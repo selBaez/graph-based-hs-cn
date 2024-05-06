@@ -1,0 +1,121 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:we_can-erase-if_them-these-lgbt-faggots-should-be-banned {
+    leolaniWorld:we n2mu:can-erase-if leolaniWorld:them-these-lgbt-faggots-should-be-banned .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:them-these-lgbt-faggots-should-be-banned a n2mu:agent,
+            n2mu:obligation,
+            n2mu:person,
+            n2mu:social,
+            n2mu:stative,
+            gaf:Instance ;
+        rdfs:label "them-these-lgbt-faggots-should-be-banned" ;
+        gaf:denotedIn leolaniTalk:chat183_utterance4_char0-60 .
+
+    leolaniWorld:we a n2mu:video-game,
+            gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat183_utterance4_char0-60 .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat183_utterance4_char0-60 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat183_utterance4_char0-60" ;
+        gaf:containsDenotation leolaniWorld:them-these-lgbt-faggots-should-be-banned,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_can-erase-if_them-these-lgbt-faggots-should-be-banned ;
+        grasp:hasAttribution leolaniTalk:we_can-erase-if_them-these-lgbt-faggots-should-be-banned_3-120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-03 13:45:24.562381"^^xml1:string ;
+        rdf:value "If we can't erase them, these LGBT-faggots should be banned."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat183_utterance4 .
+
+    leolaniTalk:we_can-erase-if_them-these-lgbt-faggots-should-be-banned_3-120 a grasp:Attribution ;
+        rdfs:label "we_can-erase-if_them-these-lgbt-faggots-should-be-banned_3-120" ;
+        grasp:isAttributionFor leolaniTalk:chat183_utterance4_char0-60 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:NEGATIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:NEGATIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "NEGATIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat183 .
+
+    leolaniTalk:chat183 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat183" ;
+        n2mu:id "183"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat183_utterance4 .
+
+    leolaniTalk:chat183_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat183_utterance4" ;
+        n2mu:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:we_can-erase-if_them-these-lgbt-faggots-should-be-banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_can-erase-if_them-these-lgbt-faggots-should-be-banned" ;
+        gaf:denotedBy leolaniTalk:chat183_utterance4_char0-60 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+

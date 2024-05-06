@@ -1,0 +1,117 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:jews_be_christ-killers {
+    leolaniWorld:jews n2mu:be leolaniWorld:christ-killers .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:christ-killers a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "christ-killers" ;
+        gaf:denotedIn leolaniTalk:chat143_utterance0_char0-24 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:jews a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat143_utterance0_char0-24 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat143_utterance0_char0-24 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat143_utterance0_char0-24" ;
+        gaf:containsDenotation leolaniWorld:christ-killers,
+            leolaniWorld:jews ;
+        gaf:denotes leolaniWorld:jews_be_christ-killers ;
+        grasp:hasAttribution leolaniTalk:jews_be_christ-killers_3120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-03 13:43:16.504186"^^xml1:string ;
+        rdf:value "Jews are Christ Killers."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat143_utterance0 .
+
+    leolaniTalk:jews_be_christ-killers_3120 a grasp:Attribution ;
+        rdfs:label "jews_be_christ-killers_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat143_utterance0_char0-24 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat143 .
+
+    leolaniTalk:chat143 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat143" ;
+        n2mu:id "143"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat143_utterance0 .
+
+    leolaniTalk:chat143_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat143_utterance0" ;
+        n2mu:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:jews_be_christ-killers a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "jews_be_christ-killers" ;
+        gaf:denotedBy leolaniTalk:chat143_utterance0_char0-24 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+

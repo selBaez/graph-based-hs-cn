@@ -1,0 +1,116 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:those-other-movements_be_a-threat-to-human-dignity {
+    leolaniWorld:those-other-movements n2mu:be leolaniWorld:a-threat-to-human-dignity .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:those-other-movements_be_a-threat-to-human-dignity a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "those-other-movements_be_a-threat-to-human-dignity" ;
+        gaf:denotedBy leolaniTalk:chat225_utterance6_char0-52 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:a-threat-to-human-dignity a gaf:Instance ;
+        rdfs:label "a-threat-to-human-dignity" ;
+        gaf:denotedIn leolaniTalk:chat225_utterance6_char0-52 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:those-other-movements a n2mu:agent,
+            gaf:Instance ;
+        rdfs:label "those-other-movements" ;
+        gaf:denotedIn leolaniTalk:chat225_utterance6_char0-52 .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat225_utterance6_char0-52 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat225_utterance6_char0-52" ;
+        gaf:containsDenotation leolaniWorld:a-threat-to-human-dignity,
+            leolaniWorld:those-other-movements ;
+        gaf:denotes leolaniWorld:those-other-movements_be_a-threat-to-human-dignity ;
+        grasp:hasAttribution leolaniTalk:those-other-movements_be_a-threat-to-human-dignity_3120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 11:17:33.379867"^^xml1:string ;
+        rdf:value "More like feminism is about the domination of women."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat225_utterance6 .
+
+    leolaniTalk:those-other-movements_be_a-threat-to-human-dignity_3120 a grasp:Attribution ;
+        rdfs:label "those-other-movements_be_a-threat-to-human-dignity_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat225_utterance6_char0-52 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat225 .
+
+    leolaniTalk:chat225 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat225" ;
+        n2mu:id "225"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat225_utterance6 .
+
+    leolaniTalk:chat225_utterance6 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat225_utterance6" ;
+        n2mu:id "6"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+

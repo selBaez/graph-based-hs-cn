@@ -1,0 +1,121 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:the-problem_be-that_islam-is-a-cancer-on-our-democracy {
+    leolaniWorld:the-problem n2mu:be-that leolaniWorld:islam-is-a-cancer-on-our-democracy .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:islam-is-a-cancer-on-our-democracy a n2mu:cognition,
+            n2mu:group,
+            n2mu:state,
+            n2mu:stative,
+            gaf:Instance ;
+        rdfs:label "islam-is-a-cancer-on-our-democracy" ;
+        gaf:denotedIn leolaniTalk:chat51_utterance2_char0-55 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:the-problem a n2mu:none,
+            n2mu:state,
+            gaf:Instance ;
+        rdfs:label "the-problem" ;
+        gaf:denotedIn leolaniTalk:chat51_utterance2_char0-55 .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat51_utterance2_char0-55 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat51_utterance2_char0-55" ;
+        gaf:containsDenotation leolaniWorld:islam-is-a-cancer-on-our-democracy,
+            leolaniWorld:the-problem ;
+        gaf:denotes leolaniWorld:the-problem_be-that_islam-is-a-cancer-on-our-democracy ;
+        grasp:hasAttribution leolaniTalk:the-problem_be-that_islam-is-a-cancer-on-our-democracy_3120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-03 13:00:01.345508"^^xml1:string ;
+        rdf:value "The problem is that Islam is a cancer on our democracy."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat51_utterance2 .
+
+    leolaniTalk:the-problem_be-that_islam-is-a-cancer-on-our-democracy_3120 a grasp:Attribution ;
+        rdfs:label "the-problem_be-that_islam-is-a-cancer-on-our-democracy_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat51_utterance2_char0-55 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat51 .
+
+    leolaniTalk:chat51 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat51" ;
+        n2mu:id "51"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat51_utterance2 .
+
+    leolaniTalk:chat51_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat51_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:the-problem_be-that_islam-is-a-cancer-on-our-democracy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "the-problem_be-that_islam-is-a-cancer-on-our-democracy" ;
+        gaf:denotedBy leolaniTalk:chat51_utterance2_char0-55 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+

@@ -1,0 +1,125 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted a n2mu:adv,
+            n2mu:attribute,
+            n2mu:cognition,
+            n2mu:group,
+            n2mu:none,
+            n2mu:social,
+            n2mu:stative,
+            gaf:Instance ;
+        rdfs:label "practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted" ;
+        gaf:denotedIn leolaniTalk:chat183_utterance3_char0-108 .
+
+    leolaniWorld:same-sex-relationships a n2mu:act,
+            n2mu:action,
+            n2mu:relation,
+            gaf:Instance ;
+        rdfs:label "same-sex-relationships" ;
+        gaf:denotedIn leolaniTalk:chat183_utterance3_char0-108 .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat183_utterance3_char0-108 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat183_utterance3_char0-108" ;
+        gaf:containsDenotation leolaniWorld:practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted,
+            leolaniWorld:same-sex-relationships ;
+        gaf:denotes leolaniWorld:same-sex-relationships_need-to_practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted ;
+        grasp:hasAttribution leolaniTalk:same-sex-relationships_need-to_practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted_3-120 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-03 13:45:17.910758"^^xml1:string ;
+        rdf:value "Same sex relationships do not need to be practiced by the majority of people. They just need to be accepted."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat183_utterance3 .
+
+    leolaniTalk:same-sex-relationships_need-to_practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted_3-120 a grasp:Attribution ;
+        rdfs:label "same-sex-relationships_need-to_practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted_3-120" ;
+        grasp:isAttributionFor leolaniTalk:chat183_utterance3_char0-108 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:NEGATIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:NEGATIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "NEGATIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat183 .
+
+    leolaniTalk:chat183 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat183" ;
+        n2mu:id "183"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat183_utterance3 .
+
+    leolaniTalk:chat183_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat183_utterance3" ;
+        n2mu:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:same-sex-relationships_need-to_practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "same-sex-relationships_need-to_practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted" ;
+        gaf:denotedBy leolaniTalk:chat183_utterance3_char0-108 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:same-sex-relationships_need-to_practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted {
+    leolaniWorld:same-sex-relationships n2mu:need-to leolaniWorld:practiced-be-by-the-majority-of-people-they-just-need-to-be-accepted .
+}
+

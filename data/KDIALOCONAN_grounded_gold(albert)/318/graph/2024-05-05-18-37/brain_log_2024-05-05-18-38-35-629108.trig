@@ -1,0 +1,115 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:so-few-fa-gg-ots a gaf:Instance ;
+        rdfs:label "so-few-fa-gg-ots" ;
+        gaf:denotedIn leolaniTalk:chat150_utterance2_char0-74 .
+
+    leolaniWorld:there a gaf:Instance ;
+        rdfs:label "there" ;
+        gaf:denotedIn leolaniTalk:chat150_utterance2_char0-74 .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:there_be_so-few-fa-gg-ots a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "there_be_so-few-fa-gg-ots" ;
+        gaf:denotedBy leolaniTalk:chat150_utterance2_char0-74 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat150_utterance2_char0-74 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat150_utterance2_char0-74" ;
+        gaf:containsDenotation leolaniWorld:so-few-fa-gg-ots,
+            leolaniWorld:there ;
+        gaf:denotes leolaniWorld:there_be_so-few-fa-gg-ots ;
+        grasp:hasAttribution leolaniTalk:there_be_so-few-fa-gg-ots_3120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-05 18:38:21.169229"^^xml1:string ;
+        rdf:value "Yes, there are so few faggots and lesbians that they should all be erased."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat150_utterance2 .
+
+    leolaniTalk:there_be_so-few-fa-gg-ots_3120 a grasp:Attribution ;
+        rdfs:label "there_be_so-few-fa-gg-ots_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat150_utterance2_char0-74 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniWorld:there_be_so-few-fa-gg-ots {
+    leolaniWorld:there n2mu:be leolaniWorld:so-few-fa-gg-ots .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat150 .
+
+    leolaniTalk:chat150 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat150" ;
+        n2mu:id "150"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat150_utterance2 .
+
+    leolaniTalk:chat150_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat150_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+

@@ -1,0 +1,117 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <http://cltl.nl/leolani/world/it_can-spread-across_cn-'-> .
+@prefix ns2: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    ns1:s-tolerant-christian-world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_can-spread-across_cn-'-s-tolerant-christian-world" ;
+        gaf:denotedBy leolaniTalk:chat1_utterance0_char0-141 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    <http://cltl.nl/leolani/world/cn-'-s-tolerant-christian-world> a gaf:Instance ;
+        rdfs:label "cn-s-tolerant-christian-world" ;
+        gaf:denotedIn leolaniTalk:chat1_utterance0_char0-141 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a n2mu:it,
+            gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1_utterance0_char0-141 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+ns1:s-tolerant-christian-world {
+    leolaniWorld:it n2mu:can-spread-across <http://cltl.nl/leolani/world/cn-'-s-tolerant-christian-world> .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat1_utterance0_char0-141 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1_utterance0_char0-141" ;
+        gaf:containsDenotation <http://cltl.nl/leolani/world/cn-'-s-tolerant-christian-world>,
+            leolaniWorld:it ;
+        gaf:denotes ns1:s-tolerant-christian-world ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/it_can-spread-across_cn-'-s-tolerant-christian-world_3120> ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 12:13:23.470586"^^xml1:string ;
+        rdf:value "Islam is a totalitarian doctrine dressed disguised as a religion so that it can spread across our tolerant Christian world. Enough IS ENOUGH!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1_utterance0 .
+
+    <http://cltl.nl/leolani/talk/it_can-spread-across_cn-'-s-tolerant-christian-world_3120> a grasp:Attribution ;
+        rdfs:label "it_can-spread-across_cn-'-s-tolerant-christian-world_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat1_utterance0_char0-141 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1 .
+
+    leolaniTalk:chat1 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1_utterance0 .
+
+    leolaniTalk:chat1_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1_utterance0" ;
+        n2mu:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+

@@ -1,0 +1,115 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:they_come_here {
+    leolaniWorld:they n2mu:come leolaniWorld:here .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_come_here a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_come_here" ;
+        gaf:denotedBy leolaniTalk:chat158_utterance4_char0-54 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:here a gaf:Instance ;
+        rdfs:label "here" ;
+        gaf:denotedIn leolaniTalk:chat158_utterance4_char0-54 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat158_utterance4_char0-54 .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat158_utterance4_char0-54 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat158_utterance4_char0-54" ;
+        gaf:containsDenotation leolaniWorld:here,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_come_here ;
+        grasp:hasAttribution leolaniTalk:they_come_here_3120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 12:48:12.046652"^^xml1:string ;
+        rdf:value "All Muslims are incompatible with any Western society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat158_utterance4 .
+
+    leolaniTalk:they_come_here_3120 a grasp:Attribution ;
+        rdfs:label "they_come_here_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat158_utterance4_char0-54 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat158 .
+
+    leolaniTalk:chat158 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat158" ;
+        n2mu:id "158"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat158_utterance4 .
+
+    leolaniTalk:chat158_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat158_utterance4" ;
+        n2mu:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
