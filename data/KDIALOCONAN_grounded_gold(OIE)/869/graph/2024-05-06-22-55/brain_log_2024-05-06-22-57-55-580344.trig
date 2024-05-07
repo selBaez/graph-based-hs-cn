@@ -1,0 +1,111 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:They_want_to_better_than_everyone {
+    leolaniWorld:They n2mu:want leolaniWorld:to_better_than_everyone .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat74_utterance2_char0-139 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:to_better_than_everyone a gaf:Instance ;
+        rdfs:label "to-better-than-everyone" ;
+        gaf:denotedIn leolaniTalk:chat74_utterance2_char0-139 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat74 .
+
+    leolaniTalk:chat74 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat74" ;
+        n2mu:id "74"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat74_utterance2 .
+
+    leolaniTalk:chat74_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat74_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:They_want_to_better_than_everyone a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_want_to_better_than_everyone" ;
+        gaf:denotedBy leolaniTalk:chat74_utterance2_char0-139 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:They_want_to_better_than_everyone_0000 a grasp:Attribution ;
+        rdfs:label "They_want_to_better_than_everyone_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat74_utterance2_char0-139 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat74_utterance2_char0-139 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat74_utterance2_char0-139" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:to_better_than_everyone ;
+        gaf:denotes leolaniWorld:They_want_to_better_than_everyone ;
+        grasp:hasAttribution leolaniTalk:They_want_to_better_than_everyone_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 22:57:41.981226"^^xml1:string ;
+        rdf:value "Because Jews are obsessed with self-improvement. They want to be better than everyone else and live in an exclusively complete Jewish city."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat74_utterance2 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

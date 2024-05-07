@@ -1,0 +1,109 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:gene,
+            n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" ;
+        gaf:denotedIn leolaniTalk:chat134_utterance7_char0-172 .
+
+    leolaniWorld:inferior a gaf:Instance ;
+        rdfs:label "inferior" ;
+        gaf:denotedIn leolaniTalk:chat134_utterance7_char0-172 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat134 .
+
+    leolaniTalk:chat134 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat134" ;
+        n2mu:id "134"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat134_utterance7 .
+
+    leolaniTalk:chat134_utterance7 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat134_utterance7" ;
+        n2mu:id "7"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:cn_are-considering-gays-as_inferior {
+    leolaniWorld:cn n2mu:are_considering_gays_as leolaniWorld:inferior .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:cn_are-considering-gays-as_inferior a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "cn_are-considering-gays-as_inferior" ;
+        gaf:denotedBy leolaniTalk:chat134_utterance7_char0-172 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat134_utterance7_char0-172 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat134_utterance7_char0-172" ;
+        gaf:containsDenotation leolaniWorld:cn,
+            leolaniWorld:inferior ;
+        gaf:denotes leolaniWorld:cn_are-considering-gays-as_inferior ;
+        grasp:hasAttribution leolaniTalk:cn_are-considering-gays-as_inferior_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 22:40:38.427757"^^xml1:string ;
+        rdf:value "What you are saying is so sad. You are considering gays as inferior and as having a negative influence on children. Unfortunately this attitude is not limited to parenting."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat134_utterance7 .
+
+    leolaniTalk:cn_are-considering-gays-as_inferior_0000 a grasp:Attribution ;
+        rdfs:label "cn_are-considering-gays-as_inferior_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat134_utterance7_char0-172 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

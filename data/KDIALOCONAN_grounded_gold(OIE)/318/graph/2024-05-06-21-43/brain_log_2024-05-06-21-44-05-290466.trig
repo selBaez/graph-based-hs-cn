@@ -1,0 +1,110 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:gays a n2mu:gays,
+            gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat33_utterance0_char0-25 .
+
+    leolaniWorld:hs a n2mu:hs,
+            n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" ;
+        gaf:denotedIn leolaniTalk:chat33_utterance0_char0-25 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat33 .
+
+    leolaniTalk:chat33 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat33" ;
+        n2mu:id "33"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat33_utterance0 .
+
+    leolaniTalk:chat33_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat33_utterance0" ;
+        n2mu:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:hs_should-eliminate_gays {
+    leolaniWorld:hs n2mu:should_eliminate leolaniWorld:gays .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:hs_should-eliminate_gays a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "hs_should-eliminate_gays" ;
+        gaf:denotedBy leolaniTalk:chat33_utterance0_char0-25 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat33_utterance0_char0-25 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat33_utterance0_char0-25" ;
+        gaf:containsDenotation leolaniWorld:gays,
+            leolaniWorld:hs ;
+        gaf:denotes leolaniWorld:hs_should-eliminate_gays ;
+        grasp:hasAttribution leolaniTalk:hs_should-eliminate_gays_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 21:43:56.228868"^^xml1:string ;
+        rdf:value "We should eliminate gays."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat33_utterance0 .
+
+    leolaniTalk:hs_should-eliminate_gays_0000 a grasp:Attribution ;
+        rdfs:label "hs_should-eliminate_gays_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat33_utterance0_char0-25 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

@@ -1,0 +1,111 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat170_utterance2_char0-86 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_culture a gaf:Instance ;
+        rdfs:label "our-culture" ;
+        gaf:denotedIn leolaniTalk:chat170_utterance2_char0-86 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat170 .
+
+    leolaniTalk:chat170 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat170" ;
+        n2mu:id "170"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat170_utterance2 .
+
+    leolaniTalk:chat170_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat170_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:They_hate_our_culture {
+    leolaniWorld:They n2mu:hate leolaniWorld:our_culture .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:They_hate_our_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_hate_our_culture" ;
+        gaf:denotedBy leolaniTalk:chat170_utterance2_char0-86 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:They_hate_our_culture_0000 a grasp:Attribution ;
+        rdfs:label "They_hate_our_culture_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat170_utterance2_char0-86 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat170_utterance2_char0-86 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat170_utterance2_char0-86" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:our_culture ;
+        gaf:denotes leolaniWorld:They_hate_our_culture ;
+        grasp:hasAttribution leolaniTalk:They_hate_our_culture_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 01:22:00.224951"^^xml1:string ;
+        rdf:value "They are discriminatory, they hate us. They hate our culture because we are different."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat170_utterance2 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

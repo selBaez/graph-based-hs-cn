@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:europe a n2mu:place,
+            gaf:Instance ;
+        rdfs:label "europe" ;
+        gaf:denotedIn leolaniTalk:chat170_utterance4_char0-91 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:win_win_situation a gaf:Instance ;
+        rdfs:label "win-win-situation" ;
+        gaf:denotedIn leolaniTalk:chat170_utterance4_char0-91 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat170 .
+
+    leolaniTalk:chat170 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat170" ;
+        n2mu:id "170"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat170_utterance4 .
+
+    leolaniTalk:chat170_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat170_utterance4" ;
+        n2mu:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:europe_is_win_win_situation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "europe_is_win_win_situation" ;
+        gaf:denotedBy leolaniTalk:chat170_utterance4_char0-91 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat170_utterance4_char0-91 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat170_utterance4_char0-91" ;
+        gaf:containsDenotation leolaniWorld:europe,
+            leolaniWorld:win_win_situation ;
+        gaf:denotes leolaniWorld:europe_is_win_win_situation ;
+        grasp:hasAttribution leolaniTalk:europe_is_win_win_situation_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 01:23:16.379107"^^xml1:string ;
+        rdf:value "They are simply not compatible with our society. Muslim-free Europe is a win-win situation."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat170_utterance4 .
+
+    leolaniTalk:europe_is_win_win_situation_0000 a grasp:Attribution ;
+        rdfs:label "europe_is_win_win_situation_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat170_utterance4_char0-91 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:europe_is_win_win_situation {
+    leolaniWorld:europe n2mu:is leolaniWorld:win_win_situation .
+}
+

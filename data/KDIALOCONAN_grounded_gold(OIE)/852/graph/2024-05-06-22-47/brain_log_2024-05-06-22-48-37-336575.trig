@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:gender_identity_is-in_school {
+    leolaniWorld:gender_identity n2mu:is_in leolaniWorld:school .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:gender_identity a n2mu:amusement-park-attraction,
+            gaf:Instance ;
+        rdfs:label "gender-identity" ;
+        gaf:denotedIn leolaniTalk:chat57_utterance1_char0-145 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:school a n2mu:music-genre,
+            gaf:Instance ;
+        rdfs:label "school" ;
+        gaf:denotedIn leolaniTalk:chat57_utterance1_char0-145 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat57 .
+
+    leolaniTalk:chat57 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat57" ;
+        n2mu:id "57"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat57_utterance1 .
+
+    leolaniTalk:chat57_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat57_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:gender_identity_is-in_school a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gender_identity_is-in_school" ;
+        gaf:denotedBy leolaniTalk:chat57_utterance1_char0-145 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat57_utterance1_char0-145 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat57_utterance1_char0-145" ;
+        gaf:containsDenotation leolaniWorld:gender_identity,
+            leolaniWorld:school ;
+        gaf:denotes leolaniWorld:gender_identity_is-in_school ;
+        grasp:hasAttribution leolaniTalk:gender_identity_is-in_school_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 22:48:30.916597"^^xml1:string ;
+        rdf:value "Learning about gender identity and sexual orientation in health classes in school could promote a more accepting environment and reduce bullying."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat57_utterance1 .
+
+    leolaniTalk:gender_identity_is-in_school_0000 a grasp:Attribution ;
+        rdfs:label "gender_identity_is-in_school_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat57_utterance1_char0-145 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

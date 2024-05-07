@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniWorld:canard_spread-throughout_century {
+    leolaniWorld:canard n2mu:spread-throughout leolaniWorld:century .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:canard a gaf:Instance ;
+        rdfs:label "canard" ;
+        gaf:denotedIn leolaniTalk:chat158_utterance1_char0-455 .
+
+    leolaniWorld:century a n2mu:achievement,
+            gaf:Instance ;
+        rdfs:label "century" ;
+        gaf:denotedIn leolaniTalk:chat158_utterance1_char0-455 .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:canard_spread-throughout_century a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "canard_spread-throughout_century" ;
+        gaf:denotedBy leolaniTalk:chat158_utterance1_char0-455 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:canard_spread-throughout_century_0000 a grasp:Attribution ;
+        rdfs:label "canard_spread-throughout_century_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat158_utterance1_char0-455 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat158_utterance1_char0-455 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat158_utterance1_char0-455" ;
+        gaf:containsDenotation leolaniWorld:canard,
+            leolaniWorld:century ;
+        gaf:denotes leolaniWorld:canard_spread-throughout_century ;
+        grasp:hasAttribution leolaniTalk:canard_spread-throughout_century_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 20:04:24.739934"^^xml1:string ;
+        rdf:value "This is just a canard that evolved from the “The Protocols of the Learned Elders of Zion”. This proven forgery was written by agents of the Russian czar in the late 19th century and claims to be the minutes of a secret meeting of Jewish leaders where they discuss a plan to rule the world. This canard spread throughout the centuries and continues to this day to promote the stereotype that the Jews own the banks and control the media and the government."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat158_utterance1 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat158 .
+
+    leolaniTalk:chat158 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat158" ;
+        n2mu:id "158"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat158_utterance1 .
+
+    leolaniTalk:chat158_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat158_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+

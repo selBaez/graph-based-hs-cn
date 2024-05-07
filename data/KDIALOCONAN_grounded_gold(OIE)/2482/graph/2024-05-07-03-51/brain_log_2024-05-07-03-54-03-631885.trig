@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:concept a n2mu:concept,
+            gaf:Instance ;
+        rdfs:label "concept" ;
+        gaf:denotedIn leolaniTalk:chat196_utterance1_char0-199 .
+
+    leolaniWorld:invented_in_Western_Europe_during_19th_century a gaf:Instance ;
+        rdfs:label "invented-in-western-europe-during-19th-century" ;
+        gaf:denotedIn leolaniTalk:chat196_utterance1_char0-199 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat196 .
+
+    leolaniTalk:chat196 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat196" ;
+        n2mu:id "196"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat196_utterance1 .
+
+    leolaniTalk:chat196_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat196_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:concept_was_invented_in_Western_Europe_during_19th_century a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "concept_was_invented_in_Western_Europe_during_19th_century" ;
+        gaf:denotedBy leolaniTalk:chat196_utterance1_char0-199 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat196_utterance1_char0-199 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat196_utterance1_char0-199" ;
+        gaf:containsDenotation leolaniWorld:concept,
+            leolaniWorld:invented_in_Western_Europe_during_19th_century ;
+        gaf:denotes leolaniWorld:concept_was_invented_in_Western_Europe_during_19th_century ;
+        grasp:hasAttribution leolaniTalk:concept_was_invented_in_Western_Europe_during_19th_century_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 03:53:56.667258"^^xml1:string ;
+        rdf:value "The concept of \"race science\" and the notion of the Jewish race was invented in Western Europe during the 19th century, and anti-Semites adopted these ideas of race to fuel their hatred against Jews."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat196_utterance1 .
+
+    leolaniTalk:concept_was_invented_in_Western_Europe_during_19th_century_0000 a grasp:Attribution ;
+        rdfs:label "concept_was_invented_in_Western_Europe_during_19th_century_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat196_utterance1_char0-199 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:concept_was_invented_in_Western_Europe_during_19th_century {
+    leolaniWorld:concept n2mu:was leolaniWorld:invented_in_Western_Europe_during_19th_century .
+}
+

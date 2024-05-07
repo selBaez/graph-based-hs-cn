@@ -1,0 +1,111 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:Muslim_free_Europe a gaf:Instance ;
+        rdfs:label "muslim-free-europe" ;
+        gaf:denotedIn leolaniTalk:chat205_utterance2_char0-91 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:win_win_situation a gaf:Instance ;
+        rdfs:label "win-win-situation" ;
+        gaf:denotedIn leolaniTalk:chat205_utterance2_char0-91 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat205 .
+
+    leolaniTalk:chat205 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat205" ;
+        n2mu:id "205"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat205_utterance2 .
+
+    leolaniTalk:chat205_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat205_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Muslim_free_Europe_is_win_win_situation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslim_free_Europe_is_win_win_situation" ;
+        gaf:denotedBy leolaniTalk:chat205_utterance2_char0-91 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Muslim_free_Europe_is_win_win_situation_0000 a grasp:Attribution ;
+        rdfs:label "Muslim_free_Europe_is_win_win_situation_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat205_utterance2_char0-91 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat205_utterance2_char0-91 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat205_utterance2_char0-91" ;
+        gaf:containsDenotation leolaniWorld:Muslim_free_Europe,
+            leolaniWorld:win_win_situation ;
+        gaf:denotes leolaniWorld:Muslim_free_Europe_is_win_win_situation ;
+        grasp:hasAttribution leolaniTalk:Muslim_free_Europe_is_win_win_situation_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 03:35:13.626086"^^xml1:string ;
+        rdf:value "They are simply not compatible with our society. Muslim-free Europe is a win-win situation."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat205_utterance2 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:Muslim_free_Europe_is_win_win_situation {
+    leolaniWorld:Muslim_free_Europe n2mu:is leolaniWorld:win_win_situation .
+}
+

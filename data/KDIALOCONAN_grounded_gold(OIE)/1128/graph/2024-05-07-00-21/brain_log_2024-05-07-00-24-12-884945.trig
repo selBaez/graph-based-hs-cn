@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:only_good_in_kitchen_with_children a gaf:Instance ;
+        rdfs:label "only-good-in-kitchen-with-children" ;
+        gaf:denotedIn leolaniTalk:chat243_utterance2_char0-120 .
+
+    leolaniWorld:women a n2mu:women,
+            gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat243_utterance2_char0-120 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat243 .
+
+    leolaniTalk:chat243 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat243" ;
+        n2mu:id "243"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat243_utterance2 .
+
+    leolaniTalk:chat243_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat243_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:women_are_only_good_in_kitchen_with_children a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are_only_good_in_kitchen_with_children" ;
+        gaf:denotedBy leolaniTalk:chat243_utterance2_char0-120 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat243_utterance2_char0-120 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat243_utterance2_char0-120" ;
+        gaf:containsDenotation leolaniWorld:only_good_in_kitchen_with_children,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:women_are_only_good_in_kitchen_with_children ;
+        grasp:hasAttribution leolaniTalk:women_are_only_good_in_kitchen_with_children_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 00:24:06.073355"^^xml1:string ;
+        rdf:value "They shouldn't manage both, women are only good in the kitchen and with children. They're unhappier because of equality."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat243_utterance2 .
+
+    leolaniTalk:women_are_only_good_in_kitchen_with_children_0000 a grasp:Attribution ;
+        rdfs:label "women_are_only_good_in_kitchen_with_children_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat243_utterance2_char0-120 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:women_are_only_good_in_kitchen_with_children {
+    leolaniWorld:women n2mu:are leolaniWorld:only_good_in_kitchen_with_children .
+}
+

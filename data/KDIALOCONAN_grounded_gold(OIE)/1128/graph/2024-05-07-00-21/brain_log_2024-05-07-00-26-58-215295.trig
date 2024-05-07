@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:reasoning_could_could_applied {
+    leolaniWorld:reasoning n2mu:could leolaniWorld:could_applied .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:could_applied a gaf:Instance ;
+        rdfs:label "could-applied" ;
+        gaf:denotedIn leolaniTalk:chat243_utterance5_char0-155 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:reasoning a n2mu:reasoning,
+            gaf:Instance ;
+        rdfs:label "reasoning" ;
+        gaf:denotedIn leolaniTalk:chat243_utterance5_char0-155 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat243 .
+
+    leolaniTalk:chat243 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat243" ;
+        n2mu:id "243"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat243_utterance5 .
+
+    leolaniTalk:chat243_utterance5 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat243_utterance5" ;
+        n2mu:id "5"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:reasoning_could_could_applied a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "reasoning_could_could_applied" ;
+        gaf:denotedBy leolaniTalk:chat243_utterance5_char0-155 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat243_utterance5_char0-155 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat243_utterance5_char0-155" ;
+        gaf:containsDenotation leolaniWorld:could_applied,
+            leolaniWorld:reasoning ;
+        gaf:denotes leolaniWorld:reasoning_could_could_applied ;
+        grasp:hasAttribution leolaniTalk:reasoning_could_could_applied_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 00:26:46.330343"^^xml1:string ;
+        rdf:value "Same reasoning could be applied to men. They also have these problems, but are less likely to be personally chastised for how they make those same choices."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat243_utterance5 .
+
+    leolaniTalk:reasoning_could_could_applied_0000 a grasp:Attribution ;
+        rdfs:label "reasoning_could_could_applied_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat243_utterance5_char0-155 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

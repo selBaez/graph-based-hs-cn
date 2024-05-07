@@ -1,0 +1,109 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:convoy-series,
+            n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" ;
+        gaf:denotedIn leolaniTalk:chat205_utterance1_char0-216 .
+
+    leolaniWorld:harmful_claims a gaf:Instance ;
+        rdfs:label "harmful-claims" ;
+        gaf:denotedIn leolaniTalk:chat205_utterance1_char0-216 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat205 .
+
+    leolaniTalk:chat205 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat205" ;
+        n2mu:id "205"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat205_utterance1 .
+
+    leolaniTalk:chat205_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat205_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:cn_are-repeating_harmful_claims a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "cn_are-repeating_harmful_claims" ;
+        gaf:denotedBy leolaniTalk:chat205_utterance1_char0-216 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat205_utterance1_char0-216 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat205_utterance1_char0-216" ;
+        gaf:containsDenotation leolaniWorld:cn,
+            leolaniWorld:harmful_claims ;
+        gaf:denotes leolaniWorld:cn_are-repeating_harmful_claims ;
+        grasp:hasAttribution leolaniTalk:cn_are-repeating_harmful_claims_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 03:34:09.743507"^^xml1:string ;
+        rdf:value "I feel like you are repeating harmful claims made by people who state to be speaking for all Muslims, but instead promote hate and division in our society. You should avoi violent preachers, but not Islam as a whole."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat205_utterance1 .
+
+    leolaniTalk:cn_are-repeating_harmful_claims_0000 a grasp:Attribution ;
+        rdfs:label "cn_are-repeating_harmful_claims_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat205_utterance1_char0-216 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:cn_are-repeating_harmful_claims {
+    leolaniWorld:cn n2mu:are_repeating leolaniWorld:harmful_claims .
+}
+

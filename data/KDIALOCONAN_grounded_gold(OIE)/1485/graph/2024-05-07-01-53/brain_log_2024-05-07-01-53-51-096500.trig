@@ -1,0 +1,109 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:all_of_rights a gaf:Instance ;
+        rdfs:label "all-of-rights" ;
+        gaf:denotedIn leolaniTalk:chat85_utterance1_char0-147 .
+
+    leolaniWorld:cn a n2mu:gene,
+            n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" ;
+        gaf:denotedIn leolaniTalk:chat85_utterance1_char0-147 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat85 .
+
+    leolaniTalk:chat85 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat85" ;
+        n2mu:id "85"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat85_utterance1 .
+
+    leolaniTalk:chat85_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat85_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:cn_have_all_of_rights {
+    leolaniWorld:cn n2mu:have leolaniWorld:all_of_rights .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:cn_have_all_of_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "cn_have_all_of_rights" ;
+        gaf:denotedBy leolaniTalk:chat85_utterance1_char0-147 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat85_utterance1_char0-147 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat85_utterance1_char0-147" ;
+        gaf:containsDenotation leolaniWorld:all_of_rights,
+            leolaniWorld:cn ;
+        gaf:denotes leolaniWorld:cn_have_all_of_rights ;
+        grasp:hasAttribution leolaniTalk:cn_have_all_of_rights_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 01:53:44.221613"^^xml1:string ;
+        rdf:value "Just because you dont like gays doesn't mean you have to hate them. What did they do to you? It seems to me that you still have all of your rights."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat85_utterance1 .
+
+    leolaniTalk:cn_have_all_of_rights_0000 a grasp:Attribution ;
+        rdfs:label "cn_have_all_of_rights_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat85_utterance1_char0-147 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:misinformation_about_people a gaf:Instance ;
+        rdfs:label "misinformation-about-people" ;
+        gaf:denotedIn leolaniTalk:chat57_utterance1_char0-191 .
+
+    leolaniWorld:owners a n2mu:owners,
+            gaf:Instance ;
+        rdfs:label "owners" ;
+        gaf:denotedIn leolaniTalk:chat57_utterance1_char0-191 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat57 .
+
+    leolaniTalk:chat57 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat57" ;
+        n2mu:id "57"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat57_utterance1 .
+
+    leolaniTalk:chat57_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat57_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:owners_probably-profit-from_misinformation_about_people {
+    leolaniWorld:owners n2mu:probably_profit_from leolaniWorld:misinformation_about_people .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:owners_probably-profit-from_misinformation_about_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_probably-profit-from_misinformation_about_people" ;
+        gaf:denotedBy leolaniTalk:chat57_utterance1_char0-191 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat57_utterance1_char0-191 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat57_utterance1_char0-191" ;
+        gaf:containsDenotation leolaniWorld:misinformation_about_people,
+            leolaniWorld:owners ;
+        gaf:denotes leolaniWorld:owners_probably-profit-from_misinformation_about_people ;
+        grasp:hasAttribution leolaniTalk:owners_probably-profit-from_misinformation_about_people_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 02:04:19.949925"^^xml1:string ;
+        rdf:value "This website is not reliable since it promotes \"reorientation therapy\", which is not backed up by science. The owners probably profit from misinformation and bad stereotypes about gay people."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat57_utterance1 .
+
+    leolaniTalk:owners_probably-profit-from_misinformation_about_people_0000 a grasp:Attribution ;
+        rdfs:label "owners_probably-profit-from_misinformation_about_people_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat57_utterance1_char0-191 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

@@ -1,0 +1,114 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <http://cltl.nl/leolani/n2mu/'> .
+@prefix ns2: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:that_s-new_hs {
+    leolaniWorld:that ns1:s_new leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a n2mu:agent,
+            gaf:Instance ;
+        rdfs:label "hs" ;
+        gaf:denotedIn leolaniTalk:chat128_utterance1_char0-70 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:that a n2mu:food,
+            gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat128_utterance1_char0-70 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat128 .
+
+    leolaniTalk:chat128 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat128" ;
+        n2mu:id "128"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat128_utterance1 .
+
+    leolaniTalk:chat128_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat128_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:that_s-new_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "that_s-new_hs" ;
+        gaf:denotedBy leolaniTalk:chat128_utterance1_char0-70 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat128_utterance1_char0-70 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat128_utterance1_char0-70" ;
+        gaf:containsDenotation leolaniWorld:hs,
+            leolaniWorld:that ;
+        gaf:denotes leolaniWorld:that_s-new_hs ;
+        grasp:hasAttribution leolaniTalk:that_s-new_hs_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 02:16:43.289271"^^xml1:string ;
+        rdf:value "So, even \"most religious organizations\"? Well, that's a new one to me."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat128_utterance1 .
+
+    leolaniTalk:that_s-new_hs_0000 a grasp:Attribution ;
+        rdfs:label "that_s-new_hs_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat128_utterance1_char0-70 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

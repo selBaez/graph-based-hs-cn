@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:religions a n2mu:religions,
+            gaf:Instance ;
+        rdfs:label "religions" ;
+        gaf:denotedIn leolaniTalk:chat141_utterance1_char0-130 .
+
+    leolaniWorld:sciences a n2mu:music-genre,
+            gaf:Instance ;
+        rdfs:label "sciences" ;
+        gaf:denotedIn leolaniTalk:chat141_utterance1_char0-130 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat141 .
+
+    leolaniTalk:chat141 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat141" ;
+        n2mu:id "141"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat141_utterance1 .
+
+    leolaniTalk:chat141_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat141_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:religions_also-promote_sciences a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "religions_also-promote_sciences" ;
+        gaf:denotedBy leolaniTalk:chat141_utterance1_char0-130 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:religions_also-promote_sciences {
+    leolaniWorld:religions n2mu:also_promote leolaniWorld:sciences .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat141_utterance1_char0-130 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat141_utterance1_char0-130" ;
+        gaf:containsDenotation leolaniWorld:religions,
+            leolaniWorld:sciences ;
+        gaf:denotes leolaniWorld:religions_also-promote_sciences ;
+        grasp:hasAttribution leolaniTalk:religions_also-promote_sciences_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 21:45:33.438881"^^xml1:string ;
+        rdf:value "Religions also promote arts, sciences, help to develop the community. Islam is not an exception. It's not about death and despair."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat141_utterance1 .
+
+    leolaniTalk:religions_also-promote_sciences_0000 a grasp:Attribution ;
+        rdfs:label "religions_also-promote_sciences_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat141_utterance1_char0-130 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

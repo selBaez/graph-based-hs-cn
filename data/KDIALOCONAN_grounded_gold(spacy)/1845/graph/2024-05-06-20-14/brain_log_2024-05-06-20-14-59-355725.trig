@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:misinformation a n2mu:company,
+            gaf:Instance ;
+        rdfs:label "misinformation" ;
+        gaf:denotedIn leolaniTalk:chat159_utterance1_char0-191 .
+
+    leolaniWorld:owner a n2mu:owner,
+            gaf:Instance ;
+        rdfs:label "owner" ;
+        gaf:denotedIn leolaniTalk:chat159_utterance1_char0-191 .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:owner_profit-from_misinformation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owner_profit-from_misinformation" ;
+        gaf:denotedBy leolaniTalk:chat159_utterance1_char0-191 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat159_utterance1_char0-191 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat159_utterance1_char0-191" ;
+        gaf:containsDenotation leolaniWorld:misinformation,
+            leolaniWorld:owner ;
+        gaf:denotes leolaniWorld:owner_profit-from_misinformation ;
+        grasp:hasAttribution leolaniTalk:owner_profit-from_misinformation_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 20:14:50.321964"^^xml1:string ;
+        rdf:value "This website is not reliable since it promotes \"reorientation therapy\", which is not backed up by science. The owners probably profit from misinformation and bad stereotypes about gay people."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat159_utterance1 .
+
+    leolaniTalk:owner_profit-from_misinformation_0000 a grasp:Attribution ;
+        rdfs:label "owner_profit-from_misinformation_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat159_utterance1_char0-191 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat159 .
+
+    leolaniTalk:chat159 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat159" ;
+        n2mu:id "159"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat159_utterance1 .
+
+    leolaniTalk:chat159_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat159_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:owner_profit-from_misinformation {
+    leolaniWorld:owner n2mu:profit-from leolaniWorld:misinformation .
+}
+

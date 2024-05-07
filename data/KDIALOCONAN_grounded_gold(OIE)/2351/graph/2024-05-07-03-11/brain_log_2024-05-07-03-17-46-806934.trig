@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:islam a n2mu:ethnic-group,
+            gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat209_utterance3_char0-105 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:only_specific_group a gaf:Instance ;
+        rdfs:label "only-specific-group" ;
+        gaf:denotedIn leolaniTalk:chat209_utterance3_char0-105 .
+}
+
+leolaniWorld:islam_is_only_specific_group {
+    leolaniWorld:islam n2mu:is leolaniWorld:only_specific_group .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat209 .
+
+    leolaniTalk:chat209 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat209" ;
+        n2mu:id "209"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat209_utterance3 .
+
+    leolaniTalk:chat209_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat209_utterance3" ;
+        n2mu:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:islam_is_only_specific_group a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "islam_is_only_specific_group" ;
+        gaf:denotedBy leolaniTalk:chat209_utterance3_char0-105 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat209_utterance3_char0-105 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat209_utterance3_char0-105" ;
+        gaf:containsDenotation leolaniWorld:islam,
+            leolaniWorld:only_specific_group ;
+        gaf:denotes leolaniWorld:islam_is_only_specific_group ;
+        grasp:hasAttribution leolaniTalk:islam_is_only_specific_group_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 03:17:39.874047"^^xml1:string ;
+        rdf:value "Did you look at statistics of crime in the area? Is Islam really the only specific group linked to crime?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat209_utterance3 .
+
+    leolaniTalk:islam_is_only_specific_group_0000 a grasp:Attribution ;
+        rdfs:label "islam_is_only_specific_group_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat209_utterance3_char0-105 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

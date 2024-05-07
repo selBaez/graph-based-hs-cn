@@ -1,0 +1,111 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_balls a gaf:Instance ;
+        rdfs:label "our-balls" ;
+        gaf:denotedIn leolaniTalk:chat181_utterance2_char0-140 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat181_utterance2_char0-140 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat181 .
+
+    leolaniTalk:chat181 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat181" ;
+        n2mu:id "181"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat181_utterance2 .
+
+    leolaniTalk:chat181_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat181_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_busting_our_balls a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_busting_our_balls" ;
+        gaf:denotedBy leolaniTalk:chat181_utterance2_char0-140 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:they_busting_our_balls {
+    leolaniWorld:they n2mu:busting leolaniWorld:our_balls .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat181_utterance2_char0-140 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat181_utterance2_char0-140" ;
+        gaf:containsDenotation leolaniWorld:our_balls,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_busting_our_balls ;
+        grasp:hasAttribution leolaniTalk:they_busting_our_balls_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 02:02:15.071333"^^xml1:string ;
+        rdf:value "In the West, women have legal equality, equal rights, and are protected from discrimination: they should stop busting our balls and whining."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat181_utterance2 .
+
+    leolaniTalk:they_busting_our_balls_0000 a grasp:Attribution ;
+        rdfs:label "they_busting_our_balls_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat181_utterance2_char0-140 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:folks a gaf:Instance ;
+        rdfs:label "folks" ;
+        gaf:denotedIn leolaniTalk:chat149_utterance0_char0-73 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:whites a n2mu:ethnic-group,
+            gaf:Instance ;
+        rdfs:label "whites" ;
+        gaf:denotedIn leolaniTalk:chat149_utterance0_char0-73 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat149 .
+
+    leolaniTalk:chat149 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat149" ;
+        n2mu:id "149"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat149_utterance0 .
+
+    leolaniTalk:chat149_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat149_utterance0" ;
+        n2mu:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:folks_are-inferior-to_whites a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "folks_are-inferior-to_whites" ;
+        gaf:denotedBy leolaniTalk:chat149_utterance0_char0-73 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:folks_are-inferior-to_whites {
+    leolaniWorld:folks n2mu:are_inferior_to leolaniWorld:whites .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat149_utterance0_char0-73 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat149_utterance0_char0-73" ;
+        gaf:containsDenotation leolaniWorld:folks,
+            leolaniWorld:whites ;
+        gaf:denotes leolaniWorld:folks_are-inferior-to_whites ;
+        grasp:hasAttribution leolaniTalk:folks_are-inferior-to_whites_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 02:06:06.212196"^^xml1:string ;
+        rdf:value "Muslim folks are still inferior to whites, even if what I said is a myth."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat149_utterance0 .
+
+    leolaniTalk:folks_are-inferior-to_whites_0000 a grasp:Attribution ;
+        rdfs:label "folks_are-inferior-to_whites_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat149_utterance0_char0-73 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

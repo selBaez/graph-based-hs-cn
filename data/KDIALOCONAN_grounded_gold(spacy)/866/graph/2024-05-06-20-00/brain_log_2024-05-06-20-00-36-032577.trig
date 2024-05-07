@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:hs_be_sorry {
+    leolaniWorld:hs n2mu:be leolaniWorld:sorry .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a n2mu:hs,
+            gaf:Instance ;
+        rdfs:label "hs" ;
+        gaf:denotedIn leolaniTalk:chat72_utterance5_char0-113 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:sorry a n2mu:sorry,
+            gaf:Instance ;
+        rdfs:label "sorry" ;
+        gaf:denotedIn leolaniTalk:chat72_utterance5_char0-113 .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:hs_be_sorry a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "hs_be_sorry" ;
+        gaf:denotedBy leolaniTalk:chat72_utterance5_char0-113 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat72_utterance5_char0-113 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat72_utterance5_char0-113" ;
+        gaf:containsDenotation leolaniWorld:hs,
+            leolaniWorld:sorry ;
+        gaf:denotes leolaniWorld:hs_be_sorry ;
+        grasp:hasAttribution leolaniTalk:hs_be_sorry_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 20:00:26.845887"^^xml1:string ;
+        rdf:value "I'm sorry, but you are wrong: It is EXACLTY about the American dream when you strive to improve your lot in life."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat72_utterance5 .
+
+    leolaniTalk:hs_be_sorry_0000 a grasp:Attribution ;
+        rdfs:label "hs_be_sorry_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat72_utterance5_char0-113 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat72 .
+
+    leolaniTalk:chat72 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat72" ;
+        n2mu:id "72"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat72_utterance5 .
+
+    leolaniTalk:chat72_utterance5 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat72_utterance5" ;
+        n2mu:id "5"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
