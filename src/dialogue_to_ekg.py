@@ -1,17 +1,16 @@
 # Imports
 import json
 import logging
-import requests
 import time
+from datetime import date, datetime
+from pathlib import Path
+from random import getrandbits
+
+import requests
 from cltl.brain import logger as brain_logger
 from cltl.brain.long_term_memory import LongTermMemory
 from cltl.brain.utils.helper_functions import brain_response_to_json
 from cltl.entity_linking.label_linker import LabelBasedLinker
-from datetime import date, datetime
-from pathlib import Path
-from random import getrandbits
-from tqdm import tqdm
-
 from cltl.triple_extraction import logger as chat_logger
 from cltl.triple_extraction.api import Chat
 from cltl.triple_extraction.cfg_analyzer import CFGAnalyzer
@@ -19,6 +18,7 @@ from cltl.triple_extraction.conversational_analyzer import ConversationalAnalyze
 from cltl.triple_extraction.oie_analyzer import OIEAnalyzer
 from cltl.triple_extraction.spacy_analyzer import spacyAnalyzer
 from cltl.triple_extraction.utils.helper_functions import utterance_to_capsules
+from tqdm import tqdm
 
 # Set logging levels
 chat_logger.setLevel(logging.ERROR)

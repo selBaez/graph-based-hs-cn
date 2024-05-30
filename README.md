@@ -15,8 +15,8 @@ In order to run the code, follow these steps:
 1) Create a virtual environment for the project (conda, venv, etc)
 
 ```bash
-conda create --name graph-based-cn-hs python=3.10
-conda activate graph-based-cn-hs
+conda create --name graph-based-hs-cn python=3.8
+conda activate graph-based-hs-cn
 ```
 
 1) Install the required dependencies in `requirements.txt`
@@ -30,7 +30,7 @@ pip install -r requirements.txt --no-cache
    pull the latest versions and install the packages into the virtual environment like this:
 
 ```bash
-conda activate graph-based-cn-hs
+conda activate graph-based-hs-cn
 cd cltl-knowledgeextraction
 git pull
 pip install -e .
