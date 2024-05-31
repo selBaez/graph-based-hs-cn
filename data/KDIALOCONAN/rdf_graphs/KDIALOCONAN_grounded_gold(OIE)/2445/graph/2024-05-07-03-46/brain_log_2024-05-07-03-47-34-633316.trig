@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:blood_compromises_safety a gaf:Instance ;
+        rdfs:label "blood-compromises-safety" ;
+        gaf:denotedIn leolaniTalk:chat192_utterance0_char0-124 .
+
+    leolaniWorld:gays a n2mu:gays,
+            gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat192_utterance0_char0-124 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat192 .
+
+    leolaniTalk:chat192 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat192" ;
+        n2mu:id "192"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat192_utterance0 .
+
+    leolaniTalk:chat192_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat192_utterance0" ;
+        n2mu:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:gays_donate_blood_compromises_safety {
+    leolaniWorld:gays n2mu:donate leolaniWorld:blood_compromises_safety .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:gays_donate_blood_compromises_safety a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gays_donate_blood_compromises_safety" ;
+        gaf:denotedBy leolaniTalk:chat192_utterance0_char0-124 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat192_utterance0_char0-124 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat192_utterance0_char0-124" ;
+        gaf:containsDenotation leolaniWorld:blood_compromises_safety,
+            leolaniWorld:gays ;
+        gaf:denotes leolaniWorld:gays_donate_blood_compromises_safety ;
+        grasp:hasAttribution leolaniTalk:gays_donate_blood_compromises_safety_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 03:47:27.719638"^^xml1:string ;
+        rdf:value "Allowing gays to donate blood compromises patient safety because of their sexual behavior that spreads diseases such as HIV."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat192_utterance0 .
+
+    leolaniTalk:gays_donate_blood_compromises_safety_0000 a grasp:Attribution ;
+        rdfs:label "gays_donate_blood_compromises_safety_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat192_utterance0_char0-124 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

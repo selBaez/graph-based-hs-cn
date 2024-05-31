@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <http://cltl.nl/leolani/world/Britain_’> .
+@prefix ns2: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    ns1:s_housing_problems a gaf:Instance ;
+        rdfs:label "britain-’s-housing-problems" ;
+        gaf:denotedIn leolaniTalk:chat80_utterance0_char0-61 .
+
+    leolaniWorld:Without_migration_would_solved a gaf:Instance ;
+        rdfs:label "without-migration-would-solved" ;
+        gaf:denotedIn leolaniTalk:chat80_utterance0_char0-61 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat80 .
+
+    leolaniTalk:chat80 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat80" ;
+        n2mu:id "80"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat80_utterance0 .
+
+    leolaniTalk:chat80_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat80_utterance0" ;
+        n2mu:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    ns1:s_housing_problems_would_Without_migration_would_solved a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Britain_’s_housing_problems_would_Without_migration_would_solved" ;
+        gaf:denotedBy leolaniTalk:chat80_utterance0_char0-61 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+ns1:s_housing_problems_would_Without_migration_would_solved {
+    ns1:s_housing_problems n2mu:would leolaniWorld:Without_migration_would_solved .
+}
+
+leolaniTalk:Perspectives {
+    <http://cltl.nl/leolani/talk/Britain_’s_housing_problems_would_Without_migration_would_solved_0000> a grasp:Attribution ;
+        rdfs:label "Britain_’s_housing_problems_would_Without_migration_would_solved_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat80_utterance0_char0-61 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat80_utterance0_char0-61 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat80_utterance0_char0-61" ;
+        gaf:containsDenotation ns1:s_housing_problems,
+            leolaniWorld:Without_migration_would_solved ;
+        gaf:denotes ns1:s_housing_problems_would_Without_migration_would_solved ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/Britain_’s_housing_problems_would_Without_migration_would_solved_0000> ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 03:25:27.114333"^^xml1:string ;
+        rdf:value "Without migration, Britain’s housing problems would be solved"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat80_utterance0 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

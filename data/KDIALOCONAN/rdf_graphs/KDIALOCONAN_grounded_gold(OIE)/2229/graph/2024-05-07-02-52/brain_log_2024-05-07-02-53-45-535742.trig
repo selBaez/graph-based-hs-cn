@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:forgery_known_as_Protocols a gaf:Instance ;
+        rdfs:label "forgery-known-as-protocols" ;
+        gaf:denotedIn leolaniTalk:chat227_utterance1_char0-458 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:myth a n2mu:written-work,
+            gaf:Instance ;
+        rdfs:label "myth" ;
+        gaf:denotedIn leolaniTalk:chat227_utterance1_char0-458 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat227 .
+
+    leolaniTalk:chat227 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat227" ;
+        n2mu:id "227"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat227_utterance1 .
+
+    leolaniTalk:chat227_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat227_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:myth_came-from_forgery_known_as_Protocols {
+    leolaniWorld:myth n2mu:came_from leolaniWorld:forgery_known_as_Protocols .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:myth_came-from_forgery_known_as_Protocols a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "myth_came-from_forgery_known_as_Protocols" ;
+        gaf:denotedBy leolaniTalk:chat227_utterance1_char0-458 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat227_utterance1_char0-458 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat227_utterance1_char0-458" ;
+        gaf:containsDenotation leolaniWorld:forgery_known_as_Protocols,
+            leolaniWorld:myth ;
+        gaf:denotes leolaniWorld:myth_came-from_forgery_known_as_Protocols ;
+        grasp:hasAttribution leolaniTalk:myth_came-from_forgery_known_as_Protocols_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 02:53:33.706498"^^xml1:string ;
+        rdf:value "This myth came from the forgery known as \"The Protocols of the Learned Elders of Zion\" that claims to be the transcript of a secret meeting of Jewish leaders, discussing how to enact their plan to control the world. These Protocols have spread throughout the centuries despite being a fake written by agents of the Russian czar in the late 19th century, and still today it is used to \"prove\" that the Jews own the banks, control the media and the government."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat227_utterance1 .
+
+    leolaniTalk:myth_came-from_forgery_known_as_Protocols_0000 a grasp:Attribution ;
+        rdfs:label "myth_came-from_forgery_known_as_Protocols_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat227_utterance1_char0-458 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

@@ -1,0 +1,117 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <http://cltl.nl/leolani/n2mu/-> .
+@prefix ns2: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:their_presence-is_strong {
+    leolaniWorld:their ns1:presence-is leolaniWorld:strong .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:their_presence-is_strong a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "their_presence-is_strong" ;
+        gaf:denotedBy leolaniTalk:chat149_utterance2_char0-106 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:strong a n2mu:strong,
+            gaf:Instance ;
+        rdfs:label "strong" ;
+        gaf:denotedIn leolaniTalk:chat149_utterance2_char0-106 .
+
+    leolaniWorld:their a gaf:Instance ;
+        rdfs:label "their" ;
+        gaf:denotedIn leolaniTalk:chat149_utterance2_char0-106 .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat149_utterance2_char0-106 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat149_utterance2_char0-106" ;
+        gaf:containsDenotation leolaniWorld:strong,
+            leolaniWorld:their ;
+        gaf:denotes leolaniWorld:their_presence-is_strong ;
+        grasp:hasAttribution leolaniTalk:their_presence-is_strong_3120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 11:55:00.999936"^^xml1:string ;
+        rdf:value "They are just an inconvenient group to be excluded from the European countries. They are a chronic threat."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat149_utterance2 .
+
+    leolaniTalk:their_presence-is_strong_3120 a grasp:Attribution ;
+        rdfs:label "their_presence-is_strong_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat149_utterance2_char0-106 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat149 .
+
+    leolaniTalk:chat149 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat149" ;
+        n2mu:id "149"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat149_utterance2 .
+
+    leolaniTalk:chat149_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat149_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+

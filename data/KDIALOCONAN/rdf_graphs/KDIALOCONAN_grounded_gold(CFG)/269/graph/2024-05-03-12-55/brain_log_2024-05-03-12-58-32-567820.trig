@@ -1,0 +1,121 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:person,
+            n2mu:substance,
+            gaf:Instance ;
+        rdfs:label "hs" ;
+        gaf:denotedIn leolaniTalk:chat219_utterance4_char0-122 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community a n2mu:body,
+            n2mu:cognition,
+            n2mu:emotion,
+            n2mu:event,
+            n2mu:group,
+            n2mu:none,
+            n2mu:person,
+            n2mu:substance,
+            gaf:Instance ;
+        rdfs:label "proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community" ;
+        gaf:denotedIn leolaniTalk:chat219_utterance4_char0-122 .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat219_utterance4_char0-122 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat219_utterance4_char0-122" ;
+        gaf:containsDenotation leolaniWorld:hs,
+            leolaniWorld:proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community ;
+        gaf:denotes leolaniWorld:hs_need_proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community ;
+        grasp:hasAttribution leolaniTalk:hs_need_proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community_3-120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-03 12:58:32.563799"^^xml1:string ;
+        rdf:value "I don't need proof. I don't want gays in my wedding. I don't want gays in the military. I don't want gays in my community."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat219_utterance4 .
+
+    leolaniTalk:hs_need_proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community_3-120 a grasp:Attribution ;
+        rdfs:label "hs_need_proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community_3-120" ;
+        grasp:isAttributionFor leolaniTalk:chat219_utterance4_char0-122 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:NEGATIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:NEGATIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "NEGATIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:hs_need_proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community {
+    leolaniWorld:hs n2mu:need leolaniWorld:proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat219 .
+
+    leolaniTalk:chat219 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat219" ;
+        n2mu:id "219"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat219_utterance4 .
+
+    leolaniTalk:chat219_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat219_utterance4" ;
+        n2mu:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:hs_need_proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "hs_need_proof-i-don-t-want-gays-in-my-wedding-i-don-t-want-gays-in-the-military-i-don-t-want-gays-in-my-community" ;
+        gaf:denotedBy leolaniTalk:chat219_utterance4_char0-122 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+

@@ -1,0 +1,115 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:other-religious-person_acts-like_different a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "other-religious-person_acts-like_different" ;
+        gaf:denotedBy leolaniTalk:chat92_utterance4_char0-61 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:different a gaf:Instance ;
+        rdfs:label "different" ;
+        gaf:denotedIn leolaniTalk:chat92_utterance4_char0-61 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:other-religious-person a gaf:Instance ;
+        rdfs:label "other-religious-person" ;
+        gaf:denotedIn leolaniTalk:chat92_utterance4_char0-61 .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat92_utterance4_char0-61 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat92_utterance4_char0-61" ;
+        gaf:containsDenotation leolaniWorld:different,
+            leolaniWorld:other-religious-person ;
+        gaf:denotes leolaniWorld:other-religious-person_acts-like_different ;
+        grasp:hasAttribution leolaniTalk:other-religious-person_acts-like_different_3-110 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 12:15:53.025576"^^xml1:string ;
+        rdf:value "No other religious person acts like they're above all others."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat92_utterance4 .
+
+    leolaniTalk:other-religious-person_acts-like_different_3-110 a grasp:Attribution ;
+        rdfs:label "other-religious-person_acts-like_different_3-110" ;
+        grasp:isAttributionFor leolaniTalk:chat92_utterance4_char0-61 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:NEGATIVE,
+            grasps:POSITIVE .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:NEGATIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "NEGATIVE" .
+
+    grasps:POSITIVE a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "POSITIVE" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat92 .
+
+    leolaniTalk:chat92 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat92" ;
+        n2mu:id "92"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat92_utterance4 .
+
+    leolaniTalk:chat92_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat92_utterance4" ;
+        n2mu:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:other-religious-person_acts-like_different {
+    leolaniWorld:other-religious-person n2mu:acts-like leolaniWorld:different .
+}
+

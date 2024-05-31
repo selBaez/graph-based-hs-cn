@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a n2mu:agent,
+            gaf:Instance ;
+        rdfs:label "hs" ;
+        gaf:denotedIn leolaniTalk:chat65_utterance5_char0-113 .
+
+    leolaniWorld:humans a n2mu:humans,
+            gaf:Instance ;
+        rdfs:label "humans" ;
+        gaf:denotedIn leolaniTalk:chat65_utterance5_char0-113 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat65 .
+
+    leolaniTalk:chat65 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat65" ;
+        n2mu:id "65"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat65_utterance5 .
+
+    leolaniTalk:chat65_utterance5 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat65_utterance5" ;
+        n2mu:id "5"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:hs_are_humans a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "hs_are_humans" ;
+        gaf:denotedBy leolaniTalk:chat65_utterance5_char0-113 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat65_utterance5_char0-113 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat65_utterance5_char0-113" ;
+        gaf:containsDenotation leolaniWorld:hs,
+            leolaniWorld:humans ;
+        gaf:denotes leolaniWorld:hs_are_humans ;
+        grasp:hasAttribution leolaniTalk:hs_are_humans_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 03:07:50.652624"^^xml1:string ;
+        rdf:value "They are. If there is a problem, a solution can be found through dialogue instead of division. We are all humans."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat65_utterance5 .
+
+    leolaniTalk:hs_are_humans_0000 a grasp:Attribution ;
+        rdfs:label "hs_are_humans_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat65_utterance5_char0-113 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:hs_are_humans {
+    leolaniWorld:hs n2mu:are leolaniWorld:humans .
+}
+

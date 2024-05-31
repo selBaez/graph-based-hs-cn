@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:arguments_are_because_valid {
+    leolaniWorld:arguments n2mu:are leolaniWorld:because_valid .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:arguments a n2mu:arguments,
+            gaf:Instance ;
+        rdfs:label "arguments" ;
+        gaf:denotedIn leolaniTalk:chat171_utterance2_char0-89 .
+
+    leolaniWorld:because_valid a gaf:Instance ;
+        rdfs:label "because-valid" ;
+        gaf:denotedIn leolaniTalk:chat171_utterance2_char0-89 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat171 .
+
+    leolaniTalk:chat171 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat171" ;
+        n2mu:id "171"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat171_utterance2 .
+
+    leolaniTalk:chat171_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat171_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:arguments_are_because_valid a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "arguments_are_because_valid" ;
+        gaf:denotedBy leolaniTalk:chat171_utterance2_char0-89 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:arguments_are_because_valid_0000 a grasp:Attribution ;
+        rdfs:label "arguments_are_because_valid_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat171_utterance2_char0-89 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat171_utterance2_char0-89 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat171_utterance2_char0-89" ;
+        gaf:containsDenotation leolaniWorld:arguments,
+            leolaniWorld:because_valid ;
+        gaf:denotes leolaniWorld:arguments_are_because_valid ;
+        grasp:hasAttribution leolaniTalk:arguments_are_because_valid_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 01:50:45.307288"^^xml1:string ;
+        rdf:value "Maybe it's because those arguments are valid. Jews are different from us and are born so."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat171_utterance2 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

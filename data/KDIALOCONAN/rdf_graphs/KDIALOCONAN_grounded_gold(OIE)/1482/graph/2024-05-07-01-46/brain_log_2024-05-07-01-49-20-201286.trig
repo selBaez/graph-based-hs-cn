@@ -1,0 +1,111 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:Anti-Semites a gaf:Instance ;
+        rdfs:label "anti-semites" ;
+        gaf:denotedIn leolaniTalk:chat171_utterance1_char0-239 .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:rationalization_for_their_hatred_of_Jews a gaf:Instance ;
+        rdfs:label "rationalization-for-their-hatred-of-jews" ;
+        gaf:denotedIn leolaniTalk:chat171_utterance1_char0-239 .
+}
+
+leolaniWorld:Anti-Semites_adopted-as_rationalization_for_their_hatred_of_Jews {
+    leolaniWorld:Anti-Semites n2mu:adopted_as leolaniWorld:rationalization_for_their_hatred_of_Jews .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat171 .
+
+    leolaniTalk:chat171 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat171" ;
+        n2mu:id "171"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat171_utterance1 .
+
+    leolaniTalk:chat171_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat171_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Anti-Semites_adopted-as_rationalization_for_their_hatred_of_Jews a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Anti-Semites_adopted-as_rationalization_for_their_hatred_of_Jews" ;
+        gaf:denotedBy leolaniTalk:chat171_utterance1_char0-239 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Anti-Semites_adopted-as_rationalization_for_their_hatred_of_Jews_0000 a grasp:Attribution ;
+        rdfs:label "Anti-Semites_adopted-as_rationalization_for_their_hatred_of_Jews_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat171_utterance1_char0-239 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat171_utterance1_char0-239 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat171_utterance1_char0-239" ;
+        gaf:containsDenotation leolaniWorld:Anti-Semites,
+            leolaniWorld:rationalization_for_their_hatred_of_Jews ;
+        gaf:denotes leolaniWorld:Anti-Semites_adopted-as_rationalization_for_their_hatred_of_Jews ;
+        grasp:hasAttribution leolaniTalk:Anti-Semites_adopted-as_rationalization_for_their_hatred_of_Jews_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 01:49:06.486722"^^xml1:string ;
+        rdf:value "Did you know that the concept of “racial science,” and therefore the notion of the Jewish “race”, took root in Western Europe during the 19th century? Anti-Semites adopted racial arguments as a new rationalization for their hatred of Jews."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat171_utterance1 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

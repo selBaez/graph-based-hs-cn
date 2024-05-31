@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:hs_say-about_something-like-that a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "hs_say-about_something-like-that" ;
+        gaf:denotedBy leolaniTalk:chat251_utterance2_char0-62 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:agent,
+            n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" ;
+        gaf:denotedIn leolaniTalk:chat251_utterance2_char0-62 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:something-like-that a gaf:Instance ;
+        rdfs:label "something-like-that" ;
+        gaf:denotedIn leolaniTalk:chat251_utterance2_char0-62 .
+}
+
+leolaniWorld:hs_say-about_something-like-that {
+    leolaniWorld:hs n2mu:say-about leolaniWorld:something-like-that .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat251_utterance2_char0-62 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat251_utterance2_char0-62" ;
+        gaf:containsDenotation leolaniWorld:hs,
+            leolaniWorld:something-like-that ;
+        gaf:denotes leolaniWorld:hs_say-about_something-like-that ;
+        grasp:hasAttribution leolaniTalk:hs_say-about_something-like-that_3120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 11:24:34.766819"^^xml1:string ;
+        rdf:value "Because they come here and do nothing except ruin our society!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat251_utterance2 .
+
+    leolaniTalk:hs_say-about_something-like-that_3120 a grasp:Attribution ;
+        rdfs:label "hs_say-about_something-like-that_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat251_utterance2_char0-62 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat251 .
+
+    leolaniTalk:chat251 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat251" ;
+        n2mu:id "251"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat251_utterance2 .
+
+    leolaniTalk:chat251_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat251_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+

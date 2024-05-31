@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:jews a n2mu:interest,
+            gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat247_utterance2_char0-38 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:one a n2mu:one,
+            gaf:Instance ;
+        rdfs:label "one" ;
+        gaf:denotedIn leolaniTalk:chat247_utterance2_char0-38 .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:jews_be_one a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "jews_be_one" ;
+        gaf:denotedBy leolaniTalk:chat247_utterance2_char0-38 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat247_utterance2_char0-38 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat247_utterance2_char0-38" ;
+        gaf:containsDenotation leolaniWorld:jews,
+            leolaniWorld:one ;
+        gaf:denotes leolaniWorld:jews_be_one ;
+        grasp:hasAttribution leolaniTalk:jews_be_one_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 19:55:23.277479"^^xml1:string ;
+        rdf:value "No, Jews were the ones to kill Christ."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat247_utterance2 .
+
+    leolaniTalk:jews_be_one_0000 a grasp:Attribution ;
+        rdfs:label "jews_be_one_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat247_utterance2_char0-38 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat247 .
+
+    leolaniTalk:chat247 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat247" ;
+        n2mu:id "247"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat247_utterance2 .
+
+    leolaniTalk:chat247_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat247_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:jews_be_one {
+    leolaniWorld:jews n2mu:be leolaniWorld:one .
+}
+

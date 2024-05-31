@@ -1,0 +1,111 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:Faggots a gaf:Instance ;
+        rdfs:label "faggots" ;
+        gaf:denotedIn leolaniTalk:chat57_utterance2_char0-69 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:their_depravity a gaf:Instance ;
+        rdfs:label "their-depravity" ;
+        gaf:denotedIn leolaniTalk:chat57_utterance2_char0-69 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat57 .
+
+    leolaniTalk:chat57 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat57" ;
+        n2mu:id "57"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat57_utterance2 .
+
+    leolaniTalk:chat57_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat57_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Faggots_are-poisoning-with_their_depravity {
+    leolaniWorld:Faggots n2mu:are_poisoning_with leolaniWorld:their_depravity .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Faggots_are-poisoning-with_their_depravity a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Faggots_are-poisoning-with_their_depravity" ;
+        gaf:denotedBy leolaniTalk:chat57_utterance2_char0-69 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Faggots_are-poisoning-with_their_depravity_0000 a grasp:Attribution ;
+        rdfs:label "Faggots_are-poisoning-with_their_depravity_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat57_utterance2_char0-69 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat57_utterance2_char0-69 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat57_utterance2_char0-69" ;
+        gaf:containsDenotation leolaniWorld:Faggots,
+            leolaniWorld:their_depravity ;
+        gaf:denotes leolaniWorld:Faggots_are-poisoning-with_their_depravity ;
+        grasp:hasAttribution leolaniTalk:Faggots_are-poisoning-with_their_depravity_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 22:49:25.122306"^^xml1:string ;
+        rdf:value "Faggots are poisoning our children minds with their filthy depravity."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat57_utterance2 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

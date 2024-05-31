@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <http://cltl.nl/leolani/n2mu/'> .
+@prefix ns2: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:STDs a gaf:Instance ;
+        rdfs:label "stds" ;
+        gaf:denotedIn leolaniTalk:chat100_utterance0_char0-56 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat100_utterance0_char0-56 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat100 .
+
+    leolaniTalk:chat100 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat100" ;
+        n2mu:id "100"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat100_utterance0 .
+
+    leolaniTalk:chat100_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat100_utterance0" ;
+        n2mu:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:they_re-more-prone-to_STDs {
+    leolaniWorld:they ns1:re_more_prone_to leolaniWorld:STDs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_re-more-prone-to_STDs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_re-more-prone-to_STDs" ;
+        gaf:denotedBy leolaniTalk:chat100_utterance0_char0-56 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat100_utterance0_char0-56 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat100_utterance0_char0-56" ;
+        gaf:containsDenotation leolaniWorld:STDs,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_re-more-prone-to_STDs ;
+        grasp:hasAttribution leolaniTalk:they_re-more-prone-to_STDs_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 01:34:07.739923"^^xml1:string ;
+        rdf:value "Gays shouldn't donate blood, they're more prone to STDs."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat100_utterance0 .
+
+    leolaniTalk:they_re-more-prone-to_STDs_0000 a grasp:Attribution ;
+        rdfs:label "they_re-more-prone-to_STDs_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat100_utterance0_char0-56 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:jewish a n2mu:ethnic-group,
+            gaf:Instance ;
+        rdfs:label "jewish" ;
+        gaf:denotedIn leolaniTalk:chat140_utterance1_char0-345 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:none a n2mu:human,
+            gaf:Instance ;
+        rdfs:label "none" ;
+        gaf:denotedIn leolaniTalk:chat140_utterance1_char0-345 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat140 .
+
+    leolaniTalk:chat140 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat140" ;
+        n2mu:id "140"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat140_utterance1 .
+
+    leolaniTalk:chat140_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat140_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:none_are_jewish a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "none_are_jewish" ;
+        gaf:denotedBy leolaniTalk:chat140_utterance1_char0-345 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:none_are_jewish {
+    leolaniWorld:none n2mu:are leolaniWorld:jewish .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat140_utterance1_char0-345 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat140_utterance1_char0-345" ;
+        gaf:containsDenotation leolaniWorld:jewish,
+            leolaniWorld:none ;
+        gaf:denotes leolaniWorld:none_are_jewish ;
+        grasp:hasAttribution leolaniTalk:none_are_jewish_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 21:49:55.819275"^^xml1:string ;
+        rdf:value "If I remember correctly, at that time the President was George W. Bush, the Vice President was Dick Cheney, the National Security Advisor was Condoleeza Rice and Secretary of Defense was Donald Rumsfeld... They were all in favor of the war and had the ultimate authority for making decisions for the United States, still none of them are Jewish."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat140_utterance1 .
+
+    leolaniTalk:none_are_jewish_0000 a grasp:Attribution ;
+        rdfs:label "none_are_jewish_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat140_utterance1_char0-345 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

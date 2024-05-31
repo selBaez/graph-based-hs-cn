@@ -1,0 +1,126 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex a n2mu:act,
+            n2mu:action,
+            n2mu:adv,
+            n2mu:agent,
+            n2mu:emotion,
+            n2mu:group,
+            n2mu:none,
+            n2mu:state,
+            n2mu:stative,
+            gaf:Instance ;
+        rdfs:label "a-disease-it-is-a-sexual-orientation-5-of-the-population-simply-love-people-of-the-same-sex" ;
+        gaf:denotedIn leolaniTalk:chat219_utterance1_char0-116 .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:homosexuality a n2mu:act,
+            n2mu:action,
+            gaf:Instance ;
+        rdfs:label "homosexuality" ;
+        gaf:denotedIn leolaniTalk:chat219_utterance1_char0-116 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat219_utterance1_char0-116 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat219_utterance1_char0-116" ;
+        gaf:containsDenotation leolaniWorld:a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex,
+            leolaniWorld:homosexuality ;
+        gaf:denotes leolaniWorld:homosexuality_be_a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex ;
+        grasp:hasAttribution leolaniTalk:homosexuality_be_a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex_3-120 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-03 12:57:59.589837"^^xml1:string ;
+        rdf:value "Homosexuality is not a disease. It is a sexual orientation. 5% of the population simply love people of the same sex."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat219_utterance1 .
+
+    leolaniTalk:homosexuality_be_a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex_3-120 a grasp:Attribution ;
+        rdfs:label "homosexuality_be_a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex_3-120" ;
+        grasp:isAttributionFor leolaniTalk:chat219_utterance1_char0-116 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:NEGATIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:NEGATIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "NEGATIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat219 .
+
+    leolaniTalk:chat219 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat219" ;
+        n2mu:id "219"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat219_utterance1 .
+
+    leolaniTalk:chat219_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat219_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:homosexuality_be_a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homosexuality_be_a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex" ;
+        gaf:denotedBy leolaniTalk:chat219_utterance1_char0-116 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:homosexuality_be_a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex {
+    leolaniWorld:homosexuality n2mu:be leolaniWorld:a-disease-it-is-a-sexual-orientation-5_-of-the-population-simply-love-people-of-the-same-sex .
+}
+

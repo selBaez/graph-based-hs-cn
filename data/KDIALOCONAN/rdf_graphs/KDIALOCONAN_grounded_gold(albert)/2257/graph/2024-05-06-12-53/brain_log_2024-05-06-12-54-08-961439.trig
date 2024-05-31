@@ -1,0 +1,117 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:2-of-the-french-population_be_muslim {
+    leolaniWorld:2-of-the-french-population n2mu:be leolaniWorld:muslim .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:2-of-the-french-population_be_muslim a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "2-of-the-french-population_be_muslim" ;
+        gaf:denotedBy leolaniTalk:chat32_utterance2_char0-58 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:2-of-the-french-population a n2mu:none,
+            gaf:Instance ;
+        rdfs:label "2-of-the-french-population" ;
+        gaf:denotedIn leolaniTalk:chat32_utterance2_char0-58 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:muslim a n2mu:muslim,
+            gaf:Instance ;
+        rdfs:label "muslim" ;
+        gaf:denotedIn leolaniTalk:chat32_utterance2_char0-58 .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:2-of-the-french-population_be_muslim_3120 a grasp:Attribution ;
+        rdfs:label "2-of-the-french-population_be_muslim_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat32_utterance2_char0-58 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    leolaniTalk:chat32_utterance2_char0-58 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat32_utterance2_char0-58" ;
+        gaf:containsDenotation leolaniWorld:2-of-the-french-population,
+            leolaniWorld:muslim ;
+        gaf:denotes leolaniWorld:2-of-the-french-population_be_muslim ;
+        grasp:hasAttribution leolaniTalk:2-of-the-french-population_be_muslim_3120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 12:54:04.834976"^^xml1:string ;
+        rdf:value "We should get rid of all of them, Muslims can't stay here."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat32_utterance2 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat32 .
+
+    leolaniTalk:chat32 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat32" ;
+        n2mu:id "32"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat32_utterance2 .
+
+    leolaniTalk:chat32_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat32_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+

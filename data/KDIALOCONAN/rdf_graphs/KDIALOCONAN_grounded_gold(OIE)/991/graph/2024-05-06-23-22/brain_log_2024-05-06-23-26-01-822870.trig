@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:jews a n2mu:interest,
+            gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat30_utterance3_char0-305 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:look a n2mu:look,
+            gaf:Instance ;
+        rdfs:label "look" ;
+        gaf:denotedIn leolaniTalk:chat30_utterance3_char0-305 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat30 .
+
+    leolaniTalk:chat30 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat30" ;
+        n2mu:id "30"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat30_utterance3 .
+
+    leolaniTalk:chat30_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat30_utterance3" ;
+        n2mu:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:jews_tend_look {
+    leolaniWorld:jews n2mu:tend leolaniWorld:look .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:jews_tend_look a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "jews_tend_look" ;
+        gaf:denotedBy leolaniTalk:chat30_utterance3_char0-305 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat30_utterance3_char0-305 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat30_utterance3_char0-305" ;
+        gaf:containsDenotation leolaniWorld:jews,
+            leolaniWorld:look ;
+        gaf:denotes leolaniWorld:jews_tend_look ;
+        grasp:hasAttribution leolaniTalk:jews_tend_look_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 23:26:01.765245"^^xml1:string ;
+        rdf:value "A definition of Judaism based on physical or genetic traits is simply wrong. Through centuries of intermarriage and conversion, Jews from Eastern Europe tend to look like Eastern Europeans; Jews from Ethiopia tend to look like Ethiopians; Jews from India tend to look like Indians. And so on and so forth."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat30_utterance3 .
+
+    leolaniTalk:jews_tend_look_0000 a grasp:Attribution ;
+        rdfs:label "jews_tend_look_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat30_utterance3_char0-305 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

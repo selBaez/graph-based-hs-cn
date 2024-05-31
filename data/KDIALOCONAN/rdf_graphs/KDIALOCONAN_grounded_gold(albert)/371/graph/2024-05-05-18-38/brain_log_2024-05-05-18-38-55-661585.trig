@@ -1,0 +1,117 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:islam a n2mu:ethnic-group,
+            gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-115 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:the-worst a n2mu:worst,
+            gaf:Instance ;
+        rdfs:label "the-worst" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-115 .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:islam_be_the-worst a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "islam_be_the-worst" ;
+        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-115 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat46_utterance0_char0-115 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat46_utterance0_char0-115" ;
+        gaf:containsDenotation leolaniWorld:islam,
+            leolaniWorld:the-worst ;
+        gaf:denotes leolaniWorld:islam_be_the-worst ;
+        grasp:hasAttribution leolaniTalk:islam_be_the-worst_3120 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-05 18:38:45.465289"^^xml1:string ;
+        rdf:value "Most religions cause death and despair, but Islam is the worst and cruelest of them all, it is nothing but trouble."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat46_utterance0 .
+
+    leolaniTalk:islam_be_the-worst_3120 a grasp:Attribution ;
+        rdfs:label "islam_be_the-worst_3120" ;
+        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-115 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:POSITIVE,
+            grasps:NEUTRAL .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:POSITIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "POSITIVE" .
+
+    grasps:NEUTRAL a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "NEUTRAL" .
+}
+
+leolaniWorld:islam_be_the-worst {
+    leolaniWorld:islam n2mu:be leolaniWorld:the-worst .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat46 .
+
+    leolaniTalk:chat46 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat46" ;
+        n2mu:id "46"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat46_utterance0 .
+
+    leolaniTalk:chat46_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat46_utterance0" ;
+        n2mu:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+

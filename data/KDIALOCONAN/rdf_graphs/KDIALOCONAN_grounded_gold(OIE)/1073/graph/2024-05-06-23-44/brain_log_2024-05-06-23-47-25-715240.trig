@@ -1,0 +1,111 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:Having a gaf:Instance ;
+        rdfs:label "having" ;
+        gaf:denotedIn leolaniTalk:chat127_utterance5_char0-176 .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:deal a gaf:Instance ;
+        rdfs:label "deal" ;
+        gaf:denotedIn leolaniTalk:chat127_utterance5_char0-176 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat127 .
+
+    leolaniTalk:chat127 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat127" ;
+        n2mu:id "127"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat127_utterance5 .
+
+    leolaniTalk:chat127_utterance5 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat127_utterance5" ;
+        n2mu:id "5"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Having_better-equips_deal {
+    leolaniWorld:Having n2mu:better_equips leolaniWorld:deal .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Having_better-equips_deal a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Having_better-equips_deal" ;
+        gaf:denotedBy leolaniTalk:chat127_utterance5_char0-176 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Having_better-equips_deal_0000 a grasp:Attribution ;
+        rdfs:label "Having_better-equips_deal_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat127_utterance5_char0-176 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat127_utterance5_char0-176 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat127_utterance5_char0-176" ;
+        gaf:containsDenotation leolaniWorld:Having,
+            leolaniWorld:deal ;
+        gaf:denotes leolaniWorld:Having_better-equips_deal ;
+        grasp:hasAttribution leolaniTalk:Having_better-equips_deal_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 23:47:12.061824"^^xml1:string ;
+        rdf:value "Having this information better equips individuals to deal with issues concerning gender and be aware of their own intent and opinions that are rooted in gender and gender bias."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat127_utterance5 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

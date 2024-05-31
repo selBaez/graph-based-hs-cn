@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:developed a n2mu:developed,
+            gaf:Instance ;
+        rdfs:label "developed" ;
+        gaf:denotedIn leolaniTalk:chat252_utterance1_char0-324 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:theory a n2mu:theory,
+            gaf:Instance ;
+        rdfs:label "theory" ;
+        gaf:denotedIn leolaniTalk:chat252_utterance1_char0-324 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat252 .
+
+    leolaniTalk:chat252 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat252" ;
+        n2mu:id "252"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat252_utterance1 .
+
+    leolaniTalk:chat252_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat252_utterance1" ;
+        n2mu:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:theory_was_developed {
+    leolaniWorld:theory n2mu:was leolaniWorld:developed .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:theory_was_developed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "theory_was_developed" ;
+        gaf:denotedBy leolaniTalk:chat252_utterance1_char0-324 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat252_utterance1_char0-324 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat252_utterance1_char0-324" ;
+        gaf:containsDenotation leolaniWorld:developed,
+            leolaniWorld:theory ;
+        gaf:denotes leolaniWorld:theory_was_developed ;
+        grasp:hasAttribution leolaniTalk:theory_was_developed_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-07 02:40:06.263458"^^xml1:string ;
+        rdf:value "The theory of Jewish \"racial\" difference was developed before modern sciences of physiology and genetics. It's still debatable whether the term \"race\" is scientifically sound, but what all scientists agree with is that physical traits are inherited and aren't connected with predispositions to emotions, intellect or morals."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat252_utterance1 .
+
+    leolaniTalk:theory_was_developed_0000 a grasp:Attribution ;
+        rdfs:label "theory_was_developed_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat252_utterance1_char0-324 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

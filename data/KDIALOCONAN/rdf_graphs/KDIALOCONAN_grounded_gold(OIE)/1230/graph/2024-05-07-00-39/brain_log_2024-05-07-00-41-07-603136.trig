@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance4_char0-78 .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:rule a n2mu:rule,
+            gaf:Instance ;
+        rdfs:label "rule" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance4_char0-78 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat242 .
+
+    leolaniTalk:chat242 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat242" ;
+        n2mu:id "242"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat242_utterance4 .
+
+    leolaniTalk:chat242_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat242_utterance4" ;
+        n2mu:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:They_want_rule {
+    leolaniWorld:They n2mu:want leolaniWorld:rule .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:They_want_rule a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_want_rule" ;
+        gaf:denotedBy leolaniTalk:chat242_utterance4_char0-78 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:They_want_rule_0000 a grasp:Attribution ;
+        rdfs:label "They_want_rule_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat242_utterance4_char0-78 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat242_utterance4_char0-78 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat242_utterance4_char0-78" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:rule ;
+        gaf:denotes leolaniWorld:They_want_rule ;
+        grasp:hasAttribution leolaniTalk:They_want_rule_0000 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-07 00:40:56.758360"^^xml1:string ;
+        rdf:value "For sure they don't need it for world domination. They want to rule the world."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat242_utterance4 .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+

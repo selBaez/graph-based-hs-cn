@@ -1,0 +1,113 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani n2mu:know leolaniWorld:hs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:hs_like_talk-to-them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "hs_like_talk-to-them" ;
+        gaf:denotedBy leolaniTalk:chat185_utterance2_char0-11 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:hs a n2mu:agent,
+            n2mu:person,
+            gaf:Instance ;
+        rdfs:label "hs" ;
+        gaf:denotedIn leolaniTalk:chat185_utterance2_char0-11 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:talk-to-them a gaf:Instance ;
+        rdfs:label "talk-to-them" ;
+        gaf:denotedIn leolaniTalk:chat185_utterance2_char0-11 .
+}
+
+leolaniWorld:hs_like_talk-to-them {
+    leolaniWorld:hs n2mu:like leolaniWorld:talk-to-them .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat185_utterance2_char0-11 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat185_utterance2_char0-11" ;
+        gaf:containsDenotation leolaniWorld:hs,
+            leolaniWorld:talk-to-them ;
+        gaf:denotes leolaniWorld:hs_like_talk-to-them ;
+        grasp:hasAttribution leolaniTalk:hs_like_talk-to-them_3-110 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-05-06 12:46:05.165907"^^xml1:string ;
+        rdf:value "I hate gays"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat185_utterance2 .
+
+    leolaniTalk:hs_like_talk-to-them_3-110 a grasp:Attribution ;
+        rdfs:label "hs_like_talk-to-them_3-110" ;
+        grasp:isAttributionFor leolaniTalk:chat185_utterance2_char0-11 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:CERTAIN,
+            graspf:NEGATIVE,
+            grasps:POSITIVE .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:CERTAIN a grasp:AttributionValue,
+            graspf:CertaintyValue ;
+        rdfs:label "CERTAIN" .
+
+    graspf:NEGATIVE a grasp:AttributionValue,
+            graspf:PolarityValue ;
+        rdfs:label "NEGATIVE" .
+
+    grasps:POSITIVE a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "POSITIVE" .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat185 .
+
+    leolaniTalk:chat185 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat185" ;
+        n2mu:id "185"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat185_utterance2 .
+
+    leolaniTalk:chat185_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat185_utterance2" ;
+        n2mu:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:hs a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+

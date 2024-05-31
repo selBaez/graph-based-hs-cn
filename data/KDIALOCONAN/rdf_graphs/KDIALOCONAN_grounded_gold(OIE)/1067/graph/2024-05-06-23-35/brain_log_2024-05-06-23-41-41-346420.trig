@@ -1,0 +1,112 @@
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix n2mu: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+
+leolaniWorld:Instances {
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:forgery_written_in_century a gaf:Instance ;
+        rdfs:label "forgery-written-in-century" ;
+        gaf:denotedIn leolaniTalk:chat239_utterance3_char0-306 .
+
+    leolaniWorld:leolani a n2mu:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:protocols a n2mu:protocols,
+            gaf:Instance ;
+        rdfs:label "protocols" ;
+        gaf:denotedIn leolaniTalk:chat239_utterance3_char0-306 .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani n2mu:know leolaniWorld:cn .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat239 .
+
+    leolaniTalk:chat239 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat239" ;
+        n2mu:id "239"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat239_utterance3 .
+
+    leolaniTalk:chat239_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat239_utterance3" ;
+        n2mu:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:cn a n2mu:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:protocols_are_forgery_written_in_century {
+    leolaniWorld:protocols n2mu:are leolaniWorld:forgery_written_in_century .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:protocols_are_forgery_written_in_century a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "protocols_are_forgery_written_in_century" ;
+        gaf:denotedBy leolaniTalk:chat239_utterance3_char0-306 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat239_utterance3_char0-306 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat239_utterance3_char0-306" ;
+        gaf:containsDenotation leolaniWorld:forgery_written_in_century,
+            leolaniWorld:protocols ;
+        gaf:denotes leolaniWorld:protocols_are_forgery_written_in_century ;
+        grasp:hasAttribution leolaniTalk:protocols_are_forgery_written_in_century_0000 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-05-06 23:41:34.439810"^^xml1:string ;
+        rdf:value "This myth traces back to “The Protocols of the Learned Elders of Zion”, that is used as proof of a Jewish conspiracy to rule the world. But the Protocols are a proven forgery, written by agents of the Russian czar in the late 19th century, that spread throughout the 20th century and continues to this day."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat239_utterance3 .
+
+    leolaniTalk:protocols_are_forgery_written_in_century_0000 a grasp:Attribution ;
+        rdfs:label "protocols_are_forgery_written_in_century_0000" ;
+        grasp:isAttributionFor leolaniTalk:chat239_utterance3_char0-306 ;
+        rdf:value graspe:UNDERSPECIFIED,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:UNDERSPECIFIED a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
