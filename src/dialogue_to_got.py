@@ -1,5 +1,4 @@
 import argparse
-import json
 import pickle
 import string
 from pathlib import Path
@@ -10,6 +9,8 @@ import spacy
 import stanza
 from stanza.server import CoreNLPClient
 from tqdm import tqdm
+
+from src.train_utils.utils_data import load_data
 
 stanza.install_corenlp()
 nlp = spacy.load('en_core_web_sm')
@@ -183,14 +184,6 @@ def make_output_directory(args, split):
     return outpath
 
 
-def load_data(args, split):
-    datapath = Path(args.data_root) / f"{split}.json"
-    with open(datapath, 'r', encoding='utf-8') as file:
-        dialogues = json.load(file)
-
-    return dialogues
-
-
 def save_data(mc_input_text_list, mc_adj_matrix_list, outpath, args):
     mc_input_text_path = outpath / args.input_text_file
     with open(mc_input_text_path, 'wb') as f:
@@ -203,8 +196,9 @@ def save_data(mc_input_text_list, mc_adj_matrix_list, outpath, args):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_root', type=str, default='./../data/DIALOCONAN/')
-    parser.add_argument('--splits', nargs="+", default=["test"])  # "train", "dev", "test"])
+    parser.add_argument('--data_root', type=str, default='./../data')
+    parser.add_argument('--dataset', type=str, default='DIALOCONAN')
+    parser.add_argument('--splits', nargs="+", default=["train", "dev", "test"])  # "test"])
     parser.add_argument('--output_dir', type=str, default='./../data/DIALOCONAN/got/')
     parser.add_argument('--input_text_file', type=str, default='mc_input_text.pkl')
     parser.add_argument('--adj_matrix_file', type=str, default='mc_adj_matrix.pkl')
@@ -235,8 +229,6 @@ def main(args):
                 mc_input_text, mc_adj_matrix = get_mind_chart(mc_context_text, max_nodes, client)
                 mc_input_text_list.append(mc_input_text)
                 mc_adj_matrix_list.append(mc_adj_matrix)
-
-                break
 
             client.stop()
 
