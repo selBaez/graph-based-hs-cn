@@ -1,3 +1,5 @@
+cd graph-based-hs-cn
+
 conda create --name graph-based-hs-cn python=3.8
 conda activate graph-based-hs-cn
 

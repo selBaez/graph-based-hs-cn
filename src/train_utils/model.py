@@ -13,10 +13,7 @@ from torch.nn import CrossEntropyLoss
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.checkpoint import checkpoint
 from transformers import T5Config, T5ForConditionalGeneration
-from transformers.modeling_outputs import (
-    BaseModelOutput,
-    Seq2SeqLMOutput,
-)
+from transformers.modeling_outputs import (BaseModelOutput, Seq2SeqLMOutput, )
 from transformers.modeling_outputs import BaseModelOutputWithPastAndCrossAttentions
 from transformers.models.t5.modeling_t5 import T5Stack, T5Block, T5LayerNorm
 from transformers.utils.model_parallel_utils import assert_device_map, get_device_map

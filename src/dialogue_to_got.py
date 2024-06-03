@@ -10,7 +10,7 @@ import stanza
 from stanza.server import CoreNLPClient
 from tqdm import tqdm
 
-from src.train_utils.utils_data import load_data
+from train_utils.utils_data import load_data
 
 stanza.install_corenlp()
 nlp = spacy.load('en_core_web_sm')
@@ -198,7 +198,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_root', type=str, default='./../data')
     parser.add_argument('--dataset', type=str, default='DIALOCONAN')
-    parser.add_argument('--splits', nargs="+", default=["train", "dev", "test"])  # "test"])
+    parser.add_argument('--splits', nargs="+", default=["train", "dev", "test"])  # "mini-test"])
     parser.add_argument('--output_dir', type=str, default='./../data/DIALOCONAN/got/')
     parser.add_argument('--input_text_file', type=str, default='mc_input_text.pkl')
     parser.add_argument('--adj_matrix_file', type=str, default='mc_adj_matrix.pkl')

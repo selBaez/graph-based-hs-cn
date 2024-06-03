@@ -11,9 +11,10 @@ from rich.console import Console
 from rich.table import Column, Table
 from transformers import AutoTokenizer, DataCollatorForSeq2Seq, Seq2SeqTrainingArguments, Seq2SeqTrainer
 
+from eval_utils.utils_evaluate import get_scores_conan
 from train_utils.dataset import DialoconanDatasetGoT
 from train_utils.model import T5ForGoTGeneration
-from train_utils.utils_data import load_data_std_dialoconan, mk_dir, make_save_directory
+from train_utils.utils_data import load_data_std_dialoconan
 from train_utils.utils_prompt import postprocess_text
 
 console = Console(record=True)
@@ -25,8 +26,8 @@ def T5Trainer(args):
 
     # make directories for output
     print('====Make directories====')
-    save_dir = make_save_directory(args)
-    mk_dir(args.output_dir)
+    save_dir = args.evaluate_dir
+    print(save_dir)
 
     # Create tokenizer
     print(f'====Create tokenizer====')
@@ -41,14 +42,17 @@ def T5Trainer(args):
     train_problems, dev_problems, test_problems = load_data_std_dialoconan(args, console=console)
     train_set = DialoconanDatasetGoT(train_problems, "train", tokenizer, args.input_len, args.output_len, args)
     eval_set = DialoconanDatasetGoT(dev_problems, "dev", tokenizer, args.input_len, args.output_len, args)
+    test_set = DialoconanDatasetGoT(test_problems, "test", tokenizer, args.input_len, args.output_len,
+                                    args)  # TODO uncomment for real
 
     # Load model
+    args.model = args.evaluate_dir
     print(f'====Load model: {args.model} ====')
     model = T5ForGoTGeneration.from_pretrained(args.model, s_token_id=s_token_id)
     model.resize_token_embeddings(len(tokenizer))
     print("model parameters: ", model.num_parameters())
 
-    # rougel for cn generation
+    # rougel for rationale generation
     metric = evaluate.load("rouge")
 
     def compute_metrics_rougel(eval_preds):
@@ -59,6 +63,7 @@ def T5Trainer(args):
         pred_result = np.where(preds != -100, preds, tokenizer.pad_token_id)
         preds = tokenizer.batch_decode(pred_result, skip_special_tokens=True, clean_up_tokenization_spaces=True)
         targets = tokenizer.batch_decode(targets, skip_special_tokens=True, clean_up_tokenization_spaces=True)
+
         decoded_preds, decoded_labels = postprocess_text(preds, targets)
 
         result = metric.compute(predictions=decoded_preds, references=decoded_labels, use_stemmer=True)
@@ -67,17 +72,17 @@ def T5Trainer(args):
         result["gen_len"] = np.mean(prediction_lens)
         return result
 
-    # evaluate at each epoch
+    # do evaluation only
     print('====Load training arguments====')
     training_args = Seq2SeqTrainingArguments(save_dir,
-                                             do_train=True,
+                                             do_train=False,
                                              do_eval=True,
                                              evaluation_strategy="steps",
                                              logging_strategy="steps",
-                                             logging_steps=10,
+                                             logging_steps=20,
                                              save_strategy="steps",
-                                             eval_steps=100,
-                                             save_steps=500,
+                                             eval_steps=20,
+                                             save_steps=100,
                                              save_total_limit=2,
                                              learning_rate=args.lr,
                                              eval_accumulation_steps=args.eval_acc,
@@ -90,7 +95,6 @@ def T5Trainer(args):
                                              generation_max_length=args.output_len,
                                              load_best_model_at_end=True,
                                              report_to="wandb",
-                                             bf16=args.bf16
                                              )
 
     print('====Load trainer====')
@@ -104,16 +108,11 @@ def T5Trainer(args):
                              preprocess_logits_for_metrics=None
                              )
 
-    # Train
-    print('====Train====')
-    trainer.train(resume_from_checkpoint=args.resume_from_checkpoint)
-    trainer.save_model(save_dir)
-
     # Evaluate
     print('====Evaluate with HF====')
-    metrics = trainer.evaluate(eval_dataset=eval_set, max_length=args.output_len)
-    trainer.log_metrics("eval", metrics)
-    trainer.save_metrics("eval", metrics)
+    metrics = trainer.evaluate(eval_dataset=test_set, max_length=args.output_len)
+    trainer.log_metrics("test", metrics)
+    trainer.save_metrics("test", metrics)
 
     def generate_predictions(dataset):
         predict_results = trainer.predict(test_dataset=dataset, max_length=args.output_len)
@@ -125,18 +124,18 @@ def T5Trainer(args):
 
         return preds, targets
 
-    # Generate predictions for eval set
+    # Generate predictions
     print('====Generate predictions====')
-    torch.cuda.empty_cache()
-    if trainer.is_world_process_zero():
-        preds, targets = generate_predictions(eval_set)
-        output_data = {"preds": preds,
-                       "labels": targets}
+    preds, targets = generate_predictions(test_set)
+    scores = get_scores_conan(preds, targets)
+    output_data = {"scores": scores,
+                   "preds": preds,
+                   "labels": targets}
 
-        # Save predictions
-        output_prediction_file = os.path.join(save_dir, "predictions_ans_eval.json")
-        with open(output_prediction_file, "w") as writer:
-            writer.write(json.dumps(output_data, indent=4))
+    # Save predictions
+    output_prediction_file = os.path.join(save_dir, "predictions_ans_test.json")
+    with open(output_prediction_file, "w") as writer:
+        writer.write(json.dumps(output_data, indent=4))
 
 
 def set_random_seeds(args):
@@ -151,14 +150,18 @@ def parse_args():
     parser.add_argument('--dataset', type=str, default='DIALOCONAN')
     parser.add_argument('--got_root', type=str, default='got/')
     parser.add_argument('--output_dir', type=str, default='./../experiments')
-    parser.add_argument('--model', type=str, default='declare-lab/flan-alpaca-base')  # TODO or large?
-    parser.add_argument('--epoch', type=int, default=2)  # TODO change
+    parser.add_argument('--model', type=str, default='declare-lab/flan-alpaca-base')
+    parser.add_argument('--epoch', type=int, default=50)
     parser.add_argument('--lr', type=float, default=5e-5)
-    parser.add_argument('--bs', type=int, default=4)  # TODO change
-    parser.add_argument('--eval_bs', type=int, default=4)  # TODO change
+    parser.add_argument('--bs', type=int, default=2)
+    parser.add_argument('--eval_bs', type=int, default=4)
     parser.add_argument('--eval_acc', type=int, default=None, help='evaluate accumulation step')
-    parser.add_argument('--input_len', type=int, default=512)  # TODO check
-    parser.add_argument('--output_len', type=int, default=64)  # TODO check
+    parser.add_argument('--input_len', type=int, default=512)
+    parser.add_argument('--output_len', type=int, default=64)
+    parser.add_argument('--final_eval', action='store_true', help='only evaluate the model at the final epoch')
+    parser.add_argument('--evaluate_dir', type=str,
+                        default="./../experiments/DIALOCONAN/declare-lab-flan-alpaca-base_lr5e-05_bs32_op256_ep50_useGTrue_2024-06-01-04-17/checkpoint-3500",
+                        help='the directory of model for evaluation')
     parser.add_argument('--seed', type=int, default=42, help='random seed')
     parser.add_argument('--resume_from_checkpoint', type=str, default=None, help='resume from checkpoint')
     parser.add_argument('--eval_strategy', type=str, default="steps", help='evaluation strategy',

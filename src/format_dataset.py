@@ -1,8 +1,7 @@
 import pandas as pd
 
-from src.utils.helpers import save_json
 from sklearn.model_selection import train_test_split
-from pathlib import Path
+
 
 def format_dialogue_history(dialogue):
     # Remove last HS and CN as they will be treated separatedly
@@ -43,15 +42,15 @@ def main():
     [train, test] = train_test_split(logs, test_size=0.10, random_state=42)
     [train, dev] = train_test_split(train, test_size=0.1111, random_state=42)
     print(f'Train size: {len(train)}, Dev size: {len(dev)}, Test size: {len(test)}')
-
-    # Save to file
-    dataset_directory = Path("./../data/DIALOCONAN")
-    dataset_directory.mkdir(parents=True, exist_ok=True)
-
-    save_json(logs, filename= dataset_directory / "full.json")
-    save_json(train, filename= dataset_directory / "train.json")
-    save_json(dev, filename= dataset_directory / "dev.json")
-    save_json(test, filename= dataset_directory / "test.json")
+    #
+    # # Save to file
+    # dataset_directory = Path("./../data/DIALOCONAN")
+    # dataset_directory.mkdir(parents=True, exist_ok=True)
+    #
+    # save_json(logs, filename= dataset_directory / "full.json")
+    # save_json(train, filename= dataset_directory / "train.json")
+    # save_json(dev, filename= dataset_directory / "dev.json")
+    # save_json(test, filename= dataset_directory / "test.json")
 
     print("DONE")
 
