@@ -5,7 +5,7 @@ Adapted from https://github.com/lupantech/ScienceQA and https://github.com/amazo
 import re
 import warnings
 
-import numpy as np
+import pandas as pd
 import syllables
 from eval_utils.heavy_metrics import Bleurt, CounterspeechScore, SentenceSimilarityScore
 from eval_utils.toxic_metric import ToxicHateXplain
@@ -19,64 +19,69 @@ warnings.filterwarnings('ignore')
 
 
 def get_scores_conan(results, results_reference):
+    df = pd.DataFrame()
+    df["ref"] = results_reference
+    df["pred"] = results
+
+    # format for metrics
     results = {idx: item for idx, item in enumerate(results)}
     results_reference = {idx: item for idx, item in enumerate(results_reference)}
 
     ## BLEU
-    bleu1 = calculate_bleu(results, results_reference, gram=1)
-    bleu4 = calculate_bleu(results, results_reference, gram=4)
+    df["bleu1"] = calculate_bleu(results, results_reference, gram=1)
+    df["bleu4"] = calculate_bleu(results, results_reference, gram=4)
 
     ## Rouge-L
-    rouge = calculate_rouge(results, results_reference)
+    df["rouge"] = calculate_rouge(results, results_reference)
 
     ## Meteor
-    meteor = calculate_meteor(results, results_reference)
+    df["meteor"] = calculate_meteor(results, results_reference)
 
     ## Gleu
-    gleu = calculate_gleu(results, results_reference)
+    df["gleu"] = calculate_gleu(results, results_reference)
 
     ## RR
 
     ## Fre
-    fre = fre_readability(results)
+    df["fre"] = fre_readability(results)
 
     ## Similarity
     similarity_scorer = SentenceSimilarityScore()
-    similarity = similarity_scorer.score(results, results_reference)
+    df["similarity"] = similarity_scorer.score(results, results_reference)
 
     ## Bleurt
     bleurt_score = Bleurt(model_path="Elron/bleurt-base-512", max_length=400, batch_size=16)
-    bleurt = bleurt_score.score(results, results_reference)
+    df["bleurt"] = bleurt_score.score(results, results_reference)
 
     ## Counter-speech
     counterspeech_score = CounterspeechScore(model_path='Hate-speech-CNERG/counterspeech-quality-bert',
                                              max_length=100, batch_size=16)
-    counterspeech = counterspeech_score.scoring(results)
+    df["counterspeech"] = counterspeech_score.scoring(results)
 
     ## toxicity
     toxicity_score = ToxicHateXplain(model_path="Hate-speech-CNERG/bert-base-uncased-hatexplain-rationale-two",
                                      max_length=100, batch_size=16)
-    toxicity = toxicity_score.scoring(results)
+    df["toxicity"] = toxicity_score.scoring(results)
 
     ## Diversity
 
     ## Novelty
 
-    scores = {'bleu1': bleu1 * 100,
-              'bleu4': bleu4 * 100,
-              'rouge': rouge * 100,
-              'meteor': meteor * 100,
-              'gleu': gleu * 100,
-              'fre': fre,
-              'sentence_similariry': similarity * 100,
-              'bleurt': bleurt,
-              'counterspeech': counterspeech,
-              'toxicity': toxicity,
+    scores = {'bleu1': df["bleu1"].mean() * 100,
+              'bleu4': df["bleu4"].mean() * 100,
+              'rouge': df["rouge"].mean() * 100,
+              'meteor': df["meteor"].mean() * 100,
+              'gleu': df["gleu"].mean() * 100,
+              'fre': df["fre"].mean(),
+              'sentence_similariry': df["similarity"].mean() * 100,
+              'bleurt': df["bleurt"].mean(),
+              'counterspeech': df["counterspeech"].mean(),
+              'toxicity': df["toxicity"].mean(),
               }
 
     scores = {k: float(val) for k, val in scores.items()}
 
-    return scores
+    return scores, df
 
 
 ########################
@@ -111,13 +116,12 @@ def calculate_bleu(results, data, gram):
         target = data[qid]
         target = target.strip()
         if target == "":
-            continue
-        bleu = bleu_score(target, prediction, gram)
+            bleu = 0
+        else:
+            bleu = bleu_score(target, prediction, gram)
         bleus.append(bleu)
 
-    avg_bleu = sum(bleus) / len(bleus)
-
-    return avg_bleu
+    return bleus
 
 
 ########################
@@ -137,12 +141,12 @@ def calculate_rouge(results, data):
         target = data[qid]
         target = target.strip()
         if prediction == "" or target == "":
-            continue
-        rouge = score_rouge(target, prediction)
+            rouge = 0
+        else:
+            rouge = score_rouge(target, prediction)
         rouges.append(rouge)
 
-    avg_rouge = sum(rouges) / len(rouges)
-    return avg_rouge
+    return rouges
 
 
 ########################
@@ -156,7 +160,7 @@ def calculate_meteor(results, data):
         score = meteor_score([hypothesis_tokens], reference_tokens)
         meteors.append(score)
 
-    return np.mean(meteors)
+    return meteors
 
 
 ########################
@@ -170,7 +174,7 @@ def calculate_gleu(results, data):
         score = sentence_gleu([hypothesis_tokens], reference_tokens)
         gleus.append(score)
 
-    return np.mean(gleus)
+    return gleus
 
 
 ########################
@@ -182,7 +186,7 @@ def fre_readability(results):
         score = fre(output)
         fres.append(score)
 
-    return np.mean(fres)
+    return fres
 
 
 def fre(para):

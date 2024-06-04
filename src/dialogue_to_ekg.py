@@ -39,9 +39,10 @@ GAF_DENOTEDIN = URIRef("http://groundedannotationframework.org/gaf#denotedIn")
 GAF_DENOTEDBY = URIRef("http://groundedannotationframework.org/gaf#denotedBy")
 GAF_CONTAINSDEN = URIRef("http://groundedannotationframework.org/gaf#containsDenotation")
 GRASP_ATTFOR = URIRef("http://groundedannotationframework.org/grasp#isAttributionFor")
+GRASP_ATTTO = URIRef("http://groundedannotationframework.org/grasp#wasAttributedTo")
 SEM_TST = URIRef("http://semanticweb.cs.vu.nl/2009/11/sem/hasBeginTimeStamp")
-TYPE_EVENT = URIRef("http://semanticweb.cs.vu.nl/2009/11/sem/Event")
-TYPE_STATEMENT = URIRef("http://groundedannotationframework.org/grasp#Statement")
+HS_ID = URIRef("http://cltl-hs.org/id")
+
 INSTANCE_GRAPH = URIRef("http://cltl.nl/leolani/world/Instances")
 PERSPECTIVE_GRAPH = URIRef("http://cltl.nl/leolani/talk/Perspectives")
 ONTOLOGY_GRAPH = URIRef("http://cltl.nl/leolani/world/Ontology")
@@ -73,8 +74,26 @@ ONTOLOGY_GRAPH = URIRef("http://cltl.nl/leolani/world/Ontology")
 
 def format_for_string_encoding(graph_data):
     temp_text = " <s> "
-    for triple in graph_data:
-        temp_text += f"</s> <s> "
+
+    contexts = sorted([c for c in graph_data.contexts()])
+    for context in contexts:
+        triples = sorted([t for t in context],
+                         key=lambda s: (not s[0].startswith('http://cltl.nl/leolani/talk/chat'), s))
+
+        for triple in triples:
+            for el in triple:
+                el = el.split("/")[-1]
+
+                tmp_el = el.split("#")
+                if tmp_el[0] in ["factuality", "sentiment", "emotion"]:
+                    el = el.replace("#", "_")
+                else:
+                    el = tmp_el[-1]
+
+                if temp_text == ' <s> ':
+                    temp_text += f"{el} "
+                else:
+                    temp_text += f"</s> <s> {el} "
 
     return temp_text
 
@@ -93,6 +112,7 @@ def format_adj_matrix(graph_data):
         degrees_idx = sorted(range(len(degrees)), key=lambda k: degrees[k])[:max_nodes]
         degrees_idx = sorted(degrees_idx)
         adj_temp = adj_temp[np.ix_(degrees_idx, degrees_idx)]
+
     elif num_nodes < max_nodes:
         # we need to add zeros to get the right dimensions
         missing_nodes = max_nodes - num_nodes
@@ -109,6 +129,21 @@ def remove_empty_contexts(graph_data):
             for triple in context.triples((None, None, None)):
                 new_context.add(triple)
     return new_cg
+
+
+def clear_context_nodes(graph_data):
+    """
+    Query graph for claims
+    """
+    q_claims = """SELECT distinct ?node  WHERE {{ ?node ?p ?o . 
+                FILTER(STRSTARTS(STR(?node), STR(leolaniContext:))) . }}"""
+    all_ctx_nodes = graph_data.query(q_claims)
+    all_ctx_nodes = [c for c in all_ctx_nodes]
+
+    for ctx in all_ctx_nodes:
+        graph_data.remove((ctx[0], None, None))
+
+    return graph_data
 
 
 def clear_claims_as_context(graph_data):
@@ -141,19 +176,21 @@ def clean_graph(graph_data):
     graph_data.remove((None, GAF_CONTAINSDEN, None))
     graph_data.remove((None, GAF_DENOTEDBY, None))
     graph_data.remove((None, GRASP_ATTFOR, None))
+    graph_data.remove((None, GRASP_ATTTO, None))
+
+    # Remove details of instances
+    graph_data = clear_context(graph_data, ONTOLOGY_GRAPH)
+    graph_data = clear_context(graph_data, INSTANCE_GRAPH)
+    # graph_data = clear_context(graph_data, PERSPECTIVE_GRAPH)
+    graph_data = clear_claims_as_context(graph_data)
+    graph_data = clear_context_nodes(graph_data)
 
     # Remove not significant
     graph_data.remove((None, SEM_TST, None))
-    graph_data.remove((None, RDFS.label, None))
     graph_data.remove((None, OWL.sameAs, None))
-    graph_data.remove((None, RDF.type, TYPE_EVENT))
-    graph_data.remove((None, RDF.type, TYPE_STATEMENT))
-
-    # Remove details of instances
-    graph_data = clear_context(graph_data, INSTANCE_GRAPH)
-    # graph_data = clear_context(graph_data, PERSPECTIVE_GRAPH)
-    graph_data = clear_context(graph_data, ONTOLOGY_GRAPH)
-    graph_data = clear_claims_as_context(graph_data)
+    graph_data.remove((None, RDFS.label, None))
+    graph_data.remove((None, RDF.type, None))
+    graph_data.remove((None, HS_ID, None))
 
     # New graph
     graph_data = remove_empty_contexts(graph_data)
@@ -255,8 +292,7 @@ def process_dialogues(split, analyzer, linker, timers):
 
         # convert to eKG
         print(f"\n\tProcessing {len(dialogue['utterances'])} utterances")
-        all_responses = []
-        all_capsules = []
+        all_responses, all_capsules = [], []
         capsules_skipped = 0
         for utterance in dialogue["utterances"]:
             # add utterance to chat and use CFG analyzer to analyze
@@ -338,7 +374,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_root', type=str, default='./../data')
     parser.add_argument('--dataset', type=str, default='DIALOCONAN')
-    parser.add_argument('--splits', nargs="+", default=["mini-test"])  # "train", "dev", "test"])
+    parser.add_argument('--splits', nargs="+", default=["train", "dev", "test"])  # "mini-test"])
     parser.add_argument('--output_dir', type=str, default='./../data/DIALOCONAN/ekg/')
     parser.add_argument('--input_text_file', type=str, default='mc_input_text.pkl')
     parser.add_argument('--adj_matrix_file', type=str, default='mc_adj_matrix.pkl')
@@ -363,20 +399,6 @@ def main(args):
 
 if __name__ == "__main__":
     args = parse_args()
-    # main(args)
-
-    brain = LongTermMemory(address="http://localhost:7200/repositories/sandbox",
-                           # Location to save accumulated graph
-                           log_dir=Path("./../data/DIALOCONAN/ekg/mini-test/1764/graph"),
-                           # Location to save step-wise graphs
-                           ontology_details=ONTOLOGY_DETAILS,
-                           clear_all=False)  # To start from an empty brain
-    response = brain._connection.export_repository()
-    graph_data = ConjunctiveGraph()
-    graph_data.parse(data=response, format="trig")
-
-    graph_data = clean_graph(graph_data)
-    mc_adj_matrix = format_adj_matrix(graph_data)
-    mc_input_text = format_for_string_encoding(graph_data)
+    main(args)
 
     print("Done")

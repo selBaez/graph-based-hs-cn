@@ -110,4 +110,4 @@ class ToxicHateXplain():
                 scores = torch.nn.functional.softmax(logits, dim=1).detach().cpu().numpy()
                 scores_all += list(scores[:, 1])
 
-        return np.mean(scores_all)
+        return scores_all

@@ -8,7 +8,7 @@ import torch
 def make_save_directory(args):
     model_name = args.model.replace("/", "-")
     gpu_count = torch.cuda.device_count()
-    save_dir = f"{args.output_dir}/{model_name}_lr{args.lr}_bs{args.bs * gpu_count}_op{args.output_len}_ep{args.epoch}_useG{args.use_generate}_{datetime.now().strftime('%Y-%m-%d-%H-%M')}"
+    save_dir = f"{args.output_dir}/{model_name}_lr{args.lr}_bs{args.bs * gpu_count}_op{args.output_len}_ep{args.epoch}_{datetime.now().strftime('%Y-%m-%d-%H-%M')}"
     mk_dir(save_dir)
     print(save_dir)
 
@@ -33,8 +33,8 @@ def load_data_std_dialoconan(args, console):
     console.log(f"[Data]: Reading data...\n")
 
     problems_train = load_data(args, 'train')
-    problems_dev = load_data(args, 'dev') #TODO change for real
-    problems_test = load_data(args, 'test')
+    problems_dev = load_data(args, 'dev')
+    problems_test = load_data(args, 'test') #TODO change for real
 
     console.log(f"number of train problems: {len(problems_train)}\n")
     console.log(f"number of val problems: {len(problems_dev)}\n")

@@ -109,7 +109,7 @@ def T5Trainer(args):
                              )
 
     # Evaluate
-    print('====Evaluate with HF====')
+    print('====Evaluate with HF====') # TODO uncomment for real
     metrics = trainer.evaluate(eval_dataset=test_set, max_length=args.output_len)
     trainer.log_metrics("test", metrics)
     trainer.save_metrics("test", metrics)
@@ -127,7 +127,7 @@ def T5Trainer(args):
     # Generate predictions
     print('====Generate predictions====')
     preds, targets = generate_predictions(test_set)
-    scores = get_scores_conan(preds, targets)
+    scores, df = get_scores_conan(preds, targets)
     output_data = {"scores": scores,
                    "preds": preds,
                    "labels": targets}
@@ -136,6 +136,8 @@ def T5Trainer(args):
     output_prediction_file = os.path.join(save_dir, "predictions_ans_test.json")
     with open(output_prediction_file, "w") as writer:
         writer.write(json.dumps(output_data, indent=4))
+
+    df.to_csv(os.path.join(save_dir, "predictions_ans_test.csv"))
 
 
 def set_random_seeds(args):

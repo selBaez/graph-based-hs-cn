@@ -33,7 +33,7 @@ class SentenceSimilarityScore():
             score = self.similariry_score(target, prediction)
             scores.append(score)
 
-        return np.mean(scores)
+        return scores
 
 
 class Bleurt():
@@ -78,7 +78,7 @@ class Bleurt():
 
                 scores_all += scores
 
-        return np.mean(scores_all)
+        return scores_all
 
 
 class CounterspeechScore():
@@ -114,4 +114,4 @@ class CounterspeechScore():
                 scores = torch.softmax(scores.T, dim=0).T.cpu().numpy()
                 scores_all += list(scores[:, 1])
 
-        return np.mean(scores_all)
+        return scores_all
