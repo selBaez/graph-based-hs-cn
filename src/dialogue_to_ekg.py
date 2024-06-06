@@ -221,9 +221,9 @@ def create_and_submit_context_capsule(brain):
                        "date": start_date,
                        "place": "Online forum",
                        "place_id": place_id,
-                       "country": location['country'],
-                       "region": location['region'],
-                       "city": location['city']}
+                       "country": "MX",  # location['country'],
+                       "region": "Mexico City",  # location['region'],
+                       "city": "Mexico City"}  # location['city']}
 
     brain.capsule_context(context_capsule)
 
@@ -399,12 +399,12 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_root', type=str, default='./../data')
     parser.add_argument('--dataset', type=str, default='DIALOCONAN')
-    parser.add_argument('--splits', nargs="+", default=["train"])  # "test", "dev", "train"])  # "mini-test"])
+    parser.add_argument('--splits', nargs="+", default=["test", "dev", "train"])  # "mini-test"])
     parser.add_argument('--output_dir', type=str, default='./../data/DIALOCONAN/ekg/')
     parser.add_argument('--input_text_file', type=str, default='mc_input_text.pkl')
     parser.add_argument('--adj_matrix_file', type=str, default='mc_adj_matrix.pkl')
     parser.add_argument('--analyzer', type=str, default='OIE', choices=["CFG", "albert", "spacy", "OIE"])
-    parser.add_argument('--start_step', type=str, default='link', choices=["analyze", "link", "merge"])
+    parser.add_argument('--start_step', type=str, default='merge', choices=["analyze", "link", "merge"])
     parser.add_argument('--stop_step', type=str, default='format', choices=["emotion", "brain", "format"])
 
     args = parser.parse_args()
