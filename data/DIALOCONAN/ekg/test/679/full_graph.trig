@@ -1,0 +1,1409 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eps: <http://cltl.nl/episodicawareness/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix hs: <http://cltl-hs.org/> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix ns1: <http://cltl.nl/leolani/n2mu/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time1: <http://www.w3.org/TR/owl-time/#> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+leolaniWorld:Ontology {
+    eps:hasContext a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance,
+            sem:Event ;
+        rdfs:range eps:Context ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    eps:hasDetection a owl:ObjectProperty ;
+        rdfs:domain eps:Context ;
+        rdfs:range grasp:Detection ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    gaf:Assertion a owl:Class ;
+        rdfs:subClassOf gaf:Instance .
+
+    grasp:Chat a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:Experience a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Statement a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Visual a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:hasAttribution a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Attribution ;
+        owl:inverseOf grasp:isAttributionFor .
+
+    grasp:wasAttributedTo a owl:ObjectProperty ;
+        rdfs:label "was attributed to" ;
+        rdfs:comment "States that a gaf:Mention was attributed to a gaf:Instance. This is a sub property of the prov:wasAttributedTo relation that can be used to relate any prov:Entity to any prov:Agent."^^xsd:string ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Source ;
+        rdfs:subPropertyOf prov:wasAttributedTo .
+
+    <http://schema.org/Place> a owl:Class .
+
+    sem:hasActor a owl:ObjectProperty ;
+        rdfs:label "has Actor" ;
+        rdfs:comment "Has actor is used to state which Actors or Objects participate in an Event." ;
+        rdfs:range sem:Actor ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasBeginTimeStamp a owl:DatatypeProperty ;
+        rdfs:label "has begin timestamp" ;
+        rdfs:comment "Has begin timestamp is used to indicate the beginning of a time interval. Omitting the hasBeginTimeStamp while stating a hasEndTimeStamp is interpreted as an open ended interval." ;
+        rdfs:subPropertyOf sem:hasTimeStamp .
+
+    sem:hasPlace a owl:ObjectProperty ;
+        rdfs:label "has Place" ;
+        rdfs:comment "Has place is used to state in which Place(s) an Event happened. Coordinates can be attached to the Place with the W3C Geospatial Vocabulary (http://www.w3.org/2005/Incubator/geo/XGR-geo-20071023/)." ;
+        rdfs:range sem:Place ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasSubEvent a owl:ObjectProperty ;
+        rdfs:label "has subevent" ;
+        rdfs:comment "Has subevent connects an Event to other Events that belong to it. This is a very generic property that does not mean the subevents fully define the superconcept or that there is any causal relationship." ;
+        rdfs:domain sem:Event ;
+        rdfs:range sem:Event ;
+        rdfs:subPropertyOf sem:eventProperty ;
+        owl:inverseOf sem:subEventOf .
+
+    sem:hasTime a owl:ObjectProperty ;
+        rdfs:label "has Time" ;
+        rdfs:comment "Has time is used to indicate at which time an Event took place or when a property under the Temporary Constraint is valid. Has time points to a symbolic representation of time, which allows semantic relations between time resources. (see http://www.w3.org/TR/owl-time/)" ;
+        rdfs:range sem:Time ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    skos:broadMatch a owl:AnnotationProperty .
+
+    skos:closeMatch a owl:AnnotationProperty .
+
+    skos:narrowMatch a owl:AnnotationProperty .
+
+    prov:category a owl:AnnotationProperty .
+
+    prov:component a owl:AnnotationProperty .
+
+    prov:definition a owl:AnnotationProperty .
+
+    prov:hadDerivation a owl:ObjectProperty ;
+        owl:inverseOf prov:wasDerivedFrom .
+
+    prov:inverse a owl:AnnotationProperty .
+
+    prov:qualifiedForm a owl:AnnotationProperty .
+
+    gaf:containsDenotation a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        owl:inverseOf gaf:denotedIn .
+
+    gaf:denotedBy a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention ;
+        rdfs:subPropertyOf gaf:denotedIn ;
+        owl:inverseOf gaf:denotes .
+
+    grasp:Source a owl:Class ;
+        rdfs:label "Source" ;
+        rdfs:comment "" ;
+        rdfs:subClassOf owl:Thing .
+
+    grasp:Utterance a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    graspe:anger a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:disgust a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:fear a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:happiness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:sadness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:surprise a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspf:certain a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:negative a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:non-future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:positive a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:possible a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:probable a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:underspecified a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    grasps:negative a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    grasps:positive a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    sem:Actor a owl:Class ;
+        rdfs:label "Actor" ;
+        rdfs:comment """Actors are entities that take part in an Event, either actively or passively. Actors do not necessarily have to be sentient. They can also be objects. Actors are a thing, animate or inanimate, physical or non-physical.
+""" ;
+        skos:broadMatch <http://sw.opencyc.org/2009/04/07/concept/en/SomethingExisting>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant> ;
+        skos:closeMatch dcterms:Agent,
+            dcterms:AgentClass,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Agent-Generic>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Agent>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E39.Actor>,
+            foaf:Agent .
+
+    sem:Place a owl:Class ;
+        rdfs:label "Place" ;
+        rdfs:comment "Places are locations where an Event happens. They do not need to be physical places and hence do not necessarily need coordinates. Neither do they need to have any significance apart from them being the location of an Event." ;
+        skos:closeMatch dcterms:Location,
+            <http://sw.opencyc.org/2009/04/07/concept/en/EnduringThing-Localized>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#GeographicArea>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E53.Place> ;
+        skos:narrowMatch <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#PhysicalRegion>,
+            <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+    sem:Time a owl:Class ;
+        rdfs:label "Time" ;
+        rdfs:comment "Time contains symbolic representations of when an Event took place. Time instances do not necessarily need to have a timestamp associated with them. The Time class exists to represent semantics of time, e.g. that one thing happens before another, even though the exact timestamps are unknown." ;
+        skos:broadMatch <http://www.w3.org/2006/timeTemporalEntity> .
+
+    sem:hasTimeStamp a owl:DatatypeProperty .
+
+    sem:subEventOf a owl:ObjectProperty ;
+        rdfs:label "subevent of" ;
+        rdfs:comment "Inverse property of hasSubEvent" .
+
+    rdf:value a owl:ObjectProperty .
+
+    prov:wasAttributedTo a owl:ObjectProperty .
+
+    prov:wasDerivedFrom a owl:ObjectProperty ;
+        rdfs:label "wasDerivedFrom" ;
+        rdfs:comment "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Detection,
+            grasp:Utterance ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        prov:category "starting-point" ;
+        prov:component "derivations" ;
+        prov:definition "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity."@en ;
+        prov:inverse "hadDerivation" ;
+        prov:qualifiedForm prov:Derivation .
+
+    foaf:Agent a owl:Class .
+
+    eps:Context a owl:Class .
+
+    eps:contextProperty a owl:ObjectProperty ;
+        rdfs:label "context property" ;
+        rdfs:comment "Context properties connect Context to other SEM Core entities." ;
+        owl:equivalentProperty sem:eventProperty .
+
+    gaf:denotedIn a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention .
+
+    gaf:denotes a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        rdfs:subPropertyOf gaf:containsDenotation .
+
+    grasp:Attribution a owl:Class ;
+        rdfs:label "Attribution" ;
+        rdfs:comment "A grasp:Attribution reflects the attribution of some interpretation, some perspective to a gaf:Mention. An attribution expresses such things as certainty, emotion, polarity, sentiment, temporality."^^xsd:string ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:intersectionOf ( [ a owl:Restriction ;
+                            owl:onProperty grasp:isAttributionFor ;
+                            owl:someValuesFrom gaf:Mention ] [ a owl:Restriction ;
+                            owl:onProperty rdf:value ;
+                            owl:someValuesFrom grasp:AttributionValue ] ) ] .
+
+    grasp:Detection a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:isAttributionFor a owl:ObjectProperty ;
+        rdfs:domain grasp:Attribution ;
+        rdfs:range gaf:Mention .
+
+    grasp:PolarityValue a owl:Class ;
+        rdfs:label "Polarity Value" ;
+        rdfs:comment "The polarity of a gaf:Mention (e.g. if something is or isn't the case)"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:negative graspf:positive ) ] .
+
+    grasp:CertaintyValue a owl:Class ;
+        rdfs:label "Certainty Value" ;
+        rdfs:comment "The level of certainty of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:PolarityValue,
+            grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:certain graspf:possible graspf:probable graspf:underspecified ) ] .
+
+    grasp:FactualityValue a owl:Class ;
+        rdfs:label "Factuality value"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:SentimentValue .
+
+    grasp:SentimentValue a owl:Class ;
+        rdfs:label "Sentiment Value" ;
+        rdfs:comment "The sentiment expressed by a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( grasps:negative grasps:positive ) ] .
+
+    grasp:TemporalValue a owl:Class ;
+        rdfs:label "Temporal Value" ;
+        rdfs:comment "The temporal property of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:future graspf:non-future ) ] .
+
+    sem:eventProperty a owl:ObjectProperty ;
+        rdfs:label "event property" ;
+        rdfs:comment "Event properties connect Events to other SEM Core entities." .
+
+    grasp:EmotionValue a owl:Class ;
+        rdfs:label "Emotion Value" ;
+        rdfs:comment "The emotion expressed in a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:FactualityValue,
+            grasp:SentimentValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspe:anger graspe:disgust graspe:fear graspe:happiness graspe:sadness graspe:surprise ) ] .
+
+    gaf:Instance a owl:Class ;
+        rdfs:label "Instance" ;
+        rdfs:comment "Instances are statements about real world entities, including actions, processes and abstract notions. They are the primary subject of individuals of type gaf:Mention that can denote them."^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotedBy ;
+                owl:someValuesFrom gaf:Mention ] .
+
+    grasp:AttributionValue a owl:Class ;
+        rdfs:label "Attribution value"^^xsd:string ;
+        rdfs:comment "The value of a grasp:Attribution"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    sem:Event a owl:Class ;
+        rdfs:label "Event" ;
+        rdfs:comment "Events are things that happen. This comprises everything from historical events to web site sessions and mythical journeys. Event is the central class of SEM." ;
+        skos:broadMatch <http://linkedevents.org/ontology/Event>,
+            <http://purl.org/NET/c4dm/event.owl#Event> ;
+        skos:closeMatch dcmitype:Event,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Situation>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#perdurant>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Process>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E5.Event> .
+
+    gaf:Mention a owl:Class ;
+        rdfs:label "Mention" ;
+        rdfs:comment """Mentions are references to members of the gaf:Instance class as they occur in (web) media such as texts, video, audio, images, etc. Mentions denote gaf:Instances.
+
+A Mention uniquely identifies the (part of a) web source that denotes the mention. We refer to the standard use of fragment identifiers for different media types. """^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotes ;
+                owl:someValuesFrom gaf:Instance ] .
+
+    [] a owl:Ontology .
+}
+
+leolaniWorld:Muslims_first-set-foot-in_Britain {
+    leolaniWorld:Muslims ns1:first_set_foot_in leolaniWorld:Britain .
+}
+
+leolaniWorld:Muslims_first-set_foot {
+    leolaniWorld:Muslims ns1:first_set leolaniWorld:foot .
+}
+
+leolaniWorld:you_should-monitor_pointing_at_others {
+    leolaniWorld:you ns1:should_monitor leolaniWorld:pointing_at_others .
+}
+
+leolaniWorld:Islam_is_all_hate {
+    leolaniWorld:Islam ns1:is leolaniWorld:all_hate .
+}
+
+leolaniWorld:you_should-monitor_before_pointing {
+    leolaniWorld:you ns1:should_monitor leolaniWorld:before_pointing .
+}
+
+leolaniWorld:Muslims_set-foot-was-in_Britain {
+    leolaniWorld:Muslims ns1:set_foot_was_in leolaniWorld:Britain .
+}
+
+leolaniWorld:They_have_have_always_part {
+    leolaniWorld:They ns1:have leolaniWorld:have_always_part .
+}
+
+leolaniWorld:you_should-monitor_before_pointing_at_others {
+    leolaniWorld:you ns1:should_monitor leolaniWorld:before_pointing_at_others .
+}
+
+leolaniWorld:you_perhaps-should-monitor_your_hate_speech {
+    leolaniWorld:you ns1:perhaps_should_monitor leolaniWorld:your_hate_speech .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context229 a eps:Context ;
+        rdfs:label "context229" ;
+        hs:id "229"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat679 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "44"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat679 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat679" ;
+        hs:id "679"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat679_utterance0,
+            leolaniTalk:chat679_utterance1,
+            leolaniTalk:chat679_utterance2,
+            leolaniTalk:chat679_utterance3 .
+
+    leolaniTalk:chat679_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat679_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat679_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat679_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat679_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat679_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat679_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat679_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Islam_is_about_hate a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_about_hate" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Islam_is_all_about_hate a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_all_about_hate" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Islam_is_all_hate a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_all_hate" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Islam_is_hate a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_hate" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_first-set-foot-in_Britain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_first-set-foot-in_Britain" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_first-set-foot-was-in_Britain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_first-set-foot-was-in_Britain" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_first-set-in_Britain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_first-set-in_Britain" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_first-set-was-in_Britain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_first-set-was-in_Britain" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_first-set-was_foot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_first-set-was_foot" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_first-set_foot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_first-set_foot" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_set-foot-in_Britain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_set-foot-in_Britain" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_set-foot-was-in_Britain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_set-foot-was-in_Britain" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_set-in_Britain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_set-in_Britain" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_set-was-in_Britain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_set-was-in_Britain" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_set-was_foot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_set-was_foot" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims_set_foot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_set_foot" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:They_are-burden-to_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-burden-to_society" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance2_char0-61 .
+
+    leolaniWorld:They_are_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance2_char0-61 .
+
+    leolaniWorld:They_have_have_always_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_have_always_part" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:They_have_have_always_part_of_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_have_always_part_of_our_society" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:They_have_have_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_have_part" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:They_have_have_part_of_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_have_part_of_our_society" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:We_have-respect_their_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_have-respect_their_culture" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:race_hate_started-in_England a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "race_hate_started-in_England" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:you_perhaps-should-monitor_before_pointing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_perhaps-should-monitor_before_pointing" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_perhaps-should-monitor_before_pointing_at_others a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_perhaps-should-monitor_before_pointing_at_others" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_perhaps-should-monitor_pointing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_perhaps-should-monitor_pointing" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_perhaps-should-monitor_pointing_at_others a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_perhaps-should-monitor_pointing_at_others" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_perhaps-should-monitor_your_hate_speech a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_perhaps-should-monitor_your_hate_speech" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_perhaps-should-monitor_your_own_hate_speech a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_perhaps-should-monitor_your_own_hate_speech" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_pointing-at_others a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_pointing-at_others" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_pointing-finger-at_others a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_pointing-finger-at_others" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_pointing_finger a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_pointing_finger" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_should-monitor_before_pointing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_should-monitor_before_pointing" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_should-monitor_before_pointing_at_others a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_should-monitor_before_pointing_at_others" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_should-monitor_pointing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_should-monitor_pointing" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_should-monitor_pointing_at_others a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_should-monitor_pointing_at_others" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_should-monitor_your_hate_speech a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_should-monitor_your_hate_speech" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:you_should-monitor_your_own_hate_speech a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_should-monitor_your_own_hate_speech" ;
+        gaf:denotedBy leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:you_pointing_finger {
+    leolaniWorld:you ns1:pointing leolaniWorld:finger .
+}
+
+leolaniWorld:Muslims_first-set-was-in_Britain {
+    leolaniWorld:Muslims ns1:first_set_was_in leolaniWorld:Britain .
+}
+
+leolaniWorld:Muslims_set-in_Britain {
+    leolaniWorld:Muslims ns1:set_in leolaniWorld:Britain .
+}
+
+leolaniWorld:you_should-monitor_pointing {
+    leolaniWorld:you ns1:should_monitor leolaniWorld:pointing .
+}
+
+leolaniWorld:Muslims_first-set-foot-was-in_Britain {
+    leolaniWorld:Muslims ns1:first_set_foot_was_in leolaniWorld:Britain .
+}
+
+leolaniWorld:Islam_is_all_about_hate {
+    leolaniWorld:Islam ns1:is leolaniWorld:all_about_hate .
+}
+
+leolaniWorld:you_perhaps-should-monitor_pointing {
+    leolaniWorld:you ns1:perhaps_should_monitor leolaniWorld:pointing .
+}
+
+leolaniWorld:Muslims_first-set-was_foot {
+    leolaniWorld:Muslims ns1:first_set_was leolaniWorld:foot .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:They_are_burden {
+    leolaniWorld:They ns1:are leolaniWorld:burden .
+}
+
+leolaniWorld:Muslims_first-set-in_Britain {
+    leolaniWorld:Muslims ns1:first_set_in leolaniWorld:Britain .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Britain a gaf:Instance ;
+        rdfs:label "britain" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:England a gaf:Instance ;
+        rdfs:label "england" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance2_char0-61,
+            leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:about_hate a gaf:Instance ;
+        rdfs:label "about-hate" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:all_about_hate a gaf:Instance ;
+        rdfs:label "all-about-hate" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:all_hate a gaf:Instance ;
+        rdfs:label "all-hate" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:before_pointing a gaf:Instance ;
+        rdfs:label "before-pointing" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:before_pointing_at_others a gaf:Instance ;
+        rdfs:label "before-pointing-at-others" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:burden a gaf:Instance ;
+        rdfs:label "burden" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance2_char0-61 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:finger a gaf:Instance ;
+        rdfs:label "finger" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:foot a gaf:Instance ;
+        rdfs:label "foot" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:hate a gaf:Instance ;
+        rdfs:label "hate" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:have_always_part a gaf:Instance ;
+        rdfs:label "have-always-part" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:have_always_part_of_our_society a gaf:Instance ;
+        rdfs:label "have-always-part-of-our-society" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:have_part a gaf:Instance ;
+        rdfs:label "have-part" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:have_part_of_our_society a gaf:Instance ;
+        rdfs:label "have-part-of-our-society" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:others a gaf:Instance ;
+        rdfs:label "others" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:pointing a gaf:Instance ;
+        rdfs:label "pointing" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:pointing_at_others a gaf:Instance ;
+        rdfs:label "pointing-at-others" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:race_hate a gaf:Instance ;
+        rdfs:label "race-hate" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance0_char0-102 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance2_char0-61 .
+
+    leolaniWorld:their_culture a gaf:Instance ;
+        rdfs:label "their-culture" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance3_char0-91 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:your_hate_speech a gaf:Instance ;
+        rdfs:label "your-hate-speech" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance1_char0-85 .
+
+    leolaniWorld:your_own_hate_speech a gaf:Instance ;
+        rdfs:label "your-own-hate-speech" ;
+        gaf:denotedIn leolaniTalk:chat679_utterance1_char0-85 .
+}
+
+leolaniWorld:Muslims_set_foot {
+    leolaniWorld:Muslims ns1:set leolaniWorld:foot .
+}
+
+leolaniWorld:Muslims_set-was_foot {
+    leolaniWorld:Muslims ns1:set_was leolaniWorld:foot .
+}
+
+leolaniWorld:you_perhaps-should-monitor_pointing_at_others {
+    leolaniWorld:you ns1:perhaps_should_monitor leolaniWorld:pointing_at_others .
+}
+
+leolaniWorld:race_hate_started-in_England {
+    leolaniWorld:race_hate ns1:started_in leolaniWorld:England .
+}
+
+leolaniWorld:you_should-monitor_your_own_hate_speech {
+    leolaniWorld:you ns1:should_monitor leolaniWorld:your_own_hate_speech .
+}
+
+leolaniWorld:you_perhaps-should-monitor_before_pointing_at_others {
+    leolaniWorld:you ns1:perhaps_should_monitor leolaniWorld:before_pointing_at_others .
+}
+
+leolaniWorld:They_have_have_part_of_our_society {
+    leolaniWorld:They ns1:have leolaniWorld:have_part_of_our_society .
+}
+
+leolaniWorld:you_pointing-at_others {
+    leolaniWorld:you ns1:pointing_at leolaniWorld:others .
+}
+
+leolaniWorld:you_perhaps-should-monitor_your_own_hate_speech {
+    leolaniWorld:you ns1:perhaps_should_monitor leolaniWorld:your_own_hate_speech .
+}
+
+leolaniWorld:We_have-respect_their_culture {
+    leolaniWorld:We ns1:have_respect leolaniWorld:their_culture .
+}
+
+leolaniWorld:They_have_have_part {
+    leolaniWorld:They ns1:have leolaniWorld:have_part .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Islam_is_about_hate_00021 a grasp:Attribution ;
+        rdfs:label "Islam_is_about_hate_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_all_about_hate_00021 a grasp:Attribution ;
+        rdfs:label "Islam_is_all_about_hate_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_all_hate_00021 a grasp:Attribution ;
+        rdfs:label "Islam_is_all_hate_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_hate_00021 a grasp:Attribution ;
+        rdfs:label "Islam_is_hate_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_first-set-foot-in_Britain_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_first-set-foot-in_Britain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_first-set-foot-was-in_Britain_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_first-set-foot-was-in_Britain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_first-set-in_Britain_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_first-set-in_Britain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_first-set-was-in_Britain_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_first-set-was-in_Britain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_first-set-was_foot_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_first-set-was_foot_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_first-set_foot_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_first-set_foot_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_set-foot-in_Britain_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_set-foot-in_Britain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_set-foot-was-in_Britain_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_set-foot-was-in_Britain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_set-in_Britain_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_set-in_Britain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_set-was-in_Britain_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_set-was-in_Britain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_set-was_foot_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_set-was_foot_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_set_foot_00021 a grasp:Attribution ;
+        rdfs:label "Muslims_set_foot_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are-burden-to_society_00023 a grasp:Attribution ;
+        rdfs:label "They_are-burden-to_society_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance2_char0-61 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_burden_00023 a grasp:Attribution ;
+        rdfs:label "They_are_burden_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance2_char0-61 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_have_have_always_part_00012 a grasp:Attribution ;
+        rdfs:label "They_have_have_always_part_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance3_char0-91 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_have_have_always_part_of_our_society_00012 a grasp:Attribution ;
+        rdfs:label "They_have_have_always_part_of_our_society_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance3_char0-91 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_have_have_part_00012 a grasp:Attribution ;
+        rdfs:label "They_have_have_part_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance3_char0-91 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_have_have_part_of_our_society_00012 a grasp:Attribution ;
+        rdfs:label "They_have_have_part_of_our_society_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance3_char0-91 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_have-respect_their_culture_00012 a grasp:Attribution ;
+        rdfs:label "We_have-respect_their_culture_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance3_char0-91 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:race_hate_started-in_England_00021 a grasp:Attribution ;
+        rdfs:label "race_hate_started-in_England_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance0_char0-102 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_perhaps-should-monitor_before_pointing_00021 a grasp:Attribution ;
+        rdfs:label "you_perhaps-should-monitor_before_pointing_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_perhaps-should-monitor_before_pointing_at_others_00021 a grasp:Attribution ;
+        rdfs:label "you_perhaps-should-monitor_before_pointing_at_others_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_perhaps-should-monitor_pointing_00021 a grasp:Attribution ;
+        rdfs:label "you_perhaps-should-monitor_pointing_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_perhaps-should-monitor_pointing_at_others_00021 a grasp:Attribution ;
+        rdfs:label "you_perhaps-should-monitor_pointing_at_others_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_perhaps-should-monitor_your_hate_speech_00021 a grasp:Attribution ;
+        rdfs:label "you_perhaps-should-monitor_your_hate_speech_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_perhaps-should-monitor_your_own_hate_speech_00021 a grasp:Attribution ;
+        rdfs:label "you_perhaps-should-monitor_your_own_hate_speech_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_pointing-at_others_00021 a grasp:Attribution ;
+        rdfs:label "you_pointing-at_others_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_pointing-finger-at_others_00021 a grasp:Attribution ;
+        rdfs:label "you_pointing-finger-at_others_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_pointing_finger_00021 a grasp:Attribution ;
+        rdfs:label "you_pointing_finger_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_should-monitor_before_pointing_00021 a grasp:Attribution ;
+        rdfs:label "you_should-monitor_before_pointing_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_should-monitor_before_pointing_at_others_00021 a grasp:Attribution ;
+        rdfs:label "you_should-monitor_before_pointing_at_others_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_should-monitor_pointing_00021 a grasp:Attribution ;
+        rdfs:label "you_should-monitor_pointing_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_should-monitor_pointing_at_others_00021 a grasp:Attribution ;
+        rdfs:label "you_should-monitor_pointing_at_others_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_should-monitor_your_hate_speech_00021 a grasp:Attribution ;
+        rdfs:label "you_should-monitor_your_hate_speech_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_should-monitor_your_own_hate_speech_00021 a grasp:Attribution ;
+        rdfs:label "you_should-monitor_your_own_hate_speech_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat679_utterance1_char0-85 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat679_utterance2_char0-61 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat679_utterance2_char0-61" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:burden,
+            leolaniWorld:society ;
+        gaf:denotes leolaniWorld:They_are-burden-to_society,
+            leolaniWorld:They_are_burden ;
+        grasp:hasAttribution leolaniTalk:They_are-burden-to_society_00023,
+            leolaniTalk:They_are_burden_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T21:51:08.318951"^^xml1:string,
+            "2024-06-05T21:51:08.319009"^^xml1:string ;
+        rdf:value "I just don't want Muslims here. They are a burden to society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat679_utterance2 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat679_utterance3_char0-91 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat679_utterance3_char0-91" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:We,
+            leolaniWorld:have_always_part,
+            leolaniWorld:have_always_part_of_our_society,
+            leolaniWorld:have_part,
+            leolaniWorld:have_part_of_our_society,
+            leolaniWorld:their_culture ;
+        gaf:denotes leolaniWorld:They_have_have_always_part,
+            leolaniWorld:They_have_have_always_part_of_our_society,
+            leolaniWorld:They_have_have_part,
+            leolaniWorld:They_have_have_part_of_our_society,
+            leolaniWorld:We_have-respect_their_culture ;
+        grasp:hasAttribution leolaniTalk:They_have_have_always_part_00012,
+            leolaniTalk:They_have_have_always_part_of_our_society_00012,
+            leolaniTalk:They_have_have_part_00012,
+            leolaniTalk:They_have_have_part_of_our_society_00012,
+            leolaniTalk:We_have-respect_their_culture_00012 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T21:51:08.410724"^^xml1:string,
+            "2024-06-05T21:51:08.410785"^^xml1:string,
+            "2024-06-05T21:51:08.410809"^^xml1:string,
+            "2024-06-05T21:51:08.410831"^^xml1:string,
+            "2024-06-05T21:51:08.410852"^^xml1:string ;
+        rdf:value "They have always been part of our society. We have to respect their culture and traditions."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat679_utterance3 .
+
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
+
+    leolaniTalk:chat679_utterance1_char0-85 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat679_utterance1_char0-85" ;
+        gaf:containsDenotation leolaniWorld:before_pointing,
+            leolaniWorld:before_pointing_at_others,
+            leolaniWorld:finger,
+            leolaniWorld:others,
+            leolaniWorld:pointing,
+            leolaniWorld:pointing_at_others,
+            leolaniWorld:you,
+            leolaniWorld:your_hate_speech,
+            leolaniWorld:your_own_hate_speech ;
+        gaf:denotes leolaniWorld:you_perhaps-should-monitor_before_pointing,
+            leolaniWorld:you_perhaps-should-monitor_before_pointing_at_others,
+            leolaniWorld:you_perhaps-should-monitor_pointing,
+            leolaniWorld:you_perhaps-should-monitor_pointing_at_others,
+            leolaniWorld:you_perhaps-should-monitor_your_hate_speech,
+            leolaniWorld:you_perhaps-should-monitor_your_own_hate_speech,
+            leolaniWorld:you_pointing-at_others,
+            leolaniWorld:you_pointing-finger-at_others,
+            leolaniWorld:you_pointing_finger,
+            leolaniWorld:you_should-monitor_before_pointing,
+            leolaniWorld:you_should-monitor_before_pointing_at_others,
+            leolaniWorld:you_should-monitor_pointing,
+            leolaniWorld:you_should-monitor_pointing_at_others,
+            leolaniWorld:you_should-monitor_your_hate_speech,
+            leolaniWorld:you_should-monitor_your_own_hate_speech ;
+        grasp:hasAttribution leolaniTalk:you_perhaps-should-monitor_before_pointing_00021,
+            leolaniTalk:you_perhaps-should-monitor_before_pointing_at_others_00021,
+            leolaniTalk:you_perhaps-should-monitor_pointing_00021,
+            leolaniTalk:you_perhaps-should-monitor_pointing_at_others_00021,
+            leolaniTalk:you_perhaps-should-monitor_your_hate_speech_00021,
+            leolaniTalk:you_perhaps-should-monitor_your_own_hate_speech_00021,
+            leolaniTalk:you_pointing-at_others_00021,
+            leolaniTalk:you_pointing-finger-at_others_00021,
+            leolaniTalk:you_pointing_finger_00021,
+            leolaniTalk:you_should-monitor_before_pointing_00021,
+            leolaniTalk:you_should-monitor_before_pointing_at_others_00021,
+            leolaniTalk:you_should-monitor_pointing_00021,
+            leolaniTalk:you_should-monitor_pointing_at_others_00021,
+            leolaniTalk:you_should-monitor_your_hate_speech_00021,
+            leolaniTalk:you_should-monitor_your_own_hate_speech_00021 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T21:51:08.229449"^^xml1:string,
+            "2024-06-05T21:51:08.229505"^^xml1:string,
+            "2024-06-05T21:51:08.229528"^^xml1:string,
+            "2024-06-05T21:51:08.229550"^^xml1:string,
+            "2024-06-05T21:51:08.229573"^^xml1:string,
+            "2024-06-05T21:51:08.229595"^^xml1:string,
+            "2024-06-05T21:51:08.229617"^^xml1:string,
+            "2024-06-05T21:51:08.229638"^^xml1:string,
+            "2024-06-05T21:51:08.229665"^^xml1:string,
+            "2024-06-05T21:51:08.229686"^^xml1:string,
+            "2024-06-05T21:51:08.229709"^^xml1:string,
+            "2024-06-05T21:51:08.229736"^^xml1:string,
+            "2024-06-05T21:51:08.229759"^^xml1:string,
+            "2024-06-05T21:51:08.229780"^^xml1:string,
+            "2024-06-05T21:51:08.229803"^^xml1:string ;
+        rdf:value "Perhaps you should monitor your own hate speech before pointing the finger at others?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat679_utterance1 .
+
+    leolaniTalk:chat679_utterance0_char0-102 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat679_utterance0_char0-102" ;
+        gaf:containsDenotation leolaniWorld:Britain,
+            leolaniWorld:England,
+            leolaniWorld:Islam,
+            leolaniWorld:Muslims,
+            leolaniWorld:about_hate,
+            leolaniWorld:all_about_hate,
+            leolaniWorld:all_hate,
+            leolaniWorld:foot,
+            leolaniWorld:hate,
+            leolaniWorld:race_hate ;
+        gaf:denotes leolaniWorld:Islam_is_about_hate,
+            leolaniWorld:Islam_is_all_about_hate,
+            leolaniWorld:Islam_is_all_hate,
+            leolaniWorld:Islam_is_hate,
+            leolaniWorld:Muslims_first-set-foot-in_Britain,
+            leolaniWorld:Muslims_first-set-foot-was-in_Britain,
+            leolaniWorld:Muslims_first-set-in_Britain,
+            leolaniWorld:Muslims_first-set-was-in_Britain,
+            leolaniWorld:Muslims_first-set-was_foot,
+            leolaniWorld:Muslims_first-set_foot,
+            leolaniWorld:Muslims_set-foot-in_Britain,
+            leolaniWorld:Muslims_set-foot-was-in_Britain,
+            leolaniWorld:Muslims_set-in_Britain,
+            leolaniWorld:Muslims_set-was-in_Britain,
+            leolaniWorld:Muslims_set-was_foot,
+            leolaniWorld:Muslims_set_foot,
+            leolaniWorld:race_hate_started-in_England ;
+        grasp:hasAttribution leolaniTalk:Islam_is_about_hate_00021,
+            leolaniTalk:Islam_is_all_about_hate_00021,
+            leolaniTalk:Islam_is_all_hate_00021,
+            leolaniTalk:Islam_is_hate_00021,
+            leolaniTalk:Muslims_first-set-foot-in_Britain_00021,
+            leolaniTalk:Muslims_first-set-foot-was-in_Britain_00021,
+            leolaniTalk:Muslims_first-set-in_Britain_00021,
+            leolaniTalk:Muslims_first-set-was-in_Britain_00021,
+            leolaniTalk:Muslims_first-set-was_foot_00021,
+            leolaniTalk:Muslims_first-set_foot_00021,
+            leolaniTalk:Muslims_set-foot-in_Britain_00021,
+            leolaniTalk:Muslims_set-foot-was-in_Britain_00021,
+            leolaniTalk:Muslims_set-in_Britain_00021,
+            leolaniTalk:Muslims_set-was-in_Britain_00021,
+            leolaniTalk:Muslims_set-was_foot_00021,
+            leolaniTalk:Muslims_set_foot_00021,
+            leolaniTalk:race_hate_started-in_England_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T21:51:08.126854"^^xml1:string,
+            "2024-06-05T21:51:08.126918"^^xml1:string,
+            "2024-06-05T21:51:08.126941"^^xml1:string,
+            "2024-06-05T21:51:08.126962"^^xml1:string,
+            "2024-06-05T21:51:08.126984"^^xml1:string,
+            "2024-06-05T21:51:08.127005"^^xml1:string,
+            "2024-06-05T21:51:08.127027"^^xml1:string,
+            "2024-06-05T21:51:08.127049"^^xml1:string,
+            "2024-06-05T21:51:08.127077"^^xml1:string,
+            "2024-06-05T21:51:08.127101"^^xml1:string,
+            "2024-06-05T21:51:08.127125"^^xml1:string,
+            "2024-06-05T21:51:08.127150"^^xml1:string,
+            "2024-06-05T21:51:08.127173"^^xml1:string,
+            "2024-06-05T21:51:08.127195"^^xml1:string,
+            "2024-06-05T21:51:08.127220"^^xml1:string,
+            "2024-06-05T21:51:08.127242"^^xml1:string,
+            "2024-06-05T21:51:08.127264"^^xml1:string ;
+        rdf:value "Islam is all about hate! When Muslims first set foot in Britain was when race hate started in England!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat679_utterance0 .
+
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:Islam_is_about_hate {
+    leolaniWorld:Islam ns1:is leolaniWorld:about_hate .
+}
+
+leolaniWorld:Muslims_set-foot-in_Britain {
+    leolaniWorld:Muslims ns1:set_foot_in leolaniWorld:Britain .
+}
+
+leolaniWorld:Muslims_set-was-in_Britain {
+    leolaniWorld:Muslims ns1:set_was_in leolaniWorld:Britain .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:They_have_have_always_part_of_our_society {
+    leolaniWorld:They ns1:have leolaniWorld:have_always_part_of_our_society .
+}
+
+leolaniWorld:you_should-monitor_your_hate_speech {
+    leolaniWorld:you ns1:should_monitor leolaniWorld:your_hate_speech .
+}
+
+leolaniWorld:Islam_is_hate {
+    leolaniWorld:Islam ns1:is leolaniWorld:hate .
+}
+
+leolaniWorld:you_perhaps-should-monitor_before_pointing {
+    leolaniWorld:you ns1:perhaps_should_monitor leolaniWorld:before_pointing .
+}
+
+leolaniWorld:you_pointing-finger-at_others {
+    leolaniWorld:you ns1:pointing_finger_at leolaniWorld:others .
+}
+
+leolaniWorld:They_are-burden-to_society {
+    leolaniWorld:They ns1:are_burden_to leolaniWorld:society .
+}
+

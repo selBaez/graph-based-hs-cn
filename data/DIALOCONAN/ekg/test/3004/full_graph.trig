@@ -1,0 +1,1326 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eps: <http://cltl.nl/episodicawareness/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix hs: <http://cltl-hs.org/> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix ns1: <http://cltl.nl/leolani/n2mu/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time1: <http://www.w3.org/TR/owl-time/#> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+leolaniWorld:Ontology {
+    eps:hasContext a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance,
+            sem:Event ;
+        rdfs:range eps:Context ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    eps:hasDetection a owl:ObjectProperty ;
+        rdfs:domain eps:Context ;
+        rdfs:range grasp:Detection ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    gaf:Assertion a owl:Class ;
+        rdfs:subClassOf gaf:Instance .
+
+    grasp:Chat a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:Experience a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Statement a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Visual a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:hasAttribution a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Attribution ;
+        owl:inverseOf grasp:isAttributionFor .
+
+    grasp:wasAttributedTo a owl:ObjectProperty ;
+        rdfs:label "was attributed to" ;
+        rdfs:comment "States that a gaf:Mention was attributed to a gaf:Instance. This is a sub property of the prov:wasAttributedTo relation that can be used to relate any prov:Entity to any prov:Agent."^^xsd:string ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Source ;
+        rdfs:subPropertyOf prov:wasAttributedTo .
+
+    <http://schema.org/Place> a owl:Class .
+
+    sem:hasActor a owl:ObjectProperty ;
+        rdfs:label "has Actor" ;
+        rdfs:comment "Has actor is used to state which Actors or Objects participate in an Event." ;
+        rdfs:range sem:Actor ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasBeginTimeStamp a owl:DatatypeProperty ;
+        rdfs:label "has begin timestamp" ;
+        rdfs:comment "Has begin timestamp is used to indicate the beginning of a time interval. Omitting the hasBeginTimeStamp while stating a hasEndTimeStamp is interpreted as an open ended interval." ;
+        rdfs:subPropertyOf sem:hasTimeStamp .
+
+    sem:hasPlace a owl:ObjectProperty ;
+        rdfs:label "has Place" ;
+        rdfs:comment "Has place is used to state in which Place(s) an Event happened. Coordinates can be attached to the Place with the W3C Geospatial Vocabulary (http://www.w3.org/2005/Incubator/geo/XGR-geo-20071023/)." ;
+        rdfs:range sem:Place ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasSubEvent a owl:ObjectProperty ;
+        rdfs:label "has subevent" ;
+        rdfs:comment "Has subevent connects an Event to other Events that belong to it. This is a very generic property that does not mean the subevents fully define the superconcept or that there is any causal relationship." ;
+        rdfs:domain sem:Event ;
+        rdfs:range sem:Event ;
+        rdfs:subPropertyOf sem:eventProperty ;
+        owl:inverseOf sem:subEventOf .
+
+    sem:hasTime a owl:ObjectProperty ;
+        rdfs:label "has Time" ;
+        rdfs:comment "Has time is used to indicate at which time an Event took place or when a property under the Temporary Constraint is valid. Has time points to a symbolic representation of time, which allows semantic relations between time resources. (see http://www.w3.org/TR/owl-time/)" ;
+        rdfs:range sem:Time ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    skos:broadMatch a owl:AnnotationProperty .
+
+    skos:closeMatch a owl:AnnotationProperty .
+
+    skos:narrowMatch a owl:AnnotationProperty .
+
+    prov:category a owl:AnnotationProperty .
+
+    prov:component a owl:AnnotationProperty .
+
+    prov:definition a owl:AnnotationProperty .
+
+    prov:hadDerivation a owl:ObjectProperty ;
+        owl:inverseOf prov:wasDerivedFrom .
+
+    prov:inverse a owl:AnnotationProperty .
+
+    prov:qualifiedForm a owl:AnnotationProperty .
+
+    gaf:containsDenotation a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        owl:inverseOf gaf:denotedIn .
+
+    gaf:denotedBy a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention ;
+        rdfs:subPropertyOf gaf:denotedIn ;
+        owl:inverseOf gaf:denotes .
+
+    grasp:Source a owl:Class ;
+        rdfs:label "Source" ;
+        rdfs:comment "" ;
+        rdfs:subClassOf owl:Thing .
+
+    grasp:Utterance a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    graspe:anger a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:disgust a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:fear a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:happiness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:sadness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:surprise a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspf:certain a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:negative a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:non-future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:positive a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:possible a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:probable a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:underspecified a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    grasps:negative a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    grasps:positive a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    sem:Actor a owl:Class ;
+        rdfs:label "Actor" ;
+        rdfs:comment """Actors are entities that take part in an Event, either actively or passively. Actors do not necessarily have to be sentient. They can also be objects. Actors are a thing, animate or inanimate, physical or non-physical.
+""" ;
+        skos:broadMatch <http://sw.opencyc.org/2009/04/07/concept/en/SomethingExisting>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant> ;
+        skos:closeMatch dcterms:Agent,
+            dcterms:AgentClass,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Agent-Generic>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Agent>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E39.Actor>,
+            foaf:Agent .
+
+    sem:Place a owl:Class ;
+        rdfs:label "Place" ;
+        rdfs:comment "Places are locations where an Event happens. They do not need to be physical places and hence do not necessarily need coordinates. Neither do they need to have any significance apart from them being the location of an Event." ;
+        skos:closeMatch dcterms:Location,
+            <http://sw.opencyc.org/2009/04/07/concept/en/EnduringThing-Localized>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#GeographicArea>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E53.Place> ;
+        skos:narrowMatch <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#PhysicalRegion>,
+            <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+    sem:Time a owl:Class ;
+        rdfs:label "Time" ;
+        rdfs:comment "Time contains symbolic representations of when an Event took place. Time instances do not necessarily need to have a timestamp associated with them. The Time class exists to represent semantics of time, e.g. that one thing happens before another, even though the exact timestamps are unknown." ;
+        skos:broadMatch <http://www.w3.org/2006/timeTemporalEntity> .
+
+    sem:hasTimeStamp a owl:DatatypeProperty .
+
+    sem:subEventOf a owl:ObjectProperty ;
+        rdfs:label "subevent of" ;
+        rdfs:comment "Inverse property of hasSubEvent" .
+
+    rdf:value a owl:ObjectProperty .
+
+    prov:wasAttributedTo a owl:ObjectProperty .
+
+    prov:wasDerivedFrom a owl:ObjectProperty ;
+        rdfs:label "wasDerivedFrom" ;
+        rdfs:comment "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Detection,
+            grasp:Utterance ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        prov:category "starting-point" ;
+        prov:component "derivations" ;
+        prov:definition "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity."@en ;
+        prov:inverse "hadDerivation" ;
+        prov:qualifiedForm prov:Derivation .
+
+    foaf:Agent a owl:Class .
+
+    eps:Context a owl:Class .
+
+    eps:contextProperty a owl:ObjectProperty ;
+        rdfs:label "context property" ;
+        rdfs:comment "Context properties connect Context to other SEM Core entities." ;
+        owl:equivalentProperty sem:eventProperty .
+
+    gaf:denotedIn a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention .
+
+    gaf:denotes a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        rdfs:subPropertyOf gaf:containsDenotation .
+
+    grasp:Attribution a owl:Class ;
+        rdfs:label "Attribution" ;
+        rdfs:comment "A grasp:Attribution reflects the attribution of some interpretation, some perspective to a gaf:Mention. An attribution expresses such things as certainty, emotion, polarity, sentiment, temporality."^^xsd:string ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:intersectionOf ( [ a owl:Restriction ;
+                            owl:onProperty grasp:isAttributionFor ;
+                            owl:someValuesFrom gaf:Mention ] [ a owl:Restriction ;
+                            owl:onProperty rdf:value ;
+                            owl:someValuesFrom grasp:AttributionValue ] ) ] .
+
+    grasp:Detection a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:isAttributionFor a owl:ObjectProperty ;
+        rdfs:domain grasp:Attribution ;
+        rdfs:range gaf:Mention .
+
+    grasp:PolarityValue a owl:Class ;
+        rdfs:label "Polarity Value" ;
+        rdfs:comment "The polarity of a gaf:Mention (e.g. if something is or isn't the case)"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:negative graspf:positive ) ] .
+
+    grasp:CertaintyValue a owl:Class ;
+        rdfs:label "Certainty Value" ;
+        rdfs:comment "The level of certainty of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:PolarityValue,
+            grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:certain graspf:possible graspf:probable graspf:underspecified ) ] .
+
+    grasp:FactualityValue a owl:Class ;
+        rdfs:label "Factuality value"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:SentimentValue .
+
+    grasp:SentimentValue a owl:Class ;
+        rdfs:label "Sentiment Value" ;
+        rdfs:comment "The sentiment expressed by a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( grasps:negative grasps:positive ) ] .
+
+    grasp:TemporalValue a owl:Class ;
+        rdfs:label "Temporal Value" ;
+        rdfs:comment "The temporal property of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:future graspf:non-future ) ] .
+
+    sem:eventProperty a owl:ObjectProperty ;
+        rdfs:label "event property" ;
+        rdfs:comment "Event properties connect Events to other SEM Core entities." .
+
+    grasp:EmotionValue a owl:Class ;
+        rdfs:label "Emotion Value" ;
+        rdfs:comment "The emotion expressed in a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:FactualityValue,
+            grasp:SentimentValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspe:anger graspe:disgust graspe:fear graspe:happiness graspe:sadness graspe:surprise ) ] .
+
+    gaf:Instance a owl:Class ;
+        rdfs:label "Instance" ;
+        rdfs:comment "Instances are statements about real world entities, including actions, processes and abstract notions. They are the primary subject of individuals of type gaf:Mention that can denote them."^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotedBy ;
+                owl:someValuesFrom gaf:Mention ] .
+
+    grasp:AttributionValue a owl:Class ;
+        rdfs:label "Attribution value"^^xsd:string ;
+        rdfs:comment "The value of a grasp:Attribution"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    sem:Event a owl:Class ;
+        rdfs:label "Event" ;
+        rdfs:comment "Events are things that happen. This comprises everything from historical events to web site sessions and mythical journeys. Event is the central class of SEM." ;
+        skos:broadMatch <http://linkedevents.org/ontology/Event>,
+            <http://purl.org/NET/c4dm/event.owl#Event> ;
+        skos:closeMatch dcmitype:Event,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Situation>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#perdurant>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Process>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E5.Event> .
+
+    gaf:Mention a owl:Class ;
+        rdfs:label "Mention" ;
+        rdfs:comment """Mentions are references to members of the gaf:Instance class as they occur in (web) media such as texts, video, audio, images, etc. Mentions denote gaf:Instances.
+
+A Mention uniquely identifies the (part of a) web source that denotes the mention. We refer to the standard use of fragment identifiers for different media types. """^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotes ;
+                owl:someValuesFrom gaf:Instance ] .
+
+    [] a owl:Ontology .
+}
+
+leolaniWorld:Children_need_live_in_society {
+    leolaniWorld:Children ns1:need leolaniWorld:live_in_society .
+}
+
+leolaniWorld:Children_need_to_live_in_society {
+    leolaniWorld:Children ns1:need leolaniWorld:to_live_in_society .
+}
+
+leolaniWorld:people_are_aggressive {
+    leolaniWorld:people ns1:are leolaniWorld:aggressive .
+}
+
+leolaniWorld:Blacks_are-normal-people-like_anyone {
+    leolaniWorld:Blacks ns1:are_normal_people_like leolaniWorld:anyone .
+}
+
+leolaniWorld:Black_people_are_aggressive {
+    leolaniWorld:Black_people ns1:are leolaniWorld:aggressive .
+}
+
+leolaniWorld:Children_live_grow_well {
+    leolaniWorld:Children ns1:live leolaniWorld:grow_well .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context100 a eps:Context ;
+        rdfs:label "context100" ;
+        hs:id "100"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat3004 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "18"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat3004 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat3004" ;
+        hs:id "3004"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat3004_utterance0,
+            leolaniTalk:chat3004_utterance1,
+            leolaniTalk:chat3004_utterance3,
+            leolaniTalk:chat3004_utterance4,
+            leolaniTalk:chat3004_utterance6 .
+
+    leolaniTalk:chat3004_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3004_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat3004_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3004_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat3004_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3004_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat3004_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3004_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat3004_utterance6 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3004_utterance6" ;
+        hs:id "6"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Black_people_are_aggressive a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are_aggressive" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance0_char0-105 .
+
+    leolaniWorld:Black_people_are_very_aggressive a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are_very_aggressive" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance0_char0-105 .
+
+    leolaniWorld:Blacks_are-normal-people-like_anyone a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_are-normal-people-like_anyone" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:Blacks_are-normal-people-like_anyone_else a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_are-normal-people-like_anyone_else" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:Blacks_are-people-like_anyone a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_are-people-like_anyone" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:Blacks_are-people-like_anyone_else a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_are-people-like_anyone_else" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:Blacks_are_aggressive a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_are_aggressive" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance4_char0-84 .
+
+    leolaniWorld:Blacks_are_naturally_aggressive a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_are_naturally_aggressive" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance4_char0-84 .
+
+    leolaniWorld:Blacks_are_normal_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_are_normal_people" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:Blacks_are_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_are_people" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:Children_live-in_diverse_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_live-in_diverse_society" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_live-in_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_live-in_society" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_live_grow a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_live_grow" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_live_grow_well a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_live_grow_well" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_live_to_grow a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_live_to_grow" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_live_to_grow_well a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_live_to_grow_well" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_need_live a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_need_live" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_need_live_in_diverse_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_need_live_in_diverse_society" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_need_live_in_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_need_live_in_society" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_need_to_live a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_need_to_live" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_need_to_live_in_diverse_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_need_to_live_in_diverse_society" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:Children_need_to_live_in_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Children_need_to_live_in_society" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:I_have_hard_time a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_have_hard_time" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:I_have_hard_time_believing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_have_hard_time_believing" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:I_have_time a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_have_time" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:I_have_time_believing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_have_time_believing" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:We_have-protect_our_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_have-protect_our_people" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance0_char0-105 .
+
+    leolaniWorld:blacks_are_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "blacks_are_criminals" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_are_aggressive a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_aggressive" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance0_char0-105 .
+
+    leolaniWorld:people_are_very_aggressive a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_very_aggressive" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance0_char0-105 .
+
+    leolaniWorld:this_can_how_can_beneficial_to_children a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "this_can_how_can_beneficial_to_children" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance4_char0-84 .
+
+    leolaniWorld:this_is_true a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "this_is_true" ;
+        gaf:denotedBy leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:I_have_hard_time_believing {
+    leolaniWorld:I ns1:have leolaniWorld:hard_time_believing .
+}
+
+leolaniWorld:Children_live-in_diverse_society {
+    leolaniWorld:Children ns1:live_in leolaniWorld:diverse_society .
+}
+
+leolaniWorld:Children_live-in_society {
+    leolaniWorld:Children ns1:live_in leolaniWorld:society .
+}
+
+leolaniWorld:Children_need_to_live {
+    leolaniWorld:Children ns1:need leolaniWorld:to_live .
+}
+
+leolaniWorld:Blacks_are-people-like_anyone {
+    leolaniWorld:Blacks ns1:are_people_like leolaniWorld:anyone .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Children_need_live_in_diverse_society {
+    leolaniWorld:Children ns1:need leolaniWorld:live_in_diverse_society .
+}
+
+leolaniWorld:We_have-protect_our_people {
+    leolaniWorld:We ns1:have_protect leolaniWorld:our_people .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Black_people a gaf:Instance ;
+        rdfs:label "black-people" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance0_char0-105 .
+
+    leolaniWorld:Blacks a gaf:Instance ;
+        rdfs:label "blacks" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance1_char0-85,
+            leolaniTalk:chat3004_utterance4_char0-84 .
+
+    leolaniWorld:Children a gaf:Instance ;
+        rdfs:label "children" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance0_char0-105 .
+
+    leolaniWorld:aggressive a gaf:Instance ;
+        rdfs:label "aggressive" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance0_char0-105,
+            leolaniTalk:chat3004_utterance4_char0-84 .
+
+    leolaniWorld:anyone a gaf:Instance ;
+        rdfs:label "anyone" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:anyone_else a gaf:Instance ;
+        rdfs:label "anyone-else" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:blacks a gaf:Instance ;
+        rdfs:label "blacks" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:criminals a gaf:Instance ;
+        rdfs:label "criminals" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:diverse_society a gaf:Instance ;
+        rdfs:label "diverse-society" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:grow a gaf:Instance ;
+        rdfs:label "grow" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:grow_well a gaf:Instance ;
+        rdfs:label "grow-well" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:hard_time a gaf:Instance ;
+        rdfs:label "hard-time" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:hard_time_believing a gaf:Instance ;
+        rdfs:label "hard-time-believing" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:how_can_beneficial_to_children a gaf:Instance ;
+        rdfs:label "how-can-beneficial-to-children" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance4_char0-84 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:live a gaf:Instance ;
+        rdfs:label "live" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:live_in_diverse_society a gaf:Instance ;
+        rdfs:label "live-in-diverse-society" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:live_in_society a gaf:Instance ;
+        rdfs:label "live-in-society" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:naturally_aggressive a gaf:Instance ;
+        rdfs:label "naturally-aggressive" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance4_char0-84 .
+
+    leolaniWorld:normal_people a gaf:Instance ;
+        rdfs:label "normal-people" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:our_people a gaf:Instance ;
+        rdfs:label "our-people" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance0_char0-105 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance0_char0-105,
+            leolaniTalk:chat3004_utterance1_char0-85 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance4_char0-84,
+            leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:time a gaf:Instance ;
+        rdfs:label "time" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:time_believing a gaf:Instance ;
+        rdfs:label "time-believing" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:to_grow a gaf:Instance ;
+        rdfs:label "to-grow" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:to_grow_well a gaf:Instance ;
+        rdfs:label "to-grow-well" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:to_live a gaf:Instance ;
+        rdfs:label "to-live" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:to_live_in_diverse_society a gaf:Instance ;
+        rdfs:label "to-live-in-diverse-society" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:to_live_in_society a gaf:Instance ;
+        rdfs:label "to-live-in-society" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance3_char0-193 .
+
+    leolaniWorld:true a gaf:Instance ;
+        rdfs:label "true" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance6_char0-80 .
+
+    leolaniWorld:very_aggressive a gaf:Instance ;
+        rdfs:label "very-aggressive" ;
+        gaf:denotedIn leolaniTalk:chat3004_utterance0_char0-105 .
+}
+
+leolaniWorld:people_are_very_aggressive {
+    leolaniWorld:people ns1:are leolaniWorld:very_aggressive .
+}
+
+leolaniWorld:Children_live_grow {
+    leolaniWorld:Children ns1:live leolaniWorld:grow .
+}
+
+leolaniWorld:this_is_true {
+    leolaniWorld:this ns1:is leolaniWorld:true .
+}
+
+leolaniWorld:Children_need_live {
+    leolaniWorld:Children ns1:need leolaniWorld:live .
+}
+
+leolaniWorld:Children_need_to_live_in_diverse_society {
+    leolaniWorld:Children ns1:need leolaniWorld:to_live_in_diverse_society .
+}
+
+leolaniWorld:Children_live_to_grow {
+    leolaniWorld:Children ns1:live leolaniWorld:to_grow .
+}
+
+leolaniWorld:Blacks_are-people-like_anyone_else {
+    leolaniWorld:Blacks ns1:are_people_like leolaniWorld:anyone_else .
+}
+
+leolaniWorld:Blacks_are_people {
+    leolaniWorld:Blacks ns1:are leolaniWorld:people .
+}
+
+leolaniWorld:I_have_time_believing {
+    leolaniWorld:I ns1:have leolaniWorld:time_believing .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Black_people_are_aggressive_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are_aggressive_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance0_char0-105 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are_very_aggressive_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are_very_aggressive_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance0_char0-105 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_are-normal-people-like_anyone_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_are-normal-people-like_anyone_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance1_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_are-normal-people-like_anyone_else_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_are-normal-people-like_anyone_else_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance1_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_are-people-like_anyone_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_are-people-like_anyone_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance1_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_are-people-like_anyone_else_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_are-people-like_anyone_else_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance1_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_are_aggressive_00026 a grasp:Attribution ;
+        rdfs:label "Blacks_are_aggressive_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance4_char0-84 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_are_naturally_aggressive_00026 a grasp:Attribution ;
+        rdfs:label "Blacks_are_naturally_aggressive_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance4_char0-84 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_are_normal_people_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_are_normal_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance1_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_are_people_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_are_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance1_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_live-in_diverse_society_00028 a grasp:Attribution ;
+        rdfs:label "Children_live-in_diverse_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_live-in_society_00028 a grasp:Attribution ;
+        rdfs:label "Children_live-in_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_live_grow_00028 a grasp:Attribution ;
+        rdfs:label "Children_live_grow_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_live_grow_well_00028 a grasp:Attribution ;
+        rdfs:label "Children_live_grow_well_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_live_to_grow_00028 a grasp:Attribution ;
+        rdfs:label "Children_live_to_grow_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_live_to_grow_well_00028 a grasp:Attribution ;
+        rdfs:label "Children_live_to_grow_well_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_need_live_00028 a grasp:Attribution ;
+        rdfs:label "Children_need_live_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_need_live_in_diverse_society_00028 a grasp:Attribution ;
+        rdfs:label "Children_need_live_in_diverse_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_need_live_in_society_00028 a grasp:Attribution ;
+        rdfs:label "Children_need_live_in_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_need_to_live_00028 a grasp:Attribution ;
+        rdfs:label "Children_need_to_live_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_need_to_live_in_diverse_society_00028 a grasp:Attribution ;
+        rdfs:label "Children_need_to_live_in_diverse_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Children_need_to_live_in_society_00028 a grasp:Attribution ;
+        rdfs:label "Children_need_to_live_in_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance3_char0-193 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_have_hard_time_00027 a grasp:Attribution ;
+        rdfs:label "I_have_hard_time_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance6_char0-80 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_have_hard_time_believing_00027 a grasp:Attribution ;
+        rdfs:label "I_have_hard_time_believing_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance6_char0-80 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_have_time_00027 a grasp:Attribution ;
+        rdfs:label "I_have_time_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance6_char0-80 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_have_time_believing_00027 a grasp:Attribution ;
+        rdfs:label "I_have_time_believing_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance6_char0-80 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_have-protect_our_people_00028 a grasp:Attribution ;
+        rdfs:label "We_have-protect_our_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance0_char0-105 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:blacks_are_criminals_00027 a grasp:Attribution ;
+        rdfs:label "blacks_are_criminals_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance6_char0-80 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are_aggressive_00028 a grasp:Attribution ;
+        rdfs:label "people_are_aggressive_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance0_char0-105 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are_very_aggressive_00028 a grasp:Attribution ;
+        rdfs:label "people_are_very_aggressive_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance0_char0-105 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:this_can_how_can_beneficial_to_children_00026 a grasp:Attribution ;
+        rdfs:label "this_can_how_can_beneficial_to_children_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance4_char0-84 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:this_is_true_00027 a grasp:Attribution ;
+        rdfs:label "this_is_true_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat3004_utterance6_char0-80 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat3004_utterance4_char0-84 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat3004_utterance4_char0-84" ;
+        gaf:containsDenotation leolaniWorld:Blacks,
+            leolaniWorld:aggressive,
+            leolaniWorld:how_can_beneficial_to_children,
+            leolaniWorld:naturally_aggressive,
+            leolaniWorld:this ;
+        gaf:denotes leolaniWorld:Blacks_are_aggressive,
+            leolaniWorld:Blacks_are_naturally_aggressive,
+            leolaniWorld:this_can_how_can_beneficial_to_children ;
+        grasp:hasAttribution leolaniTalk:Blacks_are_aggressive_00026,
+            leolaniTalk:Blacks_are_naturally_aggressive_00026,
+            leolaniTalk:this_can_how_can_beneficial_to_children_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:16:03.177522"^^xml1:string,
+            "2024-06-05T22:16:03.177585"^^xml1:string,
+            "2024-06-05T22:16:03.177608"^^xml1:string ;
+        rdf:value "Blacks are naturally aggressive and violent, how can this be beneficial to children?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat3004_utterance4 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    leolaniTalk:chat3004_utterance0_char0-105 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat3004_utterance0_char0-105" ;
+        gaf:containsDenotation leolaniWorld:Black_people,
+            leolaniWorld:We,
+            leolaniWorld:aggressive,
+            leolaniWorld:our_people,
+            leolaniWorld:people,
+            leolaniWorld:very_aggressive ;
+        gaf:denotes leolaniWorld:Black_people_are_aggressive,
+            leolaniWorld:Black_people_are_very_aggressive,
+            leolaniWorld:We_have-protect_our_people,
+            leolaniWorld:people_are_aggressive,
+            leolaniWorld:people_are_very_aggressive ;
+        grasp:hasAttribution leolaniTalk:Black_people_are_aggressive_00028,
+            leolaniTalk:Black_people_are_very_aggressive_00028,
+            leolaniTalk:We_have-protect_our_people_00028,
+            leolaniTalk:people_are_aggressive_00028,
+            leolaniTalk:people_are_very_aggressive_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:16:02.803680"^^xml1:string,
+            "2024-06-05T22:16:02.803750"^^xml1:string,
+            "2024-06-05T22:16:02.803774"^^xml1:string,
+            "2024-06-05T22:16:02.803796"^^xml1:string,
+            "2024-06-05T22:16:02.803817"^^xml1:string ;
+        rdf:value "We have to protect our people. Black people are very aggressive and think they can do whatever they want."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat3004_utterance0 .
+
+    leolaniTalk:chat3004_utterance1_char0-85 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat3004_utterance1_char0-85" ;
+        gaf:containsDenotation leolaniWorld:Blacks,
+            leolaniWorld:anyone,
+            leolaniWorld:anyone_else,
+            leolaniWorld:normal_people,
+            leolaniWorld:people ;
+        gaf:denotes leolaniWorld:Blacks_are-normal-people-like_anyone,
+            leolaniWorld:Blacks_are-normal-people-like_anyone_else,
+            leolaniWorld:Blacks_are-people-like_anyone,
+            leolaniWorld:Blacks_are-people-like_anyone_else,
+            leolaniWorld:Blacks_are_normal_people,
+            leolaniWorld:Blacks_are_people ;
+        grasp:hasAttribution leolaniTalk:Blacks_are-normal-people-like_anyone_00028,
+            leolaniTalk:Blacks_are-normal-people-like_anyone_else_00028,
+            leolaniTalk:Blacks_are-people-like_anyone_00028,
+            leolaniTalk:Blacks_are-people-like_anyone_else_00028,
+            leolaniTalk:Blacks_are_normal_people_00028,
+            leolaniTalk:Blacks_are_people_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:16:02.886020"^^xml1:string,
+            "2024-06-05T22:16:02.886087"^^xml1:string,
+            "2024-06-05T22:16:02.886112"^^xml1:string,
+            "2024-06-05T22:16:02.886134"^^xml1:string,
+            "2024-06-05T22:16:02.886156"^^xml1:string,
+            "2024-06-05T22:16:02.886178"^^xml1:string ;
+        rdf:value "We mustn't confuse prejudice with reality. Blacks are normal people like anyone else."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat3004_utterance1 .
+
+    leolaniTalk:chat3004_utterance6_char0-80 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat3004_utterance6_char0-80" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:blacks,
+            leolaniWorld:criminals,
+            leolaniWorld:hard_time,
+            leolaniWorld:hard_time_believing,
+            leolaniWorld:this,
+            leolaniWorld:time,
+            leolaniWorld:time_believing,
+            leolaniWorld:true ;
+        gaf:denotes leolaniWorld:I_have_hard_time,
+            leolaniWorld:I_have_hard_time_believing,
+            leolaniWorld:I_have_time,
+            leolaniWorld:I_have_time_believing,
+            leolaniWorld:blacks_are_criminals,
+            leolaniWorld:this_is_true ;
+        grasp:hasAttribution leolaniTalk:I_have_hard_time_00027,
+            leolaniTalk:I_have_hard_time_believing_00027,
+            leolaniTalk:I_have_time_00027,
+            leolaniTalk:I_have_time_believing_00027,
+            leolaniTalk:blacks_are_criminals_00027,
+            leolaniTalk:this_is_true_00027 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:16:03.349339"^^xml1:string,
+            "2024-06-05T22:16:03.349405"^^xml1:string,
+            "2024-06-05T22:16:03.349427"^^xml1:string,
+            "2024-06-05T22:16:03.349451"^^xml1:string,
+            "2024-06-05T22:16:03.349473"^^xml1:string,
+            "2024-06-05T22:16:03.349498"^^xml1:string ;
+        rdf:value "Is this true? I have a hard time believing it, I think all blacks are criminals."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat3004_utterance6 .
+
+    graspe:CONFUSION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CONFUSION" .
+
+    leolaniTalk:chat3004_utterance3_char0-193 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat3004_utterance3_char0-193" ;
+        gaf:containsDenotation leolaniWorld:Children,
+            leolaniWorld:diverse_society,
+            leolaniWorld:grow,
+            leolaniWorld:grow_well,
+            leolaniWorld:live,
+            leolaniWorld:live_in_diverse_society,
+            leolaniWorld:live_in_society,
+            leolaniWorld:society,
+            leolaniWorld:to_grow,
+            leolaniWorld:to_grow_well,
+            leolaniWorld:to_live,
+            leolaniWorld:to_live_in_diverse_society,
+            leolaniWorld:to_live_in_society ;
+        gaf:denotes leolaniWorld:Children_live-in_diverse_society,
+            leolaniWorld:Children_live-in_society,
+            leolaniWorld:Children_live_grow,
+            leolaniWorld:Children_live_grow_well,
+            leolaniWorld:Children_live_to_grow,
+            leolaniWorld:Children_live_to_grow_well,
+            leolaniWorld:Children_need_live,
+            leolaniWorld:Children_need_live_in_diverse_society,
+            leolaniWorld:Children_need_live_in_society,
+            leolaniWorld:Children_need_to_live,
+            leolaniWorld:Children_need_to_live_in_diverse_society,
+            leolaniWorld:Children_need_to_live_in_society ;
+        grasp:hasAttribution leolaniTalk:Children_live-in_diverse_society_00028,
+            leolaniTalk:Children_live-in_society_00028,
+            leolaniTalk:Children_live_grow_00028,
+            leolaniTalk:Children_live_grow_well_00028,
+            leolaniTalk:Children_live_to_grow_00028,
+            leolaniTalk:Children_live_to_grow_well_00028,
+            leolaniTalk:Children_need_live_00028,
+            leolaniTalk:Children_need_live_in_diverse_society_00028,
+            leolaniTalk:Children_need_live_in_society_00028,
+            leolaniTalk:Children_need_to_live_00028,
+            leolaniTalk:Children_need_to_live_in_diverse_society_00028,
+            leolaniTalk:Children_need_to_live_in_society_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:16:03.081461"^^xml1:string,
+            "2024-06-05T22:16:03.081523"^^xml1:string,
+            "2024-06-05T22:16:03.081547"^^xml1:string,
+            "2024-06-05T22:16:03.081569"^^xml1:string,
+            "2024-06-05T22:16:03.081590"^^xml1:string,
+            "2024-06-05T22:16:03.081613"^^xml1:string,
+            "2024-06-05T22:16:03.081637"^^xml1:string,
+            "2024-06-05T22:16:03.081663"^^xml1:string,
+            "2024-06-05T22:16:03.081688"^^xml1:string,
+            "2024-06-05T22:16:03.081712"^^xml1:string,
+            "2024-06-05T22:16:03.081735"^^xml1:string,
+            "2024-06-05T22:16:03.081758"^^xml1:string ;
+        rdf:value "It's not true that blacks are less capable of being civilized than anyone else, and they surely aren't the group in power at the moment. Children need to live in a diverse society to grow well."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat3004_utterance3 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:Blacks_are-normal-people-like_anyone_else {
+    leolaniWorld:Blacks ns1:are_normal_people_like leolaniWorld:anyone_else .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:I_have_hard_time {
+    leolaniWorld:I ns1:have leolaniWorld:hard_time .
+}
+
+leolaniWorld:this_can_how_can_beneficial_to_children {
+    leolaniWorld:this ns1:can leolaniWorld:how_can_beneficial_to_children .
+}
+
+leolaniWorld:Blacks_are_naturally_aggressive {
+    leolaniWorld:Blacks ns1:are leolaniWorld:naturally_aggressive .
+}
+
+leolaniWorld:Blacks_are_aggressive {
+    leolaniWorld:Blacks ns1:are leolaniWorld:aggressive .
+}
+
+leolaniWorld:I_have_time {
+    leolaniWorld:I ns1:have leolaniWorld:time .
+}
+
+leolaniWorld:Black_people_are_very_aggressive {
+    leolaniWorld:Black_people ns1:are leolaniWorld:very_aggressive .
+}
+
+leolaniWorld:Blacks_are_normal_people {
+    leolaniWorld:Blacks ns1:are leolaniWorld:normal_people .
+}
+
+leolaniWorld:blacks_are_criminals {
+    leolaniWorld:blacks ns1:are leolaniWorld:criminals .
+}
+
+leolaniWorld:Children_live_to_grow_well {
+    leolaniWorld:Children ns1:live leolaniWorld:to_grow_well .
+}
+

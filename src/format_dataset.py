@@ -42,8 +42,8 @@ def main():
     [train, test] = train_test_split(logs, test_size=0.10, random_state=42)
     [train, dev] = train_test_split(train, test_size=0.1111, random_state=42)
     print(f'Train size: {len(train)}, Dev size: {len(dev)}, Test size: {len(test)}')
-    #
-    # # Save to file
+
+    # Save to file
     # dataset_directory = Path("./../data/DIALOCONAN")
     # dataset_directory.mkdir(parents=True, exist_ok=True)
     #
@@ -51,6 +51,23 @@ def main():
     # save_json(train, filename= dataset_directory / "train.json")
     # save_json(dev, filename= dataset_directory / "dev.json")
     # save_json(test, filename= dataset_directory / "test.json")
+
+    # ######################## Split train into 5 ########################
+    # with open("./../data/DIALOCONAN/train.json") as f:
+    #     full = json.load(f)
+    #
+    # parts = []
+    # bgn = 0
+    # end = 500
+    # for i in range(5):
+    #     part = full[bgn:end]
+    #     parts.append(part)
+    #
+    #     bgn += 500
+    #     end += 500
+    #
+    #     with open(f"./../data/DIALOCONAN/train_{i}.json", "w") as f:
+    #         json.dump(part, f)
 
     print("DONE")
 

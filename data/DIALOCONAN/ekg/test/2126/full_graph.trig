@@ -1,0 +1,1692 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eps: <http://cltl.nl/episodicawareness/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix hs: <http://cltl-hs.org/> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix ns1: <http://cltl.nl/leolani/n2mu/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time1: <http://www.w3.org/TR/owl-time/#> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+leolaniWorld:people_are_misrepresented {
+    leolaniWorld:people ns1:are leolaniWorld:misrepresented .
+}
+
+leolaniWorld:we_get_rid_of_toxic_way {
+    leolaniWorld:we ns1:get leolaniWorld:rid_of_toxic_way .
+}
+
+leolaniWorld:Ontology {
+    eps:hasContext a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance,
+            sem:Event ;
+        rdfs:range eps:Context ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    eps:hasDetection a owl:ObjectProperty ;
+        rdfs:domain eps:Context ;
+        rdfs:range grasp:Detection ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    gaf:Assertion a owl:Class ;
+        rdfs:subClassOf gaf:Instance .
+
+    grasp:Chat a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:Experience a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Statement a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Visual a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:hasAttribution a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Attribution ;
+        owl:inverseOf grasp:isAttributionFor .
+
+    grasp:wasAttributedTo a owl:ObjectProperty ;
+        rdfs:label "was attributed to" ;
+        rdfs:comment "States that a gaf:Mention was attributed to a gaf:Instance. This is a sub property of the prov:wasAttributedTo relation that can be used to relate any prov:Entity to any prov:Agent."^^xsd:string ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Source ;
+        rdfs:subPropertyOf prov:wasAttributedTo .
+
+    <http://schema.org/Place> a owl:Class .
+
+    sem:hasActor a owl:ObjectProperty ;
+        rdfs:label "has Actor" ;
+        rdfs:comment "Has actor is used to state which Actors or Objects participate in an Event." ;
+        rdfs:range sem:Actor ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasBeginTimeStamp a owl:DatatypeProperty ;
+        rdfs:label "has begin timestamp" ;
+        rdfs:comment "Has begin timestamp is used to indicate the beginning of a time interval. Omitting the hasBeginTimeStamp while stating a hasEndTimeStamp is interpreted as an open ended interval." ;
+        rdfs:subPropertyOf sem:hasTimeStamp .
+
+    sem:hasPlace a owl:ObjectProperty ;
+        rdfs:label "has Place" ;
+        rdfs:comment "Has place is used to state in which Place(s) an Event happened. Coordinates can be attached to the Place with the W3C Geospatial Vocabulary (http://www.w3.org/2005/Incubator/geo/XGR-geo-20071023/)." ;
+        rdfs:range sem:Place ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasSubEvent a owl:ObjectProperty ;
+        rdfs:label "has subevent" ;
+        rdfs:comment "Has subevent connects an Event to other Events that belong to it. This is a very generic property that does not mean the subevents fully define the superconcept or that there is any causal relationship." ;
+        rdfs:domain sem:Event ;
+        rdfs:range sem:Event ;
+        rdfs:subPropertyOf sem:eventProperty ;
+        owl:inverseOf sem:subEventOf .
+
+    sem:hasTime a owl:ObjectProperty ;
+        rdfs:label "has Time" ;
+        rdfs:comment "Has time is used to indicate at which time an Event took place or when a property under the Temporary Constraint is valid. Has time points to a symbolic representation of time, which allows semantic relations between time resources. (see http://www.w3.org/TR/owl-time/)" ;
+        rdfs:range sem:Time ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    skos:broadMatch a owl:AnnotationProperty .
+
+    skos:closeMatch a owl:AnnotationProperty .
+
+    skos:narrowMatch a owl:AnnotationProperty .
+
+    prov:category a owl:AnnotationProperty .
+
+    prov:component a owl:AnnotationProperty .
+
+    prov:definition a owl:AnnotationProperty .
+
+    prov:hadDerivation a owl:ObjectProperty ;
+        owl:inverseOf prov:wasDerivedFrom .
+
+    prov:inverse a owl:AnnotationProperty .
+
+    prov:qualifiedForm a owl:AnnotationProperty .
+
+    gaf:containsDenotation a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        owl:inverseOf gaf:denotedIn .
+
+    gaf:denotedBy a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention ;
+        rdfs:subPropertyOf gaf:denotedIn ;
+        owl:inverseOf gaf:denotes .
+
+    grasp:Source a owl:Class ;
+        rdfs:label "Source" ;
+        rdfs:comment "" ;
+        rdfs:subClassOf owl:Thing .
+
+    grasp:Utterance a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    graspe:anger a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:disgust a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:fear a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:happiness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:sadness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:surprise a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspf:certain a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:negative a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:non-future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:positive a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:possible a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:probable a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:underspecified a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    grasps:negative a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    grasps:positive a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    sem:Actor a owl:Class ;
+        rdfs:label "Actor" ;
+        rdfs:comment """Actors are entities that take part in an Event, either actively or passively. Actors do not necessarily have to be sentient. They can also be objects. Actors are a thing, animate or inanimate, physical or non-physical.
+""" ;
+        skos:broadMatch <http://sw.opencyc.org/2009/04/07/concept/en/SomethingExisting>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant> ;
+        skos:closeMatch dcterms:Agent,
+            dcterms:AgentClass,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Agent-Generic>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Agent>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E39.Actor>,
+            foaf:Agent .
+
+    sem:Place a owl:Class ;
+        rdfs:label "Place" ;
+        rdfs:comment "Places are locations where an Event happens. They do not need to be physical places and hence do not necessarily need coordinates. Neither do they need to have any significance apart from them being the location of an Event." ;
+        skos:closeMatch dcterms:Location,
+            <http://sw.opencyc.org/2009/04/07/concept/en/EnduringThing-Localized>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#GeographicArea>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E53.Place> ;
+        skos:narrowMatch <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#PhysicalRegion>,
+            <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+    sem:Time a owl:Class ;
+        rdfs:label "Time" ;
+        rdfs:comment "Time contains symbolic representations of when an Event took place. Time instances do not necessarily need to have a timestamp associated with them. The Time class exists to represent semantics of time, e.g. that one thing happens before another, even though the exact timestamps are unknown." ;
+        skos:broadMatch <http://www.w3.org/2006/timeTemporalEntity> .
+
+    sem:hasTimeStamp a owl:DatatypeProperty .
+
+    sem:subEventOf a owl:ObjectProperty ;
+        rdfs:label "subevent of" ;
+        rdfs:comment "Inverse property of hasSubEvent" .
+
+    rdf:value a owl:ObjectProperty .
+
+    prov:wasAttributedTo a owl:ObjectProperty .
+
+    prov:wasDerivedFrom a owl:ObjectProperty ;
+        rdfs:label "wasDerivedFrom" ;
+        rdfs:comment "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Detection,
+            grasp:Utterance ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        prov:category "starting-point" ;
+        prov:component "derivations" ;
+        prov:definition "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity."@en ;
+        prov:inverse "hadDerivation" ;
+        prov:qualifiedForm prov:Derivation .
+
+    foaf:Agent a owl:Class .
+
+    eps:Context a owl:Class .
+
+    eps:contextProperty a owl:ObjectProperty ;
+        rdfs:label "context property" ;
+        rdfs:comment "Context properties connect Context to other SEM Core entities." ;
+        owl:equivalentProperty sem:eventProperty .
+
+    gaf:denotedIn a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention .
+
+    gaf:denotes a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        rdfs:subPropertyOf gaf:containsDenotation .
+
+    grasp:Attribution a owl:Class ;
+        rdfs:label "Attribution" ;
+        rdfs:comment "A grasp:Attribution reflects the attribution of some interpretation, some perspective to a gaf:Mention. An attribution expresses such things as certainty, emotion, polarity, sentiment, temporality."^^xsd:string ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:intersectionOf ( [ a owl:Restriction ;
+                            owl:onProperty grasp:isAttributionFor ;
+                            owl:someValuesFrom gaf:Mention ] [ a owl:Restriction ;
+                            owl:onProperty rdf:value ;
+                            owl:someValuesFrom grasp:AttributionValue ] ) ] .
+
+    grasp:Detection a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:isAttributionFor a owl:ObjectProperty ;
+        rdfs:domain grasp:Attribution ;
+        rdfs:range gaf:Mention .
+
+    grasp:PolarityValue a owl:Class ;
+        rdfs:label "Polarity Value" ;
+        rdfs:comment "The polarity of a gaf:Mention (e.g. if something is or isn't the case)"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:negative graspf:positive ) ] .
+
+    grasp:CertaintyValue a owl:Class ;
+        rdfs:label "Certainty Value" ;
+        rdfs:comment "The level of certainty of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:PolarityValue,
+            grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:certain graspf:possible graspf:probable graspf:underspecified ) ] .
+
+    grasp:FactualityValue a owl:Class ;
+        rdfs:label "Factuality value"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:SentimentValue .
+
+    grasp:SentimentValue a owl:Class ;
+        rdfs:label "Sentiment Value" ;
+        rdfs:comment "The sentiment expressed by a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( grasps:negative grasps:positive ) ] .
+
+    grasp:TemporalValue a owl:Class ;
+        rdfs:label "Temporal Value" ;
+        rdfs:comment "The temporal property of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:future graspf:non-future ) ] .
+
+    sem:eventProperty a owl:ObjectProperty ;
+        rdfs:label "event property" ;
+        rdfs:comment "Event properties connect Events to other SEM Core entities." .
+
+    grasp:EmotionValue a owl:Class ;
+        rdfs:label "Emotion Value" ;
+        rdfs:comment "The emotion expressed in a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:FactualityValue,
+            grasp:SentimentValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspe:anger graspe:disgust graspe:fear graspe:happiness graspe:sadness graspe:surprise ) ] .
+
+    gaf:Instance a owl:Class ;
+        rdfs:label "Instance" ;
+        rdfs:comment "Instances are statements about real world entities, including actions, processes and abstract notions. They are the primary subject of individuals of type gaf:Mention that can denote them."^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotedBy ;
+                owl:someValuesFrom gaf:Mention ] .
+
+    grasp:AttributionValue a owl:Class ;
+        rdfs:label "Attribution value"^^xsd:string ;
+        rdfs:comment "The value of a grasp:Attribution"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    sem:Event a owl:Class ;
+        rdfs:label "Event" ;
+        rdfs:comment "Events are things that happen. This comprises everything from historical events to web site sessions and mythical journeys. Event is the central class of SEM." ;
+        skos:broadMatch <http://linkedevents.org/ontology/Event>,
+            <http://purl.org/NET/c4dm/event.owl#Event> ;
+        skos:closeMatch dcmitype:Event,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Situation>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#perdurant>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Process>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E5.Event> .
+
+    gaf:Mention a owl:Class ;
+        rdfs:label "Mention" ;
+        rdfs:comment """Mentions are references to members of the gaf:Instance class as they occur in (web) media such as texts, video, audio, images, etc. Mentions denote gaf:Instances.
+
+A Mention uniquely identifies the (part of a) web source that denotes the mention. We refer to the standard use of fragment identifiers for different media types. """^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotes ;
+                owl:someValuesFrom gaf:Instance ] .
+
+    [] a owl:Ontology .
+}
+
+leolaniWorld:They_are_all_dangerous {
+    leolaniWorld:They ns1:are leolaniWorld:all_dangerous .
+}
+
+leolaniWorld:they_are_when_source_of_crime_in_our_society {
+    leolaniWorld:they ns1:are leolaniWorld:when_source_of_crime_in_our_society .
+}
+
+leolaniWorld:black_murderer_is-in_town {
+    leolaniWorld:black_murderer ns1:is_in leolaniWorld:town .
+}
+
+leolaniWorld:people_are-misrepresented-with_number {
+    leolaniWorld:people ns1:are_misrepresented_with leolaniWorld:number .
+}
+
+leolaniWorld:Black_people_are-really-misrepresented-with_huge_number_of_criminals {
+    leolaniWorld:Black_people ns1:are_really_misrepresented_with leolaniWorld:huge_number_of_criminals .
+}
+
+leolaniWorld:they_are_when_source_of_crime {
+    leolaniWorld:they ns1:are leolaniWorld:when_source_of_crime .
+}
+
+leolaniWorld:people_are-misrepresented-with_huge_number_of_criminals {
+    leolaniWorld:people ns1:are_misrepresented_with leolaniWorld:huge_number_of_criminals .
+}
+
+leolaniWorld:we_would-give_rights {
+    leolaniWorld:we ns1:would_give leolaniWorld:rights .
+}
+
+leolaniWorld:they_are_source {
+    leolaniWorld:they ns1:are leolaniWorld:source .
+}
+
+leolaniWorld:Blacks_do-though_more_crimes_than_whites {
+    leolaniWorld:Blacks ns1:do_though leolaniWorld:more_crimes_than_whites .
+}
+
+leolaniWorld:we_would-give_black_people {
+    leolaniWorld:we ns1:would_give leolaniWorld:black_people .
+}
+
+leolaniWorld:people_are-really-misrepresented-with_number_of_criminals {
+    leolaniWorld:people ns1:are_really_misrepresented_with leolaniWorld:number_of_criminals .
+}
+
+leolaniWorld:we_need_to_get {
+    leolaniWorld:we ns1:need leolaniWorld:to_get .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context15 a eps:Context ;
+        rdfs:label "context15" ;
+        hs:id "15"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2126 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "108"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2126 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2126" ;
+        hs:id "2126"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2126_utterance1,
+            leolaniTalk:chat2126_utterance2,
+            leolaniTalk:chat2126_utterance4,
+            leolaniTalk:chat2126_utterance5,
+            leolaniTalk:chat2126_utterance6 .
+
+    leolaniTalk:chat2126_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2126_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2126_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2126_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2126_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2126_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2126_utterance5 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2126_utterance5" ;
+        hs:id "5"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2126_utterance6 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2126_utterance6" ;
+        hs:id "6"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:we_would-give_people {
+    leolaniWorld:we ns1:would_give leolaniWorld:people .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Black_people_are-misrepresented-with_huge_number a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-misrepresented-with_huge_number" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_are-misrepresented-with_huge_number_of_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-misrepresented-with_huge_number_of_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_are-misrepresented-with_number a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-misrepresented-with_number" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_are-misrepresented-with_number_of_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-misrepresented-with_number_of_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_are-really-misrepresented-with_huge_number a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-really-misrepresented-with_huge_number" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_are-really-misrepresented-with_huge_number_of_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-really-misrepresented-with_huge_number_of_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_are-really-misrepresented-with_number a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-really-misrepresented-with_number" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_are-really-misrepresented-with_number_of_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-really-misrepresented-with_number_of_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_are_misrepresented a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are_misrepresented" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_are_really_misrepresented a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are_really_misrepresented" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Black_people_is-in_news a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_is-in_news" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Blacks_do-though_crimes_than_whites a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_do-though_crimes_than_whites" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance6_char0-42 .
+
+    leolaniWorld:Blacks_do-though_more_crimes_than_whites a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_do-though_more_crimes_than_whites" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance6_char0-42 .
+
+    leolaniWorld:Blacks_do_crimes_than_whites a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_do_crimes_than_whites" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance6_char0-42 .
+
+    leolaniWorld:Blacks_do_more_crimes_than_whites a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Blacks_do_more_crimes_than_whites" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance6_char0-42 .
+
+    leolaniWorld:Rights_are_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Rights_are_rights" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance1_char0-40 .
+
+    leolaniWorld:They_are_all_dangerous a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_all_dangerous" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance4_char0-158 .
+
+    leolaniWorld:They_are_dangerous a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_dangerous" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance4_char0-158 .
+
+    leolaniWorld:big_part_comes-from_racism a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "big_part_comes-from_racism" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:black_murderer_is-in_town a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "black_murderer_is-in_town" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance4_char0-158 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:part_comes-from_racism a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "part_comes-from_racism" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are-misrepresented-with_huge_number a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-misrepresented-with_huge_number" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are-misrepresented-with_huge_number_of_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-misrepresented-with_huge_number_of_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are-misrepresented-with_number a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-misrepresented-with_number" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are-misrepresented-with_number_of_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-misrepresented-with_number_of_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are-really-misrepresented-with_huge_number a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-really-misrepresented-with_huge_number" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are-really-misrepresented-with_huge_number_of_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-really-misrepresented-with_huge_number_of_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are-really-misrepresented-with_number a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-really-misrepresented-with_number" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are-really-misrepresented-with_number_of_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-really-misrepresented-with_number_of_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are_misrepresented a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_misrepresented" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people_are_really_misrepresented a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_really_misrepresented" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:source_is-in_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "source_is-in_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:they_are-source-in_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-source-in_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:they_are-source-of_crime a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-source-of_crime" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:they_are_source a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_source" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:they_are_source_of_crime_in_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_source_of_crime_in_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:they_are_when_source a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_when_source" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:they_are_when_source_in_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_when_source_in_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:they_are_when_source_of_crime a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_when_source_of_crime" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:they_are_when_source_of_crime_in_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_when_source_of_crime_in_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:we_get_rid a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_get_rid" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:we_get_rid_of_toxic_way a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_get_rid_of_toxic_way" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:we_get_rid_of_toxic_way_of_thinking a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_get_rid_of_toxic_way_of_thinking" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:we_get_rid_of_way a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_get_rid_of_way" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:we_get_rid_of_way_of_thinking a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_get_rid_of_way_of_thinking" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:we_need_get a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_need_get" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:we_need_to_get a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_need_to_get" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:we_would-give_black_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_would-give_black_people" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:we_would-give_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_would-give_people" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:we_would-give_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_would-give_rights" ;
+        gaf:denotedBy leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:people_are-really-misrepresented-with_huge_number {
+    leolaniWorld:people ns1:are_really_misrepresented_with leolaniWorld:huge_number .
+}
+
+leolaniWorld:Black_people_are-really-misrepresented-with_huge_number {
+    leolaniWorld:Black_people ns1:are_really_misrepresented_with leolaniWorld:huge_number .
+}
+
+leolaniWorld:Black_people_is-in_news {
+    leolaniWorld:Black_people ns1:is_in leolaniWorld:news .
+}
+
+leolaniWorld:Black_people_are-misrepresented-with_number {
+    leolaniWorld:Black_people ns1:are_misrepresented_with leolaniWorld:number .
+}
+
+leolaniWorld:they_are-source-in_our_society {
+    leolaniWorld:they ns1:are_source_in leolaniWorld:our_society .
+}
+
+leolaniWorld:they_are_when_source_in_our_society {
+    leolaniWorld:they ns1:are leolaniWorld:when_source_in_our_society .
+}
+
+leolaniWorld:people_are-misrepresented-with_number_of_criminals {
+    leolaniWorld:people ns1:are_misrepresented_with leolaniWorld:number_of_criminals .
+}
+
+leolaniWorld:They_are_dangerous {
+    leolaniWorld:They ns1:are leolaniWorld:dangerous .
+}
+
+leolaniWorld:source_is-in_our_society {
+    leolaniWorld:source ns1:is_in leolaniWorld:our_society .
+}
+
+leolaniWorld:people_are-misrepresented-with_huge_number {
+    leolaniWorld:people ns1:are_misrepresented_with leolaniWorld:huge_number .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:people_are_really_misrepresented {
+    leolaniWorld:people ns1:are leolaniWorld:really_misrepresented .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Black_people a gaf:Instance ;
+        rdfs:label "black-people" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:Blacks a gaf:Instance ;
+        rdfs:label "blacks" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance6_char0-42 .
+
+    leolaniWorld:Rights a gaf:Instance ;
+        rdfs:label "rights" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance1_char0-40 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance4_char0-158 .
+
+    leolaniWorld:all_dangerous a gaf:Instance ;
+        rdfs:label "all-dangerous" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance4_char0-158 .
+
+    leolaniWorld:big_part a gaf:Instance ;
+        rdfs:label "big-part" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:black_murderer a gaf:Instance ;
+        rdfs:label "black-murderer" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance4_char0-158 .
+
+    leolaniWorld:black_people a gaf:Instance ;
+        rdfs:label "black-people" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:crime a gaf:Instance ;
+        rdfs:label "crime" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:crimes_than_whites a gaf:Instance ;
+        rdfs:label "crimes-than-whites" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance6_char0-42 .
+
+    leolaniWorld:dangerous a gaf:Instance ;
+        rdfs:label "dangerous" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance4_char0-158 .
+
+    leolaniWorld:get a gaf:Instance ;
+        rdfs:label "get" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:huge_number a gaf:Instance ;
+        rdfs:label "huge-number" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:huge_number_of_criminals a gaf:Instance ;
+        rdfs:label "huge-number-of-criminals" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:misrepresented a gaf:Instance ;
+        rdfs:label "misrepresented" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:more_crimes_than_whites a gaf:Instance ;
+        rdfs:label "more-crimes-than-whites" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance6_char0-42 .
+
+    leolaniWorld:news a gaf:Instance ;
+        rdfs:label "news" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:number a gaf:Instance ;
+        rdfs:label "number" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:number_of_criminals a gaf:Instance ;
+        rdfs:label "number-of-criminals" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:our_society a gaf:Instance ;
+        rdfs:label "our-society" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87,
+            leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:racism a gaf:Instance ;
+        rdfs:label "racism" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:really_misrepresented a gaf:Instance ;
+        rdfs:label "really-misrepresented" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:rid a gaf:Instance ;
+        rdfs:label "rid" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:rid_of_toxic_way a gaf:Instance ;
+        rdfs:label "rid-of-toxic-way" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:rid_of_toxic_way_of_thinking a gaf:Instance ;
+        rdfs:label "rid-of-toxic-way-of-thinking" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:rid_of_way a gaf:Instance ;
+        rdfs:label "rid-of-way" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:rid_of_way_of_thinking a gaf:Instance ;
+        rdfs:label "rid-of-way-of-thinking" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:rights a gaf:Instance ;
+        rdfs:label "rights" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance1_char0-40,
+            leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:source a gaf:Instance ;
+        rdfs:label "source" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:source_of_crime_in_our_society a gaf:Instance ;
+        rdfs:label "source-of-crime-in-our-society" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:to_get a gaf:Instance ;
+        rdfs:label "to-get" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:town a gaf:Instance ;
+        rdfs:label "town" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance4_char0-158 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87,
+            leolaniTalk:chat2126_utterance5_char0-250 .
+
+    leolaniWorld:when_source a gaf:Instance ;
+        rdfs:label "when-source" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:when_source_in_our_society a gaf:Instance ;
+        rdfs:label "when-source-in-our-society" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:when_source_of_crime a gaf:Instance ;
+        rdfs:label "when-source-of-crime" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+
+    leolaniWorld:when_source_of_crime_in_our_society a gaf:Instance ;
+        rdfs:label "when-source-of-crime-in-our-society" ;
+        gaf:denotedIn leolaniTalk:chat2126_utterance2_char0-87 .
+}
+
+leolaniWorld:part_comes-from_racism {
+    leolaniWorld:part ns1:comes_from leolaniWorld:racism .
+}
+
+leolaniWorld:Blacks_do-though_crimes_than_whites {
+    leolaniWorld:Blacks ns1:do_though leolaniWorld:crimes_than_whites .
+}
+
+leolaniWorld:Black_people_are-misrepresented-with_huge_number_of_criminals {
+    leolaniWorld:Black_people ns1:are_misrepresented_with leolaniWorld:huge_number_of_criminals .
+}
+
+leolaniWorld:they_are-source-of_crime {
+    leolaniWorld:they ns1:are_source_of leolaniWorld:crime .
+}
+
+leolaniWorld:Black_people_are-misrepresented-with_number_of_criminals {
+    leolaniWorld:Black_people ns1:are_misrepresented_with leolaniWorld:number_of_criminals .
+}
+
+leolaniWorld:we_get_rid_of_way {
+    leolaniWorld:we ns1:get leolaniWorld:rid_of_way .
+}
+
+leolaniWorld:big_part_comes-from_racism {
+    leolaniWorld:big_part ns1:comes_from leolaniWorld:racism .
+}
+
+leolaniWorld:Black_people_are-really-misrepresented-with_number_of_criminals {
+    leolaniWorld:Black_people ns1:are_really_misrepresented_with leolaniWorld:number_of_criminals .
+}
+
+leolaniWorld:we_get_rid_of_way_of_thinking {
+    leolaniWorld:we ns1:get leolaniWorld:rid_of_way_of_thinking .
+}
+
+leolaniWorld:they_are_when_source {
+    leolaniWorld:they ns1:are leolaniWorld:when_source .
+}
+
+leolaniWorld:Black_people_are-misrepresented-with_huge_number {
+    leolaniWorld:Black_people ns1:are_misrepresented_with leolaniWorld:huge_number .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Black_people_are-misrepresented-with_huge_number_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are-misrepresented-with_huge_number_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are-misrepresented-with_huge_number_of_criminals_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are-misrepresented-with_huge_number_of_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are-misrepresented-with_number_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are-misrepresented-with_number_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are-misrepresented-with_number_of_criminals_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are-misrepresented-with_number_of_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are-really-misrepresented-with_huge_number_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are-really-misrepresented-with_huge_number_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are-really-misrepresented-with_huge_number_of_criminals_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are-really-misrepresented-with_huge_number_of_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are-really-misrepresented-with_number_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are-really-misrepresented-with_number_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are-really-misrepresented-with_number_of_criminals_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are-really-misrepresented-with_number_of_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are_misrepresented_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are_misrepresented_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are_really_misrepresented_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are_really_misrepresented_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_is-in_news_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_is-in_news_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_do-though_crimes_than_whites_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_do-though_crimes_than_whites_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance6_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_do-though_more_crimes_than_whites_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_do-though_more_crimes_than_whites_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance6_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_do_crimes_than_whites_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_do_crimes_than_whites_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance6_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_do_more_crimes_than_whites_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_do_more_crimes_than_whites_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance6_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Rights_are_rights_00028 a grasp:Attribution ;
+        rdfs:label "Rights_are_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance1_char0-40 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_all_dangerous_00028 a grasp:Attribution ;
+        rdfs:label "They_are_all_dangerous_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance4_char0-158 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_dangerous_00028 a grasp:Attribution ;
+        rdfs:label "They_are_dangerous_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance4_char0-158 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:big_part_comes-from_racism_00028 a grasp:Attribution ;
+        rdfs:label "big_part_comes-from_racism_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:black_murderer_is-in_town_00028 a grasp:Attribution ;
+        rdfs:label "black_murderer_is-in_town_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance4_char0-158 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2126_utterance1_char0-40 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2126_utterance1_char0-40" ;
+        gaf:containsDenotation leolaniWorld:Rights,
+            leolaniWorld:rights ;
+        gaf:denotes leolaniWorld:Rights_are_rights ;
+        grasp:hasAttribution leolaniTalk:Rights_are_rights_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T21:48:44.729138"^^xml1:string ;
+        rdf:value "Rights are rights, not \"black or white\"."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2126_utterance1 .
+
+    leolaniTalk:part_comes-from_racism_00028 a grasp:Attribution ;
+        rdfs:label "part_comes-from_racism_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-misrepresented-with_huge_number_00028 a grasp:Attribution ;
+        rdfs:label "people_are-misrepresented-with_huge_number_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-misrepresented-with_huge_number_of_criminals_00028 a grasp:Attribution ;
+        rdfs:label "people_are-misrepresented-with_huge_number_of_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-misrepresented-with_number_00028 a grasp:Attribution ;
+        rdfs:label "people_are-misrepresented-with_number_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-misrepresented-with_number_of_criminals_00028 a grasp:Attribution ;
+        rdfs:label "people_are-misrepresented-with_number_of_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-really-misrepresented-with_huge_number_00028 a grasp:Attribution ;
+        rdfs:label "people_are-really-misrepresented-with_huge_number_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-really-misrepresented-with_huge_number_of_criminals_00028 a grasp:Attribution ;
+        rdfs:label "people_are-really-misrepresented-with_huge_number_of_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-really-misrepresented-with_number_00028 a grasp:Attribution ;
+        rdfs:label "people_are-really-misrepresented-with_number_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-really-misrepresented-with_number_of_criminals_00028 a grasp:Attribution ;
+        rdfs:label "people_are-really-misrepresented-with_number_of_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are_misrepresented_00028 a grasp:Attribution ;
+        rdfs:label "people_are_misrepresented_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are_really_misrepresented_00028 a grasp:Attribution ;
+        rdfs:label "people_are_really_misrepresented_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:source_is-in_our_society_00026 a grasp:Attribution ;
+        rdfs:label "source_is-in_our_society_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-source-in_our_society_00026 a grasp:Attribution ;
+        rdfs:label "they_are-source-in_our_society_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-source-of_crime_00026 a grasp:Attribution ;
+        rdfs:label "they_are-source-of_crime_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_source_00026 a grasp:Attribution ;
+        rdfs:label "they_are_source_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_source_of_crime_in_our_society_00026 a grasp:Attribution ;
+        rdfs:label "they_are_source_of_crime_in_our_society_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_when_source_00026 a grasp:Attribution ;
+        rdfs:label "they_are_when_source_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_when_source_in_our_society_00026 a grasp:Attribution ;
+        rdfs:label "they_are_when_source_in_our_society_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_when_source_of_crime_00026 a grasp:Attribution ;
+        rdfs:label "they_are_when_source_of_crime_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_when_source_of_crime_in_our_society_00026 a grasp:Attribution ;
+        rdfs:label "they_are_when_source_of_crime_in_our_society_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_get_rid_00028 a grasp:Attribution ;
+        rdfs:label "we_get_rid_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_get_rid_of_toxic_way_00028 a grasp:Attribution ;
+        rdfs:label "we_get_rid_of_toxic_way_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_get_rid_of_toxic_way_of_thinking_00028 a grasp:Attribution ;
+        rdfs:label "we_get_rid_of_toxic_way_of_thinking_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_get_rid_of_way_00028 a grasp:Attribution ;
+        rdfs:label "we_get_rid_of_way_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_get_rid_of_way_of_thinking_00028 a grasp:Attribution ;
+        rdfs:label "we_get_rid_of_way_of_thinking_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_need_get_00028 a grasp:Attribution ;
+        rdfs:label "we_need_get_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_need_to_get_00028 a grasp:Attribution ;
+        rdfs:label "we_need_to_get_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance5_char0-250 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_would-give_black_people_00026 a grasp:Attribution ;
+        rdfs:label "we_would-give_black_people_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_would-give_people_00026 a grasp:Attribution ;
+        rdfs:label "we_would-give_people_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_would-give_rights_00026 a grasp:Attribution ;
+        rdfs:label "we_would-give_rights_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2126_utterance2_char0-87 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2126_utterance4_char0-158 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2126_utterance4_char0-158" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:all_dangerous,
+            leolaniWorld:black_murderer,
+            leolaniWorld:dangerous,
+            leolaniWorld:town ;
+        gaf:denotes leolaniWorld:They_are_all_dangerous,
+            leolaniWorld:They_are_dangerous,
+            leolaniWorld:black_murderer_is-in_town ;
+        grasp:hasAttribution leolaniTalk:They_are_all_dangerous_00028,
+            leolaniTalk:They_are_dangerous_00028,
+            leolaniTalk:black_murderer_is-in_town_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T21:48:45.031917"^^xml1:string,
+            "2024-06-05T21:48:45.031973"^^xml1:string,
+            "2024-06-05T21:48:45.031998"^^xml1:string ;
+        rdf:value "I'm saying that black people do not belong here. I don't see any difference between the black murderer on TV and other niggas in town. They are all dangerous."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2126_utterance4 .
+
+    leolaniTalk:chat2126_utterance6_char0-42 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2126_utterance6_char0-42" ;
+        gaf:containsDenotation leolaniWorld:Blacks,
+            leolaniWorld:crimes_than_whites,
+            leolaniWorld:more_crimes_than_whites ;
+        gaf:denotes leolaniWorld:Blacks_do-though_crimes_than_whites,
+            leolaniWorld:Blacks_do-though_more_crimes_than_whites,
+            leolaniWorld:Blacks_do_crimes_than_whites,
+            leolaniWorld:Blacks_do_more_crimes_than_whites ;
+        grasp:hasAttribution leolaniTalk:Blacks_do-though_crimes_than_whites_00028,
+            leolaniTalk:Blacks_do-though_more_crimes_than_whites_00028,
+            leolaniTalk:Blacks_do_crimes_than_whites_00028,
+            leolaniTalk:Blacks_do_more_crimes_than_whites_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T21:48:45.238848"^^xml1:string,
+            "2024-06-05T21:48:45.238905"^^xml1:string,
+            "2024-06-05T21:48:45.238928"^^xml1:string,
+            "2024-06-05T21:48:45.238949"^^xml1:string ;
+        rdf:value "Blacks do more crimes than whites, though."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2126_utterance6 .
+
+    leolaniTalk:chat2126_utterance2_char0-87 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2126_utterance2_char0-87" ;
+        gaf:containsDenotation leolaniWorld:black_people,
+            leolaniWorld:crime,
+            leolaniWorld:our_society,
+            leolaniWorld:people,
+            leolaniWorld:rights,
+            leolaniWorld:source,
+            leolaniWorld:source_of_crime_in_our_society,
+            leolaniWorld:they,
+            leolaniWorld:we,
+            leolaniWorld:when_source,
+            leolaniWorld:when_source_in_our_society,
+            leolaniWorld:when_source_of_crime,
+            leolaniWorld:when_source_of_crime_in_our_society ;
+        gaf:denotes leolaniWorld:source_is-in_our_society,
+            leolaniWorld:they_are-source-in_our_society,
+            leolaniWorld:they_are-source-of_crime,
+            leolaniWorld:they_are_source,
+            leolaniWorld:they_are_source_of_crime_in_our_society,
+            leolaniWorld:they_are_when_source,
+            leolaniWorld:they_are_when_source_in_our_society,
+            leolaniWorld:they_are_when_source_of_crime,
+            leolaniWorld:they_are_when_source_of_crime_in_our_society,
+            leolaniWorld:we_would-give_black_people,
+            leolaniWorld:we_would-give_people,
+            leolaniWorld:we_would-give_rights ;
+        grasp:hasAttribution leolaniTalk:source_is-in_our_society_00026,
+            leolaniTalk:they_are-source-in_our_society_00026,
+            leolaniTalk:they_are-source-of_crime_00026,
+            leolaniTalk:they_are_source_00026,
+            leolaniTalk:they_are_source_of_crime_in_our_society_00026,
+            leolaniTalk:they_are_when_source_00026,
+            leolaniTalk:they_are_when_source_in_our_society_00026,
+            leolaniTalk:they_are_when_source_of_crime_00026,
+            leolaniTalk:they_are_when_source_of_crime_in_our_society_00026,
+            leolaniTalk:we_would-give_black_people_00026,
+            leolaniTalk:we_would-give_people_00026,
+            leolaniTalk:we_would-give_rights_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T21:48:44.829567"^^xml1:string,
+            "2024-06-05T21:48:44.829622"^^xml1:string,
+            "2024-06-05T21:48:44.829646"^^xml1:string,
+            "2024-06-05T21:48:44.829668"^^xml1:string,
+            "2024-06-05T21:48:44.829690"^^xml1:string,
+            "2024-06-05T21:48:44.829712"^^xml1:string,
+            "2024-06-05T21:48:44.829733"^^xml1:string,
+            "2024-06-05T21:48:44.829753"^^xml1:string,
+            "2024-06-05T21:48:44.829775"^^xml1:string,
+            "2024-06-05T21:48:44.829797"^^xml1:string,
+            "2024-06-05T21:48:44.829933"^^xml1:string,
+            "2024-06-05T21:48:44.829954"^^xml1:string ;
+        rdf:value "Why would we give black people rights when they are the source of crime in our society?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2126_utterance2 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    leolaniTalk:chat2126_utterance5_char0-250 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2126_utterance5_char0-250" ;
+        gaf:containsDenotation leolaniWorld:Black_people,
+            leolaniWorld:big_part,
+            leolaniWorld:get,
+            leolaniWorld:huge_number,
+            leolaniWorld:huge_number_of_criminals,
+            leolaniWorld:misrepresented,
+            leolaniWorld:news,
+            leolaniWorld:number,
+            leolaniWorld:number_of_criminals,
+            leolaniWorld:part,
+            leolaniWorld:people,
+            leolaniWorld:racism,
+            leolaniWorld:really_misrepresented,
+            leolaniWorld:rid,
+            leolaniWorld:rid_of_toxic_way,
+            leolaniWorld:rid_of_toxic_way_of_thinking,
+            leolaniWorld:rid_of_way,
+            leolaniWorld:rid_of_way_of_thinking,
+            leolaniWorld:to_get,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:Black_people_are-misrepresented-with_huge_number,
+            leolaniWorld:Black_people_are-misrepresented-with_huge_number_of_criminals,
+            leolaniWorld:Black_people_are-misrepresented-with_number,
+            leolaniWorld:Black_people_are-misrepresented-with_number_of_criminals,
+            leolaniWorld:Black_people_are-really-misrepresented-with_huge_number,
+            leolaniWorld:Black_people_are-really-misrepresented-with_huge_number_of_criminals,
+            leolaniWorld:Black_people_are-really-misrepresented-with_number,
+            leolaniWorld:Black_people_are-really-misrepresented-with_number_of_criminals,
+            leolaniWorld:Black_people_are_misrepresented,
+            leolaniWorld:Black_people_are_really_misrepresented,
+            leolaniWorld:Black_people_is-in_news,
+            leolaniWorld:big_part_comes-from_racism,
+            leolaniWorld:part_comes-from_racism,
+            leolaniWorld:people_are-misrepresented-with_huge_number,
+            leolaniWorld:people_are-misrepresented-with_huge_number_of_criminals,
+            leolaniWorld:people_are-misrepresented-with_number,
+            leolaniWorld:people_are-misrepresented-with_number_of_criminals,
+            leolaniWorld:people_are-really-misrepresented-with_huge_number,
+            leolaniWorld:people_are-really-misrepresented-with_huge_number_of_criminals,
+            leolaniWorld:people_are-really-misrepresented-with_number,
+            leolaniWorld:people_are-really-misrepresented-with_number_of_criminals,
+            leolaniWorld:people_are_misrepresented,
+            leolaniWorld:people_are_really_misrepresented,
+            leolaniWorld:we_get_rid,
+            leolaniWorld:we_get_rid_of_toxic_way,
+            leolaniWorld:we_get_rid_of_toxic_way_of_thinking,
+            leolaniWorld:we_get_rid_of_way,
+            leolaniWorld:we_get_rid_of_way_of_thinking,
+            leolaniWorld:we_need_get,
+            leolaniWorld:we_need_to_get ;
+        grasp:hasAttribution leolaniTalk:Black_people_are-misrepresented-with_huge_number_00028,
+            leolaniTalk:Black_people_are-misrepresented-with_huge_number_of_criminals_00028,
+            leolaniTalk:Black_people_are-misrepresented-with_number_00028,
+            leolaniTalk:Black_people_are-misrepresented-with_number_of_criminals_00028,
+            leolaniTalk:Black_people_are-really-misrepresented-with_huge_number_00028,
+            leolaniTalk:Black_people_are-really-misrepresented-with_huge_number_of_criminals_00028,
+            leolaniTalk:Black_people_are-really-misrepresented-with_number_00028,
+            leolaniTalk:Black_people_are-really-misrepresented-with_number_of_criminals_00028,
+            leolaniTalk:Black_people_are_misrepresented_00028,
+            leolaniTalk:Black_people_are_really_misrepresented_00028,
+            leolaniTalk:Black_people_is-in_news_00028,
+            leolaniTalk:big_part_comes-from_racism_00028,
+            leolaniTalk:part_comes-from_racism_00028,
+            leolaniTalk:people_are-misrepresented-with_huge_number_00028,
+            leolaniTalk:people_are-misrepresented-with_huge_number_of_criminals_00028,
+            leolaniTalk:people_are-misrepresented-with_number_00028,
+            leolaniTalk:people_are-misrepresented-with_number_of_criminals_00028,
+            leolaniTalk:people_are-really-misrepresented-with_huge_number_00028,
+            leolaniTalk:people_are-really-misrepresented-with_huge_number_of_criminals_00028,
+            leolaniTalk:people_are-really-misrepresented-with_number_00028,
+            leolaniTalk:people_are-really-misrepresented-with_number_of_criminals_00028,
+            leolaniTalk:people_are_misrepresented_00028,
+            leolaniTalk:people_are_really_misrepresented_00028,
+            leolaniTalk:we_get_rid_00028,
+            leolaniTalk:we_get_rid_of_toxic_way_00028,
+            leolaniTalk:we_get_rid_of_toxic_way_of_thinking_00028,
+            leolaniTalk:we_get_rid_of_way_00028,
+            leolaniTalk:we_get_rid_of_way_of_thinking_00028,
+            leolaniTalk:we_need_get_00028,
+            leolaniTalk:we_need_to_get_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T21:48:45.162929"^^xml1:string,
+            "2024-06-05T21:48:45.162984"^^xml1:string,
+            "2024-06-05T21:48:45.163008"^^xml1:string,
+            "2024-06-05T21:48:45.163030"^^xml1:string,
+            "2024-06-05T21:48:45.163051"^^xml1:string,
+            "2024-06-05T21:48:45.163077"^^xml1:string,
+            "2024-06-05T21:48:45.163098"^^xml1:string,
+            "2024-06-05T21:48:45.163120"^^xml1:string,
+            "2024-06-05T21:48:45.163142"^^xml1:string,
+            "2024-06-05T21:48:45.163163"^^xml1:string,
+            "2024-06-05T21:48:45.163184"^^xml1:string,
+            "2024-06-05T21:48:45.163205"^^xml1:string,
+            "2024-06-05T21:48:45.163226"^^xml1:string,
+            "2024-06-05T21:48:45.163248"^^xml1:string,
+            "2024-06-05T21:48:45.163269"^^xml1:string,
+            "2024-06-05T21:48:45.163290"^^xml1:string,
+            "2024-06-05T21:48:45.163315"^^xml1:string,
+            "2024-06-05T21:48:45.163339"^^xml1:string,
+            "2024-06-05T21:48:45.163359"^^xml1:string,
+            "2024-06-05T21:48:45.163380"^^xml1:string,
+            "2024-06-05T21:48:45.163403"^^xml1:string,
+            "2024-06-05T21:48:45.163428"^^xml1:string,
+            "2024-06-05T21:48:45.163448"^^xml1:string,
+            "2024-06-05T21:48:45.163470"^^xml1:string,
+            "2024-06-05T21:48:45.163490"^^xml1:string,
+            "2024-06-05T21:48:45.163511"^^xml1:string,
+            "2024-06-05T21:48:45.163536"^^xml1:string,
+            "2024-06-05T21:48:45.163556"^^xml1:string,
+            "2024-06-05T21:48:45.163575"^^xml1:string,
+            "2024-06-05T21:48:45.163596"^^xml1:string ;
+        rdf:value "Black people in news are really misrepresented, with a huge number of criminals and sex offenders and murderers. A big part of this problem comes from racism. To build a more just and peaceful society we need to get rid of this toxic way of thinking."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2126_utterance5 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:people_are-really-misrepresented-with_number {
+    leolaniWorld:people ns1:are_really_misrepresented_with leolaniWorld:number .
+}
+
+leolaniWorld:we_get_rid_of_toxic_way_of_thinking {
+    leolaniWorld:we ns1:get leolaniWorld:rid_of_toxic_way_of_thinking .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:Black_people_are_misrepresented {
+    leolaniWorld:Black_people ns1:are leolaniWorld:misrepresented .
+}
+
+leolaniWorld:Black_people_are-really-misrepresented-with_number {
+    leolaniWorld:Black_people ns1:are_really_misrepresented_with leolaniWorld:number .
+}
+
+leolaniWorld:Blacks_do_more_crimes_than_whites {
+    leolaniWorld:Blacks ns1:do leolaniWorld:more_crimes_than_whites .
+}
+
+leolaniWorld:Rights_are_rights {
+    leolaniWorld:Rights ns1:are leolaniWorld:rights .
+}
+
+leolaniWorld:Black_people_are_really_misrepresented {
+    leolaniWorld:Black_people ns1:are leolaniWorld:really_misrepresented .
+}
+
+leolaniWorld:we_get_rid {
+    leolaniWorld:we ns1:get leolaniWorld:rid .
+}
+
+leolaniWorld:they_are_source_of_crime_in_our_society {
+    leolaniWorld:they ns1:are leolaniWorld:source_of_crime_in_our_society .
+}
+
+leolaniWorld:people_are-really-misrepresented-with_huge_number_of_criminals {
+    leolaniWorld:people ns1:are_really_misrepresented_with leolaniWorld:huge_number_of_criminals .
+}
+
+leolaniWorld:we_need_get {
+    leolaniWorld:we ns1:need leolaniWorld:get .
+}
+
+leolaniWorld:Blacks_do_crimes_than_whites {
+    leolaniWorld:Blacks ns1:do leolaniWorld:crimes_than_whites .
+}
+

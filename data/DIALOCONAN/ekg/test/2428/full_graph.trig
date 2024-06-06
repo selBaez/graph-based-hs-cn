@@ -1,0 +1,1553 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eps: <http://cltl.nl/episodicawareness/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix hs: <http://cltl-hs.org/> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix ns1: <http://cltl.nl/leolani/world/you_'> .
+@prefix ns2: <http://cltl.nl/leolani/n2mu/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time1: <http://www.w3.org/TR/owl-time/#> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+leolaniWorld:someone_said-because_color {
+    leolaniWorld:someone ns2:said_because leolaniWorld:color .
+}
+
+leolaniWorld:I_so-will-judge_them {
+    leolaniWorld:I ns2:so_will_judge leolaniWorld:them .
+}
+
+leolaniWorld:Ontology {
+    eps:hasContext a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance,
+            sem:Event ;
+        rdfs:range eps:Context ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    eps:hasDetection a owl:ObjectProperty ;
+        rdfs:domain eps:Context ;
+        rdfs:range grasp:Detection ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    gaf:Assertion a owl:Class ;
+        rdfs:subClassOf gaf:Instance .
+
+    grasp:Chat a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:Experience a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Statement a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Visual a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:hasAttribution a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Attribution ;
+        owl:inverseOf grasp:isAttributionFor .
+
+    grasp:wasAttributedTo a owl:ObjectProperty ;
+        rdfs:label "was attributed to" ;
+        rdfs:comment "States that a gaf:Mention was attributed to a gaf:Instance. This is a sub property of the prov:wasAttributedTo relation that can be used to relate any prov:Entity to any prov:Agent."^^xsd:string ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Source ;
+        rdfs:subPropertyOf prov:wasAttributedTo .
+
+    <http://schema.org/Place> a owl:Class .
+
+    sem:hasActor a owl:ObjectProperty ;
+        rdfs:label "has Actor" ;
+        rdfs:comment "Has actor is used to state which Actors or Objects participate in an Event." ;
+        rdfs:range sem:Actor ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasBeginTimeStamp a owl:DatatypeProperty ;
+        rdfs:label "has begin timestamp" ;
+        rdfs:comment "Has begin timestamp is used to indicate the beginning of a time interval. Omitting the hasBeginTimeStamp while stating a hasEndTimeStamp is interpreted as an open ended interval." ;
+        rdfs:subPropertyOf sem:hasTimeStamp .
+
+    sem:hasPlace a owl:ObjectProperty ;
+        rdfs:label "has Place" ;
+        rdfs:comment "Has place is used to state in which Place(s) an Event happened. Coordinates can be attached to the Place with the W3C Geospatial Vocabulary (http://www.w3.org/2005/Incubator/geo/XGR-geo-20071023/)." ;
+        rdfs:range sem:Place ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasSubEvent a owl:ObjectProperty ;
+        rdfs:label "has subevent" ;
+        rdfs:comment "Has subevent connects an Event to other Events that belong to it. This is a very generic property that does not mean the subevents fully define the superconcept or that there is any causal relationship." ;
+        rdfs:domain sem:Event ;
+        rdfs:range sem:Event ;
+        rdfs:subPropertyOf sem:eventProperty ;
+        owl:inverseOf sem:subEventOf .
+
+    sem:hasTime a owl:ObjectProperty ;
+        rdfs:label "has Time" ;
+        rdfs:comment "Has time is used to indicate at which time an Event took place or when a property under the Temporary Constraint is valid. Has time points to a symbolic representation of time, which allows semantic relations between time resources. (see http://www.w3.org/TR/owl-time/)" ;
+        rdfs:range sem:Time ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    skos:broadMatch a owl:AnnotationProperty .
+
+    skos:closeMatch a owl:AnnotationProperty .
+
+    skos:narrowMatch a owl:AnnotationProperty .
+
+    prov:category a owl:AnnotationProperty .
+
+    prov:component a owl:AnnotationProperty .
+
+    prov:definition a owl:AnnotationProperty .
+
+    prov:hadDerivation a owl:ObjectProperty ;
+        owl:inverseOf prov:wasDerivedFrom .
+
+    prov:inverse a owl:AnnotationProperty .
+
+    prov:qualifiedForm a owl:AnnotationProperty .
+
+    gaf:containsDenotation a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        owl:inverseOf gaf:denotedIn .
+
+    gaf:denotedBy a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention ;
+        rdfs:subPropertyOf gaf:denotedIn ;
+        owl:inverseOf gaf:denotes .
+
+    grasp:Source a owl:Class ;
+        rdfs:label "Source" ;
+        rdfs:comment "" ;
+        rdfs:subClassOf owl:Thing .
+
+    grasp:Utterance a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    graspe:anger a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:disgust a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:fear a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:happiness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:sadness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:surprise a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspf:certain a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:negative a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:non-future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:positive a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:possible a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:probable a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:underspecified a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    grasps:negative a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    grasps:positive a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    sem:Actor a owl:Class ;
+        rdfs:label "Actor" ;
+        rdfs:comment """Actors are entities that take part in an Event, either actively or passively. Actors do not necessarily have to be sentient. They can also be objects. Actors are a thing, animate or inanimate, physical or non-physical.
+""" ;
+        skos:broadMatch <http://sw.opencyc.org/2009/04/07/concept/en/SomethingExisting>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant> ;
+        skos:closeMatch dcterms:Agent,
+            dcterms:AgentClass,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Agent-Generic>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Agent>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E39.Actor>,
+            foaf:Agent .
+
+    sem:Place a owl:Class ;
+        rdfs:label "Place" ;
+        rdfs:comment "Places are locations where an Event happens. They do not need to be physical places and hence do not necessarily need coordinates. Neither do they need to have any significance apart from them being the location of an Event." ;
+        skos:closeMatch dcterms:Location,
+            <http://sw.opencyc.org/2009/04/07/concept/en/EnduringThing-Localized>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#GeographicArea>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E53.Place> ;
+        skos:narrowMatch <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#PhysicalRegion>,
+            <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+    sem:Time a owl:Class ;
+        rdfs:label "Time" ;
+        rdfs:comment "Time contains symbolic representations of when an Event took place. Time instances do not necessarily need to have a timestamp associated with them. The Time class exists to represent semantics of time, e.g. that one thing happens before another, even though the exact timestamps are unknown." ;
+        skos:broadMatch <http://www.w3.org/2006/timeTemporalEntity> .
+
+    sem:hasTimeStamp a owl:DatatypeProperty .
+
+    sem:subEventOf a owl:ObjectProperty ;
+        rdfs:label "subevent of" ;
+        rdfs:comment "Inverse property of hasSubEvent" .
+
+    rdf:value a owl:ObjectProperty .
+
+    prov:wasAttributedTo a owl:ObjectProperty .
+
+    prov:wasDerivedFrom a owl:ObjectProperty ;
+        rdfs:label "wasDerivedFrom" ;
+        rdfs:comment "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Detection,
+            grasp:Utterance ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        prov:category "starting-point" ;
+        prov:component "derivations" ;
+        prov:definition "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity."@en ;
+        prov:inverse "hadDerivation" ;
+        prov:qualifiedForm prov:Derivation .
+
+    foaf:Agent a owl:Class .
+
+    eps:Context a owl:Class .
+
+    eps:contextProperty a owl:ObjectProperty ;
+        rdfs:label "context property" ;
+        rdfs:comment "Context properties connect Context to other SEM Core entities." ;
+        owl:equivalentProperty sem:eventProperty .
+
+    gaf:denotedIn a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention .
+
+    gaf:denotes a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        rdfs:subPropertyOf gaf:containsDenotation .
+
+    grasp:Attribution a owl:Class ;
+        rdfs:label "Attribution" ;
+        rdfs:comment "A grasp:Attribution reflects the attribution of some interpretation, some perspective to a gaf:Mention. An attribution expresses such things as certainty, emotion, polarity, sentiment, temporality."^^xsd:string ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:intersectionOf ( [ a owl:Restriction ;
+                            owl:onProperty grasp:isAttributionFor ;
+                            owl:someValuesFrom gaf:Mention ] [ a owl:Restriction ;
+                            owl:onProperty rdf:value ;
+                            owl:someValuesFrom grasp:AttributionValue ] ) ] .
+
+    grasp:Detection a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:isAttributionFor a owl:ObjectProperty ;
+        rdfs:domain grasp:Attribution ;
+        rdfs:range gaf:Mention .
+
+    grasp:PolarityValue a owl:Class ;
+        rdfs:label "Polarity Value" ;
+        rdfs:comment "The polarity of a gaf:Mention (e.g. if something is or isn't the case)"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:negative graspf:positive ) ] .
+
+    grasp:CertaintyValue a owl:Class ;
+        rdfs:label "Certainty Value" ;
+        rdfs:comment "The level of certainty of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:PolarityValue,
+            grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:certain graspf:possible graspf:probable graspf:underspecified ) ] .
+
+    grasp:FactualityValue a owl:Class ;
+        rdfs:label "Factuality value"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:SentimentValue .
+
+    grasp:SentimentValue a owl:Class ;
+        rdfs:label "Sentiment Value" ;
+        rdfs:comment "The sentiment expressed by a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( grasps:negative grasps:positive ) ] .
+
+    grasp:TemporalValue a owl:Class ;
+        rdfs:label "Temporal Value" ;
+        rdfs:comment "The temporal property of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:future graspf:non-future ) ] .
+
+    sem:eventProperty a owl:ObjectProperty ;
+        rdfs:label "event property" ;
+        rdfs:comment "Event properties connect Events to other SEM Core entities." .
+
+    grasp:EmotionValue a owl:Class ;
+        rdfs:label "Emotion Value" ;
+        rdfs:comment "The emotion expressed in a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:FactualityValue,
+            grasp:SentimentValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspe:anger graspe:disgust graspe:fear graspe:happiness graspe:sadness graspe:surprise ) ] .
+
+    gaf:Instance a owl:Class ;
+        rdfs:label "Instance" ;
+        rdfs:comment "Instances are statements about real world entities, including actions, processes and abstract notions. They are the primary subject of individuals of type gaf:Mention that can denote them."^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotedBy ;
+                owl:someValuesFrom gaf:Mention ] .
+
+    grasp:AttributionValue a owl:Class ;
+        rdfs:label "Attribution value"^^xsd:string ;
+        rdfs:comment "The value of a grasp:Attribution"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    sem:Event a owl:Class ;
+        rdfs:label "Event" ;
+        rdfs:comment "Events are things that happen. This comprises everything from historical events to web site sessions and mythical journeys. Event is the central class of SEM." ;
+        skos:broadMatch <http://linkedevents.org/ontology/Event>,
+            <http://purl.org/NET/c4dm/event.owl#Event> ;
+        skos:closeMatch dcmitype:Event,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Situation>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#perdurant>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Process>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E5.Event> .
+
+    gaf:Mention a owl:Class ;
+        rdfs:label "Mention" ;
+        rdfs:comment """Mentions are references to members of the gaf:Instance class as they occur in (web) media such as texts, video, audio, images, etc. Mentions denote gaf:Instances.
+
+A Mention uniquely identifies the (part of a) web source that denotes the mention. We refer to the standard use of fragment identifiers for different media types. """^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotes ;
+                owl:someValuesFrom gaf:Instance ] .
+
+    [] a owl:Ontology .
+}
+
+leolaniWorld:African_Americans_are_animals_incapable {
+    leolaniWorld:African_Americans ns2:are leolaniWorld:animals_incapable .
+}
+
+leolaniWorld:African_Americans_are_animals {
+    leolaniWorld:African_Americans ns2:are leolaniWorld:animals .
+}
+
+leolaniWorld:Niggas_are_cause {
+    leolaniWorld:Niggas ns2:are leolaniWorld:cause .
+}
+
+leolaniWorld:African_Americans_are_animals_incapable_of_love {
+    leolaniWorld:African_Americans ns2:are leolaniWorld:animals_incapable_of_love .
+}
+
+leolaniWorld:African_Americans_are_essentially_animals {
+    leolaniWorld:African_Americans ns2:are leolaniWorld:essentially_animals .
+}
+
+leolaniWorld:they_are_inferior {
+    leolaniWorld:they ns2:are leolaniWorld:inferior .
+}
+
+leolaniWorld:they_are_because_inferior {
+    leolaniWorld:they ns2:are leolaniWorld:because_inferior .
+}
+
+leolaniWorld:African_Americans_are_essentially_animals_incapable_of_feeling_love {
+    leolaniWorld:African_Americans ns2:are leolaniWorld:essentially_animals_incapable_of_feeling_love .
+}
+
+leolaniWorld:idea_is_opposite {
+    leolaniWorld:idea ns2:is leolaniWorld:opposite .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context253 a eps:Context ;
+        rdfs:label "context253" ;
+        hs:id "253"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2428 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "78"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2428 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2428" ;
+        hs:id "2428"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2428_utterance0,
+            leolaniTalk:chat2428_utterance1,
+            leolaniTalk:chat2428_utterance2,
+            leolaniTalk:chat2428_utterance3,
+            leolaniTalk:chat2428_utterance4,
+            leolaniTalk:chat2428_utterance5 .
+
+    leolaniTalk:chat2428_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2428_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2428_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2428_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2428_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2428_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2428_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2428_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2428_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2428_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2428_utterance5 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2428_utterance5" ;
+        hs:id "5"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:African_Americans_are_animals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "African_Americans_are_animals" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:African_Americans_are_animals_incapable a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "African_Americans_are_animals_incapable" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:African_Americans_are_animals_incapable_of_feeling_love a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "African_Americans_are_animals_incapable_of_feeling_love" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:African_Americans_are_animals_incapable_of_love a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "African_Americans_are_animals_incapable_of_love" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:African_Americans_are_essentially_animals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "African_Americans_are_essentially_animals" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:African_Americans_are_essentially_animals_incapable a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "African_Americans_are_essentially_animals_incapable" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:African_Americans_are_essentially_animals_incapable_of_feeling_love a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "African_Americans_are_essentially_animals_incapable_of_feeling_love" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:African_Americans_are_essentially_animals_incapable_of_love a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "African_Americans_are_essentially_animals_incapable_of_love" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:I_so-will-judge_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_so-will-judge_them" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:I_will-judge_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_will-judge_them" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:Niggas_are-cause-of_crime a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Niggas_are-cause-of_crime" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:Niggas_are-cause_because_inferior a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Niggas_are-cause_because_inferior" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:Niggas_are-cause_because_inferior_to_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Niggas_are-cause_because_inferior_to_us" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:Niggas_are-cause_inferior a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Niggas_are-cause_inferior" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:Niggas_are-cause_inferior_to_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Niggas_are-cause_inferior_to_us" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:Niggas_are_cause a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Niggas_are_cause" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:cause_is-in_fact a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "cause_is-in_fact" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:idea_is-opposite-of_justice a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "idea_is-opposite-of_justice" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:idea_is_opposite a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "idea_is_opposite" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:large_number_are-suffering-because_crisis a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "large_number_are-suffering-because_crisis" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance5_char0-214 .
+
+    leolaniWorld:large_number_are-suffering-because_economic_crisis a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "large_number_are-suffering-because_economic_crisis" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance5_char0-214 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:niggas_are-cause-in_fact a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "niggas_are-cause-in_fact" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:niggas_are-cause-of_crisis a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "niggas_are-cause-of_crisis" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:niggas_are-cause-of_economic_crisis a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "niggas_are-cause-of_economic_crisis" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:niggas_are_cause a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "niggas_are_cause" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:niggas_are_in_fact_cause_of_crisis a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "niggas_are_in_fact_cause_of_crisis" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:niggas_are_in_fact_cause_of_economic_crisis a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "niggas_are_in_fact_cause_of_economic_crisis" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:number_are-suffering-because_crisis a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "number_are-suffering-because_crisis" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance5_char0-214 .
+
+    leolaniWorld:number_are-suffering-because_economic_crisis a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "number_are-suffering-because_economic_crisis" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance5_char0-214 .
+
+    leolaniWorld:rise_is-in_crime a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "rise_is-in_crime" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:someone_said-because_color a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "someone_said-because_color" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance1_char0-100 .
+
+    leolaniWorld:someone_said-because_color_of_your_skin a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "someone_said-because_color_of_your_skin" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance1_char0-100 .
+
+    leolaniWorld:they_are-inferior-to_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-inferior-to_us" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:they_are_because_inferior a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_because_inferior" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:they_are_because_inferior_to_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_because_inferior_to_us" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:they_are_inferior a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_inferior" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:we_must-keep-aside_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_must-keep-aside_them" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:we_must-keep_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_must-keep_them" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance2_char0-90 .
+
+    ns1:re_doing_is_discrimination a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_'re_doing_is_discrimination" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance3_char0-229 .
+
+    ns1:re_doing_is_racial_discrimination a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_'re_doing_is_racial_discrimination" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:you_would_Would_happy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_would_Would_happy" ;
+        gaf:denotedBy leolaniTalk:chat2428_utterance1_char0-100 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Niggas_are-cause_because_inferior_to_us {
+    leolaniWorld:Niggas ns2:are_cause leolaniWorld:because_inferior_to_us .
+}
+
+leolaniWorld:they_are-inferior-to_us {
+    leolaniWorld:they ns2:are_inferior_to leolaniWorld:us .
+}
+
+leolaniWorld:Niggas_are-cause_inferior_to_us {
+    leolaniWorld:Niggas ns2:are_cause leolaniWorld:inferior_to_us .
+}
+
+leolaniWorld:idea_is-opposite-of_justice {
+    leolaniWorld:idea ns2:is_opposite_of leolaniWorld:justice .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:niggas_are_in_fact_cause_of_economic_crisis {
+    leolaniWorld:niggas ns2:are leolaniWorld:in_fact_cause_of_economic_crisis .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:African_Americans a gaf:Instance ;
+        rdfs:label "african-americans" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:Niggas a gaf:Instance ;
+        rdfs:label "niggas" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:Would_happy a gaf:Instance ;
+        rdfs:label "would-happy" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance1_char0-100 .
+
+    leolaniWorld:animals a gaf:Instance ;
+        rdfs:label "animals" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:animals_incapable a gaf:Instance ;
+        rdfs:label "animals-incapable" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:animals_incapable_of_feeling_love a gaf:Instance ;
+        rdfs:label "animals-incapable-of-feeling-love" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:animals_incapable_of_love a gaf:Instance ;
+        rdfs:label "animals-incapable-of-love" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:because_inferior a gaf:Instance ;
+        rdfs:label "because-inferior" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:because_inferior_to_us a gaf:Instance ;
+        rdfs:label "because-inferior-to-us" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:cause a gaf:Instance ;
+        rdfs:label "cause" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90,
+            leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:color a gaf:Instance ;
+        rdfs:label "color" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance1_char0-100 .
+
+    leolaniWorld:color_of_your_skin a gaf:Instance ;
+        rdfs:label "color-of-your-skin" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance1_char0-100 .
+
+    leolaniWorld:crime a gaf:Instance ;
+        rdfs:label "crime" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90,
+            leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:crisis a gaf:Instance ;
+        rdfs:label "crisis" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance4_char0-86,
+            leolaniTalk:chat2428_utterance5_char0-214 .
+
+    leolaniWorld:discrimination a gaf:Instance ;
+        rdfs:label "discrimination" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:economic_crisis a gaf:Instance ;
+        rdfs:label "economic-crisis" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance4_char0-86,
+            leolaniTalk:chat2428_utterance5_char0-214 .
+
+    leolaniWorld:essentially_animals a gaf:Instance ;
+        rdfs:label "essentially-animals" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:essentially_animals_incapable a gaf:Instance ;
+        rdfs:label "essentially-animals-incapable" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:essentially_animals_incapable_of_feeling_love a gaf:Instance ;
+        rdfs:label "essentially-animals-incapable-of-feeling-love" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:essentially_animals_incapable_of_love a gaf:Instance ;
+        rdfs:label "essentially-animals-incapable-of-love" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance0_char0-69 .
+
+    leolaniWorld:fact a gaf:Instance ;
+        rdfs:label "fact" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:idea a gaf:Instance ;
+        rdfs:label "idea" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:in_fact_cause_of_crisis a gaf:Instance ;
+        rdfs:label "in-fact-cause-of-crisis" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:in_fact_cause_of_economic_crisis a gaf:Instance ;
+        rdfs:label "in-fact-cause-of-economic-crisis" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:inferior a gaf:Instance ;
+        rdfs:label "inferior" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:inferior_to_us a gaf:Instance ;
+        rdfs:label "inferior-to-us" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:justice a gaf:Instance ;
+        rdfs:label "justice" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:large_number a gaf:Instance ;
+        rdfs:label "large-number" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance5_char0-214 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:niggas a gaf:Instance ;
+        rdfs:label "niggas" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:number a gaf:Instance ;
+        rdfs:label "number" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance5_char0-214 .
+
+    leolaniWorld:opposite a gaf:Instance ;
+        rdfs:label "opposite" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:racial_discrimination a gaf:Instance ;
+        rdfs:label "racial-discrimination" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:rise a gaf:Instance ;
+        rdfs:label "rise" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance3_char0-229 .
+
+    leolaniWorld:someone a gaf:Instance ;
+        rdfs:label "someone" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance1_char0-100 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90,
+            leolaniTalk:chat2428_utterance4_char0-86 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance2_char0-90 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance1_char0-100 .
+
+    ns1:re_doing a gaf:Instance ;
+        rdfs:label "you-re-doing" ;
+        gaf:denotedIn leolaniTalk:chat2428_utterance3_char0-229 .
+}
+
+leolaniWorld:African_Americans_are_essentially_animals_incapable_of_love {
+    leolaniWorld:African_Americans ns2:are leolaniWorld:essentially_animals_incapable_of_love .
+}
+
+leolaniWorld:I_will-judge_them {
+    leolaniWorld:I ns2:will_judge leolaniWorld:them .
+}
+
+leolaniWorld:African_Americans_are_essentially_animals_incapable {
+    leolaniWorld:African_Americans ns2:are leolaniWorld:essentially_animals_incapable .
+}
+
+leolaniWorld:niggas_are_cause {
+    leolaniWorld:niggas ns2:are leolaniWorld:cause .
+}
+
+leolaniWorld:large_number_are-suffering-because_economic_crisis {
+    leolaniWorld:large_number ns2:are_suffering_because leolaniWorld:economic_crisis .
+}
+
+leolaniWorld:African_Americans_are_animals_incapable_of_feeling_love {
+    leolaniWorld:African_Americans ns2:are leolaniWorld:animals_incapable_of_feeling_love .
+}
+
+leolaniWorld:Niggas_are-cause-of_crime {
+    leolaniWorld:Niggas ns2:are_cause_of leolaniWorld:crime .
+}
+
+leolaniWorld:niggas_are_in_fact_cause_of_crisis {
+    leolaniWorld:niggas ns2:are leolaniWorld:in_fact_cause_of_crisis .
+}
+
+leolaniWorld:large_number_are-suffering-because_crisis {
+    leolaniWorld:large_number ns2:are_suffering_because leolaniWorld:crisis .
+}
+
+leolaniWorld:they_are_because_inferior_to_us {
+    leolaniWorld:they ns2:are leolaniWorld:because_inferior_to_us .
+}
+
+leolaniWorld:Niggas_are-cause_inferior {
+    leolaniWorld:Niggas ns2:are_cause leolaniWorld:inferior .
+}
+
+leolaniWorld:niggas_are-cause-of_crisis {
+    leolaniWorld:niggas ns2:are_cause_of leolaniWorld:crisis .
+}
+
+leolaniWorld:someone_said-because_color_of_your_skin {
+    leolaniWorld:someone ns2:said_because leolaniWorld:color_of_your_skin .
+}
+
+leolaniWorld:niggas_are-cause-in_fact {
+    leolaniWorld:niggas ns2:are_cause_in leolaniWorld:fact .
+}
+
+leolaniWorld:cause_is-in_fact {
+    leolaniWorld:cause ns2:is_in leolaniWorld:fact .
+}
+
+ns1:re_doing_is_discrimination {
+    ns1:re_doing ns2:is leolaniWorld:discrimination .
+}
+
+leolaniWorld:you_would_Would_happy {
+    leolaniWorld:you ns2:would leolaniWorld:Would_happy .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:African_Americans_are_animals_0004 a grasp:Attribution ;
+        rdfs:label "African_Americans_are_animals_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance0_char0-69 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:African_Americans_are_animals_incapable_0004 a grasp:Attribution ;
+        rdfs:label "African_Americans_are_animals_incapable_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance0_char0-69 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:African_Americans_are_animals_incapable_of_feeling_love_0004 a grasp:Attribution ;
+        rdfs:label "African_Americans_are_animals_incapable_of_feeling_love_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance0_char0-69 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:African_Americans_are_animals_incapable_of_love_0004 a grasp:Attribution ;
+        rdfs:label "African_Americans_are_animals_incapable_of_love_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance0_char0-69 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:African_Americans_are_essentially_animals_0004 a grasp:Attribution ;
+        rdfs:label "African_Americans_are_essentially_animals_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance0_char0-69 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:African_Americans_are_essentially_animals_incapable_0004 a grasp:Attribution ;
+        rdfs:label "African_Americans_are_essentially_animals_incapable_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance0_char0-69 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:African_Americans_are_essentially_animals_incapable_of_feeling_love_0004 a grasp:Attribution ;
+        rdfs:label "African_Americans_are_essentially_animals_incapable_of_feeling_love_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance0_char0-69 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:African_Americans_are_essentially_animals_incapable_of_love_0004 a grasp:Attribution ;
+        rdfs:label "African_Americans_are_essentially_animals_incapable_of_love_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance0_char0-69 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_so-will-judge_them_00012 a grasp:Attribution ;
+        rdfs:label "I_so-will-judge_them_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance4_char0-86 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_will-judge_them_00012 a grasp:Attribution ;
+        rdfs:label "I_will-judge_them_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance4_char0-86 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Niggas_are-cause-of_crime_00028 a grasp:Attribution ;
+        rdfs:label "Niggas_are-cause-of_crime_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Niggas_are-cause_because_inferior_00028 a grasp:Attribution ;
+        rdfs:label "Niggas_are-cause_because_inferior_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Niggas_are-cause_because_inferior_to_us_00028 a grasp:Attribution ;
+        rdfs:label "Niggas_are-cause_because_inferior_to_us_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Niggas_are-cause_inferior_00028 a grasp:Attribution ;
+        rdfs:label "Niggas_are-cause_inferior_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Niggas_are-cause_inferior_to_us_00028 a grasp:Attribution ;
+        rdfs:label "Niggas_are-cause_inferior_to_us_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Niggas_are_cause_00028 a grasp:Attribution ;
+        rdfs:label "Niggas_are_cause_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:cause_is-in_fact_00012 a grasp:Attribution ;
+        rdfs:label "cause_is-in_fact_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance4_char0-86 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:idea_is-opposite-of_justice_00028 a grasp:Attribution ;
+        rdfs:label "idea_is-opposite-of_justice_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance3_char0-229 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:idea_is_opposite_00028 a grasp:Attribution ;
+        rdfs:label "idea_is_opposite_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance3_char0-229 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:large_number_are-suffering-because_crisis_00028 a grasp:Attribution ;
+        rdfs:label "large_number_are-suffering-because_crisis_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance5_char0-214 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:large_number_are-suffering-because_economic_crisis_00028 a grasp:Attribution ;
+        rdfs:label "large_number_are-suffering-because_economic_crisis_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance5_char0-214 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:niggas_are-cause-in_fact_00012 a grasp:Attribution ;
+        rdfs:label "niggas_are-cause-in_fact_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance4_char0-86 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:niggas_are-cause-of_crisis_00012 a grasp:Attribution ;
+        rdfs:label "niggas_are-cause-of_crisis_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance4_char0-86 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:niggas_are-cause-of_economic_crisis_00012 a grasp:Attribution ;
+        rdfs:label "niggas_are-cause-of_economic_crisis_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance4_char0-86 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:niggas_are_cause_00012 a grasp:Attribution ;
+        rdfs:label "niggas_are_cause_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance4_char0-86 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:niggas_are_in_fact_cause_of_crisis_00012 a grasp:Attribution ;
+        rdfs:label "niggas_are_in_fact_cause_of_crisis_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance4_char0-86 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:niggas_are_in_fact_cause_of_economic_crisis_00012 a grasp:Attribution ;
+        rdfs:label "niggas_are_in_fact_cause_of_economic_crisis_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance4_char0-86 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:number_are-suffering-because_crisis_00028 a grasp:Attribution ;
+        rdfs:label "number_are-suffering-because_crisis_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance5_char0-214 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:number_are-suffering-because_economic_crisis_00028 a grasp:Attribution ;
+        rdfs:label "number_are-suffering-because_economic_crisis_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance5_char0-214 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:rise_is-in_crime_00028 a grasp:Attribution ;
+        rdfs:label "rise_is-in_crime_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance3_char0-229 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:someone_said-because_color_00026 a grasp:Attribution ;
+        rdfs:label "someone_said-because_color_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance1_char0-100 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:someone_said-because_color_of_your_skin_00026 a grasp:Attribution ;
+        rdfs:label "someone_said-because_color_of_your_skin_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance1_char0-100 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-inferior-to_us_00028 a grasp:Attribution ;
+        rdfs:label "they_are-inferior-to_us_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_because_inferior_00028 a grasp:Attribution ;
+        rdfs:label "they_are_because_inferior_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_because_inferior_to_us_00028 a grasp:Attribution ;
+        rdfs:label "they_are_because_inferior_to_us_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_inferior_00028 a grasp:Attribution ;
+        rdfs:label "they_are_inferior_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_must-keep-aside_them_00028 a grasp:Attribution ;
+        rdfs:label "we_must-keep-aside_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_must-keep_them_00028 a grasp:Attribution ;
+        rdfs:label "we_must-keep_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/you_'re_doing_is_discrimination_00028> a grasp:Attribution ;
+        rdfs:label "you_'re_doing_is_discrimination_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance3_char0-229 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/you_'re_doing_is_racial_discrimination_00028> a grasp:Attribution ;
+        rdfs:label "you_'re_doing_is_racial_discrimination_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance3_char0-229 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_would_Would_happy_00026 a grasp:Attribution ;
+        rdfs:label "you_would_Would_happy_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2428_utterance1_char0-100 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2428_utterance1_char0-100 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2428_utterance1_char0-100" ;
+        gaf:containsDenotation leolaniWorld:Would_happy,
+            leolaniWorld:color,
+            leolaniWorld:color_of_your_skin,
+            leolaniWorld:someone,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:someone_said-because_color,
+            leolaniWorld:someone_said-because_color_of_your_skin,
+            leolaniWorld:you_would_Would_happy ;
+        grasp:hasAttribution leolaniTalk:someone_said-because_color_00026,
+            leolaniTalk:someone_said-because_color_of_your_skin_00026,
+            leolaniTalk:you_would_Would_happy_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:12:31.454892"^^xml1:string,
+            "2024-06-05T22:12:31.454952"^^xml1:string,
+            "2024-06-05T22:12:31.454975"^^xml1:string ;
+        rdf:value "Would you be happy if someone said you're the antithesis of human because of the color of your skin?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2428_utterance1 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    leolaniTalk:chat2428_utterance5_char0-214 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2428_utterance5_char0-214" ;
+        gaf:containsDenotation leolaniWorld:crisis,
+            leolaniWorld:economic_crisis,
+            leolaniWorld:large_number,
+            leolaniWorld:number ;
+        gaf:denotes leolaniWorld:large_number_are-suffering-because_crisis,
+            leolaniWorld:large_number_are-suffering-because_economic_crisis,
+            leolaniWorld:number_are-suffering-because_crisis,
+            leolaniWorld:number_are-suffering-because_economic_crisis ;
+        grasp:hasAttribution leolaniTalk:large_number_are-suffering-because_crisis_00028,
+            leolaniTalk:large_number_are-suffering-because_economic_crisis_00028,
+            leolaniTalk:number_are-suffering-because_crisis_00028,
+            leolaniTalk:number_are-suffering-because_economic_crisis_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:12:58.327012"^^xml1:string,
+            "2024-06-05T22:12:58.327093"^^xml1:string,
+            "2024-06-05T22:12:58.327116"^^xml1:string,
+            "2024-06-05T22:12:58.327137"^^xml1:string ;
+        rdf:value "Because of economic crisis, a large number of people are suffering and unfortunately, many of them are black. It's not reasonable to say that they're causing it since they're the actual victims, don't you think so?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2428_utterance5 .
+
+    leolaniTalk:chat2428_utterance3_char0-229 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2428_utterance3_char0-229" ;
+        gaf:containsDenotation leolaniWorld:crime,
+            leolaniWorld:discrimination,
+            leolaniWorld:idea,
+            leolaniWorld:justice,
+            leolaniWorld:opposite,
+            leolaniWorld:racial_discrimination,
+            leolaniWorld:rise,
+            ns1:re_doing ;
+        gaf:denotes leolaniWorld:idea_is-opposite-of_justice,
+            leolaniWorld:idea_is_opposite,
+            leolaniWorld:rise_is-in_crime,
+            ns1:re_doing_is_discrimination,
+            ns1:re_doing_is_racial_discrimination ;
+        grasp:hasAttribution leolaniTalk:idea_is-opposite-of_justice_00028,
+            leolaniTalk:idea_is_opposite_00028,
+            leolaniTalk:rise_is-in_crime_00028,
+            <http://cltl.nl/leolani/talk/you_'re_doing_is_discrimination_00028>,
+            <http://cltl.nl/leolani/talk/you_'re_doing_is_racial_discrimination_00028> ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:12:45.039897"^^xml1:string,
+            "2024-06-05T22:12:45.039960"^^xml1:string,
+            "2024-06-05T22:12:45.039986"^^xml1:string,
+            "2024-06-05T22:12:45.040008"^^xml1:string,
+            "2024-06-05T22:12:45.040030"^^xml1:string ;
+        rdf:value "What you're doing is racial discrimination. The rise in crime and violence is due to poverty and other inequalities, not because POCs are inferior like some racist groups want you to believe. This idea is the opposite of justice."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2428_utterance3 .
+
+    leolaniTalk:chat2428_utterance0_char0-69 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2428_utterance0_char0-69" ;
+        gaf:containsDenotation leolaniWorld:African_Americans,
+            leolaniWorld:animals,
+            leolaniWorld:animals_incapable,
+            leolaniWorld:animals_incapable_of_feeling_love,
+            leolaniWorld:animals_incapable_of_love,
+            leolaniWorld:essentially_animals,
+            leolaniWorld:essentially_animals_incapable,
+            leolaniWorld:essentially_animals_incapable_of_feeling_love,
+            leolaniWorld:essentially_animals_incapable_of_love ;
+        gaf:denotes leolaniWorld:African_Americans_are_animals,
+            leolaniWorld:African_Americans_are_animals_incapable,
+            leolaniWorld:African_Americans_are_animals_incapable_of_feeling_love,
+            leolaniWorld:African_Americans_are_animals_incapable_of_love,
+            leolaniWorld:African_Americans_are_essentially_animals,
+            leolaniWorld:African_Americans_are_essentially_animals_incapable,
+            leolaniWorld:African_Americans_are_essentially_animals_incapable_of_feeling_love,
+            leolaniWorld:African_Americans_are_essentially_animals_incapable_of_love ;
+        grasp:hasAttribution leolaniTalk:African_Americans_are_animals_0004,
+            leolaniTalk:African_Americans_are_animals_incapable_0004,
+            leolaniTalk:African_Americans_are_animals_incapable_of_feeling_love_0004,
+            leolaniTalk:African_Americans_are_animals_incapable_of_love_0004,
+            leolaniTalk:African_Americans_are_essentially_animals_0004,
+            leolaniTalk:African_Americans_are_essentially_animals_incapable_0004,
+            leolaniTalk:African_Americans_are_essentially_animals_incapable_of_feeling_love_0004,
+            leolaniTalk:African_Americans_are_essentially_animals_incapable_of_love_0004 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:12:24.732345"^^xml1:string,
+            "2024-06-05T22:12:24.732406"^^xml1:string,
+            "2024-06-05T22:12:24.732430"^^xml1:string,
+            "2024-06-05T22:12:24.732453"^^xml1:string,
+            "2024-06-05T22:12:24.732475"^^xml1:string,
+            "2024-06-05T22:12:24.732498"^^xml1:string,
+            "2024-06-05T22:12:24.732534"^^xml1:string,
+            "2024-06-05T22:12:24.732557"^^xml1:string ;
+        rdf:value "African Americans are essentially animals, incapable of feeling love."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2428_utterance0 .
+
+    graspe:LOVE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "LOVE" .
+
+    leolaniTalk:chat2428_utterance4_char0-86 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2428_utterance4_char0-86" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:cause,
+            leolaniWorld:crisis,
+            leolaniWorld:economic_crisis,
+            leolaniWorld:fact,
+            leolaniWorld:in_fact_cause_of_crisis,
+            leolaniWorld:in_fact_cause_of_economic_crisis,
+            leolaniWorld:niggas,
+            leolaniWorld:them ;
+        gaf:denotes leolaniWorld:I_so-will-judge_them,
+            leolaniWorld:I_will-judge_them,
+            leolaniWorld:cause_is-in_fact,
+            leolaniWorld:niggas_are-cause-in_fact,
+            leolaniWorld:niggas_are-cause-of_crisis,
+            leolaniWorld:niggas_are-cause-of_economic_crisis,
+            leolaniWorld:niggas_are_cause,
+            leolaniWorld:niggas_are_in_fact_cause_of_crisis,
+            leolaniWorld:niggas_are_in_fact_cause_of_economic_crisis ;
+        grasp:hasAttribution leolaniTalk:I_so-will-judge_them_00012,
+            leolaniTalk:I_will-judge_them_00012,
+            leolaniTalk:cause_is-in_fact_00012,
+            leolaniTalk:niggas_are-cause-in_fact_00012,
+            leolaniTalk:niggas_are-cause-of_crisis_00012,
+            leolaniTalk:niggas_are-cause-of_economic_crisis_00012,
+            leolaniTalk:niggas_are_cause_00012,
+            leolaniTalk:niggas_are_in_fact_cause_of_crisis_00012,
+            leolaniTalk:niggas_are_in_fact_cause_of_economic_crisis_00012 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:12:51.727656"^^xml1:string,
+            "2024-06-05T22:12:51.727718"^^xml1:string,
+            "2024-06-05T22:12:51.727741"^^xml1:string,
+            "2024-06-05T22:12:51.727763"^^xml1:string,
+            "2024-06-05T22:12:51.727785"^^xml1:string,
+            "2024-06-05T22:12:51.727806"^^xml1:string,
+            "2024-06-05T22:12:51.727827"^^xml1:string,
+            "2024-06-05T22:12:51.727848"^^xml1:string,
+            "2024-06-05T22:12:51.727880"^^xml1:string ;
+        rdf:value "That's true, and in fact niggas are the cause of economic crisis so I will judge them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2428_utterance4 .
+
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
+
+    leolaniTalk:chat2428_utterance2_char0-90 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2428_utterance2_char0-90" ;
+        gaf:containsDenotation leolaniWorld:Niggas,
+            leolaniWorld:because_inferior,
+            leolaniWorld:because_inferior_to_us,
+            leolaniWorld:cause,
+            leolaniWorld:crime,
+            leolaniWorld:inferior,
+            leolaniWorld:inferior_to_us,
+            leolaniWorld:them,
+            leolaniWorld:they,
+            leolaniWorld:us,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:Niggas_are-cause-of_crime,
+            leolaniWorld:Niggas_are-cause_because_inferior,
+            leolaniWorld:Niggas_are-cause_because_inferior_to_us,
+            leolaniWorld:Niggas_are-cause_inferior,
+            leolaniWorld:Niggas_are-cause_inferior_to_us,
+            leolaniWorld:Niggas_are_cause,
+            leolaniWorld:they_are-inferior-to_us,
+            leolaniWorld:they_are_because_inferior,
+            leolaniWorld:they_are_because_inferior_to_us,
+            leolaniWorld:they_are_inferior,
+            leolaniWorld:we_must-keep-aside_them,
+            leolaniWorld:we_must-keep_them ;
+        grasp:hasAttribution leolaniTalk:Niggas_are-cause-of_crime_00028,
+            leolaniTalk:Niggas_are-cause_because_inferior_00028,
+            leolaniTalk:Niggas_are-cause_because_inferior_to_us_00028,
+            leolaniTalk:Niggas_are-cause_inferior_00028,
+            leolaniTalk:Niggas_are-cause_inferior_to_us_00028,
+            leolaniTalk:Niggas_are_cause_00028,
+            leolaniTalk:they_are-inferior-to_us_00028,
+            leolaniTalk:they_are_because_inferior_00028,
+            leolaniTalk:they_are_because_inferior_to_us_00028,
+            leolaniTalk:they_are_inferior_00028,
+            leolaniTalk:we_must-keep-aside_them_00028,
+            leolaniTalk:we_must-keep_them_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:12:38.131609"^^xml1:string,
+            "2024-06-05T22:12:38.131674"^^xml1:string,
+            "2024-06-05T22:12:38.131702"^^xml1:string,
+            "2024-06-05T22:12:38.131727"^^xml1:string,
+            "2024-06-05T22:12:38.131751"^^xml1:string,
+            "2024-06-05T22:12:38.131776"^^xml1:string,
+            "2024-06-05T22:12:38.131802"^^xml1:string,
+            "2024-06-05T22:12:38.131827"^^xml1:string,
+            "2024-06-05T22:12:38.131851"^^xml1:string,
+            "2024-06-05T22:12:38.131875"^^xml1:string,
+            "2024-06-05T22:12:38.131901"^^xml1:string,
+            "2024-06-05T22:12:38.131925"^^xml1:string ;
+        rdf:value "Niggas are the cause of crime because they are inferior to us and we must keep them aside."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2428_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:we_must-keep_them {
+    leolaniWorld:we ns2:must_keep leolaniWorld:them .
+}
+
+leolaniWorld:number_are-suffering-because_economic_crisis {
+    leolaniWorld:number ns2:are_suffering_because leolaniWorld:economic_crisis .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:we_must-keep-aside_them {
+    leolaniWorld:we ns2:must_keep_aside leolaniWorld:them .
+}
+
+leolaniWorld:Niggas_are-cause_because_inferior {
+    leolaniWorld:Niggas ns2:are_cause leolaniWorld:because_inferior .
+}
+
+leolaniWorld:number_are-suffering-because_crisis {
+    leolaniWorld:number ns2:are_suffering_because leolaniWorld:crisis .
+}
+
+leolaniWorld:niggas_are-cause-of_economic_crisis {
+    leolaniWorld:niggas ns2:are_cause_of leolaniWorld:economic_crisis .
+}
+
+leolaniWorld:rise_is-in_crime {
+    leolaniWorld:rise ns2:is_in leolaniWorld:crime .
+}
+
+ns1:re_doing_is_racial_discrimination {
+    ns1:re_doing ns2:is leolaniWorld:racial_discrimination .
+}
+

@@ -1,0 +1,1542 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eps: <http://cltl.nl/episodicawareness/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix hs: <http://cltl-hs.org/> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix ns1: <http://cltl.nl/leolani/n2mu/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time1: <http://www.w3.org/TR/owl-time/#> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+leolaniWorld:our_NHS_staff_most-of-are_As_matter_immigrants {
+    leolaniWorld:our_NHS_staff ns1:most_of_are leolaniWorld:As_matter_immigrants .
+}
+
+leolaniWorld:We_will-need-workforce-from_from_country {
+    leolaniWorld:We ns1:will_need_workforce_from leolaniWorld:from_country .
+}
+
+leolaniWorld:most_are_immigrants {
+    leolaniWorld:most ns1:are leolaniWorld:immigrants .
+}
+
+leolaniWorld:health_system_would-collapse-without_migrant_workers {
+    leolaniWorld:health_system ns1:would_collapse_without leolaniWorld:migrant_workers .
+}
+
+leolaniWorld:Ontology {
+    eps:hasContext a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance,
+            sem:Event ;
+        rdfs:range eps:Context ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    eps:hasDetection a owl:ObjectProperty ;
+        rdfs:domain eps:Context ;
+        rdfs:range grasp:Detection ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    gaf:Assertion a owl:Class ;
+        rdfs:subClassOf gaf:Instance .
+
+    grasp:Chat a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:Experience a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Statement a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Visual a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:hasAttribution a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Attribution ;
+        owl:inverseOf grasp:isAttributionFor .
+
+    grasp:wasAttributedTo a owl:ObjectProperty ;
+        rdfs:label "was attributed to" ;
+        rdfs:comment "States that a gaf:Mention was attributed to a gaf:Instance. This is a sub property of the prov:wasAttributedTo relation that can be used to relate any prov:Entity to any prov:Agent."^^xsd:string ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Source ;
+        rdfs:subPropertyOf prov:wasAttributedTo .
+
+    <http://schema.org/Place> a owl:Class .
+
+    sem:hasActor a owl:ObjectProperty ;
+        rdfs:label "has Actor" ;
+        rdfs:comment "Has actor is used to state which Actors or Objects participate in an Event." ;
+        rdfs:range sem:Actor ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasBeginTimeStamp a owl:DatatypeProperty ;
+        rdfs:label "has begin timestamp" ;
+        rdfs:comment "Has begin timestamp is used to indicate the beginning of a time interval. Omitting the hasBeginTimeStamp while stating a hasEndTimeStamp is interpreted as an open ended interval." ;
+        rdfs:subPropertyOf sem:hasTimeStamp .
+
+    sem:hasPlace a owl:ObjectProperty ;
+        rdfs:label "has Place" ;
+        rdfs:comment "Has place is used to state in which Place(s) an Event happened. Coordinates can be attached to the Place with the W3C Geospatial Vocabulary (http://www.w3.org/2005/Incubator/geo/XGR-geo-20071023/)." ;
+        rdfs:range sem:Place ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasSubEvent a owl:ObjectProperty ;
+        rdfs:label "has subevent" ;
+        rdfs:comment "Has subevent connects an Event to other Events that belong to it. This is a very generic property that does not mean the subevents fully define the superconcept or that there is any causal relationship." ;
+        rdfs:domain sem:Event ;
+        rdfs:range sem:Event ;
+        rdfs:subPropertyOf sem:eventProperty ;
+        owl:inverseOf sem:subEventOf .
+
+    sem:hasTime a owl:ObjectProperty ;
+        rdfs:label "has Time" ;
+        rdfs:comment "Has time is used to indicate at which time an Event took place or when a property under the Temporary Constraint is valid. Has time points to a symbolic representation of time, which allows semantic relations between time resources. (see http://www.w3.org/TR/owl-time/)" ;
+        rdfs:range sem:Time ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    skos:broadMatch a owl:AnnotationProperty .
+
+    skos:closeMatch a owl:AnnotationProperty .
+
+    skos:narrowMatch a owl:AnnotationProperty .
+
+    prov:category a owl:AnnotationProperty .
+
+    prov:component a owl:AnnotationProperty .
+
+    prov:definition a owl:AnnotationProperty .
+
+    prov:hadDerivation a owl:ObjectProperty ;
+        owl:inverseOf prov:wasDerivedFrom .
+
+    prov:inverse a owl:AnnotationProperty .
+
+    prov:qualifiedForm a owl:AnnotationProperty .
+
+    gaf:containsDenotation a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        owl:inverseOf gaf:denotedIn .
+
+    gaf:denotedBy a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention ;
+        rdfs:subPropertyOf gaf:denotedIn ;
+        owl:inverseOf gaf:denotes .
+
+    grasp:Source a owl:Class ;
+        rdfs:label "Source" ;
+        rdfs:comment "" ;
+        rdfs:subClassOf owl:Thing .
+
+    grasp:Utterance a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    graspe:anger a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:disgust a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:fear a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:happiness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:sadness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:surprise a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspf:certain a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:negative a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:non-future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:positive a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:possible a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:probable a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:underspecified a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    grasps:negative a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    grasps:positive a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    sem:Actor a owl:Class ;
+        rdfs:label "Actor" ;
+        rdfs:comment """Actors are entities that take part in an Event, either actively or passively. Actors do not necessarily have to be sentient. They can also be objects. Actors are a thing, animate or inanimate, physical or non-physical.
+""" ;
+        skos:broadMatch <http://sw.opencyc.org/2009/04/07/concept/en/SomethingExisting>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant> ;
+        skos:closeMatch dcterms:Agent,
+            dcterms:AgentClass,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Agent-Generic>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Agent>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E39.Actor>,
+            foaf:Agent .
+
+    sem:Place a owl:Class ;
+        rdfs:label "Place" ;
+        rdfs:comment "Places are locations where an Event happens. They do not need to be physical places and hence do not necessarily need coordinates. Neither do they need to have any significance apart from them being the location of an Event." ;
+        skos:closeMatch dcterms:Location,
+            <http://sw.opencyc.org/2009/04/07/concept/en/EnduringThing-Localized>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#GeographicArea>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E53.Place> ;
+        skos:narrowMatch <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#PhysicalRegion>,
+            <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+    sem:Time a owl:Class ;
+        rdfs:label "Time" ;
+        rdfs:comment "Time contains symbolic representations of when an Event took place. Time instances do not necessarily need to have a timestamp associated with them. The Time class exists to represent semantics of time, e.g. that one thing happens before another, even though the exact timestamps are unknown." ;
+        skos:broadMatch <http://www.w3.org/2006/timeTemporalEntity> .
+
+    sem:hasTimeStamp a owl:DatatypeProperty .
+
+    sem:subEventOf a owl:ObjectProperty ;
+        rdfs:label "subevent of" ;
+        rdfs:comment "Inverse property of hasSubEvent" .
+
+    rdf:value a owl:ObjectProperty .
+
+    prov:wasAttributedTo a owl:ObjectProperty .
+
+    prov:wasDerivedFrom a owl:ObjectProperty ;
+        rdfs:label "wasDerivedFrom" ;
+        rdfs:comment "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Detection,
+            grasp:Utterance ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        prov:category "starting-point" ;
+        prov:component "derivations" ;
+        prov:definition "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity."@en ;
+        prov:inverse "hadDerivation" ;
+        prov:qualifiedForm prov:Derivation .
+
+    foaf:Agent a owl:Class .
+
+    eps:Context a owl:Class .
+
+    eps:contextProperty a owl:ObjectProperty ;
+        rdfs:label "context property" ;
+        rdfs:comment "Context properties connect Context to other SEM Core entities." ;
+        owl:equivalentProperty sem:eventProperty .
+
+    gaf:denotedIn a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention .
+
+    gaf:denotes a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        rdfs:subPropertyOf gaf:containsDenotation .
+
+    grasp:Attribution a owl:Class ;
+        rdfs:label "Attribution" ;
+        rdfs:comment "A grasp:Attribution reflects the attribution of some interpretation, some perspective to a gaf:Mention. An attribution expresses such things as certainty, emotion, polarity, sentiment, temporality."^^xsd:string ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:intersectionOf ( [ a owl:Restriction ;
+                            owl:onProperty grasp:isAttributionFor ;
+                            owl:someValuesFrom gaf:Mention ] [ a owl:Restriction ;
+                            owl:onProperty rdf:value ;
+                            owl:someValuesFrom grasp:AttributionValue ] ) ] .
+
+    grasp:Detection a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:isAttributionFor a owl:ObjectProperty ;
+        rdfs:domain grasp:Attribution ;
+        rdfs:range gaf:Mention .
+
+    grasp:PolarityValue a owl:Class ;
+        rdfs:label "Polarity Value" ;
+        rdfs:comment "The polarity of a gaf:Mention (e.g. if something is or isn't the case)"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:negative graspf:positive ) ] .
+
+    grasp:CertaintyValue a owl:Class ;
+        rdfs:label "Certainty Value" ;
+        rdfs:comment "The level of certainty of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:PolarityValue,
+            grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:certain graspf:possible graspf:probable graspf:underspecified ) ] .
+
+    grasp:FactualityValue a owl:Class ;
+        rdfs:label "Factuality value"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:SentimentValue .
+
+    grasp:SentimentValue a owl:Class ;
+        rdfs:label "Sentiment Value" ;
+        rdfs:comment "The sentiment expressed by a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( grasps:negative grasps:positive ) ] .
+
+    grasp:TemporalValue a owl:Class ;
+        rdfs:label "Temporal Value" ;
+        rdfs:comment "The temporal property of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:future graspf:non-future ) ] .
+
+    sem:eventProperty a owl:ObjectProperty ;
+        rdfs:label "event property" ;
+        rdfs:comment "Event properties connect Events to other SEM Core entities." .
+
+    grasp:EmotionValue a owl:Class ;
+        rdfs:label "Emotion Value" ;
+        rdfs:comment "The emotion expressed in a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:FactualityValue,
+            grasp:SentimentValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspe:anger graspe:disgust graspe:fear graspe:happiness graspe:sadness graspe:surprise ) ] .
+
+    gaf:Instance a owl:Class ;
+        rdfs:label "Instance" ;
+        rdfs:comment "Instances are statements about real world entities, including actions, processes and abstract notions. They are the primary subject of individuals of type gaf:Mention that can denote them."^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotedBy ;
+                owl:someValuesFrom gaf:Mention ] .
+
+    grasp:AttributionValue a owl:Class ;
+        rdfs:label "Attribution value"^^xsd:string ;
+        rdfs:comment "The value of a grasp:Attribution"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    sem:Event a owl:Class ;
+        rdfs:label "Event" ;
+        rdfs:comment "Events are things that happen. This comprises everything from historical events to web site sessions and mythical journeys. Event is the central class of SEM." ;
+        skos:broadMatch <http://linkedevents.org/ontology/Event>,
+            <http://purl.org/NET/c4dm/event.owl#Event> ;
+        skos:closeMatch dcmitype:Event,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Situation>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#perdurant>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Process>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E5.Event> .
+
+    gaf:Mention a owl:Class ;
+        rdfs:label "Mention" ;
+        rdfs:comment """Mentions are references to members of the gaf:Instance class as they occur in (web) media such as texts, video, audio, images, etc. Mentions denote gaf:Instances.
+
+A Mention uniquely identifies the (part of a) web source that denotes the mention. We refer to the standard use of fragment identifiers for different media types. """^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotes ;
+                owl:someValuesFrom gaf:Instance ] .
+
+    [] a owl:Ontology .
+}
+
+leolaniWorld:we_do_need_perhaps-are-fundings-to_NHS {
+    leolaniWorld:we_do_need ns1:perhaps_are_fundings_to leolaniWorld:NHS .
+}
+
+leolaniWorld:it_treat_its_staff {
+    leolaniWorld:it ns1:treat leolaniWorld:its_staff .
+}
+
+leolaniWorld:we_do_need_are_fundings {
+    leolaniWorld:we_do_need ns1:are leolaniWorld:fundings .
+}
+
+leolaniWorld:it_treat-properly_its_staff {
+    leolaniWorld:it ns1:treat_properly leolaniWorld:its_staff .
+}
+
+leolaniWorld:medical_students_are-increasingly-emigrating-given_contacts {
+    leolaniWorld:medical_students ns1:are_increasingly_emigrating_given leolaniWorld:contacts .
+}
+
+leolaniWorld:medical_students_are-emigrating-given_contacts {
+    leolaniWorld:medical_students ns1:are_emigrating_given leolaniWorld:contacts .
+}
+
+leolaniWorld:Their_only_focus_is-colour-of_skin_of_doctor {
+    leolaniWorld:Their_only_focus ns1:is_colour_of leolaniWorld:skin_of_doctor .
+}
+
+leolaniWorld:immigrant_doctors_should-work-in_my_opnion {
+    leolaniWorld:immigrant_doctors ns1:should_work_in leolaniWorld:my_opnion .
+}
+
+leolaniWorld:Their_focus_is-colour-of_skin {
+    leolaniWorld:Their_focus ns1:is_colour_of leolaniWorld:skin .
+}
+
+leolaniWorld:our_NHS_staff_most-of-are_immigrants {
+    leolaniWorld:our_NHS_staff ns1:most_of_are leolaniWorld:immigrants .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context29 a eps:Context ;
+        rdfs:label "context29" ;
+        hs:id "29"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat218 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "135"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat218 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat218" ;
+        hs:id "218"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat218_utterance0,
+            leolaniTalk:chat218_utterance1,
+            leolaniTalk:chat218_utterance2 .
+
+    leolaniTalk:chat218_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat218_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat218_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat218_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat218_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat218_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Their_focus_is-colour-of_skin a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_focus_is-colour-of_skin" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:Their_focus_is-colour-of_skin_of_doctor a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_focus_is-colour-of_skin_of_doctor" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:Their_focus_is_colour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_focus_is_colour" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:Their_only_focus_is-colour-of_skin a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_only_focus_is-colour-of_skin" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:Their_only_focus_is-colour-of_skin_of_doctor a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_only_focus_is-colour-of_skin_of_doctor" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:Their_only_focus_is_colour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_only_focus_is_colour" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:They_are_smart a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_smart" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:We_have-got_doctors a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_have-got_doctors" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:We_will-need-workforce-from_from_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_will-need-workforce-from_from_country" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:We_will-need_workforce a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_will-need_workforce" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:doctors_should-work-in_my_opnion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "doctors_should-work-in_my_opnion" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:health_system_would-collapse-without_migrant_workers a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_system_would-collapse-without_migrant_workers" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:health_system_would-collapse-without_workers a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_system_would-collapse-without_workers" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:immigrant_doctors_should-work-in_my_opnion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "immigrant_doctors_should-work-in_my_opnion" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:it_treat-properly_its_staff a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_treat-properly_its_staff" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:it_treat_its_staff a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_treat_its_staff" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:medical_students_are-emigrating-given_contacts a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "medical_students_are-emigrating-given_contacts" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:medical_students_are-increasingly-emigrating-given_contacts a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "medical_students_are-increasingly-emigrating-given_contacts" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:most_are-immigrants-as_matter a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "most_are-immigrants-as_matter" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:most_are-immigrants-as_matter_of_fact a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "most_are-immigrants-as_matter_of_fact" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:most_are_immigrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "most_are_immigrants" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:our_NHS_staff_most-of-are_As_matter_immigrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "our_NHS_staff_most-of-are_As_matter_immigrants" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:our_NHS_staff_most-of-are_As_matter_of_fact_immigrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "our_NHS_staff_most-of-are_As_matter_of_fact_immigrants" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:our_NHS_staff_most-of-are_immigrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "our_NHS_staff_most-of-are_immigrants" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:people_are_racist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_racist" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:people_are_so_racist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_so_racist" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:students_are-emigrating-given_contacts a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "students_are-emigrating-given_contacts" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:students_are-increasingly-emigrating-given_contacts a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "students_are-increasingly-emigrating-given_contacts" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_are-fundings-to_NHS a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_are-fundings-to_NHS" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_are-fundings_it_treat a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_are-fundings_it_treat" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_are-fundings_it_treat_properly a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_are-fundings_it_treat_properly" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_are-fundings_so_it_treat a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_are-fundings_so_it_treat" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_are-fundings_so_it_treat_properly a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_are-fundings_so_it_treat_properly" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_are_Perhaps_fundings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_are_Perhaps_fundings" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_are_fundings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_are_fundings" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_perhaps-are-fundings-to_NHS a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_perhaps-are-fundings-to_NHS" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_perhaps-are-fundings_it_treat a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_perhaps-are-fundings_it_treat" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_perhaps-are-fundings_it_treat_properly a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_perhaps-are-fundings_it_treat_properly" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_perhaps-are-fundings_so_it_treat a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_perhaps-are-fundings_so_it_treat" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_do_need_perhaps-are-fundings_so_it_treat_properly a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do_need_perhaps-are-fundings_so_it_treat_properly" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we_have-stop-following_structure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have-stop-following_structure" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:we_have-stop-following_structure_of_our_population a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have-stop-following_structure_of_our_population" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:we_reverse_migration a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_reverse_migration" ;
+        gaf:denotedBy leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:we_have-stop-following_structure_of_our_population {
+    leolaniWorld:we ns1:have_stop_following leolaniWorld:structure_of_our_population .
+}
+
+leolaniWorld:most_are-immigrants-as_matter_of_fact {
+    leolaniWorld:most ns1:are_immigrants_as leolaniWorld:matter_of_fact .
+}
+
+leolaniWorld:we_do_need_are-fundings_so_it_treat {
+    leolaniWorld:we_do_need ns1:are_fundings leolaniWorld:so_it_treat .
+}
+
+leolaniWorld:We_have-got_doctors {
+    leolaniWorld:We ns1:have_got leolaniWorld:doctors .
+}
+
+leolaniWorld:students_are-increasingly-emigrating-given_contacts {
+    leolaniWorld:students ns1:are_increasingly_emigrating_given leolaniWorld:contacts .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:As_matter_immigrants a gaf:Instance ;
+        rdfs:label "as-matter-immigrants" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:As_matter_of_fact_immigrants a gaf:Instance ;
+        rdfs:label "as-matter-of-fact-immigrants" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:NHS a gaf:Instance ;
+        rdfs:label "nhs" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:Perhaps_fundings a gaf:Instance ;
+        rdfs:label "perhaps-fundings" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:Their_focus a gaf:Instance ;
+        rdfs:label "their-focus" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:Their_only_focus a gaf:Instance ;
+        rdfs:label "their-only-focus" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:colour a gaf:Instance ;
+        rdfs:label "colour" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:contacts a gaf:Instance ;
+        rdfs:label "contacts" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:doctors a gaf:Instance ;
+        rdfs:label "doctors" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance0_char0-202,
+            leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:from_country a gaf:Instance ;
+        rdfs:label "from-country" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:fundings a gaf:Instance ;
+        rdfs:label "fundings" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:health_system a gaf:Instance ;
+        rdfs:label "health-system" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:immigrant_doctors a gaf:Instance ;
+        rdfs:label "immigrant-doctors" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:immigrants a gaf:Instance ;
+        rdfs:label "immigrants" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:it_treat a gaf:Instance ;
+        rdfs:label "it-treat" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:it_treat_properly a gaf:Instance ;
+        rdfs:label "it-treat-properly" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:its_staff a gaf:Instance ;
+        rdfs:label "its-staff" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:matter a gaf:Instance ;
+        rdfs:label "matter" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:matter_of_fact a gaf:Instance ;
+        rdfs:label "matter-of-fact" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:medical_students a gaf:Instance ;
+        rdfs:label "medical-students" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:migrant_workers a gaf:Instance ;
+        rdfs:label "migrant-workers" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:migration a gaf:Instance ;
+        rdfs:label "migration" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:most a gaf:Instance ;
+        rdfs:label "most" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:my_opnion a gaf:Instance ;
+        rdfs:label "my-opnion" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:our_NHS_staff a gaf:Instance ;
+        rdfs:label "our-nhs-staff" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:racist a gaf:Instance ;
+        rdfs:label "racist" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:skin a gaf:Instance ;
+        rdfs:label "skin" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:skin_of_doctor a gaf:Instance ;
+        rdfs:label "skin-of-doctor" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:smart a gaf:Instance ;
+        rdfs:label "smart" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:so_it_treat a gaf:Instance ;
+        rdfs:label "so-it-treat" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:so_it_treat_properly a gaf:Instance ;
+        rdfs:label "so-it-treat-properly" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:so_racist a gaf:Instance ;
+        rdfs:label "so-racist" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance2_char0-422 .
+
+    leolaniWorld:structure a gaf:Instance ;
+        rdfs:label "structure" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:structure_of_our_population a gaf:Instance ;
+        rdfs:label "structure-of-our-population" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:students a gaf:Instance ;
+        rdfs:label "students" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance0_char0-202 .
+
+    leolaniWorld:we_do_need a gaf:Instance ;
+        rdfs:label "we-do-need" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:workers a gaf:Instance ;
+        rdfs:label "workers" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance1_char0-398 .
+
+    leolaniWorld:workforce a gaf:Instance ;
+        rdfs:label "workforce" ;
+        gaf:denotedIn leolaniTalk:chat218_utterance0_char0-202 .
+}
+
+leolaniWorld:most_are-immigrants-as_matter {
+    leolaniWorld:most ns1:are_immigrants_as leolaniWorld:matter .
+}
+
+leolaniWorld:health_system_would-collapse-without_workers {
+    leolaniWorld:health_system ns1:would_collapse_without leolaniWorld:workers .
+}
+
+leolaniWorld:Their_only_focus_is-colour-of_skin {
+    leolaniWorld:Their_only_focus ns1:is_colour_of leolaniWorld:skin .
+}
+
+leolaniWorld:we_reverse_migration {
+    leolaniWorld:we ns1:reverse leolaniWorld:migration .
+}
+
+leolaniWorld:we_do_need_are-fundings_it_treat {
+    leolaniWorld:we_do_need ns1:are_fundings leolaniWorld:it_treat .
+}
+
+leolaniWorld:people_are_so_racist {
+    leolaniWorld:people ns1:are leolaniWorld:so_racist .
+}
+
+leolaniWorld:we_do_need_perhaps-are-fundings_so_it_treat {
+    leolaniWorld:we_do_need ns1:perhaps_are_fundings leolaniWorld:so_it_treat .
+}
+
+leolaniWorld:We_will-need_workforce {
+    leolaniWorld:We ns1:will_need leolaniWorld:workforce .
+}
+
+leolaniWorld:we_do_need_are-fundings-to_NHS {
+    leolaniWorld:we_do_need ns1:are_fundings_to leolaniWorld:NHS .
+}
+
+leolaniWorld:They_are_smart {
+    leolaniWorld:They ns1:are leolaniWorld:smart .
+}
+
+leolaniWorld:Their_focus_is_colour {
+    leolaniWorld:Their_focus ns1:is leolaniWorld:colour .
+}
+
+leolaniWorld:we_do_need_perhaps-are-fundings_it_treat_properly {
+    leolaniWorld:we_do_need ns1:perhaps_are_fundings leolaniWorld:it_treat_properly .
+}
+
+leolaniWorld:students_are-emigrating-given_contacts {
+    leolaniWorld:students ns1:are_emigrating_given leolaniWorld:contacts .
+}
+
+leolaniWorld:Their_only_focus_is_colour {
+    leolaniWorld:Their_only_focus ns1:is leolaniWorld:colour .
+}
+
+leolaniWorld:we_do_need_are-fundings_it_treat_properly {
+    leolaniWorld:we_do_need ns1:are_fundings leolaniWorld:it_treat_properly .
+}
+
+leolaniWorld:we_do_need_are-fundings_so_it_treat_properly {
+    leolaniWorld:we_do_need ns1:are_fundings leolaniWorld:so_it_treat_properly .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Their_focus_is-colour-of_skin_00028 a grasp:Attribution ;
+        rdfs:label "Their_focus_is-colour-of_skin_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Their_focus_is-colour-of_skin_of_doctor_00028 a grasp:Attribution ;
+        rdfs:label "Their_focus_is-colour-of_skin_of_doctor_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Their_focus_is_colour_00028 a grasp:Attribution ;
+        rdfs:label "Their_focus_is_colour_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Their_only_focus_is-colour-of_skin_00028 a grasp:Attribution ;
+        rdfs:label "Their_only_focus_is-colour-of_skin_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Their_only_focus_is-colour-of_skin_of_doctor_00028 a grasp:Attribution ;
+        rdfs:label "Their_only_focus_is-colour-of_skin_of_doctor_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Their_only_focus_is_colour_00028 a grasp:Attribution ;
+        rdfs:label "Their_only_focus_is_colour_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_smart_00028 a grasp:Attribution ;
+        rdfs:label "They_are_smart_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_have-got_doctors_0006 a grasp:Attribution ;
+        rdfs:label "We_have-got_doctors_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance0_char0-202 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_will-need-workforce-from_from_country_0006 a grasp:Attribution ;
+        rdfs:label "We_will-need-workforce-from_from_country_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance0_char0-202 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_will-need_workforce_0006 a grasp:Attribution ;
+        rdfs:label "We_will-need_workforce_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance0_char0-202 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:doctors_should-work-in_my_opnion_00028 a grasp:Attribution ;
+        rdfs:label "doctors_should-work-in_my_opnion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_system_would-collapse-without_migrant_workers_00028 a grasp:Attribution ;
+        rdfs:label "health_system_would-collapse-without_migrant_workers_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_system_would-collapse-without_workers_00028 a grasp:Attribution ;
+        rdfs:label "health_system_would-collapse-without_workers_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:immigrant_doctors_should-work-in_my_opnion_00028 a grasp:Attribution ;
+        rdfs:label "immigrant_doctors_should-work-in_my_opnion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_treat-properly_its_staff_00028 a grasp:Attribution ;
+        rdfs:label "it_treat-properly_its_staff_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_treat_its_staff_00028 a grasp:Attribution ;
+        rdfs:label "it_treat_its_staff_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:medical_students_are-emigrating-given_contacts_00028 a grasp:Attribution ;
+        rdfs:label "medical_students_are-emigrating-given_contacts_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:medical_students_are-increasingly-emigrating-given_contacts_00028 a grasp:Attribution ;
+        rdfs:label "medical_students_are-increasingly-emigrating-given_contacts_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:most_are-immigrants-as_matter_00028 a grasp:Attribution ;
+        rdfs:label "most_are-immigrants-as_matter_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:most_are-immigrants-as_matter_of_fact_00028 a grasp:Attribution ;
+        rdfs:label "most_are-immigrants-as_matter_of_fact_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:most_are_immigrants_00028 a grasp:Attribution ;
+        rdfs:label "most_are_immigrants_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:our_NHS_staff_most-of-are_As_matter_immigrants_00028 a grasp:Attribution ;
+        rdfs:label "our_NHS_staff_most-of-are_As_matter_immigrants_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:our_NHS_staff_most-of-are_As_matter_of_fact_immigrants_00028 a grasp:Attribution ;
+        rdfs:label "our_NHS_staff_most-of-are_As_matter_of_fact_immigrants_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:our_NHS_staff_most-of-are_immigrants_00028 a grasp:Attribution ;
+        rdfs:label "our_NHS_staff_most-of-are_immigrants_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are_racist_00028 a grasp:Attribution ;
+        rdfs:label "people_are_racist_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are_so_racist_00028 a grasp:Attribution ;
+        rdfs:label "people_are_so_racist_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance2_char0-422 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:students_are-emigrating-given_contacts_00028 a grasp:Attribution ;
+        rdfs:label "students_are-emigrating-given_contacts_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:students_are-increasingly-emigrating-given_contacts_00028 a grasp:Attribution ;
+        rdfs:label "students_are-increasingly-emigrating-given_contacts_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_are-fundings-to_NHS_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_are-fundings-to_NHS_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_are-fundings_it_treat_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_are-fundings_it_treat_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_are-fundings_it_treat_properly_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_are-fundings_it_treat_properly_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_are-fundings_so_it_treat_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_are-fundings_so_it_treat_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_are-fundings_so_it_treat_properly_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_are-fundings_so_it_treat_properly_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_are_Perhaps_fundings_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_are_Perhaps_fundings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_are_fundings_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_are_fundings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_perhaps-are-fundings-to_NHS_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_perhaps-are-fundings-to_NHS_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_perhaps-are-fundings_it_treat_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_perhaps-are-fundings_it_treat_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_perhaps-are-fundings_it_treat_properly_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_perhaps-are-fundings_it_treat_properly_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_perhaps-are-fundings_so_it_treat_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_perhaps-are-fundings_so_it_treat_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_do_need_perhaps-are-fundings_so_it_treat_properly_00028 a grasp:Attribution ;
+        rdfs:label "we_do_need_perhaps-are-fundings_so_it_treat_properly_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance1_char0-398 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_have-stop-following_structure_0006 a grasp:Attribution ;
+        rdfs:label "we_have-stop-following_structure_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance0_char0-202 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_have-stop-following_structure_of_our_population_0006 a grasp:Attribution ;
+        rdfs:label "we_have-stop-following_structure_of_our_population_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance0_char0-202 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_reverse_migration_0006 a grasp:Attribution ;
+        rdfs:label "we_reverse_migration_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat218_utterance0_char0-202 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat218_utterance0_char0-202 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat218_utterance0_char0-202" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:doctors,
+            leolaniWorld:from_country,
+            leolaniWorld:migration,
+            leolaniWorld:structure,
+            leolaniWorld:structure_of_our_population,
+            leolaniWorld:we,
+            leolaniWorld:workforce ;
+        gaf:denotes leolaniWorld:We_have-got_doctors,
+            leolaniWorld:We_will-need-workforce-from_from_country,
+            leolaniWorld:We_will-need_workforce,
+            leolaniWorld:we_have-stop-following_structure,
+            leolaniWorld:we_have-stop-following_structure_of_our_population,
+            leolaniWorld:we_reverse_migration ;
+        grasp:hasAttribution leolaniTalk:We_have-got_doctors_0006,
+            leolaniTalk:We_will-need-workforce-from_from_country_0006,
+            leolaniTalk:We_will-need_workforce_0006,
+            leolaniTalk:we_have-stop-following_structure_0006,
+            leolaniTalk:we_have-stop-following_structure_of_our_population_0006,
+            leolaniTalk:we_reverse_migration_0006 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:01:18.653939"^^xml1:string,
+            "2024-06-05T22:01:18.654005"^^xml1:string,
+            "2024-06-05T22:01:18.654028"^^xml1:string,
+            "2024-06-05T22:01:18.654049"^^xml1:string,
+            "2024-06-05T22:01:18.654079"^^xml1:string,
+            "2024-06-05T22:01:18.654100"^^xml1:string ;
+        rdf:value "Following the structure of our population we have to stop and reverse all migration. We have got all the doctors and rocket scientists we need. We will never need any workforce from outside the country."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat218_utterance0 .
+
+    graspe:OPTIMISM a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "OPTIMISM" .
+
+    leolaniTalk:chat218_utterance2_char0-422 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat218_utterance2_char0-422" ;
+        gaf:containsDenotation leolaniWorld:Their_focus,
+            leolaniWorld:Their_only_focus,
+            leolaniWorld:They,
+            leolaniWorld:colour,
+            leolaniWorld:doctors,
+            leolaniWorld:immigrant_doctors,
+            leolaniWorld:my_opnion,
+            leolaniWorld:people,
+            leolaniWorld:racist,
+            leolaniWorld:skin,
+            leolaniWorld:skin_of_doctor,
+            leolaniWorld:smart,
+            leolaniWorld:so_racist ;
+        gaf:denotes leolaniWorld:Their_focus_is-colour-of_skin,
+            leolaniWorld:Their_focus_is-colour-of_skin_of_doctor,
+            leolaniWorld:Their_focus_is_colour,
+            leolaniWorld:Their_only_focus_is-colour-of_skin,
+            leolaniWorld:Their_only_focus_is-colour-of_skin_of_doctor,
+            leolaniWorld:Their_only_focus_is_colour,
+            leolaniWorld:They_are_smart,
+            leolaniWorld:doctors_should-work-in_my_opnion,
+            leolaniWorld:immigrant_doctors_should-work-in_my_opnion,
+            leolaniWorld:people_are_racist,
+            leolaniWorld:people_are_so_racist ;
+        grasp:hasAttribution leolaniTalk:Their_focus_is-colour-of_skin_00028,
+            leolaniTalk:Their_focus_is-colour-of_skin_of_doctor_00028,
+            leolaniTalk:Their_focus_is_colour_00028,
+            leolaniTalk:Their_only_focus_is-colour-of_skin_00028,
+            leolaniTalk:Their_only_focus_is-colour-of_skin_of_doctor_00028,
+            leolaniTalk:Their_only_focus_is_colour_00028,
+            leolaniTalk:They_are_smart_00028,
+            leolaniTalk:doctors_should-work-in_my_opnion_00028,
+            leolaniTalk:immigrant_doctors_should-work-in_my_opnion_00028,
+            leolaniTalk:people_are_racist_00028,
+            leolaniTalk:people_are_so_racist_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:01:32.116347"^^xml1:string,
+            "2024-06-05T22:01:32.116407"^^xml1:string,
+            "2024-06-05T22:01:32.116431"^^xml1:string,
+            "2024-06-05T22:01:32.116454"^^xml1:string,
+            "2024-06-05T22:01:32.116491"^^xml1:string,
+            "2024-06-05T22:01:32.116513"^^xml1:string,
+            "2024-06-05T22:01:32.116536"^^xml1:string,
+            "2024-06-05T22:01:32.116559"^^xml1:string,
+            "2024-06-05T22:01:32.116582"^^xml1:string,
+            "2024-06-05T22:01:32.116605"^^xml1:string,
+            "2024-06-05T22:01:32.116627"^^xml1:string ;
+        rdf:value "Look darling. No one is pressuring these people to become doctors. They are smart so they should have worked out what the terms and conditions are. These people are not moving out to poor countries abroad, I suppose. The NHS must be taken down and rivisited. How come this people are so racist? Their only focus is the colour of the skin of the doctor.  In my opnion, immigrant doctors should work where they have studied."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat218_utterance2 .
+
+    leolaniTalk:chat218_utterance1_char0-398 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat218_utterance1_char0-398" ;
+        gaf:containsDenotation leolaniWorld:As_matter_immigrants,
+            leolaniWorld:As_matter_of_fact_immigrants,
+            leolaniWorld:NHS,
+            leolaniWorld:Perhaps_fundings,
+            leolaniWorld:contacts,
+            leolaniWorld:fundings,
+            leolaniWorld:health_system,
+            leolaniWorld:immigrants,
+            leolaniWorld:it,
+            leolaniWorld:it_treat,
+            leolaniWorld:it_treat_properly,
+            leolaniWorld:its_staff,
+            leolaniWorld:matter,
+            leolaniWorld:matter_of_fact,
+            leolaniWorld:medical_students,
+            leolaniWorld:migrant_workers,
+            leolaniWorld:most,
+            leolaniWorld:our_NHS_staff,
+            leolaniWorld:so_it_treat,
+            leolaniWorld:so_it_treat_properly,
+            leolaniWorld:students,
+            leolaniWorld:we_do_need,
+            leolaniWorld:workers ;
+        gaf:denotes leolaniWorld:health_system_would-collapse-without_migrant_workers,
+            leolaniWorld:health_system_would-collapse-without_workers,
+            leolaniWorld:it_treat-properly_its_staff,
+            leolaniWorld:it_treat_its_staff,
+            leolaniWorld:medical_students_are-emigrating-given_contacts,
+            leolaniWorld:medical_students_are-increasingly-emigrating-given_contacts,
+            leolaniWorld:most_are-immigrants-as_matter,
+            leolaniWorld:most_are-immigrants-as_matter_of_fact,
+            leolaniWorld:most_are_immigrants,
+            leolaniWorld:our_NHS_staff_most-of-are_As_matter_immigrants,
+            leolaniWorld:our_NHS_staff_most-of-are_As_matter_of_fact_immigrants,
+            leolaniWorld:our_NHS_staff_most-of-are_immigrants,
+            leolaniWorld:students_are-emigrating-given_contacts,
+            leolaniWorld:students_are-increasingly-emigrating-given_contacts,
+            leolaniWorld:we_do_need_are-fundings-to_NHS,
+            leolaniWorld:we_do_need_are-fundings_it_treat,
+            leolaniWorld:we_do_need_are-fundings_it_treat_properly,
+            leolaniWorld:we_do_need_are-fundings_so_it_treat,
+            leolaniWorld:we_do_need_are-fundings_so_it_treat_properly,
+            leolaniWorld:we_do_need_are_Perhaps_fundings,
+            leolaniWorld:we_do_need_are_fundings,
+            leolaniWorld:we_do_need_perhaps-are-fundings-to_NHS,
+            leolaniWorld:we_do_need_perhaps-are-fundings_it_treat,
+            leolaniWorld:we_do_need_perhaps-are-fundings_it_treat_properly,
+            leolaniWorld:we_do_need_perhaps-are-fundings_so_it_treat,
+            leolaniWorld:we_do_need_perhaps-are-fundings_so_it_treat_properly ;
+        grasp:hasAttribution leolaniTalk:health_system_would-collapse-without_migrant_workers_00028,
+            leolaniTalk:health_system_would-collapse-without_workers_00028,
+            leolaniTalk:it_treat-properly_its_staff_00028,
+            leolaniTalk:it_treat_its_staff_00028,
+            leolaniTalk:medical_students_are-emigrating-given_contacts_00028,
+            leolaniTalk:medical_students_are-increasingly-emigrating-given_contacts_00028,
+            leolaniTalk:most_are-immigrants-as_matter_00028,
+            leolaniTalk:most_are-immigrants-as_matter_of_fact_00028,
+            leolaniTalk:most_are_immigrants_00028,
+            leolaniTalk:our_NHS_staff_most-of-are_As_matter_immigrants_00028,
+            leolaniTalk:our_NHS_staff_most-of-are_As_matter_of_fact_immigrants_00028,
+            leolaniTalk:our_NHS_staff_most-of-are_immigrants_00028,
+            leolaniTalk:students_are-emigrating-given_contacts_00028,
+            leolaniTalk:students_are-increasingly-emigrating-given_contacts_00028,
+            leolaniTalk:we_do_need_are-fundings-to_NHS_00028,
+            leolaniTalk:we_do_need_are-fundings_it_treat_00028,
+            leolaniTalk:we_do_need_are-fundings_it_treat_properly_00028,
+            leolaniTalk:we_do_need_are-fundings_so_it_treat_00028,
+            leolaniTalk:we_do_need_are-fundings_so_it_treat_properly_00028,
+            leolaniTalk:we_do_need_are_Perhaps_fundings_00028,
+            leolaniTalk:we_do_need_are_fundings_00028,
+            leolaniTalk:we_do_need_perhaps-are-fundings-to_NHS_00028,
+            leolaniTalk:we_do_need_perhaps-are-fundings_it_treat_00028,
+            leolaniTalk:we_do_need_perhaps-are-fundings_it_treat_properly_00028,
+            leolaniTalk:we_do_need_perhaps-are-fundings_so_it_treat_00028,
+            leolaniTalk:we_do_need_perhaps-are-fundings_so_it_treat_properly_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:01:25.468023"^^xml1:string,
+            "2024-06-05T22:01:25.468094"^^xml1:string,
+            "2024-06-05T22:01:25.468119"^^xml1:string,
+            "2024-06-05T22:01:25.468142"^^xml1:string,
+            "2024-06-05T22:01:25.468165"^^xml1:string,
+            "2024-06-05T22:01:25.468188"^^xml1:string,
+            "2024-06-05T22:01:25.468210"^^xml1:string,
+            "2024-06-05T22:01:25.468233"^^xml1:string,
+            "2024-06-05T22:01:25.468256"^^xml1:string,
+            "2024-06-05T22:01:25.468279"^^xml1:string,
+            "2024-06-05T22:01:25.468301"^^xml1:string,
+            "2024-06-05T22:01:25.468324"^^xml1:string,
+            "2024-06-05T22:01:25.468347"^^xml1:string,
+            "2024-06-05T22:01:25.468371"^^xml1:string,
+            "2024-06-05T22:01:25.468393"^^xml1:string,
+            "2024-06-05T22:01:25.468418"^^xml1:string,
+            "2024-06-05T22:01:25.468438"^^xml1:string,
+            "2024-06-05T22:01:25.468460"^^xml1:string,
+            "2024-06-05T22:01:25.468481"^^xml1:string,
+            "2024-06-05T22:01:25.468502"^^xml1:string,
+            "2024-06-05T22:01:25.468525"^^xml1:string,
+            "2024-06-05T22:01:25.468547"^^xml1:string,
+            "2024-06-05T22:01:25.468571"^^xml1:string,
+            "2024-06-05T22:01:25.468593"^^xml1:string,
+            "2024-06-05T22:01:25.468613"^^xml1:string,
+            "2024-06-05T22:01:25.468635"^^xml1:string ;
+        rdf:value "As a matter of fact, most of our NHS staff are immigrants. The health system would collapse without migrant workers. The medical students of the United Kingdom that do go on to be doctors are increasingly emigrating for better woking condition, given the contacts that Junior doctors have to deal with. Perhaps what we do need are some fundings to the NHS so that it cant treat its staff properly? "^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat218_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:doctors_should-work-in_my_opnion {
+    leolaniWorld:doctors ns1:should_work_in leolaniWorld:my_opnion .
+}
+
+leolaniWorld:we_do_need_are_Perhaps_fundings {
+    leolaniWorld:we_do_need ns1:are leolaniWorld:Perhaps_fundings .
+}
+
+leolaniWorld:Their_focus_is-colour-of_skin_of_doctor {
+    leolaniWorld:Their_focus ns1:is_colour_of leolaniWorld:skin_of_doctor .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:people_are_racist {
+    leolaniWorld:people ns1:are leolaniWorld:racist .
+}
+
+leolaniWorld:we_have-stop-following_structure {
+    leolaniWorld:we ns1:have_stop_following leolaniWorld:structure .
+}
+
+leolaniWorld:we_do_need_perhaps-are-fundings_so_it_treat_properly {
+    leolaniWorld:we_do_need ns1:perhaps_are_fundings leolaniWorld:so_it_treat_properly .
+}
+
+leolaniWorld:we_do_need_perhaps-are-fundings_it_treat {
+    leolaniWorld:we_do_need ns1:perhaps_are_fundings leolaniWorld:it_treat .
+}
+
+leolaniWorld:our_NHS_staff_most-of-are_As_matter_of_fact_immigrants {
+    leolaniWorld:our_NHS_staff ns1:most_of_are leolaniWorld:As_matter_of_fact_immigrants .
+}
+

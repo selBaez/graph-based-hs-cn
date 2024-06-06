@@ -1,0 +1,1196 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eps: <http://cltl.nl/episodicawareness/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix hs: <http://cltl-hs.org/> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix ns1: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns12: <http://cltl.nl/leolani/world/black_genes_have-on_children_'> .
+@prefix ns13: <http://cltl.nl/leolani/world/genes_have-on_children_'> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time1: <http://www.w3.org/TR/owl-time/#> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+leolaniWorld:Ontology {
+    eps:hasContext a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance,
+            sem:Event ;
+        rdfs:range eps:Context ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    eps:hasDetection a owl:ObjectProperty ;
+        rdfs:domain eps:Context ;
+        rdfs:range grasp:Detection ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    gaf:Assertion a owl:Class ;
+        rdfs:subClassOf gaf:Instance .
+
+    grasp:Chat a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:Experience a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Statement a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Visual a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:hasAttribution a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Attribution ;
+        owl:inverseOf grasp:isAttributionFor .
+
+    grasp:wasAttributedTo a owl:ObjectProperty ;
+        rdfs:label "was attributed to" ;
+        rdfs:comment "States that a gaf:Mention was attributed to a gaf:Instance. This is a sub property of the prov:wasAttributedTo relation that can be used to relate any prov:Entity to any prov:Agent."^^xsd:string ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Source ;
+        rdfs:subPropertyOf prov:wasAttributedTo .
+
+    <http://schema.org/Place> a owl:Class .
+
+    sem:hasActor a owl:ObjectProperty ;
+        rdfs:label "has Actor" ;
+        rdfs:comment "Has actor is used to state which Actors or Objects participate in an Event." ;
+        rdfs:range sem:Actor ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasBeginTimeStamp a owl:DatatypeProperty ;
+        rdfs:label "has begin timestamp" ;
+        rdfs:comment "Has begin timestamp is used to indicate the beginning of a time interval. Omitting the hasBeginTimeStamp while stating a hasEndTimeStamp is interpreted as an open ended interval." ;
+        rdfs:subPropertyOf sem:hasTimeStamp .
+
+    sem:hasPlace a owl:ObjectProperty ;
+        rdfs:label "has Place" ;
+        rdfs:comment "Has place is used to state in which Place(s) an Event happened. Coordinates can be attached to the Place with the W3C Geospatial Vocabulary (http://www.w3.org/2005/Incubator/geo/XGR-geo-20071023/)." ;
+        rdfs:range sem:Place ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasSubEvent a owl:ObjectProperty ;
+        rdfs:label "has subevent" ;
+        rdfs:comment "Has subevent connects an Event to other Events that belong to it. This is a very generic property that does not mean the subevents fully define the superconcept or that there is any causal relationship." ;
+        rdfs:domain sem:Event ;
+        rdfs:range sem:Event ;
+        rdfs:subPropertyOf sem:eventProperty ;
+        owl:inverseOf sem:subEventOf .
+
+    sem:hasTime a owl:ObjectProperty ;
+        rdfs:label "has Time" ;
+        rdfs:comment "Has time is used to indicate at which time an Event took place or when a property under the Temporary Constraint is valid. Has time points to a symbolic representation of time, which allows semantic relations between time resources. (see http://www.w3.org/TR/owl-time/)" ;
+        rdfs:range sem:Time ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    skos:broadMatch a owl:AnnotationProperty .
+
+    skos:closeMatch a owl:AnnotationProperty .
+
+    skos:narrowMatch a owl:AnnotationProperty .
+
+    prov:category a owl:AnnotationProperty .
+
+    prov:component a owl:AnnotationProperty .
+
+    prov:definition a owl:AnnotationProperty .
+
+    prov:hadDerivation a owl:ObjectProperty ;
+        owl:inverseOf prov:wasDerivedFrom .
+
+    prov:inverse a owl:AnnotationProperty .
+
+    prov:qualifiedForm a owl:AnnotationProperty .
+
+    gaf:containsDenotation a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        owl:inverseOf gaf:denotedIn .
+
+    gaf:denotedBy a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention ;
+        rdfs:subPropertyOf gaf:denotedIn ;
+        owl:inverseOf gaf:denotes .
+
+    grasp:Source a owl:Class ;
+        rdfs:label "Source" ;
+        rdfs:comment "" ;
+        rdfs:subClassOf owl:Thing .
+
+    grasp:Utterance a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    graspe:anger a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:disgust a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:fear a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:happiness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:sadness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:surprise a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspf:certain a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:negative a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:non-future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:positive a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:possible a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:probable a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:underspecified a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    grasps:negative a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    grasps:positive a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    sem:Actor a owl:Class ;
+        rdfs:label "Actor" ;
+        rdfs:comment """Actors are entities that take part in an Event, either actively or passively. Actors do not necessarily have to be sentient. They can also be objects. Actors are a thing, animate or inanimate, physical or non-physical.
+""" ;
+        skos:broadMatch <http://sw.opencyc.org/2009/04/07/concept/en/SomethingExisting>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant> ;
+        skos:closeMatch dcterms:Agent,
+            dcterms:AgentClass,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Agent-Generic>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Agent>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E39.Actor>,
+            foaf:Agent .
+
+    sem:Place a owl:Class ;
+        rdfs:label "Place" ;
+        rdfs:comment "Places are locations where an Event happens. They do not need to be physical places and hence do not necessarily need coordinates. Neither do they need to have any significance apart from them being the location of an Event." ;
+        skos:closeMatch dcterms:Location,
+            <http://sw.opencyc.org/2009/04/07/concept/en/EnduringThing-Localized>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#GeographicArea>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E53.Place> ;
+        skos:narrowMatch <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#PhysicalRegion>,
+            <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+    sem:Time a owl:Class ;
+        rdfs:label "Time" ;
+        rdfs:comment "Time contains symbolic representations of when an Event took place. Time instances do not necessarily need to have a timestamp associated with them. The Time class exists to represent semantics of time, e.g. that one thing happens before another, even though the exact timestamps are unknown." ;
+        skos:broadMatch <http://www.w3.org/2006/timeTemporalEntity> .
+
+    sem:hasTimeStamp a owl:DatatypeProperty .
+
+    sem:subEventOf a owl:ObjectProperty ;
+        rdfs:label "subevent of" ;
+        rdfs:comment "Inverse property of hasSubEvent" .
+
+    rdf:value a owl:ObjectProperty .
+
+    prov:wasAttributedTo a owl:ObjectProperty .
+
+    prov:wasDerivedFrom a owl:ObjectProperty ;
+        rdfs:label "wasDerivedFrom" ;
+        rdfs:comment "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Detection,
+            grasp:Utterance ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        prov:category "starting-point" ;
+        prov:component "derivations" ;
+        prov:definition "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity."@en ;
+        prov:inverse "hadDerivation" ;
+        prov:qualifiedForm prov:Derivation .
+
+    foaf:Agent a owl:Class .
+
+    eps:Context a owl:Class .
+
+    eps:contextProperty a owl:ObjectProperty ;
+        rdfs:label "context property" ;
+        rdfs:comment "Context properties connect Context to other SEM Core entities." ;
+        owl:equivalentProperty sem:eventProperty .
+
+    gaf:denotedIn a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention .
+
+    gaf:denotes a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        rdfs:subPropertyOf gaf:containsDenotation .
+
+    grasp:Attribution a owl:Class ;
+        rdfs:label "Attribution" ;
+        rdfs:comment "A grasp:Attribution reflects the attribution of some interpretation, some perspective to a gaf:Mention. An attribution expresses such things as certainty, emotion, polarity, sentiment, temporality."^^xsd:string ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:intersectionOf ( [ a owl:Restriction ;
+                            owl:onProperty grasp:isAttributionFor ;
+                            owl:someValuesFrom gaf:Mention ] [ a owl:Restriction ;
+                            owl:onProperty rdf:value ;
+                            owl:someValuesFrom grasp:AttributionValue ] ) ] .
+
+    grasp:Detection a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:isAttributionFor a owl:ObjectProperty ;
+        rdfs:domain grasp:Attribution ;
+        rdfs:range gaf:Mention .
+
+    grasp:PolarityValue a owl:Class ;
+        rdfs:label "Polarity Value" ;
+        rdfs:comment "The polarity of a gaf:Mention (e.g. if something is or isn't the case)"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:negative graspf:positive ) ] .
+
+    grasp:CertaintyValue a owl:Class ;
+        rdfs:label "Certainty Value" ;
+        rdfs:comment "The level of certainty of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:PolarityValue,
+            grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:certain graspf:possible graspf:probable graspf:underspecified ) ] .
+
+    grasp:FactualityValue a owl:Class ;
+        rdfs:label "Factuality value"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:SentimentValue .
+
+    grasp:SentimentValue a owl:Class ;
+        rdfs:label "Sentiment Value" ;
+        rdfs:comment "The sentiment expressed by a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( grasps:negative grasps:positive ) ] .
+
+    grasp:TemporalValue a owl:Class ;
+        rdfs:label "Temporal Value" ;
+        rdfs:comment "The temporal property of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:future graspf:non-future ) ] .
+
+    sem:eventProperty a owl:ObjectProperty ;
+        rdfs:label "event property" ;
+        rdfs:comment "Event properties connect Events to other SEM Core entities." .
+
+    grasp:EmotionValue a owl:Class ;
+        rdfs:label "Emotion Value" ;
+        rdfs:comment "The emotion expressed in a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:FactualityValue,
+            grasp:SentimentValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspe:anger graspe:disgust graspe:fear graspe:happiness graspe:sadness graspe:surprise ) ] .
+
+    gaf:Instance a owl:Class ;
+        rdfs:label "Instance" ;
+        rdfs:comment "Instances are statements about real world entities, including actions, processes and abstract notions. They are the primary subject of individuals of type gaf:Mention that can denote them."^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotedBy ;
+                owl:someValuesFrom gaf:Mention ] .
+
+    grasp:AttributionValue a owl:Class ;
+        rdfs:label "Attribution value"^^xsd:string ;
+        rdfs:comment "The value of a grasp:Attribution"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    sem:Event a owl:Class ;
+        rdfs:label "Event" ;
+        rdfs:comment "Events are things that happen. This comprises everything from historical events to web site sessions and mythical journeys. Event is the central class of SEM." ;
+        skos:broadMatch <http://linkedevents.org/ontology/Event>,
+            <http://purl.org/NET/c4dm/event.owl#Event> ;
+        skos:closeMatch dcmitype:Event,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Situation>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#perdurant>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Process>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E5.Event> .
+
+    gaf:Mention a owl:Class ;
+        rdfs:label "Mention" ;
+        rdfs:comment """Mentions are references to members of the gaf:Instance class as they occur in (web) media such as texts, video, audio, images, etc. Mentions denote gaf:Instances.
+
+A Mention uniquely identifies the (part of a) web source that denotes the mention. We refer to the standard use of fragment identifiers for different media types. """^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotes ;
+                owl:someValuesFrom gaf:Instance ] .
+
+    [] a owl:Ontology .
+}
+
+leolaniWorld:IQ_is-widely-supported-as_measure {
+    leolaniWorld:IQ ns1:is_widely_supported_as leolaniWorld:measure .
+}
+
+leolaniWorld:IQ_is_widely_supported_now {
+    leolaniWorld:IQ ns1:is leolaniWorld:widely_supported_now .
+}
+
+leolaniWorld:IQ_also-is-outdated-measure-of_intelligence {
+    leolaniWorld:IQ ns1:also_is_outdated_measure_of leolaniWorld:intelligence .
+}
+
+leolaniWorld:IQ_is-supported-now-as_measure_of_this {
+    leolaniWorld:IQ ns1:is_supported_now_as leolaniWorld:measure_of_this .
+}
+
+leolaniWorld:IQ_also-is-measure-of_intelligence {
+    leolaniWorld:IQ ns1:also_is_measure_of leolaniWorld:intelligence .
+}
+
+leolaniWorld:children_on_IQs {
+    leolaniWorld:children ns1:on leolaniWorld:IQs .
+}
+
+leolaniWorld:IQ_is-widely-supported-now-as_measure_of_this {
+    leolaniWorld:IQ ns1:is_widely_supported_now_as leolaniWorld:measure_of_this .
+}
+
+leolaniWorld:population_is-one_stupid {
+    leolaniWorld:population ns1:is_one leolaniWorld:stupid .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context224 a eps:Context ;
+        rdfs:label "context224" ;
+        hs:id "224"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat124 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "108"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat124 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat124" ;
+        hs:id "124"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat124_utterance0,
+            leolaniTalk:chat124_utterance1 .
+
+    leolaniTalk:chat124_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat124_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat124_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat124_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:IQ_also-is-measure-of_intelligence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_also-is-measure-of_intelligence" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_also-is-outdated-measure-of_intelligence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_also-is-outdated-measure-of_intelligence" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_also-is-very-outdated-measure-of_intelligence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_also-is-very-outdated-measure-of_intelligence" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-measure-of_intelligence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-measure-of_intelligence" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-outdated-measure-of_intelligence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-outdated-measure-of_intelligence" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-outdated_intelligence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-outdated_intelligence" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-supported-as_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-supported-as_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-supported-as_measure_of_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-supported-as_measure_of_this" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-supported-now-as_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-supported-now-as_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-supported-now-as_measure_of_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-supported-now-as_measure_of_this" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-very-outdated-measure-of_intelligence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-very-outdated-measure-of_intelligence" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-widely-supported-as_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-widely-supported-as_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-widely-supported-as_measure_of_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-widely-supported-as_measure_of_this" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-widely-supported-now-as_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-widely-supported-now-as_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is-widely-supported-now-as_measure_of_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is-widely-supported-now-as_measure_of_this" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_Also_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_Also_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_Also_outdated_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_Also_outdated_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_Also_very_outdated_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_Also_very_outdated_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_outdated_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_outdated_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_supported a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_supported" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_supported_now a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_supported_now" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_very_outdated_measure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_very_outdated_measure" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_widely_supported a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_widely_supported" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ_is_widely_supported_now a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "IQ_is_widely_supported_now" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance1_char0-225 .
+
+    ns12:s_IQs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "black_genes_have-on_children_'s_IQs" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:children_on_IQs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "children_on_IQs" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:encouraged_is_effect a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "encouraged_is_effect" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance0_char0-211 .
+
+    ns13:s_IQs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "genes_have-on_children_'s_IQs" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:mongrelised_population_is-one_stupid a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "mongrelised_population_is-one_stupid" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:population_is-one_stupid a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "population_is-one_stupid" ;
+        gaf:denotedBy leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:IQ_is-supported-as_measure {
+    leolaniWorld:IQ ns1:is_supported_as leolaniWorld:measure .
+}
+
+leolaniWorld:mongrelised_population_is-one_stupid {
+    leolaniWorld:mongrelised_population ns1:is_one leolaniWorld:stupid .
+}
+
+leolaniWorld:IQ_also-is-very-outdated-measure-of_intelligence {
+    leolaniWorld:IQ ns1:also_is_very_outdated_measure_of leolaniWorld:intelligence .
+}
+
+leolaniWorld:IQ_is-very-outdated-measure-of_intelligence {
+    leolaniWorld:IQ ns1:is_very_outdated_measure_of leolaniWorld:intelligence .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:IQ_is-measure-of_intelligence {
+    leolaniWorld:IQ ns1:is_measure_of leolaniWorld:intelligence .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Also_measure a gaf:Instance ;
+        rdfs:label "also-measure" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:Also_outdated_measure a gaf:Instance ;
+        rdfs:label "also-outdated-measure" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:Also_very_outdated_measure a gaf:Instance ;
+        rdfs:label "also-very-outdated-measure" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQ a gaf:Instance ;
+        rdfs:label "iq" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:IQs a gaf:Instance ;
+        rdfs:label "iqs" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:black_genes a gaf:Instance ;
+        rdfs:label "black-genes" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:children a gaf:Instance ;
+        rdfs:label "children" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    <http://cltl.nl/leolani/world/children_'s_IQs> a gaf:Instance ;
+        rdfs:label "children-s-iqs" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:effect a gaf:Instance ;
+        rdfs:label "effect" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:encouraged a gaf:Instance ;
+        rdfs:label "encouraged" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:genes a gaf:Instance ;
+        rdfs:label "genes" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:intelligence a gaf:Instance ;
+        rdfs:label "intelligence" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:measure a gaf:Instance ;
+        rdfs:label "measure" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:measure_of_this a gaf:Instance ;
+        rdfs:label "measure-of-this" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:mongrelised_population a gaf:Instance ;
+        rdfs:label "mongrelised-population" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:outdated_measure a gaf:Instance ;
+        rdfs:label "outdated-measure" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:population a gaf:Instance ;
+        rdfs:label "population" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:stupid a gaf:Instance ;
+        rdfs:label "stupid" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance0_char0-211 .
+
+    leolaniWorld:supported a gaf:Instance ;
+        rdfs:label "supported" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:supported_now a gaf:Instance ;
+        rdfs:label "supported-now" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:very_outdated_measure a gaf:Instance ;
+        rdfs:label "very-outdated-measure" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:widely_supported a gaf:Instance ;
+        rdfs:label "widely-supported" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+
+    leolaniWorld:widely_supported_now a gaf:Instance ;
+        rdfs:label "widely-supported-now" ;
+        gaf:denotedIn leolaniTalk:chat124_utterance1_char0-225 .
+}
+
+leolaniWorld:IQ_is_supported {
+    leolaniWorld:IQ ns1:is leolaniWorld:supported .
+}
+
+ns13:s_IQs {
+    leolaniWorld:genes ns1:have_on <http://cltl.nl/leolani/world/children_'s_IQs> .
+}
+
+leolaniWorld:IQ_is_Also_very_outdated_measure {
+    leolaniWorld:IQ ns1:is leolaniWorld:Also_very_outdated_measure .
+}
+
+leolaniWorld:IQ_is_Also_outdated_measure {
+    leolaniWorld:IQ ns1:is leolaniWorld:Also_outdated_measure .
+}
+
+leolaniWorld:encouraged_is_effect {
+    leolaniWorld:encouraged ns1:is leolaniWorld:effect .
+}
+
+leolaniWorld:IQ_is-outdated_intelligence {
+    leolaniWorld:IQ ns1:is_outdated leolaniWorld:intelligence .
+}
+
+ns12:s_IQs {
+    leolaniWorld:black_genes ns1:have_on <http://cltl.nl/leolani/world/children_'s_IQs> .
+}
+
+leolaniWorld:IQ_is-outdated-measure-of_intelligence {
+    leolaniWorld:IQ ns1:is_outdated_measure_of leolaniWorld:intelligence .
+}
+
+leolaniWorld:IQ_is_widely_supported {
+    leolaniWorld:IQ ns1:is leolaniWorld:widely_supported .
+}
+
+leolaniWorld:IQ_is_measure {
+    leolaniWorld:IQ ns1:is leolaniWorld:measure .
+}
+
+leolaniWorld:IQ_is-widely-supported-as_measure_of_this {
+    leolaniWorld:IQ ns1:is_widely_supported_as leolaniWorld:measure_of_this .
+}
+
+leolaniWorld:IQ_is-supported-as_measure_of_this {
+    leolaniWorld:IQ ns1:is_supported_as leolaniWorld:measure_of_this .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:IQ_also-is-measure-of_intelligence_00028 a grasp:Attribution ;
+        rdfs:label "IQ_also-is-measure-of_intelligence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_also-is-outdated-measure-of_intelligence_00028 a grasp:Attribution ;
+        rdfs:label "IQ_also-is-outdated-measure-of_intelligence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_also-is-very-outdated-measure-of_intelligence_00028 a grasp:Attribution ;
+        rdfs:label "IQ_also-is-very-outdated-measure-of_intelligence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-measure-of_intelligence_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-measure-of_intelligence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-outdated-measure-of_intelligence_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-outdated-measure-of_intelligence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-outdated_intelligence_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-outdated_intelligence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-supported-as_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-supported-as_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-supported-as_measure_of_this_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-supported-as_measure_of_this_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-supported-now-as_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-supported-now-as_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-supported-now-as_measure_of_this_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-supported-now-as_measure_of_this_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-very-outdated-measure-of_intelligence_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-very-outdated-measure-of_intelligence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-widely-supported-as_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-widely-supported-as_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-widely-supported-as_measure_of_this_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-widely-supported-as_measure_of_this_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-widely-supported-now-as_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-widely-supported-now-as_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is-widely-supported-now-as_measure_of_this_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is-widely-supported-now-as_measure_of_this_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_Also_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_Also_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_Also_outdated_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_Also_outdated_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_Also_very_outdated_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_Also_very_outdated_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_outdated_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_outdated_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_supported_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_supported_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_supported_now_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_supported_now_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_very_outdated_measure_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_very_outdated_measure_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_widely_supported_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_widely_supported_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:IQ_is_widely_supported_now_00028 a grasp:Attribution ;
+        rdfs:label "IQ_is_widely_supported_now_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance1_char0-225 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/black_genes_have-on_children_'s_IQs_00028> a grasp:Attribution ;
+        rdfs:label "black_genes_have-on_children_'s_IQs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance0_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:children_on_IQs_00028 a grasp:Attribution ;
+        rdfs:label "children_on_IQs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance0_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:encouraged_is_effect_00028 a grasp:Attribution ;
+        rdfs:label "encouraged_is_effect_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance0_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/genes_have-on_children_'s_IQs_00028> a grasp:Attribution ;
+        rdfs:label "genes_have-on_children_'s_IQs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance0_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:mongrelised_population_is-one_stupid_00028 a grasp:Attribution ;
+        rdfs:label "mongrelised_population_is-one_stupid_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance0_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:population_is-one_stupid_00028 a grasp:Attribution ;
+        rdfs:label "population_is-one_stupid_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat124_utterance0_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat124_utterance0_char0-211 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat124_utterance0_char0-211" ;
+        gaf:containsDenotation leolaniWorld:IQs,
+            leolaniWorld:black_genes,
+            leolaniWorld:children,
+            <http://cltl.nl/leolani/world/children_'s_IQs>,
+            leolaniWorld:effect,
+            leolaniWorld:encouraged,
+            leolaniWorld:genes,
+            leolaniWorld:mongrelised_population,
+            leolaniWorld:population,
+            leolaniWorld:stupid ;
+        gaf:denotes ns12:s_IQs,
+            leolaniWorld:children_on_IQs,
+            leolaniWorld:encouraged_is_effect,
+            ns13:s_IQs,
+            leolaniWorld:mongrelised_population_is-one_stupid,
+            leolaniWorld:population_is-one_stupid ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/black_genes_have-on_children_'s_IQs_00028>,
+            leolaniTalk:children_on_IQs_00028,
+            leolaniTalk:encouraged_is_effect_00028,
+            <http://cltl.nl/leolani/talk/genes_have-on_children_'s_IQs_00028>,
+            leolaniTalk:mongrelised_population_is-one_stupid_00028,
+            leolaniTalk:population_is-one_stupid_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:13:18.981779"^^xml1:string,
+            "2024-06-05T22:13:18.981846"^^xml1:string,
+            "2024-06-05T22:13:18.981869"^^xml1:string,
+            "2024-06-05T22:13:18.981890"^^xml1:string,
+            "2024-06-05T22:13:18.981910"^^xml1:string,
+            "2024-06-05T22:13:18.981931"^^xml1:string ;
+        rdf:value "One downside to the race mixing that is encouraged in our society nowadays is the effect that black and arab genes will have on children's IQs. A mongrelised population is one that is stupid and easy to control."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat124_utterance0 .
+
+    leolaniTalk:chat124_utterance1_char0-225 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat124_utterance1_char0-225" ;
+        gaf:containsDenotation leolaniWorld:Also_measure,
+            leolaniWorld:Also_outdated_measure,
+            leolaniWorld:Also_very_outdated_measure,
+            leolaniWorld:IQ,
+            leolaniWorld:intelligence,
+            leolaniWorld:measure,
+            leolaniWorld:measure_of_this,
+            leolaniWorld:outdated_measure,
+            leolaniWorld:supported,
+            leolaniWorld:supported_now,
+            leolaniWorld:very_outdated_measure,
+            leolaniWorld:widely_supported,
+            leolaniWorld:widely_supported_now ;
+        gaf:denotes leolaniWorld:IQ_also-is-measure-of_intelligence,
+            leolaniWorld:IQ_also-is-outdated-measure-of_intelligence,
+            leolaniWorld:IQ_also-is-very-outdated-measure-of_intelligence,
+            leolaniWorld:IQ_is-measure-of_intelligence,
+            leolaniWorld:IQ_is-outdated-measure-of_intelligence,
+            leolaniWorld:IQ_is-outdated_intelligence,
+            leolaniWorld:IQ_is-supported-as_measure,
+            leolaniWorld:IQ_is-supported-as_measure_of_this,
+            leolaniWorld:IQ_is-supported-now-as_measure,
+            leolaniWorld:IQ_is-supported-now-as_measure_of_this,
+            leolaniWorld:IQ_is-very-outdated-measure-of_intelligence,
+            leolaniWorld:IQ_is-widely-supported-as_measure,
+            leolaniWorld:IQ_is-widely-supported-as_measure_of_this,
+            leolaniWorld:IQ_is-widely-supported-now-as_measure,
+            leolaniWorld:IQ_is-widely-supported-now-as_measure_of_this,
+            leolaniWorld:IQ_is_Also_measure,
+            leolaniWorld:IQ_is_Also_outdated_measure,
+            leolaniWorld:IQ_is_Also_very_outdated_measure,
+            leolaniWorld:IQ_is_measure,
+            leolaniWorld:IQ_is_outdated_measure,
+            leolaniWorld:IQ_is_supported,
+            leolaniWorld:IQ_is_supported_now,
+            leolaniWorld:IQ_is_very_outdated_measure,
+            leolaniWorld:IQ_is_widely_supported,
+            leolaniWorld:IQ_is_widely_supported_now ;
+        grasp:hasAttribution leolaniTalk:IQ_also-is-measure-of_intelligence_00028,
+            leolaniTalk:IQ_also-is-outdated-measure-of_intelligence_00028,
+            leolaniTalk:IQ_also-is-very-outdated-measure-of_intelligence_00028,
+            leolaniTalk:IQ_is-measure-of_intelligence_00028,
+            leolaniTalk:IQ_is-outdated-measure-of_intelligence_00028,
+            leolaniTalk:IQ_is-outdated_intelligence_00028,
+            leolaniTalk:IQ_is-supported-as_measure_00028,
+            leolaniTalk:IQ_is-supported-as_measure_of_this_00028,
+            leolaniTalk:IQ_is-supported-now-as_measure_00028,
+            leolaniTalk:IQ_is-supported-now-as_measure_of_this_00028,
+            leolaniTalk:IQ_is-very-outdated-measure-of_intelligence_00028,
+            leolaniTalk:IQ_is-widely-supported-as_measure_00028,
+            leolaniTalk:IQ_is-widely-supported-as_measure_of_this_00028,
+            leolaniTalk:IQ_is-widely-supported-now-as_measure_00028,
+            leolaniTalk:IQ_is-widely-supported-now-as_measure_of_this_00028,
+            leolaniTalk:IQ_is_Also_measure_00028,
+            leolaniTalk:IQ_is_Also_outdated_measure_00028,
+            leolaniTalk:IQ_is_Also_very_outdated_measure_00028,
+            leolaniTalk:IQ_is_measure_00028,
+            leolaniTalk:IQ_is_outdated_measure_00028,
+            leolaniTalk:IQ_is_supported_00028,
+            leolaniTalk:IQ_is_supported_now_00028,
+            leolaniTalk:IQ_is_very_outdated_measure_00028,
+            leolaniTalk:IQ_is_widely_supported_00028,
+            leolaniTalk:IQ_is_widely_supported_now_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:13:19.198342"^^xml1:string,
+            "2024-06-05T22:13:19.198392"^^xml1:string,
+            "2024-06-05T22:13:19.198414"^^xml1:string,
+            "2024-06-05T22:13:19.198436"^^xml1:string,
+            "2024-06-05T22:13:19.198457"^^xml1:string,
+            "2024-06-05T22:13:19.198478"^^xml1:string,
+            "2024-06-05T22:13:19.198498"^^xml1:string,
+            "2024-06-05T22:13:19.198519"^^xml1:string,
+            "2024-06-05T22:13:19.198541"^^xml1:string,
+            "2024-06-05T22:13:19.198561"^^xml1:string,
+            "2024-06-05T22:13:19.198583"^^xml1:string,
+            "2024-06-05T22:13:19.198604"^^xml1:string,
+            "2024-06-05T22:13:19.198624"^^xml1:string,
+            "2024-06-05T22:13:19.198644"^^xml1:string,
+            "2024-06-05T22:13:19.198664"^^xml1:string,
+            "2024-06-05T22:13:19.198775"^^xml1:string,
+            "2024-06-05T22:13:19.198794"^^xml1:string,
+            "2024-06-05T22:13:19.198814"^^xml1:string,
+            "2024-06-05T22:13:19.198833"^^xml1:string,
+            "2024-06-05T22:13:19.198852"^^xml1:string,
+            "2024-06-05T22:13:19.198871"^^xml1:string,
+            "2024-06-05T22:13:19.198890"^^xml1:string,
+            "2024-06-05T22:13:19.198910"^^xml1:string,
+            "2024-06-05T22:13:19.198929"^^xml1:string,
+            "2024-06-05T22:13:19.198949"^^xml1:string ;
+        rdf:value "What are you talking about? There's no evidence to say that black people, or people from the Middle East have lower IQs. Also, IQ is a very outdated measure of intelligence and isn't widely supported as a measure of this now."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat124_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:IQ_is_outdated_measure {
+    leolaniWorld:IQ ns1:is leolaniWorld:outdated_measure .
+}
+
+leolaniWorld:IQ_is-widely-supported-now-as_measure {
+    leolaniWorld:IQ ns1:is_widely_supported_now_as leolaniWorld:measure .
+}
+
+leolaniWorld:IQ_is_Also_measure {
+    leolaniWorld:IQ ns1:is leolaniWorld:Also_measure .
+}
+
+leolaniWorld:IQ_is_very_outdated_measure {
+    leolaniWorld:IQ ns1:is leolaniWorld:very_outdated_measure .
+}
+
+leolaniWorld:IQ_is-supported-now-as_measure {
+    leolaniWorld:IQ ns1:is_supported_now_as leolaniWorld:measure .
+}
+
+leolaniWorld:IQ_is_supported_now {
+    leolaniWorld:IQ ns1:is leolaniWorld:supported_now .
+}
+

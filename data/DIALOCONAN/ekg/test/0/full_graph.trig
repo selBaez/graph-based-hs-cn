@@ -1,0 +1,2027 @@
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eps: <http://cltl.nl/episodicawareness/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gaf: <http://groundedannotationframework.org/gaf#> .
+@prefix grasp: <http://groundedannotationframework.org/grasp#> .
+@prefix graspe: <http://groundedannotationframework.org/grasp/emotion#> .
+@prefix graspf: <http://groundedannotationframework.org/grasp/factuality#> .
+@prefix grasps: <http://groundedannotationframework.org/grasp/sentiment#> .
+@prefix hs: <http://cltl-hs.org/> .
+@prefix leolaniContext: <http://cltl.nl/leolani/context/> .
+@prefix leolaniTalk: <http://cltl.nl/leolani/talk/> .
+@prefix leolaniWorld: <http://cltl.nl/leolani/world/> .
+@prefix ns1: <http://cltl.nl/leolani/world/We_’> .
+@prefix ns11: <http://cltl.nl/leolani/n2mu/> .
+@prefix ns13: <http://cltl.nl/leolani/world/I_’> .
+@prefix ns2: <http://cltl.nl/leolani/n2mu/’> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time1: <http://www.w3.org/TR/owl-time/#> .
+@prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+leolaniWorld:Our_soldiers_are-left_to_rot_on_our_streets {
+    leolaniWorld:Our_soldiers ns11:are_left leolaniWorld:to_rot_on_our_streets .
+}
+
+leolaniWorld:people_surely-need_to_honour {
+    leolaniWorld:people ns11:surely_need leolaniWorld:to_honour .
+}
+
+leolaniWorld:We_have_at_least_13k_ex-soldiers_sleeping {
+    leolaniWorld:We ns11:have leolaniWorld:at_least_13k_ex-soldiers_sleeping .
+}
+
+ns1:ve_20k_time_bombs_from_Afghanistan {
+    leolaniWorld:We ns2:ve leolaniWorld:20k_time_bombs_from_Afghanistan .
+}
+
+leolaniWorld:Ontology {
+    eps:hasContext a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance,
+            sem:Event ;
+        rdfs:range eps:Context ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    eps:hasDetection a owl:ObjectProperty ;
+        rdfs:domain eps:Context ;
+        rdfs:range grasp:Detection ;
+        rdfs:subPropertyOf eps:contextProperty .
+
+    gaf:Assertion a owl:Class ;
+        rdfs:subClassOf gaf:Instance .
+
+    grasp:Chat a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:Experience a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Statement a owl:Class ;
+        rdfs:subClassOf gaf:Mention,
+            sem:Event .
+
+    grasp:Visual a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:hasAttribution a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Attribution ;
+        owl:inverseOf grasp:isAttributionFor .
+
+    grasp:wasAttributedTo a owl:ObjectProperty ;
+        rdfs:label "was attributed to" ;
+        rdfs:comment "States that a gaf:Mention was attributed to a gaf:Instance. This is a sub property of the prov:wasAttributedTo relation that can be used to relate any prov:Entity to any prov:Agent."^^xsd:string ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Source ;
+        rdfs:subPropertyOf prov:wasAttributedTo .
+
+    <http://schema.org/Place> a owl:Class .
+
+    sem:hasActor a owl:ObjectProperty ;
+        rdfs:label "has Actor" ;
+        rdfs:comment "Has actor is used to state which Actors or Objects participate in an Event." ;
+        rdfs:range sem:Actor ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasBeginTimeStamp a owl:DatatypeProperty ;
+        rdfs:label "has begin timestamp" ;
+        rdfs:comment "Has begin timestamp is used to indicate the beginning of a time interval. Omitting the hasBeginTimeStamp while stating a hasEndTimeStamp is interpreted as an open ended interval." ;
+        rdfs:subPropertyOf sem:hasTimeStamp .
+
+    sem:hasPlace a owl:ObjectProperty ;
+        rdfs:label "has Place" ;
+        rdfs:comment "Has place is used to state in which Place(s) an Event happened. Coordinates can be attached to the Place with the W3C Geospatial Vocabulary (http://www.w3.org/2005/Incubator/geo/XGR-geo-20071023/)." ;
+        rdfs:range sem:Place ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    sem:hasSubEvent a owl:ObjectProperty ;
+        rdfs:label "has subevent" ;
+        rdfs:comment "Has subevent connects an Event to other Events that belong to it. This is a very generic property that does not mean the subevents fully define the superconcept or that there is any causal relationship." ;
+        rdfs:domain sem:Event ;
+        rdfs:range sem:Event ;
+        rdfs:subPropertyOf sem:eventProperty ;
+        owl:inverseOf sem:subEventOf .
+
+    sem:hasTime a owl:ObjectProperty ;
+        rdfs:label "has Time" ;
+        rdfs:comment "Has time is used to indicate at which time an Event took place or when a property under the Temporary Constraint is valid. Has time points to a symbolic representation of time, which allows semantic relations between time resources. (see http://www.w3.org/TR/owl-time/)" ;
+        rdfs:range sem:Time ;
+        rdfs:subPropertyOf sem:eventProperty .
+
+    skos:broadMatch a owl:AnnotationProperty .
+
+    skos:closeMatch a owl:AnnotationProperty .
+
+    skos:narrowMatch a owl:AnnotationProperty .
+
+    prov:category a owl:AnnotationProperty .
+
+    prov:component a owl:AnnotationProperty .
+
+    prov:definition a owl:AnnotationProperty .
+
+    prov:hadDerivation a owl:ObjectProperty ;
+        owl:inverseOf prov:wasDerivedFrom .
+
+    prov:inverse a owl:AnnotationProperty .
+
+    prov:qualifiedForm a owl:AnnotationProperty .
+
+    gaf:containsDenotation a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        owl:inverseOf gaf:denotedIn .
+
+    gaf:denotedBy a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention ;
+        rdfs:subPropertyOf gaf:denotedIn ;
+        owl:inverseOf gaf:denotes .
+
+    grasp:Source a owl:Class ;
+        rdfs:label "Source" ;
+        rdfs:comment "" ;
+        rdfs:subClassOf owl:Thing .
+
+    grasp:Utterance a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    graspe:anger a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:disgust a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:fear a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:happiness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:sadness a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspe:surprise a grasp:EmotionValue,
+            owl:NamedIndividual .
+
+    graspf:certain a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:negative a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:non-future a grasp:TemporalValue,
+            owl:NamedIndividual .
+
+    graspf:positive a grasp:PolarityValue,
+            owl:NamedIndividual .
+
+    graspf:possible a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:probable a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    graspf:underspecified a grasp:CertaintyValue,
+            owl:NamedIndividual .
+
+    grasps:negative a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    grasps:positive a grasp:SentimentValue,
+            owl:NamedIndividual .
+
+    sem:Actor a owl:Class ;
+        rdfs:label "Actor" ;
+        rdfs:comment """Actors are entities that take part in an Event, either actively or passively. Actors do not necessarily have to be sentient. They can also be objects. Actors are a thing, animate or inanimate, physical or non-physical.
+""" ;
+        skos:broadMatch <http://sw.opencyc.org/2009/04/07/concept/en/SomethingExisting>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant> ;
+        skos:closeMatch dcterms:Agent,
+            dcterms:AgentClass,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Agent-Generic>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Agent>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E39.Actor>,
+            foaf:Agent .
+
+    sem:Place a owl:Class ;
+        rdfs:label "Place" ;
+        rdfs:comment "Places are locations where an Event happens. They do not need to be physical places and hence do not necessarily need coordinates. Neither do they need to have any significance apart from them being the location of an Event." ;
+        skos:closeMatch dcterms:Location,
+            <http://sw.opencyc.org/2009/04/07/concept/en/EnduringThing-Localized>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#GeographicArea>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E53.Place> ;
+        skos:narrowMatch <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#PhysicalRegion>,
+            <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+    sem:Time a owl:Class ;
+        rdfs:label "Time" ;
+        rdfs:comment "Time contains symbolic representations of when an Event took place. Time instances do not necessarily need to have a timestamp associated with them. The Time class exists to represent semantics of time, e.g. that one thing happens before another, even though the exact timestamps are unknown." ;
+        skos:broadMatch <http://www.w3.org/2006/timeTemporalEntity> .
+
+    sem:hasTimeStamp a owl:DatatypeProperty .
+
+    sem:subEventOf a owl:ObjectProperty ;
+        rdfs:label "subevent of" ;
+        rdfs:comment "Inverse property of hasSubEvent" .
+
+    rdf:value a owl:ObjectProperty .
+
+    prov:wasAttributedTo a owl:ObjectProperty .
+
+    prov:wasDerivedFrom a owl:ObjectProperty ;
+        rdfs:label "wasDerivedFrom" ;
+        rdfs:comment "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range grasp:Detection,
+            grasp:Utterance ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        prov:category "starting-point" ;
+        prov:component "derivations" ;
+        prov:definition "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity."@en ;
+        prov:inverse "hadDerivation" ;
+        prov:qualifiedForm prov:Derivation .
+
+    foaf:Agent a owl:Class .
+
+    eps:Context a owl:Class .
+
+    eps:contextProperty a owl:ObjectProperty ;
+        rdfs:label "context property" ;
+        rdfs:comment "Context properties connect Context to other SEM Core entities." ;
+        owl:equivalentProperty sem:eventProperty .
+
+    gaf:denotedIn a owl:ObjectProperty ;
+        rdfs:domain gaf:Instance ;
+        rdfs:range gaf:Mention .
+
+    gaf:denotes a owl:ObjectProperty ;
+        rdfs:domain gaf:Mention ;
+        rdfs:range gaf:Instance ;
+        rdfs:subPropertyOf gaf:containsDenotation .
+
+    grasp:Attribution a owl:Class ;
+        rdfs:label "Attribution" ;
+        rdfs:comment "A grasp:Attribution reflects the attribution of some interpretation, some perspective to a gaf:Mention. An attribution expresses such things as certainty, emotion, polarity, sentiment, temporality."^^xsd:string ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:intersectionOf ( [ a owl:Restriction ;
+                            owl:onProperty grasp:isAttributionFor ;
+                            owl:someValuesFrom gaf:Mention ] [ a owl:Restriction ;
+                            owl:onProperty rdf:value ;
+                            owl:someValuesFrom grasp:AttributionValue ] ) ] .
+
+    grasp:Detection a owl:Class ;
+        rdfs:subClassOf sem:Event .
+
+    grasp:isAttributionFor a owl:ObjectProperty ;
+        rdfs:domain grasp:Attribution ;
+        rdfs:range gaf:Mention .
+
+    grasp:PolarityValue a owl:Class ;
+        rdfs:label "Polarity Value" ;
+        rdfs:comment "The polarity of a gaf:Mention (e.g. if something is or isn't the case)"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:negative graspf:positive ) ] .
+
+    grasp:CertaintyValue a owl:Class ;
+        rdfs:label "Certainty Value" ;
+        rdfs:comment "The level of certainty of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:disjointWith grasp:PolarityValue,
+            grasp:TemporalValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:certain graspf:possible graspf:probable graspf:underspecified ) ] .
+
+    grasp:FactualityValue a owl:Class ;
+        rdfs:label "Factuality value"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:SentimentValue .
+
+    grasp:SentimentValue a owl:Class ;
+        rdfs:label "Sentiment Value" ;
+        rdfs:comment "The sentiment expressed by a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( grasps:negative grasps:positive ) ] .
+
+    grasp:TemporalValue a owl:Class ;
+        rdfs:label "Temporal Value" ;
+        rdfs:comment "The temporal property of a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:FactualityValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspf:future graspf:non-future ) ] .
+
+    sem:eventProperty a owl:ObjectProperty ;
+        rdfs:label "event property" ;
+        rdfs:comment "Event properties connect Events to other SEM Core entities." .
+
+    grasp:EmotionValue a owl:Class ;
+        rdfs:label "Emotion Value" ;
+        rdfs:comment "The emotion expressed in a gaf:Mention"^^xsd:string ;
+        rdfs:subClassOf grasp:AttributionValue ;
+        owl:disjointWith grasp:FactualityValue,
+            grasp:SentimentValue ;
+        owl:equivalentClass [ a owl:Class ;
+                owl:oneOf ( graspe:anger graspe:disgust graspe:fear graspe:happiness graspe:sadness graspe:surprise ) ] .
+
+    gaf:Instance a owl:Class ;
+        rdfs:label "Instance" ;
+        rdfs:comment "Instances are statements about real world entities, including actions, processes and abstract notions. They are the primary subject of individuals of type gaf:Mention that can denote them."^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotedBy ;
+                owl:someValuesFrom gaf:Mention ] .
+
+    grasp:AttributionValue a owl:Class ;
+        rdfs:label "Attribution value"^^xsd:string ;
+        rdfs:comment "The value of a grasp:Attribution"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    sem:Event a owl:Class ;
+        rdfs:label "Event" ;
+        rdfs:comment "Events are things that happen. This comprises everything from historical events to web site sessions and mythical journeys. Event is the central class of SEM." ;
+        skos:broadMatch <http://linkedevents.org/ontology/Event>,
+            <http://purl.org/NET/c4dm/event.owl#Event> ;
+        skos:closeMatch dcmitype:Event,
+            <http://sw.opencyc.org/2009/04/07/concept/en/Situation>,
+            <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#perdurant>,
+            <http://www.ontologyportal.org/translations/SUMO.owl.txt#Process>,
+            <http://www8.informatik.uni-erlangen.de/IMMD8/Services/cidoc-crm/erlangen-crm_090330_5_0_1.owl#E5.Event> .
+
+    gaf:Mention a owl:Class ;
+        rdfs:label "Mention" ;
+        rdfs:comment """Mentions are references to members of the gaf:Instance class as they occur in (web) media such as texts, video, audio, images, etc. Mentions denote gaf:Instances.
+
+A Mention uniquely identifies the (part of a) web source that denotes the mention. We refer to the standard use of fragment identifiers for different media types. """^^xsd:string ;
+        rdfs:subClassOf owl:Thing ;
+        owl:disjointWith grasp:AttributionValue ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty gaf:denotes ;
+                owl:someValuesFrom gaf:Instance ] .
+
+    [] a owl:Ontology .
+}
+
+leolaniWorld:We_have_at_least_13k_homeless_ex-soldiers {
+    leolaniWorld:We ns11:have leolaniWorld:at_least_13k_homeless_ex-soldiers .
+}
+
+leolaniWorld:veterans_getting_arrested {
+    leolaniWorld:veterans ns11:getting leolaniWorld:arrested .
+}
+
+leolaniWorld:We_have_at_least_13k_homeless_ex-soldiers_sleeping {
+    leolaniWorld:We ns11:have leolaniWorld:at_least_13k_homeless_ex-soldiers_sleeping .
+}
+
+leolaniWorld:people_also-need_honour {
+    leolaniWorld:people ns11:also_need leolaniWorld:honour .
+}
+
+leolaniWorld:I_care-about_future_of_our_great_country {
+    leolaniWorld:I ns11:care_about leolaniWorld:future_of_our_great_country .
+}
+
+leolaniWorld:their_lives_help_our_forces {
+    leolaniWorld:their_lives ns11:help leolaniWorld:our_forces .
+}
+
+ns1:ve_imported_20k_time_bombs_from_Afghanistan {
+    leolaniWorld:We ns2:ve leolaniWorld:imported_20k_time_bombs_from_Afghanistan .
+}
+
+leolaniWorld:people_need_to_honour {
+    leolaniWorld:people ns11:need leolaniWorld:to_honour .
+}
+
+leolaniWorld:people_surely-also-need_us {
+    leolaniWorld:people ns11:surely_also_need leolaniWorld:us .
+}
+
+ns1:ve_20k_time_bombs {
+    leolaniWorld:We ns2:ve leolaniWorld:20k_time_bombs .
+}
+
+leolaniWorld:people_surely-also-need_honour {
+    leolaniWorld:people ns11:surely_also_need leolaniWorld:honour .
+}
+
+ns1:ve_just_imported_20k_ticking_time_bombs_from_Afghanistan {
+    leolaniWorld:We ns2:ve leolaniWorld:just_imported_20k_ticking_time_bombs_from_Afghanistan .
+}
+
+ns1:ve_just_imported_20k_time_bombs {
+    leolaniWorld:We ns2:ve leolaniWorld:just_imported_20k_time_bombs .
+}
+
+leolaniWorld:We_have_at_least_13k_ex-soldiers {
+    leolaniWorld:We ns11:have leolaniWorld:at_least_13k_ex-soldiers .
+}
+
+leolaniWorld:Our_soldiers_are-left_rot {
+    leolaniWorld:Our_soldiers ns11:are_left leolaniWorld:rot .
+}
+
+leolaniWorld:homeless_veterans_getting_arrested_for_begging_in_street {
+    leolaniWorld:homeless_veterans ns11:getting leolaniWorld:arrested_for_begging_in_street .
+}
+
+leolaniWorld:Our_soldiers_rot-on_our_streets {
+    leolaniWorld:Our_soldiers ns11:rot_on leolaniWorld:our_streets .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context19 a eps:Context ;
+        rdfs:label "context19" ;
+        hs:id "19"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat0 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "132"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat0 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat0_utterance0,
+            leolaniTalk:chat0_utterance1,
+            leolaniTalk:chat0_utterance2,
+            leolaniTalk:chat0_utterance3,
+            leolaniTalk:chat0_utterance4,
+            leolaniTalk:chat0_utterance5,
+            leolaniTalk:chat0_utterance6 .
+
+    leolaniTalk:chat0_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat0_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat0_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat0_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat0_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat0_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat0_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat0_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat0_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat0_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat0_utterance5 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat0_utterance5" ;
+        hs:id "5"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat0_utterance6 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat0_utterance6" ;
+        hs:id "6"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+ns1:ve_imported_20k_time_bombs {
+    leolaniWorld:We ns2:ve leolaniWorld:imported_20k_time_bombs .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:I_care-about_future a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_care-about_future" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:I_care-about_future_of_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_care-about_future_of_our_country" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:I_care-about_future_of_our_great_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_care-about_future_of_our_great_country" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:I_care-about_future_of_our_once_great_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_care-about_future_of_our_once_great_country" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance6_char0-65 .
+
+    ns13:m_patriot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_’m_patriot" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:Our_soldiers_are-left_rot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_soldiers_are-left_rot" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:Our_soldiers_are-left_rot_on_our_streets a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_soldiers_are-left_rot_on_our_streets" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:Our_soldiers_are-left_to_rot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_soldiers_are-left_to_rot" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:Our_soldiers_are-left_to_rot_on_our_streets a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_soldiers_are-left_to_rot_on_our_streets" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:Our_soldiers_are_left a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_soldiers_are_left" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:Our_soldiers_rot-on_our_streets a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_soldiers_rot-on_our_streets" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:Our_soldiers_rot_we_house a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_soldiers_rot_we_house" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:Our_soldiers_rot_while_we_house a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_soldiers_rot_while_we_house" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:We_also-have_at_least_1_million_empty_homes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_also-have_at_least_1_million_empty_homes" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance3_char0-139 .
+
+    leolaniWorld:We_also-have_at_least_1_million_homes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_also-have_at_least_1_million_homes" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance3_char0-139 .
+
+    leolaniWorld:We_have_at_least_13k_ex-soldiers a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_have_at_least_13k_ex-soldiers" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance2_char0-88 .
+
+    leolaniWorld:We_have_at_least_13k_ex-soldiers_sleeping a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_have_at_least_13k_ex-soldiers_sleeping" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance2_char0-88 .
+
+    leolaniWorld:We_have_at_least_13k_homeless_ex-soldiers a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_have_at_least_13k_homeless_ex-soldiers" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance2_char0-88 .
+
+    leolaniWorld:We_have_at_least_13k_homeless_ex-soldiers_sleeping a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_have_at_least_13k_homeless_ex-soldiers_sleeping" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance2_char0-88 .
+
+    leolaniWorld:We_have_at_least_1_million_empty_homes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_have_at_least_1_million_empty_homes" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance3_char0-139 .
+
+    leolaniWorld:We_have_at_least_1_million_homes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_have_at_least_1_million_homes" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance3_char0-139 .
+
+    ns1:ve_20k_ticking_time_bombs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_20k_ticking_time_bombs" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_20k_ticking_time_bombs_from_Afghanistan a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_20k_ticking_time_bombs_from_Afghanistan" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_20k_time_bombs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_20k_time_bombs" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_20k_time_bombs_from_Afghanistan a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_20k_time_bombs_from_Afghanistan" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_imported_20k_ticking_time_bombs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_imported_20k_ticking_time_bombs" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_imported_20k_ticking_time_bombs_from_Afghanistan a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_imported_20k_ticking_time_bombs_from_Afghanistan" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_imported_20k_time_bombs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_imported_20k_time_bombs" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_imported_20k_time_bombs_from_Afghanistan a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_imported_20k_time_bombs_from_Afghanistan" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_just_imported_20k_ticking_time_bombs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_just_imported_20k_ticking_time_bombs" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_just_imported_20k_ticking_time_bombs_from_Afghanistan a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_just_imported_20k_ticking_time_bombs_from_Afghanistan" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_just_imported_20k_time_bombs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_just_imported_20k_time_bombs" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    ns1:ve_just_imported_20k_time_bombs_from_Afghanistan a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_’ve_just_imported_20k_time_bombs_from_Afghanistan" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:families_coming-from_Kabul a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "families_coming-from_Kabul" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:families_coming-off_planes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "families_coming-off_planes" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:homeless_veterans_getting-arrested-for_begging a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homeless_veterans_getting-arrested-for_begging" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:homeless_veterans_getting-arrested-in_street a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homeless_veterans_getting-arrested-in_street" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:homeless_veterans_getting_arrested a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homeless_veterans_getting_arrested" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:homeless_veterans_getting_arrested_for_begging_in_street a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homeless_veterans_getting_arrested_for_begging_in_street" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:kids_coming-from_Kabul a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "kids_coming-from_Kabul" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:kids_coming-off_planes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "kids_coming-off_planes" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_also-need_honour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_also-need_honour" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_also-need_to_honour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_also-need_to_honour" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_also-need_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_also-need_us" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_need_honour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_need_honour" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_need_to_honour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_need_to_honour" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_need_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_need_us" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_surely-also-need_honour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_surely-also-need_honour" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_surely-also-need_to_honour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_surely-also-need_to_honour" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_surely-also-need_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_surely-also-need_us" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_surely-need_honour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_surely-need_honour" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_surely-need_to_honour a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_surely-need_to_honour" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:people_surely-need_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_surely-need_us" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:scared_kids_coming-from_Kabul a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "scared_kids_coming-from_Kabul" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:scared_kids_coming-off_planes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "scared_kids_coming-off_planes" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:their_lives_help_our_forces a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "their_lives_help_our_forces" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:us_honour_our_promises a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "us_honour_our_promises" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:veterans_getting-arrested-for_begging a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "veterans_getting-arrested-for_begging" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:veterans_getting-arrested-in_street a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "veterans_getting-arrested-in_street" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:veterans_getting_arrested a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "veterans_getting_arrested" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:veterans_getting_arrested_for_begging_in_street a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "veterans_getting_arrested_for_begging_in_street" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:we_house_terrorists a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_house_terrorists" ;
+        gaf:denotedBy leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:people_also-need_to_honour {
+    leolaniWorld:people ns11:also_need leolaniWorld:to_honour .
+}
+
+leolaniWorld:veterans_getting_arrested_for_begging_in_street {
+    leolaniWorld:veterans ns11:getting leolaniWorld:arrested_for_begging_in_street .
+}
+
+ns1:ve_imported_20k_ticking_time_bombs {
+    leolaniWorld:We ns2:ve leolaniWorld:imported_20k_ticking_time_bombs .
+}
+
+leolaniWorld:I_care-about_future_of_our_once_great_country {
+    leolaniWorld:I ns11:care_about leolaniWorld:future_of_our_once_great_country .
+}
+
+leolaniWorld:I_care-about_future_of_our_country {
+    leolaniWorld:I ns11:care_about leolaniWorld:future_of_our_country .
+}
+
+ns1:ve_imported_20k_ticking_time_bombs_from_Afghanistan {
+    leolaniWorld:We ns2:ve leolaniWorld:imported_20k_ticking_time_bombs_from_Afghanistan .
+}
+
+leolaniWorld:Our_soldiers_rot_while_we_house {
+    leolaniWorld:Our_soldiers ns11:rot leolaniWorld:while_we_house .
+}
+
+leolaniWorld:We_have_at_least_1_million_homes {
+    leolaniWorld:We ns11:have leolaniWorld:at_least_1_million_homes .
+}
+
+leolaniWorld:people_surely-need_us {
+    leolaniWorld:people ns11:surely_need leolaniWorld:us .
+}
+
+leolaniWorld:kids_coming-off_planes {
+    leolaniWorld:kids ns11:coming_off leolaniWorld:planes .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:20k_ticking_time_bombs a gaf:Instance ;
+        rdfs:label "20k-ticking-time-bombs" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:20k_ticking_time_bombs_from_Afghanistan a gaf:Instance ;
+        rdfs:label "20k-ticking-time-bombs-from-afghanistan" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:20k_time_bombs a gaf:Instance ;
+        rdfs:label "20k-time-bombs" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:20k_time_bombs_from_Afghanistan a gaf:Instance ;
+        rdfs:label "20k-time-bombs-from-afghanistan" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:Kabul a gaf:Instance ;
+        rdfs:label "kabul" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:Our_soldiers a gaf:Instance ;
+        rdfs:label "our-soldiers" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133,
+            leolaniTalk:chat0_utterance2_char0-88,
+            leolaniTalk:chat0_utterance3_char0-139 .
+
+    leolaniWorld:arrested a gaf:Instance ;
+        rdfs:label "arrested" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:arrested_for_begging_in_street a gaf:Instance ;
+        rdfs:label "arrested-for-begging-in-street" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:at_least_13k_ex-soldiers a gaf:Instance ;
+        rdfs:label "at-least-13k-ex-soldiers" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance2_char0-88 .
+
+    leolaniWorld:at_least_13k_ex-soldiers_sleeping a gaf:Instance ;
+        rdfs:label "at-least-13k-ex-soldiers-sleeping" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance2_char0-88 .
+
+    leolaniWorld:at_least_13k_homeless_ex-soldiers a gaf:Instance ;
+        rdfs:label "at-least-13k-homeless-ex-soldiers" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance2_char0-88 .
+
+    leolaniWorld:at_least_13k_homeless_ex-soldiers_sleeping a gaf:Instance ;
+        rdfs:label "at-least-13k-homeless-ex-soldiers-sleeping" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance2_char0-88 .
+
+    leolaniWorld:at_least_1_million_empty_homes a gaf:Instance ;
+        rdfs:label "at-least-1-million-empty-homes" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance3_char0-139 .
+
+    leolaniWorld:at_least_1_million_homes a gaf:Instance ;
+        rdfs:label "at-least-1-million-homes" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance3_char0-139 .
+
+    leolaniWorld:begging a gaf:Instance ;
+        rdfs:label "begging" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:families a gaf:Instance ;
+        rdfs:label "families" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:future a gaf:Instance ;
+        rdfs:label "future" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:future_of_our_country a gaf:Instance ;
+        rdfs:label "future-of-our-country" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:future_of_our_great_country a gaf:Instance ;
+        rdfs:label "future-of-our-great-country" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:future_of_our_once_great_country a gaf:Instance ;
+        rdfs:label "future-of-our-once-great-country" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:homeless_veterans a gaf:Instance ;
+        rdfs:label "homeless-veterans" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:honour a gaf:Instance ;
+        rdfs:label "honour" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:imported_20k_ticking_time_bombs a gaf:Instance ;
+        rdfs:label "imported-20k-ticking-time-bombs" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:imported_20k_ticking_time_bombs_from_Afghanistan a gaf:Instance ;
+        rdfs:label "imported-20k-ticking-time-bombs-from-afghanistan" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:imported_20k_time_bombs a gaf:Instance ;
+        rdfs:label "imported-20k-time-bombs" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:imported_20k_time_bombs_from_Afghanistan a gaf:Instance ;
+        rdfs:label "imported-20k-time-bombs-from-afghanistan" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:just_imported_20k_ticking_time_bombs a gaf:Instance ;
+        rdfs:label "just-imported-20k-ticking-time-bombs" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:just_imported_20k_ticking_time_bombs_from_Afghanistan a gaf:Instance ;
+        rdfs:label "just-imported-20k-ticking-time-bombs-from-afghanistan" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:just_imported_20k_time_bombs a gaf:Instance ;
+        rdfs:label "just-imported-20k-time-bombs" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:just_imported_20k_time_bombs_from_Afghanistan a gaf:Instance ;
+        rdfs:label "just-imported-20k-time-bombs-from-afghanistan" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:kids a gaf:Instance ;
+        rdfs:label "kids" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:left a gaf:Instance ;
+        rdfs:label "left" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_forces a gaf:Instance ;
+        rdfs:label "our-forces" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:our_promises a gaf:Instance ;
+        rdfs:label "our-promises" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:our_streets a gaf:Instance ;
+        rdfs:label "our-streets" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:patriot a gaf:Instance ;
+        rdfs:label "patriot" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance6_char0-65 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:planes a gaf:Instance ;
+        rdfs:label "planes" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:rot a gaf:Instance ;
+        rdfs:label "rot" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:rot_on_our_streets a gaf:Instance ;
+        rdfs:label "rot-on-our-streets" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:scared_kids a gaf:Instance ;
+        rdfs:label "scared-kids" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance5_char0-188 .
+
+    leolaniWorld:street a gaf:Instance ;
+        rdfs:label "street" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:terrorists a gaf:Instance ;
+        rdfs:label "terrorists" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:their_lives a gaf:Instance ;
+        rdfs:label "their-lives" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:to_honour a gaf:Instance ;
+        rdfs:label "to-honour" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:to_rot a gaf:Instance ;
+        rdfs:label "to-rot" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:to_rot_on_our_streets a gaf:Instance ;
+        rdfs:label "to-rot-on-our-streets" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance1_char0-97 .
+
+    leolaniWorld:veterans a gaf:Instance ;
+        rdfs:label "veterans" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance0_char0-133 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:we_house a gaf:Instance ;
+        rdfs:label "we-house" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+
+    leolaniWorld:while_we_house a gaf:Instance ;
+        rdfs:label "while-we-house" ;
+        gaf:denotedIn leolaniTalk:chat0_utterance4_char0-88 .
+}
+
+leolaniWorld:homeless_veterans_getting_arrested {
+    leolaniWorld:homeless_veterans ns11:getting leolaniWorld:arrested .
+}
+
+leolaniWorld:people_need_us {
+    leolaniWorld:people ns11:need leolaniWorld:us .
+}
+
+leolaniWorld:people_need_honour {
+    leolaniWorld:people ns11:need leolaniWorld:honour .
+}
+
+leolaniWorld:Our_soldiers_are_left {
+    leolaniWorld:Our_soldiers ns11:are leolaniWorld:left .
+}
+
+ns1:ve_20k_ticking_time_bombs_from_Afghanistan {
+    leolaniWorld:We ns2:ve leolaniWorld:20k_ticking_time_bombs_from_Afghanistan .
+}
+
+leolaniWorld:We_have_at_least_1_million_empty_homes {
+    leolaniWorld:We ns11:have leolaniWorld:at_least_1_million_empty_homes .
+}
+
+leolaniWorld:scared_kids_coming-off_planes {
+    leolaniWorld:scared_kids ns11:coming_off leolaniWorld:planes .
+}
+
+leolaniWorld:Our_soldiers_are-left_rot_on_our_streets {
+    leolaniWorld:Our_soldiers ns11:are_left leolaniWorld:rot_on_our_streets .
+}
+
+leolaniWorld:families_coming-from_Kabul {
+    leolaniWorld:families ns11:coming_from leolaniWorld:Kabul .
+}
+
+leolaniWorld:homeless_veterans_getting-arrested-in_street {
+    leolaniWorld:homeless_veterans ns11:getting_arrested_in leolaniWorld:street .
+}
+
+leolaniWorld:people_surely-also-need_to_honour {
+    leolaniWorld:people ns11:surely_also_need leolaniWorld:to_honour .
+}
+
+ns1:ve_20k_ticking_time_bombs {
+    leolaniWorld:We ns2:ve leolaniWorld:20k_ticking_time_bombs .
+}
+
+leolaniWorld:Our_soldiers_rot_we_house {
+    leolaniWorld:Our_soldiers ns11:rot leolaniWorld:we_house .
+}
+
+leolaniWorld:families_coming-off_planes {
+    leolaniWorld:families ns11:coming_off leolaniWorld:planes .
+}
+
+leolaniWorld:kids_coming-from_Kabul {
+    leolaniWorld:kids ns11:coming_from leolaniWorld:Kabul .
+}
+
+leolaniWorld:we_house_terrorists {
+    leolaniWorld:we ns11:house leolaniWorld:terrorists .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_care-about_future_0009 a grasp:Attribution ;
+        rdfs:label "I_care-about_future_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance6_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_care-about_future_of_our_country_0009 a grasp:Attribution ;
+        rdfs:label "I_care-about_future_of_our_country_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance6_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_care-about_future_of_our_great_country_0009 a grasp:Attribution ;
+        rdfs:label "I_care-about_future_of_our_great_country_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance6_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_care-about_future_of_our_once_great_country_0009 a grasp:Attribution ;
+        rdfs:label "I_care-about_future_of_our_once_great_country_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance6_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/I_’m_patriot_0009> a grasp:Attribution ;
+        rdfs:label "I_’m_patriot_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance6_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_soldiers_are-left_rot_00028 a grasp:Attribution ;
+        rdfs:label "Our_soldiers_are-left_rot_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_soldiers_are-left_rot_on_our_streets_00028 a grasp:Attribution ;
+        rdfs:label "Our_soldiers_are-left_rot_on_our_streets_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_soldiers_are-left_to_rot_00028 a grasp:Attribution ;
+        rdfs:label "Our_soldiers_are-left_to_rot_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_soldiers_are-left_to_rot_on_our_streets_00028 a grasp:Attribution ;
+        rdfs:label "Our_soldiers_are-left_to_rot_on_our_streets_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_soldiers_are_left_00028 a grasp:Attribution ;
+        rdfs:label "Our_soldiers_are_left_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_soldiers_rot-on_our_streets_00028 a grasp:Attribution ;
+        rdfs:label "Our_soldiers_rot-on_our_streets_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_soldiers_rot_we_house_00028 a grasp:Attribution ;
+        rdfs:label "Our_soldiers_rot_we_house_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_soldiers_rot_while_we_house_00028 a grasp:Attribution ;
+        rdfs:label "Our_soldiers_rot_while_we_house_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_also-have_at_least_1_million_empty_homes_00028 a grasp:Attribution ;
+        rdfs:label "We_also-have_at_least_1_million_empty_homes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance3_char0-139 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_also-have_at_least_1_million_homes_00028 a grasp:Attribution ;
+        rdfs:label "We_also-have_at_least_1_million_homes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance3_char0-139 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_have_at_least_13k_ex-soldiers_00028 a grasp:Attribution ;
+        rdfs:label "We_have_at_least_13k_ex-soldiers_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance2_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_have_at_least_13k_ex-soldiers_sleeping_00028 a grasp:Attribution ;
+        rdfs:label "We_have_at_least_13k_ex-soldiers_sleeping_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance2_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_have_at_least_13k_homeless_ex-soldiers_00028 a grasp:Attribution ;
+        rdfs:label "We_have_at_least_13k_homeless_ex-soldiers_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance2_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_have_at_least_13k_homeless_ex-soldiers_sleeping_00028 a grasp:Attribution ;
+        rdfs:label "We_have_at_least_13k_homeless_ex-soldiers_sleeping_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance2_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_have_at_least_1_million_empty_homes_00028 a grasp:Attribution ;
+        rdfs:label "We_have_at_least_1_million_empty_homes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance3_char0-139 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_have_at_least_1_million_homes_00028 a grasp:Attribution ;
+        rdfs:label "We_have_at_least_1_million_homes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance3_char0-139 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_20k_ticking_time_bombs_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_20k_ticking_time_bombs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_20k_ticking_time_bombs_from_Afghanistan_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_20k_ticking_time_bombs_from_Afghanistan_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_20k_time_bombs_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_20k_time_bombs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_20k_time_bombs_from_Afghanistan_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_20k_time_bombs_from_Afghanistan_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_imported_20k_ticking_time_bombs_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_imported_20k_ticking_time_bombs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_imported_20k_ticking_time_bombs_from_Afghanistan_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_imported_20k_ticking_time_bombs_from_Afghanistan_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_imported_20k_time_bombs_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_imported_20k_time_bombs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_imported_20k_time_bombs_from_Afghanistan_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_imported_20k_time_bombs_from_Afghanistan_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_just_imported_20k_ticking_time_bombs_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_just_imported_20k_ticking_time_bombs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_just_imported_20k_ticking_time_bombs_from_Afghanistan_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_just_imported_20k_ticking_time_bombs_from_Afghanistan_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_just_imported_20k_time_bombs_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_just_imported_20k_time_bombs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/We_’ve_just_imported_20k_time_bombs_from_Afghanistan_00028> a grasp:Attribution ;
+        rdfs:label "We_’ve_just_imported_20k_time_bombs_from_Afghanistan_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:families_coming-from_Kabul_00013 a grasp:Attribution ;
+        rdfs:label "families_coming-from_Kabul_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance5_char0-188 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:families_coming-off_planes_00013 a grasp:Attribution ;
+        rdfs:label "families_coming-off_planes_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance5_char0-188 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:homeless_veterans_getting-arrested-for_begging_00028 a grasp:Attribution ;
+        rdfs:label "homeless_veterans_getting-arrested-for_begging_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:homeless_veterans_getting-arrested-in_street_00028 a grasp:Attribution ;
+        rdfs:label "homeless_veterans_getting-arrested-in_street_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:homeless_veterans_getting_arrested_00028 a grasp:Attribution ;
+        rdfs:label "homeless_veterans_getting_arrested_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:homeless_veterans_getting_arrested_for_begging_in_street_00028 a grasp:Attribution ;
+        rdfs:label "homeless_veterans_getting_arrested_for_begging_in_street_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:kids_coming-from_Kabul_00013 a grasp:Attribution ;
+        rdfs:label "kids_coming-from_Kabul_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance5_char0-188 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:kids_coming-off_planes_00013 a grasp:Attribution ;
+        rdfs:label "kids_coming-off_planes_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance5_char0-188 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_also-need_honour_00026 a grasp:Attribution ;
+        rdfs:label "people_also-need_honour_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_also-need_to_honour_00026 a grasp:Attribution ;
+        rdfs:label "people_also-need_to_honour_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_also-need_us_00026 a grasp:Attribution ;
+        rdfs:label "people_also-need_us_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_need_honour_00026 a grasp:Attribution ;
+        rdfs:label "people_need_honour_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_need_to_honour_00026 a grasp:Attribution ;
+        rdfs:label "people_need_to_honour_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_need_us_00026 a grasp:Attribution ;
+        rdfs:label "people_need_us_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_surely-also-need_honour_00026 a grasp:Attribution ;
+        rdfs:label "people_surely-also-need_honour_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_surely-also-need_to_honour_00026 a grasp:Attribution ;
+        rdfs:label "people_surely-also-need_to_honour_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_surely-also-need_us_00026 a grasp:Attribution ;
+        rdfs:label "people_surely-also-need_us_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_surely-need_honour_00026 a grasp:Attribution ;
+        rdfs:label "people_surely-need_honour_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_surely-need_to_honour_00026 a grasp:Attribution ;
+        rdfs:label "people_surely-need_to_honour_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_surely-need_us_00026 a grasp:Attribution ;
+        rdfs:label "people_surely-need_us_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:scared_kids_coming-from_Kabul_00013 a grasp:Attribution ;
+        rdfs:label "scared_kids_coming-from_Kabul_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance5_char0-188 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:scared_kids_coming-off_planes_00013 a grasp:Attribution ;
+        rdfs:label "scared_kids_coming-off_planes_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance5_char0-188 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:their_lives_help_our_forces_00026 a grasp:Attribution ;
+        rdfs:label "their_lives_help_our_forces_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:us_honour_our_promises_00026 a grasp:Attribution ;
+        rdfs:label "us_honour_our_promises_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance1_char0-97 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:veterans_getting-arrested-for_begging_00028 a grasp:Attribution ;
+        rdfs:label "veterans_getting-arrested-for_begging_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:veterans_getting-arrested-in_street_00028 a grasp:Attribution ;
+        rdfs:label "veterans_getting-arrested-in_street_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:veterans_getting_arrested_00028 a grasp:Attribution ;
+        rdfs:label "veterans_getting_arrested_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:veterans_getting_arrested_for_begging_in_street_00028 a grasp:Attribution ;
+        rdfs:label "veterans_getting_arrested_for_begging_in_street_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance0_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_house_terrorists_00028 a grasp:Attribution ;
+        rdfs:label "we_house_terrorists_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat0_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat0_utterance2_char0-88 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat0_utterance2_char0-88" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:at_least_13k_ex-soldiers,
+            leolaniWorld:at_least_13k_ex-soldiers_sleeping,
+            leolaniWorld:at_least_13k_homeless_ex-soldiers,
+            leolaniWorld:at_least_13k_homeless_ex-soldiers_sleeping ;
+        gaf:denotes leolaniWorld:We_have_at_least_13k_ex-soldiers,
+            leolaniWorld:We_have_at_least_13k_ex-soldiers_sleeping,
+            leolaniWorld:We_have_at_least_13k_homeless_ex-soldiers,
+            leolaniWorld:We_have_at_least_13k_homeless_ex-soldiers_sleeping ;
+        grasp:hasAttribution leolaniTalk:We_have_at_least_13k_ex-soldiers_00028,
+            leolaniTalk:We_have_at_least_13k_ex-soldiers_sleeping_00028,
+            leolaniTalk:We_have_at_least_13k_homeless_ex-soldiers_00028,
+            leolaniTalk:We_have_at_least_13k_homeless_ex-soldiers_sleeping_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T21:57:26.216767"^^xml1:string,
+            "2024-06-05T21:57:26.216826"^^xml1:string,
+            "2024-06-05T21:57:26.216850"^^xml1:string,
+            "2024-06-05T21:57:26.216872"^^xml1:string ;
+        rdf:value "Our own must always come first. We have at least 13k homeless ex-soldiers sleeping rough"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat0_utterance2 .
+
+    leolaniTalk:chat0_utterance3_char0-139 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat0_utterance3_char0-139" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:at_least_1_million_empty_homes,
+            leolaniWorld:at_least_1_million_homes ;
+        gaf:denotes leolaniWorld:We_also-have_at_least_1_million_empty_homes,
+            leolaniWorld:We_also-have_at_least_1_million_homes,
+            leolaniWorld:We_have_at_least_1_million_empty_homes,
+            leolaniWorld:We_have_at_least_1_million_homes ;
+        grasp:hasAttribution leolaniTalk:We_also-have_at_least_1_million_empty_homes_00028,
+            leolaniTalk:We_also-have_at_least_1_million_homes_00028,
+            leolaniTalk:We_have_at_least_1_million_empty_homes_00028,
+            leolaniTalk:We_have_at_least_1_million_homes_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T21:57:26.310301"^^xml1:string,
+            "2024-06-05T21:57:26.310364"^^xml1:string,
+            "2024-06-05T21:57:26.310388"^^xml1:string,
+            "2024-06-05T21:57:26.310409"^^xml1:string ;
+        rdf:value "We also have at least 1 million empty homes. There are many reasons for the housing shortage, but newly arrived Afghans is not one of them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat0_utterance3 .
+
+    leolaniTalk:chat0_utterance6_char0-65 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat0_utterance6_char0-65" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:future,
+            leolaniWorld:future_of_our_country,
+            leolaniWorld:future_of_our_great_country,
+            leolaniWorld:future_of_our_once_great_country,
+            leolaniWorld:patriot ;
+        gaf:denotes leolaniWorld:I_care-about_future,
+            leolaniWorld:I_care-about_future_of_our_country,
+            leolaniWorld:I_care-about_future_of_our_great_country,
+            leolaniWorld:I_care-about_future_of_our_once_great_country,
+            ns13:m_patriot ;
+        grasp:hasAttribution leolaniTalk:I_care-about_future_0009,
+            leolaniTalk:I_care-about_future_of_our_country_0009,
+            leolaniTalk:I_care-about_future_of_our_great_country_0009,
+            leolaniTalk:I_care-about_future_of_our_once_great_country_0009,
+            <http://cltl.nl/leolani/talk/I_’m_patriot_0009> ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T21:57:26.607670"^^xml1:string,
+            "2024-06-05T21:57:26.607732"^^xml1:string,
+            "2024-06-05T21:57:26.607756"^^xml1:string,
+            "2024-06-05T21:57:26.607777"^^xml1:string,
+            "2024-06-05T21:57:26.607798"^^xml1:string ;
+        rdf:value "I’m a patriot, I care about the future of our once great country."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat0_utterance6 .
+
+    graspe:ADMIRATION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ADMIRATION" .
+
+    leolaniTalk:chat0_utterance5_char0-188 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat0_utterance5_char0-188" ;
+        gaf:containsDenotation leolaniWorld:Kabul,
+            leolaniWorld:families,
+            leolaniWorld:kids,
+            leolaniWorld:planes,
+            leolaniWorld:scared_kids ;
+        gaf:denotes leolaniWorld:families_coming-from_Kabul,
+            leolaniWorld:families_coming-off_planes,
+            leolaniWorld:kids_coming-from_Kabul,
+            leolaniWorld:kids_coming-off_planes,
+            leolaniWorld:scared_kids_coming-from_Kabul,
+            leolaniWorld:scared_kids_coming-off_planes ;
+        grasp:hasAttribution leolaniTalk:families_coming-from_Kabul_00013,
+            leolaniTalk:families_coming-off_planes_00013,
+            leolaniTalk:kids_coming-from_Kabul_00013,
+            leolaniTalk:kids_coming-off_planes_00013,
+            leolaniTalk:scared_kids_coming-from_Kabul_00013,
+            leolaniTalk:scared_kids_coming-off_planes_00013 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T21:57:26.521047"^^xml1:string,
+            "2024-06-05T21:57:26.521114"^^xml1:string,
+            "2024-06-05T21:57:26.521139"^^xml1:string,
+            "2024-06-05T21:57:26.521163"^^xml1:string,
+            "2024-06-05T21:57:26.521186"^^xml1:string,
+            "2024-06-05T21:57:26.521208"^^xml1:string ;
+        rdf:value "Neither of those statements is true. I saw scared kids and families coming off those planes from Kabul but you just want to bang on about ‘time bombs’. I think you have a different agenda."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat0_utterance5 .
+
+    graspe:FEAR a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "FEAR" .
+
+    leolaniTalk:chat0_utterance4_char0-88 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat0_utterance4_char0-88" ;
+        gaf:containsDenotation leolaniWorld:Our_soldiers,
+            leolaniWorld:left,
+            leolaniWorld:our_streets,
+            leolaniWorld:rot,
+            leolaniWorld:rot_on_our_streets,
+            leolaniWorld:terrorists,
+            leolaniWorld:to_rot,
+            leolaniWorld:to_rot_on_our_streets,
+            leolaniWorld:we,
+            leolaniWorld:we_house,
+            leolaniWorld:while_we_house ;
+        gaf:denotes leolaniWorld:Our_soldiers_are-left_rot,
+            leolaniWorld:Our_soldiers_are-left_rot_on_our_streets,
+            leolaniWorld:Our_soldiers_are-left_to_rot,
+            leolaniWorld:Our_soldiers_are-left_to_rot_on_our_streets,
+            leolaniWorld:Our_soldiers_are_left,
+            leolaniWorld:Our_soldiers_rot-on_our_streets,
+            leolaniWorld:Our_soldiers_rot_we_house,
+            leolaniWorld:Our_soldiers_rot_while_we_house,
+            leolaniWorld:we_house_terrorists ;
+        grasp:hasAttribution leolaniTalk:Our_soldiers_are-left_rot_00028,
+            leolaniTalk:Our_soldiers_are-left_rot_on_our_streets_00028,
+            leolaniTalk:Our_soldiers_are-left_to_rot_00028,
+            leolaniTalk:Our_soldiers_are-left_to_rot_on_our_streets_00028,
+            leolaniTalk:Our_soldiers_are_left_00028,
+            leolaniTalk:Our_soldiers_rot-on_our_streets_00028,
+            leolaniTalk:Our_soldiers_rot_we_house_00028,
+            leolaniTalk:Our_soldiers_rot_while_we_house_00028,
+            leolaniTalk:we_house_terrorists_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T21:57:26.413979"^^xml1:string,
+            "2024-06-05T21:57:26.414040"^^xml1:string,
+            "2024-06-05T21:57:26.414064"^^xml1:string,
+            "2024-06-05T21:57:26.414093"^^xml1:string,
+            "2024-06-05T21:57:26.414115"^^xml1:string,
+            "2024-06-05T21:57:26.414137"^^xml1:string,
+            "2024-06-05T21:57:26.414158"^^xml1:string,
+            "2024-06-05T21:57:26.414183"^^xml1:string,
+            "2024-06-05T21:57:26.414207"^^xml1:string ;
+        rdf:value "Our soldiers are left to rot on our streets while we house terrorists and child groomers"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat0_utterance4 .
+
+    leolaniTalk:chat0_utterance1_char0-97 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat0_utterance1_char0-97" ;
+        gaf:containsDenotation leolaniWorld:honour,
+            leolaniWorld:our_forces,
+            leolaniWorld:our_promises,
+            leolaniWorld:people,
+            leolaniWorld:their_lives,
+            leolaniWorld:to_honour,
+            leolaniWorld:us ;
+        gaf:denotes leolaniWorld:people_also-need_honour,
+            leolaniWorld:people_also-need_to_honour,
+            leolaniWorld:people_also-need_us,
+            leolaniWorld:people_need_honour,
+            leolaniWorld:people_need_to_honour,
+            leolaniWorld:people_need_us,
+            leolaniWorld:people_surely-also-need_honour,
+            leolaniWorld:people_surely-also-need_to_honour,
+            leolaniWorld:people_surely-also-need_us,
+            leolaniWorld:people_surely-need_honour,
+            leolaniWorld:people_surely-need_to_honour,
+            leolaniWorld:people_surely-need_us,
+            leolaniWorld:their_lives_help_our_forces,
+            leolaniWorld:us_honour_our_promises ;
+        grasp:hasAttribution leolaniTalk:people_also-need_honour_00026,
+            leolaniTalk:people_also-need_to_honour_00026,
+            leolaniTalk:people_also-need_us_00026,
+            leolaniTalk:people_need_honour_00026,
+            leolaniTalk:people_need_to_honour_00026,
+            leolaniTalk:people_need_us_00026,
+            leolaniTalk:people_surely-also-need_honour_00026,
+            leolaniTalk:people_surely-also-need_to_honour_00026,
+            leolaniTalk:people_surely-also-need_us_00026,
+            leolaniTalk:people_surely-need_honour_00026,
+            leolaniTalk:people_surely-need_to_honour_00026,
+            leolaniTalk:people_surely-need_us_00026,
+            leolaniTalk:their_lives_help_our_forces_00026,
+            leolaniTalk:us_honour_our_promises_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T21:57:26.103673"^^xml1:string,
+            "2024-06-05T21:57:26.103742"^^xml1:string,
+            "2024-06-05T21:57:26.103767"^^xml1:string,
+            "2024-06-05T21:57:26.103790"^^xml1:string,
+            "2024-06-05T21:57:26.103811"^^xml1:string,
+            "2024-06-05T21:57:26.103832"^^xml1:string,
+            "2024-06-05T21:57:26.103855"^^xml1:string,
+            "2024-06-05T21:57:26.103879"^^xml1:string,
+            "2024-06-05T21:57:26.103912"^^xml1:string,
+            "2024-06-05T21:57:26.103934"^^xml1:string,
+            "2024-06-05T21:57:26.103957"^^xml1:string,
+            "2024-06-05T21:57:26.103981"^^xml1:string,
+            "2024-06-05T21:57:26.104002"^^xml1:string,
+            "2024-06-05T21:57:26.104027"^^xml1:string ;
+        rdf:value "Surely people who also risked their lives to help our forces also need us to honour our promises?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat0_utterance1 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    leolaniTalk:chat0_utterance0_char0-133 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat0_utterance0_char0-133" ;
+        gaf:containsDenotation leolaniWorld:20k_ticking_time_bombs,
+            leolaniWorld:20k_ticking_time_bombs_from_Afghanistan,
+            leolaniWorld:20k_time_bombs,
+            leolaniWorld:20k_time_bombs_from_Afghanistan,
+            leolaniWorld:We,
+            leolaniWorld:arrested,
+            leolaniWorld:arrested_for_begging_in_street,
+            leolaniWorld:begging,
+            leolaniWorld:homeless_veterans,
+            leolaniWorld:imported_20k_ticking_time_bombs,
+            leolaniWorld:imported_20k_ticking_time_bombs_from_Afghanistan,
+            leolaniWorld:imported_20k_time_bombs,
+            leolaniWorld:imported_20k_time_bombs_from_Afghanistan,
+            leolaniWorld:just_imported_20k_ticking_time_bombs,
+            leolaniWorld:just_imported_20k_ticking_time_bombs_from_Afghanistan,
+            leolaniWorld:just_imported_20k_time_bombs,
+            leolaniWorld:just_imported_20k_time_bombs_from_Afghanistan,
+            leolaniWorld:street,
+            leolaniWorld:veterans ;
+        gaf:denotes ns1:ve_20k_ticking_time_bombs,
+            ns1:ve_20k_ticking_time_bombs_from_Afghanistan,
+            ns1:ve_20k_time_bombs,
+            ns1:ve_20k_time_bombs_from_Afghanistan,
+            ns1:ve_imported_20k_ticking_time_bombs,
+            ns1:ve_imported_20k_ticking_time_bombs_from_Afghanistan,
+            ns1:ve_imported_20k_time_bombs,
+            ns1:ve_imported_20k_time_bombs_from_Afghanistan,
+            ns1:ve_just_imported_20k_ticking_time_bombs,
+            ns1:ve_just_imported_20k_ticking_time_bombs_from_Afghanistan,
+            ns1:ve_just_imported_20k_time_bombs,
+            ns1:ve_just_imported_20k_time_bombs_from_Afghanistan,
+            leolaniWorld:homeless_veterans_getting-arrested-for_begging,
+            leolaniWorld:homeless_veterans_getting-arrested-in_street,
+            leolaniWorld:homeless_veterans_getting_arrested,
+            leolaniWorld:homeless_veterans_getting_arrested_for_begging_in_street,
+            leolaniWorld:veterans_getting-arrested-for_begging,
+            leolaniWorld:veterans_getting-arrested-in_street,
+            leolaniWorld:veterans_getting_arrested,
+            leolaniWorld:veterans_getting_arrested_for_begging_in_street ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/We_’ve_20k_ticking_time_bombs_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_20k_ticking_time_bombs_from_Afghanistan_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_20k_time_bombs_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_20k_time_bombs_from_Afghanistan_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_imported_20k_ticking_time_bombs_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_imported_20k_ticking_time_bombs_from_Afghanistan_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_imported_20k_time_bombs_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_imported_20k_time_bombs_from_Afghanistan_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_just_imported_20k_ticking_time_bombs_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_just_imported_20k_ticking_time_bombs_from_Afghanistan_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_just_imported_20k_time_bombs_00028>,
+            <http://cltl.nl/leolani/talk/We_’ve_just_imported_20k_time_bombs_from_Afghanistan_00028>,
+            leolaniTalk:homeless_veterans_getting-arrested-for_begging_00028,
+            leolaniTalk:homeless_veterans_getting-arrested-in_street_00028,
+            leolaniTalk:homeless_veterans_getting_arrested_00028,
+            leolaniTalk:homeless_veterans_getting_arrested_for_begging_in_street_00028,
+            leolaniTalk:veterans_getting-arrested-for_begging_00028,
+            leolaniTalk:veterans_getting-arrested-in_street_00028,
+            leolaniTalk:veterans_getting_arrested_00028,
+            leolaniTalk:veterans_getting_arrested_for_begging_in_street_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T21:57:25.957275"^^xml1:string,
+            "2024-06-05T21:57:25.957339"^^xml1:string,
+            "2024-06-05T21:57:25.957362"^^xml1:string,
+            "2024-06-05T21:57:25.957384"^^xml1:string,
+            "2024-06-05T21:57:25.957406"^^xml1:string,
+            "2024-06-05T21:57:25.957428"^^xml1:string,
+            "2024-06-05T21:57:25.957450"^^xml1:string,
+            "2024-06-05T21:57:25.957472"^^xml1:string,
+            "2024-06-05T21:57:25.957494"^^xml1:string,
+            "2024-06-05T21:57:25.957517"^^xml1:string,
+            "2024-06-05T21:57:25.957538"^^xml1:string,
+            "2024-06-05T21:57:25.957560"^^xml1:string,
+            "2024-06-05T21:57:25.957581"^^xml1:string,
+            "2024-06-05T21:57:25.957603"^^xml1:string,
+            "2024-06-05T21:57:25.957625"^^xml1:string,
+            "2024-06-05T21:57:25.957646"^^xml1:string,
+            "2024-06-05T21:57:25.957667"^^xml1:string,
+            "2024-06-05T21:57:25.957689"^^xml1:string,
+            "2024-06-05T21:57:25.957711"^^xml1:string,
+            "2024-06-05T21:57:25.957733"^^xml1:string ;
+        rdf:value "We’ve just imported 20k ticking time bombs from Afghanistan and we have homeless veterans getting arrested for begging in the street!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat0_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:people_also-need_us {
+    leolaniWorld:people ns11:also_need leolaniWorld:us .
+}
+
+leolaniWorld:scared_kids_coming-from_Kabul {
+    leolaniWorld:scared_kids ns11:coming_from leolaniWorld:Kabul .
+}
+
+ns1:ve_just_imported_20k_ticking_time_bombs {
+    leolaniWorld:We ns2:ve leolaniWorld:just_imported_20k_ticking_time_bombs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:We_also-have_at_least_1_million_homes {
+    leolaniWorld:We ns11:also_have leolaniWorld:at_least_1_million_homes .
+}
+
+leolaniWorld:veterans_getting-arrested-for_begging {
+    leolaniWorld:veterans ns11:getting_arrested_for leolaniWorld:begging .
+}
+
+ns1:ve_just_imported_20k_time_bombs_from_Afghanistan {
+    leolaniWorld:We ns2:ve leolaniWorld:just_imported_20k_time_bombs_from_Afghanistan .
+}
+
+leolaniWorld:people_surely-need_honour {
+    leolaniWorld:people ns11:surely_need leolaniWorld:honour .
+}
+
+leolaniWorld:Our_soldiers_are-left_to_rot {
+    leolaniWorld:Our_soldiers ns11:are_left leolaniWorld:to_rot .
+}
+
+leolaniWorld:We_also-have_at_least_1_million_empty_homes {
+    leolaniWorld:We ns11:also_have leolaniWorld:at_least_1_million_empty_homes .
+}
+
+leolaniWorld:us_honour_our_promises {
+    leolaniWorld:us ns11:honour leolaniWorld:our_promises .
+}
+
+leolaniWorld:homeless_veterans_getting-arrested-for_begging {
+    leolaniWorld:homeless_veterans ns11:getting_arrested_for leolaniWorld:begging .
+}
+
+leolaniWorld:I_care-about_future {
+    leolaniWorld:I ns11:care_about leolaniWorld:future .
+}
+
+leolaniWorld:veterans_getting-arrested-in_street {
+    leolaniWorld:veterans ns11:getting_arrested_in leolaniWorld:street .
+}
+
+ns13:m_patriot {
+    leolaniWorld:I ns2:m leolaniWorld:patriot .
+}
+
