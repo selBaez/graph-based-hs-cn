@@ -22,6 +22,80 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context85 a eps:Context ;
+        rdfs:label "context85" ;
+        hs:id "85"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2906 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "56"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2906 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2906" ;
+        hs:id "2906"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2906_utterance0,
+            leolaniTalk:chat2906_utterance1,
+            leolaniTalk:chat2906_utterance3 .
+
+    leolaniTalk:chat2906_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2906_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2906_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2906_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2906_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2906_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
 leolaniWorld:Jews_have_unique_culture {
     leolaniWorld:Jews ns1:have leolaniWorld:unique_culture .
 }
@@ -30,106 +104,126 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_have_culture a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_culture" ;
-        gaf:denotedBy leolaniTalk:chat2906_utterance3_char0-103 .
-
-    leolaniWorld:Jews_have_unique_culture a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_unique_culture" ;
-        gaf:denotedBy leolaniTalk:chat2906_utterance3_char0-103 .
-
-    leolaniWorld:Jews_run_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_run_our_country" ;
-        gaf:denotedBy leolaniTalk:chat2906_utterance0_char0-21 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:statement_seems_founded a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "statement_seems_founded" ;
-        gaf:denotedBy leolaniTalk:chat2906_utterance3_char0-103 .
-
-    leolaniWorld:you_do-have_proof a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-have_proof" ;
-        gaf:denotedBy leolaniTalk:chat2906_utterance1_char0-195 .
-
-    leolaniWorld:you_say_that a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_say_that" ;
-        gaf:denotedBy leolaniTalk:chat2906_utterance1_char0-195 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:Jews_run_our_country {
     leolaniWorld:Jews ns1:run leolaniWorld:our_country .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2906_utterance0_char0-21,
-            leolaniTalk:chat2906_utterance3_char0-103 .
+leolaniWorld:you_say_that {
+    leolaniWorld:you ns1:say leolaniWorld:that .
+}
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:culture a gaf:Instance ;
-        rdfs:label "culture" ;
-        gaf:denotedIn leolaniTalk:chat2906_utterance3_char0-103 .
-
-    leolaniWorld:founded a gaf:Instance ;
-        rdfs:label "founded" ;
-        gaf:denotedIn leolaniTalk:chat2906_utterance3_char0-103 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_country a gaf:Instance ;
-        rdfs:label "our-country" ;
-        gaf:denotedIn leolaniTalk:chat2906_utterance0_char0-21 .
-
-    leolaniWorld:proof a gaf:Instance ;
-        rdfs:label "proof" ;
-        gaf:denotedIn leolaniTalk:chat2906_utterance1_char0-195 .
-
-    leolaniWorld:statement a gaf:Instance ;
-        rdfs:label "statement" ;
-        gaf:denotedIn leolaniTalk:chat2906_utterance3_char0-103 .
-
-    leolaniWorld:that a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat2906_utterance1_char0-195 .
-
-    leolaniWorld:unique_culture a gaf:Instance ;
-        rdfs:label "unique-culture" ;
-        gaf:denotedIn leolaniTalk:chat2906_utterance3_char0-103 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat2906_utterance1_char0-195 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:you_do-have_proof {
     leolaniWorld:you ns1:do_have leolaniWorld:proof .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_have_culture_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2906_utterance3_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_unique_culture_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_unique_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2906_utterance3_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_run_our_country_00028 a grasp:Attribution ;
+        rdfs:label "Jews_run_our_country_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2906_utterance0_char0-21 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2906_utterance0_char0-21 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2906_utterance0_char0-21" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:our_country ;
+        gaf:denotes leolaniWorld:Jews_run_our_country ;
+        grasp:hasAttribution leolaniTalk:Jews_run_our_country_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:43.991014"^^xml1:string ;
+        rdf:value "Jews run our country."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2906_utterance0 .
+
+    leolaniTalk:statement_seems_founded_00028 a grasp:Attribution ;
+        rdfs:label "statement_seems_founded_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2906_utterance3_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-have_proof_00028 a grasp:Attribution ;
+        rdfs:label "you_do-have_proof_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2906_utterance1_char0-195 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_say_that_00028 a grasp:Attribution ;
+        rdfs:label "you_say_that_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2906_utterance1_char0-195 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2906_utterance1_char0-195 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2906_utterance1_char0-195" ;
+        gaf:containsDenotation leolaniWorld:proof,
+            leolaniWorld:that,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:you_do-have_proof,
+            leolaniWorld:you_say_that ;
+        grasp:hasAttribution leolaniTalk:you_do-have_proof_00028,
+            leolaniTalk:you_say_that_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:44.091657"^^xml1:string,
+            "2024-06-05T23:33:44.091714"^^xml1:string ;
+        rdf:value "Jews are citizens and can influence the government by voting and participating in politics, like any other citizen, but they don't run the country. What makes you say that? Do you have any proof?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2906_utterance1 .
+
+    leolaniTalk:chat2906_utterance3_char0-103 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2906_utterance3_char0-103" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:culture,
+            leolaniWorld:founded,
+            leolaniWorld:statement,
+            leolaniWorld:unique_culture ;
+        gaf:denotes leolaniWorld:Jews_have_culture,
+            leolaniWorld:Jews_have_unique_culture,
+            leolaniWorld:statement_seems_founded ;
+        grasp:hasAttribution leolaniTalk:Jews_have_culture_00028,
+            leolaniTalk:Jews_have_unique_culture_00028,
+            leolaniTalk:statement_seems_founded_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:44.265357"^^xml1:string,
+            "2024-06-05T23:33:44.265422"^^xml1:string,
+            "2024-06-05T23:33:44.265445"^^xml1:string ;
+        rdf:value "Jews have a unique culture, but it's not inferior to any other. This statement seems quite ill founded."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2906_utterance3 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -467,199 +561,105 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:Jews_have_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_culture" ;
+        gaf:denotedBy leolaniTalk:chat2906_utterance3_char0-103 .
+
+    leolaniWorld:Jews_have_unique_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_unique_culture" ;
+        gaf:denotedBy leolaniTalk:chat2906_utterance3_char0-103 .
+
+    leolaniWorld:Jews_run_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_run_our_country" ;
+        gaf:denotedBy leolaniTalk:chat2906_utterance0_char0-21 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:statement_seems_founded a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "statement_seems_founded" ;
+        gaf:denotedBy leolaniTalk:chat2906_utterance3_char0-103 .
+
+    leolaniWorld:you_do-have_proof a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-have_proof" ;
+        gaf:denotedBy leolaniTalk:chat2906_utterance1_char0-195 .
+
+    leolaniWorld:you_say_that a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_say_that" ;
+        gaf:denotedBy leolaniTalk:chat2906_utterance1_char0-195 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
 leolaniWorld:Jews_have_culture {
     leolaniWorld:Jews ns1:have leolaniWorld:culture .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:you_say_that {
-    leolaniWorld:you ns1:say leolaniWorld:that .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_have_culture_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2906_utterance3_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_have_unique_culture_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_unique_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2906_utterance3_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_run_our_country_00028 a grasp:Attribution ;
-        rdfs:label "Jews_run_our_country_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2906_utterance0_char0-21 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2906_utterance0_char0-21 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2906_utterance0_char0-21" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:our_country ;
-        gaf:denotes leolaniWorld:Jews_run_our_country ;
-        grasp:hasAttribution leolaniTalk:Jews_run_our_country_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:43.991014"^^xml1:string ;
-        rdf:value "Jews run our country."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2906_utterance0 .
-
-    leolaniTalk:statement_seems_founded_00028 a grasp:Attribution ;
-        rdfs:label "statement_seems_founded_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2906_utterance3_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_do-have_proof_00028 a grasp:Attribution ;
-        rdfs:label "you_do-have_proof_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2906_utterance1_char0-195 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_say_that_00028 a grasp:Attribution ;
-        rdfs:label "you_say_that_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2906_utterance1_char0-195 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2906_utterance1_char0-195 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2906_utterance1_char0-195" ;
-        gaf:containsDenotation leolaniWorld:proof,
-            leolaniWorld:that,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:you_do-have_proof,
-            leolaniWorld:you_say_that ;
-        grasp:hasAttribution leolaniTalk:you_do-have_proof_00028,
-            leolaniTalk:you_say_that_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:44.091657"^^xml1:string,
-            "2024-06-05T23:33:44.091714"^^xml1:string ;
-        rdf:value "Jews are citizens and can influence the government by voting and participating in politics, like any other citizen, but they don't run the country. What makes you say that? Do you have any proof?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2906_utterance1 .
-
-    leolaniTalk:chat2906_utterance3_char0-103 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2906_utterance3_char0-103" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:culture,
-            leolaniWorld:founded,
-            leolaniWorld:statement,
-            leolaniWorld:unique_culture ;
-        gaf:denotes leolaniWorld:Jews_have_culture,
-            leolaniWorld:Jews_have_unique_culture,
-            leolaniWorld:statement_seems_founded ;
-        grasp:hasAttribution leolaniTalk:Jews_have_culture_00028,
-            leolaniTalk:Jews_have_unique_culture_00028,
-            leolaniTalk:statement_seems_founded_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:44.265357"^^xml1:string,
-            "2024-06-05T23:33:44.265422"^^xml1:string,
-            "2024-06-05T23:33:44.265445"^^xml1:string ;
-        rdf:value "Jews have a unique culture, but it's not inferior to any other. This statement seems quite ill founded."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2906_utterance3 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context85 a eps:Context ;
-        rdfs:label "context85" ;
-        hs:id "85"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2906 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "56"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2906 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2906" ;
-        hs:id "2906"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2906_utterance0,
-            leolaniTalk:chat2906_utterance1,
-            leolaniTalk:chat2906_utterance3 .
-
-    leolaniTalk:chat2906_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2906_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2906_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2906_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2906_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2906_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-}
-
 leolaniWorld:statement_seems_founded {
     leolaniWorld:statement ns1:seems leolaniWorld:founded .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2906_utterance0_char0-21,
+            leolaniTalk:chat2906_utterance3_char0-103 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:culture a gaf:Instance ;
+        rdfs:label "culture" ;
+        gaf:denotedIn leolaniTalk:chat2906_utterance3_char0-103 .
+
+    leolaniWorld:founded a gaf:Instance ;
+        rdfs:label "founded" ;
+        gaf:denotedIn leolaniTalk:chat2906_utterance3_char0-103 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_country a gaf:Instance ;
+        rdfs:label "our-country" ;
+        gaf:denotedIn leolaniTalk:chat2906_utterance0_char0-21 .
+
+    leolaniWorld:proof a gaf:Instance ;
+        rdfs:label "proof" ;
+        gaf:denotedIn leolaniTalk:chat2906_utterance1_char0-195 .
+
+    leolaniWorld:statement a gaf:Instance ;
+        rdfs:label "statement" ;
+        gaf:denotedIn leolaniTalk:chat2906_utterance3_char0-103 .
+
+    leolaniWorld:that a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat2906_utterance1_char0-195 .
+
+    leolaniWorld:unique_culture a gaf:Instance ;
+        rdfs:label "unique-culture" ;
+        gaf:denotedIn leolaniTalk:chat2906_utterance3_char0-103 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat2906_utterance1_char0-195 .
 }
 

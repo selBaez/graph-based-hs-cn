@@ -22,48 +22,122 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_are_criminals a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context114 a eps:Context ;
+        rdfs:label "context114" ;
+        hs:id "114"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2133 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "235"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2133 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Jews_are_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2133_utterance0_char0-23 .
+        rdfs:label "chat2133" ;
+        hs:id "2133"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2133_utterance0,
+            leolaniTalk:chat2133_utterance2 .
 
-    leolaniWorld:Jews_have_values a gaf:Assertion,
+    leolaniTalk:chat2133_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Jews_have_values" ;
-        gaf:denotedBy leolaniTalk:chat2133_utterance2_char0-56 .
+        rdfs:label "chat2133_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat2133_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat2133_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-leolaniWorld:Jews_are_criminals {
-    leolaniWorld:Jews ns1:are leolaniWorld:criminals .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2133_utterance0_char0-23,
-            leolaniTalk:chat2133_utterance2_char0-56 .
-
-    leolaniWorld:criminals a gaf:Instance ;
-        rdfs:label "criminals" ;
-        gaf:denotedIn leolaniTalk:chat2133_utterance0_char0-23 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:values a gaf:Instance ;
-        rdfs:label "values" ;
-        gaf:denotedIn leolaniTalk:chat2133_utterance2_char0-56 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_are_criminals_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2133_utterance0_char0-23 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_values_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_values_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2133_utterance2_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2133_utterance0_char0-23 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2133_utterance0_char0-23" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:criminals ;
+        gaf:denotes leolaniWorld:Jews_are_criminals ;
+        grasp:hasAttribution leolaniTalk:Jews_are_criminals_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:19.697564"^^xml1:string ;
+        rdf:value "All Jews are criminals."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2133_utterance0 .
+
+    leolaniTalk:chat2133_utterance2_char0-56 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2133_utterance2_char0-56" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:values ;
+        gaf:denotes leolaniWorld:Jews_have_values ;
+        grasp:hasAttribution leolaniTalk:Jews_have_values_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:19.888679"^^xml1:string ;
+        rdf:value "Jews have values? No, they are just a bunch of criminals"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2133_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -401,125 +475,51 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
 leolaniWorld:Jews_have_values {
     leolaniWorld:Jews ns1:have leolaniWorld:values .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_are_criminals_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_criminals_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2133_utterance0_char0-23 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_are_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2133_utterance0_char0-23 .
 
-    leolaniTalk:Jews_have_values_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_values_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2133_utterance2_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_have_values a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_values" ;
+        gaf:denotedBy leolaniTalk:chat2133_utterance2_char0-56 .
 
-    leolaniTalk:chat2133_utterance0_char0-23 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2133_utterance0_char0-23" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:criminals ;
-        gaf:denotes leolaniWorld:Jews_are_criminals ;
-        grasp:hasAttribution leolaniTalk:Jews_are_criminals_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:19.697564"^^xml1:string ;
-        rdf:value "All Jews are criminals."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2133_utterance0 .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat2133_utterance2_char0-56 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2133_utterance2_char0-56" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:values ;
-        gaf:denotes leolaniWorld:Jews_have_values ;
-        grasp:hasAttribution leolaniTalk:Jews_have_values_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:19.888679"^^xml1:string ;
-        rdf:value "Jews have values? No, they are just a bunch of criminals"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2133_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context114 a eps:Context ;
-        rdfs:label "context114" ;
-        hs:id "114"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Jews_are_criminals {
+    leolaniWorld:Jews ns1:are leolaniWorld:criminals .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2133 .
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2133_utterance0_char0-23,
+            leolaniTalk:chat2133_utterance2_char0-56 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "235"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2133 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2133" ;
-        hs:id "2133"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2133_utterance0,
-            leolaniTalk:chat2133_utterance2 .
-
-    leolaniTalk:chat2133_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2133_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2133_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2133_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:criminals a gaf:Instance ;
+        rdfs:label "criminals" ;
+        gaf:denotedIn leolaniTalk:chat2133_utterance0_char0-23 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:values a gaf:Instance ;
+        rdfs:label "values" ;
+        gaf:denotedIn leolaniTalk:chat2133_utterance2_char0-56 .
 }
 

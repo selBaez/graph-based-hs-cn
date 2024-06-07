@@ -22,6 +22,81 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:many_people_is-in_US {
+    leolaniWorld:many_people ns1:is_in leolaniWorld:US .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context188 a eps:Context ;
+        rdfs:label "context188" ;
+        hs:id "188"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2228 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "147"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2228 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2228" ;
+        hs:id "2228"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2228_utterance3,
+            leolaniTalk:chat2228_utterance4 .
+
+    leolaniTalk:chat2228_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2228_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2228_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2228_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Nobody_needs_them {
+    leolaniWorld:Nobody ns1:needs leolaniWorld:them .
+}
+
 leolaniWorld:most_immigrant_are-naturalized_citizens {
     leolaniWorld:most_immigrant ns1:are_naturalized leolaniWorld:citizens .
 }
@@ -30,33 +105,8 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Nobody_needs_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Nobody_needs_them" ;
-        gaf:denotedBy leolaniTalk:chat2228_utterance4_char0-85 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:many_people_is-in_US a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_people_is-in_US" ;
-        gaf:denotedBy leolaniTalk:chat2228_utterance3_char0-226 .
-
-    leolaniWorld:most_immigrant_are-naturalized_citizens a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "most_immigrant_are-naturalized_citizens" ;
-        gaf:denotedBy leolaniTalk:chat2228_utterance3_char0-226 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniTalk:Perspectives {
@@ -122,55 +172,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Nobody a gaf:Instance ;
-        rdfs:label "nobody" ;
-        gaf:denotedIn leolaniTalk:chat2228_utterance4_char0-85 .
-
-    leolaniWorld:US a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat2228_utterance3_char0-226 .
-
-    leolaniWorld:citizens a gaf:Instance ;
-        rdfs:label "citizens" ;
-        gaf:denotedIn leolaniTalk:chat2228_utterance3_char0-226 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_people a gaf:Instance ;
-        rdfs:label "many-people" ;
-        gaf:denotedIn leolaniTalk:chat2228_utterance3_char0-226 .
-
-    leolaniWorld:most_immigrant a gaf:Instance ;
-        rdfs:label "most-immigrant" ;
-        gaf:denotedIn leolaniTalk:chat2228_utterance3_char0-226 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat2228_utterance4_char0-85 .
-}
-
-leolaniWorld:Nobody_needs_them {
-    leolaniWorld:Nobody ns1:needs leolaniWorld:them .
-}
-
-leolaniWorld:many_people_is-in_US {
-    leolaniWorld:many_people ns1:is_in leolaniWorld:US .
 }
 
 leolaniWorld:Ontology {
@@ -508,70 +509,69 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context188 a eps:Context ;
-        rdfs:label "context188" ;
-        hs:id "188"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2228 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "147"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2228 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Nobody_needs_them a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2228" ;
-        hs:id "2228"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2228_utterance3,
-            leolaniTalk:chat2228_utterance4 .
+        rdfs:label "Nobody_needs_them" ;
+        gaf:denotedBy leolaniTalk:chat2228_utterance4_char0-85 .
 
-    leolaniTalk:chat2228_utterance3 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2228_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat2228_utterance4 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2228_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:many_people_is-in_US a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_people_is-in_US" ;
+        gaf:denotedBy leolaniTalk:chat2228_utterance3_char0-226 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:most_immigrant_are-naturalized_citizens a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "most_immigrant_are-naturalized_citizens" ;
+        gaf:denotedBy leolaniTalk:chat2228_utterance3_char0-226 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Nobody a gaf:Instance ;
+        rdfs:label "nobody" ;
+        gaf:denotedIn leolaniTalk:chat2228_utterance4_char0-85 .
+
+    leolaniWorld:US a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat2228_utterance3_char0-226 .
+
+    leolaniWorld:citizens a gaf:Instance ;
+        rdfs:label "citizens" ;
+        gaf:denotedIn leolaniTalk:chat2228_utterance3_char0-226 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_people a gaf:Instance ;
+        rdfs:label "many-people" ;
+        gaf:denotedIn leolaniTalk:chat2228_utterance3_char0-226 .
+
+    leolaniWorld:most_immigrant a gaf:Instance ;
+        rdfs:label "most-immigrant" ;
+        gaf:denotedIn leolaniTalk:chat2228_utterance3_char0-226 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat2228_utterance4_char0-85 .
 }
 

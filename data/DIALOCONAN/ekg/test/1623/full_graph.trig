@@ -22,8 +22,103 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:you_so-feel_safe {
+    leolaniWorld:you ns1:so_feel leolaniWorld:safe .
+}
+
+leolaniWorld:you_feel_safe_with_rapists_on_our_streets {
+    leolaniWorld:you ns1:feel leolaniWorld:safe_with_rapists_on_our_streets .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context65 a eps:Context ;
+        rdfs:label "context65" ;
+        hs:id "65"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1623 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "148"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1623 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1623" ;
+        hs:id "1623"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1623_utterance1,
+            leolaniTalk:chat1623_utterance2 .
+
+    leolaniTalk:chat1623_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1623_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1623_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1623_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:you_so-feel_safe_with_rapists {
+    leolaniWorld:you ns1:so_feel leolaniWorld:safe_with_rapists .
+}
+
+leolaniWorld:you_feel_safe {
+    leolaniWorld:you ns1:feel leolaniWorld:safe .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniWorld:you_so-feel_safe_with_rapists_on_our_streets {
     leolaniWorld:you ns1:so_feel leolaniWorld:safe_with_rapists_on_our_streets .
+}
+
+leolaniWorld:you_feel_safe_with_rapists {
+    leolaniWorld:you ns1:feel leolaniWorld:safe_with_rapists .
 }
 
 leolaniTalk:Perspectives {
@@ -154,51 +249,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Trying a gaf:Instance ;
-        rdfs:label "trying" ;
-        gaf:denotedIn leolaniTalk:chat1623_utterance1_char0-268 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:safe a gaf:Instance ;
-        rdfs:label "safe" ;
-        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
-
-    leolaniWorld:safe_with_rapists a gaf:Instance ;
-        rdfs:label "safe-with-rapists" ;
-        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
-
-    leolaniWorld:safe_with_rapists_on_our_streets a gaf:Instance ;
-        rdfs:label "safe-with-rapists-on-our-streets" ;
-        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
-
-    leolaniWorld:safe_with_rapists_out_on_our_streets a gaf:Instance ;
-        rdfs:label "safe-with-rapists-out-on-our-streets" ;
-        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
-
-    leolaniWorld:simplification a gaf:Instance ;
-        rdfs:label "simplification" ;
-        gaf:denotedIn leolaniTalk:chat1623_utterance1_char0-268 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
-}
-
-leolaniWorld:you_feel_safe_with_rapists_out_on_our_streets {
-    leolaniWorld:you ns1:feel leolaniWorld:safe_with_rapists_out_on_our_streets .
 }
 
 leolaniWorld:Ontology {
@@ -536,83 +586,12 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:you_feel_safe_with_rapists {
-    leolaniWorld:you ns1:feel leolaniWorld:safe_with_rapists .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
 leolaniWorld:you_so-feel_safe_with_rapists_out_on_our_streets {
     leolaniWorld:you ns1:so_feel leolaniWorld:safe_with_rapists_out_on_our_streets .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context65 a eps:Context ;
-        rdfs:label "context65" ;
-        hs:id "65"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1623 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "148"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1623 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1623" ;
-        hs:id "1623"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1623_utterance1,
-            leolaniTalk:chat1623_utterance2 .
-
-    leolaniTalk:chat1623_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1623_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1623_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1623_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:you_feel_safe_with_rapists_out_on_our_streets {
+    leolaniWorld:you ns1:feel leolaniWorld:safe_with_rapists_out_on_our_streets .
 }
 
 leolaniWorld:Claims {
@@ -674,27 +653,48 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:you_so-feel_safe_with_rapists {
-    leolaniWorld:you ns1:so_feel leolaniWorld:safe_with_rapists .
-}
-
-leolaniWorld:you_feel_safe {
-    leolaniWorld:you ns1:feel leolaniWorld:safe .
-}
-
-leolaniWorld:you_feel_safe_with_rapists_on_our_streets {
-    leolaniWorld:you ns1:feel leolaniWorld:safe_with_rapists_on_our_streets .
-}
-
 leolaniWorld:Trying_is_simplification {
     leolaniWorld:Trying ns1:is leolaniWorld:simplification .
 }
 
-leolaniWorld:you_so-feel_safe {
-    leolaniWorld:you ns1:so_feel leolaniWorld:safe .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Trying a gaf:Instance ;
+        rdfs:label "trying" ;
+        gaf:denotedIn leolaniTalk:chat1623_utterance1_char0-268 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:safe a gaf:Instance ;
+        rdfs:label "safe" ;
+        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
+
+    leolaniWorld:safe_with_rapists a gaf:Instance ;
+        rdfs:label "safe-with-rapists" ;
+        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
+
+    leolaniWorld:safe_with_rapists_on_our_streets a gaf:Instance ;
+        rdfs:label "safe-with-rapists-on-our-streets" ;
+        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
+
+    leolaniWorld:safe_with_rapists_out_on_our_streets a gaf:Instance ;
+        rdfs:label "safe-with-rapists-out-on-our-streets" ;
+        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
+
+    leolaniWorld:simplification a gaf:Instance ;
+        rdfs:label "simplification" ;
+        gaf:denotedIn leolaniTalk:chat1623_utterance1_char0-268 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1623_utterance2_char0-73 .
 }
 

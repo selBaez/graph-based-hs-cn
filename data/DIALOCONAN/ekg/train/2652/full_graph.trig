@@ -22,51 +22,130 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:We_should_should_careful a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context169 a eps:Context ;
+        rdfs:label "context169" ;
+        hs:id "169"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2652 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "204"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2652 a grasp:Chat,
             sem:Event ;
-        rdfs:label "We_should_should_careful" ;
-        gaf:denotedBy leolaniTalk:chat2652_utterance2_char0-75 .
+        rdfs:label "chat2652" ;
+        hs:id "2652"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2652_utterance0,
+            leolaniTalk:chat2652_utterance2 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat2652_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat2652_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:muslims_are_rapists a gaf:Assertion,
+    leolaniTalk:chat2652_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "muslims_are_rapists" ;
-        gaf:denotedBy leolaniTalk:chat2652_utterance0_char0-23 .
+        rdfs:label "chat2652_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-leolaniWorld:muslims_are_rapists {
-    leolaniWorld:muslims ns1:are leolaniWorld:rapists .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2652_utterance2_char0-75 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat2652_utterance0_char0-23 .
+leolaniTalk:Perspectives {
+    leolaniTalk:We_should_should_careful_00026 a grasp:Attribution ;
+        rdfs:label "We_should_should_careful_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2652_utterance2_char0-75 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:rapists a gaf:Instance ;
-        rdfs:label "rapists" ;
-        gaf:denotedIn leolaniTalk:chat2652_utterance0_char0-23 .
+    leolaniTalk:chat2652_utterance0_char0-23 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2652_utterance0_char0-23" ;
+        gaf:containsDenotation leolaniWorld:muslims,
+            leolaniWorld:rapists ;
+        gaf:denotes leolaniWorld:muslims_are_rapists ;
+        grasp:hasAttribution leolaniTalk:muslims_are_rapists_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:44.331450"^^xml1:string ;
+        rdf:value "All muslims are rapists"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2652_utterance0 .
 
-    leolaniWorld:should_careful a gaf:Instance ;
-        rdfs:label "should-careful" ;
-        gaf:denotedIn leolaniTalk:chat2652_utterance2_char0-75 .
+    leolaniTalk:chat2652_utterance2_char0-75 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2652_utterance2_char0-75" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:should_careful ;
+        gaf:denotes leolaniWorld:We_should_should_careful ;
+        grasp:hasAttribution leolaniTalk:We_should_should_careful_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:44.492060"^^xml1:string ;
+        rdf:value "What is the point of letting rapists into our country? We should be careful"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2652_utterance2 .
+
+    leolaniTalk:muslims_are_rapists_00028 a grasp:Attribution ;
+        rdfs:label "muslims_are_rapists_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2652_utterance0_char0-23 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:We_should_should_careful {
+    leolaniWorld:We ns1:should leolaniWorld:should_careful .
 }
 
 leolaniWorld:Ontology {
@@ -404,129 +483,50 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:We_should_should_careful a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_should_should_careful" ;
+        gaf:denotedBy leolaniTalk:chat2652_utterance2_char0-75 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:muslims_are_rapists a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "muslims_are_rapists" ;
+        gaf:denotedBy leolaniTalk:chat2652_utterance0_char0-23 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:We_should_should_careful_00026 a grasp:Attribution ;
-        rdfs:label "We_should_should_careful_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2652_utterance2_char0-75 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2652_utterance0_char0-23 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2652_utterance0_char0-23" ;
-        gaf:containsDenotation leolaniWorld:muslims,
-            leolaniWorld:rapists ;
-        gaf:denotes leolaniWorld:muslims_are_rapists ;
-        grasp:hasAttribution leolaniTalk:muslims_are_rapists_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:44.331450"^^xml1:string ;
-        rdf:value "All muslims are rapists"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2652_utterance0 .
-
-    leolaniTalk:chat2652_utterance2_char0-75 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2652_utterance2_char0-75" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:should_careful ;
-        gaf:denotes leolaniWorld:We_should_should_careful ;
-        grasp:hasAttribution leolaniTalk:We_should_should_careful_00026 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:44.492060"^^xml1:string ;
-        rdf:value "What is the point of letting rapists into our country? We should be careful"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2652_utterance2 .
-
-    leolaniTalk:muslims_are_rapists_00028 a grasp:Attribution ;
-        rdfs:label "muslims_are_rapists_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2652_utterance0_char0-23 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:muslims_are_rapists {
+    leolaniWorld:muslims ns1:are leolaniWorld:rapists .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context169 a eps:Context ;
-        rdfs:label "context169" ;
-        hs:id "169"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2652 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "204"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2652 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2652" ;
-        hs:id "2652"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2652_utterance0,
-            leolaniTalk:chat2652_utterance2 .
-
-    leolaniTalk:chat2652_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2652_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2652_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2652_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2652_utterance2_char0-75 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:We_should_should_careful {
-    leolaniWorld:We ns1:should leolaniWorld:should_careful .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat2652_utterance0_char0-23 .
+
+    leolaniWorld:rapists a gaf:Instance ;
+        rdfs:label "rapists" ;
+        gaf:denotedIn leolaniTalk:chat2652_utterance0_char0-23 .
+
+    leolaniWorld:should_careful a gaf:Instance ;
+        rdfs:label "should-careful" ;
+        gaf:denotedIn leolaniTalk:chat2652_utterance2_char0-75 .
 }
 

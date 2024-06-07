@@ -22,8 +22,73 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:nigga_being_Westerner {
-    leolaniWorld:nigga ns1:being leolaniWorld:Westerner .
+leolaniTalk:Interactions {
+    leolaniContext:context13 a eps:Context ;
+        rdfs:label "context13" ;
+        hs:id "13"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1467 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "12"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1467 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1467" ;
+        hs:id "1467"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1467_utterance0,
+            leolaniTalk:chat1467_utterance2 .
+
+    leolaniTalk:chat1467_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1467_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1467_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1467_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Niggas_are-influenced-by_not_human_being {
+    leolaniWorld:Niggas ns1:are_influenced_by leolaniWorld:not_human_being .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniTalk:Perspectives {
@@ -112,35 +177,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Niggas a gaf:Instance ;
-        rdfs:label "niggas" ;
-        gaf:denotedIn leolaniTalk:chat1467_utterance2_char0-65 .
-
-    leolaniWorld:Westerner a gaf:Instance ;
-        rdfs:label "westerner" ;
-        gaf:denotedIn leolaniTalk:chat1467_utterance0_char0-50 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nigga a gaf:Instance ;
-        rdfs:label "nigga" ;
-        gaf:denotedIn leolaniTalk:chat1467_utterance0_char0-50 .
-
-    leolaniWorld:not_human_being a gaf:Instance ;
-        rdfs:label "not-human-being" ;
-        gaf:denotedIn leolaniTalk:chat1467_utterance2_char0-65 .
-
-    leolaniWorld:with_Westerner a gaf:Instance ;
-        rdfs:label "with-westerner" ;
-        gaf:denotedIn leolaniTalk:chat1467_utterance0_char0-50 .
 }
 
 leolaniWorld:Niggas_are-just-influenced-by_not_human_being {
@@ -482,71 +518,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:nigga_have-do_with_Westerner {
-    leolaniWorld:nigga ns1:have_do leolaniWorld:with_Westerner .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context13 a eps:Context ;
-        rdfs:label "context13" ;
-        hs:id "13"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1467 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "12"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1467 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1467" ;
-        hs:id "1467"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1467_utterance0,
-            leolaniTalk:chat1467_utterance2 .
-
-    leolaniTalk:chat1467_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1467_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1467_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1467_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:Niggas_are-influenced-by_not_human_being a gaf:Assertion,
             sem:Event ;
@@ -580,15 +551,44 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Niggas_are-influenced-by_not_human_being {
-    leolaniWorld:Niggas ns1:are_influenced_by leolaniWorld:not_human_being .
-}
-
 leolaniWorld:nigga_have-do_Westerner {
     leolaniWorld:nigga ns1:have_do leolaniWorld:Westerner .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:nigga_have-do_with_Westerner {
+    leolaniWorld:nigga ns1:have_do leolaniWorld:with_Westerner .
+}
+
+leolaniWorld:nigga_being_Westerner {
+    leolaniWorld:nigga ns1:being leolaniWorld:Westerner .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Niggas a gaf:Instance ;
+        rdfs:label "niggas" ;
+        gaf:denotedIn leolaniTalk:chat1467_utterance2_char0-65 .
+
+    leolaniWorld:Westerner a gaf:Instance ;
+        rdfs:label "westerner" ;
+        gaf:denotedIn leolaniTalk:chat1467_utterance0_char0-50 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nigga a gaf:Instance ;
+        rdfs:label "nigga" ;
+        gaf:denotedIn leolaniTalk:chat1467_utterance0_char0-50 .
+
+    leolaniWorld:not_human_being a gaf:Instance ;
+        rdfs:label "not-human-being" ;
+        gaf:denotedIn leolaniTalk:chat1467_utterance2_char0-65 .
+
+    leolaniWorld:with_Westerner a gaf:Instance ;
+        rdfs:label "with-westerner" ;
+        gaf:denotedIn leolaniTalk:chat1467_utterance0_char0-50 .
 }
 

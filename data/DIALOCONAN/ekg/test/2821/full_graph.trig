@@ -22,6 +22,68 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Women_are_subhuman {
+    leolaniWorld:Women ns11:are leolaniWorld:subhuman .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context85 a eps:Context ;
+        rdfs:label "context85" ;
+        hs:id "85"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2821 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "106"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2821 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2821" ;
+        hs:id "2821"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2821_utterance0 .
+
+    leolaniTalk:chat2821_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2821_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:Women_are_inherently_subhuman_00028 a grasp:Attribution ;
         rdfs:label "Women_are_inherently_subhuman_00028" ;
@@ -78,29 +140,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat2821_utterance0_char0-55 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:inherently_subhuman a gaf:Instance ;
-        rdfs:label "inherently-subhuman" ;
-        gaf:denotedIn leolaniTalk:chat2821_utterance0_char0-55 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:subhuman a gaf:Instance ;
-        rdfs:label "subhuman" ;
-        gaf:denotedIn leolaniTalk:chat2821_utterance0_char0-55 .
-
-    leolaniWorld:valued a gaf:Instance ;
-        rdfs:label "valued" ;
-        gaf:denotedIn leolaniTalk:chat2821_utterance0_char0-55 .
+leolaniWorld:Women_are_inherently_subhuman {
+    leolaniWorld:Women ns11:are leolaniWorld:inherently_subhuman .
 }
 
 leolaniWorld:Ontology {
@@ -442,60 +483,6 @@ leolaniWorld:Women_be_valued {
     leolaniWorld:Women ns11:be leolaniWorld:valued .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context85 a eps:Context ;
-        rdfs:label "context85" ;
-        hs:id "85"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2821 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "106"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2821 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2821" ;
-        hs:id "2821"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2821_utterance0 .
-
-    leolaniTalk:chat2821_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2821_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:Women_are_inherently_subhuman a gaf:Assertion,
             sem:Event ;
@@ -519,15 +506,28 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Women_are_subhuman {
-    leolaniWorld:Women ns11:are leolaniWorld:subhuman .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat2821_utterance0_char0-55 .
 
-leolaniWorld:Women_are_inherently_subhuman {
-    leolaniWorld:Women ns11:are leolaniWorld:inherently_subhuman .
-}
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:inherently_subhuman a gaf:Instance ;
+        rdfs:label "inherently-subhuman" ;
+        gaf:denotedIn leolaniTalk:chat2821_utterance0_char0-55 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:subhuman a gaf:Instance ;
+        rdfs:label "subhuman" ;
+        gaf:denotedIn leolaniTalk:chat2821_utterance0_char0-55 .
+
+    leolaniWorld:valued a gaf:Instance ;
+        rdfs:label "valued" ;
+        gaf:denotedIn leolaniTalk:chat2821_utterance0_char0-55 .
 }
 

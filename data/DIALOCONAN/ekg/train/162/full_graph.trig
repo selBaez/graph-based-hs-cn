@@ -22,152 +22,237 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Allowing_children_is_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Allowing_children_is_sick" ;
-        gaf:denotedBy leolaniTalk:chat162_utterance0_char0-116 .
-
-    leolaniWorld:children_is_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "children_is_sick" ;
-        gaf:denotedBy leolaniTalk:chat162_utterance0_char0-116 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are-queer_if_they_do_ever_realise a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-queer_if_they_do_ever_realise" ;
-        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:they_are-queer_if_they_do_realise a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-queer_if_they_do_realise" ;
-        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:they_are-queer_they_do_ever_realise a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-queer_they_do_ever_realise" ;
-        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:they_are-queer_they_do_realise a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-queer_they_do_realise" ;
-        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:they_are_queer a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_queer" ;
-        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:they_be_loved a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_be_loved" ;
-        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:they_be_still_loved a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_be_still_loved" ;
-        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:children_is_sick {
+    leolaniWorld:children ns1:is leolaniWorld:sick .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context147 a eps:Context ;
+        rdfs:label "context147" ;
+        hs:id "147"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Allowing_children_is_sick {
-    leolaniWorld:Allowing_children ns1:is leolaniWorld:sick .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat162 .
 
-leolaniWorld:they_are-queer_if_they_do_ever_realise {
-    leolaniWorld:they ns1:are_queer leolaniWorld:if_they_do_ever_realise .
-}
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-leolaniWorld:Instances {
-    leolaniWorld:Allowing_children a gaf:Instance ;
-        rdfs:label "allowing-children" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance0_char0-116 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "246"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:children a gaf:Instance ;
-        rdfs:label "children" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance0_char0-116 .
+    leolaniTalk:chat162 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat162" ;
+        hs:id "162"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat162_utterance0,
+            leolaniTalk:chat162_utterance1 .
+
+    leolaniTalk:chat162_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat162_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat162_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat162_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:if_they_do_ever_realise a gaf:Instance ;
-        rdfs:label "if-they-do-ever-realise" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:if_they_do_realise a gaf:Instance ;
-        rdfs:label "if-they-do-realise" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:loved a gaf:Instance ;
-        rdfs:label "loved" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:queer a gaf:Instance ;
-        rdfs:label "queer" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:sick a gaf:Instance ;
-        rdfs:label "sick" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance0_char0-116 .
-
-    leolaniWorld:still_loved a gaf:Instance ;
-        rdfs:label "still-loved" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:they_do_ever_realise a gaf:Instance ;
-        rdfs:label "they-do-ever-realise" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
-
-    leolaniWorld:they_do_realise a gaf:Instance ;
-        rdfs:label "they-do-realise" ;
-        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
-}
-
-leolaniWorld:they_be_loved {
-    leolaniWorld:they ns1:be leolaniWorld:loved .
 }
 
 leolaniWorld:they_are-queer_if_they_do_realise {
     leolaniWorld:they ns1:are_queer leolaniWorld:if_they_do_realise .
 }
 
-leolaniWorld:they_be_still_loved {
-    leolaniWorld:they ns1:be leolaniWorld:still_loved .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:they_are-queer_they_do_ever_realise {
+    leolaniWorld:they ns1:are_queer leolaniWorld:they_do_ever_realise .
+}
+
+leolaniWorld:they_are_queer {
+    leolaniWorld:they ns1:are leolaniWorld:queer .
+}
+
+leolaniWorld:they_are-queer_if_they_do_ever_realise {
+    leolaniWorld:they ns1:are_queer leolaniWorld:if_they_do_ever_realise .
 }
 
 leolaniWorld:they_are-queer_they_do_realise {
     leolaniWorld:they ns1:are_queer leolaniWorld:they_do_realise .
 }
 
-leolaniWorld:children_is_sick {
-    leolaniWorld:children ns1:is leolaniWorld:sick .
+leolaniTalk:Perspectives {
+    leolaniTalk:Allowing_children_is_sick_00028 a grasp:Attribution ;
+        rdfs:label "Allowing_children_is_sick_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat162_utterance0_char0-116 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:children_is_sick_00028 a grasp:Attribution ;
+        rdfs:label "children_is_sick_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat162_utterance0_char0-116 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-queer_if_they_do_ever_realise_0009 a grasp:Attribution ;
+        rdfs:label "they_are-queer_if_they_do_ever_realise_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-queer_if_they_do_realise_0009 a grasp:Attribution ;
+        rdfs:label "they_are-queer_if_they_do_realise_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-queer_they_do_ever_realise_0009 a grasp:Attribution ;
+        rdfs:label "they_are-queer_they_do_ever_realise_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-queer_they_do_realise_0009 a grasp:Attribution ;
+        rdfs:label "they_are-queer_they_do_realise_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_queer_0009 a grasp:Attribution ;
+        rdfs:label "they_are_queer_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_be_loved_0009 a grasp:Attribution ;
+        rdfs:label "they_be_loved_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_be_still_loved_0009 a grasp:Attribution ;
+        rdfs:label "they_be_still_loved_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat162_utterance0_char0-116 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat162_utterance0_char0-116" ;
+        gaf:containsDenotation leolaniWorld:Allowing_children,
+            leolaniWorld:children,
+            leolaniWorld:sick ;
+        gaf:denotes leolaniWorld:Allowing_children_is_sick,
+            leolaniWorld:children_is_sick ;
+        grasp:hasAttribution leolaniTalk:Allowing_children_is_sick_00028,
+            leolaniTalk:children_is_sick_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:22.359301"^^xml1:string,
+            "2024-06-05T23:35:22.359373"^^xml1:string ;
+        rdf:value "Allowing children at Pride parades is sick. It’s just another way to indoctrinate them into this perverse lifestyle."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat162_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat162_utterance1_char0-187 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat162_utterance1_char0-187" ;
+        gaf:containsDenotation leolaniWorld:if_they_do_ever_realise,
+            leolaniWorld:if_they_do_realise,
+            leolaniWorld:loved,
+            leolaniWorld:queer,
+            leolaniWorld:still_loved,
+            leolaniWorld:they,
+            leolaniWorld:they_do_ever_realise,
+            leolaniWorld:they_do_realise ;
+        gaf:denotes leolaniWorld:they_are-queer_if_they_do_ever_realise,
+            leolaniWorld:they_are-queer_if_they_do_realise,
+            leolaniWorld:they_are-queer_they_do_ever_realise,
+            leolaniWorld:they_are-queer_they_do_realise,
+            leolaniWorld:they_are_queer,
+            leolaniWorld:they_be_loved,
+            leolaniWorld:they_be_still_loved ;
+        grasp:hasAttribution leolaniTalk:they_are-queer_if_they_do_ever_realise_0009,
+            leolaniTalk:they_are-queer_if_they_do_realise_0009,
+            leolaniTalk:they_are-queer_they_do_ever_realise_0009,
+            leolaniTalk:they_are-queer_they_do_realise_0009,
+            leolaniTalk:they_are_queer_0009,
+            leolaniTalk:they_be_loved_0009,
+            leolaniTalk:they_be_still_loved_0009 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:22.500298"^^xml1:string,
+            "2024-06-05T23:35:22.500365"^^xml1:string,
+            "2024-06-05T23:35:22.500390"^^xml1:string,
+            "2024-06-05T23:35:22.500413"^^xml1:string,
+            "2024-06-05T23:35:22.500436"^^xml1:string,
+            "2024-06-05T23:35:22.500460"^^xml1:string,
+            "2024-06-05T23:35:22.500483"^^xml1:string ;
+        rdf:value "I think it’s nice that more parents are open minded now. Taking kids to pride is a great way to let them know they will still be loved and accepted if they do ever realise they are queer."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat162_utterance1 .
+
+    graspe:ADMIRATION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ADMIRATION" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -505,216 +590,131 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_be_still_loved {
+    leolaniWorld:they ns1:be leolaniWorld:still_loved .
 }
 
-leolaniWorld:they_are-queer_they_do_ever_realise {
-    leolaniWorld:they ns1:are_queer leolaniWorld:they_do_ever_realise .
+leolaniWorld:Claims {
+    leolaniWorld:Allowing_children_is_sick a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Allowing_children_is_sick" ;
+        gaf:denotedBy leolaniTalk:chat162_utterance0_char0-116 .
+
+    leolaniWorld:children_is_sick a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "children_is_sick" ;
+        gaf:denotedBy leolaniTalk:chat162_utterance0_char0-116 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are-queer_if_they_do_ever_realise a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-queer_if_they_do_ever_realise" ;
+        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:they_are-queer_if_they_do_realise a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-queer_if_they_do_realise" ;
+        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:they_are-queer_they_do_ever_realise a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-queer_they_do_ever_realise" ;
+        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:they_are-queer_they_do_realise a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-queer_they_do_realise" ;
+        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:they_are_queer a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_queer" ;
+        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:they_be_loved a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_be_loved" ;
+        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:they_be_still_loved a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_be_still_loved" ;
+        gaf:denotedBy leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Allowing_children_is_sick_00028 a grasp:Attribution ;
-        rdfs:label "Allowing_children_is_sick_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat162_utterance0_char0-116 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:children_is_sick_00028 a grasp:Attribution ;
-        rdfs:label "children_is_sick_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat162_utterance0_char0-116 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-queer_if_they_do_ever_realise_0009 a grasp:Attribution ;
-        rdfs:label "they_are-queer_if_they_do_ever_realise_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-queer_if_they_do_realise_0009 a grasp:Attribution ;
-        rdfs:label "they_are-queer_if_they_do_realise_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-queer_they_do_ever_realise_0009 a grasp:Attribution ;
-        rdfs:label "they_are-queer_they_do_ever_realise_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-queer_they_do_realise_0009 a grasp:Attribution ;
-        rdfs:label "they_are-queer_they_do_realise_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_queer_0009 a grasp:Attribution ;
-        rdfs:label "they_are_queer_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_be_loved_0009 a grasp:Attribution ;
-        rdfs:label "they_be_loved_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_be_still_loved_0009 a grasp:Attribution ;
-        rdfs:label "they_be_still_loved_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat162_utterance1_char0-187 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat162_utterance0_char0-116 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat162_utterance0_char0-116" ;
-        gaf:containsDenotation leolaniWorld:Allowing_children,
-            leolaniWorld:children,
-            leolaniWorld:sick ;
-        gaf:denotes leolaniWorld:Allowing_children_is_sick,
-            leolaniWorld:children_is_sick ;
-        grasp:hasAttribution leolaniTalk:Allowing_children_is_sick_00028,
-            leolaniTalk:children_is_sick_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:22.359301"^^xml1:string,
-            "2024-06-05T23:35:22.359373"^^xml1:string ;
-        rdf:value "Allowing children at Pride parades is sick. It’s just another way to indoctrinate them into this perverse lifestyle."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat162_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat162_utterance1_char0-187 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat162_utterance1_char0-187" ;
-        gaf:containsDenotation leolaniWorld:if_they_do_ever_realise,
-            leolaniWorld:if_they_do_realise,
-            leolaniWorld:loved,
-            leolaniWorld:queer,
-            leolaniWorld:still_loved,
-            leolaniWorld:they,
-            leolaniWorld:they_do_ever_realise,
-            leolaniWorld:they_do_realise ;
-        gaf:denotes leolaniWorld:they_are-queer_if_they_do_ever_realise,
-            leolaniWorld:they_are-queer_if_they_do_realise,
-            leolaniWorld:they_are-queer_they_do_ever_realise,
-            leolaniWorld:they_are-queer_they_do_realise,
-            leolaniWorld:they_are_queer,
-            leolaniWorld:they_be_loved,
-            leolaniWorld:they_be_still_loved ;
-        grasp:hasAttribution leolaniTalk:they_are-queer_if_they_do_ever_realise_0009,
-            leolaniTalk:they_are-queer_if_they_do_realise_0009,
-            leolaniTalk:they_are-queer_they_do_ever_realise_0009,
-            leolaniTalk:they_are-queer_they_do_realise_0009,
-            leolaniTalk:they_are_queer_0009,
-            leolaniTalk:they_be_loved_0009,
-            leolaniTalk:they_be_still_loved_0009 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:22.500298"^^xml1:string,
-            "2024-06-05T23:35:22.500365"^^xml1:string,
-            "2024-06-05T23:35:22.500390"^^xml1:string,
-            "2024-06-05T23:35:22.500413"^^xml1:string,
-            "2024-06-05T23:35:22.500436"^^xml1:string,
-            "2024-06-05T23:35:22.500460"^^xml1:string,
-            "2024-06-05T23:35:22.500483"^^xml1:string ;
-        rdf:value "I think it’s nice that more parents are open minded now. Taking kids to pride is a great way to let them know they will still be loved and accepted if they do ever realise they are queer."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat162_utterance1 .
-
-    graspe:ADMIRATION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ADMIRATION" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:they_be_loved {
+    leolaniWorld:they ns1:be leolaniWorld:loved .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context147 a eps:Context ;
-        rdfs:label "context147" ;
-        hs:id "147"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Allowing_children_is_sick {
+    leolaniWorld:Allowing_children ns1:is leolaniWorld:sick .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat162 .
+leolaniWorld:Instances {
+    leolaniWorld:Allowing_children a gaf:Instance ;
+        rdfs:label "allowing-children" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance0_char0-116 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "246"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat162 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat162" ;
-        hs:id "162"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat162_utterance0,
-            leolaniTalk:chat162_utterance1 .
-
-    leolaniTalk:chat162_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat162_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat162_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat162_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:children a gaf:Instance ;
+        rdfs:label "children" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance0_char0-116 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:they_are_queer {
-    leolaniWorld:they ns1:are leolaniWorld:queer .
+    leolaniWorld:if_they_do_ever_realise a gaf:Instance ;
+        rdfs:label "if-they-do-ever-realise" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:if_they_do_realise a gaf:Instance ;
+        rdfs:label "if-they-do-realise" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:loved a gaf:Instance ;
+        rdfs:label "loved" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:queer a gaf:Instance ;
+        rdfs:label "queer" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:sick a gaf:Instance ;
+        rdfs:label "sick" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance0_char0-116 .
+
+    leolaniWorld:still_loved a gaf:Instance ;
+        rdfs:label "still-loved" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:they_do_ever_realise a gaf:Instance ;
+        rdfs:label "they-do-ever-realise" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
+
+    leolaniWorld:they_do_realise a gaf:Instance ;
+        rdfs:label "they-do-realise" ;
+        gaf:denotedIn leolaniTalk:chat162_utterance1_char0-187 .
 }
 

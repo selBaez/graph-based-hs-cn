@@ -22,71 +22,8 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Many_migrants_come-to_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Many_migrants_come-to_country" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:Many_migrants_come_to_work a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Many_migrants_come_to_work" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:Many_migrants_come_work a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Many_migrants_come_work" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:You_would_would_surprised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_would_would_surprised" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:You_would_would_very_surprised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_would_would_very_surprised" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:migrants_come-to_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_come-to_country" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:migrants_come_to_work a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_come_to_work" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:migrants_come_work a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_come_work" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:you_talked-about_their_experience a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_talked-about_their_experience" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:you_talked-about_their_experience_here a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_talked-about_their_experience_here" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:you_talked-to_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_talked-to_them" ;
-        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:you_talked-to_them {
+    leolaniWorld:you ns1:talked_to leolaniWorld:them .
 }
 
 leolaniWorld:migrants_come_work {
@@ -97,85 +34,234 @@ leolaniWorld:you_talked-about_their_experience_here {
     leolaniWorld:you ns1:talked_about leolaniWorld:their_experience_here .
 }
 
-leolaniWorld:Many_migrants_come_work {
-    leolaniWorld:Many_migrants ns1:come leolaniWorld:work .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context26 a eps:Context ;
+        rdfs:label "context26" ;
+        hs:id "26"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:migrants_come-to_country {
-    leolaniWorld:migrants ns1:come_to leolaniWorld:country .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat745 .
 
-leolaniWorld:Instances {
-    leolaniWorld:Many_migrants a gaf:Instance ;
-        rdfs:label "many-migrants" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:You a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "145"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat745 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat745" ;
+        hs:id "745"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat745_utterance1 .
+
+    leolaniTalk:chat745_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat745_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
-
-    leolaniWorld:country a gaf:Instance ;
-        rdfs:label "country" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:their_experience a gaf:Instance ;
-        rdfs:label "their-experience" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:their_experience_here a gaf:Instance ;
-        rdfs:label "their-experience-here" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:to_work a gaf:Instance ;
-        rdfs:label "to-work" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:work a gaf:Instance ;
-        rdfs:label "work" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:would_surprised a gaf:Instance ;
-        rdfs:label "would-surprised" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:would_very_surprised a gaf:Instance ;
-        rdfs:label "would-very-surprised" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
 }
 
-leolaniWorld:You_would_would_surprised {
-    leolaniWorld:You ns1:would leolaniWorld:would_surprised .
+leolaniWorld:you_talked-about_their_experience {
+    leolaniWorld:you ns1:talked_about leolaniWorld:their_experience .
 }
 
 leolaniWorld:Many_migrants_come-to_country {
     leolaniWorld:Many_migrants ns1:come_to leolaniWorld:country .
 }
 
+leolaniWorld:Many_migrants_come_work {
+    leolaniWorld:Many_migrants ns1:come leolaniWorld:work .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
 leolaniWorld:You_would_would_very_surprised {
     leolaniWorld:You ns1:would leolaniWorld:would_very_surprised .
 }
 
+leolaniWorld:You_would_would_surprised {
+    leolaniWorld:You ns1:would leolaniWorld:would_surprised .
+}
+
 leolaniWorld:Many_migrants_come_to_work {
     leolaniWorld:Many_migrants ns1:come leolaniWorld:to_work .
+}
+
+leolaniWorld:migrants_come-to_country {
+    leolaniWorld:migrants ns1:come_to leolaniWorld:country .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Many_migrants_come-to_country_00025 a grasp:Attribution ;
+        rdfs:label "Many_migrants_come-to_country_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Many_migrants_come_to_work_00025 a grasp:Attribution ;
+        rdfs:label "Many_migrants_come_to_work_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Many_migrants_come_work_00025 a grasp:Attribution ;
+        rdfs:label "Many_migrants_come_work_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_would_would_surprised_00025 a grasp:Attribution ;
+        rdfs:label "You_would_would_surprised_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_would_would_very_surprised_00025 a grasp:Attribution ;
+        rdfs:label "You_would_would_very_surprised_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:migrants_come-to_country_00025 a grasp:Attribution ;
+        rdfs:label "migrants_come-to_country_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:migrants_come_to_work_00025 a grasp:Attribution ;
+        rdfs:label "migrants_come_to_work_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:migrants_come_work_00025 a grasp:Attribution ;
+        rdfs:label "migrants_come_work_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_talked-about_their_experience_00025 a grasp:Attribution ;
+        rdfs:label "you_talked-about_their_experience_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_talked-about_their_experience_here_00025 a grasp:Attribution ;
+        rdfs:label "you_talked-about_their_experience_here_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_talked-to_them_00025 a grasp:Attribution ;
+        rdfs:label "you_talked-to_them_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat745_utterance1_char0-136 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat745_utterance1_char0-136" ;
+        gaf:containsDenotation leolaniWorld:Many_migrants,
+            leolaniWorld:You,
+            leolaniWorld:country,
+            leolaniWorld:migrants,
+            leolaniWorld:their_experience,
+            leolaniWorld:their_experience_here,
+            leolaniWorld:them,
+            leolaniWorld:to_work,
+            leolaniWorld:work,
+            leolaniWorld:would_surprised,
+            leolaniWorld:would_very_surprised,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:Many_migrants_come-to_country,
+            leolaniWorld:Many_migrants_come_to_work,
+            leolaniWorld:Many_migrants_come_work,
+            leolaniWorld:You_would_would_surprised,
+            leolaniWorld:You_would_would_very_surprised,
+            leolaniWorld:migrants_come-to_country,
+            leolaniWorld:migrants_come_to_work,
+            leolaniWorld:migrants_come_work,
+            leolaniWorld:you_talked-about_their_experience,
+            leolaniWorld:you_talked-about_their_experience_here,
+            leolaniWorld:you_talked-to_them ;
+        grasp:hasAttribution leolaniTalk:Many_migrants_come-to_country_00025,
+            leolaniTalk:Many_migrants_come_to_work_00025,
+            leolaniTalk:Many_migrants_come_work_00025,
+            leolaniTalk:You_would_would_surprised_00025,
+            leolaniTalk:You_would_would_very_surprised_00025,
+            leolaniTalk:migrants_come-to_country_00025,
+            leolaniTalk:migrants_come_to_work_00025,
+            leolaniTalk:migrants_come_work_00025,
+            leolaniTalk:you_talked-about_their_experience_00025,
+            leolaniTalk:you_talked-about_their_experience_here_00025,
+            leolaniTalk:you_talked-to_them_00025 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:53.807386"^^xml1:string,
+            "2024-06-05T23:06:53.807451"^^xml1:string,
+            "2024-06-05T23:06:53.807474"^^xml1:string,
+            "2024-06-05T23:06:53.807497"^^xml1:string,
+            "2024-06-05T23:06:53.807519"^^xml1:string,
+            "2024-06-05T23:06:53.807540"^^xml1:string,
+            "2024-06-05T23:06:53.807562"^^xml1:string,
+            "2024-06-05T23:06:53.807584"^^xml1:string,
+            "2024-06-05T23:06:53.807607"^^xml1:string,
+            "2024-06-05T23:06:53.807629"^^xml1:string,
+            "2024-06-05T23:06:53.807674"^^xml1:string ;
+        rdf:value "Many migrants come to this country to work and integrate. You would be very surprised if you talked to them about their experience here."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat745_utterance1 .
+
+    graspe:SURPRISE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "SURPRISE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -513,213 +599,127 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Many_migrants_come-to_country_00025 a grasp:Attribution ;
-        rdfs:label "Many_migrants_come-to_country_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Many_migrants_come-to_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Many_migrants_come-to_country" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:Many_migrants_come_to_work_00025 a grasp:Attribution ;
-        rdfs:label "Many_migrants_come_to_work_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Many_migrants_come_to_work a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Many_migrants_come_to_work" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:Many_migrants_come_work_00025 a grasp:Attribution ;
-        rdfs:label "Many_migrants_come_work_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Many_migrants_come_work a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Many_migrants_come_work" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:You_would_would_surprised_00025 a grasp:Attribution ;
-        rdfs:label "You_would_would_surprised_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_would_would_surprised a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_would_would_surprised" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:You_would_would_very_surprised_00025 a grasp:Attribution ;
-        rdfs:label "You_would_would_very_surprised_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_would_would_very_surprised a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_would_would_very_surprised" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:migrants_come-to_country_00025 a grasp:Attribution ;
-        rdfs:label "migrants_come-to_country_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:migrants_come_to_work_00025 a grasp:Attribution ;
-        rdfs:label "migrants_come_to_work_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:migrants_come-to_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_come-to_country" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:migrants_come_work_00025 a grasp:Attribution ;
-        rdfs:label "migrants_come_work_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:migrants_come_to_work a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_come_to_work" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:you_talked-about_their_experience_00025 a grasp:Attribution ;
-        rdfs:label "you_talked-about_their_experience_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:migrants_come_work a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_come_work" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:you_talked-about_their_experience_here_00025 a grasp:Attribution ;
-        rdfs:label "you_talked-about_their_experience_here_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_talked-about_their_experience a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_talked-about_their_experience" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:you_talked-to_them_00025 a grasp:Attribution ;
-        rdfs:label "you_talked-to_them_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat745_utterance1_char0-136 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_talked-about_their_experience_here a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_talked-about_their_experience_here" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniTalk:chat745_utterance1_char0-136 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat745_utterance1_char0-136" ;
-        gaf:containsDenotation leolaniWorld:Many_migrants,
-            leolaniWorld:You,
-            leolaniWorld:country,
-            leolaniWorld:migrants,
-            leolaniWorld:their_experience,
-            leolaniWorld:their_experience_here,
-            leolaniWorld:them,
-            leolaniWorld:to_work,
-            leolaniWorld:work,
-            leolaniWorld:would_surprised,
-            leolaniWorld:would_very_surprised,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:Many_migrants_come-to_country,
-            leolaniWorld:Many_migrants_come_to_work,
-            leolaniWorld:Many_migrants_come_work,
-            leolaniWorld:You_would_would_surprised,
-            leolaniWorld:You_would_would_very_surprised,
-            leolaniWorld:migrants_come-to_country,
-            leolaniWorld:migrants_come_to_work,
-            leolaniWorld:migrants_come_work,
-            leolaniWorld:you_talked-about_their_experience,
-            leolaniWorld:you_talked-about_their_experience_here,
-            leolaniWorld:you_talked-to_them ;
-        grasp:hasAttribution leolaniTalk:Many_migrants_come-to_country_00025,
-            leolaniTalk:Many_migrants_come_to_work_00025,
-            leolaniTalk:Many_migrants_come_work_00025,
-            leolaniTalk:You_would_would_surprised_00025,
-            leolaniTalk:You_would_would_very_surprised_00025,
-            leolaniTalk:migrants_come-to_country_00025,
-            leolaniTalk:migrants_come_to_work_00025,
-            leolaniTalk:migrants_come_work_00025,
-            leolaniTalk:you_talked-about_their_experience_00025,
-            leolaniTalk:you_talked-about_their_experience_here_00025,
-            leolaniTalk:you_talked-to_them_00025 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:53.807386"^^xml1:string,
-            "2024-06-05T23:06:53.807451"^^xml1:string,
-            "2024-06-05T23:06:53.807474"^^xml1:string,
-            "2024-06-05T23:06:53.807497"^^xml1:string,
-            "2024-06-05T23:06:53.807519"^^xml1:string,
-            "2024-06-05T23:06:53.807540"^^xml1:string,
-            "2024-06-05T23:06:53.807562"^^xml1:string,
-            "2024-06-05T23:06:53.807584"^^xml1:string,
-            "2024-06-05T23:06:53.807607"^^xml1:string,
-            "2024-06-05T23:06:53.807629"^^xml1:string,
-            "2024-06-05T23:06:53.807674"^^xml1:string ;
-        rdf:value "Many migrants come to this country to work and integrate. You would be very surprised if you talked to them about their experience here."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat745_utterance1 .
+    leolaniWorld:you_talked-to_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_talked-to_them" ;
+        gaf:denotedBy leolaniTalk:chat745_utterance1_char0-136 .
 
-    graspe:SURPRISE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "SURPRISE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
 leolaniWorld:migrants_come_to_work {
     leolaniWorld:migrants ns1:come leolaniWorld:to_work .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context26 a eps:Context ;
-        rdfs:label "context26" ;
-        hs:id "26"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Many_migrants a gaf:Instance ;
+        rdfs:label "many-migrants" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat745 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "145"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat745 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat745" ;
-        hs:id "745"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat745_utterance1 .
-
-    leolaniTalk:chat745_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat745_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:You a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
-}
 
-leolaniWorld:you_talked-about_their_experience {
-    leolaniWorld:you ns1:talked_about leolaniWorld:their_experience .
-}
+    leolaniWorld:country a gaf:Instance ;
+        rdfs:label "country" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
 
-leolaniWorld:you_talked-to_them {
-    leolaniWorld:you ns1:talked_to leolaniWorld:them .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+
+    leolaniWorld:their_experience a gaf:Instance ;
+        rdfs:label "their-experience" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+
+    leolaniWorld:their_experience_here a gaf:Instance ;
+        rdfs:label "their-experience-here" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+
+    leolaniWorld:to_work a gaf:Instance ;
+        rdfs:label "to-work" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+
+    leolaniWorld:work a gaf:Instance ;
+        rdfs:label "work" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+
+    leolaniWorld:would_surprised a gaf:Instance ;
+        rdfs:label "would-surprised" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+
+    leolaniWorld:would_very_surprised a gaf:Instance ;
+        rdfs:label "would-very-surprised" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat745_utterance1_char0-136 .
 }
 

@@ -22,117 +22,188 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:it_is-because_fear a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is-because_fear" ;
-        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:it_is-because_fear_of_different_ways a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is-because_fear_of_different_ways" ;
-        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:it_is-because_fear_of_different_ways_of_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is-because_fear_of_different_ways_of_life" ;
-        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:it_is-because_fear_of_ways a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is-because_fear_of_ways" ;
-        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:it_is-because_fear_of_ways_of_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is-because_fear_of_ways_of_life" ;
-        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_should_should_banned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_should_should_banned" ;
-        gaf:denotedBy leolaniTalk:chat841_utterance0_char0-97 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:it_is-because_fear_of_different_ways_of_life {
+    leolaniWorld:it ns1:is_because leolaniWorld:fear_of_different_ways_of_life .
 }
 
 leolaniWorld:it_is-because_fear_of_different_ways {
     leolaniWorld:it ns1:is_because leolaniWorld:fear_of_different_ways .
 }
 
-leolaniWorld:Instances {
+leolaniTalk:Interactions {
+    leolaniContext:context110 a eps:Context ;
+        rdfs:label "context110" ;
+        hs:id "110"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat841 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "208"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat841 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat841" ;
+        hs:id "841"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat841_utterance0,
+            leolaniTalk:chat841_utterance1 .
+
+    leolaniTalk:chat841_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat841_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat841_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat841_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:fear a gaf:Instance ;
-        rdfs:label "fear" ;
-        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:fear_of_different_ways a gaf:Instance ;
-        rdfs:label "fear-of-different-ways" ;
-        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:fear_of_different_ways_of_life a gaf:Instance ;
-        rdfs:label "fear-of-different-ways-of-life" ;
-        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:fear_of_ways a gaf:Instance ;
-        rdfs:label "fear-of-ways" ;
-        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:fear_of_ways_of_life a gaf:Instance ;
-        rdfs:label "fear-of-ways-of-life" ;
-        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:should_banned a gaf:Instance ;
-        rdfs:label "should-banned" ;
-        gaf:denotedIn leolaniTalk:chat841_utterance0_char0-97 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat841_utterance0_char0-97 .
 }
 
-leolaniWorld:it_is-because_fear_of_ways {
-    leolaniWorld:it ns1:is_because leolaniWorld:fear_of_ways .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:it_is-because_fear {
-    leolaniWorld:it ns1:is_because leolaniWorld:fear .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:it_is-because_fear_of_ways_of_life {
-    leolaniWorld:it ns1:is_because leolaniWorld:fear_of_ways_of_life .
+leolaniTalk:Perspectives {
+    leolaniTalk:chat841_utterance0_char0-97 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat841_utterance0_char0-97" ;
+        gaf:containsDenotation leolaniWorld:should_banned,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_should_should_banned ;
+        grasp:hasAttribution leolaniTalk:they_should_should_banned_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:51:47.891258"^^xml1:string ;
+        rdf:value "Afro-Caribbean's are just a bunch of stupid and dangerous dancing n*ggers, they should be banned."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat841_utterance0 .
+
+    leolaniTalk:it_is-because_fear_00028 a grasp:Attribution ;
+        rdfs:label "it_is-because_fear_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_is-because_fear_of_different_ways_00028 a grasp:Attribution ;
+        rdfs:label "it_is-because_fear_of_different_ways_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_is-because_fear_of_different_ways_of_life_00028 a grasp:Attribution ;
+        rdfs:label "it_is-because_fear_of_different_ways_of_life_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_is-because_fear_of_ways_00028 a grasp:Attribution ;
+        rdfs:label "it_is-because_fear_of_ways_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_is-because_fear_of_ways_of_life_00028 a grasp:Attribution ;
+        rdfs:label "it_is-because_fear_of_ways_of_life_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_should_should_banned_00022 a grasp:Attribution ;
+        rdfs:label "they_should_should_banned_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat841_utterance0_char0-97 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    leolaniTalk:chat841_utterance1_char0-155 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat841_utterance1_char0-155" ;
+        gaf:containsDenotation leolaniWorld:fear,
+            leolaniWorld:fear_of_different_ways,
+            leolaniWorld:fear_of_different_ways_of_life,
+            leolaniWorld:fear_of_ways,
+            leolaniWorld:fear_of_ways_of_life,
+            leolaniWorld:it ;
+        gaf:denotes leolaniWorld:it_is-because_fear,
+            leolaniWorld:it_is-because_fear_of_different_ways,
+            leolaniWorld:it_is-because_fear_of_different_ways_of_life,
+            leolaniWorld:it_is-because_fear_of_ways,
+            leolaniWorld:it_is-because_fear_of_ways_of_life ;
+        grasp:hasAttribution leolaniTalk:it_is-because_fear_00028,
+            leolaniTalk:it_is-because_fear_of_different_ways_00028,
+            leolaniTalk:it_is-because_fear_of_different_ways_of_life_00028,
+            leolaniTalk:it_is-because_fear_of_ways_00028,
+            leolaniTalk:it_is-because_fear_of_ways_of_life_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:51:48.031894"^^xml1:string,
+            "2024-06-05T23:51:48.031952"^^xml1:string,
+            "2024-06-05T23:51:48.031975"^^xml1:string,
+            "2024-06-05T23:51:48.031996"^^xml1:string,
+            "2024-06-05T23:51:48.032020"^^xml1:string ;
+        rdf:value "There are still incidents of hate speech being hurled at people from different ethnic backgrounds, and it is because of the fear of different ways of life."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat841_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -470,179 +541,108 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:it_is-because_fear_of_different_ways_of_life {
-    leolaniWorld:it ns1:is_because leolaniWorld:fear_of_different_ways_of_life .
+leolaniWorld:it_is-because_fear_of_ways {
+    leolaniWorld:it ns1:is_because leolaniWorld:fear_of_ways .
+}
+
+leolaniWorld:it_is-because_fear {
+    leolaniWorld:it ns1:is_because leolaniWorld:fear .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:it_is-because_fear a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is-because_fear" ;
+        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:it_is-because_fear_of_different_ways a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is-because_fear_of_different_ways" ;
+        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:it_is-because_fear_of_different_ways_of_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is-because_fear_of_different_ways_of_life" ;
+        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:it_is-because_fear_of_ways a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is-because_fear_of_ways" ;
+        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:it_is-because_fear_of_ways_of_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is-because_fear_of_ways_of_life" ;
+        gaf:denotedBy leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_should_should_banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_should_should_banned" ;
+        gaf:denotedBy leolaniTalk:chat841_utterance0_char0-97 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:they_should_should_banned {
     leolaniWorld:they ns1:should leolaniWorld:should_banned .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat841_utterance0_char0-97 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat841_utterance0_char0-97" ;
-        gaf:containsDenotation leolaniWorld:should_banned,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_should_should_banned ;
-        grasp:hasAttribution leolaniTalk:they_should_should_banned_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:51:47.891258"^^xml1:string ;
-        rdf:value "Afro-Caribbean's are just a bunch of stupid and dangerous dancing n*ggers, they should be banned."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat841_utterance0 .
-
-    leolaniTalk:it_is-because_fear_00028 a grasp:Attribution ;
-        rdfs:label "it_is-because_fear_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_is-because_fear_of_different_ways_00028 a grasp:Attribution ;
-        rdfs:label "it_is-because_fear_of_different_ways_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_is-because_fear_of_different_ways_of_life_00028 a grasp:Attribution ;
-        rdfs:label "it_is-because_fear_of_different_ways_of_life_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_is-because_fear_of_ways_00028 a grasp:Attribution ;
-        rdfs:label "it_is-because_fear_of_ways_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_is-because_fear_of_ways_of_life_00028 a grasp:Attribution ;
-        rdfs:label "it_is-because_fear_of_ways_of_life_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat841_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_should_should_banned_00022 a grasp:Attribution ;
-        rdfs:label "they_should_should_banned_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat841_utterance0_char0-97 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    leolaniTalk:chat841_utterance1_char0-155 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat841_utterance1_char0-155" ;
-        gaf:containsDenotation leolaniWorld:fear,
-            leolaniWorld:fear_of_different_ways,
-            leolaniWorld:fear_of_different_ways_of_life,
-            leolaniWorld:fear_of_ways,
-            leolaniWorld:fear_of_ways_of_life,
-            leolaniWorld:it ;
-        gaf:denotes leolaniWorld:it_is-because_fear,
-            leolaniWorld:it_is-because_fear_of_different_ways,
-            leolaniWorld:it_is-because_fear_of_different_ways_of_life,
-            leolaniWorld:it_is-because_fear_of_ways,
-            leolaniWorld:it_is-because_fear_of_ways_of_life ;
-        grasp:hasAttribution leolaniTalk:it_is-because_fear_00028,
-            leolaniTalk:it_is-because_fear_of_different_ways_00028,
-            leolaniTalk:it_is-because_fear_of_different_ways_of_life_00028,
-            leolaniTalk:it_is-because_fear_of_ways_00028,
-            leolaniTalk:it_is-because_fear_of_ways_of_life_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:51:48.031894"^^xml1:string,
-            "2024-06-05T23:51:48.031952"^^xml1:string,
-            "2024-06-05T23:51:48.031975"^^xml1:string,
-            "2024-06-05T23:51:48.031996"^^xml1:string,
-            "2024-06-05T23:51:48.032020"^^xml1:string ;
-        rdf:value "There are still incidents of hate speech being hurled at people from different ethnic backgrounds, and it is because of the fear of different ways of life."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat841_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:it_is-because_fear_of_ways_of_life {
+    leolaniWorld:it ns1:is_because leolaniWorld:fear_of_ways_of_life .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context110 a eps:Context ;
-        rdfs:label "context110" ;
-        hs:id "110"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat841 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "208"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat841 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat841" ;
-        hs:id "841"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat841_utterance0,
-            leolaniTalk:chat841_utterance1 .
-
-    leolaniTalk:chat841_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat841_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat841_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat841_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:fear a gaf:Instance ;
+        rdfs:label "fear" ;
+        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:fear_of_different_ways a gaf:Instance ;
+        rdfs:label "fear-of-different-ways" ;
+        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:fear_of_different_ways_of_life a gaf:Instance ;
+        rdfs:label "fear-of-different-ways-of-life" ;
+        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:fear_of_ways a gaf:Instance ;
+        rdfs:label "fear-of-ways" ;
+        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:fear_of_ways_of_life a gaf:Instance ;
+        rdfs:label "fear-of-ways-of-life" ;
+        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat841_utterance1_char0-155 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:should_banned a gaf:Instance ;
+        rdfs:label "should-banned" ;
+        gaf:denotedIn leolaniTalk:chat841_utterance0_char0-97 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat841_utterance0_char0-97 .
 }
 

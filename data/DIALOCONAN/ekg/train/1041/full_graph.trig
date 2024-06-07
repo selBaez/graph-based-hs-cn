@@ -22,145 +22,234 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:It_has_nothing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_nothing" ;
-        gaf:denotedBy leolaniTalk:chat1041_utterance1_char0-120 .
-
-    leolaniWorld:N_word_is-insult_still_used a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "N_word_is-insult_still_used" ;
-        gaf:denotedBy leolaniTalk:chat1041_utterance1_char0-120 .
-
-    leolaniWorld:N_word_is-insult_used a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "N_word_is-insult_used" ;
-        gaf:denotedBy leolaniTalk:chat1041_utterance1_char0-120 .
-
-    leolaniWorld:N_word_is-part-of_our_culture a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "N_word_is-part-of_our_culture" ;
-        gaf:denotedBy leolaniTalk:chat1041_utterance2_char0-43 .
-
-    leolaniWorld:N_word_is_insult a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "N_word_is_insult" ;
-        gaf:denotedBy leolaniTalk:chat1041_utterance1_char0-120 .
-
-    leolaniWorld:N_word_is_part a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "N_word_is_part" ;
-        gaf:denotedBy leolaniTalk:chat1041_utterance2_char0-43 .
-
-    leolaniWorld:correctness_is-killing_our_culture a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "correctness_is-killing_our_culture" ;
-        gaf:denotedBy leolaniTalk:chat1041_utterance0_char0-87 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:political_correctness_is-killing_our_culture a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "political_correctness_is-killing_our_culture" ;
-        gaf:denotedBy leolaniTalk:chat1041_utterance0_char0-87 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:N_word_is-insult_used {
+    leolaniWorld:N_word ns1:is_insult leolaniWorld:used .
 }
 
 leolaniWorld:N_word_is-part-of_our_culture {
     leolaniWorld:N_word ns1:is_part_of leolaniWorld:our_culture .
 }
 
-leolaniWorld:N_word_is_insult {
-    leolaniWorld:N_word ns1:is leolaniWorld:insult .
-}
-
-leolaniWorld:N_word_is_part {
-    leolaniWorld:N_word ns1:is leolaniWorld:part .
-}
-
-leolaniWorld:N_word_is-insult_used {
-    leolaniWorld:N_word ns1:is_insult leolaniWorld:used .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
-
-    leolaniWorld:N_word a gaf:Instance ;
-        rdfs:label "n-word" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120,
-            leolaniTalk:chat1041_utterance2_char0-43 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:correctness a gaf:Instance ;
-        rdfs:label "correctness" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance0_char0-87 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:insult a gaf:Instance ;
-        rdfs:label "insult" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
-
-    leolaniWorld:our_culture a gaf:Instance ;
-        rdfs:label "our-culture" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance0_char0-87,
-            leolaniTalk:chat1041_utterance2_char0-43 .
-
-    leolaniWorld:part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance2_char0-43 .
-
-    leolaniWorld:political_correctness a gaf:Instance ;
-        rdfs:label "political-correctness" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance0_char0-87 .
-
-    leolaniWorld:still_used a gaf:Instance ;
-        rdfs:label "still-used" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
-
-    leolaniWorld:used a gaf:Instance ;
-        rdfs:label "used" ;
-        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
-}
-
 leolaniWorld:It_has_nothing {
     leolaniWorld:It ns1:has leolaniWorld:nothing .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context62 a eps:Context ;
+        rdfs:label "context62" ;
+        hs:id "62"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1041 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "231"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1041 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1041" ;
+        hs:id "1041"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1041_utterance0,
+            leolaniTalk:chat1041_utterance1,
+            leolaniTalk:chat1041_utterance2 .
+
+    leolaniTalk:chat1041_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1041_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1041_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1041_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1041_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1041_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:N_word_is-insult_still_used {
+    leolaniWorld:N_word ns1:is_insult leolaniWorld:still_used .
 }
 
 leolaniWorld:political_correctness_is-killing_our_culture {
     leolaniWorld:political_correctness ns1:is_killing leolaniWorld:our_culture .
 }
 
-leolaniWorld:N_word_is-insult_still_used {
-    leolaniWorld:N_word ns1:is_insult leolaniWorld:still_used .
+leolaniTalk:Perspectives {
+    leolaniTalk:It_has_nothing_00028 a grasp:Attribution ;
+        rdfs:label "It_has_nothing_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1041_utterance1_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:N_word_is-insult_still_used_00028 a grasp:Attribution ;
+        rdfs:label "N_word_is-insult_still_used_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1041_utterance1_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:N_word_is-insult_used_00028 a grasp:Attribution ;
+        rdfs:label "N_word_is-insult_used_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1041_utterance1_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:N_word_is-part-of_our_culture_00028 a grasp:Attribution ;
+        rdfs:label "N_word_is-part-of_our_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1041_utterance2_char0-43 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:N_word_is_insult_00028 a grasp:Attribution ;
+        rdfs:label "N_word_is_insult_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1041_utterance1_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:N_word_is_part_00028 a grasp:Attribution ;
+        rdfs:label "N_word_is_part_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1041_utterance2_char0-43 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:correctness_is-killing_our_culture_00028 a grasp:Attribution ;
+        rdfs:label "correctness_is-killing_our_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1041_utterance0_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:political_correctness_is-killing_our_culture_00028 a grasp:Attribution ;
+        rdfs:label "political_correctness_is-killing_our_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1041_utterance0_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1041_utterance0_char0-87 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1041_utterance0_char0-87" ;
+        gaf:containsDenotation leolaniWorld:correctness,
+            leolaniWorld:our_culture,
+            leolaniWorld:political_correctness ;
+        gaf:denotes leolaniWorld:correctness_is-killing_our_culture,
+            leolaniWorld:political_correctness_is-killing_our_culture ;
+        grasp:hasAttribution leolaniTalk:correctness_is-killing_our_culture_00028,
+            leolaniTalk:political_correctness_is-killing_our_culture_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:41.727885"^^xml1:string,
+            "2024-06-05T23:04:41.727943"^^xml1:string ;
+        rdf:value "Now we can't use the N-word anymore. This political correctness is killing our culture."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1041_utterance0 .
+
+    leolaniTalk:chat1041_utterance2_char0-43 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1041_utterance2_char0-43" ;
+        gaf:containsDenotation leolaniWorld:N_word,
+            leolaniWorld:our_culture,
+            leolaniWorld:part ;
+        gaf:denotes leolaniWorld:N_word_is-part-of_our_culture,
+            leolaniWorld:N_word_is_part ;
+        grasp:hasAttribution leolaniTalk:N_word_is-part-of_our_culture_00028,
+            leolaniTalk:N_word_is_part_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:41.912525"^^xml1:string,
+            "2024-06-05T23:04:41.912582"^^xml1:string ;
+        rdf:value "Come on, the N-word is part of our culture!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1041_utterance2 .
+
+    leolaniTalk:chat1041_utterance1_char0-120 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1041_utterance1_char0-120" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:N_word,
+            leolaniWorld:insult,
+            leolaniWorld:nothing,
+            leolaniWorld:still_used,
+            leolaniWorld:used ;
+        gaf:denotes leolaniWorld:It_has_nothing,
+            leolaniWorld:N_word_is-insult_still_used,
+            leolaniWorld:N_word_is-insult_used,
+            leolaniWorld:N_word_is_insult ;
+        grasp:hasAttribution leolaniTalk:It_has_nothing_00028,
+            leolaniTalk:N_word_is-insult_still_used_00028,
+            leolaniTalk:N_word_is-insult_used_00028,
+            leolaniTalk:N_word_is_insult_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:41.827200"^^xml1:string,
+            "2024-06-05T23:04:41.827255"^^xml1:string,
+            "2024-06-05T23:04:41.827278"^^xml1:string,
+            "2024-06-05T23:04:41.827299"^^xml1:string ;
+        rdf:value "The N-word is an insult that is still used to demean African Americans. It has nothing to do with political correctness."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1041_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -498,213 +587,124 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
 leolaniWorld:correctness_is-killing_our_culture {
     leolaniWorld:correctness ns1:is_killing leolaniWorld:our_culture .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:It_has_nothing_00028 a grasp:Attribution ;
-        rdfs:label "It_has_nothing_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1041_utterance1_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:N_word_is-insult_still_used_00028 a grasp:Attribution ;
-        rdfs:label "N_word_is-insult_still_used_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1041_utterance1_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:N_word_is-insult_used_00028 a grasp:Attribution ;
-        rdfs:label "N_word_is-insult_used_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1041_utterance1_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:N_word_is-part-of_our_culture_00028 a grasp:Attribution ;
-        rdfs:label "N_word_is-part-of_our_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1041_utterance2_char0-43 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:N_word_is_insult_00028 a grasp:Attribution ;
-        rdfs:label "N_word_is_insult_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1041_utterance1_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:N_word_is_part_00028 a grasp:Attribution ;
-        rdfs:label "N_word_is_part_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1041_utterance2_char0-43 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:correctness_is-killing_our_culture_00028 a grasp:Attribution ;
-        rdfs:label "correctness_is-killing_our_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1041_utterance0_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:political_correctness_is-killing_our_culture_00028 a grasp:Attribution ;
-        rdfs:label "political_correctness_is-killing_our_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1041_utterance0_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1041_utterance0_char0-87 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1041_utterance0_char0-87" ;
-        gaf:containsDenotation leolaniWorld:correctness,
-            leolaniWorld:our_culture,
-            leolaniWorld:political_correctness ;
-        gaf:denotes leolaniWorld:correctness_is-killing_our_culture,
-            leolaniWorld:political_correctness_is-killing_our_culture ;
-        grasp:hasAttribution leolaniTalk:correctness_is-killing_our_culture_00028,
-            leolaniTalk:political_correctness_is-killing_our_culture_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:41.727885"^^xml1:string,
-            "2024-06-05T23:04:41.727943"^^xml1:string ;
-        rdf:value "Now we can't use the N-word anymore. This political correctness is killing our culture."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1041_utterance0 .
-
-    leolaniTalk:chat1041_utterance2_char0-43 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1041_utterance2_char0-43" ;
-        gaf:containsDenotation leolaniWorld:N_word,
-            leolaniWorld:our_culture,
-            leolaniWorld:part ;
-        gaf:denotes leolaniWorld:N_word_is-part-of_our_culture,
-            leolaniWorld:N_word_is_part ;
-        grasp:hasAttribution leolaniTalk:N_word_is-part-of_our_culture_00028,
-            leolaniTalk:N_word_is_part_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:41.912525"^^xml1:string,
-            "2024-06-05T23:04:41.912582"^^xml1:string ;
-        rdf:value "Come on, the N-word is part of our culture!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1041_utterance2 .
-
-    leolaniTalk:chat1041_utterance1_char0-120 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1041_utterance1_char0-120" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:N_word,
-            leolaniWorld:insult,
-            leolaniWorld:nothing,
-            leolaniWorld:still_used,
-            leolaniWorld:used ;
-        gaf:denotes leolaniWorld:It_has_nothing,
-            leolaniWorld:N_word_is-insult_still_used,
-            leolaniWorld:N_word_is-insult_used,
-            leolaniWorld:N_word_is_insult ;
-        grasp:hasAttribution leolaniTalk:It_has_nothing_00028,
-            leolaniTalk:N_word_is-insult_still_used_00028,
-            leolaniTalk:N_word_is-insult_used_00028,
-            leolaniTalk:N_word_is_insult_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:41.827200"^^xml1:string,
-            "2024-06-05T23:04:41.827255"^^xml1:string,
-            "2024-06-05T23:04:41.827278"^^xml1:string,
-            "2024-06-05T23:04:41.827299"^^xml1:string ;
-        rdf:value "The N-word is an insult that is still used to demean African Americans. It has nothing to do with political correctness."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1041_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:N_word_is_insult {
+    leolaniWorld:N_word ns1:is leolaniWorld:insult .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context62 a eps:Context ;
-        rdfs:label "context62" ;
-        hs:id "62"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1041 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "231"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1041 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:It_has_nothing a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1041" ;
-        hs:id "1041"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1041_utterance0,
-            leolaniTalk:chat1041_utterance1,
-            leolaniTalk:chat1041_utterance2 .
+        rdfs:label "It_has_nothing" ;
+        gaf:denotedBy leolaniTalk:chat1041_utterance1_char0-120 .
 
-    leolaniTalk:chat1041_utterance0 a grasp:Utterance,
+    leolaniWorld:N_word_is-insult_still_used a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1041_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "N_word_is-insult_still_used" ;
+        gaf:denotedBy leolaniTalk:chat1041_utterance1_char0-120 .
 
-    leolaniTalk:chat1041_utterance1 a grasp:Utterance,
+    leolaniWorld:N_word_is-insult_used a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1041_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "N_word_is-insult_used" ;
+        gaf:denotedBy leolaniTalk:chat1041_utterance1_char0-120 .
 
-    leolaniTalk:chat1041_utterance2 a grasp:Utterance,
+    leolaniWorld:N_word_is-part-of_our_culture a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1041_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "N_word_is-part-of_our_culture" ;
+        gaf:denotedBy leolaniTalk:chat1041_utterance2_char0-43 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:N_word_is_insult a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "N_word_is_insult" ;
+        gaf:denotedBy leolaniTalk:chat1041_utterance1_char0-120 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:N_word_is_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "N_word_is_part" ;
+        gaf:denotedBy leolaniTalk:chat1041_utterance2_char0-43 .
+
+    leolaniWorld:correctness_is-killing_our_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "correctness_is-killing_our_culture" ;
+        gaf:denotedBy leolaniTalk:chat1041_utterance0_char0-87 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:political_correctness_is-killing_our_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "political_correctness_is-killing_our_culture" ;
+        gaf:denotedBy leolaniTalk:chat1041_utterance0_char0-87 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:N_word_is_part {
+    leolaniWorld:N_word ns1:is leolaniWorld:part .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
+
+    leolaniWorld:N_word a gaf:Instance ;
+        rdfs:label "n-word" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120,
+            leolaniTalk:chat1041_utterance2_char0-43 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:correctness a gaf:Instance ;
+        rdfs:label "correctness" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance0_char0-87 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:insult a gaf:Instance ;
+        rdfs:label "insult" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
+
+    leolaniWorld:our_culture a gaf:Instance ;
+        rdfs:label "our-culture" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance0_char0-87,
+            leolaniTalk:chat1041_utterance2_char0-43 .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance2_char0-43 .
+
+    leolaniWorld:political_correctness a gaf:Instance ;
+        rdfs:label "political-correctness" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance0_char0-87 .
+
+    leolaniWorld:still_used a gaf:Instance ;
+        rdfs:label "still-used" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
+
+    leolaniWorld:used a gaf:Instance ;
+        rdfs:label "used" ;
+        gaf:denotedIn leolaniTalk:chat1041_utterance1_char0-120 .
 }
 

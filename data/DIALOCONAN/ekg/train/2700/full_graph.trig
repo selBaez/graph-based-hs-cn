@@ -22,76 +22,79 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:they_want_see {
-    leolaniWorld:they ns1:want leolaniWorld:see .
+leolaniWorld:Migrants_have_say {
+    leolaniWorld:Migrants ns1:have leolaniWorld:say .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:they_want-because_this {
+    leolaniWorld:they ns1:want_because leolaniWorld:this .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Migrants_have_right a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context153 a eps:Context ;
+        rdfs:label "context153" ;
+        hs:id "153"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2700 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "217"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2700 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Migrants_have_right" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+        rdfs:label "chat2700" ;
+        hs:id "2700"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2700_utterance0,
+            leolaniTalk:chat2700_utterance1 .
 
-    leolaniWorld:Migrants_have_say a gaf:Assertion,
+    leolaniTalk:chat2700_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Migrants_have_say" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+        rdfs:label "chat2700_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Migrants_have_say_in_politics a gaf:Assertion,
+    leolaniTalk:chat2700_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Migrants_have_say_in_politics" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+        rdfs:label "chat2700_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:They_are-part-of_our_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are-part-of_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:They_are_part a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_part" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:say_is-in_politics a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "say_is-in_politics" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:them_have-fled-to_our_countries a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "them_have-fled-to_our_countries" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance0_char0-95 .
-
-    leolaniWorld:they_want-because_this a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want-because_this" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:they_want_see a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_see" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:they_want_to_see a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_to_see" ;
-        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:They_are-part-of_our_society {
@@ -102,85 +105,163 @@ leolaniWorld:them_have-fled-to_our_countries {
     leolaniWorld:them ns1:have_fled_to leolaniWorld:our_countries .
 }
 
-leolaniWorld:they_want-because_this {
-    leolaniWorld:they ns1:want_because leolaniWorld:this .
+leolaniWorld:Migrants_have_say_in_politics {
+    leolaniWorld:Migrants ns1:have leolaniWorld:say_in_politics .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_countries a gaf:Instance ;
-        rdfs:label "our-countries" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance0_char0-95 .
-
-    leolaniWorld:our_society a gaf:Instance ;
-        rdfs:label "our-society" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:politics a gaf:Instance ;
-        rdfs:label "politics" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:say a gaf:Instance ;
-        rdfs:label "say" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:say_in_politics a gaf:Instance ;
-        rdfs:label "say-in-politics" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:see a gaf:Instance ;
-        rdfs:label "see" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance0_char0-95 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
-
-    leolaniWorld:to_see a gaf:Instance ;
-        rdfs:label "to-see" ;
-        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:they_want_to_see {
-    leolaniWorld:they ns1:want leolaniWorld:to_see .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Migrants_have_say {
-    leolaniWorld:Migrants ns1:have leolaniWorld:say .
+leolaniTalk:Perspectives {
+    leolaniTalk:Migrants_have_right_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_have_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_have_say_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_have_say_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_have_say_in_politics_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_have_say_in_politics_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are-part-of_our_society_00028 a grasp:Attribution ;
+        rdfs:label "They_are-part-of_our_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_part_00028 a grasp:Attribution ;
+        rdfs:label "They_are_part_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2700_utterance0_char0-95 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2700_utterance0_char0-95" ;
+        gaf:containsDenotation leolaniWorld:our_countries,
+            leolaniWorld:them ;
+        gaf:denotes leolaniWorld:them_have-fled-to_our_countries ;
+        grasp:hasAttribution leolaniTalk:them_have-fled-to_our_countries_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:01:23.586510"^^xml1:string ;
+        rdf:value "Migrants do not want Europe to succeed. That is why so many of them have fled to our countries."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2700_utterance0 .
+
+    leolaniTalk:say_is-in_politics_00028 a grasp:Attribution ;
+        rdfs:label "say_is-in_politics_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:them_have-fled-to_our_countries_00028 a grasp:Attribution ;
+        rdfs:label "them_have-fled-to_our_countries_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance0_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want-because_this_00028 a grasp:Attribution ;
+        rdfs:label "they_want-because_this_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_see_00028 a grasp:Attribution ;
+        rdfs:label "they_want_see_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_to_see_00028 a grasp:Attribution ;
+        rdfs:label "they_want_to_see_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2700_utterance1_char0-155 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2700_utterance1_char0-155" ;
+        gaf:containsDenotation leolaniWorld:Migrants,
+            leolaniWorld:They,
+            leolaniWorld:our_society,
+            leolaniWorld:part,
+            leolaniWorld:politics,
+            leolaniWorld:right,
+            leolaniWorld:say,
+            leolaniWorld:say_in_politics,
+            leolaniWorld:see,
+            leolaniWorld:they,
+            leolaniWorld:this,
+            leolaniWorld:to_see ;
+        gaf:denotes leolaniWorld:Migrants_have_right,
+            leolaniWorld:Migrants_have_say,
+            leolaniWorld:Migrants_have_say_in_politics,
+            leolaniWorld:They_are-part-of_our_society,
+            leolaniWorld:They_are_part,
+            leolaniWorld:say_is-in_politics,
+            leolaniWorld:they_want-because_this,
+            leolaniWorld:they_want_see,
+            leolaniWorld:they_want_to_see ;
+        grasp:hasAttribution leolaniTalk:Migrants_have_right_00028,
+            leolaniTalk:Migrants_have_say_00028,
+            leolaniTalk:Migrants_have_say_in_politics_00028,
+            leolaniTalk:They_are-part-of_our_society_00028,
+            leolaniTalk:They_are_part_00028,
+            leolaniTalk:say_is-in_politics_00028,
+            leolaniTalk:they_want-because_this_00028,
+            leolaniTalk:they_want_see_00028,
+            leolaniTalk:they_want_to_see_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:01:23.708761"^^xml1:string,
+            "2024-06-05T23:01:23.708819"^^xml1:string,
+            "2024-06-05T23:01:23.708842"^^xml1:string,
+            "2024-06-05T23:01:23.708864"^^xml1:string,
+            "2024-06-05T23:01:23.708887"^^xml1:string,
+            "2024-06-05T23:01:23.708907"^^xml1:string,
+            "2024-06-05T23:01:23.708929"^^xml1:string,
+            "2024-06-05T23:01:23.708953"^^xml1:string,
+            "2024-06-05T23:01:23.708976"^^xml1:string ;
+        rdf:value "Migrants have the right to live here, and to have a say in politics. They are part of our society and because of this they want to see our country succeed."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2700_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:say_is-in_politics {
+    leolaniWorld:say ns1:is_in leolaniWorld:politics .
 }
 
 leolaniWorld:Ontology {
@@ -518,233 +599,152 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Migrants_have_say_in_politics {
-    leolaniWorld:Migrants ns1:have leolaniWorld:say_in_politics .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
 leolaniWorld:They_are_part {
     leolaniWorld:They ns1:are leolaniWorld:part .
 }
 
-leolaniWorld:say_is-in_politics {
-    leolaniWorld:say ns1:is_in leolaniWorld:politics .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Migrants_have_right_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_have_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_have_say_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_have_say_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_have_say_in_politics_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_have_say_in_politics_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are-part-of_our_society_00028 a grasp:Attribution ;
-        rdfs:label "They_are-part-of_our_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_part_00028 a grasp:Attribution ;
-        rdfs:label "They_are_part_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2700_utterance0_char0-95 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2700_utterance0_char0-95" ;
-        gaf:containsDenotation leolaniWorld:our_countries,
-            leolaniWorld:them ;
-        gaf:denotes leolaniWorld:them_have-fled-to_our_countries ;
-        grasp:hasAttribution leolaniTalk:them_have-fled-to_our_countries_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:01:23.586510"^^xml1:string ;
-        rdf:value "Migrants do not want Europe to succeed. That is why so many of them have fled to our countries."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2700_utterance0 .
-
-    leolaniTalk:say_is-in_politics_00028 a grasp:Attribution ;
-        rdfs:label "say_is-in_politics_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:them_have-fled-to_our_countries_00028 a grasp:Attribution ;
-        rdfs:label "them_have-fled-to_our_countries_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance0_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_want-because_this_00028 a grasp:Attribution ;
-        rdfs:label "they_want-because_this_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_want_see_00028 a grasp:Attribution ;
-        rdfs:label "they_want_see_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_want_to_see_00028 a grasp:Attribution ;
-        rdfs:label "they_want_to_see_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2700_utterance1_char0-155 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2700_utterance1_char0-155 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2700_utterance1_char0-155" ;
-        gaf:containsDenotation leolaniWorld:Migrants,
-            leolaniWorld:They,
-            leolaniWorld:our_society,
-            leolaniWorld:part,
-            leolaniWorld:politics,
-            leolaniWorld:right,
-            leolaniWorld:say,
-            leolaniWorld:say_in_politics,
-            leolaniWorld:see,
-            leolaniWorld:they,
-            leolaniWorld:this,
-            leolaniWorld:to_see ;
-        gaf:denotes leolaniWorld:Migrants_have_right,
-            leolaniWorld:Migrants_have_say,
-            leolaniWorld:Migrants_have_say_in_politics,
-            leolaniWorld:They_are-part-of_our_society,
-            leolaniWorld:They_are_part,
-            leolaniWorld:say_is-in_politics,
-            leolaniWorld:they_want-because_this,
-            leolaniWorld:they_want_see,
-            leolaniWorld:they_want_to_see ;
-        grasp:hasAttribution leolaniTalk:Migrants_have_right_00028,
-            leolaniTalk:Migrants_have_say_00028,
-            leolaniTalk:Migrants_have_say_in_politics_00028,
-            leolaniTalk:They_are-part-of_our_society_00028,
-            leolaniTalk:They_are_part_00028,
-            leolaniTalk:say_is-in_politics_00028,
-            leolaniTalk:they_want-because_this_00028,
-            leolaniTalk:they_want_see_00028,
-            leolaniTalk:they_want_to_see_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:01:23.708761"^^xml1:string,
-            "2024-06-05T23:01:23.708819"^^xml1:string,
-            "2024-06-05T23:01:23.708842"^^xml1:string,
-            "2024-06-05T23:01:23.708864"^^xml1:string,
-            "2024-06-05T23:01:23.708887"^^xml1:string,
-            "2024-06-05T23:01:23.708907"^^xml1:string,
-            "2024-06-05T23:01:23.708929"^^xml1:string,
-            "2024-06-05T23:01:23.708953"^^xml1:string,
-            "2024-06-05T23:01:23.708976"^^xml1:string ;
-        rdf:value "Migrants have the right to live here, and to have a say in politics. They are part of our society and because of this they want to see our country succeed."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2700_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context153 a eps:Context ;
-        rdfs:label "context153" ;
-        hs:id "153"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2700 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "217"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2700 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2700" ;
-        hs:id "2700"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2700_utterance0,
-            leolaniTalk:chat2700_utterance1 .
-
-    leolaniTalk:chat2700_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2700_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2700_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2700_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:they_want_see {
+    leolaniWorld:they ns1:want leolaniWorld:see .
 }
 
 leolaniWorld:Migrants_have_right {
     leolaniWorld:Migrants ns1:have leolaniWorld:right .
+}
+
+leolaniWorld:they_want_to_see {
+    leolaniWorld:they ns1:want leolaniWorld:to_see .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Migrants_have_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_have_right" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:Migrants_have_say a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_have_say" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:Migrants_have_say_in_politics a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_have_say_in_politics" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:They_are-part-of_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-part-of_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:They_are_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_part" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:say_is-in_politics a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "say_is-in_politics" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:them_have-fled-to_our_countries a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "them_have-fled-to_our_countries" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance0_char0-95 .
+
+    leolaniWorld:they_want-because_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want-because_this" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:they_want_see a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_see" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:they_want_to_see a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_to_see" ;
+        gaf:denotedBy leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_countries a gaf:Instance ;
+        rdfs:label "our-countries" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance0_char0-95 .
+
+    leolaniWorld:our_society a gaf:Instance ;
+        rdfs:label "our-society" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:politics a gaf:Instance ;
+        rdfs:label "politics" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:say a gaf:Instance ;
+        rdfs:label "say" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:say_in_politics a gaf:Instance ;
+        rdfs:label "say-in-politics" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:see a gaf:Instance ;
+        rdfs:label "see" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance0_char0-95 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
+
+    leolaniWorld:to_see a gaf:Instance ;
+        rdfs:label "to-see" ;
+        gaf:denotedIn leolaniTalk:chat2700_utterance1_char0-155 .
 }
 

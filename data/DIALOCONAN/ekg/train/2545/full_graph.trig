@@ -22,153 +22,264 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:muslims_are_rapists a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "muslims_are_rapists" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance0_char0-23 .
-
-    leolaniWorld:someone_been-raped-by_Muslim a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "someone_been-raped-by_Muslim" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
-
-    leolaniWorld:someone_been_when_raped_by_Muslim a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "someone_been_when_raped_by_Muslim" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
-
-    leolaniWorld:they_are_murderers a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_murderers" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance2_char0-79 .
-
-    leolaniWorld:we_throwing-around-without_evidence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_throwing-around-without_evidence" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
-
-    leolaniWorld:we_throwing-around_generalizations a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_throwing-around_generalizations" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
-
-    leolaniWorld:we_throwing-generalizations-around-without_evidence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_throwing-generalizations-around-without_evidence" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
-
-    leolaniWorld:we_throwing-generalizations-without_evidence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_throwing-generalizations-without_evidence" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
-
-    leolaniWorld:we_throwing-without_evidence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_throwing-without_evidence" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
-
-    leolaniWorld:we_throwing_generalizations a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_throwing_generalizations" ;
-        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:we_throwing-generalizations-around-without_evidence {
-    leolaniWorld:we ns1:throwing_generalizations_around_without leolaniWorld:evidence .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_are_murderers {
+    leolaniWorld:they ns1:are leolaniWorld:murderers .
 }
 
 leolaniWorld:muslims_are_rapists {
     leolaniWorld:muslims ns1:are leolaniWorld:rapists .
 }
 
-leolaniWorld:someone_been-raped-by_Muslim {
-    leolaniWorld:someone ns1:been_raped_by leolaniWorld:Muslim .
+leolaniWorld:we_throwing-generalizations-around-without_evidence {
+    leolaniWorld:we ns1:throwing_generalizations_around_without leolaniWorld:evidence .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context136 a eps:Context ;
+        rdfs:label "context136" ;
+        hs:id "136"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2545 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "173"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2545 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2545" ;
+        hs:id "2545"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2545_utterance0,
+            leolaniTalk:chat2545_utterance1,
+            leolaniTalk:chat2545_utterance2 .
+
+    leolaniTalk:chat2545_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2545_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2545_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2545_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2545_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2545_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:we_throwing-around-without_evidence {
+    leolaniWorld:we ns1:throwing_around_without leolaniWorld:evidence .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:we_throwing-without_evidence {
+    leolaniWorld:we ns1:throwing_without leolaniWorld:evidence .
 }
 
 leolaniWorld:someone_been_when_raped_by_Muslim {
     leolaniWorld:someone ns1:been leolaniWorld:when_raped_by_Muslim .
 }
 
-leolaniWorld:we_throwing-generalizations-without_evidence {
-    leolaniWorld:we ns1:throwing_generalizations_without leolaniWorld:evidence .
+leolaniWorld:someone_been-raped-by_Muslim {
+    leolaniWorld:someone ns1:been_raped_by leolaniWorld:Muslim .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Muslim a gaf:Instance ;
-        rdfs:label "muslim" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+leolaniTalk:Perspectives {
+    leolaniTalk:chat2545_utterance0_char0-23 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2545_utterance0_char0-23" ;
+        gaf:containsDenotation leolaniWorld:muslims,
+            leolaniWorld:rapists ;
+        gaf:denotes leolaniWorld:muslims_are_rapists ;
+        grasp:hasAttribution leolaniTalk:muslims_are_rapists_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:54.624872"^^xml1:string ;
+        rdf:value "All muslims are rapists"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2545_utterance0 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat2545_utterance2_char0-79 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2545_utterance2_char0-79" ;
+        gaf:containsDenotation leolaniWorld:murderers,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_are_murderers ;
+        grasp:hasAttribution leolaniTalk:they_are_murderers_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:54.802401"^^xml1:string ;
+        rdf:value "Even if muslims aren't rapists, we must understand that they are all murderers."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2545_utterance2 .
 
-    leolaniWorld:evidence a gaf:Instance ;
-        rdfs:label "evidence" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+    leolaniTalk:muslims_are_rapists_00028 a grasp:Attribution ;
+        rdfs:label "muslims_are_rapists_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance0_char0-23 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:generalizations a gaf:Instance ;
-        rdfs:label "generalizations" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+    leolaniTalk:someone_been-raped-by_Muslim_00026 a grasp:Attribution ;
+        rdfs:label "someone_been-raped-by_Muslim_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:someone_been_when_raped_by_Muslim_00026 a grasp:Attribution ;
+        rdfs:label "someone_been_when_raped_by_Muslim_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:they_are_murderers_00028 a grasp:Attribution ;
+        rdfs:label "they_are_murderers_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance2_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:murderers a gaf:Instance ;
-        rdfs:label "murderers" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance2_char0-79 .
+    leolaniTalk:we_throwing-around-without_evidence_00026 a grasp:Attribution ;
+        rdfs:label "we_throwing-around-without_evidence_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance0_char0-23 .
+    leolaniTalk:we_throwing-around_generalizations_00026 a grasp:Attribution ;
+        rdfs:label "we_throwing-around_generalizations_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:rapists a gaf:Instance ;
-        rdfs:label "rapists" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance0_char0-23 .
+    leolaniTalk:we_throwing-generalizations-around-without_evidence_00026 a grasp:Attribution ;
+        rdfs:label "we_throwing-generalizations-around-without_evidence_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:someone a gaf:Instance ;
-        rdfs:label "someone" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+    leolaniTalk:we_throwing-generalizations-without_evidence_00026 a grasp:Attribution ;
+        rdfs:label "we_throwing-generalizations-without_evidence_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance2_char0-79 .
+    leolaniTalk:we_throwing-without_evidence_00026 a grasp:Attribution ;
+        rdfs:label "we_throwing-without_evidence_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+    leolaniTalk:we_throwing_generalizations_00026 a grasp:Attribution ;
+        rdfs:label "we_throwing_generalizations_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:when_raped_by_Muslim a gaf:Instance ;
-        rdfs:label "when-raped-by-muslim" ;
-        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
-}
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-leolaniWorld:we_throwing-around-without_evidence {
-    leolaniWorld:we ns1:throwing_around_without leolaniWorld:evidence .
+    leolaniTalk:chat2545_utterance1_char0-129 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2545_utterance1_char0-129" ;
+        gaf:containsDenotation leolaniWorld:Muslim,
+            leolaniWorld:evidence,
+            leolaniWorld:generalizations,
+            leolaniWorld:someone,
+            leolaniWorld:we,
+            leolaniWorld:when_raped_by_Muslim ;
+        gaf:denotes leolaniWorld:someone_been-raped-by_Muslim,
+            leolaniWorld:someone_been_when_raped_by_Muslim,
+            leolaniWorld:we_throwing-around-without_evidence,
+            leolaniWorld:we_throwing-around_generalizations,
+            leolaniWorld:we_throwing-generalizations-around-without_evidence,
+            leolaniWorld:we_throwing-generalizations-without_evidence,
+            leolaniWorld:we_throwing-without_evidence,
+            leolaniWorld:we_throwing_generalizations ;
+        grasp:hasAttribution leolaniTalk:someone_been-raped-by_Muslim_00026,
+            leolaniTalk:someone_been_when_raped_by_Muslim_00026,
+            leolaniTalk:we_throwing-around-without_evidence_00026,
+            leolaniTalk:we_throwing-around_generalizations_00026,
+            leolaniTalk:we_throwing-generalizations-around-without_evidence_00026,
+            leolaniTalk:we_throwing-generalizations-without_evidence_00026,
+            leolaniTalk:we_throwing-without_evidence_00026,
+            leolaniTalk:we_throwing_generalizations_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:54.717077"^^xml1:string,
+            "2024-06-05T23:24:54.717137"^^xml1:string,
+            "2024-06-05T23:24:54.717161"^^xml1:string,
+            "2024-06-05T23:24:54.717184"^^xml1:string,
+            "2024-06-05T23:24:54.717206"^^xml1:string,
+            "2024-06-05T23:24:54.717228"^^xml1:string,
+            "2024-06-05T23:24:54.717251"^^xml1:string,
+            "2024-06-05T23:24:54.717277"^^xml1:string ;
+        rdf:value "How do you know when someone has been raped by a Muslim? How about we stop throwing this generalizations around without evidence?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2545_utterance1 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -506,243 +617,132 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:we_throwing-without_evidence {
-    leolaniWorld:we ns1:throwing_without leolaniWorld:evidence .
-}
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-leolaniWorld:we_throwing_generalizations {
-    leolaniWorld:we ns1:throwing leolaniWorld:generalizations .
-}
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat2545_utterance0_char0-23 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2545_utterance0_char0-23" ;
-        gaf:containsDenotation leolaniWorld:muslims,
-            leolaniWorld:rapists ;
-        gaf:denotes leolaniWorld:muslims_are_rapists ;
-        grasp:hasAttribution leolaniTalk:muslims_are_rapists_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:54.624872"^^xml1:string ;
-        rdf:value "All muslims are rapists"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2545_utterance0 .
+    leolaniWorld:muslims_are_rapists a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "muslims_are_rapists" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance0_char0-23 .
 
-    leolaniTalk:chat2545_utterance2_char0-79 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2545_utterance2_char0-79" ;
-        gaf:containsDenotation leolaniWorld:murderers,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_are_murderers ;
-        grasp:hasAttribution leolaniTalk:they_are_murderers_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:54.802401"^^xml1:string ;
-        rdf:value "Even if muslims aren't rapists, we must understand that they are all murderers."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2545_utterance2 .
+    leolaniWorld:someone_been-raped-by_Muslim a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "someone_been-raped-by_Muslim" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
 
-    leolaniTalk:muslims_are_rapists_00028 a grasp:Attribution ;
-        rdfs:label "muslims_are_rapists_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance0_char0-23 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:someone_been_when_raped_by_Muslim a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "someone_been_when_raped_by_Muslim" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
 
-    leolaniTalk:someone_been-raped-by_Muslim_00026 a grasp:Attribution ;
-        rdfs:label "someone_been-raped-by_Muslim_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_are_murderers a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_murderers" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance2_char0-79 .
 
-    leolaniTalk:someone_been_when_raped_by_Muslim_00026 a grasp:Attribution ;
-        rdfs:label "someone_been_when_raped_by_Muslim_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:we_throwing-around-without_evidence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_throwing-around-without_evidence" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
 
-    leolaniTalk:they_are_murderers_00028 a grasp:Attribution ;
-        rdfs:label "they_are_murderers_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance2_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:we_throwing-around_generalizations a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_throwing-around_generalizations" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
 
-    leolaniTalk:we_throwing-around-without_evidence_00026 a grasp:Attribution ;
-        rdfs:label "we_throwing-around-without_evidence_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:we_throwing-generalizations-around-without_evidence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_throwing-generalizations-around-without_evidence" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
 
-    leolaniTalk:we_throwing-around_generalizations_00026 a grasp:Attribution ;
-        rdfs:label "we_throwing-around_generalizations_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:we_throwing-generalizations-without_evidence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_throwing-generalizations-without_evidence" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
 
-    leolaniTalk:we_throwing-generalizations-around-without_evidence_00026 a grasp:Attribution ;
-        rdfs:label "we_throwing-generalizations-around-without_evidence_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:we_throwing-without_evidence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_throwing-without_evidence" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
 
-    leolaniTalk:we_throwing-generalizations-without_evidence_00026 a grasp:Attribution ;
-        rdfs:label "we_throwing-generalizations-without_evidence_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:we_throwing_generalizations a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_throwing_generalizations" ;
+        gaf:denotedBy leolaniTalk:chat2545_utterance1_char0-129 .
 
-    leolaniTalk:we_throwing-without_evidence_00026 a grasp:Attribution ;
-        rdfs:label "we_throwing-without_evidence_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    leolaniTalk:we_throwing_generalizations_00026 a grasp:Attribution ;
-        rdfs:label "we_throwing_generalizations_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2545_utterance1_char0-129 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat2545_utterance1_char0-129 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2545_utterance1_char0-129" ;
-        gaf:containsDenotation leolaniWorld:Muslim,
-            leolaniWorld:evidence,
-            leolaniWorld:generalizations,
-            leolaniWorld:someone,
-            leolaniWorld:we,
-            leolaniWorld:when_raped_by_Muslim ;
-        gaf:denotes leolaniWorld:someone_been-raped-by_Muslim,
-            leolaniWorld:someone_been_when_raped_by_Muslim,
-            leolaniWorld:we_throwing-around-without_evidence,
-            leolaniWorld:we_throwing-around_generalizations,
-            leolaniWorld:we_throwing-generalizations-around-without_evidence,
-            leolaniWorld:we_throwing-generalizations-without_evidence,
-            leolaniWorld:we_throwing-without_evidence,
-            leolaniWorld:we_throwing_generalizations ;
-        grasp:hasAttribution leolaniTalk:someone_been-raped-by_Muslim_00026,
-            leolaniTalk:someone_been_when_raped_by_Muslim_00026,
-            leolaniTalk:we_throwing-around-without_evidence_00026,
-            leolaniTalk:we_throwing-around_generalizations_00026,
-            leolaniTalk:we_throwing-generalizations-around-without_evidence_00026,
-            leolaniTalk:we_throwing-generalizations-without_evidence_00026,
-            leolaniTalk:we_throwing-without_evidence_00026,
-            leolaniTalk:we_throwing_generalizations_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:54.717077"^^xml1:string,
-            "2024-06-05T23:24:54.717137"^^xml1:string,
-            "2024-06-05T23:24:54.717161"^^xml1:string,
-            "2024-06-05T23:24:54.717184"^^xml1:string,
-            "2024-06-05T23:24:54.717206"^^xml1:string,
-            "2024-06-05T23:24:54.717228"^^xml1:string,
-            "2024-06-05T23:24:54.717251"^^xml1:string,
-            "2024-06-05T23:24:54.717277"^^xml1:string ;
-        rdf:value "How do you know when someone has been raped by a Muslim? How about we stop throwing this generalizations around without evidence?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2545_utterance1 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:we_throwing-around_generalizations {
     leolaniWorld:we ns1:throwing_around leolaniWorld:generalizations .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context136 a eps:Context ;
-        rdfs:label "context136" ;
-        hs:id "136"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2545 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "173"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2545 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2545" ;
-        hs:id "2545"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2545_utterance0,
-            leolaniTalk:chat2545_utterance1,
-            leolaniTalk:chat2545_utterance2 .
-
-    leolaniTalk:chat2545_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2545_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2545_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2545_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2545_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2545_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:we_throwing-generalizations-without_evidence {
+    leolaniWorld:we ns1:throwing_generalizations_without leolaniWorld:evidence .
 }
 
-leolaniWorld:they_are_murderers {
-    leolaniWorld:they ns1:are leolaniWorld:murderers .
+leolaniWorld:we_throwing_generalizations {
+    leolaniWorld:we ns1:throwing leolaniWorld:generalizations .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Muslim a gaf:Instance ;
+        rdfs:label "muslim" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:evidence a gaf:Instance ;
+        rdfs:label "evidence" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+
+    leolaniWorld:generalizations a gaf:Instance ;
+        rdfs:label "generalizations" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:murderers a gaf:Instance ;
+        rdfs:label "murderers" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance2_char0-79 .
+
+    leolaniWorld:muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance0_char0-23 .
+
+    leolaniWorld:rapists a gaf:Instance ;
+        rdfs:label "rapists" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance0_char0-23 .
+
+    leolaniWorld:someone a gaf:Instance ;
+        rdfs:label "someone" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance2_char0-79 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
+
+    leolaniWorld:when_raped_by_Muslim a gaf:Instance ;
+        rdfs:label "when-raped-by-muslim" ;
+        gaf:denotedIn leolaniTalk:chat2545_utterance1_char0-129 .
 }
 

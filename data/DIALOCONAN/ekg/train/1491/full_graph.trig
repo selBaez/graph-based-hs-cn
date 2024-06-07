@@ -23,164 +23,269 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    ns11:s_test_gays a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "'s_test_gays" ;
-        gaf:denotedBy leolaniTalk:chat1491_utterance4_char0-81 .
-
-    leolaniWorld:everyone_has_blood a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "everyone_has_blood" ;
-        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:homosexual_of_blood_donation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "homosexual_of_blood_donation" ;
-        gaf:denotedBy leolaniTalk:chat1491_utterance1_char0-281 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:malice_is-in_humans a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "malice_is-in_humans" ;
-        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:potential_is-reason_enough_test a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "potential_is-reason_enough_test" ;
-        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:potential_is-reason_enough_to_test a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "potential_is-reason_enough_to_test" ;
-        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:potential_is-reason_test a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "potential_is-reason_test" ;
-        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:potential_is-reason_to_test a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "potential_is-reason_to_test" ;
-        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:we_should-test_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_should-test_them" ;
-        gaf:denotedBy leolaniTalk:chat1491_utterance2_char0-163 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:we_should-test_them {
+    leolaniWorld:we ns1:should_test leolaniWorld:them .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:homosexual_of_blood_donation {
-    leolaniWorld:homosexual ns1:of leolaniWorld:blood_donation .
-}
-
-leolaniWorld:malice_is-in_humans {
-    leolaniWorld:malice ns1:is_in leolaniWorld:humans .
-}
-
-leolaniWorld:potential_is-reason_enough_test {
-    leolaniWorld:potential ns1:is_reason leolaniWorld:enough_test .
+ns11:s_test_gays {
+    ns11:s ns1:test leolaniWorld:gays .
 }
 
 leolaniWorld:potential_is-reason_enough_to_test {
     leolaniWorld:potential ns1:is_reason leolaniWorld:enough_to_test .
 }
 
-leolaniWorld:Instances {
-    ns11:s a gaf:Instance ;
-        rdfs:label "s" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance4_char0-81 .
+leolaniTalk:Interactions {
+    leolaniContext:context64 a eps:Context ;
+        rdfs:label "context64" ;
+        hs:id "64"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:blood a gaf:Instance ;
-        rdfs:label "blood" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1491 .
 
-    leolaniWorld:blood_donation a gaf:Instance ;
-        rdfs:label "blood-donation" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance1_char0-281 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "134"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1491 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1491" ;
+        hs:id "1491"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1491_utterance1,
+            leolaniTalk:chat1491_utterance2,
+            leolaniTalk:chat1491_utterance3,
+            leolaniTalk:chat1491_utterance4 .
+
+    leolaniTalk:chat1491_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1491_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1491_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1491_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1491_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1491_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1491_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1491_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:enough_test a gaf:Instance ;
-        rdfs:label "enough-test" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:enough_to_test a gaf:Instance ;
-        rdfs:label "enough-to-test" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:everyone a gaf:Instance ;
-        rdfs:label "everyone" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance4_char0-81 .
-
-    leolaniWorld:homosexual a gaf:Instance ;
-        rdfs:label "homosexual" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance1_char0-281 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:humans a gaf:Instance ;
-        rdfs:label "humans" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:malice a gaf:Instance ;
-        rdfs:label "malice" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:potential a gaf:Instance ;
-        rdfs:label "potential" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:test a gaf:Instance ;
-        rdfs:label "test" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance2_char0-163 .
-
-    leolaniWorld:to_test a gaf:Instance ;
-        rdfs:label "to-test" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1491_utterance2_char0-163 .
-}
-
-leolaniWorld:we_should-test_them {
-    leolaniWorld:we ns1:should_test leolaniWorld:them .
 }
 
 leolaniWorld:potential_is-reason_test {
     leolaniWorld:potential ns1:is_reason leolaniWorld:test .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:potential_is-reason_to_test {
+    leolaniWorld:potential ns1:is_reason leolaniWorld:to_test .
+}
+
+leolaniWorld:malice_is-in_humans {
+    leolaniWorld:malice ns1:is_in leolaniWorld:humans .
+}
+
+leolaniTalk:Perspectives {
+    <http://cltl.nl/leolani/talk/'s_test_gays_0006> a grasp:Attribution ;
+        rdfs:label "'s_test_gays_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat1491_utterance4_char0-81 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1491_utterance1_char0-281 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1491_utterance1_char0-281" ;
+        gaf:containsDenotation leolaniWorld:blood_donation,
+            leolaniWorld:homosexual ;
+        gaf:denotes leolaniWorld:homosexual_of_blood_donation ;
+        grasp:hasAttribution leolaniTalk:homosexual_of_blood_donation_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:44.077571"^^xml1:string ;
+        rdf:value "Any decision embarked on by a country would likely have been considered in light of evidence. As such, if no evidence was found by those countries of the harm of a policy, it can be fairly confidently asserted that we can adopt this policy in favour of homosexual's blood donation."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1491_utterance1 .
+
+    leolaniTalk:chat1491_utterance2_char0-163 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1491_utterance2_char0-163" ;
+        gaf:containsDenotation leolaniWorld:them,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_should-test_them ;
+        grasp:hasAttribution leolaniTalk:we_should-test_them_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:44.169832"^^xml1:string ;
+        rdf:value "However, allowing gays to donate blood compromises patient safety because of their sexual behavior that spreads diseases such as HIV. At least we should test them!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1491_utterance2 .
+
+    leolaniTalk:chat1491_utterance4_char0-81 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1491_utterance4_char0-81" ;
+        gaf:containsDenotation ns11:s,
+            leolaniWorld:gays ;
+        gaf:denotes ns11:s_test_gays ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/'s_test_gays_0006> ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:44.340736"^^xml1:string ;
+        rdf:value "Then let's test gays! We'll surely find out that they transmit a lot of diseases."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1491_utterance4 .
+
+    leolaniTalk:everyone_has_blood_00028 a grasp:Attribution ;
+        rdfs:label "everyone_has_blood_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:homosexual_of_blood_donation_00028 a grasp:Attribution ;
+        rdfs:label "homosexual_of_blood_donation_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1491_utterance1_char0-281 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:malice_is-in_humans_00028 a grasp:Attribution ;
+        rdfs:label "malice_is-in_humans_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:potential_is-reason_enough_test_00028 a grasp:Attribution ;
+        rdfs:label "potential_is-reason_enough_test_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:potential_is-reason_enough_to_test_00028 a grasp:Attribution ;
+        rdfs:label "potential_is-reason_enough_to_test_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:potential_is-reason_test_00028 a grasp:Attribution ;
+        rdfs:label "potential_is-reason_test_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:potential_is-reason_to_test_00028 a grasp:Attribution ;
+        rdfs:label "potential_is-reason_to_test_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_should-test_them_00028 a grasp:Attribution ;
+        rdfs:label "we_should-test_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1491_utterance2_char0-163 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:OPTIMISM a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "OPTIMISM" .
+
+    leolaniTalk:chat1491_utterance3_char0-91 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1491_utterance3_char0-91" ;
+        gaf:containsDenotation leolaniWorld:blood,
+            leolaniWorld:enough_test,
+            leolaniWorld:enough_to_test,
+            leolaniWorld:everyone,
+            leolaniWorld:humans,
+            leolaniWorld:malice,
+            leolaniWorld:potential,
+            leolaniWorld:test,
+            leolaniWorld:to_test ;
+        gaf:denotes leolaniWorld:everyone_has_blood,
+            leolaniWorld:malice_is-in_humans,
+            leolaniWorld:potential_is-reason_enough_test,
+            leolaniWorld:potential_is-reason_enough_to_test,
+            leolaniWorld:potential_is-reason_test,
+            leolaniWorld:potential_is-reason_to_test ;
+        grasp:hasAttribution leolaniTalk:everyone_has_blood_00028,
+            leolaniTalk:malice_is-in_humans_00028,
+            leolaniTalk:potential_is-reason_enough_test_00028,
+            leolaniTalk:potential_is-reason_enough_to_test_00028,
+            leolaniTalk:potential_is-reason_test_00028,
+            leolaniTalk:potential_is-reason_to_test_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:44.257857"^^xml1:string,
+            "2024-06-05T23:06:44.257915"^^xml1:string,
+            "2024-06-05T23:06:44.257940"^^xml1:string,
+            "2024-06-05T23:06:44.257962"^^xml1:string,
+            "2024-06-05T23:06:44.257983"^^xml1:string,
+            "2024-06-05T23:06:44.258005"^^xml1:string ;
+        rdf:value "To be honest, the potential for malice in humans is reason enough to test everyone's blood."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1491_utterance3 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -518,252 +623,147 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:potential_is-reason_enough_test {
+    leolaniWorld:potential ns1:is_reason leolaniWorld:enough_test .
 }
 
-ns11:s_test_gays {
-    ns11:s ns1:test leolaniWorld:gays .
-}
-
-leolaniWorld:potential_is-reason_to_test {
-    leolaniWorld:potential ns1:is_reason leolaniWorld:to_test .
-}
-
-leolaniTalk:Perspectives {
-    <http://cltl.nl/leolani/talk/'s_test_gays_0006> a grasp:Attribution ;
-        rdfs:label "'s_test_gays_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat1491_utterance4_char0-81 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1491_utterance1_char0-281 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1491_utterance1_char0-281" ;
-        gaf:containsDenotation leolaniWorld:blood_donation,
-            leolaniWorld:homosexual ;
-        gaf:denotes leolaniWorld:homosexual_of_blood_donation ;
-        grasp:hasAttribution leolaniTalk:homosexual_of_blood_donation_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:44.077571"^^xml1:string ;
-        rdf:value "Any decision embarked on by a country would likely have been considered in light of evidence. As such, if no evidence was found by those countries of the harm of a policy, it can be fairly confidently asserted that we can adopt this policy in favour of homosexual's blood donation."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1491_utterance1 .
-
-    leolaniTalk:chat1491_utterance2_char0-163 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1491_utterance2_char0-163" ;
-        gaf:containsDenotation leolaniWorld:them,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_should-test_them ;
-        grasp:hasAttribution leolaniTalk:we_should-test_them_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:44.169832"^^xml1:string ;
-        rdf:value "However, allowing gays to donate blood compromises patient safety because of their sexual behavior that spreads diseases such as HIV. At least we should test them!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1491_utterance2 .
-
-    leolaniTalk:chat1491_utterance4_char0-81 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1491_utterance4_char0-81" ;
-        gaf:containsDenotation ns11:s,
-            leolaniWorld:gays ;
-        gaf:denotes ns11:s_test_gays ;
-        grasp:hasAttribution <http://cltl.nl/leolani/talk/'s_test_gays_0006> ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:44.340736"^^xml1:string ;
-        rdf:value "Then let's test gays! We'll surely find out that they transmit a lot of diseases."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1491_utterance4 .
-
-    leolaniTalk:everyone_has_blood_00028 a grasp:Attribution ;
-        rdfs:label "everyone_has_blood_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:homosexual_of_blood_donation_00028 a grasp:Attribution ;
-        rdfs:label "homosexual_of_blood_donation_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1491_utterance1_char0-281 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:malice_is-in_humans_00028 a grasp:Attribution ;
-        rdfs:label "malice_is-in_humans_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:potential_is-reason_enough_test_00028 a grasp:Attribution ;
-        rdfs:label "potential_is-reason_enough_test_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:potential_is-reason_enough_to_test_00028 a grasp:Attribution ;
-        rdfs:label "potential_is-reason_enough_to_test_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:potential_is-reason_test_00028 a grasp:Attribution ;
-        rdfs:label "potential_is-reason_test_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:potential_is-reason_to_test_00028 a grasp:Attribution ;
-        rdfs:label "potential_is-reason_to_test_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1491_utterance3_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_should-test_them_00028 a grasp:Attribution ;
-        rdfs:label "we_should-test_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1491_utterance2_char0-163 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:OPTIMISM a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "OPTIMISM" .
-
-    leolaniTalk:chat1491_utterance3_char0-91 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1491_utterance3_char0-91" ;
-        gaf:containsDenotation leolaniWorld:blood,
-            leolaniWorld:enough_test,
-            leolaniWorld:enough_to_test,
-            leolaniWorld:everyone,
-            leolaniWorld:humans,
-            leolaniWorld:malice,
-            leolaniWorld:potential,
-            leolaniWorld:test,
-            leolaniWorld:to_test ;
-        gaf:denotes leolaniWorld:everyone_has_blood,
-            leolaniWorld:malice_is-in_humans,
-            leolaniWorld:potential_is-reason_enough_test,
-            leolaniWorld:potential_is-reason_enough_to_test,
-            leolaniWorld:potential_is-reason_test,
-            leolaniWorld:potential_is-reason_to_test ;
-        grasp:hasAttribution leolaniTalk:everyone_has_blood_00028,
-            leolaniTalk:malice_is-in_humans_00028,
-            leolaniTalk:potential_is-reason_enough_test_00028,
-            leolaniTalk:potential_is-reason_enough_to_test_00028,
-            leolaniTalk:potential_is-reason_test_00028,
-            leolaniTalk:potential_is-reason_to_test_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:44.257857"^^xml1:string,
-            "2024-06-05T23:06:44.257915"^^xml1:string,
-            "2024-06-05T23:06:44.257940"^^xml1:string,
-            "2024-06-05T23:06:44.257962"^^xml1:string,
-            "2024-06-05T23:06:44.257983"^^xml1:string,
-            "2024-06-05T23:06:44.258005"^^xml1:string ;
-        rdf:value "To be honest, the potential for malice in humans is reason enough to test everyone's blood."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1491_utterance3 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context64 a eps:Context ;
-        rdfs:label "context64" ;
-        hs:id "64"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1491 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "134"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1491 a grasp:Chat,
+leolaniWorld:Claims {
+    ns11:s_test_gays a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1491" ;
-        hs:id "1491"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1491_utterance1,
-            leolaniTalk:chat1491_utterance2,
-            leolaniTalk:chat1491_utterance3,
-            leolaniTalk:chat1491_utterance4 .
+        rdfs:label "'s_test_gays" ;
+        gaf:denotedBy leolaniTalk:chat1491_utterance4_char0-81 .
 
-    leolaniTalk:chat1491_utterance1 a grasp:Utterance,
+    leolaniWorld:everyone_has_blood a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1491_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "everyone_has_blood" ;
+        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
 
-    leolaniTalk:chat1491_utterance2 a grasp:Utterance,
+    leolaniWorld:homosexual_of_blood_donation a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1491_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "homosexual_of_blood_donation" ;
+        gaf:denotedBy leolaniTalk:chat1491_utterance1_char0-281 .
 
-    leolaniTalk:chat1491_utterance3 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1491_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat1491_utterance4 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1491_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:malice_is-in_humans a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "malice_is-in_humans" ;
+        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:potential_is-reason_enough_test a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "potential_is-reason_enough_test" ;
+        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:potential_is-reason_enough_to_test a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "potential_is-reason_enough_to_test" ;
+        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:potential_is-reason_test a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "potential_is-reason_test" ;
+        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:potential_is-reason_to_test a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "potential_is-reason_to_test" ;
+        gaf:denotedBy leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:we_should-test_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_should-test_them" ;
+        gaf:denotedBy leolaniTalk:chat1491_utterance2_char0-163 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:everyone_has_blood {
     leolaniWorld:everyone ns1:has leolaniWorld:blood .
+}
+
+leolaniWorld:homosexual_of_blood_donation {
+    leolaniWorld:homosexual ns1:of leolaniWorld:blood_donation .
+}
+
+leolaniWorld:Instances {
+    ns11:s a gaf:Instance ;
+        rdfs:label "s" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance4_char0-81 .
+
+    leolaniWorld:blood a gaf:Instance ;
+        rdfs:label "blood" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:blood_donation a gaf:Instance ;
+        rdfs:label "blood-donation" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance1_char0-281 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:enough_test a gaf:Instance ;
+        rdfs:label "enough-test" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:enough_to_test a gaf:Instance ;
+        rdfs:label "enough-to-test" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:everyone a gaf:Instance ;
+        rdfs:label "everyone" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance4_char0-81 .
+
+    leolaniWorld:homosexual a gaf:Instance ;
+        rdfs:label "homosexual" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance1_char0-281 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:humans a gaf:Instance ;
+        rdfs:label "humans" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:malice a gaf:Instance ;
+        rdfs:label "malice" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:potential a gaf:Instance ;
+        rdfs:label "potential" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:test a gaf:Instance ;
+        rdfs:label "test" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance2_char0-163 .
+
+    leolaniWorld:to_test a gaf:Instance ;
+        rdfs:label "to-test" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance3_char0-91 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1491_utterance2_char0-163 .
 }
 

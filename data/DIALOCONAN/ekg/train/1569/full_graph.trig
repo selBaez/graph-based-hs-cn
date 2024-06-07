@@ -23,122 +23,208 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:They_re_too_uncivilised {
+    leolaniWorld:They ns12:re leolaniWorld:too_uncivilised .
+}
+
 leolaniWorld:It_could_could_have_anyone {
     leolaniWorld:It ns1:could leolaniWorld:could_have_anyone .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context30 a eps:Context ;
+        rdfs:label "context30" ;
+        hs:id "30"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1569 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "153"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1569 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1569" ;
+        hs:id "1569"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1569_utterance1,
+            leolaniTalk:chat1569_utterance2 .
+
+    leolaniTalk:chat1569_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1569_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1569_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1569_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:assumption_is_inaccurate {
+    leolaniWorld:assumption ns1:is leolaniWorld:inaccurate .
+}
+
+leolaniWorld:assumption_implies_only_immigrant {
+    leolaniWorld:assumption ns1:implies leolaniWorld:only_immigrant .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:It_could_could_have_anyone a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_could_could_have_anyone" ;
-        gaf:denotedBy leolaniTalk:chat1569_utterance1_char0-104 .
-
-    leolaniWorld:They_re_too_uncivilised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_re_too_uncivilised" ;
-        gaf:denotedBy leolaniTalk:chat1569_utterance2_char0-87 .
-
-    leolaniWorld:They_re_uncivilised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_re_uncivilised" ;
-        gaf:denotedBy leolaniTalk:chat1569_utterance2_char0-87 .
-
-    leolaniWorld:They_respect_our_war_heroes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_respect_our_war_heroes" ;
-        gaf:denotedBy leolaniTalk:chat1569_utterance2_char0-87 .
-
-    leolaniWorld:assumption_implies_immigrant a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "assumption_implies_immigrant" ;
-        gaf:denotedBy leolaniTalk:chat1569_utterance1_char0-104 .
-
-    leolaniWorld:assumption_implies_only_immigrant a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "assumption_implies_only_immigrant" ;
-        gaf:denotedBy leolaniTalk:chat1569_utterance1_char0-104 .
-
-    leolaniWorld:assumption_is_inaccurate a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "assumption_is_inaccurate" ;
-        gaf:denotedBy leolaniTalk:chat1569_utterance1_char0-104 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:assumption_implies_immigrant {
+    leolaniWorld:assumption ns1:implies leolaniWorld:immigrant .
 }
 
-leolaniWorld:They_re_too_uncivilised {
-    leolaniWorld:They ns12:re leolaniWorld:too_uncivilised .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+leolaniTalk:Perspectives {
+    leolaniTalk:It_could_could_have_anyone_00028 a grasp:Attribution ;
+        rdfs:label "It_could_could_have_anyone_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1569_utterance1_char0-104 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance2_char0-87 .
+    leolaniTalk:They_re_too_uncivilised_00028 a grasp:Attribution ;
+        rdfs:label "They_re_too_uncivilised_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1569_utterance2_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:assumption a gaf:Instance ;
-        rdfs:label "assumption" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+    leolaniTalk:They_re_uncivilised_00028 a grasp:Attribution ;
+        rdfs:label "They_re_uncivilised_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1569_utterance2_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:They_respect_our_war_heroes_00028 a grasp:Attribution ;
+        rdfs:label "They_respect_our_war_heroes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1569_utterance2_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:could_have_anyone a gaf:Instance ;
-        rdfs:label "could-have-anyone" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+    leolaniTalk:assumption_implies_immigrant_00028 a grasp:Attribution ;
+        rdfs:label "assumption_implies_immigrant_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1569_utterance1_char0-104 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:assumption_implies_only_immigrant_00028 a grasp:Attribution ;
+        rdfs:label "assumption_implies_only_immigrant_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1569_utterance1_char0-104 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:immigrant a gaf:Instance ;
-        rdfs:label "immigrant" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+    leolaniTalk:assumption_is_inaccurate_00028 a grasp:Attribution ;
+        rdfs:label "assumption_is_inaccurate_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1569_utterance1_char0-104 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:inaccurate a gaf:Instance ;
-        rdfs:label "inaccurate" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+    leolaniTalk:chat1569_utterance2_char0-87 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1569_utterance2_char0-87" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:our_war_heroes,
+            leolaniWorld:too_uncivilised,
+            leolaniWorld:uncivilised ;
+        gaf:denotes leolaniWorld:They_re_too_uncivilised,
+            leolaniWorld:They_re_uncivilised,
+            leolaniWorld:They_respect_our_war_heroes ;
+        grasp:hasAttribution leolaniTalk:They_re_too_uncivilised_00028,
+            leolaniTalk:They_re_uncivilised_00028,
+            leolaniTalk:They_respect_our_war_heroes_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:48.102467"^^xml1:string,
+            "2024-06-05T23:07:48.102528"^^xml1:string,
+            "2024-06-05T23:07:48.102552"^^xml1:string ;
+        rdf:value "It always is, whenever this happens. They're too uncivilised to respect our war heroes."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1569_utterance2 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat1569_utterance1_char0-104 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1569_utterance1_char0-104" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:assumption,
+            leolaniWorld:could_have_anyone,
+            leolaniWorld:immigrant,
+            leolaniWorld:inaccurate,
+            leolaniWorld:only_immigrant ;
+        gaf:denotes leolaniWorld:It_could_could_have_anyone,
+            leolaniWorld:assumption_implies_immigrant,
+            leolaniWorld:assumption_implies_only_immigrant,
+            leolaniWorld:assumption_is_inaccurate ;
+        grasp:hasAttribution leolaniTalk:It_could_could_have_anyone_00028,
+            leolaniTalk:assumption_implies_immigrant_00028,
+            leolaniTalk:assumption_implies_only_immigrant_00028,
+            leolaniTalk:assumption_is_inaccurate_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:48.014228"^^xml1:string,
+            "2024-06-05T23:07:48.014291"^^xml1:string,
+            "2024-06-05T23:07:48.014316"^^xml1:string,
+            "2024-06-05T23:07:48.014338"^^xml1:string ;
+        rdf:value "This assumption is inaccurate and implies only an immigrant could've done it. It could have been anyone."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1569_utterance1 .
 
-    leolaniWorld:only_immigrant a gaf:Instance ;
-        rdfs:label "only-immigrant" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:our_war_heroes a gaf:Instance ;
-        rdfs:label "our-war-heroes" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance2_char0-87 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:too_uncivilised a gaf:Instance ;
-        rdfs:label "too-uncivilised" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance2_char0-87 .
-
-    leolaniWorld:uncivilised a gaf:Instance ;
-        rdfs:label "uncivilised" ;
-        gaf:denotedIn leolaniTalk:chat1569_utterance2_char0-87 .
-}
-
-leolaniWorld:They_re_uncivilised {
-    leolaniWorld:They ns12:re leolaniWorld:uncivilised .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -476,199 +562,113 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:assumption_implies_only_immigrant {
-    leolaniWorld:assumption ns1:implies leolaniWorld:only_immigrant .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:It_could_could_have_anyone_00028 a grasp:Attribution ;
-        rdfs:label "It_could_could_have_anyone_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1569_utterance1_char0-104 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_re_too_uncivilised_00028 a grasp:Attribution ;
-        rdfs:label "They_re_too_uncivilised_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1569_utterance2_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_re_uncivilised_00028 a grasp:Attribution ;
-        rdfs:label "They_re_uncivilised_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1569_utterance2_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_respect_our_war_heroes_00028 a grasp:Attribution ;
-        rdfs:label "They_respect_our_war_heroes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1569_utterance2_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:assumption_implies_immigrant_00028 a grasp:Attribution ;
-        rdfs:label "assumption_implies_immigrant_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1569_utterance1_char0-104 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:assumption_implies_only_immigrant_00028 a grasp:Attribution ;
-        rdfs:label "assumption_implies_only_immigrant_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1569_utterance1_char0-104 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:assumption_is_inaccurate_00028 a grasp:Attribution ;
-        rdfs:label "assumption_is_inaccurate_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1569_utterance1_char0-104 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1569_utterance2_char0-87 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1569_utterance2_char0-87" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:our_war_heroes,
-            leolaniWorld:too_uncivilised,
-            leolaniWorld:uncivilised ;
-        gaf:denotes leolaniWorld:They_re_too_uncivilised,
-            leolaniWorld:They_re_uncivilised,
-            leolaniWorld:They_respect_our_war_heroes ;
-        grasp:hasAttribution leolaniTalk:They_re_too_uncivilised_00028,
-            leolaniTalk:They_re_uncivilised_00028,
-            leolaniTalk:They_respect_our_war_heroes_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:48.102467"^^xml1:string,
-            "2024-06-05T23:07:48.102528"^^xml1:string,
-            "2024-06-05T23:07:48.102552"^^xml1:string ;
-        rdf:value "It always is, whenever this happens. They're too uncivilised to respect our war heroes."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1569_utterance2 .
-
-    leolaniTalk:chat1569_utterance1_char0-104 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1569_utterance1_char0-104" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:assumption,
-            leolaniWorld:could_have_anyone,
-            leolaniWorld:immigrant,
-            leolaniWorld:inaccurate,
-            leolaniWorld:only_immigrant ;
-        gaf:denotes leolaniWorld:It_could_could_have_anyone,
-            leolaniWorld:assumption_implies_immigrant,
-            leolaniWorld:assumption_implies_only_immigrant,
-            leolaniWorld:assumption_is_inaccurate ;
-        grasp:hasAttribution leolaniTalk:It_could_could_have_anyone_00028,
-            leolaniTalk:assumption_implies_immigrant_00028,
-            leolaniTalk:assumption_implies_only_immigrant_00028,
-            leolaniTalk:assumption_is_inaccurate_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:48.014228"^^xml1:string,
-            "2024-06-05T23:07:48.014291"^^xml1:string,
-            "2024-06-05T23:07:48.014316"^^xml1:string,
-            "2024-06-05T23:07:48.014338"^^xml1:string ;
-        rdf:value "This assumption is inaccurate and implies only an immigrant could've done it. It could have been anyone."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1569_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context30 a eps:Context ;
-        rdfs:label "context30" ;
-        hs:id "30"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1569 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "153"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1569 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:It_could_could_have_anyone a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1569" ;
-        hs:id "1569"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1569_utterance1,
-            leolaniTalk:chat1569_utterance2 .
+        rdfs:label "It_could_could_have_anyone" ;
+        gaf:denotedBy leolaniTalk:chat1569_utterance1_char0-104 .
 
-    leolaniTalk:chat1569_utterance1 a grasp:Utterance,
+    leolaniWorld:They_re_too_uncivilised a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1569_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "They_re_too_uncivilised" ;
+        gaf:denotedBy leolaniTalk:chat1569_utterance2_char0-87 .
 
-    leolaniTalk:chat1569_utterance2 a grasp:Utterance,
+    leolaniWorld:They_re_uncivilised a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1569_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_re_uncivilised" ;
+        gaf:denotedBy leolaniTalk:chat1569_utterance2_char0-87 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:They_respect_our_war_heroes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_respect_our_war_heroes" ;
+        gaf:denotedBy leolaniTalk:chat1569_utterance2_char0-87 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:assumption_implies_immigrant a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "assumption_implies_immigrant" ;
+        gaf:denotedBy leolaniTalk:chat1569_utterance1_char0-104 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:assumption_implies_only_immigrant a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "assumption_implies_only_immigrant" ;
+        gaf:denotedBy leolaniTalk:chat1569_utterance1_char0-104 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:assumption_is_inaccurate a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "assumption_is_inaccurate" ;
+        gaf:denotedBy leolaniTalk:chat1569_utterance1_char0-104 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:assumption_implies_immigrant {
-    leolaniWorld:assumption ns1:implies leolaniWorld:immigrant .
+leolaniWorld:They_re_uncivilised {
+    leolaniWorld:They ns12:re leolaniWorld:uncivilised .
 }
 
 leolaniWorld:They_respect_our_war_heroes {
     leolaniWorld:They ns1:respect leolaniWorld:our_war_heroes .
 }
 
-leolaniWorld:assumption_is_inaccurate {
-    leolaniWorld:assumption ns1:is leolaniWorld:inaccurate .
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance2_char0-87 .
+
+    leolaniWorld:assumption a gaf:Instance ;
+        rdfs:label "assumption" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:could_have_anyone a gaf:Instance ;
+        rdfs:label "could-have-anyone" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:immigrant a gaf:Instance ;
+        rdfs:label "immigrant" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+
+    leolaniWorld:inaccurate a gaf:Instance ;
+        rdfs:label "inaccurate" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:only_immigrant a gaf:Instance ;
+        rdfs:label "only-immigrant" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance1_char0-104 .
+
+    leolaniWorld:our_war_heroes a gaf:Instance ;
+        rdfs:label "our-war-heroes" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance2_char0-87 .
+
+    leolaniWorld:too_uncivilised a gaf:Instance ;
+        rdfs:label "too-uncivilised" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance2_char0-87 .
+
+    leolaniWorld:uncivilised a gaf:Instance ;
+        rdfs:label "uncivilised" ;
+        gaf:denotedIn leolaniTalk:chat1569_utterance2_char0-87 .
 }
 

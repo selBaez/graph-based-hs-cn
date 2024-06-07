@@ -24,91 +24,178 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:We_send_clear_message {
-    leolaniWorld:We ns11:send leolaniWorld:clear_message .
+leolaniWorld:they_making_it_harder {
+    leolaniWorld:they ns11:making leolaniWorld:it_harder .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:We_need_send a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context79 a eps:Context ;
+        rdfs:label "context79" ;
+        hs:id "79"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1566 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "109"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1566 a grasp:Chat,
             sem:Event ;
-        rdfs:label "We_need_send" ;
-        gaf:denotedBy leolaniTalk:chat1566_utterance0_char0-31 .
+        rdfs:label "chat1566" ;
+        hs:id "1566"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1566_utterance0,
+            leolaniTalk:chat1566_utterance2 .
 
-    leolaniWorld:We_need_to_send a gaf:Assertion,
+    leolaniTalk:chat1566_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "We_need_to_send" ;
-        gaf:denotedBy leolaniTalk:chat1566_utterance0_char0-31 .
+        rdfs:label "chat1566_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:We_send_clear_message a gaf:Assertion,
+    leolaniTalk:chat1566_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "We_send_clear_message" ;
-        gaf:denotedBy leolaniTalk:chat1566_utterance0_char0-31 .
+        rdfs:label "chat1566_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:We_send_message a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_send_message" ;
-        gaf:denotedBy leolaniTalk:chat1566_utterance0_char0-31 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_making_it_harder a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_making_it_harder" ;
-        gaf:denotedBy leolaniTalk:chat1566_utterance2_char0-144 .
-
-    ns12:re-rinsing_our_benefit_system a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_’re-rinsing_our_benefit_system" ;
-        gaf:denotedBy leolaniTalk:chat1566_utterance2_char0-144 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:We_send_message {
-    leolaniWorld:We ns11:send leolaniWorld:message .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
-
-    leolaniWorld:clear_message a gaf:Instance ;
-        rdfs:label "clear-message" ;
-        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:it_harder a gaf:Instance ;
-        rdfs:label "it-harder" ;
-        gaf:denotedIn leolaniTalk:chat1566_utterance2_char0-144 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:We_need_send {
+    leolaniWorld:We ns11:need leolaniWorld:send .
+}
 
-    leolaniWorld:message a gaf:Instance ;
-        rdfs:label "message" ;
-        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
+leolaniWorld:We_need_to_send {
+    leolaniWorld:We ns11:need leolaniWorld:to_send .
+}
 
-    leolaniWorld:our_benefit_system a gaf:Instance ;
-        rdfs:label "our-benefit-system" ;
-        gaf:denotedIn leolaniTalk:chat1566_utterance2_char0-144 .
+leolaniTalk:Perspectives {
+    leolaniTalk:We_need_send_00028 a grasp:Attribution ;
+        rdfs:label "We_need_send_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1566_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:send a gaf:Instance ;
-        rdfs:label "send" ;
-        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
+    leolaniTalk:We_need_to_send_00028 a grasp:Attribution ;
+        rdfs:label "We_need_to_send_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1566_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1566_utterance2_char0-144 .
+    leolaniTalk:We_send_clear_message_00028 a grasp:Attribution ;
+        rdfs:label "We_send_clear_message_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1566_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:to_send a gaf:Instance ;
-        rdfs:label "to-send" ;
-        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
+    leolaniTalk:We_send_message_00028 a grasp:Attribution ;
+        rdfs:label "We_send_message_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1566_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_making_it_harder_00028 a grasp:Attribution ;
+        rdfs:label "they_making_it_harder_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1566_utterance2_char0-144 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/they_’re-rinsing_our_benefit_system_00028> a grasp:Attribution ;
+        rdfs:label "they_’re-rinsing_our_benefit_system_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1566_utterance2_char0-144 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1566_utterance2_char0-144 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1566_utterance2_char0-144" ;
+        gaf:containsDenotation leolaniWorld:it_harder,
+            leolaniWorld:our_benefit_system,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_making_it_harder,
+            ns12:re-rinsing_our_benefit_system ;
+        grasp:hasAttribution leolaniTalk:they_making_it_harder_00028,
+            <http://cltl.nl/leolani/talk/they_’re-rinsing_our_benefit_system_00028> ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:52.572938"^^xml1:string,
+            "2024-06-05T23:04:52.572995"^^xml1:string ;
+        rdf:value "But our economy and infrastructure can’t support all these migrants, they’re rinsing our benefit system and making it harder for us to get jobs."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1566_utterance2 .
+
+    leolaniTalk:chat1566_utterance0_char0-31 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1566_utterance0_char0-31" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:clear_message,
+            leolaniWorld:message,
+            leolaniWorld:send,
+            leolaniWorld:to_send ;
+        gaf:denotes leolaniWorld:We_need_send,
+            leolaniWorld:We_need_to_send,
+            leolaniWorld:We_send_clear_message,
+            leolaniWorld:We_send_message ;
+        grasp:hasAttribution leolaniTalk:We_need_send_00028,
+            leolaniTalk:We_need_to_send_00028,
+            leolaniTalk:We_send_clear_message_00028,
+            leolaniTalk:We_send_message_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:52.321483"^^xml1:string,
+            "2024-06-05T23:04:52.321543"^^xml1:string,
+            "2024-06-05T23:04:52.321567"^^xml1:string,
+            "2024-06-05T23:04:52.321588"^^xml1:string ;
+        rdf:value "We need to send a clear message"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1566_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -446,181 +533,94 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:We_need_to_send {
-    leolaniWorld:We ns11:need leolaniWorld:to_send .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:We_need_send {
-    leolaniWorld:We ns11:need leolaniWorld:send .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:We_need_send_00028 a grasp:Attribution ;
-        rdfs:label "We_need_send_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1566_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_need_to_send_00028 a grasp:Attribution ;
-        rdfs:label "We_need_to_send_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1566_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_send_clear_message_00028 a grasp:Attribution ;
-        rdfs:label "We_send_clear_message_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1566_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_send_message_00028 a grasp:Attribution ;
-        rdfs:label "We_send_message_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1566_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_making_it_harder_00028 a grasp:Attribution ;
-        rdfs:label "they_making_it_harder_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1566_utterance2_char0-144 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/they_’re-rinsing_our_benefit_system_00028> a grasp:Attribution ;
-        rdfs:label "they_’re-rinsing_our_benefit_system_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1566_utterance2_char0-144 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1566_utterance2_char0-144 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1566_utterance2_char0-144" ;
-        gaf:containsDenotation leolaniWorld:it_harder,
-            leolaniWorld:our_benefit_system,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_making_it_harder,
-            ns12:re-rinsing_our_benefit_system ;
-        grasp:hasAttribution leolaniTalk:they_making_it_harder_00028,
-            <http://cltl.nl/leolani/talk/they_’re-rinsing_our_benefit_system_00028> ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:52.572938"^^xml1:string,
-            "2024-06-05T23:04:52.572995"^^xml1:string ;
-        rdf:value "But our economy and infrastructure can’t support all these migrants, they’re rinsing our benefit system and making it harder for us to get jobs."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1566_utterance2 .
-
-    leolaniTalk:chat1566_utterance0_char0-31 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1566_utterance0_char0-31" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:clear_message,
-            leolaniWorld:message,
-            leolaniWorld:send,
-            leolaniWorld:to_send ;
-        gaf:denotes leolaniWorld:We_need_send,
-            leolaniWorld:We_need_to_send,
-            leolaniWorld:We_send_clear_message,
-            leolaniWorld:We_send_message ;
-        grasp:hasAttribution leolaniTalk:We_need_send_00028,
-            leolaniTalk:We_need_to_send_00028,
-            leolaniTalk:We_send_clear_message_00028,
-            leolaniTalk:We_send_message_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:52.321483"^^xml1:string,
-            "2024-06-05T23:04:52.321543"^^xml1:string,
-            "2024-06-05T23:04:52.321567"^^xml1:string,
-            "2024-06-05T23:04:52.321588"^^xml1:string ;
-        rdf:value "We need to send a clear message"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1566_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context79 a eps:Context ;
-        rdfs:label "context79" ;
-        hs:id "79"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1566 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "109"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1566 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:We_need_send a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1566" ;
-        hs:id "1566"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1566_utterance0,
-            leolaniTalk:chat1566_utterance2 .
+        rdfs:label "We_need_send" ;
+        gaf:denotedBy leolaniTalk:chat1566_utterance0_char0-31 .
 
-    leolaniTalk:chat1566_utterance0 a grasp:Utterance,
+    leolaniWorld:We_need_to_send a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1566_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "We_need_to_send" ;
+        gaf:denotedBy leolaniTalk:chat1566_utterance0_char0-31 .
 
-    leolaniTalk:chat1566_utterance2 a grasp:Utterance,
+    leolaniWorld:We_send_clear_message a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1566_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "We_send_clear_message" ;
+        gaf:denotedBy leolaniTalk:chat1566_utterance0_char0-31 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:We_send_message a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_send_message" ;
+        gaf:denotedBy leolaniTalk:chat1566_utterance0_char0-31 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:they_making_it_harder a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_making_it_harder" ;
+        gaf:denotedBy leolaniTalk:chat1566_utterance2_char0-144 .
+
+    ns12:re-rinsing_our_benefit_system a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_’re-rinsing_our_benefit_system" ;
+        gaf:denotedBy leolaniTalk:chat1566_utterance2_char0-144 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:We_send_message {
+    leolaniWorld:We ns11:send leolaniWorld:message .
+}
+
+leolaniWorld:We_send_clear_message {
+    leolaniWorld:We ns11:send leolaniWorld:clear_message .
 }
 
 ns12:re-rinsing_our_benefit_system {
     leolaniWorld:they ns21:re_rinsing leolaniWorld:our_benefit_system .
 }
 
-leolaniWorld:they_making_it_harder {
-    leolaniWorld:they ns11:making leolaniWorld:it_harder .
+leolaniWorld:Instances {
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
+
+    leolaniWorld:clear_message a gaf:Instance ;
+        rdfs:label "clear-message" ;
+        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it_harder a gaf:Instance ;
+        rdfs:label "it-harder" ;
+        gaf:denotedIn leolaniTalk:chat1566_utterance2_char0-144 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:message a gaf:Instance ;
+        rdfs:label "message" ;
+        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
+
+    leolaniWorld:our_benefit_system a gaf:Instance ;
+        rdfs:label "our-benefit-system" ;
+        gaf:denotedIn leolaniTalk:chat1566_utterance2_char0-144 .
+
+    leolaniWorld:send a gaf:Instance ;
+        rdfs:label "send" ;
+        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1566_utterance2_char0-144 .
+
+    leolaniWorld:to_send a gaf:Instance ;
+        rdfs:label "to-send" ;
+        gaf:denotedIn leolaniTalk:chat1566_utterance0_char0-31 .
 }
 

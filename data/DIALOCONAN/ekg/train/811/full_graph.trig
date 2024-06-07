@@ -22,133 +22,240 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Islam_is-religion_has_had a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is-religion_has_had" ;
-        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:Islam_is_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_religion" ;
-        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:Islam_should_should_banned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_should_should_banned" ;
-        gaf:denotedBy leolaniTalk:chat811_utterance2_char0-56 .
-
-    leolaniWorld:To_hate_is-hate_religions a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "To_hate_is-hate_religions" ;
-        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:hate_is-hate_religions a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "hate_is-hate_religions" ;
-        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:religions_hate_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "religions_hate_religion" ;
-        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:we_must-completely-destroy_Islam a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_must-completely-destroy_Islam" ;
-        gaf:denotedBy leolaniTalk:chat811_utterance0_char0-79 .
-
-    leolaniWorld:we_must-destroy_Islam a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_must-destroy_Islam" ;
-        gaf:denotedBy leolaniTalk:chat811_utterance0_char0-79 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:we_must-destroy_Islam {
-    leolaniWorld:we ns1:must_destroy leolaniWorld:Islam .
-}
-
-leolaniWorld:Islam_should_should_banned {
-    leolaniWorld:Islam ns1:should leolaniWorld:should_banned .
+leolaniWorld:To_hate_is-hate_religions {
+    leolaniWorld:To_hate ns1:is_hate leolaniWorld:religions .
 }
 
 leolaniWorld:Islam_is_religion {
     leolaniWorld:Islam ns1:is leolaniWorld:religion .
 }
 
+leolaniTalk:Interactions {
+    leolaniContext:context90 a eps:Context ;
+        rdfs:label "context90" ;
+        hs:id "90"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat811 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "24"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat811 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat811" ;
+        hs:id "811"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat811_utterance0,
+            leolaniTalk:chat811_utterance1,
+            leolaniTalk:chat811_utterance2 .
+
+    leolaniTalk:chat811_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat811_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat811_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat811_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat811_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat811_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Islam_is-religion_has_had {
+    leolaniWorld:Islam ns1:is_religion leolaniWorld:has_had .
+}
+
 leolaniWorld:religions_hate_religion {
     leolaniWorld:religions ns1:hate leolaniWorld:religion .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat811_utterance0_char0-79,
-            leolaniTalk:chat811_utterance1_char0-142,
-            leolaniTalk:chat811_utterance2_char0-56 .
-
-    leolaniWorld:To_hate a gaf:Instance ;
-        rdfs:label "to-hate" ;
-        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:has_had a gaf:Instance ;
-        rdfs:label "has-had" ;
-        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:hate a gaf:Instance ;
-        rdfs:label "hate" ;
-        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:religion a gaf:Instance ;
-        rdfs:label "religion" ;
-        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:religions a gaf:Instance ;
-        rdfs:label "religions" ;
-        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
-
-    leolaniWorld:should_banned a gaf:Instance ;
-        rdfs:label "should-banned" ;
-        gaf:denotedIn leolaniTalk:chat811_utterance2_char0-56 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat811_utterance0_char0-79 .
-}
-
-leolaniWorld:To_hate_is-hate_religions {
-    leolaniWorld:To_hate ns1:is_hate leolaniWorld:religions .
+leolaniWorld:Islam_should_should_banned {
+    leolaniWorld:Islam ns1:should leolaniWorld:should_banned .
 }
 
 leolaniWorld:we_must-completely-destroy_Islam {
     leolaniWorld:we ns1:must_completely_destroy leolaniWorld:Islam .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Islam_is-religion_has_had_00022 a grasp:Attribution ;
+        rdfs:label "Islam_is-religion_has_had_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_religion_00022 a grasp:Attribution ;
+        rdfs:label "Islam_is_religion_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_should_should_banned_00023 a grasp:Attribution ;
+        rdfs:label "Islam_should_should_banned_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat811_utterance2_char0-56 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:To_hate_is-hate_religions_00022 a grasp:Attribution ;
+        rdfs:label "To_hate_is-hate_religions_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat811_utterance2_char0-56 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat811_utterance2_char0-56" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:should_banned ;
+        gaf:denotes leolaniWorld:Islam_should_should_banned ;
+        grasp:hasAttribution leolaniTalk:Islam_should_should_banned_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:14.273078"^^xml1:string ;
+        rdf:value "I don't see any positive impact. Islam should be banned."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat811_utterance2 .
+
+    leolaniTalk:hate_is-hate_religions_00022 a grasp:Attribution ;
+        rdfs:label "hate_is-hate_religions_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:religions_hate_religion_00022 a grasp:Attribution ;
+        rdfs:label "religions_hate_religion_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_must-completely-destroy_Islam_00023 a grasp:Attribution ;
+        rdfs:label "we_must-completely-destroy_Islam_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat811_utterance0_char0-79 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_must-destroy_Islam_00023 a grasp:Attribution ;
+        rdfs:label "we_must-destroy_Islam_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat811_utterance0_char0-79 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat811_utterance0_char0-79 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat811_utterance0_char0-79" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_must-completely-destroy_Islam,
+            leolaniWorld:we_must-destroy_Islam ;
+        grasp:hasAttribution leolaniTalk:we_must-completely-destroy_Islam_00023,
+            leolaniTalk:we_must-destroy_Islam_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:14.093103"^^xml1:string,
+            "2024-06-05T23:07:14.093165"^^xml1:string ;
+        rdf:value "Islam is not compatible with Western culture, we must completely destroy Islam."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat811_utterance0 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat811_utterance1_char0-142 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat811_utterance1_char0-142" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:To_hate,
+            leolaniWorld:has_had,
+            leolaniWorld:hate,
+            leolaniWorld:religion,
+            leolaniWorld:religions ;
+        gaf:denotes leolaniWorld:Islam_is-religion_has_had,
+            leolaniWorld:Islam_is_religion,
+            leolaniWorld:To_hate_is-hate_religions,
+            leolaniWorld:hate_is-hate_religions,
+            leolaniWorld:religions_hate_religion ;
+        grasp:hasAttribution leolaniTalk:Islam_is-religion_has_had_00022,
+            leolaniTalk:Islam_is_religion_00022,
+            leolaniTalk:To_hate_is-hate_religions_00022,
+            leolaniTalk:hate_is-hate_religions_00022,
+            leolaniTalk:religions_hate_religion_00022 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:14.191312"^^xml1:string,
+            "2024-06-05T23:07:14.191366"^^xml1:string,
+            "2024-06-05T23:07:14.191389"^^xml1:string,
+            "2024-06-05T23:07:14.191411"^^xml1:string,
+            "2024-06-05T23:07:14.191434"^^xml1:string ;
+        rdf:value "Islam is a religion that has had a huge and positive impact on human history and Western culture. To hate a religion is to hate all religions."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat811_utterance1 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -490,215 +597,108 @@ leolaniWorld:hate_is-hate_religions {
     leolaniWorld:hate ns1:is_hate leolaniWorld:religions .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Islam_is-religion_has_had a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-religion_has_had" ;
+        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
+
+    leolaniWorld:Islam_is_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_religion" ;
+        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
+
+    leolaniWorld:Islam_should_should_banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_should_should_banned" ;
+        gaf:denotedBy leolaniTalk:chat811_utterance2_char0-56 .
+
+    leolaniWorld:To_hate_is-hate_religions a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "To_hate_is-hate_religions" ;
+        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
+
+    leolaniWorld:hate_is-hate_religions a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "hate_is-hate_religions" ;
+        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:religions_hate_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "religions_hate_religion" ;
+        gaf:denotedBy leolaniTalk:chat811_utterance1_char0-142 .
+
+    leolaniWorld:we_must-completely-destroy_Islam a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_must-completely-destroy_Islam" ;
+        gaf:denotedBy leolaniTalk:chat811_utterance0_char0-79 .
+
+    leolaniWorld:we_must-destroy_Islam a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_must-destroy_Islam" ;
+        gaf:denotedBy leolaniTalk:chat811_utterance0_char0-79 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Islam_is-religion_has_had {
-    leolaniWorld:Islam ns1:is_religion leolaniWorld:has_had .
+leolaniWorld:we_must-destroy_Islam {
+    leolaniWorld:we ns1:must_destroy leolaniWorld:Islam .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Islam_is-religion_has_had_00022 a grasp:Attribution ;
-        rdfs:label "Islam_is-religion_has_had_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat811_utterance0_char0-79,
+            leolaniTalk:chat811_utterance1_char0-142,
+            leolaniTalk:chat811_utterance2_char0-56 .
 
-    leolaniTalk:Islam_is_religion_00022 a grasp:Attribution ;
-        rdfs:label "Islam_is_religion_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_should_should_banned_00023 a grasp:Attribution ;
-        rdfs:label "Islam_should_should_banned_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat811_utterance2_char0-56 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:To_hate_is-hate_religions_00022 a grasp:Attribution ;
-        rdfs:label "To_hate_is-hate_religions_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat811_utterance2_char0-56 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat811_utterance2_char0-56" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:should_banned ;
-        gaf:denotes leolaniWorld:Islam_should_should_banned ;
-        grasp:hasAttribution leolaniTalk:Islam_should_should_banned_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:14.273078"^^xml1:string ;
-        rdf:value "I don't see any positive impact. Islam should be banned."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat811_utterance2 .
-
-    leolaniTalk:hate_is-hate_religions_00022 a grasp:Attribution ;
-        rdfs:label "hate_is-hate_religions_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:religions_hate_religion_00022 a grasp:Attribution ;
-        rdfs:label "religions_hate_religion_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat811_utterance1_char0-142 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_must-completely-destroy_Islam_00023 a grasp:Attribution ;
-        rdfs:label "we_must-completely-destroy_Islam_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat811_utterance0_char0-79 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_must-destroy_Islam_00023 a grasp:Attribution ;
-        rdfs:label "we_must-destroy_Islam_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat811_utterance0_char0-79 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat811_utterance0_char0-79 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat811_utterance0_char0-79" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_must-completely-destroy_Islam,
-            leolaniWorld:we_must-destroy_Islam ;
-        grasp:hasAttribution leolaniTalk:we_must-completely-destroy_Islam_00023,
-            leolaniTalk:we_must-destroy_Islam_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:14.093103"^^xml1:string,
-            "2024-06-05T23:07:14.093165"^^xml1:string ;
-        rdf:value "Islam is not compatible with Western culture, we must completely destroy Islam."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat811_utterance0 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat811_utterance1_char0-142 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat811_utterance1_char0-142" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:To_hate,
-            leolaniWorld:has_had,
-            leolaniWorld:hate,
-            leolaniWorld:religion,
-            leolaniWorld:religions ;
-        gaf:denotes leolaniWorld:Islam_is-religion_has_had,
-            leolaniWorld:Islam_is_religion,
-            leolaniWorld:To_hate_is-hate_religions,
-            leolaniWorld:hate_is-hate_religions,
-            leolaniWorld:religions_hate_religion ;
-        grasp:hasAttribution leolaniTalk:Islam_is-religion_has_had_00022,
-            leolaniTalk:Islam_is_religion_00022,
-            leolaniTalk:To_hate_is-hate_religions_00022,
-            leolaniTalk:hate_is-hate_religions_00022,
-            leolaniTalk:religions_hate_religion_00022 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:14.191312"^^xml1:string,
-            "2024-06-05T23:07:14.191366"^^xml1:string,
-            "2024-06-05T23:07:14.191389"^^xml1:string,
-            "2024-06-05T23:07:14.191411"^^xml1:string,
-            "2024-06-05T23:07:14.191434"^^xml1:string ;
-        rdf:value "Islam is a religion that has had a huge and positive impact on human history and Western culture. To hate a religion is to hate all religions."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat811_utterance1 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context90 a eps:Context ;
-        rdfs:label "context90" ;
-        hs:id "90"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat811 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "24"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat811 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat811" ;
-        hs:id "811"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat811_utterance0,
-            leolaniTalk:chat811_utterance1,
-            leolaniTalk:chat811_utterance2 .
-
-    leolaniTalk:chat811_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat811_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat811_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat811_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat811_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat811_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:To_hate a gaf:Instance ;
+        rdfs:label "to-hate" ;
+        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:has_had a gaf:Instance ;
+        rdfs:label "has-had" ;
+        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
+
+    leolaniWorld:hate a gaf:Instance ;
+        rdfs:label "hate" ;
+        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:religion a gaf:Instance ;
+        rdfs:label "religion" ;
+        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
+
+    leolaniWorld:religions a gaf:Instance ;
+        rdfs:label "religions" ;
+        gaf:denotedIn leolaniTalk:chat811_utterance1_char0-142 .
+
+    leolaniWorld:should_banned a gaf:Instance ;
+        rdfs:label "should-banned" ;
+        gaf:denotedIn leolaniTalk:chat811_utterance2_char0-56 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat811_utterance0_char0-79 .
 }
 

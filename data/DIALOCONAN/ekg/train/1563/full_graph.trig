@@ -22,122 +22,207 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:slaughter_is_barbaric {
-    leolaniWorld:slaughter ns1:is leolaniWorld:barbaric .
+leolaniWorld:Halal_slaughter_is_practice {
+    leolaniWorld:Halal_slaughter ns1:is leolaniWorld:practice .
+}
+
+leolaniWorld:slaughter_be_banned {
+    leolaniWorld:slaughter ns1:be leolaniWorld:banned .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context81 a eps:Context ;
+        rdfs:label "context81" ;
+        hs:id "81"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1563 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "189"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1563 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1563" ;
+        hs:id "1563"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1563_utterance0 .
+
+    leolaniTalk:chat1563_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1563_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:slaughter_is_barbaric_practice {
     leolaniWorld:slaughter ns1:is leolaniWorld:barbaric_practice .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Halal_slaughter_be_banned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Halal_slaughter_be_banned" ;
-        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:Halal_slaughter_is_barbaric_practice a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Halal_slaughter_is_barbaric_practice" ;
-        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:Halal_slaughter_is_practice a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Halal_slaughter_is_practice" ;
-        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:meat_industry_does-pander-to_whims a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "meat_industry_does-pander-to_whims" ;
-        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:meat_industry_does-pander-to_whims_of_Islamists a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "meat_industry_does-pander-to_whims_of_Islamists" ;
-        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:slaughter_be_banned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "slaughter_be_banned" ;
-        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:slaughter_is_barbaric a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "slaughter_is_barbaric" ;
-        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:slaughter_is_barbaric_practice a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "slaughter_is_barbaric_practice" ;
-        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:slaughter_is_practice a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "slaughter_is_practice" ;
-        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:slaughter_is_barbaric {
+    leolaniWorld:slaughter ns1:is leolaniWorld:barbaric .
 }
 
-leolaniWorld:Halal_slaughter_is_practice {
-    leolaniWorld:Halal_slaughter ns1:is leolaniWorld:practice .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Halal_slaughter a gaf:Instance ;
-        rdfs:label "halal-slaughter" ;
-        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:banned a gaf:Instance ;
-        rdfs:label "banned" ;
-        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:barbaric a gaf:Instance ;
-        rdfs:label "barbaric" ;
-        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:barbaric_practice a gaf:Instance ;
-        rdfs:label "barbaric-practice" ;
-        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:meat_industry a gaf:Instance ;
-        rdfs:label "meat-industry" ;
-        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:practice a gaf:Instance ;
-        rdfs:label "practice" ;
-        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:slaughter a gaf:Instance ;
-        rdfs:label "slaughter" ;
-        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:whims a gaf:Instance ;
-        rdfs:label "whims" ;
-        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
-
-    leolaniWorld:whims_of_Islamists a gaf:Instance ;
-        rdfs:label "whims-of-islamists" ;
-        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
+leolaniWorld:Halal_slaughter_is_barbaric_practice {
+    leolaniWorld:Halal_slaughter ns1:is leolaniWorld:barbaric_practice .
 }
 
-leolaniWorld:meat_industry_does-pander-to_whims_of_Islamists {
-    leolaniWorld:meat_industry ns1:does_pander_to leolaniWorld:whims_of_Islamists .
+leolaniWorld:slaughter_is_practice {
+    leolaniWorld:slaughter ns1:is leolaniWorld:practice .
 }
 
-leolaniWorld:slaughter_be_banned {
-    leolaniWorld:slaughter ns1:be leolaniWorld:banned .
+leolaniTalk:Perspectives {
+    leolaniTalk:Halal_slaughter_be_banned_00026 a grasp:Attribution ;
+        rdfs:label "Halal_slaughter_be_banned_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Halal_slaughter_is_barbaric_practice_00026 a grasp:Attribution ;
+        rdfs:label "Halal_slaughter_is_barbaric_practice_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Halal_slaughter_is_practice_00026 a grasp:Attribution ;
+        rdfs:label "Halal_slaughter_is_practice_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:meat_industry_does-pander-to_whims_00026 a grasp:Attribution ;
+        rdfs:label "meat_industry_does-pander-to_whims_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:meat_industry_does-pander-to_whims_of_Islamists_00026 a grasp:Attribution ;
+        rdfs:label "meat_industry_does-pander-to_whims_of_Islamists_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:slaughter_be_banned_00026 a grasp:Attribution ;
+        rdfs:label "slaughter_be_banned_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:slaughter_is_barbaric_00026 a grasp:Attribution ;
+        rdfs:label "slaughter_is_barbaric_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:slaughter_is_barbaric_practice_00026 a grasp:Attribution ;
+        rdfs:label "slaughter_is_barbaric_practice_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:slaughter_is_practice_00026 a grasp:Attribution ;
+        rdfs:label "slaughter_is_practice_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1563_utterance0_char0-131 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1563_utterance0_char0-131" ;
+        gaf:containsDenotation leolaniWorld:Halal_slaughter,
+            leolaniWorld:banned,
+            leolaniWorld:barbaric,
+            leolaniWorld:barbaric_practice,
+            leolaniWorld:meat_industry,
+            leolaniWorld:practice,
+            leolaniWorld:slaughter,
+            leolaniWorld:whims,
+            leolaniWorld:whims_of_Islamists ;
+        gaf:denotes leolaniWorld:Halal_slaughter_be_banned,
+            leolaniWorld:Halal_slaughter_is_barbaric_practice,
+            leolaniWorld:Halal_slaughter_is_practice,
+            leolaniWorld:meat_industry_does-pander-to_whims,
+            leolaniWorld:meat_industry_does-pander-to_whims_of_Islamists,
+            leolaniWorld:slaughter_be_banned,
+            leolaniWorld:slaughter_is_barbaric,
+            leolaniWorld:slaughter_is_barbaric_practice,
+            leolaniWorld:slaughter_is_practice ;
+        grasp:hasAttribution leolaniTalk:Halal_slaughter_be_banned_00026,
+            leolaniTalk:Halal_slaughter_is_barbaric_practice_00026,
+            leolaniTalk:Halal_slaughter_is_practice_00026,
+            leolaniTalk:meat_industry_does-pander-to_whims_00026,
+            leolaniTalk:meat_industry_does-pander-to_whims_of_Islamists_00026,
+            leolaniTalk:slaughter_be_banned_00026,
+            leolaniTalk:slaughter_is_barbaric_00026,
+            leolaniTalk:slaughter_is_barbaric_practice_00026,
+            leolaniTalk:slaughter_is_practice_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:55.286415"^^xml1:string,
+            "2024-06-05T23:33:55.286479"^^xml1:string,
+            "2024-06-05T23:33:55.286502"^^xml1:string,
+            "2024-06-05T23:33:55.286523"^^xml1:string,
+            "2024-06-05T23:33:55.286545"^^xml1:string,
+            "2024-06-05T23:33:55.286567"^^xml1:string,
+            "2024-06-05T23:33:55.286588"^^xml1:string,
+            "2024-06-05T23:33:55.286611"^^xml1:string,
+            "2024-06-05T23:33:55.286633"^^xml1:string ;
+        rdf:value "Halal slaughter is a barbaric and cruel practice and should be banned! Why does the meat industry pander to the whims of Islamists?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1563_utterance0 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -475,198 +560,113 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:slaughter_is_practice {
-    leolaniWorld:slaughter ns1:is leolaniWorld:practice .
+leolaniWorld:Claims {
+    leolaniWorld:Halal_slaughter_be_banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Halal_slaughter_be_banned" ;
+        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:Halal_slaughter_is_barbaric_practice a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Halal_slaughter_is_barbaric_practice" ;
+        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:Halal_slaughter_is_practice a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Halal_slaughter_is_practice" ;
+        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:meat_industry_does-pander-to_whims a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "meat_industry_does-pander-to_whims" ;
+        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:meat_industry_does-pander-to_whims_of_Islamists a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "meat_industry_does-pander-to_whims_of_Islamists" ;
+        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:slaughter_be_banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "slaughter_be_banned" ;
+        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:slaughter_is_barbaric a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "slaughter_is_barbaric" ;
+        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:slaughter_is_barbaric_practice a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "slaughter_is_barbaric_practice" ;
+        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:slaughter_is_practice a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "slaughter_is_practice" ;
+        gaf:denotedBy leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Halal_slaughter_is_barbaric_practice {
-    leolaniWorld:Halal_slaughter ns1:is leolaniWorld:barbaric_practice .
-}
-
-leolaniWorld:meat_industry_does-pander-to_whims {
-    leolaniWorld:meat_industry ns1:does_pander_to leolaniWorld:whims .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Halal_slaughter_be_banned_00026 a grasp:Attribution ;
-        rdfs:label "Halal_slaughter_be_banned_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Halal_slaughter_is_barbaric_practice_00026 a grasp:Attribution ;
-        rdfs:label "Halal_slaughter_is_barbaric_practice_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Halal_slaughter_is_practice_00026 a grasp:Attribution ;
-        rdfs:label "Halal_slaughter_is_practice_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:meat_industry_does-pander-to_whims_00026 a grasp:Attribution ;
-        rdfs:label "meat_industry_does-pander-to_whims_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:meat_industry_does-pander-to_whims_of_Islamists_00026 a grasp:Attribution ;
-        rdfs:label "meat_industry_does-pander-to_whims_of_Islamists_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:slaughter_be_banned_00026 a grasp:Attribution ;
-        rdfs:label "slaughter_be_banned_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:slaughter_is_barbaric_00026 a grasp:Attribution ;
-        rdfs:label "slaughter_is_barbaric_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:slaughter_is_barbaric_practice_00026 a grasp:Attribution ;
-        rdfs:label "slaughter_is_barbaric_practice_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:slaughter_is_practice_00026 a grasp:Attribution ;
-        rdfs:label "slaughter_is_practice_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1563_utterance0_char0-131 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1563_utterance0_char0-131 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1563_utterance0_char0-131" ;
-        gaf:containsDenotation leolaniWorld:Halal_slaughter,
-            leolaniWorld:banned,
-            leolaniWorld:barbaric,
-            leolaniWorld:barbaric_practice,
-            leolaniWorld:meat_industry,
-            leolaniWorld:practice,
-            leolaniWorld:slaughter,
-            leolaniWorld:whims,
-            leolaniWorld:whims_of_Islamists ;
-        gaf:denotes leolaniWorld:Halal_slaughter_be_banned,
-            leolaniWorld:Halal_slaughter_is_barbaric_practice,
-            leolaniWorld:Halal_slaughter_is_practice,
-            leolaniWorld:meat_industry_does-pander-to_whims,
-            leolaniWorld:meat_industry_does-pander-to_whims_of_Islamists,
-            leolaniWorld:slaughter_be_banned,
-            leolaniWorld:slaughter_is_barbaric,
-            leolaniWorld:slaughter_is_barbaric_practice,
-            leolaniWorld:slaughter_is_practice ;
-        grasp:hasAttribution leolaniTalk:Halal_slaughter_be_banned_00026,
-            leolaniTalk:Halal_slaughter_is_barbaric_practice_00026,
-            leolaniTalk:Halal_slaughter_is_practice_00026,
-            leolaniTalk:meat_industry_does-pander-to_whims_00026,
-            leolaniTalk:meat_industry_does-pander-to_whims_of_Islamists_00026,
-            leolaniTalk:slaughter_be_banned_00026,
-            leolaniTalk:slaughter_is_barbaric_00026,
-            leolaniTalk:slaughter_is_barbaric_practice_00026,
-            leolaniTalk:slaughter_is_practice_00026 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:55.286415"^^xml1:string,
-            "2024-06-05T23:33:55.286479"^^xml1:string,
-            "2024-06-05T23:33:55.286502"^^xml1:string,
-            "2024-06-05T23:33:55.286523"^^xml1:string,
-            "2024-06-05T23:33:55.286545"^^xml1:string,
-            "2024-06-05T23:33:55.286567"^^xml1:string,
-            "2024-06-05T23:33:55.286588"^^xml1:string,
-            "2024-06-05T23:33:55.286611"^^xml1:string,
-            "2024-06-05T23:33:55.286633"^^xml1:string ;
-        rdf:value "Halal slaughter is a barbaric and cruel practice and should be banned! Why does the meat industry pander to the whims of Islamists?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1563_utterance0 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:meat_industry_does-pander-to_whims_of_Islamists {
+    leolaniWorld:meat_industry ns1:does_pander_to leolaniWorld:whims_of_Islamists .
 }
 
 leolaniWorld:Halal_slaughter_be_banned {
     leolaniWorld:Halal_slaughter ns1:be leolaniWorld:banned .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context81 a eps:Context ;
-        rdfs:label "context81" ;
-        hs:id "81"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:meat_industry_does-pander-to_whims {
+    leolaniWorld:meat_industry ns1:does_pander_to leolaniWorld:whims .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1563 .
+leolaniWorld:Instances {
+    leolaniWorld:Halal_slaughter a gaf:Instance ;
+        rdfs:label "halal-slaughter" ;
+        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:banned a gaf:Instance ;
+        rdfs:label "banned" ;
+        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "189"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    leolaniWorld:barbaric a gaf:Instance ;
+        rdfs:label "barbaric" ;
+        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
 
-    leolaniTalk:chat1563 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1563" ;
-        hs:id "1563"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1563_utterance0 .
-
-    leolaniTalk:chat1563_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1563_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:barbaric_practice a gaf:Instance ;
+        rdfs:label "barbaric-practice" ;
+        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:meat_industry a gaf:Instance ;
+        rdfs:label "meat-industry" ;
+        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:practice a gaf:Instance ;
+        rdfs:label "practice" ;
+        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:slaughter a gaf:Instance ;
+        rdfs:label "slaughter" ;
+        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:whims a gaf:Instance ;
+        rdfs:label "whims" ;
+        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
+
+    leolaniWorld:whims_of_Islamists a gaf:Instance ;
+        rdfs:label "whims-of-islamists" ;
+        gaf:denotedIn leolaniTalk:chat1563_utterance0_char0-131 .
 }
 

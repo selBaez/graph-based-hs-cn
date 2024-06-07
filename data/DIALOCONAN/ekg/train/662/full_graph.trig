@@ -22,60 +22,126 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:it_is_right {
+    leolaniWorld:it ns11:is leolaniWorld:right .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context141 a eps:Context ;
+        rdfs:label "context141" ;
+        hs:id "141"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat662 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "146"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat662 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat662" ;
+        hs:id "662"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat662_utterance1 .
+
+    leolaniTalk:chat662_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat662_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:it_is_human a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is_human" ;
-        gaf:denotedBy leolaniTalk:chat662_utterance1_char0-62 .
-
-    leolaniWorld:it_is_human_right a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is_human_right" ;
-        gaf:denotedBy leolaniTalk:chat662_utterance1_char0-62 .
-
-    leolaniWorld:it_is_right a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is_right" ;
-        gaf:denotedBy leolaniTalk:chat662_utterance1_char0-62 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:it_is_human_right {
+    leolaniWorld:it ns11:is leolaniWorld:human_right .
 }
 
-leolaniWorld:it_is_human {
-    leolaniWorld:it ns11:is leolaniWorld:human .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:it_is_human_00028 a grasp:Attribution ;
+        rdfs:label "it_is_human_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat662_utterance1_char0-62 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:it_is_human_right_00028 a grasp:Attribution ;
+        rdfs:label "it_is_human_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat662_utterance1_char0-62 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:human a gaf:Instance ;
-        rdfs:label "human" ;
-        gaf:denotedIn leolaniTalk:chat662_utterance1_char0-62 .
+    leolaniTalk:it_is_right_00028 a grasp:Attribution ;
+        rdfs:label "it_is_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat662_utterance1_char0-62 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:human_right a gaf:Instance ;
-        rdfs:label "human-right" ;
-        gaf:denotedIn leolaniTalk:chat662_utterance1_char0-62 .
+    leolaniTalk:chat662_utterance1_char0-62 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat662_utterance1_char0-62" ;
+        gaf:containsDenotation leolaniWorld:human,
+            leolaniWorld:human_right,
+            leolaniWorld:it,
+            leolaniWorld:right ;
+        gaf:denotes leolaniWorld:it_is_human,
+            leolaniWorld:it_is_human_right,
+            leolaniWorld:it_is_right ;
+        grasp:hasAttribution leolaniTalk:it_is_human_00028,
+            leolaniTalk:it_is_human_right_00028,
+            leolaniTalk:it_is_right_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:14.326061"^^xml1:string,
+            "2024-06-05T23:24:14.326125"^^xml1:string,
+            "2024-06-05T23:24:14.326149"^^xml1:string ;
+        rdf:value "Women cannot be denied the right to vote, it is a human right."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat662_utterance1 .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat662_utterance1_char0-62 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat662_utterance1_char0-62 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -413,121 +479,55 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:it_is_human_right {
-    leolaniWorld:it ns11:is leolaniWorld:human_right .
+leolaniWorld:Claims {
+    leolaniWorld:it_is_human a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is_human" ;
+        gaf:denotedBy leolaniTalk:chat662_utterance1_char0-62 .
+
+    leolaniWorld:it_is_human_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is_human_right" ;
+        gaf:denotedBy leolaniTalk:chat662_utterance1_char0-62 .
+
+    leolaniWorld:it_is_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is_right" ;
+        gaf:denotedBy leolaniTalk:chat662_utterance1_char0-62 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:it_is_human_00028 a grasp:Attribution ;
-        rdfs:label "it_is_human_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat662_utterance1_char0-62 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_is_human_right_00028 a grasp:Attribution ;
-        rdfs:label "it_is_human_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat662_utterance1_char0-62 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_is_right_00028 a grasp:Attribution ;
-        rdfs:label "it_is_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat662_utterance1_char0-62 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat662_utterance1_char0-62 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat662_utterance1_char0-62" ;
-        gaf:containsDenotation leolaniWorld:human,
-            leolaniWorld:human_right,
-            leolaniWorld:it,
-            leolaniWorld:right ;
-        gaf:denotes leolaniWorld:it_is_human,
-            leolaniWorld:it_is_human_right,
-            leolaniWorld:it_is_right ;
-        grasp:hasAttribution leolaniTalk:it_is_human_00028,
-            leolaniTalk:it_is_human_right_00028,
-            leolaniTalk:it_is_right_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:14.326061"^^xml1:string,
-            "2024-06-05T23:24:14.326125"^^xml1:string,
-            "2024-06-05T23:24:14.326149"^^xml1:string ;
-        rdf:value "Women cannot be denied the right to vote, it is a human right."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat662_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:it_is_human {
+    leolaniWorld:it ns11:is leolaniWorld:human .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context141 a eps:Context ;
-        rdfs:label "context141" ;
-        hs:id "141"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat662 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "146"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat662 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat662" ;
-        hs:id "662"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat662_utterance1 .
-
-    leolaniTalk:chat662_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat662_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
-}
 
-leolaniWorld:it_is_right {
-    leolaniWorld:it ns11:is leolaniWorld:right .
+    leolaniWorld:human a gaf:Instance ;
+        rdfs:label "human" ;
+        gaf:denotedIn leolaniTalk:chat662_utterance1_char0-62 .
+
+    leolaniWorld:human_right a gaf:Instance ;
+        rdfs:label "human-right" ;
+        gaf:denotedIn leolaniTalk:chat662_utterance1_char0-62 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat662_utterance1_char0-62 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat662_utterance1_char0-62 .
 }
 

@@ -22,165 +22,258 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:European_Union_includes_Jewish_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "European_Union_includes_Jewish_people" ;
-        gaf:denotedBy leolaniTalk:chat490_utterance1_char0-87 .
-
-    leolaniWorld:European_Union_includes_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "European_Union_includes_people" ;
-        gaf:denotedBy leolaniTalk:chat490_utterance1_char0-87 .
-
-    leolaniWorld:Jews_control_Hollywood a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_control_Hollywood" ;
-        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
-
-    leolaniWorld:Jews_have_much_power a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_much_power" ;
-        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
-
-    leolaniWorld:Jews_have_power a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_power" ;
-        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
-
-    leolaniWorld:Jews_have_too_much_power a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_too_much_power" ;
-        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
-
-    leolaniWorld:They_have_nothing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_have_nothing" ;
-        gaf:denotedBy leolaniTalk:chat490_utterance0_char0-66 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_can-have_banned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_can-have_banned" ;
-        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
-
-    leolaniWorld:they_have_part a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_have_part" ;
-        gaf:denotedBy leolaniTalk:chat490_utterance1_char0-87 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:European_Union_includes_Jewish_people {
-    leolaniWorld:European_Union ns1:includes leolaniWorld:Jewish_people .
-}
-
-leolaniWorld:Jews_control_Hollywood {
-    leolaniWorld:Jews ns1:control leolaniWorld:Hollywood .
-}
-
-leolaniWorld:They_have_nothing {
-    leolaniWorld:They ns1:have leolaniWorld:nothing .
+leolaniWorld:they_have_part {
+    leolaniWorld:they ns1:have leolaniWorld:part .
 }
 
 leolaniWorld:European_Union_includes_people {
     leolaniWorld:European_Union ns1:includes leolaniWorld:people .
 }
 
-leolaniWorld:they_can-have_banned {
-    leolaniWorld:they ns1:can_have leolaniWorld:banned .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context4 a eps:Context ;
+        rdfs:label "context4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:European_Union a gaf:Instance ;
-        rdfs:label "european-union" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat490 .
 
-    leolaniWorld:Hollywood a gaf:Instance ;
-        rdfs:label "hollywood" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:Jewish_people a gaf:Instance ;
-        rdfs:label "jewish-people" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "210"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
+    leolaniTalk:chat490 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat490" ;
+        hs:id "490"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat490_utterance0,
+            leolaniTalk:chat490_utterance1,
+            leolaniTalk:chat490_utterance4 .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance0_char0-66 .
+    leolaniTalk:chat490_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat490_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:banned a gaf:Instance ;
-        rdfs:label "banned" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
+    leolaniTalk:chat490_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat490_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat490_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat490_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:much_power a gaf:Instance ;
-        rdfs:label "much-power" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance0_char0-66 .
-
-    leolaniWorld:part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87 .
-
-    leolaniWorld:power a gaf:Instance ;
-        rdfs:label "power" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87,
-            leolaniTalk:chat490_utterance4_char0-165 .
-
-    leolaniWorld:too_much_power a gaf:Instance ;
-        rdfs:label "too-much-power" ;
-        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
 }
 
 leolaniWorld:Jews_have_too_much_power {
     leolaniWorld:Jews ns1:have leolaniWorld:too_much_power .
 }
 
-leolaniWorld:they_have_part {
-    leolaniWorld:they ns1:have leolaniWorld:part .
+leolaniWorld:Jews_have_much_power {
+    leolaniWorld:Jews ns1:have leolaniWorld:much_power .
+}
+
+leolaniWorld:European_Union_includes_Jewish_people {
+    leolaniWorld:European_Union ns1:includes leolaniWorld:Jewish_people .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:Jews_have_power {
     leolaniWorld:Jews ns1:have leolaniWorld:power .
+}
+
+leolaniWorld:Jews_control_Hollywood {
+    leolaniWorld:Jews ns1:control leolaniWorld:Hollywood .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:European_Union_includes_Jewish_people_00028 a grasp:Attribution ;
+        rdfs:label "European_Union_includes_Jewish_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat490_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:European_Union_includes_people_00028 a grasp:Attribution ;
+        rdfs:label "European_Union_includes_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat490_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_control_Hollywood_00028 a grasp:Attribution ;
+        rdfs:label "Jews_control_Hollywood_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_much_power_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_much_power_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_power_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_power_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_too_much_power_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_too_much_power_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_have_nothing_00023 a grasp:Attribution ;
+        rdfs:label "They_have_nothing_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat490_utterance0_char0-66 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat490_utterance0_char0-66 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat490_utterance0_char0-66" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:nothing ;
+        gaf:denotes leolaniWorld:They_have_nothing ;
+        grasp:hasAttribution leolaniTalk:They_have_nothing_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:12:22.175835"^^xml1:string ;
+        rdf:value "Jews don't belong here. They have nothing to contribute to Europe."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat490_utterance0 .
+
+    leolaniTalk:they_can-have_banned_00028 a grasp:Attribution ;
+        rdfs:label "they_can-have_banned_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_have_part_00028 a grasp:Attribution ;
+        rdfs:label "they_have_part_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat490_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat490_utterance1_char0-87 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat490_utterance1_char0-87" ;
+        gaf:containsDenotation leolaniWorld:European_Union,
+            leolaniWorld:Jewish_people,
+            leolaniWorld:part,
+            leolaniWorld:people,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:European_Union_includes_Jewish_people,
+            leolaniWorld:European_Union_includes_people,
+            leolaniWorld:they_have_part ;
+        grasp:hasAttribution leolaniTalk:European_Union_includes_Jewish_people_00028,
+            leolaniTalk:European_Union_includes_people_00028,
+            leolaniTalk:they_have_part_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:12:22.284151"^^xml1:string,
+            "2024-06-05T23:12:22.284205"^^xml1:string,
+            "2024-06-05T23:12:22.284228"^^xml1:string ;
+        rdf:value "The European Union includes Jewish people and, they have a part to play in our society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat490_utterance1 .
+
+    leolaniTalk:chat490_utterance4_char0-165 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat490_utterance4_char0-165" ;
+        gaf:containsDenotation leolaniWorld:Hollywood,
+            leolaniWorld:Jews,
+            leolaniWorld:banned,
+            leolaniWorld:much_power,
+            leolaniWorld:power,
+            leolaniWorld:they,
+            leolaniWorld:too_much_power ;
+        gaf:denotes leolaniWorld:Jews_control_Hollywood,
+            leolaniWorld:Jews_have_much_power,
+            leolaniWorld:Jews_have_power,
+            leolaniWorld:Jews_have_too_much_power,
+            leolaniWorld:they_can-have_banned ;
+        grasp:hasAttribution leolaniTalk:Jews_control_Hollywood_00028,
+            leolaniTalk:Jews_have_much_power_00028,
+            leolaniTalk:Jews_have_power_00028,
+            leolaniTalk:Jews_have_too_much_power_00028,
+            leolaniTalk:they_can-have_banned_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:12:28.939220"^^xml1:string,
+            "2024-06-05T23:12:28.939274"^^xml1:string,
+            "2024-06-05T23:12:28.939298"^^xml1:string,
+            "2024-06-05T23:12:28.939321"^^xml1:string,
+            "2024-06-05T23:12:28.939347"^^xml1:string ;
+        rdf:value "I'm not talking about white people here! Jews have too much power, they can have movies banned and directors censured. This is proof that the Jews control Hollywood."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat490_utterance4 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -518,229 +611,136 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_can-have_banned {
+    leolaniWorld:they ns1:can_have leolaniWorld:banned .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:European_Union_includes_Jewish_people_00028 a grasp:Attribution ;
-        rdfs:label "European_Union_includes_Jewish_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat490_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:European_Union_includes_Jewish_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "European_Union_includes_Jewish_people" ;
+        gaf:denotedBy leolaniTalk:chat490_utterance1_char0-87 .
 
-    leolaniTalk:European_Union_includes_people_00028 a grasp:Attribution ;
-        rdfs:label "European_Union_includes_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat490_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:European_Union_includes_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "European_Union_includes_people" ;
+        gaf:denotedBy leolaniTalk:chat490_utterance1_char0-87 .
 
-    leolaniTalk:Jews_control_Hollywood_00028 a grasp:Attribution ;
-        rdfs:label "Jews_control_Hollywood_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_control_Hollywood a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_control_Hollywood" ;
+        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
 
-    leolaniTalk:Jews_have_much_power_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_much_power_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_have_much_power a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_much_power" ;
+        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
 
-    leolaniTalk:Jews_have_power_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_power_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_have_power a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_power" ;
+        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
 
-    leolaniTalk:Jews_have_too_much_power_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_too_much_power_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_have_too_much_power a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_too_much_power" ;
+        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
 
-    leolaniTalk:They_have_nothing_00023 a grasp:Attribution ;
-        rdfs:label "They_have_nothing_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat490_utterance0_char0-66 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:They_have_nothing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_nothing" ;
+        gaf:denotedBy leolaniTalk:chat490_utterance0_char0-66 .
 
-    leolaniTalk:chat490_utterance0_char0-66 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat490_utterance0_char0-66" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:nothing ;
-        gaf:denotes leolaniWorld:They_have_nothing ;
-        grasp:hasAttribution leolaniTalk:They_have_nothing_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:12:22.175835"^^xml1:string ;
-        rdf:value "Jews don't belong here. They have nothing to contribute to Europe."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat490_utterance0 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:they_can-have_banned_00028 a grasp:Attribution ;
-        rdfs:label "they_can-have_banned_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat490_utterance4_char0-165 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:they_have_part_00028 a grasp:Attribution ;
-        rdfs:label "they_have_part_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat490_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_can-have_banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_can-have_banned" ;
+        gaf:denotedBy leolaniTalk:chat490_utterance4_char0-165 .
 
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
+    leolaniWorld:they_have_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_have_part" ;
+        gaf:denotedBy leolaniTalk:chat490_utterance1_char0-87 .
 
-    leolaniTalk:chat490_utterance1_char0-87 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat490_utterance1_char0-87" ;
-        gaf:containsDenotation leolaniWorld:European_Union,
-            leolaniWorld:Jewish_people,
-            leolaniWorld:part,
-            leolaniWorld:people,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:European_Union_includes_Jewish_people,
-            leolaniWorld:European_Union_includes_people,
-            leolaniWorld:they_have_part ;
-        grasp:hasAttribution leolaniTalk:European_Union_includes_Jewish_people_00028,
-            leolaniTalk:European_Union_includes_people_00028,
-            leolaniTalk:they_have_part_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:12:22.284151"^^xml1:string,
-            "2024-06-05T23:12:22.284205"^^xml1:string,
-            "2024-06-05T23:12:22.284228"^^xml1:string ;
-        rdf:value "The European Union includes Jewish people and, they have a part to play in our society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat490_utterance1 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    leolaniTalk:chat490_utterance4_char0-165 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat490_utterance4_char0-165" ;
-        gaf:containsDenotation leolaniWorld:Hollywood,
-            leolaniWorld:Jews,
-            leolaniWorld:banned,
-            leolaniWorld:much_power,
-            leolaniWorld:power,
-            leolaniWorld:they,
-            leolaniWorld:too_much_power ;
-        gaf:denotes leolaniWorld:Jews_control_Hollywood,
-            leolaniWorld:Jews_have_much_power,
-            leolaniWorld:Jews_have_power,
-            leolaniWorld:Jews_have_too_much_power,
-            leolaniWorld:they_can-have_banned ;
-        grasp:hasAttribution leolaniTalk:Jews_control_Hollywood_00028,
-            leolaniTalk:Jews_have_much_power_00028,
-            leolaniTalk:Jews_have_power_00028,
-            leolaniTalk:Jews_have_too_much_power_00028,
-            leolaniTalk:they_can-have_banned_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:12:28.939220"^^xml1:string,
-            "2024-06-05T23:12:28.939274"^^xml1:string,
-            "2024-06-05T23:12:28.939298"^^xml1:string,
-            "2024-06-05T23:12:28.939321"^^xml1:string,
-            "2024-06-05T23:12:28.939347"^^xml1:string ;
-        rdf:value "I'm not talking about white people here! Jews have too much power, they can have movies banned and directors censured. This is proof that the Jews control Hollywood."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat490_utterance4 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context4 a eps:Context ;
-        rdfs:label "context4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:They_have_nothing {
+    leolaniWorld:They ns1:have leolaniWorld:nothing .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat490 .
+leolaniWorld:Instances {
+    leolaniWorld:European_Union a gaf:Instance ;
+        rdfs:label "european-union" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:Hollywood a gaf:Instance ;
+        rdfs:label "hollywood" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "210"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    leolaniWorld:Jewish_people a gaf:Instance ;
+        rdfs:label "jewish-people" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87 .
 
-    leolaniTalk:chat490 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat490" ;
-        hs:id "490"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat490_utterance0,
-            leolaniTalk:chat490_utterance1,
-            leolaniTalk:chat490_utterance4 .
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
 
-    leolaniTalk:chat490_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat490_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance0_char0-66 .
 
-    leolaniTalk:chat490_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat490_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat490_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat490_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:banned a gaf:Instance ;
+        rdfs:label "banned" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:Jews_have_much_power {
-    leolaniWorld:Jews ns1:have leolaniWorld:much_power .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:much_power a gaf:Instance ;
+        rdfs:label "much-power" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance0_char0-66 .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87 .
+
+    leolaniWorld:power a gaf:Instance ;
+        rdfs:label "power" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance1_char0-87,
+            leolaniTalk:chat490_utterance4_char0-165 .
+
+    leolaniWorld:too_much_power a gaf:Instance ;
+        rdfs:label "too-much-power" ;
+        gaf:denotedIn leolaniTalk:chat490_utterance4_char0-165 .
 }
 

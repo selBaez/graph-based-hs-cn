@@ -22,8 +22,91 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:That_has_anti-Semitic {
-    leolaniWorld:That ns1:has leolaniWorld:anti-Semitic .
+leolaniWorld:Jews_are_greedy {
+    leolaniWorld:Jews ns1:are leolaniWorld:greedy .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context32 a eps:Context ;
+        rdfs:label "context32" ;
+        hs:id "32"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat102 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "194"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat102 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat102" ;
+        hs:id "102"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat102_utterance0,
+            leolaniTalk:chat102_utterance1 .
+
+    leolaniTalk:chat102_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat102_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat102_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat102_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:ones_is-in_charge_of_banks {
+    leolaniWorld:ones ns1:is_in leolaniWorld:charge_of_banks .
+}
+
+leolaniWorld:Jews_are_so_greedy {
+    leolaniWorld:Jews ns1:are leolaniWorld:so_greedy .
 }
 
 leolaniTalk:Perspectives {
@@ -104,51 +187,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
-
-    leolaniWorld:That a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat102_utterance1_char0-117 .
-
-    leolaniWorld:anti-Semitic a gaf:Instance ;
-        rdfs:label "anti-semitic" ;
-        gaf:denotedIn leolaniTalk:chat102_utterance1_char0-117 .
-
-    leolaniWorld:charge_of_banks a gaf:Instance ;
-        rdfs:label "charge-of-banks" ;
-        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:greedy a gaf:Instance ;
-        rdfs:label "greedy" ;
-        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:ones a gaf:Instance ;
-        rdfs:label "ones" ;
-        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
-
-    leolaniWorld:so_greedy a gaf:Instance ;
-        rdfs:label "so-greedy" ;
-        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
-}
-
-leolaniWorld:Jews_are_so_greedy {
-    leolaniWorld:Jews ns1:are leolaniWorld:so_greedy .
 }
 
 leolaniWorld:Ontology {
@@ -486,81 +524,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context32 a eps:Context ;
-        rdfs:label "context32" ;
-        hs:id "32"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat102 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "194"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat102 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat102" ;
-        hs:id "102"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat102_utterance0,
-            leolaniTalk:chat102_utterance1 .
-
-    leolaniTalk:chat102_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat102_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat102_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat102_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:Jews_are_greedy {
-    leolaniWorld:Jews ns1:are leolaniWorld:greedy .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:Jews_are_greedy a gaf:Assertion,
             sem:Event ;
@@ -595,11 +558,48 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:ones_is-in_charge_of_banks {
-    leolaniWorld:ones ns1:is_in leolaniWorld:charge_of_banks .
+leolaniWorld:That_has_anti-Semitic {
+    leolaniWorld:That ns1:has leolaniWorld:anti-Semitic .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
+
+    leolaniWorld:That a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat102_utterance1_char0-117 .
+
+    leolaniWorld:anti-Semitic a gaf:Instance ;
+        rdfs:label "anti-semitic" ;
+        gaf:denotedIn leolaniTalk:chat102_utterance1_char0-117 .
+
+    leolaniWorld:charge_of_banks a gaf:Instance ;
+        rdfs:label "charge-of-banks" ;
+        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:greedy a gaf:Instance ;
+        rdfs:label "greedy" ;
+        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:ones a gaf:Instance ;
+        rdfs:label "ones" ;
+        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
+
+    leolaniWorld:so_greedy a gaf:Instance ;
+        rdfs:label "so-greedy" ;
+        gaf:denotedIn leolaniTalk:chat102_utterance0_char0-74 .
 }
 

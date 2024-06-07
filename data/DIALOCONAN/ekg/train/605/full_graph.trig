@@ -22,100 +22,187 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:it_has_decay {
-    leolaniWorld:it ns1:has leolaniWorld:decay .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:White_people_are-threatened-by_blacks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "White_people_are-threatened-by_blacks" ;
-        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
-
-    leolaniWorld:it_has_cultural a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_cultural" ;
-        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
-
-    leolaniWorld:it_has_cultural_decay a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_cultural_decay" ;
-        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
-
-    leolaniWorld:it_has_decay a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_decay" ;
-        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:niggas_are-enemies-of_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "niggas_are-enemies-of_people" ;
-        gaf:denotedBy leolaniTalk:chat605_utterance2_char0-49 .
-
-    leolaniWorld:people_are-threatened-by_blacks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_are-threatened-by_blacks" ;
-        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:niggas_are-enemies-of_people {
     leolaniWorld:niggas ns1:are_enemies_of leolaniWorld:people .
 }
 
-leolaniWorld:it_has_cultural {
-    leolaniWorld:it ns1:has leolaniWorld:cultural .
+leolaniTalk:Interactions {
+    leolaniContext:context157 a eps:Context ;
+        rdfs:label "context157" ;
+        hs:id "157"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat605 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "89"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat605 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat605" ;
+        hs:id "605"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat605_utterance0,
+            leolaniTalk:chat605_utterance2 .
+
+    leolaniTalk:chat605_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat605_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat605_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat605_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:it_has_decay {
+    leolaniWorld:it ns1:has leolaniWorld:decay .
 }
 
 leolaniWorld:it_has_cultural_decay {
     leolaniWorld:it ns1:has leolaniWorld:cultural_decay .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:White_people a gaf:Instance ;
-        rdfs:label "white-people" ;
-        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
+leolaniWorld:White_people_are-threatened-by_blacks {
+    leolaniWorld:White_people ns1:are_threatened_by leolaniWorld:blacks .
+}
 
-    leolaniWorld:blacks a gaf:Instance ;
-        rdfs:label "blacks" ;
-        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
+leolaniTalk:Perspectives {
+    leolaniTalk:White_people_are-threatened-by_blacks_00022 a grasp:Attribution ;
+        rdfs:label "White_people_are-threatened-by_blacks_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cultural a gaf:Instance ;
-        rdfs:label "cultural" ;
-        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
+    leolaniTalk:chat605_utterance2_char0-49 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat605_utterance2_char0-49" ;
+        gaf:containsDenotation leolaniWorld:niggas,
+            leolaniWorld:people ;
+        gaf:denotes leolaniWorld:niggas_are-enemies-of_people ;
+        grasp:hasAttribution leolaniTalk:niggas_are-enemies-of_people_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:02.615390"^^xml1:string ;
+        rdf:value "We can! The niggas are all enemies of the people."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat605_utterance2 .
 
-    leolaniWorld:cultural_decay a gaf:Instance ;
-        rdfs:label "cultural-decay" ;
-        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
+    leolaniTalk:it_has_cultural_00022 a grasp:Attribution ;
+        rdfs:label "it_has_cultural_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:decay a gaf:Instance ;
-        rdfs:label "decay" ;
-        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
+    leolaniTalk:it_has_cultural_decay_00022 a grasp:Attribution ;
+        rdfs:label "it_has_cultural_decay_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:it_has_decay_00022 a grasp:Attribution ;
+        rdfs:label "it_has_decay_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
+    leolaniTalk:niggas_are-enemies-of_people_00028 a grasp:Attribution ;
+        rdfs:label "niggas_are-enemies-of_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat605_utterance2_char0-49 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:people_are-threatened-by_blacks_00022 a grasp:Attribution ;
+        rdfs:label "people_are-threatened-by_blacks_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:niggas a gaf:Instance ;
-        rdfs:label "niggas" ;
-        gaf:denotedIn leolaniTalk:chat605_utterance2_char0-49 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68,
-            leolaniTalk:chat605_utterance2_char0-49 .
+    leolaniTalk:chat605_utterance0_char0-68 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat605_utterance0_char0-68" ;
+        gaf:containsDenotation leolaniWorld:White_people,
+            leolaniWorld:blacks,
+            leolaniWorld:cultural,
+            leolaniWorld:cultural_decay,
+            leolaniWorld:decay,
+            leolaniWorld:it,
+            leolaniWorld:people ;
+        gaf:denotes leolaniWorld:White_people_are-threatened-by_blacks,
+            leolaniWorld:it_has_cultural,
+            leolaniWorld:it_has_cultural_decay,
+            leolaniWorld:it_has_decay,
+            leolaniWorld:people_are-threatened-by_blacks ;
+        grasp:hasAttribution leolaniTalk:White_people_are-threatened-by_blacks_00022,
+            leolaniTalk:it_has_cultural_00022,
+            leolaniTalk:it_has_cultural_decay_00022,
+            leolaniTalk:it_has_decay_00022,
+            leolaniTalk:people_are-threatened-by_blacks_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:02.460985"^^xml1:string,
+            "2024-06-05T23:10:02.461050"^^xml1:string,
+            "2024-06-05T23:10:02.461073"^^xml1:string,
+            "2024-06-05T23:10:02.461094"^^xml1:string,
+            "2024-06-05T23:10:02.461115"^^xml1:string ;
+        rdf:value "White people are threatened by the blacks and it's a cultural decay."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat605_utterance0 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:people_are-threatened-by_blacks {
@@ -457,174 +544,87 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:White_people_are-threatened-by_blacks {
-    leolaniWorld:White_people ns1:are_threatened_by leolaniWorld:blacks .
+leolaniWorld:it_has_cultural {
+    leolaniWorld:it ns1:has leolaniWorld:cultural .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:White_people_are-threatened-by_blacks a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "White_people_are-threatened-by_blacks" ;
+        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
+
+    leolaniWorld:it_has_cultural a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_cultural" ;
+        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
+
+    leolaniWorld:it_has_cultural_decay a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_cultural_decay" ;
+        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
+
+    leolaniWorld:it_has_decay a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_decay" ;
+        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:niggas_are-enemies-of_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "niggas_are-enemies-of_people" ;
+        gaf:denotedBy leolaniTalk:chat605_utterance2_char0-49 .
+
+    leolaniWorld:people_are-threatened-by_blacks a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-threatened-by_blacks" ;
+        gaf:denotedBy leolaniTalk:chat605_utterance0_char0-68 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:White_people_are-threatened-by_blacks_00022 a grasp:Attribution ;
-        rdfs:label "White_people_are-threatened-by_blacks_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:White_people a gaf:Instance ;
+        rdfs:label "white-people" ;
+        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
 
-    leolaniTalk:chat605_utterance2_char0-49 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat605_utterance2_char0-49" ;
-        gaf:containsDenotation leolaniWorld:niggas,
-            leolaniWorld:people ;
-        gaf:denotes leolaniWorld:niggas_are-enemies-of_people ;
-        grasp:hasAttribution leolaniTalk:niggas_are-enemies-of_people_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:02.615390"^^xml1:string ;
-        rdf:value "We can! The niggas are all enemies of the people."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat605_utterance2 .
+    leolaniWorld:blacks a gaf:Instance ;
+        rdfs:label "blacks" ;
+        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
 
-    leolaniTalk:it_has_cultural_00022 a grasp:Attribution ;
-        rdfs:label "it_has_cultural_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:cultural a gaf:Instance ;
+        rdfs:label "cultural" ;
+        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
 
-    leolaniTalk:it_has_cultural_decay_00022 a grasp:Attribution ;
-        rdfs:label "it_has_cultural_decay_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:cultural_decay a gaf:Instance ;
+        rdfs:label "cultural-decay" ;
+        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
 
-    leolaniTalk:it_has_decay_00022 a grasp:Attribution ;
-        rdfs:label "it_has_decay_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:niggas_are-enemies-of_people_00028 a grasp:Attribution ;
-        rdfs:label "niggas_are-enemies-of_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat605_utterance2_char0-49 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_are-threatened-by_blacks_00022 a grasp:Attribution ;
-        rdfs:label "people_are-threatened-by_blacks_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat605_utterance0_char0-68 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat605_utterance0_char0-68 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat605_utterance0_char0-68" ;
-        gaf:containsDenotation leolaniWorld:White_people,
-            leolaniWorld:blacks,
-            leolaniWorld:cultural,
-            leolaniWorld:cultural_decay,
-            leolaniWorld:decay,
-            leolaniWorld:it,
-            leolaniWorld:people ;
-        gaf:denotes leolaniWorld:White_people_are-threatened-by_blacks,
-            leolaniWorld:it_has_cultural,
-            leolaniWorld:it_has_cultural_decay,
-            leolaniWorld:it_has_decay,
-            leolaniWorld:people_are-threatened-by_blacks ;
-        grasp:hasAttribution leolaniTalk:White_people_are-threatened-by_blacks_00022,
-            leolaniTalk:it_has_cultural_00022,
-            leolaniTalk:it_has_cultural_decay_00022,
-            leolaniTalk:it_has_decay_00022,
-            leolaniTalk:people_are-threatened-by_blacks_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:02.460985"^^xml1:string,
-            "2024-06-05T23:10:02.461050"^^xml1:string,
-            "2024-06-05T23:10:02.461073"^^xml1:string,
-            "2024-06-05T23:10:02.461094"^^xml1:string,
-            "2024-06-05T23:10:02.461115"^^xml1:string ;
-        rdf:value "White people are threatened by the blacks and it's a cultural decay."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat605_utterance0 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context157 a eps:Context ;
-        rdfs:label "context157" ;
-        hs:id "157"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat605 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "89"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat605 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat605" ;
-        hs:id "605"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat605_utterance0,
-            leolaniTalk:chat605_utterance2 .
-
-    leolaniTalk:chat605_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat605_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat605_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat605_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:decay a gaf:Instance ;
+        rdfs:label "decay" ;
+        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:niggas a gaf:Instance ;
+        rdfs:label "niggas" ;
+        gaf:denotedIn leolaniTalk:chat605_utterance2_char0-49 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat605_utterance0_char0-68,
+            leolaniTalk:chat605_utterance2_char0-49 .
 }
 

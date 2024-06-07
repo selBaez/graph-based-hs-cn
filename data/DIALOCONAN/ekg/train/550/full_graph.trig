@@ -22,71 +22,157 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context92 a eps:Context ;
+        rdfs:label "context92" ;
+        hs:id "92"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat550 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "124"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat550 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat550" ;
+        hs:id "550"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat550_utterance0,
+            leolaniTalk:chat550_utterance2 .
+
+    leolaniTalk:chat550_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat550_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat550_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat550_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:people_are_rapists {
     leolaniWorld:people ns1:are leolaniWorld:rapists .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:It_has_clear a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_clear" ;
-        gaf:denotedBy leolaniTalk:chat550_utterance2_char0-64 .
-
-    leolaniWorld:black_people_are_rapists a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "black_people_are_rapists" ;
-        gaf:denotedBy leolaniTalk:chat550_utterance0_char0-29,
-            leolaniTalk:chat550_utterance2_char0-64 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_are_rapists a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_are_rapists" ;
-        gaf:denotedBy leolaniTalk:chat550_utterance2_char0-64 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:It_has_clear {
-    leolaniWorld:It ns1:has leolaniWorld:clear .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:black_people_are_rapists {
     leolaniWorld:black_people ns1:are leolaniWorld:rapists .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat550_utterance2_char0-64 .
+leolaniTalk:Perspectives {
+    leolaniTalk:It_has_clear_00012 a grasp:Attribution ;
+        rdfs:label "It_has_clear_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat550_utterance2_char0-64 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:black_people a gaf:Instance ;
-        rdfs:label "black-people" ;
-        gaf:denotedIn leolaniTalk:chat550_utterance0_char0-29,
-            leolaniTalk:chat550_utterance2_char0-64 .
+    leolaniTalk:black_people_are_rapists_00012 a grasp:Attribution ;
+        rdfs:label "black_people_are_rapists_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat550_utterance2_char0-64 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:clear a gaf:Instance ;
-        rdfs:label "clear" ;
-        gaf:denotedIn leolaniTalk:chat550_utterance2_char0-64 .
+    leolaniTalk:black_people_are_rapists_00028 a grasp:Attribution ;
+        rdfs:label "black_people_are_rapists_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat550_utterance0_char0-29 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat550_utterance0_char0-29 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat550_utterance0_char0-29" ;
+        gaf:containsDenotation leolaniWorld:black_people,
+            leolaniWorld:rapists ;
+        gaf:denotes leolaniWorld:black_people_are_rapists ;
+        grasp:hasAttribution leolaniTalk:black_people_are_rapists_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:52:40.643733"^^xml1:string ;
+        rdf:value "All black people are rapists."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat550_utterance0 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:people_are_rapists_00012 a grasp:Attribution ;
+        rdfs:label "people_are_rapists_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat550_utterance2_char0-64 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat550_utterance2_char0-64 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:rapists a gaf:Instance ;
-        rdfs:label "rapists" ;
-        gaf:denotedIn leolaniTalk:chat550_utterance0_char0-29,
-            leolaniTalk:chat550_utterance2_char0-64 .
+    leolaniTalk:chat550_utterance2_char0-64 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat550_utterance2_char0-64" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:black_people,
+            leolaniWorld:clear,
+            leolaniWorld:people,
+            leolaniWorld:rapists ;
+        gaf:denotes leolaniWorld:It_has_clear,
+            leolaniWorld:black_people_are_rapists,
+            leolaniWorld:people_are_rapists ;
+        grasp:hasAttribution leolaniTalk:It_has_clear_00012,
+            leolaniTalk:black_people_are_rapists_00012,
+            leolaniTalk:people_are_rapists_00012 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:52:40.838311"^^xml1:string,
+            "2024-06-05T23:52:40.838378"^^xml1:string,
+            "2024-06-05T23:52:40.838401"^^xml1:string ;
+        rdf:value "I couldn't agree less. It's clear that black people are rapists."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat550_utterance2 .
+
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -424,148 +510,62 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:It_has_clear a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_clear" ;
+        gaf:denotedBy leolaniTalk:chat550_utterance2_char0-64 .
+
+    leolaniWorld:black_people_are_rapists a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "black_people_are_rapists" ;
+        gaf:denotedBy leolaniTalk:chat550_utterance0_char0-29,
+            leolaniTalk:chat550_utterance2_char0-64 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_are_rapists a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_rapists" ;
+        gaf:denotedBy leolaniTalk:chat550_utterance2_char0-64 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:It_has_clear_00012 a grasp:Attribution ;
-        rdfs:label "It_has_clear_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat550_utterance2_char0-64 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:black_people_are_rapists_00012 a grasp:Attribution ;
-        rdfs:label "black_people_are_rapists_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat550_utterance2_char0-64 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:black_people_are_rapists_00028 a grasp:Attribution ;
-        rdfs:label "black_people_are_rapists_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat550_utterance0_char0-29 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat550_utterance0_char0-29 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat550_utterance0_char0-29" ;
-        gaf:containsDenotation leolaniWorld:black_people,
-            leolaniWorld:rapists ;
-        gaf:denotes leolaniWorld:black_people_are_rapists ;
-        grasp:hasAttribution leolaniTalk:black_people_are_rapists_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:52:40.643733"^^xml1:string ;
-        rdf:value "All black people are rapists."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat550_utterance0 .
-
-    leolaniTalk:people_are_rapists_00012 a grasp:Attribution ;
-        rdfs:label "people_are_rapists_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat550_utterance2_char0-64 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat550_utterance2_char0-64 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat550_utterance2_char0-64" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:black_people,
-            leolaniWorld:clear,
-            leolaniWorld:people,
-            leolaniWorld:rapists ;
-        gaf:denotes leolaniWorld:It_has_clear,
-            leolaniWorld:black_people_are_rapists,
-            leolaniWorld:people_are_rapists ;
-        grasp:hasAttribution leolaniTalk:It_has_clear_00012,
-            leolaniTalk:black_people_are_rapists_00012,
-            leolaniTalk:people_are_rapists_00012 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:52:40.838311"^^xml1:string,
-            "2024-06-05T23:52:40.838378"^^xml1:string,
-            "2024-06-05T23:52:40.838401"^^xml1:string ;
-        rdf:value "I couldn't agree less. It's clear that black people are rapists."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat550_utterance2 .
-
-    graspe:APPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "APPROVAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:It_has_clear {
+    leolaniWorld:It ns1:has leolaniWorld:clear .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context92 a eps:Context ;
-        rdfs:label "context92" ;
-        hs:id "92"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat550_utterance2_char0-64 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat550 .
+    leolaniWorld:black_people a gaf:Instance ;
+        rdfs:label "black-people" ;
+        gaf:denotedIn leolaniTalk:chat550_utterance0_char0-29,
+            leolaniTalk:chat550_utterance2_char0-64 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "124"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat550 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat550" ;
-        hs:id "550"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat550_utterance0,
-            leolaniTalk:chat550_utterance2 .
-
-    leolaniTalk:chat550_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat550_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat550_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat550_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:clear a gaf:Instance ;
+        rdfs:label "clear" ;
+        gaf:denotedIn leolaniTalk:chat550_utterance2_char0-64 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat550_utterance2_char0-64 .
+
+    leolaniWorld:rapists a gaf:Instance ;
+        rdfs:label "rapists" ;
+        gaf:denotedIn leolaniTalk:chat550_utterance0_char0-29,
+            leolaniTalk:chat550_utterance2_char0-64 .
 }
 

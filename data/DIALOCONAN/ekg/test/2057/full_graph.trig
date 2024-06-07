@@ -22,8 +22,102 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:you_are-considered_inferior {
-    leolaniWorld:you ns1:are_considered leolaniWorld:inferior .
+leolaniWorld:you_are_considered {
+    leolaniWorld:you ns1:are leolaniWorld:considered .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context185 a eps:Context ;
+        rdfs:label "context185" ;
+        hs:id "185"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2057 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "82"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2057 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2057" ;
+        hs:id "2057"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2057_utterance0,
+            leolaniTalk:chat2057_utterance1,
+            leolaniTalk:chat2057_utterance4 .
+
+    leolaniTalk:chat2057_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2057_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2057_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2057_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2057_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2057_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:people_are-born_equal {
+    leolaniWorld:people ns1:are_born leolaniWorld:equal .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:you_be-rejected-by_society {
+    leolaniWorld:you ns1:be_rejected_by leolaniWorld:society .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:blacks_are_rapists {
+    leolaniWorld:blacks ns1:are leolaniWorld:rapists .
 }
 
 leolaniTalk:Perspectives {
@@ -144,63 +238,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:blacks a gaf:Instance ;
-        rdfs:label "blacks" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance0_char0-23 .
-
-    leolaniWorld:born a gaf:Instance ;
-        rdfs:label "born" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance1_char0-85 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:considered a gaf:Instance ;
-        rdfs:label "considered" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance4_char0-158 .
-
-    leolaniWorld:equal a gaf:Instance ;
-        rdfs:label "equal" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance1_char0-85 .
-
-    leolaniWorld:equal_to_law a gaf:Instance ;
-        rdfs:label "equal-to-law" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance1_char0-85 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:inferior a gaf:Instance ;
-        rdfs:label "inferior" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance4_char0-158 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance1_char0-85 .
-
-    leolaniWorld:rapists a gaf:Instance ;
-        rdfs:label "rapists" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance0_char0-23 .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance4_char0-158 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat2057_utterance4_char0-158 .
-}
-
-leolaniWorld:you_be-rejected-by_society {
-    leolaniWorld:you ns1:be_rejected_by leolaniWorld:society .
 }
 
 leolaniWorld:Ontology {
@@ -542,90 +579,12 @@ leolaniWorld:people_are-born_equal_to_law {
     leolaniWorld:people ns1:are_born leolaniWorld:equal_to_law .
 }
 
+leolaniWorld:you_are-considered_inferior {
+    leolaniWorld:you ns1:are_considered leolaniWorld:inferior .
+}
+
 leolaniWorld:people_are_born {
     leolaniWorld:people ns1:are leolaniWorld:born .
-}
-
-leolaniWorld:blacks_are_rapists {
-    leolaniWorld:blacks ns1:are leolaniWorld:rapists .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context185 a eps:Context ;
-        rdfs:label "context185" ;
-        hs:id "185"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2057 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "82"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2057 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2057" ;
-        hs:id "2057"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2057_utterance0,
-            leolaniTalk:chat2057_utterance1,
-            leolaniTalk:chat2057_utterance4 .
-
-    leolaniTalk:chat2057_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2057_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2057_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2057_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2057_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2057_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
 }
 
 leolaniWorld:Claims {
@@ -677,15 +636,56 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:people_are-born_equal {
-    leolaniWorld:people ns1:are_born leolaniWorld:equal .
-}
+leolaniWorld:Instances {
+    leolaniWorld:blacks a gaf:Instance ;
+        rdfs:label "blacks" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance0_char0-23 .
 
-leolaniWorld:you_are_considered {
-    leolaniWorld:you ns1:are leolaniWorld:considered .
-}
+    leolaniWorld:born a gaf:Instance ;
+        rdfs:label "born" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance1_char0-85 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:considered a gaf:Instance ;
+        rdfs:label "considered" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance4_char0-158 .
+
+    leolaniWorld:equal a gaf:Instance ;
+        rdfs:label "equal" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance1_char0-85 .
+
+    leolaniWorld:equal_to_law a gaf:Instance ;
+        rdfs:label "equal-to-law" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance1_char0-85 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:inferior a gaf:Instance ;
+        rdfs:label "inferior" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance4_char0-158 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance1_char0-85 .
+
+    leolaniWorld:rapists a gaf:Instance ;
+        rdfs:label "rapists" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance0_char0-23 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance4_char0-158 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat2057_utterance4_char0-158 .
 }
 

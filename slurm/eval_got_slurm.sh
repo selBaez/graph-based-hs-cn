@@ -16,7 +16,7 @@ cd ./../src
 
 # Run the actual experiment.
 CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node 4 \
-  train_model.py \
+  evaluate_model.py \
   --data_root ./../data --dataset DIALOCONAN --got_root got/ \
   --output_dir ./../experiments/DIALOCONAN \
   --model declare-lab/flan-alpaca-base \

@@ -25,129 +25,217 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ns1:s_about_sexualised {
-    leolaniWorld:it ns2:s leolaniWorld:about_sexualised .
-}
-
-ns1:s_sexualised {
-    leolaniWorld:it ns2:s leolaniWorld:sexualised .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:It_s-shame_have a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_s-shame_have" ;
-        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
-
-    leolaniWorld:It_s-shame_to_have a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_s-shame_to_have" ;
-        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
-
-    leolaniWorld:celebration_celebration-of_sexualization a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "celebration_celebration-of_sexualization" ;
-        gaf:denotedBy leolaniTalk:chat2580_utterance3_char0-86 .
-
-    leolaniWorld:diversity_of-celebration-is_not_celebration a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "diversity_of-celebration-is_not_celebration" ;
-        gaf:denotedBy leolaniTalk:chat2580_utterance3_char0-86 .
-
-    ns1:s_about_sexualised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_’s_about_sexualised" ;
-        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
-
-    ns1:s_sexualised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_’s_sexualised" ;
-        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
-
-    leolaniWorld:kids_being_about_sexualised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "kids_being_about_sexualised" ;
-        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
-
-    leolaniWorld:kids_being_sexualised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "kids_being_sexualised" ;
-        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:It_s-shame_to_have {
-    leolaniWorld:It ns13:s_shame leolaniWorld:to_have .
-}
-
 leolaniWorld:It_s-shame_have {
     leolaniWorld:It ns13:s_shame leolaniWorld:have .
+}
+
+leolaniWorld:kids_being_sexualised {
+    leolaniWorld:kids ns12:being leolaniWorld:sexualised .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context171 a eps:Context ;
+        rdfs:label "context171" ;
+        hs:id "171"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2580 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "195"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2580 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2580" ;
+        hs:id "2580"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2580_utterance2,
+            leolaniTalk:chat2580_utterance3 .
+
+    leolaniTalk:chat2580_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2580_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2580_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2580_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:celebration_celebration-of_sexualization {
+    leolaniWorld:celebration ns12:celebration_of leolaniWorld:sexualization .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:diversity_of-celebration-is_not_celebration {
     leolaniWorld:diversity ns12:of_celebration_is leolaniWorld:not_celebration .
 }
 
-leolaniWorld:kids_being_about_sexualised {
-    leolaniWorld:kids ns12:being leolaniWorld:about_sexualised .
+leolaniWorld:It_s-shame_to_have {
+    leolaniWorld:It ns13:s_shame leolaniWorld:to_have .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+leolaniTalk:Perspectives {
+    leolaniTalk:It_s-shame_have_00020 a grasp:Attribution ;
+        rdfs:label "It_s-shame_have_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:about_sexualised a gaf:Instance ;
-        rdfs:label "about-sexualised" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+    leolaniTalk:It_s-shame_to_have_00020 a grasp:Attribution ;
+        rdfs:label "It_s-shame_to_have_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:celebration a gaf:Instance ;
-        rdfs:label "celebration" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance3_char0-86 .
+    leolaniTalk:celebration_celebration-of_sexualization_00028 a grasp:Attribution ;
+        rdfs:label "celebration_celebration-of_sexualization_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2580_utterance3_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:diversity a gaf:Instance ;
-        rdfs:label "diversity" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance3_char0-86 .
+    leolaniTalk:diversity_of-celebration-is_not_celebration_00028 a grasp:Attribution ;
+        rdfs:label "diversity_of-celebration-is_not_celebration_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2580_utterance3_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:have a gaf:Instance ;
-        rdfs:label "have" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+    <http://cltl.nl/leolani/talk/it_’s_about_sexualised_00020> a grasp:Attribution ;
+        rdfs:label "it_’s_about_sexualised_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    <http://cltl.nl/leolani/talk/it_’s_sexualised_00020> a grasp:Attribution ;
+        rdfs:label "it_’s_sexualised_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+    leolaniTalk:kids_being_about_sexualised_00020 a grasp:Attribution ;
+        rdfs:label "kids_being_about_sexualised_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:kids a gaf:Instance ;
-        rdfs:label "kids" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+    leolaniTalk:kids_being_sexualised_00020 a grasp:Attribution ;
+        rdfs:label "kids_being_sexualised_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat2580_utterance3_char0-86 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2580_utterance3_char0-86" ;
+        gaf:containsDenotation leolaniWorld:celebration,
+            leolaniWorld:diversity,
+            leolaniWorld:not_celebration,
+            leolaniWorld:sexualization ;
+        gaf:denotes leolaniWorld:celebration_celebration-of_sexualization,
+            leolaniWorld:diversity_of-celebration-is_not_celebration ;
+        grasp:hasAttribution leolaniTalk:celebration_celebration-of_sexualization_00028,
+            leolaniTalk:diversity_of-celebration-is_not_celebration_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:28.331126"^^xml1:string,
+            "2024-06-05T23:08:28.331181"^^xml1:string ;
+        rdf:value "Pride is a celebration of diversity and inclusion, not a celebration of sexualization."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2580_utterance3 .
 
-    leolaniWorld:not_celebration a gaf:Instance ;
-        rdfs:label "not-celebration" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance3_char0-86 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:sexualised a gaf:Instance ;
-        rdfs:label "sexualised" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+    leolaniTalk:chat2580_utterance2_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2580_utterance2_char0-77" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:about_sexualised,
+            leolaniWorld:have,
+            leolaniWorld:it,
+            leolaniWorld:kids,
+            leolaniWorld:sexualised,
+            leolaniWorld:to_have ;
+        gaf:denotes leolaniWorld:It_s-shame_have,
+            leolaniWorld:It_s-shame_to_have,
+            ns1:s_about_sexualised,
+            ns1:s_sexualised,
+            leolaniWorld:kids_being_about_sexualised,
+            leolaniWorld:kids_being_sexualised ;
+        grasp:hasAttribution leolaniTalk:It_s-shame_have_00020,
+            leolaniTalk:It_s-shame_to_have_00020,
+            <http://cltl.nl/leolani/talk/it_’s_about_sexualised_00020>,
+            <http://cltl.nl/leolani/talk/it_’s_sexualised_00020>,
+            leolaniTalk:kids_being_about_sexualised_00020,
+            leolaniTalk:kids_being_sexualised_00020 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:28.247413"^^xml1:string,
+            "2024-06-05T23:08:28.247476"^^xml1:string,
+            "2024-06-05T23:08:28.247501"^^xml1:string,
+            "2024-06-05T23:08:28.247524"^^xml1:string,
+            "2024-06-05T23:08:28.247546"^^xml1:string,
+            "2024-06-05T23:08:28.247569"^^xml1:string ;
+        rdf:value "No, it’s about the kids being sexualised! It's a shame to have Pride as such."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2580_utterance2 .
 
-    leolaniWorld:sexualization a gaf:Instance ;
-        rdfs:label "sexualization" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance3_char0-86 .
+    graspe:DISGUST a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISGUST" .
 
-    leolaniWorld:to_have a gaf:Instance ;
-        rdfs:label "to-have" ;
-        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+ns1:s_about_sexualised {
+    leolaniWorld:it ns2:s leolaniWorld:about_sexualised .
 }
 
 leolaniWorld:Ontology {
@@ -485,200 +573,112 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+ns1:s_sexualised {
+    leolaniWorld:it ns2:s leolaniWorld:sexualised .
 }
 
-leolaniWorld:celebration_celebration-of_sexualization {
-    leolaniWorld:celebration ns12:celebration_of leolaniWorld:sexualization .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:It_s-shame_have_00020 a grasp:Attribution ;
-        rdfs:label "It_s-shame_have_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_s-shame_to_have_00020 a grasp:Attribution ;
-        rdfs:label "It_s-shame_to_have_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:celebration_celebration-of_sexualization_00028 a grasp:Attribution ;
-        rdfs:label "celebration_celebration-of_sexualization_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2580_utterance3_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:diversity_of-celebration-is_not_celebration_00028 a grasp:Attribution ;
-        rdfs:label "diversity_of-celebration-is_not_celebration_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2580_utterance3_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/it_’s_about_sexualised_00020> a grasp:Attribution ;
-        rdfs:label "it_’s_about_sexualised_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/it_’s_sexualised_00020> a grasp:Attribution ;
-        rdfs:label "it_’s_sexualised_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:kids_being_about_sexualised_00020 a grasp:Attribution ;
-        rdfs:label "kids_being_about_sexualised_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:kids_being_sexualised_00020 a grasp:Attribution ;
-        rdfs:label "kids_being_sexualised_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2580_utterance2_char0-77 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2580_utterance3_char0-86 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2580_utterance3_char0-86" ;
-        gaf:containsDenotation leolaniWorld:celebration,
-            leolaniWorld:diversity,
-            leolaniWorld:not_celebration,
-            leolaniWorld:sexualization ;
-        gaf:denotes leolaniWorld:celebration_celebration-of_sexualization,
-            leolaniWorld:diversity_of-celebration-is_not_celebration ;
-        grasp:hasAttribution leolaniTalk:celebration_celebration-of_sexualization_00028,
-            leolaniTalk:diversity_of-celebration-is_not_celebration_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:28.331126"^^xml1:string,
-            "2024-06-05T23:08:28.331181"^^xml1:string ;
-        rdf:value "Pride is a celebration of diversity and inclusion, not a celebration of sexualization."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2580_utterance3 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat2580_utterance2_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2580_utterance2_char0-77" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:about_sexualised,
-            leolaniWorld:have,
-            leolaniWorld:it,
-            leolaniWorld:kids,
-            leolaniWorld:sexualised,
-            leolaniWorld:to_have ;
-        gaf:denotes leolaniWorld:It_s-shame_have,
-            leolaniWorld:It_s-shame_to_have,
-            ns1:s_about_sexualised,
-            ns1:s_sexualised,
-            leolaniWorld:kids_being_about_sexualised,
-            leolaniWorld:kids_being_sexualised ;
-        grasp:hasAttribution leolaniTalk:It_s-shame_have_00020,
-            leolaniTalk:It_s-shame_to_have_00020,
-            <http://cltl.nl/leolani/talk/it_’s_about_sexualised_00020>,
-            <http://cltl.nl/leolani/talk/it_’s_sexualised_00020>,
-            leolaniTalk:kids_being_about_sexualised_00020,
-            leolaniTalk:kids_being_sexualised_00020 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:28.247413"^^xml1:string,
-            "2024-06-05T23:08:28.247476"^^xml1:string,
-            "2024-06-05T23:08:28.247501"^^xml1:string,
-            "2024-06-05T23:08:28.247524"^^xml1:string,
-            "2024-06-05T23:08:28.247546"^^xml1:string,
-            "2024-06-05T23:08:28.247569"^^xml1:string ;
-        rdf:value "No, it’s about the kids being sexualised! It's a shame to have Pride as such."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2580_utterance2 .
-
-    graspe:DISGUST a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISGUST" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:kids_being_sexualised {
-    leolaniWorld:kids ns12:being leolaniWorld:sexualised .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context171 a eps:Context ;
-        rdfs:label "context171" ;
-        hs:id "171"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2580 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "195"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2580 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:It_s-shame_have a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2580" ;
-        hs:id "2580"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2580_utterance2,
-            leolaniTalk:chat2580_utterance3 .
+        rdfs:label "It_s-shame_have" ;
+        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
 
-    leolaniTalk:chat2580_utterance2 a grasp:Utterance,
+    leolaniWorld:It_s-shame_to_have a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2580_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "It_s-shame_to_have" ;
+        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
 
-    leolaniTalk:chat2580_utterance3 a grasp:Utterance,
+    leolaniWorld:celebration_celebration-of_sexualization a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2580_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "celebration_celebration-of_sexualization" ;
+        gaf:denotedBy leolaniTalk:chat2580_utterance3_char0-86 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:diversity_of-celebration-is_not_celebration a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "diversity_of-celebration-is_not_celebration" ;
+        gaf:denotedBy leolaniTalk:chat2580_utterance3_char0-86 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    ns1:s_about_sexualised a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_’s_about_sexualised" ;
+        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
+
+    ns1:s_sexualised a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_’s_sexualised" ;
+        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
+
+    leolaniWorld:kids_being_about_sexualised a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "kids_being_about_sexualised" ;
+        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
+
+    leolaniWorld:kids_being_sexualised a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "kids_being_sexualised" ;
+        gaf:denotedBy leolaniTalk:chat2580_utterance2_char0-77 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:kids_being_about_sexualised {
+    leolaniWorld:kids ns12:being leolaniWorld:about_sexualised .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+
+    leolaniWorld:about_sexualised a gaf:Instance ;
+        rdfs:label "about-sexualised" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+
+    leolaniWorld:celebration a gaf:Instance ;
+        rdfs:label "celebration" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance3_char0-86 .
+
+    leolaniWorld:diversity a gaf:Instance ;
+        rdfs:label "diversity" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance3_char0-86 .
+
+    leolaniWorld:have a gaf:Instance ;
+        rdfs:label "have" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+
+    leolaniWorld:kids a gaf:Instance ;
+        rdfs:label "kids" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:not_celebration a gaf:Instance ;
+        rdfs:label "not-celebration" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance3_char0-86 .
+
+    leolaniWorld:sexualised a gaf:Instance ;
+        rdfs:label "sexualised" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
+
+    leolaniWorld:sexualization a gaf:Instance ;
+        rdfs:label "sexualization" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance3_char0-86 .
+
+    leolaniWorld:to_have a gaf:Instance ;
+        rdfs:label "to-have" ;
+        gaf:denotedIn leolaniTalk:chat2580_utterance2_char0-77 .
 }
 

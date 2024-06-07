@@ -22,112 +22,201 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:They_are_problem a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_problem" ;
-        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
-
-    leolaniWorld:correctness_is-killing_our_culture a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "correctness_is-killing_our_culture" ;
-        gaf:denotedBy leolaniTalk:chat1824_utterance2_char0-109 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:niggas_being_about_lazy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "niggas_being_about_lazy" ;
-        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
-
-    leolaniWorld:niggas_being_lazy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "niggas_being_lazy" ;
-        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
-
-    leolaniWorld:nobody_is-moaning_about_lazy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "nobody_is-moaning_about_lazy" ;
-        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
-
-    leolaniWorld:nobody_is-moaning_lazy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "nobody_is-moaning_lazy" ;
-        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
-
-    leolaniWorld:political_correctness_is-killing_our_culture a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "political_correctness_is-killing_our_culture" ;
-        gaf:denotedBy leolaniTalk:chat1824_utterance2_char0-109 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:nobody_is-moaning_lazy {
+    leolaniWorld:nobody ns1:is_moaning leolaniWorld:lazy .
 }
 
 leolaniWorld:niggas_being_about_lazy {
     leolaniWorld:niggas ns1:being leolaniWorld:about_lazy .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
+leolaniTalk:Interactions {
+    leolaniContext:context76 a eps:Context ;
+        rdfs:label "context76" ;
+        hs:id "76"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:about_lazy a gaf:Instance ;
-        rdfs:label "about-lazy" ;
-        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1824 .
 
-    leolaniWorld:correctness a gaf:Instance ;
-        rdfs:label "correctness" ;
-        gaf:denotedIn leolaniTalk:chat1824_utterance2_char0-109 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "88"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1824 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1824" ;
+        hs:id "1824"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1824_utterance0,
+            leolaniTalk:chat1824_utterance2 .
+
+    leolaniTalk:chat1824_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1824_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1824_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1824_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:lazy a gaf:Instance ;
-        rdfs:label "lazy" ;
-        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:niggas a gaf:Instance ;
-        rdfs:label "niggas" ;
-        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
-
-    leolaniWorld:nobody a gaf:Instance ;
-        rdfs:label "nobody" ;
-        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
-
-    leolaniWorld:our_culture a gaf:Instance ;
-        rdfs:label "our-culture" ;
-        gaf:denotedIn leolaniTalk:chat1824_utterance2_char0-109 .
-
-    leolaniWorld:political_correctness a gaf:Instance ;
-        rdfs:label "political-correctness" ;
-        gaf:denotedIn leolaniTalk:chat1824_utterance2_char0-109 .
-
-    leolaniWorld:problem a gaf:Instance ;
-        rdfs:label "problem" ;
-        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
 }
 
-leolaniWorld:nobody_is-moaning_about_lazy {
-    leolaniWorld:nobody ns1:is_moaning leolaniWorld:about_lazy .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:political_correctness_is-killing_our_culture {
-    leolaniWorld:political_correctness ns1:is_killing leolaniWorld:our_culture .
+leolaniWorld:niggas_being_lazy {
+    leolaniWorld:niggas ns1:being leolaniWorld:lazy .
 }
 
 leolaniWorld:They_are_problem {
     leolaniWorld:They ns1:are leolaniWorld:problem .
 }
 
-leolaniWorld:nobody_is-moaning_lazy {
-    leolaniWorld:nobody ns1:is_moaning leolaniWorld:lazy .
+leolaniWorld:nobody_is-moaning_about_lazy {
+    leolaniWorld:nobody ns1:is_moaning leolaniWorld:about_lazy .
+}
+
+leolaniWorld:correctness_is-killing_our_culture {
+    leolaniWorld:correctness ns1:is_killing leolaniWorld:our_culture .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:They_are_problem_00028 a grasp:Attribution ;
+        rdfs:label "They_are_problem_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:correctness_is-killing_our_culture_00028 a grasp:Attribution ;
+        rdfs:label "correctness_is-killing_our_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1824_utterance2_char0-109 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:niggas_being_about_lazy_00028 a grasp:Attribution ;
+        rdfs:label "niggas_being_about_lazy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:niggas_being_lazy_00028 a grasp:Attribution ;
+        rdfs:label "niggas_being_lazy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:nobody_is-moaning_about_lazy_00028 a grasp:Attribution ;
+        rdfs:label "nobody_is-moaning_about_lazy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:nobody_is-moaning_lazy_00028 a grasp:Attribution ;
+        rdfs:label "nobody_is-moaning_lazy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:political_correctness_is-killing_our_culture_00028 a grasp:Attribution ;
+        rdfs:label "political_correctness_is-killing_our_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1824_utterance2_char0-109 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1824_utterance2_char0-109 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1824_utterance2_char0-109" ;
+        gaf:containsDenotation leolaniWorld:correctness,
+            leolaniWorld:our_culture,
+            leolaniWorld:political_correctness ;
+        gaf:denotes leolaniWorld:correctness_is-killing_our_culture,
+            leolaniWorld:political_correctness_is-killing_our_culture ;
+        grasp:hasAttribution leolaniTalk:correctness_is-killing_our_culture_00028,
+            leolaniTalk:political_correctness_is-killing_our_culture_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:43.692230"^^xml1:string,
+            "2024-06-05T23:26:43.692310"^^xml1:string ;
+        rdf:value "Yeah, \"black people\". Now we can't use the N-word anymore. This political correctness is killing our culture."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1824_utterance2 .
+
+    leolaniTalk:chat1824_utterance0_char0-89 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1824_utterance0_char0-89" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:about_lazy,
+            leolaniWorld:lazy,
+            leolaniWorld:niggas,
+            leolaniWorld:nobody,
+            leolaniWorld:problem ;
+        gaf:denotes leolaniWorld:They_are_problem,
+            leolaniWorld:niggas_being_about_lazy,
+            leolaniWorld:niggas_being_lazy,
+            leolaniWorld:nobody_is-moaning_about_lazy,
+            leolaniWorld:nobody_is-moaning_lazy ;
+        grasp:hasAttribution leolaniTalk:They_are_problem_00028,
+            leolaniTalk:niggas_being_about_lazy_00028,
+            leolaniTalk:niggas_being_lazy_00028,
+            leolaniTalk:nobody_is-moaning_about_lazy_00028,
+            leolaniTalk:nobody_is-moaning_lazy_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:43.529095"^^xml1:string,
+            "2024-06-05T23:26:43.529154"^^xml1:string,
+            "2024-06-05T23:26:43.529177"^^xml1:string,
+            "2024-06-05T23:26:43.529200"^^xml1:string,
+            "2024-06-05T23:26:43.529223"^^xml1:string ;
+        rdf:value "How come nobody is moaning about niggas being lazy and unmotivated? They are the problem."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1824_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -465,184 +554,95 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:political_correctness_is-killing_our_culture {
+    leolaniWorld:political_correctness ns1:is_killing leolaniWorld:our_culture .
 }
 
-leolaniWorld:correctness_is-killing_our_culture {
-    leolaniWorld:correctness ns1:is_killing leolaniWorld:our_culture .
+leolaniWorld:Claims {
+    leolaniWorld:They_are_problem a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_problem" ;
+        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
+
+    leolaniWorld:correctness_is-killing_our_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "correctness_is-killing_our_culture" ;
+        gaf:denotedBy leolaniTalk:chat1824_utterance2_char0-109 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:niggas_being_about_lazy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "niggas_being_about_lazy" ;
+        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
+
+    leolaniWorld:niggas_being_lazy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "niggas_being_lazy" ;
+        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
+
+    leolaniWorld:nobody_is-moaning_about_lazy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "nobody_is-moaning_about_lazy" ;
+        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
+
+    leolaniWorld:nobody_is-moaning_lazy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "nobody_is-moaning_lazy" ;
+        gaf:denotedBy leolaniTalk:chat1824_utterance0_char0-89 .
+
+    leolaniWorld:political_correctness_is-killing_our_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "political_correctness_is-killing_our_culture" ;
+        gaf:denotedBy leolaniTalk:chat1824_utterance2_char0-109 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_are_problem_00028 a grasp:Attribution ;
-        rdfs:label "They_are_problem_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
 
-    leolaniTalk:correctness_is-killing_our_culture_00028 a grasp:Attribution ;
-        rdfs:label "correctness_is-killing_our_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1824_utterance2_char0-109 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:about_lazy a gaf:Instance ;
+        rdfs:label "about-lazy" ;
+        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
 
-    leolaniTalk:niggas_being_about_lazy_00028 a grasp:Attribution ;
-        rdfs:label "niggas_being_about_lazy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:niggas_being_lazy_00028 a grasp:Attribution ;
-        rdfs:label "niggas_being_lazy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:nobody_is-moaning_about_lazy_00028 a grasp:Attribution ;
-        rdfs:label "nobody_is-moaning_about_lazy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:nobody_is-moaning_lazy_00028 a grasp:Attribution ;
-        rdfs:label "nobody_is-moaning_lazy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1824_utterance0_char0-89 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:political_correctness_is-killing_our_culture_00028 a grasp:Attribution ;
-        rdfs:label "political_correctness_is-killing_our_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1824_utterance2_char0-109 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1824_utterance2_char0-109 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1824_utterance2_char0-109" ;
-        gaf:containsDenotation leolaniWorld:correctness,
-            leolaniWorld:our_culture,
-            leolaniWorld:political_correctness ;
-        gaf:denotes leolaniWorld:correctness_is-killing_our_culture,
-            leolaniWorld:political_correctness_is-killing_our_culture ;
-        grasp:hasAttribution leolaniTalk:correctness_is-killing_our_culture_00028,
-            leolaniTalk:political_correctness_is-killing_our_culture_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:43.692230"^^xml1:string,
-            "2024-06-05T23:26:43.692310"^^xml1:string ;
-        rdf:value "Yeah, \"black people\". Now we can't use the N-word anymore. This political correctness is killing our culture."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1824_utterance2 .
-
-    leolaniTalk:chat1824_utterance0_char0-89 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1824_utterance0_char0-89" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:about_lazy,
-            leolaniWorld:lazy,
-            leolaniWorld:niggas,
-            leolaniWorld:nobody,
-            leolaniWorld:problem ;
-        gaf:denotes leolaniWorld:They_are_problem,
-            leolaniWorld:niggas_being_about_lazy,
-            leolaniWorld:niggas_being_lazy,
-            leolaniWorld:nobody_is-moaning_about_lazy,
-            leolaniWorld:nobody_is-moaning_lazy ;
-        grasp:hasAttribution leolaniTalk:They_are_problem_00028,
-            leolaniTalk:niggas_being_about_lazy_00028,
-            leolaniTalk:niggas_being_lazy_00028,
-            leolaniTalk:nobody_is-moaning_about_lazy_00028,
-            leolaniTalk:nobody_is-moaning_lazy_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:43.529095"^^xml1:string,
-            "2024-06-05T23:26:43.529154"^^xml1:string,
-            "2024-06-05T23:26:43.529177"^^xml1:string,
-            "2024-06-05T23:26:43.529200"^^xml1:string,
-            "2024-06-05T23:26:43.529223"^^xml1:string ;
-        rdf:value "How come nobody is moaning about niggas being lazy and unmotivated? They are the problem."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1824_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context76 a eps:Context ;
-        rdfs:label "context76" ;
-        hs:id "76"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1824 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "88"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1824 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1824" ;
-        hs:id "1824"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1824_utterance0,
-            leolaniTalk:chat1824_utterance2 .
-
-    leolaniTalk:chat1824_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1824_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1824_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1824_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:correctness a gaf:Instance ;
+        rdfs:label "correctness" ;
+        gaf:denotedIn leolaniTalk:chat1824_utterance2_char0-109 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:niggas_being_lazy {
-    leolaniWorld:niggas ns1:being leolaniWorld:lazy .
+    leolaniWorld:lazy a gaf:Instance ;
+        rdfs:label "lazy" ;
+        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:niggas a gaf:Instance ;
+        rdfs:label "niggas" ;
+        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
+
+    leolaniWorld:nobody a gaf:Instance ;
+        rdfs:label "nobody" ;
+        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
+
+    leolaniWorld:our_culture a gaf:Instance ;
+        rdfs:label "our-culture" ;
+        gaf:denotedIn leolaniTalk:chat1824_utterance2_char0-109 .
+
+    leolaniWorld:political_correctness a gaf:Instance ;
+        rdfs:label "political-correctness" ;
+        gaf:denotedIn leolaniTalk:chat1824_utterance2_char0-109 .
+
+    leolaniWorld:problem a gaf:Instance ;
+        rdfs:label "problem" ;
+        gaf:denotedIn leolaniTalk:chat1824_utterance0_char0-89 .
 }
 

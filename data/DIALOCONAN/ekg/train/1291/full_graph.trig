@@ -22,69 +22,6 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Muslims_have_nothing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_have_nothing" ;
-        gaf:denotedBy leolaniTalk:chat1291_utterance0_char0-50 .
-
-    leolaniWorld:They_are_just_trouble a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_just_trouble" ;
-        gaf:denotedBy leolaniTalk:chat1291_utterance4_char0-88 .
-
-    leolaniWorld:They_are_our_brothers a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_our_brothers" ;
-        gaf:denotedBy leolaniTalk:chat1291_utterance1_char0-66 .
-
-    leolaniWorld:They_are_trouble a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_trouble" ;
-        gaf:denotedBy leolaniTalk:chat1291_utterance4_char0-88 .
-
-    leolaniWorld:We_should-work-against_not_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_should-work-against_not_them" ;
-        gaf:denotedBy leolaniTalk:chat1291_utterance1_char0-66 .
-
-    leolaniWorld:We_should-work-against_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_should-work-against_them" ;
-        gaf:denotedBy leolaniTalk:chat1291_utterance1_char0-66 .
-
-    leolaniWorld:We_should-work-with_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_should-work-with_them" ;
-        gaf:denotedBy leolaniTalk:chat1291_utterance1_char0-66 .
-
-    leolaniWorld:laws_control_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "laws_control_them" ;
-        gaf:denotedBy leolaniTalk:chat1291_utterance4_char0-88 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:special_laws_control_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "special_laws_control_them" ;
-        gaf:denotedBy leolaniTalk:chat1291_utterance4_char0-88 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
 leolaniWorld:We_should-work-against_them {
     leolaniWorld:We ns1:should_work_against leolaniWorld:them .
 }
@@ -93,79 +30,245 @@ leolaniWorld:They_are_just_trouble {
     leolaniWorld:They ns1:are leolaniWorld:just_trouble .
 }
 
-leolaniWorld:special_laws_control_them {
-    leolaniWorld:special_laws ns1:control leolaniWorld:them .
-}
-
 leolaniWorld:They_are_trouble {
     leolaniWorld:They ns1:are leolaniWorld:trouble .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance0_char0-50 .
+leolaniWorld:special_laws_control_them {
+    leolaniWorld:special_laws ns1:control leolaniWorld:them .
+}
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66,
-            leolaniTalk:chat1291_utterance4_char0-88 .
+leolaniTalk:Interactions {
+    leolaniContext:context59 a eps:Context ;
+        rdfs:label "context59" ;
+        hs:id "59"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1291 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "237"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1291 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1291" ;
+        hs:id "1291"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1291_utterance0,
+            leolaniTalk:chat1291_utterance1,
+            leolaniTalk:chat1291_utterance4 .
+
+    leolaniTalk:chat1291_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1291_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1291_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1291_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1291_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1291_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:just_trouble a gaf:Instance ;
-        rdfs:label "just-trouble" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance4_char0-88 .
+leolaniWorld:laws_control_them {
+    leolaniWorld:laws ns1:control leolaniWorld:them .
+}
 
-    leolaniWorld:laws a gaf:Instance ;
-        rdfs:label "laws" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance4_char0-88 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:We_should-work-against_not_them {
+    leolaniWorld:We ns1:should_work_against leolaniWorld:not_them .
+}
 
-    leolaniWorld:not_them a gaf:Instance ;
-        rdfs:label "not-them" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66 .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance0_char0-50 .
-
-    leolaniWorld:our_brothers a gaf:Instance ;
-        rdfs:label "our-brothers" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66 .
-
-    leolaniWorld:special_laws a gaf:Instance ;
-        rdfs:label "special-laws" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance4_char0-88 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66,
-            leolaniTalk:chat1291_utterance4_char0-88 .
-
-    leolaniWorld:trouble a gaf:Instance ;
-        rdfs:label "trouble" ;
-        gaf:denotedIn leolaniTalk:chat1291_utterance4_char0-88 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:We_should-work-with_them {
     leolaniWorld:We ns1:should_work_with leolaniWorld:them .
 }
 
-leolaniWorld:Muslims_have_nothing {
-    leolaniWorld:Muslims ns1:have leolaniWorld:nothing .
+leolaniTalk:Perspectives {
+    leolaniTalk:Muslims_have_nothing_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_have_nothing_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1291_utterance0_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_just_trouble_00028 a grasp:Attribution ;
+        rdfs:label "They_are_just_trouble_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1291_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_our_brothers_00028 a grasp:Attribution ;
+        rdfs:label "They_are_our_brothers_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1291_utterance1_char0-66 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_trouble_00028 a grasp:Attribution ;
+        rdfs:label "They_are_trouble_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1291_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_should-work-against_not_them_00028 a grasp:Attribution ;
+        rdfs:label "We_should-work-against_not_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1291_utterance1_char0-66 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_should-work-against_them_00028 a grasp:Attribution ;
+        rdfs:label "We_should-work-against_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1291_utterance1_char0-66 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_should-work-with_them_00028 a grasp:Attribution ;
+        rdfs:label "We_should-work-with_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1291_utterance1_char0-66 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1291_utterance0_char0-50 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1291_utterance0_char0-50" ;
+        gaf:containsDenotation leolaniWorld:Muslims,
+            leolaniWorld:nothing ;
+        gaf:denotes leolaniWorld:Muslims_have_nothing ;
+        grasp:hasAttribution leolaniTalk:Muslims_have_nothing_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:06.773044"^^xml1:string ;
+        rdf:value "Muslims have nothing to contribute to our society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1291_utterance0 .
+
+    leolaniTalk:laws_control_them_00028 a grasp:Attribution ;
+        rdfs:label "laws_control_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1291_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:special_laws_control_them_00028 a grasp:Attribution ;
+        rdfs:label "special_laws_control_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1291_utterance4_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1291_utterance1_char0-66 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1291_utterance1_char0-66" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:We,
+            leolaniWorld:not_them,
+            leolaniWorld:our_brothers,
+            leolaniWorld:them ;
+        gaf:denotes leolaniWorld:They_are_our_brothers,
+            leolaniWorld:We_should-work-against_not_them,
+            leolaniWorld:We_should-work-against_them,
+            leolaniWorld:We_should-work-with_them ;
+        grasp:hasAttribution leolaniTalk:They_are_our_brothers_00028,
+            leolaniTalk:We_should-work-against_not_them_00028,
+            leolaniTalk:We_should-work-against_them_00028,
+            leolaniTalk:We_should-work-with_them_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:06.863829"^^xml1:string,
+            "2024-06-05T23:07:06.863887"^^xml1:string,
+            "2024-06-05T23:07:06.863912"^^xml1:string,
+            "2024-06-05T23:07:06.863934"^^xml1:string ;
+        rdf:value "We should work with them, not against them. They are our brothers."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1291_utterance1 .
+
+    leolaniTalk:chat1291_utterance4_char0-88 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1291_utterance4_char0-88" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:just_trouble,
+            leolaniWorld:laws,
+            leolaniWorld:special_laws,
+            leolaniWorld:them,
+            leolaniWorld:trouble ;
+        gaf:denotes leolaniWorld:They_are_just_trouble,
+            leolaniWorld:They_are_trouble,
+            leolaniWorld:laws_control_them,
+            leolaniWorld:special_laws_control_them ;
+        grasp:hasAttribution leolaniTalk:They_are_just_trouble_00028,
+            leolaniTalk:They_are_trouble_00028,
+            leolaniTalk:laws_control_them_00028,
+            leolaniTalk:special_laws_control_them_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:07.138564"^^xml1:string,
+            "2024-06-05T23:07:07.138625"^^xml1:string,
+            "2024-06-05T23:07:07.138650"^^xml1:string,
+            "2024-06-05T23:07:07.138672"^^xml1:string ;
+        rdf:value "So much contribution that we need special laws to control them. They are just a trouble."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1291_utterance4 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -503,232 +606,129 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:We_should-work-against_not_them {
-    leolaniWorld:We ns1:should_work_against leolaniWorld:not_them .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Muslims_have_nothing_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_have_nothing_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1291_utterance0_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_just_trouble_00028 a grasp:Attribution ;
-        rdfs:label "They_are_just_trouble_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1291_utterance4_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_our_brothers_00028 a grasp:Attribution ;
-        rdfs:label "They_are_our_brothers_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1291_utterance1_char0-66 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_trouble_00028 a grasp:Attribution ;
-        rdfs:label "They_are_trouble_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1291_utterance4_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_should-work-against_not_them_00028 a grasp:Attribution ;
-        rdfs:label "We_should-work-against_not_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1291_utterance1_char0-66 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_should-work-against_them_00028 a grasp:Attribution ;
-        rdfs:label "We_should-work-against_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1291_utterance1_char0-66 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_should-work-with_them_00028 a grasp:Attribution ;
-        rdfs:label "We_should-work-with_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1291_utterance1_char0-66 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1291_utterance0_char0-50 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1291_utterance0_char0-50" ;
-        gaf:containsDenotation leolaniWorld:Muslims,
-            leolaniWorld:nothing ;
-        gaf:denotes leolaniWorld:Muslims_have_nothing ;
-        grasp:hasAttribution leolaniTalk:Muslims_have_nothing_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:06.773044"^^xml1:string ;
-        rdf:value "Muslims have nothing to contribute to our society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1291_utterance0 .
-
-    leolaniTalk:laws_control_them_00028 a grasp:Attribution ;
-        rdfs:label "laws_control_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1291_utterance4_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:special_laws_control_them_00028 a grasp:Attribution ;
-        rdfs:label "special_laws_control_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1291_utterance4_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1291_utterance1_char0-66 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1291_utterance1_char0-66" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:We,
-            leolaniWorld:not_them,
-            leolaniWorld:our_brothers,
-            leolaniWorld:them ;
-        gaf:denotes leolaniWorld:They_are_our_brothers,
-            leolaniWorld:We_should-work-against_not_them,
-            leolaniWorld:We_should-work-against_them,
-            leolaniWorld:We_should-work-with_them ;
-        grasp:hasAttribution leolaniTalk:They_are_our_brothers_00028,
-            leolaniTalk:We_should-work-against_not_them_00028,
-            leolaniTalk:We_should-work-against_them_00028,
-            leolaniTalk:We_should-work-with_them_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:06.863829"^^xml1:string,
-            "2024-06-05T23:07:06.863887"^^xml1:string,
-            "2024-06-05T23:07:06.863912"^^xml1:string,
-            "2024-06-05T23:07:06.863934"^^xml1:string ;
-        rdf:value "We should work with them, not against them. They are our brothers."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1291_utterance1 .
-
-    leolaniTalk:chat1291_utterance4_char0-88 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1291_utterance4_char0-88" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:just_trouble,
-            leolaniWorld:laws,
-            leolaniWorld:special_laws,
-            leolaniWorld:them,
-            leolaniWorld:trouble ;
-        gaf:denotes leolaniWorld:They_are_just_trouble,
-            leolaniWorld:They_are_trouble,
-            leolaniWorld:laws_control_them,
-            leolaniWorld:special_laws_control_them ;
-        grasp:hasAttribution leolaniTalk:They_are_just_trouble_00028,
-            leolaniTalk:They_are_trouble_00028,
-            leolaniTalk:laws_control_them_00028,
-            leolaniTalk:special_laws_control_them_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:07.138564"^^xml1:string,
-            "2024-06-05T23:07:07.138625"^^xml1:string,
-            "2024-06-05T23:07:07.138650"^^xml1:string,
-            "2024-06-05T23:07:07.138672"^^xml1:string ;
-        rdf:value "So much contribution that we need special laws to control them. They are just a trouble."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1291_utterance4 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:laws_control_them {
-    leolaniWorld:laws ns1:control leolaniWorld:them .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context59 a eps:Context ;
-        rdfs:label "context59" ;
-        hs:id "59"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1291 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "237"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1291 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Muslims_have_nothing a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1291" ;
-        hs:id "1291"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1291_utterance0,
-            leolaniTalk:chat1291_utterance1,
-            leolaniTalk:chat1291_utterance4 .
+        rdfs:label "Muslims_have_nothing" ;
+        gaf:denotedBy leolaniTalk:chat1291_utterance0_char0-50 .
 
-    leolaniTalk:chat1291_utterance0 a grasp:Utterance,
+    leolaniWorld:They_are_just_trouble a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1291_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_are_just_trouble" ;
+        gaf:denotedBy leolaniTalk:chat1291_utterance4_char0-88 .
 
-    leolaniTalk:chat1291_utterance1 a grasp:Utterance,
+    leolaniWorld:They_are_our_brothers a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1291_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "They_are_our_brothers" ;
+        gaf:denotedBy leolaniTalk:chat1291_utterance1_char0-66 .
 
-    leolaniTalk:chat1291_utterance4 a grasp:Utterance,
+    leolaniWorld:They_are_trouble a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1291_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_are_trouble" ;
+        gaf:denotedBy leolaniTalk:chat1291_utterance4_char0-88 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:We_should-work-against_not_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_should-work-against_not_them" ;
+        gaf:denotedBy leolaniTalk:chat1291_utterance1_char0-66 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:We_should-work-against_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_should-work-against_them" ;
+        gaf:denotedBy leolaniTalk:chat1291_utterance1_char0-66 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:We_should-work-with_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_should-work-with_them" ;
+        gaf:denotedBy leolaniTalk:chat1291_utterance1_char0-66 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:laws_control_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "laws_control_them" ;
+        gaf:denotedBy leolaniTalk:chat1291_utterance4_char0-88 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:special_laws_control_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "special_laws_control_them" ;
+        gaf:denotedBy leolaniTalk:chat1291_utterance4_char0-88 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:They_are_our_brothers {
     leolaniWorld:They ns1:are leolaniWorld:our_brothers .
+}
+
+leolaniWorld:Muslims_have_nothing {
+    leolaniWorld:Muslims ns1:have leolaniWorld:nothing .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance0_char0-50 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66,
+            leolaniTalk:chat1291_utterance4_char0-88 .
+
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:just_trouble a gaf:Instance ;
+        rdfs:label "just-trouble" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance4_char0-88 .
+
+    leolaniWorld:laws a gaf:Instance ;
+        rdfs:label "laws" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance4_char0-88 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:not_them a gaf:Instance ;
+        rdfs:label "not-them" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66 .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance0_char0-50 .
+
+    leolaniWorld:our_brothers a gaf:Instance ;
+        rdfs:label "our-brothers" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66 .
+
+    leolaniWorld:special_laws a gaf:Instance ;
+        rdfs:label "special-laws" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance4_char0-88 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance1_char0-66,
+            leolaniTalk:chat1291_utterance4_char0-88 .
+
+    leolaniWorld:trouble a gaf:Instance ;
+        rdfs:label "trouble" ;
+        gaf:denotedIn leolaniTalk:chat1291_utterance4_char0-88 .
 }
 

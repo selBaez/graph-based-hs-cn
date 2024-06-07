@@ -22,77 +22,95 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Immigrants_are-creating_wealth_for_country {
-    leolaniWorld:Immigrants ns1:are_creating leolaniWorld:wealth_for_country .
+leolaniWorld:Immigrants_are-creating_wealth {
+    leolaniWorld:Immigrants ns1:are_creating leolaniWorld:wealth .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context61 a eps:Context ;
+        rdfs:label "context61" ;
+        hs:id "61"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat557 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "187"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat557 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat557" ;
+        hs:id "557"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat557_utterance0,
+            leolaniTalk:chat557_utterance1 .
+
+    leolaniTalk:chat557_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat557_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat557_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat557_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Immigrants_are-creating_wealth {
-    leolaniWorld:Immigrants ns1:are_creating leolaniWorld:wealth .
+leolaniWorld:Immigrants_are-actually-creating_wealth_for_country {
+    leolaniWorld:Immigrants ns1:are_actually_creating leolaniWorld:wealth_for_country .
 }
 
 leolaniWorld:we_stopped_migrants {
     leolaniWorld:we ns1:stopped leolaniWorld:migrants .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Immigrants_are-actually-creating_wealth a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Immigrants_are-actually-creating_wealth" ;
-        gaf:denotedBy leolaniTalk:chat557_utterance1_char0-56 .
-
-    leolaniWorld:Immigrants_are-actually-creating_wealth_for_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Immigrants_are-actually-creating_wealth_for_country" ;
-        gaf:denotedBy leolaniTalk:chat557_utterance1_char0-56 .
-
-    leolaniWorld:Immigrants_are-creating_wealth a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Immigrants_are-creating_wealth" ;
-        gaf:denotedBy leolaniTalk:chat557_utterance1_char0-56 .
-
-    leolaniWorld:Immigrants_are-creating_wealth_for_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Immigrants_are-creating_wealth_for_country" ;
-        gaf:denotedBy leolaniTalk:chat557_utterance1_char0-56 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:our_financial_situation_could_could_have_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "our_financial_situation_could_could_have_better" ;
-        gaf:denotedBy leolaniTalk:chat557_utterance0_char0-71 .
-
-    leolaniWorld:our_situation_could_could_have_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "our_situation_could_could_have_better" ;
-        gaf:denotedBy leolaniTalk:chat557_utterance0_char0-71 .
-
-    leolaniWorld:we_stopped_migrants a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_stopped_migrants" ;
-        gaf:denotedBy leolaniTalk:chat557_utterance0_char0-71 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Immigrants_are-actually-creating_wealth {
-    leolaniWorld:Immigrants ns1:are_actually_creating leolaniWorld:wealth .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Immigrants_are-creating_wealth_for_country {
+    leolaniWorld:Immigrants ns1:are_creating leolaniWorld:wealth_for_country .
 }
 
 leolaniTalk:Perspectives {
@@ -206,61 +224,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Immigrants a gaf:Instance ;
-        rdfs:label "immigrants" ;
-        gaf:denotedIn leolaniTalk:chat557_utterance1_char0-56 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:could_have_better a gaf:Instance ;
-        rdfs:label "could-have-better" ;
-        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
-
-    leolaniWorld:our_financial_situation a gaf:Instance ;
-        rdfs:label "our-financial-situation" ;
-        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
-
-    leolaniWorld:our_situation a gaf:Instance ;
-        rdfs:label "our-situation" ;
-        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
-
-    leolaniWorld:wealth a gaf:Instance ;
-        rdfs:label "wealth" ;
-        gaf:denotedIn leolaniTalk:chat557_utterance1_char0-56 .
-
-    leolaniWorld:wealth_for_country a gaf:Instance ;
-        rdfs:label "wealth-for-country" ;
-        gaf:denotedIn leolaniTalk:chat557_utterance1_char0-56 .
-}
-
-leolaniWorld:our_situation_could_could_have_better {
-    leolaniWorld:our_situation ns1:could leolaniWorld:could_have_better .
-}
-
-leolaniWorld:our_financial_situation_could_could_have_better {
-    leolaniWorld:our_financial_situation ns1:could leolaniWorld:could_have_better .
-}
-
-leolaniWorld:Immigrants_are-actually-creating_wealth_for_country {
-    leolaniWorld:Immigrants ns1:are_actually_creating leolaniWorld:wealth_for_country .
+leolaniWorld:Immigrants_are-actually-creating_wealth {
+    leolaniWorld:Immigrants ns1:are_actually_creating leolaniWorld:wealth .
 }
 
 leolaniWorld:Ontology {
@@ -598,70 +563,105 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context61 a eps:Context ;
-        rdfs:label "context61" ;
-        hs:id "61"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat557 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "187"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat557 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Immigrants_are-actually-creating_wealth a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat557" ;
-        hs:id "557"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat557_utterance0,
-            leolaniTalk:chat557_utterance1 .
+        rdfs:label "Immigrants_are-actually-creating_wealth" ;
+        gaf:denotedBy leolaniTalk:chat557_utterance1_char0-56 .
 
-    leolaniTalk:chat557_utterance0 a grasp:Utterance,
+    leolaniWorld:Immigrants_are-actually-creating_wealth_for_country a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat557_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Immigrants_are-actually-creating_wealth_for_country" ;
+        gaf:denotedBy leolaniTalk:chat557_utterance1_char0-56 .
 
-    leolaniTalk:chat557_utterance1 a grasp:Utterance,
+    leolaniWorld:Immigrants_are-creating_wealth a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat557_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Immigrants_are-creating_wealth" ;
+        gaf:denotedBy leolaniTalk:chat557_utterance1_char0-56 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Immigrants_are-creating_wealth_for_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigrants_are-creating_wealth_for_country" ;
+        gaf:denotedBy leolaniTalk:chat557_utterance1_char0-56 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:our_financial_situation_could_could_have_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "our_financial_situation_could_could_have_better" ;
+        gaf:denotedBy leolaniTalk:chat557_utterance0_char0-71 .
+
+    leolaniWorld:our_situation_could_could_have_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "our_situation_could_could_have_better" ;
+        gaf:denotedBy leolaniTalk:chat557_utterance0_char0-71 .
+
+    leolaniWorld:we_stopped_migrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_stopped_migrants" ;
+        gaf:denotedBy leolaniTalk:chat557_utterance0_char0-71 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:our_financial_situation_could_could_have_better {
+    leolaniWorld:our_financial_situation ns1:could leolaniWorld:could_have_better .
+}
+
+leolaniWorld:our_situation_could_could_have_better {
+    leolaniWorld:our_situation ns1:could leolaniWorld:could_have_better .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Immigrants a gaf:Instance ;
+        rdfs:label "immigrants" ;
+        gaf:denotedIn leolaniTalk:chat557_utterance1_char0-56 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:could_have_better a gaf:Instance ;
+        rdfs:label "could-have-better" ;
+        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
+
+    leolaniWorld:our_financial_situation a gaf:Instance ;
+        rdfs:label "our-financial-situation" ;
+        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
+
+    leolaniWorld:our_situation a gaf:Instance ;
+        rdfs:label "our-situation" ;
+        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat557_utterance0_char0-71 .
+
+    leolaniWorld:wealth a gaf:Instance ;
+        rdfs:label "wealth" ;
+        gaf:denotedIn leolaniTalk:chat557_utterance1_char0-56 .
+
+    leolaniWorld:wealth_for_country a gaf:Instance ;
+        rdfs:label "wealth-for-country" ;
+        gaf:denotedIn leolaniTalk:chat557_utterance1_char0-56 .
 }
 

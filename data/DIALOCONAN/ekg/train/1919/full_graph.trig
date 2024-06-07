@@ -22,6 +22,93 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:there_do_do_any {
+    leolaniWorld:there ns1:do leolaniWorld:do_any .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context254 a eps:Context ;
+        rdfs:label "context254" ;
+        hs:id "254"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1919 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "21"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1919 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1919" ;
+        hs:id "1919"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1919_utterance0,
+            leolaniTalk:chat1919_utterance1 .
+
+    leolaniTalk:chat1919_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1919_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1919_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1919_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:evidence_grow_worse {
+    leolaniWorld:evidence ns1:grow leolaniWorld:worse .
+}
+
+leolaniWorld:evidence_grow_worse_than_children {
+    leolaniWorld:evidence ns1:grow leolaniWorld:worse_than_children .
+}
+
 leolaniWorld:They_will-bring-up_worst {
     leolaniWorld:They ns1:will_bring_up leolaniWorld:worst .
 }
@@ -145,145 +232,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:I_do_do_any a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_do_do_any" ;
-        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:They_will-bring-up-in_us a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_will-bring-up-in_us" ;
-        gaf:denotedBy leolaniTalk:chat1919_utterance0_char0-77 .
-
-    leolaniWorld:They_will-bring-up_worst a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_will-bring-up_worst" ;
-        gaf:denotedBy leolaniTalk:chat1919_utterance0_char0-77 .
-
-    leolaniWorld:children_raised-by_lesbians a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "children_raised-by_lesbians" ;
-        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:evidence_grow_worse a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "evidence_grow_worse" ;
-        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:evidence_grow_worse_than_children a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "evidence_grow_worse_than_children" ;
-        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:evidence_grow_worse_than_other_children a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "evidence_grow_worse_than_other_children" ;
-        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:there_do_do_any a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "there_do_do_any" ;
-        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:evidence_grow_worse_than_children {
-    leolaniWorld:evidence ns1:grow leolaniWorld:worse_than_children .
-}
-
-leolaniWorld:I_do_do_any {
-    leolaniWorld:I ns1:do leolaniWorld:do_any .
-}
-
-leolaniWorld:They_will-bring-up-in_us {
-    leolaniWorld:They ns1:will_bring_up_in leolaniWorld:us .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance0_char0-77 .
-
-    leolaniWorld:children a gaf:Instance ;
-        rdfs:label "children" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:do_any a gaf:Instance ;
-        rdfs:label "do-any" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:evidence a gaf:Instance ;
-        rdfs:label "evidence" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:lesbians a gaf:Instance ;
-        rdfs:label "lesbians" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:there a gaf:Instance ;
-        rdfs:label "there" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance0_char0-77 .
-
-    leolaniWorld:worse a gaf:Instance ;
-        rdfs:label "worse" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:worse_than_children a gaf:Instance ;
-        rdfs:label "worse-than-children" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:worse_than_other_children a gaf:Instance ;
-        rdfs:label "worse-than-other-children" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
-
-    leolaniWorld:worst a gaf:Instance ;
-        rdfs:label "worst" ;
-        gaf:denotedIn leolaniTalk:chat1919_utterance0_char0-77 .
-}
-
-leolaniWorld:evidence_grow_worse_than_other_children {
-    leolaniWorld:evidence ns1:grow leolaniWorld:worse_than_other_children .
-}
-
-leolaniWorld:evidence_grow_worse {
-    leolaniWorld:evidence ns1:grow leolaniWorld:worse .
 }
 
 leolaniWorld:Ontology {
@@ -621,82 +569,134 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:I_do_do_any a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_do_do_any" ;
+        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:They_will-bring-up-in_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_will-bring-up-in_us" ;
+        gaf:denotedBy leolaniTalk:chat1919_utterance0_char0-77 .
+
+    leolaniWorld:They_will-bring-up_worst a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_will-bring-up_worst" ;
+        gaf:denotedBy leolaniTalk:chat1919_utterance0_char0-77 .
+
+    leolaniWorld:children_raised-by_lesbians a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "children_raised-by_lesbians" ;
+        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:evidence_grow_worse a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "evidence_grow_worse" ;
+        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:evidence_grow_worse_than_children a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "evidence_grow_worse_than_children" ;
+        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:evidence_grow_worse_than_other_children a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "evidence_grow_worse_than_other_children" ;
+        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:there_do_do_any a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "there_do_do_any" ;
+        gaf:denotedBy leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:there_do_do_any {
-    leolaniWorld:there ns1:do leolaniWorld:do_any .
+leolaniWorld:They_will-bring-up-in_us {
+    leolaniWorld:They ns1:will_bring_up_in leolaniWorld:us .
+}
+
+leolaniWorld:evidence_grow_worse_than_other_children {
+    leolaniWorld:evidence ns1:grow leolaniWorld:worse_than_other_children .
+}
+
+leolaniWorld:I_do_do_any {
+    leolaniWorld:I ns1:do leolaniWorld:do_any .
 }
 
 leolaniWorld:children_raised-by_lesbians {
     leolaniWorld:children ns1:raised_by leolaniWorld:lesbians .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context254 a eps:Context ;
-        rdfs:label "context254" ;
-        hs:id "254"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1919 .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance0_char0-77 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "21"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1919 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1919" ;
-        hs:id "1919"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1919_utterance0,
-            leolaniTalk:chat1919_utterance1 .
-
-    leolaniTalk:chat1919_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1919_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1919_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1919_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:children a gaf:Instance ;
+        rdfs:label "children" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:do_any a gaf:Instance ;
+        rdfs:label "do-any" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:evidence a gaf:Instance ;
+        rdfs:label "evidence" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:lesbians a gaf:Instance ;
+        rdfs:label "lesbians" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:there a gaf:Instance ;
+        rdfs:label "there" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance0_char0-77 .
+
+    leolaniWorld:worse a gaf:Instance ;
+        rdfs:label "worse" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:worse_than_children a gaf:Instance ;
+        rdfs:label "worse-than-children" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:worse_than_other_children a gaf:Instance ;
+        rdfs:label "worse-than-other-children" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance1_char0-107 .
+
+    leolaniWorld:worst a gaf:Instance ;
+        rdfs:label "worst" ;
+        gaf:denotedIn leolaniTalk:chat1919_utterance0_char0-77 .
 }
 

@@ -22,99 +22,165 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_control_Hollywood a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_control_Hollywood" ;
-        gaf:denotedBy leolaniTalk:chat1280_utterance0_char0-37 .
+leolaniTalk:Interactions {
+    leolaniContext:context44 a eps:Context ;
+        rdfs:label "context44" ;
+        hs:id "44"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Their_power_have_banned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Their_power_have_banned" ;
-        gaf:denotedBy leolaniTalk:chat1280_utterance2_char0-94 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1280 .
 
-    leolaniWorld:Their_power_have_is_proof a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Their_power_have_is_proof" ;
-        gaf:denotedBy leolaniTalk:chat1280_utterance2_char0-94 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:Their_power_to_have_is_proof a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Their_power_to_have_is_proof" ;
-        gaf:denotedBy leolaniTalk:chat1280_utterance2_char0-94 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "196"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat1280 a grasp:Chat,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat1280" ;
+        hs:id "1280"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1280_utterance0,
+            leolaniTalk:chat1280_utterance2 .
 
-    leolaniWorld:they_control_Hollywood a gaf:Assertion,
+    leolaniTalk:chat1280_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "they_control_Hollywood" ;
-        gaf:denotedBy leolaniTalk:chat1280_utterance2_char0-94 .
+        rdfs:label "chat1280_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat1280_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1280_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:they_control_Hollywood {
+    leolaniWorld:they ns1:control leolaniWorld:Hollywood .
 }
 
 leolaniWorld:Jews_control_Hollywood {
     leolaniWorld:Jews ns1:control leolaniWorld:Hollywood .
 }
 
-leolaniWorld:Their_power_have_banned {
-    leolaniWorld:Their_power ns1:have leolaniWorld:banned .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_control_Hollywood_00028 a grasp:Attribution ;
+        rdfs:label "Jews_control_Hollywood_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1280_utterance0_char0-37 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Their_power_have_is_proof {
-    leolaniWorld:Their_power_have ns1:is leolaniWorld:proof .
-}
+    leolaniTalk:Their_power_have_banned_00028 a grasp:Attribution ;
+        rdfs:label "Their_power_have_banned_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1280_utterance2_char0-94 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Their_power_to_have_is_proof {
-    leolaniWorld:Their_power_to_have ns1:is leolaniWorld:proof .
-}
+    leolaniTalk:Their_power_have_is_proof_00028 a grasp:Attribution ;
+        rdfs:label "Their_power_have_is_proof_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1280_utterance2_char0-94 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:Hollywood a gaf:Instance ;
-        rdfs:label "hollywood" ;
-        gaf:denotedIn leolaniTalk:chat1280_utterance0_char0-37,
-            leolaniTalk:chat1280_utterance2_char0-94 .
+    leolaniTalk:Their_power_to_have_is_proof_00028 a grasp:Attribution ;
+        rdfs:label "Their_power_to_have_is_proof_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1280_utterance2_char0-94 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1280_utterance0_char0-37 .
+    leolaniTalk:chat1280_utterance0_char0-37 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1280_utterance0_char0-37" ;
+        gaf:containsDenotation leolaniWorld:Hollywood,
+            leolaniWorld:Jews ;
+        gaf:denotes leolaniWorld:Jews_control_Hollywood ;
+        grasp:hasAttribution leolaniTalk:Jews_control_Hollywood_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:40.072684"^^xml1:string ;
+        rdf:value "Jews control Hollywood and the media."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1280_utterance0 .
 
-    leolaniWorld:Their_power a gaf:Instance ;
-        rdfs:label "their-power" ;
-        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
+    leolaniTalk:they_control_Hollywood_00028 a grasp:Attribution ;
+        rdfs:label "they_control_Hollywood_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1280_utterance2_char0-94 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Their_power_have a gaf:Instance ;
-        rdfs:label "their-power-have" ;
-        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
+    leolaniTalk:chat1280_utterance2_char0-94 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1280_utterance2_char0-94" ;
+        gaf:containsDenotation leolaniWorld:Hollywood,
+            leolaniWorld:Their_power,
+            leolaniWorld:Their_power_have,
+            leolaniWorld:Their_power_to_have,
+            leolaniWorld:banned,
+            leolaniWorld:proof,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:Their_power_have_banned,
+            leolaniWorld:Their_power_have_is_proof,
+            leolaniWorld:Their_power_to_have_is_proof,
+            leolaniWorld:they_control_Hollywood ;
+        grasp:hasAttribution leolaniTalk:Their_power_have_banned_00028,
+            leolaniTalk:Their_power_have_is_proof_00028,
+            leolaniTalk:Their_power_to_have_is_proof_00028,
+            leolaniTalk:they_control_Hollywood_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:40.249874"^^xml1:string,
+            "2024-06-05T23:06:40.249930"^^xml1:string,
+            "2024-06-05T23:06:40.249955"^^xml1:string,
+            "2024-06-05T23:06:40.249978"^^xml1:string ;
+        rdf:value "Their power to have movies banned and directors censured is proof that they control Hollywood."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1280_utterance2 .
 
-    leolaniWorld:Their_power_to_have a gaf:Instance ;
-        rdfs:label "their-power-to-have" ;
-        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:banned a gaf:Instance ;
-        rdfs:label "banned" ;
-        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:proof a gaf:Instance ;
-        rdfs:label "proof" ;
-        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
-}
-
-leolaniWorld:they_control_Hollywood {
-    leolaniWorld:they ns1:control leolaniWorld:Hollywood .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -452,156 +518,90 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Their_power_have_is_proof {
+    leolaniWorld:Their_power_have ns1:is leolaniWorld:proof .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_control_Hollywood_00028 a grasp:Attribution ;
-        rdfs:label "Jews_control_Hollywood_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1280_utterance0_char0-37 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_control_Hollywood a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_control_Hollywood" ;
+        gaf:denotedBy leolaniTalk:chat1280_utterance0_char0-37 .
 
-    leolaniTalk:Their_power_have_banned_00028 a grasp:Attribution ;
-        rdfs:label "Their_power_have_banned_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1280_utterance2_char0-94 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Their_power_have_banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_power_have_banned" ;
+        gaf:denotedBy leolaniTalk:chat1280_utterance2_char0-94 .
 
-    leolaniTalk:Their_power_have_is_proof_00028 a grasp:Attribution ;
-        rdfs:label "Their_power_have_is_proof_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1280_utterance2_char0-94 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Their_power_have_is_proof a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_power_have_is_proof" ;
+        gaf:denotedBy leolaniTalk:chat1280_utterance2_char0-94 .
 
-    leolaniTalk:Their_power_to_have_is_proof_00028 a grasp:Attribution ;
-        rdfs:label "Their_power_to_have_is_proof_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1280_utterance2_char0-94 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Their_power_to_have_is_proof a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_power_to_have_is_proof" ;
+        gaf:denotedBy leolaniTalk:chat1280_utterance2_char0-94 .
 
-    leolaniTalk:chat1280_utterance0_char0-37 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1280_utterance0_char0-37" ;
-        gaf:containsDenotation leolaniWorld:Hollywood,
-            leolaniWorld:Jews ;
-        gaf:denotes leolaniWorld:Jews_control_Hollywood ;
-        grasp:hasAttribution leolaniTalk:Jews_control_Hollywood_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:40.072684"^^xml1:string ;
-        rdf:value "Jews control Hollywood and the media."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1280_utterance0 .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:they_control_Hollywood_00028 a grasp:Attribution ;
-        rdfs:label "they_control_Hollywood_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1280_utterance2_char0-94 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_control_Hollywood a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_control_Hollywood" ;
+        gaf:denotedBy leolaniTalk:chat1280_utterance2_char0-94 .
 
-    leolaniTalk:chat1280_utterance2_char0-94 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1280_utterance2_char0-94" ;
-        gaf:containsDenotation leolaniWorld:Hollywood,
-            leolaniWorld:Their_power,
-            leolaniWorld:Their_power_have,
-            leolaniWorld:Their_power_to_have,
-            leolaniWorld:banned,
-            leolaniWorld:proof,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:Their_power_have_banned,
-            leolaniWorld:Their_power_have_is_proof,
-            leolaniWorld:Their_power_to_have_is_proof,
-            leolaniWorld:they_control_Hollywood ;
-        grasp:hasAttribution leolaniTalk:Their_power_have_banned_00028,
-            leolaniTalk:Their_power_have_is_proof_00028,
-            leolaniTalk:Their_power_to_have_is_proof_00028,
-            leolaniTalk:they_control_Hollywood_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:40.249874"^^xml1:string,
-            "2024-06-05T23:06:40.249930"^^xml1:string,
-            "2024-06-05T23:06:40.249955"^^xml1:string,
-            "2024-06-05T23:06:40.249978"^^xml1:string ;
-        rdf:value "Their power to have movies banned and directors censured is proof that they control Hollywood."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1280_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context44 a eps:Context ;
-        rdfs:label "context44" ;
-        hs:id "44"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Their_power_to_have_is_proof {
+    leolaniWorld:Their_power_to_have ns1:is leolaniWorld:proof .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1280 .
+leolaniWorld:Their_power_have_banned {
+    leolaniWorld:Their_power ns1:have leolaniWorld:banned .
+}
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+leolaniWorld:Instances {
+    leolaniWorld:Hollywood a gaf:Instance ;
+        rdfs:label "hollywood" ;
+        gaf:denotedIn leolaniTalk:chat1280_utterance0_char0-37,
+            leolaniTalk:chat1280_utterance2_char0-94 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "196"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1280_utterance0_char0-37 .
 
-    leolaniTalk:chat1280 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1280" ;
-        hs:id "1280"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1280_utterance0,
-            leolaniTalk:chat1280_utterance2 .
+    leolaniWorld:Their_power a gaf:Instance ;
+        rdfs:label "their-power" ;
+        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
 
-    leolaniTalk:chat1280_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1280_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+    leolaniWorld:Their_power_have a gaf:Instance ;
+        rdfs:label "their-power-have" ;
+        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
 
-    leolaniTalk:chat1280_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1280_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+    leolaniWorld:Their_power_to_have a gaf:Instance ;
+        rdfs:label "their-power-to-have" ;
+        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:banned a gaf:Instance ;
+        rdfs:label "banned" ;
+        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:proof a gaf:Instance ;
+        rdfs:label "proof" ;
+        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1280_utterance2_char0-94 .
 }
 

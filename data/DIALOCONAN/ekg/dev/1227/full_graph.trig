@@ -22,56 +22,87 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:They_just-got_treatment {
+    leolaniWorld:They ns1:just_got leolaniWorld:treatment .
+}
+
+leolaniWorld:They_got_much_treatment {
+    leolaniWorld:They ns1:got leolaniWorld:much_treatment .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context135 a eps:Context ;
+        rdfs:label "context135" ;
+        hs:id "135"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1227 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "115"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1227 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1227" ;
+        hs:id "1227"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1227_utterance1,
+            leolaniTalk:chat1227_utterance2 .
+
+    leolaniTalk:chat1227_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1227_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1227_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1227_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:part_should_should_repeated {
-    leolaniWorld:part ns1:should leolaniWorld:should_repeated .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:They_got_much_treatment a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_got_much_treatment" ;
-        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
-
-    leolaniWorld:They_got_treatment a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_got_treatment" ;
-        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
-
-    leolaniWorld:They_just-got_much_treatment a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_just-got_much_treatment" ;
-        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
-
-    leolaniWorld:They_just-got_treatment a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_just-got_treatment" ;
-        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:part_should_should_repeated a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "part_should_should_repeated" ;
-        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
-
-    leolaniWorld:that_was_good a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "that_was_good" ;
-        gaf:denotedBy leolaniTalk:chat1227_utterance2_char0-89 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniTalk:Perspectives {
@@ -172,71 +203,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:good a gaf:Instance ;
-        rdfs:label "good" ;
-        gaf:denotedIn leolaniTalk:chat1227_utterance2_char0-89 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:much_treatment a gaf:Instance ;
-        rdfs:label "much-treatment" ;
-        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
-
-    leolaniWorld:part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
-
-    leolaniWorld:should_repeated a gaf:Instance ;
-        rdfs:label "should-repeated" ;
-        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
-
-    leolaniWorld:that a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat1227_utterance2_char0-89 .
-
-    leolaniWorld:treatment a gaf:Instance ;
-        rdfs:label "treatment" ;
-        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
-}
-
-leolaniWorld:They_got_treatment {
-    leolaniWorld:They ns1:got leolaniWorld:treatment .
-}
-
-leolaniWorld:They_got_much_treatment {
-    leolaniWorld:They ns1:got leolaniWorld:much_treatment .
-}
-
-leolaniWorld:They_just-got_treatment {
-    leolaniWorld:They ns1:just_got leolaniWorld:treatment .
-}
-
-leolaniWorld:that_was_good {
-    leolaniWorld:that ns1:was leolaniWorld:good .
-}
-
-leolaniWorld:They_just-got_much_treatment {
-    leolaniWorld:They ns1:just_got leolaniWorld:much_treatment .
 }
 
 leolaniWorld:Ontology {
@@ -574,70 +540,104 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context135 a eps:Context ;
-        rdfs:label "context135" ;
-        hs:id "135"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:They_just-got_much_treatment {
+    leolaniWorld:They ns1:just_got leolaniWorld:much_treatment .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1227 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "115"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1227 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:They_got_much_treatment a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1227" ;
-        hs:id "1227"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1227_utterance1,
-            leolaniTalk:chat1227_utterance2 .
+        rdfs:label "They_got_much_treatment" ;
+        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
 
-    leolaniTalk:chat1227_utterance1 a grasp:Utterance,
+    leolaniWorld:They_got_treatment a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1227_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "They_got_treatment" ;
+        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
 
-    leolaniTalk:chat1227_utterance2 a grasp:Utterance,
+    leolaniWorld:They_just-got_much_treatment a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1227_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_just-got_much_treatment" ;
+        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:They_just-got_treatment a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_just-got_treatment" ;
+        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:part_should_should_repeated a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "part_should_should_repeated" ;
+        gaf:denotedBy leolaniTalk:chat1227_utterance1_char0-153 .
+
+    leolaniWorld:that_was_good a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "that_was_good" ;
+        gaf:denotedBy leolaniTalk:chat1227_utterance2_char0-89 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:part_should_should_repeated {
+    leolaniWorld:part ns1:should leolaniWorld:should_repeated .
+}
+
+leolaniWorld:that_was_good {
+    leolaniWorld:that ns1:was leolaniWorld:good .
+}
+
+leolaniWorld:They_got_treatment {
+    leolaniWorld:They ns1:got leolaniWorld:treatment .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:good a gaf:Instance ;
+        rdfs:label "good" ;
+        gaf:denotedIn leolaniTalk:chat1227_utterance2_char0-89 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:much_treatment a gaf:Instance ;
+        rdfs:label "much-treatment" ;
+        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
+
+    leolaniWorld:should_repeated a gaf:Instance ;
+        rdfs:label "should-repeated" ;
+        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
+
+    leolaniWorld:that a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat1227_utterance2_char0-89 .
+
+    leolaniWorld:treatment a gaf:Instance ;
+        rdfs:label "treatment" ;
+        gaf:denotedIn leolaniTalk:chat1227_utterance1_char0-153 .
 }
 

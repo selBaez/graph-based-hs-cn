@@ -22,104 +22,190 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Lesbian_women_hate_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Lesbian_women_hate_men" ;
-        gaf:denotedBy leolaniTalk:chat1752_utterance0_char0-60 .
-
-    leolaniWorld:choice_can_can_should_made_by_people_themselves a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "choice_can_can_should_made_by_people_themselves" ;
-        gaf:denotedBy leolaniTalk:chat1752_utterance1_char0-70 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are-bitches-for_reason a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-bitches-for_reason" ;
-        gaf:denotedBy leolaniTalk:chat1752_utterance0_char0-60 .
-
-    leolaniWorld:they_are_bitches a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_bitches" ;
-        gaf:denotedBy leolaniTalk:chat1752_utterance0_char0-60 .
-
-    leolaniWorld:women_hate_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_hate_men" ;
-        gaf:denotedBy leolaniTalk:chat1752_utterance0_char0-60 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Lesbian_women a gaf:Instance ;
-        rdfs:label "lesbian-women" ;
-        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
-
-    leolaniWorld:bitches a gaf:Instance ;
-        rdfs:label "bitches" ;
-        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
-
-    leolaniWorld:can_should_made_by_people_themselves a gaf:Instance ;
-        rdfs:label "can-should-made-by-people-themselves" ;
-        gaf:denotedIn leolaniTalk:chat1752_utterance1_char0-70 .
-
-    leolaniWorld:choice a gaf:Instance ;
-        rdfs:label "choice" ;
-        gaf:denotedIn leolaniTalk:chat1752_utterance1_char0-70 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
-
-    leolaniWorld:reason a gaf:Instance ;
-        rdfs:label "reason" ;
-        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
-}
-
 leolaniWorld:women_hate_men {
     leolaniWorld:women ns1:hate leolaniWorld:men .
 }
 
-leolaniWorld:they_are-bitches-for_reason {
-    leolaniWorld:they ns1:are_bitches_for leolaniWorld:reason .
+leolaniTalk:Interactions {
+    leolaniContext:context214 a eps:Context ;
+        rdfs:label "context214" ;
+        hs:id "214"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1752 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "111"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1752 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1752" ;
+        hs:id "1752"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1752_utterance0,
+            leolaniTalk:chat1752_utterance1 .
+
+    leolaniTalk:chat1752_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1752_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1752_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1752_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Lesbian_women_hate_men {
+    leolaniWorld:Lesbian_women ns1:hate leolaniWorld:men .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:choice_can_can_should_made_by_people_themselves {
+    leolaniWorld:choice ns1:can leolaniWorld:can_should_made_by_people_themselves .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:they_are_bitches {
     leolaniWorld:they ns1:are leolaniWorld:bitches .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Lesbian_women_hate_men_00021 a grasp:Attribution ;
+        rdfs:label "Lesbian_women_hate_men_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1752_utterance0_char0-60 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1752_utterance1_char0-70 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1752_utterance1_char0-70" ;
+        gaf:containsDenotation leolaniWorld:can_should_made_by_people_themselves,
+            leolaniWorld:choice ;
+        gaf:denotes leolaniWorld:choice_can_can_should_made_by_people_themselves ;
+        grasp:hasAttribution leolaniTalk:choice_can_can_should_made_by_people_themselves_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:26.254799"^^xml1:string ;
+        rdf:value "The choice of partner can and should be made by the people themselves."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1752_utterance1 .
+
+    leolaniTalk:choice_can_can_should_made_by_people_themselves_00028 a grasp:Attribution ;
+        rdfs:label "choice_can_can_should_made_by_people_themselves_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1752_utterance1_char0-70 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-bitches-for_reason_00021 a grasp:Attribution ;
+        rdfs:label "they_are-bitches-for_reason_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1752_utterance0_char0-60 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_bitches_00021 a grasp:Attribution ;
+        rdfs:label "they_are_bitches_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1752_utterance0_char0-60 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_hate_men_00021 a grasp:Attribution ;
+        rdfs:label "women_hate_men_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1752_utterance0_char0-60 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat1752_utterance0_char0-60 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1752_utterance0_char0-60" ;
+        gaf:containsDenotation leolaniWorld:Lesbian_women,
+            leolaniWorld:bitches,
+            leolaniWorld:men,
+            leolaniWorld:reason,
+            leolaniWorld:they,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:Lesbian_women_hate_men,
+            leolaniWorld:they_are-bitches-for_reason,
+            leolaniWorld:they_are_bitches,
+            leolaniWorld:women_hate_men ;
+        grasp:hasAttribution leolaniTalk:Lesbian_women_hate_men_00021,
+            leolaniTalk:they_are-bitches-for_reason_00021,
+            leolaniTalk:they_are_bitches_00021,
+            leolaniTalk:women_hate_men_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:26.170602"^^xml1:string,
+            "2024-06-05T23:34:26.170720"^^xml1:string,
+            "2024-06-05T23:34:26.170743"^^xml1:string,
+            "2024-06-05T23:34:26.170765"^^xml1:string ;
+        rdf:value "Lesbian women hate men and they are bitches for this reason."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1752_utterance0 .
+
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:they_are-bitches-for_reason {
+    leolaniWorld:they ns1:are_bitches_for leolaniWorld:reason .
 }
 
 leolaniWorld:Ontology {
@@ -457,173 +543,87 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Lesbian_women_hate_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Lesbian_women_hate_men" ;
+        gaf:denotedBy leolaniTalk:chat1752_utterance0_char0-60 .
+
+    leolaniWorld:choice_can_can_should_made_by_people_themselves a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "choice_can_can_should_made_by_people_themselves" ;
+        gaf:denotedBy leolaniTalk:chat1752_utterance1_char0-70 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are-bitches-for_reason a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-bitches-for_reason" ;
+        gaf:denotedBy leolaniTalk:chat1752_utterance0_char0-60 .
+
+    leolaniWorld:they_are_bitches a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_bitches" ;
+        gaf:denotedBy leolaniTalk:chat1752_utterance0_char0-60 .
+
+    leolaniWorld:women_hate_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_hate_men" ;
+        gaf:denotedBy leolaniTalk:chat1752_utterance0_char0-60 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:choice_can_can_should_made_by_people_themselves {
-    leolaniWorld:choice ns1:can leolaniWorld:can_should_made_by_people_themselves .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Lesbian_women a gaf:Instance ;
+        rdfs:label "lesbian-women" ;
+        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Lesbian_women_hate_men_00021 a grasp:Attribution ;
-        rdfs:label "Lesbian_women_hate_men_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1752_utterance0_char0-60 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:bitches a gaf:Instance ;
+        rdfs:label "bitches" ;
+        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
 
-    leolaniTalk:chat1752_utterance1_char0-70 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1752_utterance1_char0-70" ;
-        gaf:containsDenotation leolaniWorld:can_should_made_by_people_themselves,
-            leolaniWorld:choice ;
-        gaf:denotes leolaniWorld:choice_can_can_should_made_by_people_themselves ;
-        grasp:hasAttribution leolaniTalk:choice_can_can_should_made_by_people_themselves_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:26.254799"^^xml1:string ;
-        rdf:value "The choice of partner can and should be made by the people themselves."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1752_utterance1 .
+    leolaniWorld:can_should_made_by_people_themselves a gaf:Instance ;
+        rdfs:label "can-should-made-by-people-themselves" ;
+        gaf:denotedIn leolaniTalk:chat1752_utterance1_char0-70 .
 
-    leolaniTalk:choice_can_can_should_made_by_people_themselves_00028 a grasp:Attribution ;
-        rdfs:label "choice_can_can_should_made_by_people_themselves_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1752_utterance1_char0-70 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-bitches-for_reason_00021 a grasp:Attribution ;
-        rdfs:label "they_are-bitches-for_reason_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1752_utterance0_char0-60 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_bitches_00021 a grasp:Attribution ;
-        rdfs:label "they_are_bitches_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1752_utterance0_char0-60 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_hate_men_00021 a grasp:Attribution ;
-        rdfs:label "women_hate_men_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1752_utterance0_char0-60 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat1752_utterance0_char0-60 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1752_utterance0_char0-60" ;
-        gaf:containsDenotation leolaniWorld:Lesbian_women,
-            leolaniWorld:bitches,
-            leolaniWorld:men,
-            leolaniWorld:reason,
-            leolaniWorld:they,
-            leolaniWorld:women ;
-        gaf:denotes leolaniWorld:Lesbian_women_hate_men,
-            leolaniWorld:they_are-bitches-for_reason,
-            leolaniWorld:they_are_bitches,
-            leolaniWorld:women_hate_men ;
-        grasp:hasAttribution leolaniTalk:Lesbian_women_hate_men_00021,
-            leolaniTalk:they_are-bitches-for_reason_00021,
-            leolaniTalk:they_are_bitches_00021,
-            leolaniTalk:women_hate_men_00021 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:26.170602"^^xml1:string,
-            "2024-06-05T23:34:26.170720"^^xml1:string,
-            "2024-06-05T23:34:26.170743"^^xml1:string,
-            "2024-06-05T23:34:26.170765"^^xml1:string ;
-        rdf:value "Lesbian women hate men and they are bitches for this reason."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1752_utterance0 .
-
-    graspe:ANGER a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANGER" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context214 a eps:Context ;
-        rdfs:label "context214" ;
-        hs:id "214"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1752 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "111"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1752 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1752" ;
-        hs:id "1752"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1752_utterance0,
-            leolaniTalk:chat1752_utterance1 .
-
-    leolaniTalk:chat1752_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1752_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1752_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1752_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:choice a gaf:Instance ;
+        rdfs:label "choice" ;
+        gaf:denotedIn leolaniTalk:chat1752_utterance1_char0-70 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:Lesbian_women_hate_men {
-    leolaniWorld:Lesbian_women ns1:hate leolaniWorld:men .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
+
+    leolaniWorld:reason a gaf:Instance ;
+        rdfs:label "reason" ;
+        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1752_utterance0_char0-60 .
 }
 

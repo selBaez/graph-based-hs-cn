@@ -22,12 +22,120 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:us_control_world {
+    leolaniWorld:us ns1:control leolaniWorld:world .
+}
+
+leolaniWorld:Jewishness_is_inherited {
+    leolaniWorld:Jewishness ns1:is leolaniWorld:inherited .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context145 a eps:Context ;
+        rdfs:label "context145" ;
+        hs:id "145"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat621 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "254"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat621 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat621" ;
+        hs:id "621"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat621_utterance0,
+            leolaniTalk:chat621_utterance2,
+            leolaniTalk:chat621_utterance4 .
+
+    leolaniTalk:chat621_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat621_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat621_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat621_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat621_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat621_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:they_are_people {
+    leolaniWorld:they ns1:are leolaniWorld:people .
+}
+
+leolaniWorld:Jews_are_only {
+    leolaniWorld:Jews ns1:are leolaniWorld:only .
+}
+
+leolaniWorld:they_are_chosen_people {
+    leolaniWorld:they ns1:are leolaniWorld:chosen_people .
+}
+
+leolaniWorld:they_are-chosen-people_Jews_think {
+    leolaniWorld:they ns1:are_chosen_people leolaniWorld:Jews_think .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Jewishness_is-inherited-through_blood {
+    leolaniWorld:Jewishness ns1:is_inherited_through leolaniWorld:blood .
+}
+
+leolaniWorld:they_are-people_Jews_think {
+    leolaniWorld:they ns1:are_people leolaniWorld:Jews_think .
+}
+
+leolaniWorld:they_are-people_Since_Jews_think {
+    leolaniWorld:they ns1:are_people leolaniWorld:Since_Jews_think .
+}
+
 leolaniWorld:they_ask-for_privileges {
     leolaniWorld:they ns1:ask_for leolaniWorld:privileges .
 }
 
-leolaniWorld:they_are-chosen-people_Since_Jews_think {
-    leolaniWorld:they ns1:are_chosen_people leolaniWorld:Since_Jews_think .
+leolaniWorld:they_ask-for_special_privileges {
+    leolaniWorld:they ns1:ask_for leolaniWorld:special_privileges .
 }
 
 leolaniTalk:Perspectives {
@@ -198,71 +306,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jewishness a gaf:Instance ;
-        rdfs:label "jewishness" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance4_char0-164 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance0_char0-63 .
-
-    leolaniWorld:Jews_think a gaf:Instance ;
-        rdfs:label "jews-think" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
-
-    leolaniWorld:Since_Jews_think a gaf:Instance ;
-        rdfs:label "since-jews-think" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
-
-    leolaniWorld:blood a gaf:Instance ;
-        rdfs:label "blood" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance4_char0-164 .
-
-    leolaniWorld:chosen_people a gaf:Instance ;
-        rdfs:label "chosen-people" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:inherited a gaf:Instance ;
-        rdfs:label "inherited" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance4_char0-164 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:only a gaf:Instance ;
-        rdfs:label "only" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance0_char0-63 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
-
-    leolaniWorld:privileges a gaf:Instance ;
-        rdfs:label "privileges" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
-
-    leolaniWorld:special_privileges a gaf:Instance ;
-        rdfs:label "special-privileges" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance0_char0-63 .
-
-    leolaniWorld:world a gaf:Instance ;
-        rdfs:label "world" ;
-        gaf:denotedIn leolaniTalk:chat621_utterance0_char0-63 .
 }
 
 leolaniWorld:Ontology {
@@ -600,76 +643,8 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context145 a eps:Context ;
-        rdfs:label "context145" ;
-        hs:id "145"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat621 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "254"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat621 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat621" ;
-        hs:id "621"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat621_utterance0,
-            leolaniTalk:chat621_utterance2,
-            leolaniTalk:chat621_utterance4 .
-
-    leolaniTalk:chat621_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat621_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat621_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat621_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat621_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat621_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:us_control_world {
-    leolaniWorld:us ns1:control leolaniWorld:world .
+leolaniWorld:they_are-chosen-people_Since_Jews_think {
+    leolaniWorld:they ns1:are_chosen_people leolaniWorld:Since_Jews_think .
 }
 
 leolaniWorld:Claims {
@@ -740,43 +715,68 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Jews_are_only {
-    leolaniWorld:Jews ns1:are leolaniWorld:only .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Jewishness a gaf:Instance ;
+        rdfs:label "jewishness" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance4_char0-164 .
 
-leolaniWorld:they_are-chosen-people_Jews_think {
-    leolaniWorld:they ns1:are_chosen_people leolaniWorld:Jews_think .
-}
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance0_char0-63 .
 
-leolaniWorld:Jewishness_is-inherited-through_blood {
-    leolaniWorld:Jewishness ns1:is_inherited_through leolaniWorld:blood .
-}
+    leolaniWorld:Jews_think a gaf:Instance ;
+        rdfs:label "jews-think" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
 
-leolaniWorld:they_are_people {
-    leolaniWorld:they ns1:are leolaniWorld:people .
-}
+    leolaniWorld:Since_Jews_think a gaf:Instance ;
+        rdfs:label "since-jews-think" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
 
-leolaniWorld:they_are-people_Since_Jews_think {
-    leolaniWorld:they ns1:are_people leolaniWorld:Since_Jews_think .
-}
+    leolaniWorld:blood a gaf:Instance ;
+        rdfs:label "blood" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance4_char0-164 .
 
-leolaniWorld:they_ask-for_special_privileges {
-    leolaniWorld:they ns1:ask_for leolaniWorld:special_privileges .
-}
+    leolaniWorld:chosen_people a gaf:Instance ;
+        rdfs:label "chosen-people" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
 
-leolaniWorld:they_are-people_Jews_think {
-    leolaniWorld:they ns1:are_people leolaniWorld:Jews_think .
-}
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
 
-leolaniWorld:they_are_chosen_people {
-    leolaniWorld:they ns1:are leolaniWorld:chosen_people .
-}
+    leolaniWorld:inherited a gaf:Instance ;
+        rdfs:label "inherited" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance4_char0-164 .
 
-leolaniWorld:Jewishness_is_inherited {
-    leolaniWorld:Jewishness ns1:is leolaniWorld:inherited .
-}
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:only a gaf:Instance ;
+        rdfs:label "only" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance0_char0-63 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
+
+    leolaniWorld:privileges a gaf:Instance ;
+        rdfs:label "privileges" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
+
+    leolaniWorld:special_privileges a gaf:Instance ;
+        rdfs:label "special-privileges" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance2_char0-170 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance0_char0-63 .
+
+    leolaniWorld:world a gaf:Instance ;
+        rdfs:label "world" ;
+        gaf:denotedIn leolaniTalk:chat621_utterance0_char0-63 .
 }
 

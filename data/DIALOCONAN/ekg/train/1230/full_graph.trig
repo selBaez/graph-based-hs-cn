@@ -22,88 +22,101 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:they_are_so_special {
-    leolaniWorld:they ns11:are leolaniWorld:so_special .
+leolaniWorld:they_would-need_your_consent {
+    leolaniWorld:they ns11:would_need leolaniWorld:your_consent .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context24 a eps:Context ;
+        rdfs:label "context24" ;
+        hs:id "24"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_might-feel-as_minority a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1230 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "126"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1230 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Jews_might-feel-as_minority" ;
-        gaf:denotedBy leolaniTalk:chat1230_utterance1_char0-88 .
+        rdfs:label "chat1230" ;
+        hs:id "1230"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1230_utterance0,
+            leolaniTalk:chat1230_utterance1,
+            leolaniTalk:chat1230_utterance3,
+            leolaniTalk:chat1230_utterance4 .
 
-    leolaniWorld:Jews_might-feel_different a gaf:Assertion,
+    leolaniTalk:chat1230_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Jews_might-feel_different" ;
-        gaf:denotedBy leolaniTalk:chat1230_utterance1_char0-88 .
+        rdfs:label "chat1230_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:They_rule_world a gaf:Assertion,
+    leolaniTalk:chat1230_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_rule_world" ;
-        gaf:denotedBy leolaniTalk:chat1230_utterance4_char0-78 .
+        rdfs:label "chat1230_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:They_want_rule a gaf:Assertion,
+    leolaniTalk:chat1230_utterance3 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_want_rule" ;
-        gaf:denotedBy leolaniTalk:chat1230_utterance4_char0-78 .
+        rdfs:label "chat1230_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:They_want_to_rule a gaf:Assertion,
+    leolaniTalk:chat1230_utterance4 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_want_to_rule" ;
-        gaf:denotedBy leolaniTalk:chat1230_utterance4_char0-78 .
+        rdfs:label "chat1230_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:they_are-special-in_sense a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-special-in_sense" ;
-        gaf:denotedBy leolaniTalk:chat1230_utterance1_char0-88 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:they_are_so_special a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_so_special" ;
-        gaf:denotedBy leolaniTalk:chat1230_utterance0_char0-30 .
-
-    leolaniWorld:they_are_special a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_special" ;
-        gaf:denotedBy leolaniTalk:chat1230_utterance0_char0-30,
-            leolaniTalk:chat1230_utterance1_char0-88 .
-
-    leolaniWorld:they_would-need_your_consent a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_would-need_your_consent" ;
-        gaf:denotedBy leolaniTalk:chat1230_utterance3_char0-78 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Jews_might-feel_different {
-    leolaniWorld:Jews ns11:might_feel leolaniWorld:different .
-}
-
-leolaniWorld:They_want_to_rule {
-    leolaniWorld:They ns11:want leolaniWorld:to_rule .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:they_are_special {
     leolaniWorld:they ns11:are leolaniWorld:special .
 }
 
-leolaniWorld:they_would-need_your_consent {
-    leolaniWorld:they ns11:would_need leolaniWorld:your_consent .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:They_want_rule {
@@ -114,72 +127,160 @@ leolaniWorld:They_rule_world {
     leolaniWorld:They ns11:rule leolaniWorld:world .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance1_char0-88 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance4_char0-78 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:different a gaf:Instance ;
-        rdfs:label "different" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance1_char0-88 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:minority a gaf:Instance ;
-        rdfs:label "minority" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance1_char0-88 .
-
-    leolaniWorld:rule a gaf:Instance ;
-        rdfs:label "rule" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance4_char0-78 .
-
-    leolaniWorld:sense a gaf:Instance ;
-        rdfs:label "sense" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance1_char0-88 .
-
-    leolaniWorld:so_special a gaf:Instance ;
-        rdfs:label "so-special" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance0_char0-30 .
-
-    leolaniWorld:special a gaf:Instance ;
-        rdfs:label "special" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance0_char0-30,
-            leolaniTalk:chat1230_utterance1_char0-88 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance0_char0-30,
-            leolaniTalk:chat1230_utterance1_char0-88,
-            leolaniTalk:chat1230_utterance3_char0-78 .
-
-    leolaniWorld:to_rule a gaf:Instance ;
-        rdfs:label "to-rule" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance4_char0-78 .
-
-    leolaniWorld:world a gaf:Instance ;
-        rdfs:label "world" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance4_char0-78 .
-
-    leolaniWorld:your_consent a gaf:Instance ;
-        rdfs:label "your-consent" ;
-        gaf:denotedIn leolaniTalk:chat1230_utterance3_char0-78 .
+leolaniWorld:They_want_to_rule {
+    leolaniWorld:They ns11:want leolaniWorld:to_rule .
 }
 
-leolaniWorld:Jews_might-feel-as_minority {
-    leolaniWorld:Jews ns11:might_feel_as leolaniWorld:minority .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_might-feel-as_minority_00028 a grasp:Attribution ;
+        rdfs:label "Jews_might-feel-as_minority_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1230_utterance1_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_might-feel_different_00028 a grasp:Attribution ;
+        rdfs:label "Jews_might-feel_different_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1230_utterance1_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_rule_world_00028 a grasp:Attribution ;
+        rdfs:label "They_rule_world_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1230_utterance4_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_want_rule_00028 a grasp:Attribution ;
+        rdfs:label "They_want_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1230_utterance4_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_want_to_rule_00028 a grasp:Attribution ;
+        rdfs:label "They_want_to_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1230_utterance4_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1230_utterance3_char0-78 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1230_utterance3_char0-78" ;
+        gaf:containsDenotation leolaniWorld:they,
+            leolaniWorld:your_consent ;
+        gaf:denotes leolaniWorld:they_would-need_your_consent ;
+        grasp:hasAttribution leolaniTalk:they_would-need_your_consent_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:30.840586"^^xml1:string ;
+        rdf:value "I think that Jews are a part of our country. Why would they need your consent?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1230_utterance3 .
+
+    leolaniTalk:they_are-special-in_sense_00028 a grasp:Attribution ;
+        rdfs:label "they_are-special-in_sense_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1230_utterance1_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_so_special_00028 a grasp:Attribution ;
+        rdfs:label "they_are_so_special_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1230_utterance0_char0-30 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_would-need_your_consent_00028 a grasp:Attribution ;
+        rdfs:label "they_would-need_your_consent_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1230_utterance3_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1230_utterance0_char0-30 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1230_utterance0_char0-30" ;
+        gaf:containsDenotation leolaniWorld:so_special,
+            leolaniWorld:special,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_are_so_special,
+            leolaniWorld:they_are_special ;
+        grasp:hasAttribution leolaniTalk:they_are_so_special_00028,
+            leolaniTalk:they_are_special_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:30.546090"^^xml1:string,
+            "2024-06-05T23:09:30.546147"^^xml1:string ;
+        rdf:value "Jews think they are so special"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1230_utterance0 .
+
+    leolaniTalk:they_are_special_00028 a grasp:Attribution ;
+        rdfs:label "they_are_special_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1230_utterance0_char0-30,
+            leolaniTalk:chat1230_utterance1_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1230_utterance4_char0-78 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1230_utterance4_char0-78" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:rule,
+            leolaniWorld:to_rule,
+            leolaniWorld:world ;
+        gaf:denotes leolaniWorld:They_rule_world,
+            leolaniWorld:They_want_rule,
+            leolaniWorld:They_want_to_rule ;
+        grasp:hasAttribution leolaniTalk:They_rule_world_00028,
+            leolaniTalk:They_want_rule_00028,
+            leolaniTalk:They_want_to_rule_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:30.923595"^^xml1:string,
+            "2024-06-05T23:09:30.923650"^^xml1:string,
+            "2024-06-05T23:09:30.923673"^^xml1:string ;
+        rdf:value "For sure they don't need it for world domination. They want to rule the world."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1230_utterance4 .
+
+    leolaniTalk:chat1230_utterance1_char0-88 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1230_utterance1_char0-88" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:different,
+            leolaniWorld:minority,
+            leolaniWorld:sense,
+            leolaniWorld:special,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:Jews_might-feel-as_minority,
+            leolaniWorld:Jews_might-feel_different,
+            leolaniWorld:they_are-special-in_sense,
+            leolaniWorld:they_are_special ;
+        grasp:hasAttribution leolaniTalk:Jews_might-feel-as_minority_00028,
+            leolaniTalk:Jews_might-feel_different_00028,
+            leolaniTalk:they_are-special-in_sense_00028,
+            leolaniTalk:they_are_special_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:30.648784"^^xml1:string,
+            "2024-06-05T23:09:30.648839"^^xml1:string,
+            "2024-06-05T23:09:30.648863"^^xml1:string,
+            "2024-06-05T23:09:30.648885"^^xml1:string ;
+        rdf:value "Jews might feel different as a minority, in this sense they are \"special\". Nothing else."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1230_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -517,244 +618,143 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:they_are_so_special {
+    leolaniWorld:they ns11:are leolaniWorld:so_special .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Jews_might-feel-as_minority a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_might-feel-as_minority" ;
+        gaf:denotedBy leolaniTalk:chat1230_utterance1_char0-88 .
+
+    leolaniWorld:Jews_might-feel_different a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_might-feel_different" ;
+        gaf:denotedBy leolaniTalk:chat1230_utterance1_char0-88 .
+
+    leolaniWorld:They_rule_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_rule_world" ;
+        gaf:denotedBy leolaniTalk:chat1230_utterance4_char0-78 .
+
+    leolaniWorld:They_want_rule a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_want_rule" ;
+        gaf:denotedBy leolaniTalk:chat1230_utterance4_char0-78 .
+
+    leolaniWorld:They_want_to_rule a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_want_to_rule" ;
+        gaf:denotedBy leolaniTalk:chat1230_utterance4_char0-78 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are-special-in_sense a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-special-in_sense" ;
+        gaf:denotedBy leolaniTalk:chat1230_utterance1_char0-88 .
+
+    leolaniWorld:they_are_so_special a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_so_special" ;
+        gaf:denotedBy leolaniTalk:chat1230_utterance0_char0-30 .
+
+    leolaniWorld:they_are_special a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_special" ;
+        gaf:denotedBy leolaniTalk:chat1230_utterance0_char0-30,
+            leolaniTalk:chat1230_utterance1_char0-88 .
+
+    leolaniWorld:they_would-need_your_consent a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_would-need_your_consent" ;
+        gaf:denotedBy leolaniTalk:chat1230_utterance3_char0-78 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Jews_might-feel-as_minority {
+    leolaniWorld:Jews ns11:might_feel_as leolaniWorld:minority .
+}
+
+leolaniWorld:Jews_might-feel_different {
+    leolaniWorld:Jews ns11:might_feel leolaniWorld:different .
+}
+
 leolaniWorld:they_are-special-in_sense {
     leolaniWorld:they ns11:are_special_in leolaniWorld:sense .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance1_char0-88 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_might-feel-as_minority_00028 a grasp:Attribution ;
-        rdfs:label "Jews_might-feel-as_minority_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1230_utterance1_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_might-feel_different_00028 a grasp:Attribution ;
-        rdfs:label "Jews_might-feel_different_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1230_utterance1_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_rule_world_00028 a grasp:Attribution ;
-        rdfs:label "They_rule_world_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1230_utterance4_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_want_rule_00028 a grasp:Attribution ;
-        rdfs:label "They_want_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1230_utterance4_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_want_to_rule_00028 a grasp:Attribution ;
-        rdfs:label "They_want_to_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1230_utterance4_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1230_utterance3_char0-78 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1230_utterance3_char0-78" ;
-        gaf:containsDenotation leolaniWorld:they,
-            leolaniWorld:your_consent ;
-        gaf:denotes leolaniWorld:they_would-need_your_consent ;
-        grasp:hasAttribution leolaniTalk:they_would-need_your_consent_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:30.840586"^^xml1:string ;
-        rdf:value "I think that Jews are a part of our country. Why would they need your consent?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1230_utterance3 .
-
-    leolaniTalk:they_are-special-in_sense_00028 a grasp:Attribution ;
-        rdfs:label "they_are-special-in_sense_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1230_utterance1_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_so_special_00028 a grasp:Attribution ;
-        rdfs:label "they_are_so_special_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1230_utterance0_char0-30 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_would-need_your_consent_00028 a grasp:Attribution ;
-        rdfs:label "they_would-need_your_consent_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1230_utterance3_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1230_utterance0_char0-30 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1230_utterance0_char0-30" ;
-        gaf:containsDenotation leolaniWorld:so_special,
-            leolaniWorld:special,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_are_so_special,
-            leolaniWorld:they_are_special ;
-        grasp:hasAttribution leolaniTalk:they_are_so_special_00028,
-            leolaniTalk:they_are_special_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:30.546090"^^xml1:string,
-            "2024-06-05T23:09:30.546147"^^xml1:string ;
-        rdf:value "Jews think they are so special"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1230_utterance0 .
-
-    leolaniTalk:they_are_special_00028 a grasp:Attribution ;
-        rdfs:label "they_are_special_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1230_utterance0_char0-30,
-            leolaniTalk:chat1230_utterance1_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1230_utterance4_char0-78 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1230_utterance4_char0-78" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:rule,
-            leolaniWorld:to_rule,
-            leolaniWorld:world ;
-        gaf:denotes leolaniWorld:They_rule_world,
-            leolaniWorld:They_want_rule,
-            leolaniWorld:They_want_to_rule ;
-        grasp:hasAttribution leolaniTalk:They_rule_world_00028,
-            leolaniTalk:They_want_rule_00028,
-            leolaniTalk:They_want_to_rule_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:30.923595"^^xml1:string,
-            "2024-06-05T23:09:30.923650"^^xml1:string,
-            "2024-06-05T23:09:30.923673"^^xml1:string ;
-        rdf:value "For sure they don't need it for world domination. They want to rule the world."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1230_utterance4 .
-
-    leolaniTalk:chat1230_utterance1_char0-88 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1230_utterance1_char0-88" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:different,
-            leolaniWorld:minority,
-            leolaniWorld:sense,
-            leolaniWorld:special,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:Jews_might-feel-as_minority,
-            leolaniWorld:Jews_might-feel_different,
-            leolaniWorld:they_are-special-in_sense,
-            leolaniWorld:they_are_special ;
-        grasp:hasAttribution leolaniTalk:Jews_might-feel-as_minority_00028,
-            leolaniTalk:Jews_might-feel_different_00028,
-            leolaniTalk:they_are-special-in_sense_00028,
-            leolaniTalk:they_are_special_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:30.648784"^^xml1:string,
-            "2024-06-05T23:09:30.648839"^^xml1:string,
-            "2024-06-05T23:09:30.648863"^^xml1:string,
-            "2024-06-05T23:09:30.648885"^^xml1:string ;
-        rdf:value "Jews might feel different as a minority, in this sense they are \"special\". Nothing else."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1230_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context24 a eps:Context ;
-        rdfs:label "context24" ;
-        hs:id "24"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1230 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "126"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1230 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1230" ;
-        hs:id "1230"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1230_utterance0,
-            leolaniTalk:chat1230_utterance1,
-            leolaniTalk:chat1230_utterance3,
-            leolaniTalk:chat1230_utterance4 .
-
-    leolaniTalk:chat1230_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1230_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1230_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1230_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1230_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1230_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1230_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1230_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance4_char0-78 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:different a gaf:Instance ;
+        rdfs:label "different" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance1_char0-88 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:minority a gaf:Instance ;
+        rdfs:label "minority" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance1_char0-88 .
+
+    leolaniWorld:rule a gaf:Instance ;
+        rdfs:label "rule" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance4_char0-78 .
+
+    leolaniWorld:sense a gaf:Instance ;
+        rdfs:label "sense" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance1_char0-88 .
+
+    leolaniWorld:so_special a gaf:Instance ;
+        rdfs:label "so-special" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance0_char0-30 .
+
+    leolaniWorld:special a gaf:Instance ;
+        rdfs:label "special" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance0_char0-30,
+            leolaniTalk:chat1230_utterance1_char0-88 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance0_char0-30,
+            leolaniTalk:chat1230_utterance1_char0-88,
+            leolaniTalk:chat1230_utterance3_char0-78 .
+
+    leolaniWorld:to_rule a gaf:Instance ;
+        rdfs:label "to-rule" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance4_char0-78 .
+
+    leolaniWorld:world a gaf:Instance ;
+        rdfs:label "world" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance4_char0-78 .
+
+    leolaniWorld:your_consent a gaf:Instance ;
+        rdfs:label "your-consent" ;
+        gaf:denotedIn leolaniTalk:chat1230_utterance3_char0-78 .
 }
 

@@ -22,12 +22,116 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:that_has_greedy {
-    leolaniWorld:that ns1:has leolaniWorld:greedy .
-}
-
 leolaniWorld:Bisexuals_are_attracted {
     leolaniWorld:Bisexuals ns1:are leolaniWorld:attracted .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context209 a eps:Context ;
+        rdfs:label "context209" ;
+        hs:id "209"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat3037 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "227"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat3037 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat3037" ;
+        hs:id "3037"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat3037_utterance0,
+            leolaniTalk:chat3037_utterance1,
+            leolaniTalk:chat3037_utterance2,
+            leolaniTalk:chat3037_utterance3,
+            leolaniTalk:chat3037_utterance4 .
+
+    leolaniTalk:chat3037_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3037_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat3037_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3037_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat3037_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3037_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat3037_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3037_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat3037_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3037_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:they_can-choose_men {
+    leolaniWorld:they ns1:can_choose leolaniWorld:men .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:Bisexuals_are_greedy {
+    leolaniWorld:Bisexuals ns1:are leolaniWorld:greedy .
+}
+
+leolaniWorld:relationship_is-with_everyone {
+    leolaniWorld:relationship ns1:is_with leolaniWorld:everyone .
 }
 
 leolaniTalk:Perspectives {
@@ -150,61 +254,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Bisexuals a gaf:Instance ;
-        rdfs:label "bisexuals" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance0_char0-21,
-            leolaniTalk:chat3037_utterance1_char0-115 .
-
-    leolaniWorld:attracted a gaf:Instance ;
-        rdfs:label "attracted" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance1_char0-115 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:everyone a gaf:Instance ;
-        rdfs:label "everyone" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance4_char0-76 .
-
-    leolaniWorld:greedy a gaf:Instance ;
-        rdfs:label "greedy" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance0_char0-21,
-            leolaniTalk:chat3037_utterance2_char0-111 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance2_char0-111 .
-
-    leolaniWorld:most_people a gaf:Instance ;
-        rdfs:label "most-people" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance3_char0-127 .
-
-    leolaniWorld:only_one_partner a gaf:Instance ;
-        rdfs:label "only-one-partner" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance3_char0-127 .
-
-    leolaniWorld:relationship a gaf:Instance ;
-        rdfs:label "relationship" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance4_char0-76 .
-
-    leolaniWorld:that a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance2_char0-111 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat3037_utterance2_char0-111 .
 }
 
 leolaniWorld:Ontology {
@@ -542,100 +591,8 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:relationship_is-with_everyone {
-    leolaniWorld:relationship ns1:is_with leolaniWorld:everyone .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context209 a eps:Context ;
-        rdfs:label "context209" ;
-        hs:id "209"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat3037 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "227"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat3037 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat3037" ;
-        hs:id "3037"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat3037_utterance0,
-            leolaniTalk:chat3037_utterance1,
-            leolaniTalk:chat3037_utterance2,
-            leolaniTalk:chat3037_utterance3,
-            leolaniTalk:chat3037_utterance4 .
-
-    leolaniTalk:chat3037_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat3037_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat3037_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat3037_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat3037_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat3037_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat3037_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat3037_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat3037_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat3037_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:most_people_choose_only_one_partner {
+    leolaniWorld:most_people ns1:choose leolaniWorld:only_one_partner .
 }
 
 leolaniWorld:Claims {
@@ -682,19 +639,62 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:most_people_choose_only_one_partner {
-    leolaniWorld:most_people ns1:choose leolaniWorld:only_one_partner .
+leolaniWorld:that_has_greedy {
+    leolaniWorld:that ns1:has leolaniWorld:greedy .
 }
 
-leolaniWorld:Bisexuals_are_greedy {
-    leolaniWorld:Bisexuals ns1:are leolaniWorld:greedy .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Bisexuals a gaf:Instance ;
+        rdfs:label "bisexuals" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance0_char0-21,
+            leolaniTalk:chat3037_utterance1_char0-115 .
 
-leolaniWorld:they_can-choose_men {
-    leolaniWorld:they ns1:can_choose leolaniWorld:men .
-}
+    leolaniWorld:attracted a gaf:Instance ;
+        rdfs:label "attracted" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance1_char0-115 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:everyone a gaf:Instance ;
+        rdfs:label "everyone" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance4_char0-76 .
+
+    leolaniWorld:greedy a gaf:Instance ;
+        rdfs:label "greedy" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance0_char0-21,
+            leolaniTalk:chat3037_utterance2_char0-111 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance2_char0-111 .
+
+    leolaniWorld:most_people a gaf:Instance ;
+        rdfs:label "most-people" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance3_char0-127 .
+
+    leolaniWorld:only_one_partner a gaf:Instance ;
+        rdfs:label "only-one-partner" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance3_char0-127 .
+
+    leolaniWorld:relationship a gaf:Instance ;
+        rdfs:label "relationship" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance4_char0-76 .
+
+    leolaniWorld:that a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance2_char0-111 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat3037_utterance2_char0-111 .
 }
 

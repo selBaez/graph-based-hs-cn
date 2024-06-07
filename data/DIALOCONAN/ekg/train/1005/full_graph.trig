@@ -22,73 +22,138 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:jihad_is-core-of_their_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "jihad_is-core-of_their_religion" ;
-        gaf:denotedBy leolaniTalk:chat1005_utterance0_char0-205 .
-
-    leolaniWorld:jihad_is_core a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "jihad_is_core" ;
-        gaf:denotedBy leolaniTalk:chat1005_utterance0_char0-205 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are_extreme a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_extreme" ;
-        gaf:denotedBy leolaniTalk:chat1005_utterance0_char0-205 .
-
-    leolaniWorld:they_support_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_support_it" ;
-        gaf:denotedBy leolaniTalk:chat1005_utterance0_char0-205 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:jihad_is_core {
+    leolaniWorld:jihad ns1:is leolaniWorld:core .
 }
 
-leolaniWorld:they_are_extreme {
-    leolaniWorld:they ns1:are leolaniWorld:extreme .
+leolaniWorld:jihad_is-core-of_their_religion {
+    leolaniWorld:jihad ns1:is_core_of leolaniWorld:their_religion .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:core a gaf:Instance ;
-        rdfs:label "core" ;
-        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
+leolaniTalk:Interactions {
+    leolaniContext:context11 a eps:Context ;
+        rdfs:label "context11" ;
+        hs:id "11"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:extreme a gaf:Instance ;
-        rdfs:label "extreme" ;
-        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1005 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "145"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1005 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1005" ;
+        hs:id "1005"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1005_utterance0 .
+
+    leolaniTalk:chat1005_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1005_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
-
-    leolaniWorld:jihad a gaf:Instance ;
-        rdfs:label "jihad" ;
-        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:their_religion a gaf:Instance ;
-        rdfs:label "their-religion" ;
-        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
 }
 
-leolaniWorld:they_support_it {
-    leolaniWorld:they ns1:support leolaniWorld:it .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:jihad_is-core-of_their_religion_00028 a grasp:Attribution ;
+        rdfs:label "jihad_is-core-of_their_religion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1005_utterance0_char0-205 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:jihad_is_core_00028 a grasp:Attribution ;
+        rdfs:label "jihad_is_core_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1005_utterance0_char0-205 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_extreme_00028 a grasp:Attribution ;
+        rdfs:label "they_are_extreme_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1005_utterance0_char0-205 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_support_it_00028 a grasp:Attribution ;
+        rdfs:label "they_support_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1005_utterance0_char0-205 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1005_utterance0_char0-205 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1005_utterance0_char0-205" ;
+        gaf:containsDenotation leolaniWorld:core,
+            leolaniWorld:extreme,
+            leolaniWorld:it,
+            leolaniWorld:jihad,
+            leolaniWorld:their_religion,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:jihad_is-core-of_their_religion,
+            leolaniWorld:jihad_is_core,
+            leolaniWorld:they_are_extreme,
+            leolaniWorld:they_support_it ;
+        grasp:hasAttribution leolaniTalk:jihad_is-core-of_their_religion_00028,
+            leolaniTalk:jihad_is_core_00028,
+            leolaniTalk:they_are_extreme_00028,
+            leolaniTalk:they_support_it_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:57.338075"^^xml1:string,
+            "2024-06-05T23:08:57.338143"^^xml1:string,
+            "2024-06-05T23:08:57.338167"^^xml1:string,
+            "2024-06-05T23:08:57.338190"^^xml1:string ;
+        rdf:value "All versions of Islam have Sharia law, thus, they are all extreme. Not all Muslims are engaged in actual violences, but every Muslim knows that jihad is the core of their religion, and they all support it."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1005_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -426,137 +491,72 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:jihad_is_core {
-    leolaniWorld:jihad ns1:is leolaniWorld:core .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:jihad_is-core-of_their_religion {
-    leolaniWorld:jihad ns1:is_core_of leolaniWorld:their_religion .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:jihad_is-core-of_their_religion_00028 a grasp:Attribution ;
-        rdfs:label "jihad_is-core-of_their_religion_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1005_utterance0_char0-205 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:jihad_is_core_00028 a grasp:Attribution ;
-        rdfs:label "jihad_is_core_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1005_utterance0_char0-205 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_extreme_00028 a grasp:Attribution ;
-        rdfs:label "they_are_extreme_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1005_utterance0_char0-205 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_support_it_00028 a grasp:Attribution ;
-        rdfs:label "they_support_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1005_utterance0_char0-205 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1005_utterance0_char0-205 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1005_utterance0_char0-205" ;
-        gaf:containsDenotation leolaniWorld:core,
-            leolaniWorld:extreme,
-            leolaniWorld:it,
-            leolaniWorld:jihad,
-            leolaniWorld:their_religion,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:jihad_is-core-of_their_religion,
-            leolaniWorld:jihad_is_core,
-            leolaniWorld:they_are_extreme,
-            leolaniWorld:they_support_it ;
-        grasp:hasAttribution leolaniTalk:jihad_is-core-of_their_religion_00028,
-            leolaniTalk:jihad_is_core_00028,
-            leolaniTalk:they_are_extreme_00028,
-            leolaniTalk:they_support_it_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:57.338075"^^xml1:string,
-            "2024-06-05T23:08:57.338143"^^xml1:string,
-            "2024-06-05T23:08:57.338167"^^xml1:string,
-            "2024-06-05T23:08:57.338190"^^xml1:string ;
-        rdf:value "All versions of Islam have Sharia law, thus, they are all extreme. Not all Muslims are engaged in actual violences, but every Muslim knows that jihad is the core of their religion, and they all support it."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1005_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context11 a eps:Context ;
-        rdfs:label "context11" ;
-        hs:id "11"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1005 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "145"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1005 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:jihad_is-core-of_their_religion a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1005" ;
-        hs:id "1005"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1005_utterance0 .
+        rdfs:label "jihad_is-core-of_their_religion" ;
+        gaf:denotedBy leolaniTalk:chat1005_utterance0_char0-205 .
 
-    leolaniTalk:chat1005_utterance0 a grasp:Utterance,
+    leolaniWorld:jihad_is_core a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1005_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "jihad_is_core" ;
+        gaf:denotedBy leolaniTalk:chat1005_utterance0_char0-205 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:they_are_extreme a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_extreme" ;
+        gaf:denotedBy leolaniTalk:chat1005_utterance0_char0-205 .
+
+    leolaniWorld:they_support_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_support_it" ;
+        gaf:denotedBy leolaniTalk:chat1005_utterance0_char0-205 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:they_support_it {
+    leolaniWorld:they ns1:support leolaniWorld:it .
+}
+
+leolaniWorld:they_are_extreme {
+    leolaniWorld:they ns1:are leolaniWorld:extreme .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:core a gaf:Instance ;
+        rdfs:label "core" ;
+        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
+
+    leolaniWorld:extreme a gaf:Instance ;
+        rdfs:label "extreme" ;
+        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
+
+    leolaniWorld:jihad a gaf:Instance ;
+        rdfs:label "jihad" ;
+        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:their_religion a gaf:Instance ;
+        rdfs:label "their-religion" ;
+        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1005_utterance0_char0-205 .
 }
 

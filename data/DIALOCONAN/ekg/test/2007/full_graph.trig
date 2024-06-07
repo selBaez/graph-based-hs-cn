@@ -22,8 +22,102 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context206 a eps:Context ;
+        rdfs:label "context206" ;
+        hs:id "206"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2007 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "248"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2007 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2007" ;
+        hs:id "2007"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2007_utterance1,
+            leolaniTalk:chat2007_utterance2,
+            leolaniTalk:chat2007_utterance4 .
+
+    leolaniTalk:chat2007_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2007_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2007_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2007_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2007_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2007_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:They_should_should_isolated_from_society {
     leolaniWorld:They ns1:should leolaniWorld:should_isolated_from_society .
+}
+
+leolaniWorld:They_should_should_isolated {
+    leolaniWorld:They ns1:should leolaniWorld:should_isolated .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:Universal_Declaration_must_must_followed_in_country {
+    leolaniWorld:Universal_Declaration ns1:must leolaniWorld:must_followed_in_country .
+}
+
+leolaniWorld:gays_are_Because_sick {
+    leolaniWorld:gays ns1:are leolaniWorld:Because_sick .
 }
 
 leolaniTalk:Perspectives {
@@ -126,51 +220,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Because_sick a gaf:Instance ;
-        rdfs:label "because-sick" ;
-        gaf:denotedIn leolaniTalk:chat2007_utterance4_char0-52 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2007_utterance2_char0-112 .
-
-    leolaniWorld:Universal_Declaration a gaf:Instance ;
-        rdfs:label "universal-declaration" ;
-        gaf:denotedIn leolaniTalk:chat2007_utterance1_char0-86 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat2007_utterance4_char0-52 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:must_followed_in_country a gaf:Instance ;
-        rdfs:label "must-followed-in-country" ;
-        gaf:denotedIn leolaniTalk:chat2007_utterance1_char0-86 .
-
-    leolaniWorld:should_isolated a gaf:Instance ;
-        rdfs:label "should-isolated" ;
-        gaf:denotedIn leolaniTalk:chat2007_utterance2_char0-112 .
-
-    leolaniWorld:should_isolated_from_society a gaf:Instance ;
-        rdfs:label "should-isolated-from-society" ;
-        gaf:denotedIn leolaniTalk:chat2007_utterance2_char0-112 .
-
-    leolaniWorld:sick a gaf:Instance ;
-        rdfs:label "sick" ;
-        gaf:denotedIn leolaniTalk:chat2007_utterance4_char0-52 .
 }
 
 leolaniWorld:Ontology {
@@ -508,88 +557,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Universal_Declaration_must_must_followed_in_country {
-    leolaniWorld:Universal_Declaration ns1:must leolaniWorld:must_followed_in_country .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context206 a eps:Context ;
-        rdfs:label "context206" ;
-        hs:id "206"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2007 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "248"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2007 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2007" ;
-        hs:id "2007"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2007_utterance1,
-            leolaniTalk:chat2007_utterance2,
-            leolaniTalk:chat2007_utterance4 .
-
-    leolaniTalk:chat2007_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2007_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2007_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2007_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2007_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2007_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:They_should_should_isolated a gaf:Assertion,
             sem:Event ;
@@ -629,19 +596,52 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:gays_are_Because_sick {
-    leolaniWorld:gays ns1:are leolaniWorld:Because_sick .
-}
-
 leolaniWorld:gays_are_sick {
     leolaniWorld:gays ns1:are leolaniWorld:sick .
 }
 
-leolaniWorld:They_should_should_isolated {
-    leolaniWorld:They ns1:should leolaniWorld:should_isolated .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Because_sick a gaf:Instance ;
+        rdfs:label "because-sick" ;
+        gaf:denotedIn leolaniTalk:chat2007_utterance4_char0-52 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2007_utterance2_char0-112 .
+
+    leolaniWorld:Universal_Declaration a gaf:Instance ;
+        rdfs:label "universal-declaration" ;
+        gaf:denotedIn leolaniTalk:chat2007_utterance1_char0-86 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat2007_utterance4_char0-52 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:must_followed_in_country a gaf:Instance ;
+        rdfs:label "must-followed-in-country" ;
+        gaf:denotedIn leolaniTalk:chat2007_utterance1_char0-86 .
+
+    leolaniWorld:should_isolated a gaf:Instance ;
+        rdfs:label "should-isolated" ;
+        gaf:denotedIn leolaniTalk:chat2007_utterance2_char0-112 .
+
+    leolaniWorld:should_isolated_from_society a gaf:Instance ;
+        rdfs:label "should-isolated-from-society" ;
+        gaf:denotedIn leolaniTalk:chat2007_utterance2_char0-112 .
+
+    leolaniWorld:sick a gaf:Instance ;
+        rdfs:label "sick" ;
+        gaf:denotedIn leolaniTalk:chat2007_utterance4_char0-52 .
 }
 

@@ -22,112 +22,186 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context144 a eps:Context ;
+        rdfs:label "context144" ;
+        hs:id "144"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1697 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "138"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1697 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1697" ;
+        hs:id "1697"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1697_utterance0,
+            leolaniTalk:chat1697_utterance1 .
+
+    leolaniTalk:chat1697_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1697_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1697_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1697_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:bitches_are_vain a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "bitches_are_vain" ;
-        gaf:denotedBy leolaniTalk:chat1697_utterance0_char0-103 .
-
-    leolaniWorld:bitches_are_when_vain a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "bitches_are_when_vain" ;
-        gaf:denotedBy leolaniTalk:chat1697_utterance0_char0-103 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:shit_is_unattractive a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "shit_is_unattractive" ;
-        gaf:denotedBy leolaniTalk:chat1697_utterance0_char0-103 .
-
-    leolaniWorld:women_having_self_esteem a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_having_self_esteem" ;
-        gaf:denotedBy leolaniTalk:chat1697_utterance1_char0-73 .
-
-    leolaniWorld:women_loving_themselves a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_loving_themselves" ;
-        gaf:denotedBy leolaniTalk:chat1697_utterance1_char0-73 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:bitches_are_vain {
-    leolaniWorld:bitches ns11:are leolaniWorld:vain .
-}
-
-leolaniWorld:shit_is_unattractive {
-    leolaniWorld:shit ns11:is leolaniWorld:unattractive .
+leolaniWorld:women_having_self_esteem {
+    leolaniWorld:women ns11:having leolaniWorld:self_esteem .
 }
 
 leolaniWorld:bitches_are_when_vain {
     leolaniWorld:bitches ns11:are leolaniWorld:when_vain .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:bitches a gaf:Instance ;
-        rdfs:label "bitches" ;
-        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:self_esteem a gaf:Instance ;
-        rdfs:label "self-esteem" ;
-        gaf:denotedIn leolaniTalk:chat1697_utterance1_char0-73 .
-
-    leolaniWorld:shit a gaf:Instance ;
-        rdfs:label "shit" ;
-        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
-
-    leolaniWorld:themselves a gaf:Instance ;
-        rdfs:label "themselves" ;
-        gaf:denotedIn leolaniTalk:chat1697_utterance1_char0-73 .
-
-    leolaniWorld:unattractive a gaf:Instance ;
-        rdfs:label "unattractive" ;
-        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
-
-    leolaniWorld:vain a gaf:Instance ;
-        rdfs:label "vain" ;
-        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
-
-    leolaniWorld:when_vain a gaf:Instance ;
-        rdfs:label "when-vain" ;
-        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1697_utterance1_char0-73 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:women_loving_themselves {
-    leolaniWorld:women ns11:loving leolaniWorld:themselves .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:women_having_self_esteem {
-    leolaniWorld:women ns11:having leolaniWorld:self_esteem .
+leolaniWorld:shit_is_unattractive {
+    leolaniWorld:shit ns11:is leolaniWorld:unattractive .
+}
+
+leolaniWorld:bitches_are_vain {
+    leolaniWorld:bitches ns11:are leolaniWorld:vain .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:bitches_are_vain_00021 a grasp:Attribution ;
+        rdfs:label "bitches_are_vain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1697_utterance0_char0-103 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:bitches_are_when_vain_00021 a grasp:Attribution ;
+        rdfs:label "bitches_are_when_vain_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1697_utterance0_char0-103 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:shit_is_unattractive_00021 a grasp:Attribution ;
+        rdfs:label "shit_is_unattractive_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1697_utterance0_char0-103 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_having_self_esteem_0004 a grasp:Attribution ;
+        rdfs:label "women_having_self_esteem_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat1697_utterance1_char0-73 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_loving_themselves_0004 a grasp:Attribution ;
+        rdfs:label "women_loving_themselves_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat1697_utterance1_char0-73 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1697_utterance1_char0-73 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1697_utterance1_char0-73" ;
+        gaf:containsDenotation leolaniWorld:self_esteem,
+            leolaniWorld:themselves,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:women_having_self_esteem,
+            leolaniWorld:women_loving_themselves ;
+        grasp:hasAttribution leolaniTalk:women_having_self_esteem_0004,
+            leolaniTalk:women_loving_themselves_0004 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:09.616744"^^xml1:string,
+            "2024-06-05T23:08:09.616798"^^xml1:string ;
+        rdf:value "There's nothing wrong with women having self esteem and loving themselves"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1697_utterance1 .
+
+    graspe:LOVE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "LOVE" .
+
+    leolaniTalk:chat1697_utterance0_char0-103 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1697_utterance0_char0-103" ;
+        gaf:containsDenotation leolaniWorld:bitches,
+            leolaniWorld:shit,
+            leolaniWorld:unattractive,
+            leolaniWorld:vain,
+            leolaniWorld:when_vain ;
+        gaf:denotes leolaniWorld:bitches_are_vain,
+            leolaniWorld:bitches_are_when_vain,
+            leolaniWorld:shit_is_unattractive ;
+        grasp:hasAttribution leolaniTalk:bitches_are_vain_00021,
+            leolaniTalk:bitches_are_when_vain_00021,
+            leolaniTalk:shit_is_unattractive_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:09.538723"^^xml1:string,
+            "2024-06-05T23:08:09.538781"^^xml1:string,
+            "2024-06-05T23:08:09.538805"^^xml1:string ;
+        rdf:value "I hate when bitches are vain and think they’re the prettiest bitch there is. That shit is unattractive."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1697_utterance0 .
+
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -465,165 +539,91 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:bitches_are_vain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "bitches_are_vain" ;
+        gaf:denotedBy leolaniTalk:chat1697_utterance0_char0-103 .
+
+    leolaniWorld:bitches_are_when_vain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "bitches_are_when_vain" ;
+        gaf:denotedBy leolaniTalk:chat1697_utterance0_char0-103 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:shit_is_unattractive a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "shit_is_unattractive" ;
+        gaf:denotedBy leolaniTalk:chat1697_utterance0_char0-103 .
+
+    leolaniWorld:women_having_self_esteem a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_having_self_esteem" ;
+        gaf:denotedBy leolaniTalk:chat1697_utterance1_char0-73 .
+
+    leolaniWorld:women_loving_themselves a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_loving_themselves" ;
+        gaf:denotedBy leolaniTalk:chat1697_utterance1_char0-73 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:bitches_are_vain_00021 a grasp:Attribution ;
-        rdfs:label "bitches_are_vain_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1697_utterance0_char0-103 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:bitches_are_when_vain_00021 a grasp:Attribution ;
-        rdfs:label "bitches_are_when_vain_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1697_utterance0_char0-103 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:shit_is_unattractive_00021 a grasp:Attribution ;
-        rdfs:label "shit_is_unattractive_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1697_utterance0_char0-103 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_having_self_esteem_0004 a grasp:Attribution ;
-        rdfs:label "women_having_self_esteem_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat1697_utterance1_char0-73 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_loving_themselves_0004 a grasp:Attribution ;
-        rdfs:label "women_loving_themselves_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat1697_utterance1_char0-73 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1697_utterance1_char0-73 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1697_utterance1_char0-73" ;
-        gaf:containsDenotation leolaniWorld:self_esteem,
-            leolaniWorld:themselves,
-            leolaniWorld:women ;
-        gaf:denotes leolaniWorld:women_having_self_esteem,
-            leolaniWorld:women_loving_themselves ;
-        grasp:hasAttribution leolaniTalk:women_having_self_esteem_0004,
-            leolaniTalk:women_loving_themselves_0004 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:09.616744"^^xml1:string,
-            "2024-06-05T23:08:09.616798"^^xml1:string ;
-        rdf:value "There's nothing wrong with women having self esteem and loving themselves"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1697_utterance1 .
-
-    graspe:LOVE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "LOVE" .
-
-    leolaniTalk:chat1697_utterance0_char0-103 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1697_utterance0_char0-103" ;
-        gaf:containsDenotation leolaniWorld:bitches,
-            leolaniWorld:shit,
-            leolaniWorld:unattractive,
-            leolaniWorld:vain,
-            leolaniWorld:when_vain ;
-        gaf:denotes leolaniWorld:bitches_are_vain,
-            leolaniWorld:bitches_are_when_vain,
-            leolaniWorld:shit_is_unattractive ;
-        grasp:hasAttribution leolaniTalk:bitches_are_vain_00021,
-            leolaniTalk:bitches_are_when_vain_00021,
-            leolaniTalk:shit_is_unattractive_00021 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:09.538723"^^xml1:string,
-            "2024-06-05T23:08:09.538781"^^xml1:string,
-            "2024-06-05T23:08:09.538805"^^xml1:string ;
-        rdf:value "I hate when bitches are vain and think they’re the prettiest bitch there is. That shit is unattractive."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1697_utterance0 .
-
-    graspe:ANGER a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANGER" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:women_loving_themselves {
+    leolaniWorld:women ns11:loving leolaniWorld:themselves .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context144 a eps:Context ;
-        rdfs:label "context144" ;
-        hs:id "144"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1697 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "138"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1697 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1697" ;
-        hs:id "1697"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1697_utterance0,
-            leolaniTalk:chat1697_utterance1 .
-
-    leolaniTalk:chat1697_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1697_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1697_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1697_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:bitches a gaf:Instance ;
+        rdfs:label "bitches" ;
+        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:self_esteem a gaf:Instance ;
+        rdfs:label "self-esteem" ;
+        gaf:denotedIn leolaniTalk:chat1697_utterance1_char0-73 .
+
+    leolaniWorld:shit a gaf:Instance ;
+        rdfs:label "shit" ;
+        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
+
+    leolaniWorld:themselves a gaf:Instance ;
+        rdfs:label "themselves" ;
+        gaf:denotedIn leolaniTalk:chat1697_utterance1_char0-73 .
+
+    leolaniWorld:unattractive a gaf:Instance ;
+        rdfs:label "unattractive" ;
+        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
+
+    leolaniWorld:vain a gaf:Instance ;
+        rdfs:label "vain" ;
+        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
+
+    leolaniWorld:when_vain a gaf:Instance ;
+        rdfs:label "when-vain" ;
+        gaf:denotedIn leolaniTalk:chat1697_utterance0_char0-103 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1697_utterance1_char0-73 .
 }
 

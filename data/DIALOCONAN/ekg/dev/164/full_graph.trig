@@ -22,8 +22,86 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:kids_go-to_pride {
-    leolaniWorld:kids ns1:go_to leolaniWorld:pride .
+leolaniWorld:they_are_trans {
+    leolaniWorld:they ns1:are leolaniWorld:trans .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context132 a eps:Context ;
+        rdfs:label "context132" ;
+        hs:id "132"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat164 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "231"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat164 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat164" ;
+        hs:id "164"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat164_utterance0,
+            leolaniTalk:chat164_utterance1,
+            leolaniTalk:chat164_utterance2 .
+
+    leolaniTalk:chat164_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat164_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat164_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat164_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat164_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat164_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:you_do-mean-by_trans_pipeline {
@@ -34,55 +112,12 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:They_indoctrinate_kids {
-    leolaniWorld:They ns1:indoctrinate leolaniWorld:kids .
+leolaniWorld:they_are-trans-into_thinking {
+    leolaniWorld:they ns1:are_trans_into leolaniWorld:thinking .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:They_indoctrinate_kids a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_indoctrinate_kids" ;
-        gaf:denotedBy leolaniTalk:chat164_utterance2_char0-143 .
-
-    leolaniWorld:kids_go-to_pride a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "kids_go-to_pride" ;
-        gaf:denotedBy leolaniTalk:chat164_utterance0_char0-87 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are-trans-into_thinking a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-trans-into_thinking" ;
-        gaf:denotedBy leolaniTalk:chat164_utterance2_char0-143 .
-
-    leolaniWorld:they_are_trans a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_trans" ;
-        gaf:denotedBy leolaniTalk:chat164_utterance2_char0-143 .
-
-    leolaniWorld:you_do-mean-by_trans_pipeline a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-mean-by_trans_pipeline" ;
-        gaf:denotedBy leolaniTalk:chat164_utterance1_char0-41 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:they_are_trans {
-    leolaniWorld:they ns1:are leolaniWorld:trans .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:kids_go-to_pride {
+    leolaniWorld:kids ns1:go_to leolaniWorld:pride .
 }
 
 leolaniTalk:Perspectives {
@@ -182,56 +217,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat164_utterance2_char0-143 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:kids a gaf:Instance ;
-        rdfs:label "kids" ;
-        gaf:denotedIn leolaniTalk:chat164_utterance0_char0-87,
-            leolaniTalk:chat164_utterance2_char0-143 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:pride a gaf:Instance ;
-        rdfs:label "pride" ;
-        gaf:denotedIn leolaniTalk:chat164_utterance0_char0-87 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat164_utterance2_char0-143 .
-
-    leolaniWorld:thinking a gaf:Instance ;
-        rdfs:label "thinking" ;
-        gaf:denotedIn leolaniTalk:chat164_utterance2_char0-143 .
-
-    leolaniWorld:trans a gaf:Instance ;
-        rdfs:label "trans" ;
-        gaf:denotedIn leolaniTalk:chat164_utterance2_char0-143 .
-
-    leolaniWorld:trans_pipeline a gaf:Instance ;
-        rdfs:label "trans-pipeline" ;
-        gaf:denotedIn leolaniTalk:chat164_utterance1_char0-41 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat164_utterance1_char0-41 .
-}
-
-leolaniWorld:they_are-trans-into_thinking {
-    leolaniWorld:they ns1:are_trans_into leolaniWorld:thinking .
 }
 
 leolaniWorld:Ontology {
@@ -569,77 +554,92 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context132 a eps:Context ;
-        rdfs:label "context132" ;
-        hs:id "132"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat164 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "231"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat164 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:They_indoctrinate_kids a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat164" ;
-        hs:id "164"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat164_utterance0,
-            leolaniTalk:chat164_utterance1,
-            leolaniTalk:chat164_utterance2 .
+        rdfs:label "They_indoctrinate_kids" ;
+        gaf:denotedBy leolaniTalk:chat164_utterance2_char0-143 .
 
-    leolaniTalk:chat164_utterance0 a grasp:Utterance,
+    leolaniWorld:kids_go-to_pride a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat164_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "kids_go-to_pride" ;
+        gaf:denotedBy leolaniTalk:chat164_utterance0_char0-87 .
 
-    leolaniTalk:chat164_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat164_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat164_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat164_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:they_are-trans-into_thinking a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-trans-into_thinking" ;
+        gaf:denotedBy leolaniTalk:chat164_utterance2_char0-143 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:they_are_trans a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_trans" ;
+        gaf:denotedBy leolaniTalk:chat164_utterance2_char0-143 .
+
+    leolaniWorld:you_do-mean-by_trans_pipeline a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-mean-by_trans_pipeline" ;
+        gaf:denotedBy leolaniTalk:chat164_utterance1_char0-41 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:They_indoctrinate_kids {
+    leolaniWorld:They ns1:indoctrinate leolaniWorld:kids .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat164_utterance2_char0-143 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:kids a gaf:Instance ;
+        rdfs:label "kids" ;
+        gaf:denotedIn leolaniTalk:chat164_utterance0_char0-87,
+            leolaniTalk:chat164_utterance2_char0-143 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:pride a gaf:Instance ;
+        rdfs:label "pride" ;
+        gaf:denotedIn leolaniTalk:chat164_utterance0_char0-87 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat164_utterance2_char0-143 .
+
+    leolaniWorld:thinking a gaf:Instance ;
+        rdfs:label "thinking" ;
+        gaf:denotedIn leolaniTalk:chat164_utterance2_char0-143 .
+
+    leolaniWorld:trans a gaf:Instance ;
+        rdfs:label "trans" ;
+        gaf:denotedIn leolaniTalk:chat164_utterance2_char0-143 .
+
+    leolaniWorld:trans_pipeline a gaf:Instance ;
+        rdfs:label "trans-pipeline" ;
+        gaf:denotedIn leolaniTalk:chat164_utterance1_char0-41 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat164_utterance1_char0-41 .
 }
 

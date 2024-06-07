@@ -22,6 +22,95 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:you_everywhere-look-on_tv {
+    leolaniWorld:you ns1:everywhere_look_on leolaniWorld:tv .
+}
+
+leolaniWorld:you_look-on_tv {
+    leolaniWorld:you ns1:look_on leolaniWorld:tv .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context230 a eps:Context ;
+        rdfs:label "context230" ;
+        hs:id "230"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1525 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "129"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1525 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1525" ;
+        hs:id "1525"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1525_utterance0,
+            leolaniTalk:chat1525_utterance2 .
+
+    leolaniTalk:chat1525_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1525_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1525_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1525_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:white_people_are_are_erased {
+    leolaniWorld:white_people ns1:are leolaniWorld:are_erased .
+}
+
+leolaniWorld:you_look-now-on_tv {
+    leolaniWorld:you ns1:look_now_on leolaniWorld:tv .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:us_think_is_normal {
+    leolaniWorld:us_think ns1:is leolaniWorld:normal .
+}
+
+leolaniWorld:advert_has-mixed_race_families {
+    leolaniWorld:advert ns1:has_mixed leolaniWorld:race_families .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:advert_has-mixed_race_families_00028 a grasp:Attribution ;
         rdfs:label "advert_has-mixed_race_families_00028" ;
@@ -142,51 +231,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:advert a gaf:Instance ;
-        rdfs:label "advert" ;
-        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
-
-    leolaniWorld:are_erased a gaf:Instance ;
-        rdfs:label "are-erased" ;
-        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:normal a gaf:Instance ;
-        rdfs:label "normal" ;
-        gaf:denotedIn leolaniTalk:chat1525_utterance2_char0-129 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
-
-    leolaniWorld:race_families a gaf:Instance ;
-        rdfs:label "race-families" ;
-        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
-
-    leolaniWorld:tv a gaf:Instance ;
-        rdfs:label "tv" ;
-        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
-
-    leolaniWorld:us_think a gaf:Instance ;
-        rdfs:label "us-think" ;
-        gaf:denotedIn leolaniTalk:chat1525_utterance2_char0-129 .
-
-    leolaniWorld:white_people a gaf:Instance ;
-        rdfs:label "white-people" ;
-        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
 }
 
 leolaniWorld:Ontology {
@@ -524,75 +568,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:you_look-on_tv {
-    leolaniWorld:you ns1:look_on leolaniWorld:tv .
-}
-
-leolaniWorld:you_look-now-on_tv {
-    leolaniWorld:you ns1:look_now_on leolaniWorld:tv .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context230 a eps:Context ;
-        rdfs:label "context230" ;
-        hs:id "230"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1525 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "129"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1525 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1525" ;
-        hs:id "1525"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1525_utterance0,
-            leolaniTalk:chat1525_utterance2 .
-
-    leolaniTalk:chat1525_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1525_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1525_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1525_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:advert_has-mixed_race_families a gaf:Assertion,
             sem:Event ;
@@ -641,31 +616,56 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:you_everywhere-look-on_tv {
-    leolaniWorld:you ns1:everywhere_look_on leolaniWorld:tv .
-}
-
 leolaniWorld:people_are_are_erased {
     leolaniWorld:people ns1:are leolaniWorld:are_erased .
-}
-
-leolaniWorld:advert_has-mixed_race_families {
-    leolaniWorld:advert ns1:has_mixed leolaniWorld:race_families .
 }
 
 leolaniWorld:you_everywhere-look-now-on_tv {
     leolaniWorld:you ns1:everywhere_look_now_on leolaniWorld:tv .
 }
 
-leolaniWorld:white_people_are_are_erased {
-    leolaniWorld:white_people ns1:are leolaniWorld:are_erased .
-}
+leolaniWorld:Instances {
+    leolaniWorld:advert a gaf:Instance ;
+        rdfs:label "advert" ;
+        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
 
-leolaniWorld:us_think_is_normal {
-    leolaniWorld:us_think ns1:is leolaniWorld:normal .
-}
+    leolaniWorld:are_erased a gaf:Instance ;
+        rdfs:label "are-erased" ;
+        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:normal a gaf:Instance ;
+        rdfs:label "normal" ;
+        gaf:denotedIn leolaniTalk:chat1525_utterance2_char0-129 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
+
+    leolaniWorld:race_families a gaf:Instance ;
+        rdfs:label "race-families" ;
+        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
+
+    leolaniWorld:tv a gaf:Instance ;
+        rdfs:label "tv" ;
+        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
+
+    leolaniWorld:us_think a gaf:Instance ;
+        rdfs:label "us-think" ;
+        gaf:denotedIn leolaniTalk:chat1525_utterance2_char0-129 .
+
+    leolaniWorld:white_people a gaf:Instance ;
+        rdfs:label "white-people" ;
+        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1525_utterance0_char0-213 .
 }
 

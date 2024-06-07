@@ -22,134 +22,218 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:they_contribute_their_expertise {
-    leolaniWorld:they ns1:contribute leolaniWorld:their_expertise .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:I_experienced_benefit a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_experienced_benefit" ;
-        gaf:denotedBy leolaniTalk:chat927_utterance2_char0-90 .
-
-    leolaniWorld:Muslims_have_nothing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_have_nothing" ;
-        gaf:denotedBy leolaniTalk:chat927_utterance0_char0-50 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:their_expertise_tasty_food a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "their_expertise_tasty_food" ;
-        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:they_contribute-to_our_economy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_contribute-to_our_economy" ;
-        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:they_contribute_food a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_contribute_food" ;
-        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:they_contribute_tasty_food a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_contribute_tasty_food" ;
-        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:they_contribute_their_expertise a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_contribute_their_expertise" ;
-        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:they_contribute_tasty_food {
     leolaniWorld:they ns1:contribute leolaniWorld:tasty_food .
 }
 
-leolaniWorld:their_expertise_tasty_food {
-    leolaniWorld:their ns1:expertise leolaniWorld:tasty_food .
+leolaniWorld:I_experienced_benefit {
+    leolaniWorld:I ns1:experienced leolaniWorld:benefit .
 }
 
-leolaniWorld:they_contribute_food {
-    leolaniWorld:they ns1:contribute leolaniWorld:food .
+leolaniTalk:Interactions {
+    leolaniContext:context33 a eps:Context ;
+        rdfs:label "context33" ;
+        hs:id "33"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat927 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "178"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat927 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat927" ;
+        hs:id "927"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat927_utterance0,
+            leolaniTalk:chat927_utterance1,
+            leolaniTalk:chat927_utterance2 .
+
+    leolaniTalk:chat927_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat927_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat927_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat927_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat927_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat927_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:they_contribute-to_our_economy {
     leolaniWorld:they ns1:contribute_to leolaniWorld:our_economy .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance2_char0-90 .
-
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance0_char0-50 .
-
-    leolaniWorld:benefit a gaf:Instance ;
-        rdfs:label "benefit" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance2_char0-90 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:food a gaf:Instance ;
-        rdfs:label "food" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance0_char0-50 .
-
-    leolaniWorld:our_economy a gaf:Instance ;
-        rdfs:label "our-economy" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:tasty_food a gaf:Instance ;
-        rdfs:label "tasty-food" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:their a gaf:Instance ;
-        rdfs:label "their" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:their_expertise a gaf:Instance ;
-        rdfs:label "their-expertise" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Muslims_have_nothing {
-    leolaniWorld:Muslims ns1:have leolaniWorld:nothing .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:they_contribute_food {
+    leolaniWorld:they ns1:contribute leolaniWorld:food .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_experienced_benefit_00028 a grasp:Attribution ;
+        rdfs:label "I_experienced_benefit_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat927_utterance2_char0-90 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_have_nothing_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_have_nothing_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat927_utterance0_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat927_utterance0_char0-50 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat927_utterance0_char0-50" ;
+        gaf:containsDenotation leolaniWorld:Muslims,
+            leolaniWorld:nothing ;
+        gaf:denotes leolaniWorld:Muslims_have_nothing ;
+        grasp:hasAttribution leolaniTalk:Muslims_have_nothing_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:58.057132"^^xml1:string ;
+        rdf:value "Muslims have nothing to contribute to our society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat927_utterance0 .
+
+    leolaniTalk:chat927_utterance2_char0-90 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat927_utterance2_char0-90" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:benefit ;
+        gaf:denotes leolaniWorld:I_experienced_benefit ;
+        grasp:hasAttribution leolaniTalk:I_experienced_benefit_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:58.245940"^^xml1:string ;
+        rdf:value "I never experienced those benefit. I'm certain they didn't really contribute to that much."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat927_utterance2 .
+
+    leolaniTalk:their_expertise_tasty_food_00028 a grasp:Attribution ;
+        rdfs:label "their_expertise_tasty_food_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_contribute-to_our_economy_00028 a grasp:Attribution ;
+        rdfs:label "they_contribute-to_our_economy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_contribute_food_00028 a grasp:Attribution ;
+        rdfs:label "they_contribute_food_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_contribute_tasty_food_00028 a grasp:Attribution ;
+        rdfs:label "they_contribute_tasty_food_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_contribute_their_expertise_00028 a grasp:Attribution ;
+        rdfs:label "they_contribute_their_expertise_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat927_utterance1_char0-125 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat927_utterance1_char0-125" ;
+        gaf:containsDenotation leolaniWorld:food,
+            leolaniWorld:our_economy,
+            leolaniWorld:tasty_food,
+            leolaniWorld:their,
+            leolaniWorld:their_expertise,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:their_expertise_tasty_food,
+            leolaniWorld:they_contribute-to_our_economy,
+            leolaniWorld:they_contribute_food,
+            leolaniWorld:they_contribute_tasty_food,
+            leolaniWorld:they_contribute_their_expertise ;
+        grasp:hasAttribution leolaniTalk:their_expertise_tasty_food_00028,
+            leolaniTalk:they_contribute-to_our_economy_00028,
+            leolaniTalk:they_contribute_food_00028,
+            leolaniTalk:they_contribute_tasty_food_00028,
+            leolaniTalk:they_contribute_their_expertise_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:58.163815"^^xml1:string,
+            "2024-06-05T23:08:58.163871"^^xml1:string,
+            "2024-06-05T23:08:58.163896"^^xml1:string,
+            "2024-06-05T23:08:58.163924"^^xml1:string,
+            "2024-06-05T23:08:58.163951"^^xml1:string ;
+        rdf:value "How about the money they contribute to our economy, their expertise and knowledge, their culture, tasty food. Should I go on?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat927_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -487,201 +571,117 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_contribute_their_expertise {
+    leolaniWorld:they ns1:contribute leolaniWorld:their_expertise .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_experienced_benefit_00028 a grasp:Attribution ;
-        rdfs:label "I_experienced_benefit_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat927_utterance2_char0-90 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:I_experienced_benefit a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_experienced_benefit" ;
+        gaf:denotedBy leolaniTalk:chat927_utterance2_char0-90 .
 
-    leolaniTalk:Muslims_have_nothing_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_have_nothing_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat927_utterance0_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Muslims_have_nothing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_have_nothing" ;
+        gaf:denotedBy leolaniTalk:chat927_utterance0_char0-50 .
 
-    leolaniTalk:chat927_utterance0_char0-50 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat927_utterance0_char0-50" ;
-        gaf:containsDenotation leolaniWorld:Muslims,
-            leolaniWorld:nothing ;
-        gaf:denotes leolaniWorld:Muslims_have_nothing ;
-        grasp:hasAttribution leolaniTalk:Muslims_have_nothing_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:58.057132"^^xml1:string ;
-        rdf:value "Muslims have nothing to contribute to our society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat927_utterance0 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat927_utterance2_char0-90 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat927_utterance2_char0-90" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:benefit ;
-        gaf:denotes leolaniWorld:I_experienced_benefit ;
-        grasp:hasAttribution leolaniTalk:I_experienced_benefit_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:58.245940"^^xml1:string ;
-        rdf:value "I never experienced those benefit. I'm certain they didn't really contribute to that much."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat927_utterance2 .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:their_expertise_tasty_food_00028 a grasp:Attribution ;
-        rdfs:label "their_expertise_tasty_food_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:their_expertise_tasty_food a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "their_expertise_tasty_food" ;
+        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
 
-    leolaniTalk:they_contribute-to_our_economy_00028 a grasp:Attribution ;
-        rdfs:label "they_contribute-to_our_economy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_contribute-to_our_economy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_contribute-to_our_economy" ;
+        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
 
-    leolaniTalk:they_contribute_food_00028 a grasp:Attribution ;
-        rdfs:label "they_contribute_food_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_contribute_food a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_contribute_food" ;
+        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
 
-    leolaniTalk:they_contribute_tasty_food_00028 a grasp:Attribution ;
-        rdfs:label "they_contribute_tasty_food_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_contribute_tasty_food a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_contribute_tasty_food" ;
+        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
 
-    leolaniTalk:they_contribute_their_expertise_00028 a grasp:Attribution ;
-        rdfs:label "they_contribute_their_expertise_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat927_utterance1_char0-125 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_contribute_their_expertise a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_contribute_their_expertise" ;
+        gaf:denotedBy leolaniTalk:chat927_utterance1_char0-125 .
 
-    leolaniTalk:chat927_utterance1_char0-125 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat927_utterance1_char0-125" ;
-        gaf:containsDenotation leolaniWorld:food,
-            leolaniWorld:our_economy,
-            leolaniWorld:tasty_food,
-            leolaniWorld:their,
-            leolaniWorld:their_expertise,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:their_expertise_tasty_food,
-            leolaniWorld:they_contribute-to_our_economy,
-            leolaniWorld:they_contribute_food,
-            leolaniWorld:they_contribute_tasty_food,
-            leolaniWorld:they_contribute_their_expertise ;
-        grasp:hasAttribution leolaniTalk:their_expertise_tasty_food_00028,
-            leolaniTalk:they_contribute-to_our_economy_00028,
-            leolaniTalk:they_contribute_food_00028,
-            leolaniTalk:they_contribute_tasty_food_00028,
-            leolaniTalk:they_contribute_their_expertise_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:58.163815"^^xml1:string,
-            "2024-06-05T23:08:58.163871"^^xml1:string,
-            "2024-06-05T23:08:58.163896"^^xml1:string,
-            "2024-06-05T23:08:58.163924"^^xml1:string,
-            "2024-06-05T23:08:58.163951"^^xml1:string ;
-        rdf:value "How about the money they contribute to our economy, their expertise and knowledge, their culture, tasty food. Should I go on?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat927_utterance1 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:I_experienced_benefit {
-    leolaniWorld:I ns1:experienced leolaniWorld:benefit .
+leolaniWorld:their_expertise_tasty_food {
+    leolaniWorld:their ns1:expertise leolaniWorld:tasty_food .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context33 a eps:Context ;
-        rdfs:label "context33" ;
-        hs:id "33"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Muslims_have_nothing {
+    leolaniWorld:Muslims ns1:have leolaniWorld:nothing .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat927 .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance2_char0-90 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance0_char0-50 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "178"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat927 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat927" ;
-        hs:id "927"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat927_utterance0,
-            leolaniTalk:chat927_utterance1,
-            leolaniTalk:chat927_utterance2 .
-
-    leolaniTalk:chat927_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat927_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat927_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat927_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat927_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat927_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:benefit a gaf:Instance ;
+        rdfs:label "benefit" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance2_char0-90 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:food a gaf:Instance ;
+        rdfs:label "food" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance0_char0-50 .
+
+    leolaniWorld:our_economy a gaf:Instance ;
+        rdfs:label "our-economy" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
+
+    leolaniWorld:tasty_food a gaf:Instance ;
+        rdfs:label "tasty-food" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
+
+    leolaniWorld:their a gaf:Instance ;
+        rdfs:label "their" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
+
+    leolaniWorld:their_expertise a gaf:Instance ;
+        rdfs:label "their-expertise" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat927_utterance1_char0-125 .
 }
 

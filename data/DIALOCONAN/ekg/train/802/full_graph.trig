@@ -22,6 +22,93 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:EU_have_laws {
+    leolaniWorld:EU ns1:have leolaniWorld:laws .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context179 a eps:Context ;
+        rdfs:label "context179" ;
+        hs:id "179"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat802 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "1"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat802 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat802" ;
+        hs:id "802"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat802_utterance0,
+            leolaniTalk:chat802_utterance1 .
+
+    leolaniTalk:chat802_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat802_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat802_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat802_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Muslims_are-invading_us {
+    leolaniWorld:Muslims ns1:are_invading leolaniWorld:us .
+}
+
+leolaniWorld:EU_have_laws_against_discrimination {
+    leolaniWorld:EU ns1:have leolaniWorld:laws_against_discrimination .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:EU_have_laws_00022 a grasp:Attribution ;
         rdfs:label "EU_have_laws_00022" ;
@@ -131,124 +218,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:EU_have_laws a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "EU_have_laws" ;
-        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:EU_have_laws_against_discrimination a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "EU_have_laws_against_discrimination" ;
-        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:Muslims_are-invading_us a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are-invading_us" ;
-        gaf:denotedBy leolaniTalk:chat802_utterance0_char0-51 .
-
-    leolaniWorld:UK_have_laws a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "UK_have_laws" ;
-        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:UK_have_laws_against_discrimination a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "UK_have_laws_against_discrimination" ;
-        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:you_maybe-should-check-out_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_maybe-should-check-out_them" ;
-        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:you_should-check-out_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_should-check-out_them" ;
-        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Muslims_are-invading_us {
-    leolaniWorld:Muslims ns1:are_invading leolaniWorld:us .
-}
-
-leolaniWorld:UK_have_laws_against_discrimination {
-    leolaniWorld:UK ns1:have leolaniWorld:laws_against_discrimination .
-}
-
-leolaniWorld:EU_have_laws_against_discrimination {
-    leolaniWorld:EU ns1:have leolaniWorld:laws_against_discrimination .
-}
-
-leolaniWorld:UK_have_laws {
-    leolaniWorld:UK ns1:have leolaniWorld:laws .
-}
-
-leolaniWorld:you_maybe-should-check-out_them {
-    leolaniWorld:you ns1:maybe_should_check_out leolaniWorld:them .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:EU a gaf:Instance ;
-        rdfs:label "eu" ;
-        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat802_utterance0_char0-51 .
-
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:laws a gaf:Instance ;
-        rdfs:label "laws" ;
-        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:laws_against_discrimination a gaf:Instance ;
-        rdfs:label "laws-against-discrimination" ;
-        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat802_utterance0_char0-51 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
 }
 
 leolaniWorld:Ontology {
@@ -586,82 +555,113 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:UK_have_laws {
+    leolaniWorld:UK ns1:have leolaniWorld:laws .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:EU_have_laws a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "EU_have_laws" ;
+        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
+
+    leolaniWorld:EU_have_laws_against_discrimination a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "EU_have_laws_against_discrimination" ;
+        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
+
+    leolaniWorld:Muslims_are-invading_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are-invading_us" ;
+        gaf:denotedBy leolaniTalk:chat802_utterance0_char0-51 .
+
+    leolaniWorld:UK_have_laws a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "UK_have_laws" ;
+        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
+
+    leolaniWorld:UK_have_laws_against_discrimination a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "UK_have_laws_against_discrimination" ;
+        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:you_maybe-should-check-out_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_maybe-should-check-out_them" ;
+        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
+
+    leolaniWorld:you_should-check-out_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_should-check-out_them" ;
+        gaf:denotedBy leolaniTalk:chat802_utterance1_char0-98 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:UK_have_laws_against_discrimination {
+    leolaniWorld:UK ns1:have leolaniWorld:laws_against_discrimination .
+}
+
+leolaniWorld:you_maybe-should-check-out_them {
+    leolaniWorld:you ns1:maybe_should_check_out leolaniWorld:them .
 }
 
 leolaniWorld:you_should-check-out_them {
     leolaniWorld:you ns1:should_check_out leolaniWorld:them .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context179 a eps:Context ;
-        rdfs:label "context179" ;
-        hs:id "179"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:EU a gaf:Instance ;
+        rdfs:label "eu" ;
+        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat802 .
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat802_utterance0_char0-51 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "1"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat802 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat802" ;
-        hs:id "802"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat802_utterance0,
-            leolaniTalk:chat802_utterance1 .
-
-    leolaniTalk:chat802_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat802_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat802_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat802_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:EU_have_laws {
-    leolaniWorld:EU ns1:have leolaniWorld:laws .
+    leolaniWorld:laws a gaf:Instance ;
+        rdfs:label "laws" ;
+        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
+
+    leolaniWorld:laws_against_discrimination a gaf:Instance ;
+        rdfs:label "laws-against-discrimination" ;
+        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat802_utterance0_char0-51 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat802_utterance1_char0-98 .
 }
 

@@ -22,83 +22,163 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Refugees_contribute_lot {
+    leolaniWorld:Refugees ns1:contribute leolaniWorld:lot .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context209 a eps:Context ;
+        rdfs:label "context209" ;
+        hs:id "209"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2103 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "212"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2103 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2103" ;
+        hs:id "2103"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2103_utterance1 .
+
+    leolaniTalk:chat2103_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2103_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Refugees_contribute-lot-to_our_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_contribute-lot-to_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
-
-    leolaniWorld:Refugees_contribute-to_our_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_contribute-to_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
-
-    leolaniWorld:Refugees_contribute_lot a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_contribute_lot" ;
-        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
-
-    leolaniWorld:Refugees_often-contribute-lot-to_our_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_often-contribute-lot-to_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
-
-    leolaniWorld:Refugees_often-contribute-to_our_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_often-contribute-to_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
-
-    leolaniWorld:Refugees_often-contribute_lot a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_often-contribute_lot" ;
-        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
-leolaniWorld:Refugees_often-contribute-lot-to_our_society {
-    leolaniWorld:Refugees ns1:often_contribute_lot_to leolaniWorld:our_society .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Refugees a gaf:Instance ;
-        rdfs:label "refugees" ;
-        gaf:denotedIn leolaniTalk:chat2103_utterance1_char0-95 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:lot a gaf:Instance ;
-        rdfs:label "lot" ;
-        gaf:denotedIn leolaniTalk:chat2103_utterance1_char0-95 .
-
-    leolaniWorld:our_society a gaf:Instance ;
-        rdfs:label "our-society" ;
-        gaf:denotedIn leolaniTalk:chat2103_utterance1_char0-95 .
+leolaniWorld:Refugees_contribute-lot-to_our_society {
+    leolaniWorld:Refugees ns1:contribute_lot_to leolaniWorld:our_society .
 }
 
 leolaniWorld:Refugees_often-contribute-to_our_society {
     leolaniWorld:Refugees ns1:often_contribute_to leolaniWorld:our_society .
 }
 
-leolaniWorld:Refugees_contribute-to_our_society {
-    leolaniWorld:Refugees ns1:contribute_to leolaniWorld:our_society .
+leolaniWorld:Refugees_often-contribute-lot-to_our_society {
+    leolaniWorld:Refugees ns1:often_contribute_lot_to leolaniWorld:our_society .
 }
 
-leolaniWorld:Refugees_contribute-lot-to_our_society {
-    leolaniWorld:Refugees ns1:contribute_lot_to leolaniWorld:our_society .
+leolaniTalk:Perspectives {
+    leolaniTalk:Refugees_contribute-lot-to_our_society_00028 a grasp:Attribution ;
+        rdfs:label "Refugees_contribute-lot-to_our_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Refugees_contribute-to_our_society_00028 a grasp:Attribution ;
+        rdfs:label "Refugees_contribute-to_our_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Refugees_contribute_lot_00028 a grasp:Attribution ;
+        rdfs:label "Refugees_contribute_lot_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Refugees_often-contribute-lot-to_our_society_00028 a grasp:Attribution ;
+        rdfs:label "Refugees_often-contribute-lot-to_our_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Refugees_often-contribute-to_our_society_00028 a grasp:Attribution ;
+        rdfs:label "Refugees_often-contribute-to_our_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Refugees_often-contribute_lot_00028 a grasp:Attribution ;
+        rdfs:label "Refugees_often-contribute_lot_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2103_utterance1_char0-95 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2103_utterance1_char0-95" ;
+        gaf:containsDenotation leolaniWorld:Refugees,
+            leolaniWorld:lot,
+            leolaniWorld:our_society ;
+        gaf:denotes leolaniWorld:Refugees_contribute-lot-to_our_society,
+            leolaniWorld:Refugees_contribute-to_our_society,
+            leolaniWorld:Refugees_contribute_lot,
+            leolaniWorld:Refugees_often-contribute-lot-to_our_society,
+            leolaniWorld:Refugees_often-contribute-to_our_society,
+            leolaniWorld:Refugees_often-contribute_lot ;
+        grasp:hasAttribution leolaniTalk:Refugees_contribute-lot-to_our_society_00028,
+            leolaniTalk:Refugees_contribute-to_our_society_00028,
+            leolaniTalk:Refugees_contribute_lot_00028,
+            leolaniTalk:Refugees_often-contribute-lot-to_our_society_00028,
+            leolaniTalk:Refugees_often-contribute-to_our_society_00028,
+            leolaniTalk:Refugees_often-contribute_lot_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:35.592609"^^xml1:string,
+            "2024-06-05T23:34:35.592669"^^xml1:string,
+            "2024-06-05T23:34:35.592692"^^xml1:string,
+            "2024-06-05T23:34:35.592713"^^xml1:string,
+            "2024-06-05T23:34:35.592738"^^xml1:string,
+            "2024-06-05T23:34:35.592759"^^xml1:string ;
+        rdf:value "Refugees often contribute a lot to our society. They are welcome and we should not exclude them"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2103_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -436,150 +516,70 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Refugees_contribute_lot {
-    leolaniWorld:Refugees ns1:contribute leolaniWorld:lot .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Refugees_contribute-lot-to_our_society_00028 a grasp:Attribution ;
-        rdfs:label "Refugees_contribute-lot-to_our_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Refugees_contribute-to_our_society_00028 a grasp:Attribution ;
-        rdfs:label "Refugees_contribute-to_our_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Refugees_contribute_lot_00028 a grasp:Attribution ;
-        rdfs:label "Refugees_contribute_lot_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Refugees_often-contribute-lot-to_our_society_00028 a grasp:Attribution ;
-        rdfs:label "Refugees_often-contribute-lot-to_our_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Refugees_often-contribute-to_our_society_00028 a grasp:Attribution ;
-        rdfs:label "Refugees_often-contribute-to_our_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Refugees_often-contribute_lot_00028 a grasp:Attribution ;
-        rdfs:label "Refugees_often-contribute_lot_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2103_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2103_utterance1_char0-95 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2103_utterance1_char0-95" ;
-        gaf:containsDenotation leolaniWorld:Refugees,
-            leolaniWorld:lot,
-            leolaniWorld:our_society ;
-        gaf:denotes leolaniWorld:Refugees_contribute-lot-to_our_society,
-            leolaniWorld:Refugees_contribute-to_our_society,
-            leolaniWorld:Refugees_contribute_lot,
-            leolaniWorld:Refugees_often-contribute-lot-to_our_society,
-            leolaniWorld:Refugees_often-contribute-to_our_society,
-            leolaniWorld:Refugees_often-contribute_lot ;
-        grasp:hasAttribution leolaniTalk:Refugees_contribute-lot-to_our_society_00028,
-            leolaniTalk:Refugees_contribute-to_our_society_00028,
-            leolaniTalk:Refugees_contribute_lot_00028,
-            leolaniTalk:Refugees_often-contribute-lot-to_our_society_00028,
-            leolaniTalk:Refugees_often-contribute-to_our_society_00028,
-            leolaniTalk:Refugees_often-contribute_lot_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:35.592609"^^xml1:string,
-            "2024-06-05T23:34:35.592669"^^xml1:string,
-            "2024-06-05T23:34:35.592692"^^xml1:string,
-            "2024-06-05T23:34:35.592713"^^xml1:string,
-            "2024-06-05T23:34:35.592738"^^xml1:string,
-            "2024-06-05T23:34:35.592759"^^xml1:string ;
-        rdf:value "Refugees often contribute a lot to our society. They are welcome and we should not exclude them"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2103_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context209 a eps:Context ;
-        rdfs:label "context209" ;
-        hs:id "209"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2103 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "212"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2103 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2103" ;
-        hs:id "2103"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2103_utterance1 .
-
-    leolaniTalk:chat2103_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2103_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-}
-
 leolaniWorld:Refugees_often-contribute_lot {
     leolaniWorld:Refugees ns1:often_contribute leolaniWorld:lot .
+}
+
+leolaniWorld:Refugees_contribute-to_our_society {
+    leolaniWorld:Refugees ns1:contribute_to leolaniWorld:our_society .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Refugees_contribute-lot-to_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_contribute-lot-to_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
+
+    leolaniWorld:Refugees_contribute-to_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_contribute-to_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
+
+    leolaniWorld:Refugees_contribute_lot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_contribute_lot" ;
+        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
+
+    leolaniWorld:Refugees_often-contribute-lot-to_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_often-contribute-lot-to_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
+
+    leolaniWorld:Refugees_often-contribute-to_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_often-contribute-to_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
+
+    leolaniWorld:Refugees_often-contribute_lot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_often-contribute_lot" ;
+        gaf:denotedBy leolaniTalk:chat2103_utterance1_char0-95 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Refugees a gaf:Instance ;
+        rdfs:label "refugees" ;
+        gaf:denotedIn leolaniTalk:chat2103_utterance1_char0-95 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:lot a gaf:Instance ;
+        rdfs:label "lot" ;
+        gaf:denotedIn leolaniTalk:chat2103_utterance1_char0-95 .
+
+    leolaniWorld:our_society a gaf:Instance ;
+        rdfs:label "our-society" ;
+        gaf:denotedIn leolaniTalk:chat2103_utterance1_char0-95 .
 }
 

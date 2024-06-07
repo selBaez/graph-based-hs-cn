@@ -22,74 +22,170 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:This_is_big a gaf:Assertion,
+leolaniWorld:mosques_being_built {
+    leolaniWorld:mosques ns11:being leolaniWorld:built .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context169 a eps:Context ;
+        rdfs:label "context169" ;
+        hs:id "169"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1671 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "2"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1671 a grasp:Chat,
             sem:Event ;
-        rdfs:label "This_is_big" ;
-        gaf:denotedBy leolaniTalk:chat1671_utterance3_char0-172 .
+        rdfs:label "chat1671" ;
+        hs:id "1671"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1671_utterance0,
+            leolaniTalk:chat1671_utterance2,
+            leolaniTalk:chat1671_utterance3 .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat1671_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat1671_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat1671_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat1671_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:mosques_being_built a gaf:Assertion,
+    leolaniTalk:chat1671_utterance3 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "mosques_being_built" ;
-        gaf:denotedBy leolaniTalk:chat1671_utterance0_char0-124 .
+        rdfs:label "chat1671_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:they_replace_us a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_replace_us" ;
-        gaf:denotedBy leolaniTalk:chat1671_utterance2_char0-86 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:This_is_big {
+    leolaniWorld:This ns11:is leolaniWorld:big .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:This a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat1671_utterance3_char0-172 .
+leolaniTalk:Perspectives {
+    leolaniTalk:This_is_big_00023 a grasp:Attribution ;
+        rdfs:label "This_is_big_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1671_utterance3_char0-172 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:big a gaf:Instance ;
-        rdfs:label "big" ;
-        gaf:denotedIn leolaniTalk:chat1671_utterance3_char0-172 .
+    leolaniTalk:chat1671_utterance0_char0-124 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1671_utterance0_char0-124" ;
+        gaf:containsDenotation leolaniWorld:built,
+            leolaniWorld:mosques ;
+        gaf:denotes leolaniWorld:mosques_being_built ;
+        grasp:hasAttribution leolaniTalk:mosques_being_built_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:00.560335"^^xml1:string ;
+        rdf:value "More and more mosques being built whilst churches are being burnt down all over Europe. This is the start of Islamification."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1671_utterance0 .
 
-    leolaniWorld:built a gaf:Instance ;
-        rdfs:label "built" ;
-        gaf:denotedIn leolaniTalk:chat1671_utterance0_char0-124 .
+    leolaniTalk:chat1671_utterance2_char0-86 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1671_utterance2_char0-86" ;
+        gaf:containsDenotation leolaniWorld:they,
+            leolaniWorld:us ;
+        gaf:denotes leolaniWorld:they_replace_us ;
+        grasp:hasAttribution leolaniTalk:they_replace_us_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:00.748771"^^xml1:string ;
+        rdf:value "Yes there is, it’s probably Muslims who are doing the damage, they want to replace us."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1671_utterance2 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat1671_utterance3_char0-172 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1671_utterance3_char0-172" ;
+        gaf:containsDenotation leolaniWorld:This,
+            leolaniWorld:big ;
+        gaf:denotes leolaniWorld:This_is_big ;
+        grasp:hasAttribution leolaniTalk:This_is_big_00023 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:00.845876"^^xml1:string ;
+        rdf:value "I'm not sure that \"probably\" is necessarily a good logic. This is a big assumption that doesn't take into consideration that churches get vandalized by all sorts of people."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1671_utterance3 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:mosques_being_built_00028 a grasp:Attribution ;
+        rdfs:label "mosques_being_built_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1671_utterance0_char0-124 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:they_replace_us_00028 a grasp:Attribution ;
+        rdfs:label "they_replace_us_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1671_utterance2_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:mosques a gaf:Instance ;
-        rdfs:label "mosques" ;
-        gaf:denotedIn leolaniTalk:chat1671_utterance0_char0-124 .
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1671_utterance2_char0-86 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat1671_utterance2_char0-86 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -431,165 +527,69 @@ leolaniWorld:they_replace_us {
     leolaniWorld:they ns11:replace leolaniWorld:us .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:This_is_big a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "This_is_big" ;
+        gaf:denotedBy leolaniTalk:chat1671_utterance3_char0-172 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:mosques_being_built a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "mosques_being_built" ;
+        gaf:denotedBy leolaniTalk:chat1671_utterance0_char0-124 .
+
+    leolaniWorld:they_replace_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_replace_us" ;
+        gaf:denotedBy leolaniTalk:chat1671_utterance2_char0-86 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:This_is_big_00023 a grasp:Attribution ;
-        rdfs:label "This_is_big_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1671_utterance3_char0-172 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:This a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat1671_utterance3_char0-172 .
 
-    leolaniTalk:chat1671_utterance0_char0-124 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1671_utterance0_char0-124" ;
-        gaf:containsDenotation leolaniWorld:built,
-            leolaniWorld:mosques ;
-        gaf:denotes leolaniWorld:mosques_being_built ;
-        grasp:hasAttribution leolaniTalk:mosques_being_built_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:00.560335"^^xml1:string ;
-        rdf:value "More and more mosques being built whilst churches are being burnt down all over Europe. This is the start of Islamification."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1671_utterance0 .
+    leolaniWorld:big a gaf:Instance ;
+        rdfs:label "big" ;
+        gaf:denotedIn leolaniTalk:chat1671_utterance3_char0-172 .
 
-    leolaniTalk:chat1671_utterance2_char0-86 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1671_utterance2_char0-86" ;
-        gaf:containsDenotation leolaniWorld:they,
-            leolaniWorld:us ;
-        gaf:denotes leolaniWorld:they_replace_us ;
-        grasp:hasAttribution leolaniTalk:they_replace_us_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:00.748771"^^xml1:string ;
-        rdf:value "Yes there is, it’s probably Muslims who are doing the damage, they want to replace us."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1671_utterance2 .
-
-    leolaniTalk:chat1671_utterance3_char0-172 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1671_utterance3_char0-172" ;
-        gaf:containsDenotation leolaniWorld:This,
-            leolaniWorld:big ;
-        gaf:denotes leolaniWorld:This_is_big ;
-        grasp:hasAttribution leolaniTalk:This_is_big_00023 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:00.845876"^^xml1:string ;
-        rdf:value "I'm not sure that \"probably\" is necessarily a good logic. This is a big assumption that doesn't take into consideration that churches get vandalized by all sorts of people."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1671_utterance3 .
-
-    leolaniTalk:mosques_being_built_00028 a grasp:Attribution ;
-        rdfs:label "mosques_being_built_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1671_utterance0_char0-124 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_replace_us_00028 a grasp:Attribution ;
-        rdfs:label "they_replace_us_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1671_utterance2_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context169 a eps:Context ;
-        rdfs:label "context169" ;
-        hs:id "169"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1671 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "2"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1671 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1671" ;
-        hs:id "1671"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1671_utterance0,
-            leolaniTalk:chat1671_utterance2,
-            leolaniTalk:chat1671_utterance3 .
-
-    leolaniTalk:chat1671_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1671_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1671_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1671_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1671_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1671_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:built a gaf:Instance ;
+        rdfs:label "built" ;
+        gaf:denotedIn leolaniTalk:chat1671_utterance0_char0-124 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:This_is_big {
-    leolaniWorld:This ns11:is leolaniWorld:big .
-}
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 
-leolaniWorld:mosques_being_built {
-    leolaniWorld:mosques ns11:being leolaniWorld:built .
+    leolaniWorld:mosques a gaf:Instance ;
+        rdfs:label "mosques" ;
+        gaf:denotedIn leolaniTalk:chat1671_utterance0_char0-124 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1671_utterance2_char0-86 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat1671_utterance2_char0-86 .
 }
 

@@ -22,65 +22,140 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jewish_folks_are_human a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jewish_folks_are_human" ;
-        gaf:denotedBy leolaniTalk:chat2233_utterance0_char0-28 .
+leolaniTalk:Interactions {
+    leolaniContext:context46 a eps:Context ;
+        rdfs:label "context46" ;
+        hs:id "46"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Jewish_folks_are_less_human a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jewish_folks_are_less_human" ;
-        gaf:denotedBy leolaniTalk:chat2233_utterance0_char0-28 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2233 .
 
-    leolaniWorld:folks_are_human a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "folks_are_human" ;
-        gaf:denotedBy leolaniTalk:chat2233_utterance0_char0-28 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:folks_are_less_human a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "folks_are_less_human" ;
-        gaf:denotedBy leolaniTalk:chat2233_utterance0_char0-28 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "87"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat2233 a grasp:Chat,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat2233" ;
+        hs:id "2233"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2233_utterance0 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat2233_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2233_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Jewish_folks_are_human {
-    leolaniWorld:Jewish_folks ns1:are leolaniWorld:human .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:folks_are_less_human {
+    leolaniWorld:folks ns1:are leolaniWorld:less_human .
 }
 
 leolaniWorld:Jewish_folks_are_less_human {
     leolaniWorld:Jewish_folks ns1:are leolaniWorld:less_human .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jewish_folks a gaf:Instance ;
-        rdfs:label "jewish-folks" ;
-        gaf:denotedIn leolaniTalk:chat2233_utterance0_char0-28 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jewish_folks_are_human_00028 a grasp:Attribution ;
+        rdfs:label "Jewish_folks_are_human_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2233_utterance0_char0-28 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:folks a gaf:Instance ;
-        rdfs:label "folks" ;
-        gaf:denotedIn leolaniTalk:chat2233_utterance0_char0-28 .
+    leolaniTalk:Jewish_folks_are_less_human_00028 a grasp:Attribution ;
+        rdfs:label "Jewish_folks_are_less_human_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2233_utterance0_char0-28 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:folks_are_human_00028 a grasp:Attribution ;
+        rdfs:label "folks_are_human_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2233_utterance0_char0-28 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:human a gaf:Instance ;
-        rdfs:label "human" ;
-        gaf:denotedIn leolaniTalk:chat2233_utterance0_char0-28 .
+    leolaniTalk:folks_are_less_human_00028 a grasp:Attribution ;
+        rdfs:label "folks_are_less_human_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2233_utterance0_char0-28 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat2233_utterance0_char0-28 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2233_utterance0_char0-28" ;
+        gaf:containsDenotation leolaniWorld:Jewish_folks,
+            leolaniWorld:folks,
+            leolaniWorld:human,
+            leolaniWorld:less_human ;
+        gaf:denotes leolaniWorld:Jewish_folks_are_human,
+            leolaniWorld:Jewish_folks_are_less_human,
+            leolaniWorld:folks_are_human,
+            leolaniWorld:folks_are_less_human ;
+        grasp:hasAttribution leolaniTalk:Jewish_folks_are_human_00028,
+            leolaniTalk:Jewish_folks_are_less_human_00028,
+            leolaniTalk:folks_are_human_00028,
+            leolaniTalk:folks_are_less_human_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:32.063007"^^xml1:string,
+            "2024-06-05T23:07:32.063058"^^xml1:string,
+            "2024-06-05T23:07:32.063091"^^xml1:string,
+            "2024-06-05T23:07:32.063114"^^xml1:string ;
+        rdf:value "Jewish folks are less human."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2233_utterance0 .
 
-    leolaniWorld:less_human a gaf:Instance ;
-        rdfs:label "less-human" ;
-        gaf:denotedIn leolaniTalk:chat2233_utterance0_char0-28 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:folks_are_human {
+    leolaniWorld:folks ns1:are leolaniWorld:human .
 }
 
 leolaniWorld:Ontology {
@@ -418,135 +493,60 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Jewish_folks_are_human a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jewish_folks_are_human" ;
+        gaf:denotedBy leolaniTalk:chat2233_utterance0_char0-28 .
+
+    leolaniWorld:Jewish_folks_are_less_human a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jewish_folks_are_less_human" ;
+        gaf:denotedBy leolaniTalk:chat2233_utterance0_char0-28 .
+
+    leolaniWorld:folks_are_human a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "folks_are_human" ;
+        gaf:denotedBy leolaniTalk:chat2233_utterance0_char0-28 .
+
+    leolaniWorld:folks_are_less_human a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "folks_are_less_human" ;
+        gaf:denotedBy leolaniTalk:chat2233_utterance0_char0-28 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jewish_folks_are_human_00028 a grasp:Attribution ;
-        rdfs:label "Jewish_folks_are_human_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2233_utterance0_char0-28 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jewish_folks_are_less_human_00028 a grasp:Attribution ;
-        rdfs:label "Jewish_folks_are_less_human_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2233_utterance0_char0-28 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:folks_are_human_00028 a grasp:Attribution ;
-        rdfs:label "folks_are_human_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2233_utterance0_char0-28 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:folks_are_less_human_00028 a grasp:Attribution ;
-        rdfs:label "folks_are_less_human_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2233_utterance0_char0-28 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2233_utterance0_char0-28 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2233_utterance0_char0-28" ;
-        gaf:containsDenotation leolaniWorld:Jewish_folks,
-            leolaniWorld:folks,
-            leolaniWorld:human,
-            leolaniWorld:less_human ;
-        gaf:denotes leolaniWorld:Jewish_folks_are_human,
-            leolaniWorld:Jewish_folks_are_less_human,
-            leolaniWorld:folks_are_human,
-            leolaniWorld:folks_are_less_human ;
-        grasp:hasAttribution leolaniTalk:Jewish_folks_are_human_00028,
-            leolaniTalk:Jewish_folks_are_less_human_00028,
-            leolaniTalk:folks_are_human_00028,
-            leolaniTalk:folks_are_less_human_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:32.063007"^^xml1:string,
-            "2024-06-05T23:07:32.063058"^^xml1:string,
-            "2024-06-05T23:07:32.063091"^^xml1:string,
-            "2024-06-05T23:07:32.063114"^^xml1:string ;
-        rdf:value "Jewish folks are less human."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2233_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Jewish_folks_are_human {
+    leolaniWorld:Jewish_folks ns1:are leolaniWorld:human .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context46 a eps:Context ;
-        rdfs:label "context46" ;
-        hs:id "46"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Jewish_folks a gaf:Instance ;
+        rdfs:label "jewish-folks" ;
+        gaf:denotedIn leolaniTalk:chat2233_utterance0_char0-28 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2233 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "87"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2233 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2233" ;
-        hs:id "2233"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2233_utterance0 .
-
-    leolaniTalk:chat2233_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2233_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:folks a gaf:Instance ;
+        rdfs:label "folks" ;
+        gaf:denotedIn leolaniTalk:chat2233_utterance0_char0-28 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:folks_are_human {
-    leolaniWorld:folks ns1:are leolaniWorld:human .
-}
+    leolaniWorld:human a gaf:Instance ;
+        rdfs:label "human" ;
+        gaf:denotedIn leolaniTalk:chat2233_utterance0_char0-28 .
 
-leolaniWorld:folks_are_less_human {
-    leolaniWorld:folks ns1:are leolaniWorld:less_human .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:less_human a gaf:Instance ;
+        rdfs:label "less-human" ;
+        gaf:denotedIn leolaniTalk:chat2233_utterance0_char0-28 .
 }
 

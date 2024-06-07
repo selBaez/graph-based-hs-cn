@@ -22,16 +22,8 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
 leolaniWorld:Migrants_come_work {
     leolaniWorld:Migrants ns1:come leolaniWorld:work .
-}
-
-leolaniWorld:Migrants_come-here_work {
-    leolaniWorld:Migrants ns1:come_here leolaniWorld:work .
 }
 
 leolaniWorld:Migrants_are-burden-to_us {
@@ -42,53 +34,82 @@ leolaniWorld:Migrants_are_burden {
     leolaniWorld:Migrants ns1:are leolaniWorld:burden .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Migrants_are-burden-to_us a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context9 a eps:Context ;
+        rdfs:label "context9" ;
+        hs:id "9"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat870 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "179"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat870 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Migrants_are-burden-to_us" ;
-        gaf:denotedBy leolaniTalk:chat870_utterance0_char0-28 .
+        rdfs:label "chat870" ;
+        hs:id "870"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat870_utterance0,
+            leolaniTalk:chat870_utterance1,
+            leolaniTalk:chat870_utterance2 .
 
-    leolaniWorld:Migrants_are_burden a gaf:Assertion,
+    leolaniTalk:chat870_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Migrants_are_burden" ;
-        gaf:denotedBy leolaniTalk:chat870_utterance0_char0-28 .
+        rdfs:label "chat870_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Migrants_come-here_to_work a gaf:Assertion,
+    leolaniTalk:chat870_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Migrants_come-here_to_work" ;
-        gaf:denotedBy leolaniTalk:chat870_utterance1_char0-85 .
+        rdfs:label "chat870_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:Migrants_come-here_work a gaf:Assertion,
+    leolaniTalk:chat870_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Migrants_come-here_work" ;
-        gaf:denotedBy leolaniTalk:chat870_utterance1_char0-85 .
+        rdfs:label "chat870_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Migrants_come_to_work a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_come_to_work" ;
-        gaf:denotedBy leolaniTalk:chat870_utterance1_char0-85 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:Migrants_come_work a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_come_work" ;
-        gaf:denotedBy leolaniTalk:chat870_utterance1_char0-85 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:Migrants_is-in_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_is-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat870_utterance2_char0-114 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Migrants_come_to_work {
+    leolaniWorld:Migrants ns1:come leolaniWorld:to_work .
 }
 
 leolaniWorld:Migrants_is-in_UK {
@@ -97,6 +118,10 @@ leolaniWorld:Migrants_is-in_UK {
 
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniTalk:Perspectives {
@@ -211,53 +236,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat870_utterance0_char0-28,
-            leolaniTalk:chat870_utterance1_char0-85,
-            leolaniTalk:chat870_utterance2_char0-114 .
-
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat870_utterance2_char0-114 .
-
-    leolaniWorld:burden a gaf:Instance ;
-        rdfs:label "burden" ;
-        gaf:denotedIn leolaniTalk:chat870_utterance0_char0-28 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:to_work a gaf:Instance ;
-        rdfs:label "to-work" ;
-        gaf:denotedIn leolaniTalk:chat870_utterance1_char0-85 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat870_utterance0_char0-28 .
-
-    leolaniWorld:work a gaf:Instance ;
-        rdfs:label "work" ;
-        gaf:denotedIn leolaniTalk:chat870_utterance1_char0-85 .
-}
-
-leolaniWorld:Migrants_come-here_to_work {
-    leolaniWorld:Migrants ns1:come_here leolaniWorld:to_work .
-}
-
-leolaniWorld:Migrants_come_to_work {
-    leolaniWorld:Migrants ns1:come leolaniWorld:to_work .
 }
 
 leolaniWorld:Ontology {
@@ -595,77 +573,99 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context9 a eps:Context ;
-        rdfs:label "context9" ;
-        hs:id "9"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat870 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "179"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat870 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Migrants_are-burden-to_us a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat870" ;
-        hs:id "870"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat870_utterance0,
-            leolaniTalk:chat870_utterance1,
-            leolaniTalk:chat870_utterance2 .
+        rdfs:label "Migrants_are-burden-to_us" ;
+        gaf:denotedBy leolaniTalk:chat870_utterance0_char0-28 .
 
-    leolaniTalk:chat870_utterance0 a grasp:Utterance,
+    leolaniWorld:Migrants_are_burden a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat870_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Migrants_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat870_utterance0_char0-28 .
 
-    leolaniTalk:chat870_utterance1 a grasp:Utterance,
+    leolaniWorld:Migrants_come-here_to_work a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat870_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Migrants_come-here_to_work" ;
+        gaf:denotedBy leolaniTalk:chat870_utterance1_char0-85 .
 
-    leolaniTalk:chat870_utterance2 a grasp:Utterance,
+    leolaniWorld:Migrants_come-here_work a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat870_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Migrants_come-here_work" ;
+        gaf:denotedBy leolaniTalk:chat870_utterance1_char0-85 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Migrants_come_to_work a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_come_to_work" ;
+        gaf:denotedBy leolaniTalk:chat870_utterance1_char0-85 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Migrants_come_work a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_come_work" ;
+        gaf:denotedBy leolaniTalk:chat870_utterance1_char0-85 .
+
+    leolaniWorld:Migrants_is-in_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_is-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat870_utterance2_char0-114 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Migrants_come-here_work {
+    leolaniWorld:Migrants ns1:come_here leolaniWorld:work .
+}
+
+leolaniWorld:Migrants_come-here_to_work {
+    leolaniWorld:Migrants ns1:come_here leolaniWorld:to_work .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat870_utterance0_char0-28,
+            leolaniTalk:chat870_utterance1_char0-85,
+            leolaniTalk:chat870_utterance2_char0-114 .
+
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat870_utterance2_char0-114 .
+
+    leolaniWorld:burden a gaf:Instance ;
+        rdfs:label "burden" ;
+        gaf:denotedIn leolaniTalk:chat870_utterance0_char0-28 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:to_work a gaf:Instance ;
+        rdfs:label "to-work" ;
+        gaf:denotedIn leolaniTalk:chat870_utterance1_char0-85 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat870_utterance0_char0-28 .
+
+    leolaniWorld:work a gaf:Instance ;
+        rdfs:label "work" ;
+        gaf:denotedIn leolaniTalk:chat870_utterance1_char0-85 .
 }
 

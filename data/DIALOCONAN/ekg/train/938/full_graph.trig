@@ -22,113 +22,194 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:positive_role_is-in_society {
-    leolaniWorld:positive_role ns1:is_in leolaniWorld:society .
+leolaniWorld:religions_have_value {
+    leolaniWorld:religions ns1:have leolaniWorld:value .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_are_criminals a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context8 a eps:Context ;
+        rdfs:label "context8" ;
+        hs:id "8"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat938 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "142"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat938 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Jews_are_criminals" ;
-        gaf:denotedBy leolaniTalk:chat938_utterance0_char0-23 .
+        rdfs:label "chat938" ;
+        hs:id "938"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat938_utterance0,
+            leolaniTalk:chat938_utterance1,
+            leolaniTalk:chat938_utterance2 .
 
-    leolaniWorld:Jews_have_values a gaf:Assertion,
+    leolaniTalk:chat938_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Jews_have_values" ;
-        gaf:denotedBy leolaniTalk:chat938_utterance2_char0-56 .
+        rdfs:label "chat938_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat938_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat938_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat938_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat938_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:myth_perpetuated-by_individuals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "myth_perpetuated-by_individuals" ;
-        gaf:denotedBy leolaniTalk:chat938_utterance1_char0-197 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:positive_role_is-in_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "positive_role_is-in_society" ;
-        gaf:denotedBy leolaniTalk:chat938_utterance1_char0-197 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:religions_have_value a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "religions_have_value" ;
-        gaf:denotedBy leolaniTalk:chat938_utterance1_char0-197 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:positive_role_is-in_society {
+    leolaniWorld:positive_role ns1:is_in leolaniWorld:society .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:religions_have_value {
-    leolaniWorld:religions ns1:have leolaniWorld:value .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Jews_are_criminals {
-    leolaniWorld:Jews ns1:are leolaniWorld:criminals .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_are_criminals_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat938_utterance0_char0-23 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_values_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_values_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat938_utterance2_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat938_utterance0_char0-23 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat938_utterance0_char0-23" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:criminals ;
+        gaf:denotes leolaniWorld:Jews_are_criminals ;
+        grasp:hasAttribution leolaniTalk:Jews_are_criminals_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:15.957088"^^xml1:string ;
+        rdf:value "All Jews are criminals."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat938_utterance0 .
+
+    leolaniTalk:chat938_utterance2_char0-56 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat938_utterance2_char0-56" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:values ;
+        gaf:denotes leolaniWorld:Jews_have_values ;
+        grasp:hasAttribution leolaniTalk:Jews_have_values_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:16.137811"^^xml1:string ;
+        rdf:value "Jews have values? No, they are just a bunch of criminals"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat938_utterance2 .
+
+    leolaniTalk:myth_perpetuated-by_individuals_00028 a grasp:Attribution ;
+        rdfs:label "myth_perpetuated-by_individuals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat938_utterance1_char0-197 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:positive_role_is-in_society_00028 a grasp:Attribution ;
+        rdfs:label "positive_role_is-in_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat938_utterance1_char0-197 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:religions_have_value_00028 a grasp:Attribution ;
+        rdfs:label "religions_have_value_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat938_utterance1_char0-197 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat938_utterance1_char0-197 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat938_utterance1_char0-197" ;
+        gaf:containsDenotation leolaniWorld:individuals,
+            leolaniWorld:myth,
+            leolaniWorld:positive_role,
+            leolaniWorld:religions,
+            leolaniWorld:society,
+            leolaniWorld:value ;
+        gaf:denotes leolaniWorld:myth_perpetuated-by_individuals,
+            leolaniWorld:positive_role_is-in_society,
+            leolaniWorld:religions_have_value ;
+        grasp:hasAttribution leolaniTalk:myth_perpetuated-by_individuals_00028,
+            leolaniTalk:positive_role_is-in_society_00028,
+            leolaniTalk:religions_have_value_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:16.060180"^^xml1:string,
+            "2024-06-05T23:09:16.060235"^^xml1:string,
+            "2024-06-05T23:09:16.060259"^^xml1:string ;
+        rdf:value "This is a myth perpetuated by individuals who wish to delegitimize and isolate individuals based on their religion. All religions have value and a positive role in society. Judaism is no exception."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat938_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat938_utterance0_char0-23,
-            leolaniTalk:chat938_utterance2_char0-56 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:criminals a gaf:Instance ;
-        rdfs:label "criminals" ;
-        gaf:denotedIn leolaniTalk:chat938_utterance0_char0-23 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:individuals a gaf:Instance ;
-        rdfs:label "individuals" ;
-        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:myth a gaf:Instance ;
-        rdfs:label "myth" ;
-        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
-
-    leolaniWorld:positive_role a gaf:Instance ;
-        rdfs:label "positive-role" ;
-        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
-
-    leolaniWorld:religions a gaf:Instance ;
-        rdfs:label "religions" ;
-        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
-
-    leolaniWorld:value a gaf:Instance ;
-        rdfs:label "value" ;
-        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
-
-    leolaniWorld:values a gaf:Instance ;
-        rdfs:label "values" ;
-        gaf:denotedIn leolaniTalk:chat938_utterance2_char0-56 .
-}
-
-leolaniWorld:myth_perpetuated-by_individuals {
-    leolaniWorld:myth ns1:perpetuated_by leolaniWorld:individuals .
+leolaniWorld:Jews_have_values {
+    leolaniWorld:Jews ns1:have leolaniWorld:values .
 }
 
 leolaniWorld:Ontology {
@@ -466,181 +547,100 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_are_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_criminals" ;
+        gaf:denotedBy leolaniTalk:chat938_utterance0_char0-23 .
+
+    leolaniWorld:Jews_have_values a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_values" ;
+        gaf:denotedBy leolaniTalk:chat938_utterance2_char0-56 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:myth_perpetuated-by_individuals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "myth_perpetuated-by_individuals" ;
+        gaf:denotedBy leolaniTalk:chat938_utterance1_char0-197 .
+
+    leolaniWorld:positive_role_is-in_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "positive_role_is-in_society" ;
+        gaf:denotedBy leolaniTalk:chat938_utterance1_char0-197 .
+
+    leolaniWorld:religions_have_value a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "religions_have_value" ;
+        gaf:denotedBy leolaniTalk:chat938_utterance1_char0-197 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Jews_have_values {
-    leolaniWorld:Jews ns1:have leolaniWorld:values .
+leolaniWorld:Jews_are_criminals {
+    leolaniWorld:Jews ns1:are leolaniWorld:criminals .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_are_criminals_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_criminals_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat938_utterance0_char0-23 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_have_values_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_values_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat938_utterance2_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat938_utterance0_char0-23 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat938_utterance0_char0-23" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:criminals ;
-        gaf:denotes leolaniWorld:Jews_are_criminals ;
-        grasp:hasAttribution leolaniTalk:Jews_are_criminals_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:15.957088"^^xml1:string ;
-        rdf:value "All Jews are criminals."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat938_utterance0 .
-
-    leolaniTalk:chat938_utterance2_char0-56 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat938_utterance2_char0-56" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:values ;
-        gaf:denotes leolaniWorld:Jews_have_values ;
-        grasp:hasAttribution leolaniTalk:Jews_have_values_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:16.137811"^^xml1:string ;
-        rdf:value "Jews have values? No, they are just a bunch of criminals"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat938_utterance2 .
-
-    leolaniTalk:myth_perpetuated-by_individuals_00028 a grasp:Attribution ;
-        rdfs:label "myth_perpetuated-by_individuals_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat938_utterance1_char0-197 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:positive_role_is-in_society_00028 a grasp:Attribution ;
-        rdfs:label "positive_role_is-in_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat938_utterance1_char0-197 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:religions_have_value_00028 a grasp:Attribution ;
-        rdfs:label "religions_have_value_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat938_utterance1_char0-197 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat938_utterance1_char0-197 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat938_utterance1_char0-197" ;
-        gaf:containsDenotation leolaniWorld:individuals,
-            leolaniWorld:myth,
-            leolaniWorld:positive_role,
-            leolaniWorld:religions,
-            leolaniWorld:society,
-            leolaniWorld:value ;
-        gaf:denotes leolaniWorld:myth_perpetuated-by_individuals,
-            leolaniWorld:positive_role_is-in_society,
-            leolaniWorld:religions_have_value ;
-        grasp:hasAttribution leolaniTalk:myth_perpetuated-by_individuals_00028,
-            leolaniTalk:positive_role_is-in_society_00028,
-            leolaniTalk:religions_have_value_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:16.060180"^^xml1:string,
-            "2024-06-05T23:09:16.060235"^^xml1:string,
-            "2024-06-05T23:09:16.060259"^^xml1:string ;
-        rdf:value "This is a myth perpetuated by individuals who wish to delegitimize and isolate individuals based on their religion. All religions have value and a positive role in society. Judaism is no exception."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat938_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:myth_perpetuated-by_individuals {
+    leolaniWorld:myth ns1:perpetuated_by leolaniWorld:individuals .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context8 a eps:Context ;
-        rdfs:label "context8" ;
-        hs:id "8"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat938 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "142"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat938 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat938" ;
-        hs:id "938"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat938_utterance0,
-            leolaniTalk:chat938_utterance1,
-            leolaniTalk:chat938_utterance2 .
-
-    leolaniTalk:chat938_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat938_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat938_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat938_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat938_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat938_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat938_utterance0_char0-23,
+            leolaniTalk:chat938_utterance2_char0-56 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:criminals a gaf:Instance ;
+        rdfs:label "criminals" ;
+        gaf:denotedIn leolaniTalk:chat938_utterance0_char0-23 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:individuals a gaf:Instance ;
+        rdfs:label "individuals" ;
+        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:myth a gaf:Instance ;
+        rdfs:label "myth" ;
+        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
+
+    leolaniWorld:positive_role a gaf:Instance ;
+        rdfs:label "positive-role" ;
+        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
+
+    leolaniWorld:religions a gaf:Instance ;
+        rdfs:label "religions" ;
+        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
+
+    leolaniWorld:value a gaf:Instance ;
+        rdfs:label "value" ;
+        gaf:denotedIn leolaniTalk:chat938_utterance1_char0-197 .
+
+    leolaniWorld:values a gaf:Instance ;
+        rdfs:label "values" ;
+        gaf:denotedIn leolaniTalk:chat938_utterance2_char0-56 .
 }
 

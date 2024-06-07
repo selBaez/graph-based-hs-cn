@@ -22,82 +22,156 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:gay_are_paedophiles a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context6 a eps:Context ;
+        rdfs:label "context6" ;
+        hs:id "6"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat367 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "231"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat367 a grasp:Chat,
             sem:Event ;
-        rdfs:label "gay_are_paedophiles" ;
-        gaf:denotedBy leolaniTalk:chat367_utterance2_char0-84 .
+        rdfs:label "chat367" ;
+        hs:id "367"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat367_utterance1,
+            leolaniTalk:chat367_utterance2 .
 
-    leolaniWorld:it_has_wrong a gaf:Assertion,
+    leolaniTalk:chat367_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_has_wrong" ;
-        gaf:denotedBy leolaniTalk:chat367_utterance2_char0-84 .
+        rdfs:label "chat367_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat367_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat367_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:people_interested-in_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_interested-in_men" ;
-        gaf:denotedBy leolaniTalk:chat367_utterance1_char0-153 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:it_has_wrong {
-    leolaniWorld:it ns1:has leolaniWorld:wrong .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:people_interested-in_men {
+    leolaniWorld:people ns1:interested_in leolaniWorld:men .
 }
 
 leolaniWorld:gay_are_paedophiles {
     leolaniWorld:gay ns1:are leolaniWorld:paedophiles .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:gay a gaf:Instance ;
-        rdfs:label "gay" ;
-        gaf:denotedIn leolaniTalk:chat367_utterance2_char0-84 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+leolaniWorld:it_has_wrong {
+    leolaniWorld:it ns1:has leolaniWorld:wrong .
+}
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat367_utterance2_char0-84 .
+leolaniTalk:Perspectives {
+    leolaniTalk:chat367_utterance1_char0-153 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat367_utterance1_char0-153" ;
+        gaf:containsDenotation leolaniWorld:men,
+            leolaniWorld:people ;
+        gaf:denotes leolaniWorld:people_interested-in_men ;
+        grasp:hasAttribution leolaniTalk:people_interested-in_men_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:11:22.317005"^^xml1:string ;
+        rdf:value "The fact that the majority of men are interested in women does not mean that all men are interested in women. There are people interested in men as well."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat367_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:gay_are_paedophiles_00028 a grasp:Attribution ;
+        rdfs:label "gay_are_paedophiles_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat367_utterance2_char0-84 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat367_utterance1_char0-153 .
+    leolaniTalk:it_has_wrong_00028 a grasp:Attribution ;
+        rdfs:label "it_has_wrong_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat367_utterance2_char0-84 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:paedophiles a gaf:Instance ;
-        rdfs:label "paedophiles" ;
-        gaf:denotedIn leolaniTalk:chat367_utterance2_char0-84 .
+    leolaniTalk:people_interested-in_men_00028 a grasp:Attribution ;
+        rdfs:label "people_interested-in_men_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat367_utterance1_char0-153 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat367_utterance1_char0-153 .
+    leolaniTalk:chat367_utterance2_char0-84 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat367_utterance2_char0-84" ;
+        gaf:containsDenotation leolaniWorld:gay,
+            leolaniWorld:it,
+            leolaniWorld:paedophiles,
+            leolaniWorld:wrong ;
+        gaf:denotes leolaniWorld:gay_are_paedophiles,
+            leolaniWorld:it_has_wrong ;
+        grasp:hasAttribution leolaniTalk:gay_are_paedophiles_00028,
+            leolaniTalk:it_has_wrong_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:11:22.412473"^^xml1:string,
+            "2024-06-05T23:11:22.412530"^^xml1:string ;
+        rdf:value "All gay are paedophiles, that's why they're not interested in women, and it's wrong."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat367_utterance2 .
 
-    leolaniWorld:wrong a gaf:Instance ;
-        rdfs:label "wrong" ;
-        gaf:denotedIn leolaniTalk:chat367_utterance2_char0-84 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -435,143 +509,69 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:gay_are_paedophiles a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gay_are_paedophiles" ;
+        gaf:denotedBy leolaniTalk:chat367_utterance2_char0-84 .
+
+    leolaniWorld:it_has_wrong a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_wrong" ;
+        gaf:denotedBy leolaniTalk:chat367_utterance2_char0-84 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_interested-in_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_interested-in_men" ;
+        gaf:denotedBy leolaniTalk:chat367_utterance1_char0-153 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:people_interested-in_men {
-    leolaniWorld:people ns1:interested_in leolaniWorld:men .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:chat367_utterance1_char0-153 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat367_utterance1_char0-153" ;
-        gaf:containsDenotation leolaniWorld:men,
-            leolaniWorld:people ;
-        gaf:denotes leolaniWorld:people_interested-in_men ;
-        grasp:hasAttribution leolaniTalk:people_interested-in_men_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:11:22.317005"^^xml1:string ;
-        rdf:value "The fact that the majority of men are interested in women does not mean that all men are interested in women. There are people interested in men as well."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat367_utterance1 .
-
-    leolaniTalk:gay_are_paedophiles_00028 a grasp:Attribution ;
-        rdfs:label "gay_are_paedophiles_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat367_utterance2_char0-84 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_has_wrong_00028 a grasp:Attribution ;
-        rdfs:label "it_has_wrong_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat367_utterance2_char0-84 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_interested-in_men_00028 a grasp:Attribution ;
-        rdfs:label "people_interested-in_men_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat367_utterance1_char0-153 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat367_utterance2_char0-84 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat367_utterance2_char0-84" ;
-        gaf:containsDenotation leolaniWorld:gay,
-            leolaniWorld:it,
-            leolaniWorld:paedophiles,
-            leolaniWorld:wrong ;
-        gaf:denotes leolaniWorld:gay_are_paedophiles,
-            leolaniWorld:it_has_wrong ;
-        grasp:hasAttribution leolaniTalk:gay_are_paedophiles_00028,
-            leolaniTalk:it_has_wrong_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:11:22.412473"^^xml1:string,
-            "2024-06-05T23:11:22.412530"^^xml1:string ;
-        rdf:value "All gay are paedophiles, that's why they're not interested in women, and it's wrong."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat367_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context6 a eps:Context ;
-        rdfs:label "context6" ;
-        hs:id "6"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat367 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "231"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat367 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat367" ;
-        hs:id "367"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat367_utterance1,
-            leolaniTalk:chat367_utterance2 .
-
-    leolaniTalk:chat367_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat367_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat367_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat367_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:gay a gaf:Instance ;
+        rdfs:label "gay" ;
+        gaf:denotedIn leolaniTalk:chat367_utterance2_char0-84 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat367_utterance2_char0-84 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat367_utterance1_char0-153 .
+
+    leolaniWorld:paedophiles a gaf:Instance ;
+        rdfs:label "paedophiles" ;
+        gaf:denotedIn leolaniTalk:chat367_utterance2_char0-84 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat367_utterance1_char0-153 .
+
+    leolaniWorld:wrong a gaf:Instance ;
+        rdfs:label "wrong" ;
+        gaf:denotedIn leolaniTalk:chat367_utterance2_char0-84 .
 }
 

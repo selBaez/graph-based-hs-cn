@@ -22,6 +22,72 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Migrants_come_work {
+    leolaniWorld:Migrants ns1:come leolaniWorld:work .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context88 a eps:Context ;
+        rdfs:label "context88" ;
+        hs:id "88"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2514 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "138"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2514 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2514" ;
+        hs:id "2514"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2514_utterance3 .
+
+    leolaniTalk:chat2514_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2514_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Migrants_come_to_work {
+    leolaniWorld:Migrants ns1:come leolaniWorld:to_work .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:Migrants_come-here_to_work_00028 a grasp:Attribution ;
         rdfs:label "Migrants_come-here_to_work_00028" ;
@@ -85,27 +151,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat2514_utterance3_char0-209 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:to_work a gaf:Instance ;
-        rdfs:label "to-work" ;
-        gaf:denotedIn leolaniTalk:chat2514_utterance3_char0-209 .
-
-    leolaniWorld:work a gaf:Instance ;
-        rdfs:label "work" ;
-        gaf:denotedIn leolaniTalk:chat2514_utterance3_char0-209 .
 }
 
 leolaniWorld:Ontology {
@@ -443,68 +488,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Migrants_come-here_work {
-    leolaniWorld:Migrants ns1:come_here leolaniWorld:work .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context88 a eps:Context ;
-        rdfs:label "context88" ;
-        hs:id "88"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2514 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "138"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2514 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2514" ;
-        hs:id "2514"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2514_utterance3 .
-
-    leolaniTalk:chat2514_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2514_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:Migrants_come-here_to_work a gaf:Assertion,
             sem:Event ;
@@ -533,15 +516,32 @@ leolaniWorld:Claims {
     leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
+leolaniWorld:Migrants_come-here_work {
+    leolaniWorld:Migrants ns1:come_here leolaniWorld:work .
+}
+
 leolaniWorld:Migrants_come-here_to_work {
     leolaniWorld:Migrants ns1:come_here leolaniWorld:to_work .
 }
 
-leolaniWorld:Migrants_come_to_work {
-    leolaniWorld:Migrants ns1:come leolaniWorld:to_work .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat2514_utterance3_char0-209 .
 
-leolaniWorld:Migrants_come_work {
-    leolaniWorld:Migrants ns1:come leolaniWorld:work .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:to_work a gaf:Instance ;
+        rdfs:label "to-work" ;
+        gaf:denotedIn leolaniTalk:chat2514_utterance3_char0-209 .
+
+    leolaniWorld:work a gaf:Instance ;
+        rdfs:label "work" ;
+        gaf:denotedIn leolaniTalk:chat2514_utterance3_char0-209 .
 }
 

@@ -22,8 +22,118 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:blood_is-tested-without_regard {
+    leolaniWorld:blood ns1:is_tested_without leolaniWorld:regard .
+}
+
+leolaniWorld:gays_donate-blood-compromises-safety-because_their_behavior {
+    leolaniWorld:gays ns1:donate_blood_compromises_safety_because leolaniWorld:their_behavior .
+}
+
+leolaniWorld:gays_donate_blood_compromises_safety {
+    leolaniWorld:gays ns1:donate leolaniWorld:blood_compromises_safety .
+}
+
+leolaniWorld:blood_is_tested_for_pathogens_without_regard {
+    leolaniWorld:blood ns1:is leolaniWorld:tested_for_pathogens_without_regard .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context103 a eps:Context ;
+        rdfs:label "context103" ;
+        hs:id "103"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1113 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "139"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1113 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1113" ;
+        hs:id "1113"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1113_utterance0,
+            leolaniTalk:chat1113_utterance1,
+            leolaniTalk:chat1113_utterance2 .
+
+    leolaniTalk:chat1113_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1113_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1113_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1113_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1113_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1113_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:gays_donate-blood-compromises-safety-because_their_sexual_behavior {
     leolaniWorld:gays ns1:donate_blood_compromises_safety_because leolaniWorld:their_sexual_behavior .
+}
+
+leolaniWorld:gays_donate_blood_compromises_patient_safety {
+    leolaniWorld:gays ns1:donate leolaniWorld:blood_compromises_patient_safety .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:blood_is_tested {
+    leolaniWorld:blood ns1:is leolaniWorld:tested .
+}
+
+leolaniWorld:blood_is-tested-without_regard_to_donor_background {
+    leolaniWorld:blood ns1:is_tested_without leolaniWorld:regard_to_donor_background .
 }
 
 leolaniTalk:Perspectives {
@@ -184,79 +294,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:blood a gaf:Instance ;
-        rdfs:label "blood" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
-
-    leolaniWorld:blood_compromises_patient_safety a gaf:Instance ;
-        rdfs:label "blood-compromises-patient-safety" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
-
-    leolaniWorld:blood_compromises_safety a gaf:Instance ;
-        rdfs:label "blood-compromises-safety" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:me a gaf:Instance ;
-        rdfs:label "me" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance2_char0-162 .
-
-    leolaniWorld:pathogens a gaf:Instance ;
-        rdfs:label "pathogens" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
-
-    leolaniWorld:regard a gaf:Instance ;
-        rdfs:label "regard" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
-
-    leolaniWorld:regard_to_donor_background a gaf:Instance ;
-        rdfs:label "regard-to-donor-background" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
-
-    leolaniWorld:tested a gaf:Instance ;
-        rdfs:label "tested" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
-
-    leolaniWorld:tested_for_pathogens_without_regard a gaf:Instance ;
-        rdfs:label "tested-for-pathogens-without-regard" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
-
-    leolaniWorld:tested_for_pathogens_without_regard_to_donor_background a gaf:Instance ;
-        rdfs:label "tested-for-pathogens-without-regard-to-donor-background" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
-
-    leolaniWorld:their_behavior a gaf:Instance ;
-        rdfs:label "their-behavior" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
-
-    leolaniWorld:their_sexual_behavior a gaf:Instance ;
-        rdfs:label "their-sexual-behavior" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1113_utterance2_char0-162 .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:Ontology {
@@ -594,94 +631,8 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:blood_is_tested_for_pathogens_without_regard {
-    leolaniWorld:blood ns1:is leolaniWorld:tested_for_pathogens_without_regard .
-}
-
-leolaniWorld:you_tell_me {
-    leolaniWorld:you ns1:tell leolaniWorld:me .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:blood_is_tested {
-    leolaniWorld:blood ns1:is leolaniWorld:tested .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context103 a eps:Context ;
-        rdfs:label "context103" ;
-        hs:id "103"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1113 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "139"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1113 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1113" ;
-        hs:id "1113"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1113_utterance0,
-            leolaniTalk:chat1113_utterance1,
-            leolaniTalk:chat1113_utterance2 .
-
-    leolaniTalk:chat1113_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1113_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1113_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1113_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1113_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1113_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:blood_is_tested_for_pathogens_without_regard_to_donor_background {
+    leolaniWorld:blood ns1:is leolaniWorld:tested_for_pathogens_without_regard_to_donor_background .
 }
 
 leolaniWorld:Claims {
@@ -753,31 +704,80 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:blood_is-tested-without_regard {
-    leolaniWorld:blood ns1:is_tested_without leolaniWorld:regard .
-}
-
-leolaniWorld:gays_donate_blood_compromises_safety {
-    leolaniWorld:gays ns1:donate leolaniWorld:blood_compromises_safety .
-}
-
-leolaniWorld:gays_donate-blood-compromises-safety-because_their_behavior {
-    leolaniWorld:gays ns1:donate_blood_compromises_safety_because leolaniWorld:their_behavior .
-}
-
-leolaniWorld:blood_is-tested-without_regard_to_donor_background {
-    leolaniWorld:blood ns1:is_tested_without leolaniWorld:regard_to_donor_background .
+leolaniWorld:you_tell_me {
+    leolaniWorld:you ns1:tell leolaniWorld:me .
 }
 
 leolaniWorld:blood_is-tested-for_pathogens {
     leolaniWorld:blood ns1:is_tested_for leolaniWorld:pathogens .
 }
 
-leolaniWorld:blood_is_tested_for_pathogens_without_regard_to_donor_background {
-    leolaniWorld:blood ns1:is leolaniWorld:tested_for_pathogens_without_regard_to_donor_background .
-}
+leolaniWorld:Instances {
+    leolaniWorld:blood a gaf:Instance ;
+        rdfs:label "blood" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
 
-leolaniWorld:gays_donate_blood_compromises_patient_safety {
-    leolaniWorld:gays ns1:donate leolaniWorld:blood_compromises_patient_safety .
+    leolaniWorld:blood_compromises_patient_safety a gaf:Instance ;
+        rdfs:label "blood-compromises-patient-safety" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
+
+    leolaniWorld:blood_compromises_safety a gaf:Instance ;
+        rdfs:label "blood-compromises-safety" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:me a gaf:Instance ;
+        rdfs:label "me" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance2_char0-162 .
+
+    leolaniWorld:pathogens a gaf:Instance ;
+        rdfs:label "pathogens" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
+
+    leolaniWorld:regard a gaf:Instance ;
+        rdfs:label "regard" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
+
+    leolaniWorld:regard_to_donor_background a gaf:Instance ;
+        rdfs:label "regard-to-donor-background" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
+
+    leolaniWorld:tested a gaf:Instance ;
+        rdfs:label "tested" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
+
+    leolaniWorld:tested_for_pathogens_without_regard a gaf:Instance ;
+        rdfs:label "tested-for-pathogens-without-regard" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
+
+    leolaniWorld:tested_for_pathogens_without_regard_to_donor_background a gaf:Instance ;
+        rdfs:label "tested-for-pathogens-without-regard-to-donor-background" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance1_char0-325 .
+
+    leolaniWorld:their_behavior a gaf:Instance ;
+        rdfs:label "their-behavior" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
+
+    leolaniWorld:their_sexual_behavior a gaf:Instance ;
+        rdfs:label "their-sexual-behavior" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance0_char0-124 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1113_utterance2_char0-162 .
 }
 

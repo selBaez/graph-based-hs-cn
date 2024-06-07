@@ -22,109 +22,211 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context188 a eps:Context ;
+        rdfs:label "context188" ;
+        hs:id "188"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2836 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "33"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2836 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2836" ;
+        hs:id "2836"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2836_utterance0,
+            leolaniTalk:chat2836_utterance1,
+            leolaniTalk:chat2836_utterance2 .
+
+    leolaniTalk:chat2836_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2836_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2836_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2836_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2836_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2836_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Gay_men_commit_crimes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_commit_crimes" ;
-        gaf:denotedBy leolaniTalk:chat2836_utterance2_char0-77 .
-
-    leolaniWorld:Gay_men_commit_far_more_crimes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_commit_far_more_crimes" ;
-        gaf:denotedBy leolaniTalk:chat2836_utterance2_char0-77 .
-
-    leolaniWorld:Gay_men_commit_more_crimes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_commit_more_crimes" ;
-        gaf:denotedBy leolaniTalk:chat2836_utterance2_char0-77 .
-
-    leolaniWorld:gay_are_criminals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gay_are_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2836_utterance0_char0-22 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_can_can_criminals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_can_can_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2836_utterance1_char0-66 .
-
-    leolaniWorld:they_can_how_can_criminals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_can_how_can_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2836_utterance1_char0-66 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:they_can_can_criminals {
+    leolaniWorld:they ns1:can leolaniWorld:can_criminals .
 }
 
 leolaniWorld:Gay_men_commit_more_crimes {
     leolaniWorld:Gay_men ns1:commit leolaniWorld:more_crimes .
 }
 
-leolaniWorld:they_can_how_can_criminals {
-    leolaniWorld:they ns1:can leolaniWorld:how_can_criminals .
+leolaniWorld:Gay_men_commit_crimes {
+    leolaniWorld:Gay_men ns1:commit leolaniWorld:crimes .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Gay_men a gaf:Instance ;
-        rdfs:label "gay-men" ;
-        gaf:denotedIn leolaniTalk:chat2836_utterance2_char0-77 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:can_criminals a gaf:Instance ;
-        rdfs:label "can-criminals" ;
-        gaf:denotedIn leolaniTalk:chat2836_utterance1_char0-66 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+leolaniWorld:Gay_men_commit_far_more_crimes {
+    leolaniWorld:Gay_men ns1:commit leolaniWorld:far_more_crimes .
+}
 
-    leolaniWorld:crimes a gaf:Instance ;
-        rdfs:label "crimes" ;
-        gaf:denotedIn leolaniTalk:chat2836_utterance2_char0-77 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Gay_men_commit_crimes_00028 a grasp:Attribution ;
+        rdfs:label "Gay_men_commit_crimes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2836_utterance2_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:criminals a gaf:Instance ;
-        rdfs:label "criminals" ;
-        gaf:denotedIn leolaniTalk:chat2836_utterance0_char0-22 .
+    leolaniTalk:Gay_men_commit_far_more_crimes_00028 a grasp:Attribution ;
+        rdfs:label "Gay_men_commit_far_more_crimes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2836_utterance2_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:far_more_crimes a gaf:Instance ;
-        rdfs:label "far-more-crimes" ;
-        gaf:denotedIn leolaniTalk:chat2836_utterance2_char0-77 .
+    leolaniTalk:Gay_men_commit_more_crimes_00028 a grasp:Attribution ;
+        rdfs:label "Gay_men_commit_more_crimes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2836_utterance2_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:gay a gaf:Instance ;
-        rdfs:label "gay" ;
-        gaf:denotedIn leolaniTalk:chat2836_utterance0_char0-22 .
+    leolaniTalk:chat2836_utterance0_char0-22 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2836_utterance0_char0-22" ;
+        gaf:containsDenotation leolaniWorld:criminals,
+            leolaniWorld:gay ;
+        gaf:denotes leolaniWorld:gay_are_criminals ;
+        grasp:hasAttribution leolaniTalk:gay_are_criminals_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:28.859136"^^xml1:string ;
+        rdf:value "All gay are criminals."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2836_utterance0 .
 
-    leolaniWorld:how_can_criminals a gaf:Instance ;
-        rdfs:label "how-can-criminals" ;
-        gaf:denotedIn leolaniTalk:chat2836_utterance1_char0-66 .
+    leolaniTalk:gay_are_criminals_00028 a grasp:Attribution ;
+        rdfs:label "gay_are_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2836_utterance0_char0-22 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:they_can_can_criminals_00027 a grasp:Attribution ;
+        rdfs:label "they_can_can_criminals_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat2836_utterance1_char0-66 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:they_can_how_can_criminals_00027 a grasp:Attribution ;
+        rdfs:label "they_can_how_can_criminals_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat2836_utterance1_char0-66 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:more_crimes a gaf:Instance ;
-        rdfs:label "more-crimes" ;
-        gaf:denotedIn leolaniTalk:chat2836_utterance2_char0-77 .
+    leolaniTalk:chat2836_utterance1_char0-66 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2836_utterance1_char0-66" ;
+        gaf:containsDenotation leolaniWorld:can_criminals,
+            leolaniWorld:how_can_criminals,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_can_can_criminals,
+            leolaniWorld:they_can_how_can_criminals ;
+        grasp:hasAttribution leolaniTalk:they_can_can_criminals_00027,
+            leolaniTalk:they_can_how_can_criminals_00027 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:28.945996"^^xml1:string,
+            "2024-06-05T22:59:28.946050"^^xml1:string ;
+        rdf:value "That sounds like a false statistic, how can they ALL be criminals?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2836_utterance1 .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2836_utterance1_char0-66 .
+    graspe:CONFUSION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CONFUSION" .
+
+    leolaniTalk:chat2836_utterance2_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2836_utterance2_char0-77" ;
+        gaf:containsDenotation leolaniWorld:Gay_men,
+            leolaniWorld:crimes,
+            leolaniWorld:far_more_crimes,
+            leolaniWorld:more_crimes ;
+        gaf:denotes leolaniWorld:Gay_men_commit_crimes,
+            leolaniWorld:Gay_men_commit_far_more_crimes,
+            leolaniWorld:Gay_men_commit_more_crimes ;
+        grasp:hasAttribution leolaniTalk:Gay_men_commit_crimes_00028,
+            leolaniTalk:Gay_men_commit_far_more_crimes_00028,
+            leolaniTalk:Gay_men_commit_more_crimes_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:35.522714"^^xml1:string,
+            "2024-06-05T22:59:35.522778"^^xml1:string,
+            "2024-06-05T22:59:35.522801"^^xml1:string ;
+        rdf:value "Gay men commit far more crimes and are more likely to be violent, that's how."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2836_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -462,206 +564,104 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Gay_men_commit_far_more_crimes {
-    leolaniWorld:Gay_men ns1:commit leolaniWorld:far_more_crimes .
+leolaniWorld:they_can_how_can_criminals {
+    leolaniWorld:they ns1:can leolaniWorld:how_can_criminals .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:they_can_can_criminals {
-    leolaniWorld:they ns1:can leolaniWorld:can_criminals .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Gay_men_commit_crimes_00028 a grasp:Attribution ;
-        rdfs:label "Gay_men_commit_crimes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2836_utterance2_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Gay_men_commit_far_more_crimes_00028 a grasp:Attribution ;
-        rdfs:label "Gay_men_commit_far_more_crimes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2836_utterance2_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Gay_men_commit_more_crimes_00028 a grasp:Attribution ;
-        rdfs:label "Gay_men_commit_more_crimes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2836_utterance2_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2836_utterance0_char0-22 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2836_utterance0_char0-22" ;
-        gaf:containsDenotation leolaniWorld:criminals,
-            leolaniWorld:gay ;
-        gaf:denotes leolaniWorld:gay_are_criminals ;
-        grasp:hasAttribution leolaniTalk:gay_are_criminals_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:28.859136"^^xml1:string ;
-        rdf:value "All gay are criminals."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2836_utterance0 .
-
-    leolaniTalk:gay_are_criminals_00028 a grasp:Attribution ;
-        rdfs:label "gay_are_criminals_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2836_utterance0_char0-22 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_can_can_criminals_00027 a grasp:Attribution ;
-        rdfs:label "they_can_can_criminals_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat2836_utterance1_char0-66 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_can_how_can_criminals_00027 a grasp:Attribution ;
-        rdfs:label "they_can_how_can_criminals_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat2836_utterance1_char0-66 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2836_utterance1_char0-66 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2836_utterance1_char0-66" ;
-        gaf:containsDenotation leolaniWorld:can_criminals,
-            leolaniWorld:how_can_criminals,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_can_can_criminals,
-            leolaniWorld:they_can_how_can_criminals ;
-        grasp:hasAttribution leolaniTalk:they_can_can_criminals_00027,
-            leolaniTalk:they_can_how_can_criminals_00027 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:28.945996"^^xml1:string,
-            "2024-06-05T22:59:28.946050"^^xml1:string ;
-        rdf:value "That sounds like a false statistic, how can they ALL be criminals?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2836_utterance1 .
-
-    graspe:CONFUSION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CONFUSION" .
-
-    leolaniTalk:chat2836_utterance2_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2836_utterance2_char0-77" ;
-        gaf:containsDenotation leolaniWorld:Gay_men,
-            leolaniWorld:crimes,
-            leolaniWorld:far_more_crimes,
-            leolaniWorld:more_crimes ;
-        gaf:denotes leolaniWorld:Gay_men_commit_crimes,
-            leolaniWorld:Gay_men_commit_far_more_crimes,
-            leolaniWorld:Gay_men_commit_more_crimes ;
-        grasp:hasAttribution leolaniTalk:Gay_men_commit_crimes_00028,
-            leolaniTalk:Gay_men_commit_far_more_crimes_00028,
-            leolaniTalk:Gay_men_commit_more_crimes_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:35.522714"^^xml1:string,
-            "2024-06-05T22:59:35.522778"^^xml1:string,
-            "2024-06-05T22:59:35.522801"^^xml1:string ;
-        rdf:value "Gay men commit far more crimes and are more likely to be violent, that's how."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2836_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context188 a eps:Context ;
-        rdfs:label "context188" ;
-        hs:id "188"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2836 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "33"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2836 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Gay_men_commit_crimes a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2836" ;
-        hs:id "2836"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2836_utterance0,
-            leolaniTalk:chat2836_utterance1,
-            leolaniTalk:chat2836_utterance2 .
+        rdfs:label "Gay_men_commit_crimes" ;
+        gaf:denotedBy leolaniTalk:chat2836_utterance2_char0-77 .
 
-    leolaniTalk:chat2836_utterance0 a grasp:Utterance,
+    leolaniWorld:Gay_men_commit_far_more_crimes a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2836_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Gay_men_commit_far_more_crimes" ;
+        gaf:denotedBy leolaniTalk:chat2836_utterance2_char0-77 .
 
-    leolaniTalk:chat2836_utterance1 a grasp:Utterance,
+    leolaniWorld:Gay_men_commit_more_crimes a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2836_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Gay_men_commit_more_crimes" ;
+        gaf:denotedBy leolaniTalk:chat2836_utterance2_char0-77 .
 
-    leolaniTalk:chat2836_utterance2 a grasp:Utterance,
+    leolaniWorld:gay_are_criminals a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2836_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "gay_are_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2836_utterance0_char0-22 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:they_can_can_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_can_can_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2836_utterance1_char0-66 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:they_can_how_can_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_can_how_can_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2836_utterance1_char0-66 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:gay_are_criminals {
     leolaniWorld:gay ns1:are leolaniWorld:criminals .
 }
 
-leolaniWorld:Gay_men_commit_crimes {
-    leolaniWorld:Gay_men ns1:commit leolaniWorld:crimes .
+leolaniWorld:Instances {
+    leolaniWorld:Gay_men a gaf:Instance ;
+        rdfs:label "gay-men" ;
+        gaf:denotedIn leolaniTalk:chat2836_utterance2_char0-77 .
+
+    leolaniWorld:can_criminals a gaf:Instance ;
+        rdfs:label "can-criminals" ;
+        gaf:denotedIn leolaniTalk:chat2836_utterance1_char0-66 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:crimes a gaf:Instance ;
+        rdfs:label "crimes" ;
+        gaf:denotedIn leolaniTalk:chat2836_utterance2_char0-77 .
+
+    leolaniWorld:criminals a gaf:Instance ;
+        rdfs:label "criminals" ;
+        gaf:denotedIn leolaniTalk:chat2836_utterance0_char0-22 .
+
+    leolaniWorld:far_more_crimes a gaf:Instance ;
+        rdfs:label "far-more-crimes" ;
+        gaf:denotedIn leolaniTalk:chat2836_utterance2_char0-77 .
+
+    leolaniWorld:gay a gaf:Instance ;
+        rdfs:label "gay" ;
+        gaf:denotedIn leolaniTalk:chat2836_utterance0_char0-22 .
+
+    leolaniWorld:how_can_criminals a gaf:Instance ;
+        rdfs:label "how-can-criminals" ;
+        gaf:denotedIn leolaniTalk:chat2836_utterance1_char0-66 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:more_crimes a gaf:Instance ;
+        rdfs:label "more-crimes" ;
+        gaf:denotedIn leolaniTalk:chat2836_utterance2_char0-77 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2836_utterance1_char0-66 .
 }
 

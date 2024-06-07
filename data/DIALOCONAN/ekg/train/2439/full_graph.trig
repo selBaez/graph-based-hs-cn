@@ -22,51 +22,107 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Lesbian_women_are_lustful a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context107 a eps:Context ;
+        rdfs:label "context107" ;
+        hs:id "107"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2439 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "4"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2439 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Lesbian_women_are_lustful" ;
-        gaf:denotedBy leolaniTalk:chat2439_utterance0_char0-26 .
+        rdfs:label "chat2439" ;
+        hs:id "2439"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2439_utterance0 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat2439_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat2439_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:women_are_lustful a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_are_lustful" ;
-        gaf:denotedBy leolaniTalk:chat2439_utterance0_char0-26 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:women_are_lustful {
-    leolaniWorld:women ns11:are leolaniWorld:lustful .
-}
-
-leolaniWorld:Lesbian_women_are_lustful {
-    leolaniWorld:Lesbian_women ns11:are leolaniWorld:lustful .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Lesbian_women a gaf:Instance ;
-        rdfs:label "lesbian-women" ;
-        gaf:denotedIn leolaniTalk:chat2439_utterance0_char0-26 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:lustful a gaf:Instance ;
-        rdfs:label "lustful" ;
-        gaf:denotedIn leolaniTalk:chat2439_utterance0_char0-26 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Lesbian_women_are_lustful_00028 a grasp:Attribution ;
+        rdfs:label "Lesbian_women_are_lustful_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2439_utterance0_char0-26 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat2439_utterance0_char0-26 .
+    leolaniTalk:women_are_lustful_00028 a grasp:Attribution ;
+        rdfs:label "women_are_lustful_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2439_utterance0_char0-26 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2439_utterance0_char0-26 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2439_utterance0_char0-26" ;
+        gaf:containsDenotation leolaniWorld:Lesbian_women,
+            leolaniWorld:lustful,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:Lesbian_women_are_lustful,
+            leolaniWorld:women_are_lustful ;
+        grasp:hasAttribution leolaniTalk:Lesbian_women_are_lustful_00028,
+            leolaniTalk:women_are_lustful_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:51.771094"^^xml1:string,
+            "2024-06-05T23:32:51.771153"^^xml1:string ;
+        rdf:value "Lesbian women are lustful."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2439_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -404,106 +460,50 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:women_are_lustful {
+    leolaniWorld:women ns11:are leolaniWorld:lustful .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Lesbian_women_are_lustful_00028 a grasp:Attribution ;
-        rdfs:label "Lesbian_women_are_lustful_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2439_utterance0_char0-26 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_are_lustful_00028 a grasp:Attribution ;
-        rdfs:label "women_are_lustful_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2439_utterance0_char0-26 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2439_utterance0_char0-26 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2439_utterance0_char0-26" ;
-        gaf:containsDenotation leolaniWorld:Lesbian_women,
-            leolaniWorld:lustful,
-            leolaniWorld:women ;
-        gaf:denotes leolaniWorld:Lesbian_women_are_lustful,
-            leolaniWorld:women_are_lustful ;
-        grasp:hasAttribution leolaniTalk:Lesbian_women_are_lustful_00028,
-            leolaniTalk:women_are_lustful_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:51.771094"^^xml1:string,
-            "2024-06-05T23:32:51.771153"^^xml1:string ;
-        rdf:value "Lesbian women are lustful."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2439_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Lesbian_women_are_lustful {
+    leolaniWorld:Lesbian_women ns11:are leolaniWorld:lustful .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context107 a eps:Context ;
-        rdfs:label "context107" ;
-        hs:id "107"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2439 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "4"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2439 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Lesbian_women_are_lustful a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2439" ;
-        hs:id "2439"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2439_utterance0 .
+        rdfs:label "Lesbian_women_are_lustful" ;
+        gaf:denotedBy leolaniTalk:chat2439_utterance0_char0-26 .
 
-    leolaniTalk:chat2439_utterance0 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2439_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:women_are_lustful a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are_lustful" ;
+        gaf:denotedBy leolaniTalk:chat2439_utterance0_char0-26 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Lesbian_women a gaf:Instance ;
+        rdfs:label "lesbian-women" ;
+        gaf:denotedIn leolaniTalk:chat2439_utterance0_char0-26 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:lustful a gaf:Instance ;
+        rdfs:label "lustful" ;
+        gaf:denotedIn leolaniTalk:chat2439_utterance0_char0-26 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat2439_utterance0_char0-26 .
 }
 

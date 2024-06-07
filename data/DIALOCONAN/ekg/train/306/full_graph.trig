@@ -22,131 +22,222 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Immigration_is_part {
+    leolaniWorld:Immigration ns1:is leolaniWorld:part .
+}
+
+leolaniWorld:crisis_is-caused-by_migrants {
+    leolaniWorld:crisis ns1:is_caused_by leolaniWorld:migrants .
+}
+
+leolaniWorld:Migrants_are-victims-of_discrimination {
+    leolaniWorld:Migrants ns1:are_victims_of leolaniWorld:discrimination .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context151 a eps:Context ;
+        rdfs:label "context151" ;
+        hs:id "151"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat306 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "171"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat306 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat306" ;
+        hs:id "306"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat306_utterance0,
+            leolaniTalk:chat306_utterance1 .
+
+    leolaniTalk:chat306_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat306_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat306_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat306_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Immigration_is-part-of_solution a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Immigration_is-part-of_solution" ;
-        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:Immigration_is-part-of_solution_to_problems a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Immigration_is-part-of_solution_to_problems" ;
-        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:Immigration_is_part a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Immigration_is_part" ;
-        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:Migrants_are-often-victims-of_discrimination a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_are-often-victims-of_discrimination" ;
-        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:Migrants_are-victims-of_discrimination a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_are-victims-of_discrimination" ;
-        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:Migrants_are_often_victims a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_are_often_victims" ;
-        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:Migrants_are_victims a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_are_victims" ;
-        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:crisis_is-caused-by_migrants a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "crisis_is-caused-by_migrants" ;
-        gaf:denotedBy leolaniTalk:chat306_utterance0_char0-33 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Migrants_are-often-victims-of_discrimination {
-    leolaniWorld:Migrants ns1:are_often_victims_of leolaniWorld:discrimination .
 }
 
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Migrants_are_often_victims {
-    leolaniWorld:Migrants ns1:are leolaniWorld:often_victims .
+leolaniWorld:Migrants_are-often-victims-of_discrimination {
+    leolaniWorld:Migrants ns1:are_often_victims_of leolaniWorld:discrimination .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Immigration a gaf:Instance ;
-        rdfs:label "immigration" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:crisis a gaf:Instance ;
-        rdfs:label "crisis" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance0_char0-33 .
-
-    leolaniWorld:discrimination a gaf:Instance ;
-        rdfs:label "discrimination" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance0_char0-33 .
-
-    leolaniWorld:often_victims a gaf:Instance ;
-        rdfs:label "often-victims" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:solution a gaf:Instance ;
-        rdfs:label "solution" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:solution_to_problems a gaf:Instance ;
-        rdfs:label "solution-to-problems" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
-
-    leolaniWorld:victims a gaf:Instance ;
-        rdfs:label "victims" ;
-        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
+leolaniWorld:Migrants_are_victims {
+    leolaniWorld:Migrants ns1:are leolaniWorld:victims .
 }
 
-leolaniWorld:Immigration_is_part {
-    leolaniWorld:Immigration ns1:is leolaniWorld:part .
+leolaniTalk:Perspectives {
+    leolaniTalk:Immigration_is-part-of_solution_00022 a grasp:Attribution ;
+        rdfs:label "Immigration_is-part-of_solution_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Immigration_is-part-of_solution_to_problems_00022 a grasp:Attribution ;
+        rdfs:label "Immigration_is-part-of_solution_to_problems_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Immigration_is_part_00022 a grasp:Attribution ;
+        rdfs:label "Immigration_is_part_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_are-often-victims-of_discrimination_00022 a grasp:Attribution ;
+        rdfs:label "Migrants_are-often-victims-of_discrimination_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_are-victims-of_discrimination_00022 a grasp:Attribution ;
+        rdfs:label "Migrants_are-victims-of_discrimination_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_are_often_victims_00022 a grasp:Attribution ;
+        rdfs:label "Migrants_are_often_victims_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_are_victims_00022 a grasp:Attribution ;
+        rdfs:label "Migrants_are_victims_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat306_utterance0_char0-33 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat306_utterance0_char0-33" ;
+        gaf:containsDenotation leolaniWorld:crisis,
+            leolaniWorld:migrants ;
+        gaf:denotes leolaniWorld:crisis_is-caused-by_migrants ;
+        grasp:hasAttribution leolaniTalk:crisis_is-caused-by_migrants_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:16.840936"^^xml1:string ;
+        rdf:value "The crisis is caused by migrants."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat306_utterance0 .
+
+    leolaniTalk:crisis_is-caused-by_migrants_00028 a grasp:Attribution ;
+        rdfs:label "crisis_is-caused-by_migrants_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat306_utterance0_char0-33 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat306_utterance1_char0-115 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat306_utterance1_char0-115" ;
+        gaf:containsDenotation leolaniWorld:Immigration,
+            leolaniWorld:Migrants,
+            leolaniWorld:discrimination,
+            leolaniWorld:often_victims,
+            leolaniWorld:part,
+            leolaniWorld:solution,
+            leolaniWorld:solution_to_problems,
+            leolaniWorld:victims ;
+        gaf:denotes leolaniWorld:Immigration_is-part-of_solution,
+            leolaniWorld:Immigration_is-part-of_solution_to_problems,
+            leolaniWorld:Immigration_is_part,
+            leolaniWorld:Migrants_are-often-victims-of_discrimination,
+            leolaniWorld:Migrants_are-victims-of_discrimination,
+            leolaniWorld:Migrants_are_often_victims,
+            leolaniWorld:Migrants_are_victims ;
+        grasp:hasAttribution leolaniTalk:Immigration_is-part-of_solution_00022,
+            leolaniTalk:Immigration_is-part-of_solution_to_problems_00022,
+            leolaniTalk:Immigration_is_part_00022,
+            leolaniTalk:Migrants_are-often-victims-of_discrimination_00022,
+            leolaniTalk:Migrants_are-victims-of_discrimination_00022,
+            leolaniTalk:Migrants_are_often_victims_00022,
+            leolaniTalk:Migrants_are_victims_00022 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:16.929276"^^xml1:string,
+            "2024-06-05T23:23:16.929333"^^xml1:string,
+            "2024-06-05T23:23:16.929357"^^xml1:string,
+            "2024-06-05T23:23:16.929379"^^xml1:string,
+            "2024-06-05T23:23:16.929400"^^xml1:string,
+            "2024-06-05T23:23:16.929422"^^xml1:string,
+            "2024-06-05T23:23:16.929444"^^xml1:string ;
+        rdf:value "Migrants are often victims of discrimination and violence. Immigration is a part of the solution to these problems."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat306_utterance1 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Immigration_is-part-of_solution_to_problems {
@@ -488,209 +579,118 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:crisis_is-caused-by_migrants {
-    leolaniWorld:crisis ns1:is_caused_by leolaniWorld:migrants .
+leolaniWorld:Claims {
+    leolaniWorld:Immigration_is-part-of_solution a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigration_is-part-of_solution" ;
+        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:Immigration_is-part-of_solution_to_problems a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigration_is-part-of_solution_to_problems" ;
+        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:Immigration_is_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigration_is_part" ;
+        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:Migrants_are-often-victims-of_discrimination a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are-often-victims-of_discrimination" ;
+        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:Migrants_are-victims-of_discrimination a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are-victims-of_discrimination" ;
+        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:Migrants_are_often_victims a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are_often_victims" ;
+        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:Migrants_are_victims a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are_victims" ;
+        gaf:denotedBy leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:crisis_is-caused-by_migrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "crisis_is-caused-by_migrants" ;
+        gaf:denotedBy leolaniTalk:chat306_utterance0_char0-33 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Migrants_are-victims-of_discrimination {
-    leolaniWorld:Migrants ns1:are_victims_of leolaniWorld:discrimination .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Immigration_is-part-of_solution_00022 a grasp:Attribution ;
-        rdfs:label "Immigration_is-part-of_solution_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Immigration_is-part-of_solution_to_problems_00022 a grasp:Attribution ;
-        rdfs:label "Immigration_is-part-of_solution_to_problems_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Immigration_is_part_00022 a grasp:Attribution ;
-        rdfs:label "Immigration_is_part_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_are-often-victims-of_discrimination_00022 a grasp:Attribution ;
-        rdfs:label "Migrants_are-often-victims-of_discrimination_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_are-victims-of_discrimination_00022 a grasp:Attribution ;
-        rdfs:label "Migrants_are-victims-of_discrimination_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_are_often_victims_00022 a grasp:Attribution ;
-        rdfs:label "Migrants_are_often_victims_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_are_victims_00022 a grasp:Attribution ;
-        rdfs:label "Migrants_are_victims_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat306_utterance1_char0-115 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat306_utterance0_char0-33 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat306_utterance0_char0-33" ;
-        gaf:containsDenotation leolaniWorld:crisis,
-            leolaniWorld:migrants ;
-        gaf:denotes leolaniWorld:crisis_is-caused-by_migrants ;
-        grasp:hasAttribution leolaniTalk:crisis_is-caused-by_migrants_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:16.840936"^^xml1:string ;
-        rdf:value "The crisis is caused by migrants."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat306_utterance0 .
-
-    leolaniTalk:crisis_is-caused-by_migrants_00028 a grasp:Attribution ;
-        rdfs:label "crisis_is-caused-by_migrants_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat306_utterance0_char0-33 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat306_utterance1_char0-115 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat306_utterance1_char0-115" ;
-        gaf:containsDenotation leolaniWorld:Immigration,
-            leolaniWorld:Migrants,
-            leolaniWorld:discrimination,
-            leolaniWorld:often_victims,
-            leolaniWorld:part,
-            leolaniWorld:solution,
-            leolaniWorld:solution_to_problems,
-            leolaniWorld:victims ;
-        gaf:denotes leolaniWorld:Immigration_is-part-of_solution,
-            leolaniWorld:Immigration_is-part-of_solution_to_problems,
-            leolaniWorld:Immigration_is_part,
-            leolaniWorld:Migrants_are-often-victims-of_discrimination,
-            leolaniWorld:Migrants_are-victims-of_discrimination,
-            leolaniWorld:Migrants_are_often_victims,
-            leolaniWorld:Migrants_are_victims ;
-        grasp:hasAttribution leolaniTalk:Immigration_is-part-of_solution_00022,
-            leolaniTalk:Immigration_is-part-of_solution_to_problems_00022,
-            leolaniTalk:Immigration_is_part_00022,
-            leolaniTalk:Migrants_are-often-victims-of_discrimination_00022,
-            leolaniTalk:Migrants_are-victims-of_discrimination_00022,
-            leolaniTalk:Migrants_are_often_victims_00022,
-            leolaniTalk:Migrants_are_victims_00022 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:16.929276"^^xml1:string,
-            "2024-06-05T23:23:16.929333"^^xml1:string,
-            "2024-06-05T23:23:16.929357"^^xml1:string,
-            "2024-06-05T23:23:16.929379"^^xml1:string,
-            "2024-06-05T23:23:16.929400"^^xml1:string,
-            "2024-06-05T23:23:16.929422"^^xml1:string,
-            "2024-06-05T23:23:16.929444"^^xml1:string ;
-        rdf:value "Migrants are often victims of discrimination and violence. Immigration is a part of the solution to these problems."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat306_utterance1 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context151 a eps:Context ;
-        rdfs:label "context151" ;
-        hs:id "151"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat306 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "171"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat306 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat306" ;
-        hs:id "306"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat306_utterance0,
-            leolaniTalk:chat306_utterance1 .
-
-    leolaniTalk:chat306_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat306_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat306_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat306_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:Migrants_are_often_victims {
+    leolaniWorld:Migrants ns1:are leolaniWorld:often_victims .
 }
 
 leolaniWorld:Immigration_is-part-of_solution {
     leolaniWorld:Immigration ns1:is_part_of leolaniWorld:solution .
 }
 
-leolaniWorld:Migrants_are_victims {
-    leolaniWorld:Migrants ns1:are leolaniWorld:victims .
+leolaniWorld:Instances {
+    leolaniWorld:Immigration a gaf:Instance ;
+        rdfs:label "immigration" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:crisis a gaf:Instance ;
+        rdfs:label "crisis" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance0_char0-33 .
+
+    leolaniWorld:discrimination a gaf:Instance ;
+        rdfs:label "discrimination" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance0_char0-33 .
+
+    leolaniWorld:often_victims a gaf:Instance ;
+        rdfs:label "often-victims" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:solution a gaf:Instance ;
+        rdfs:label "solution" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:solution_to_problems a gaf:Instance ;
+        rdfs:label "solution-to-problems" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
+
+    leolaniWorld:victims a gaf:Instance ;
+        rdfs:label "victims" ;
+        gaf:denotedIn leolaniTalk:chat306_utterance1_char0-115 .
 }
 

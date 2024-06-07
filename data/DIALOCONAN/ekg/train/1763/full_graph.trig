@@ -22,12 +22,103 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Refugees_are-persecuted_different {
-    leolaniWorld:Refugees ns1:are_persecuted leolaniWorld:different .
-}
-
 leolaniWorld:Refugees_are-frequently-persecuted_different {
     leolaniWorld:Refugees ns1:are_frequently_persecuted leolaniWorld:different .
+}
+
+leolaniWorld:they_are_different {
+    leolaniWorld:they ns1:are leolaniWorld:different .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context94 a eps:Context ;
+        rdfs:label "context94" ;
+        hs:id "94"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1763 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "190"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1763 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1763" ;
+        hs:id "1763"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1763_utterance1,
+            leolaniTalk:chat1763_utterance2 .
+
+    leolaniTalk:chat1763_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1763_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1763_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1763_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:they_are_because_different {
+    leolaniWorld:they ns1:are leolaniWorld:because_different .
+}
+
+leolaniWorld:Refugees_are-persecuted_because_different {
+    leolaniWorld:Refugees ns1:are_persecuted leolaniWorld:because_different .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:Refugees_are-frequently-persecuted_because_different {
+    leolaniWorld:Refugees ns1:are_frequently_persecuted leolaniWorld:because_different .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:They_are_problem {
+    leolaniWorld:They ns1:are leolaniWorld:problem .
 }
 
 leolaniTalk:Perspectives {
@@ -155,134 +246,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Refugees_are-frequently-persecuted_because_different a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_are-frequently-persecuted_because_different" ;
-        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:Refugees_are-frequently-persecuted_different a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_are-frequently-persecuted_different" ;
-        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:Refugees_are-persecuted_because_different a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_are-persecuted_because_different" ;
-        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:Refugees_are-persecuted_different a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_are-persecuted_different" ;
-        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:Refugees_are_frequently_persecuted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_are_frequently_persecuted" ;
-        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:Refugees_are_persecuted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Refugees_are_persecuted" ;
-        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:They_are_problem a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_problem" ;
-        gaf:denotedBy leolaniTalk:chat1763_utterance2_char0-133 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are_because_different a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_because_different" ;
-        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:they_are_different a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_different" ;
-        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:they_are_different {
-    leolaniWorld:they ns1:are leolaniWorld:different .
-}
-
-leolaniWorld:Refugees_are_frequently_persecuted {
-    leolaniWorld:Refugees ns1:are leolaniWorld:frequently_persecuted .
-}
-
-leolaniWorld:they_are_because_different {
-    leolaniWorld:they ns1:are leolaniWorld:because_different .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Refugees a gaf:Instance ;
-        rdfs:label "refugees" ;
-        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1763_utterance2_char0-133 .
-
-    leolaniWorld:because_different a gaf:Instance ;
-        rdfs:label "because-different" ;
-        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:different a gaf:Instance ;
-        rdfs:label "different" ;
-        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:frequently_persecuted a gaf:Instance ;
-        rdfs:label "frequently-persecuted" ;
-        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:persecuted a gaf:Instance ;
-        rdfs:label "persecuted" ;
-        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
-
-    leolaniWorld:problem a gaf:Instance ;
-        rdfs:label "problem" ;
-        gaf:denotedIn leolaniTalk:chat1763_utterance2_char0-133 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
-}
-
-leolaniWorld:Refugees_are-frequently-persecuted_because_different {
-    leolaniWorld:Refugees ns1:are_frequently_persecuted leolaniWorld:because_different .
-}
-
-leolaniWorld:They_are_problem {
-    leolaniWorld:They ns1:are leolaniWorld:problem .
 }
 
 leolaniWorld:Ontology {
@@ -620,82 +583,119 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Refugees_are_frequently_persecuted {
+    leolaniWorld:Refugees ns1:are leolaniWorld:frequently_persecuted .
 }
 
 leolaniWorld:Refugees_are_persecuted {
     leolaniWorld:Refugees ns1:are leolaniWorld:persecuted .
 }
 
-leolaniWorld:Refugees_are-persecuted_because_different {
-    leolaniWorld:Refugees ns1:are_persecuted leolaniWorld:because_different .
+leolaniWorld:Claims {
+    leolaniWorld:Refugees_are-frequently-persecuted_because_different a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_are-frequently-persecuted_because_different" ;
+        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:Refugees_are-frequently-persecuted_different a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_are-frequently-persecuted_different" ;
+        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:Refugees_are-persecuted_because_different a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_are-persecuted_because_different" ;
+        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:Refugees_are-persecuted_different a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_are-persecuted_different" ;
+        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:Refugees_are_frequently_persecuted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_are_frequently_persecuted" ;
+        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:Refugees_are_persecuted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_are_persecuted" ;
+        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:They_are_problem a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_problem" ;
+        gaf:denotedBy leolaniTalk:chat1763_utterance2_char0-133 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_because_different a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_because_different" ;
+        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:they_are_different a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_different" ;
+        gaf:denotedBy leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context94 a eps:Context ;
-        rdfs:label "context94" ;
-        hs:id "94"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Refugees_are-persecuted_different {
+    leolaniWorld:Refugees ns1:are_persecuted leolaniWorld:different .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1763 .
+leolaniWorld:Instances {
+    leolaniWorld:Refugees a gaf:Instance ;
+        rdfs:label "refugees" ;
+        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1763_utterance2_char0-133 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "190"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1763 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1763" ;
-        hs:id "1763"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1763_utterance1,
-            leolaniTalk:chat1763_utterance2 .
-
-    leolaniTalk:chat1763_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1763_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1763_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1763_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:because_different a gaf:Instance ;
+        rdfs:label "because-different" ;
+        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:different a gaf:Instance ;
+        rdfs:label "different" ;
+        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:frequently_persecuted a gaf:Instance ;
+        rdfs:label "frequently-persecuted" ;
+        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:persecuted a gaf:Instance ;
+        rdfs:label "persecuted" ;
+        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
+
+    leolaniWorld:problem a gaf:Instance ;
+        rdfs:label "problem" ;
+        gaf:denotedIn leolaniTalk:chat1763_utterance2_char0-133 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1763_utterance1_char0-120 .
 }
 

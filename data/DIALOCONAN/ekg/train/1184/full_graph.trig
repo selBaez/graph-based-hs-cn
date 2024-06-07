@@ -22,157 +22,248 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:I_am-tired-of_women a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_am-tired-of_women" ;
-        gaf:denotedBy leolaniTalk:chat1184_utterance0_char0-107 .
-
-    leolaniWorld:I_am-tired-of_women_whining a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_am-tired-of_women_whining" ;
-        gaf:denotedBy leolaniTalk:chat1184_utterance0_char0-107 .
-
-    leolaniWorld:I_am-tired-of_women_whining_about_their_condition a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_am-tired-of_women_whining_about_their_condition" ;
-        gaf:denotedBy leolaniTalk:chat1184_utterance0_char0-107 .
-
-    leolaniWorld:I_am_tired a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_am_tired" ;
-        gaf:denotedBy leolaniTalk:chat1184_utterance0_char0-107 .
-
-    leolaniWorld:We_address_root a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_address_root" ;
-        gaf:denotedBy leolaniTalk:chat1184_utterance1_char0-80 .
-
-    leolaniWorld:We_are-victim-of_feminism a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_are-victim-of_feminism" ;
-        gaf:denotedBy leolaniTalk:chat1184_utterance2_char0-83 .
-
-    leolaniWorld:We_are_victim a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_are_victim" ;
-        gaf:denotedBy leolaniTalk:chat1184_utterance2_char0-83 .
-
-    leolaniWorld:We_need_address a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_need_address" ;
-        gaf:denotedBy leolaniTalk:chat1184_utterance1_char0-80 .
-
-    leolaniWorld:We_need_to_address a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_need_to_address" ;
-        gaf:denotedBy leolaniTalk:chat1184_utterance1_char0-80 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:I_am-tired-of_women_whining_about_their_condition {
-    leolaniWorld:I ns1:am_tired_of leolaniWorld:women_whining_about_their_condition .
-}
-
-leolaniWorld:We_address_root {
-    leolaniWorld:We ns1:address leolaniWorld:root .
-}
-
-leolaniWorld:I_am-tired-of_women {
-    leolaniWorld:I ns1:am_tired_of leolaniWorld:women .
-}
-
 leolaniWorld:We_are-victim-of_feminism {
     leolaniWorld:We ns1:are_victim_of leolaniWorld:feminism .
 }
 
-leolaniWorld:We_need_address {
-    leolaniWorld:We ns1:need leolaniWorld:address .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context8 a eps:Context ;
+        rdfs:label "context8" ;
+        hs:id "8"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1184 .
 
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance1_char0-80,
-            leolaniTalk:chat1184_utterance2_char0-83 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:address a gaf:Instance ;
-        rdfs:label "address" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance1_char0-80 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "242"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1184 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1184" ;
+        hs:id "1184"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1184_utterance0,
+            leolaniTalk:chat1184_utterance1,
+            leolaniTalk:chat1184_utterance2 .
+
+    leolaniTalk:chat1184_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1184_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1184_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1184_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1184_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1184_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:feminism a gaf:Instance ;
-        rdfs:label "feminism" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance2_char0-83 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:root a gaf:Instance ;
-        rdfs:label "root" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance1_char0-80 .
-
-    leolaniWorld:tired a gaf:Instance ;
-        rdfs:label "tired" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
-
-    leolaniWorld:to_address a gaf:Instance ;
-        rdfs:label "to-address" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance1_char0-80 .
-
-    leolaniWorld:victim a gaf:Instance ;
-        rdfs:label "victim" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance2_char0-83 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
-
-    leolaniWorld:women_whining a gaf:Instance ;
-        rdfs:label "women-whining" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
-
-    leolaniWorld:women_whining_about_their_condition a gaf:Instance ;
-        rdfs:label "women-whining-about-their-condition" ;
-        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
-}
-
-leolaniWorld:I_am_tired {
-    leolaniWorld:I ns1:am leolaniWorld:tired .
 }
 
 leolaniWorld:I_am-tired-of_women_whining {
     leolaniWorld:I ns1:am_tired_of leolaniWorld:women_whining .
 }
 
-leolaniWorld:We_need_to_address {
-    leolaniWorld:We ns1:need leolaniWorld:to_address .
+leolaniWorld:I_am-tired-of_women_whining_about_their_condition {
+    leolaniWorld:I ns1:am_tired_of leolaniWorld:women_whining_about_their_condition .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:We_address_root {
+    leolaniWorld:We ns1:address leolaniWorld:root .
+}
+
+leolaniWorld:We_are_victim {
+    leolaniWorld:We ns1:are leolaniWorld:victim .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_am-tired-of_women_00028 a grasp:Attribution ;
+        rdfs:label "I_am-tired-of_women_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1184_utterance0_char0-107 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_am-tired-of_women_whining_00028 a grasp:Attribution ;
+        rdfs:label "I_am-tired-of_women_whining_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1184_utterance0_char0-107 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_am-tired-of_women_whining_about_their_condition_00028 a grasp:Attribution ;
+        rdfs:label "I_am-tired-of_women_whining_about_their_condition_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1184_utterance0_char0-107 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_am_tired_00028 a grasp:Attribution ;
+        rdfs:label "I_am_tired_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1184_utterance0_char0-107 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_address_root_00028 a grasp:Attribution ;
+        rdfs:label "We_address_root_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1184_utterance1_char0-80 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_are-victim-of_feminism_00022 a grasp:Attribution ;
+        rdfs:label "We_are-victim-of_feminism_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1184_utterance2_char0-83 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_are_victim_00022 a grasp:Attribution ;
+        rdfs:label "We_are_victim_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1184_utterance2_char0-83 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_need_address_00028 a grasp:Attribution ;
+        rdfs:label "We_need_address_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1184_utterance1_char0-80 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_need_to_address_00028 a grasp:Attribution ;
+        rdfs:label "We_need_to_address_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1184_utterance1_char0-80 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1184_utterance2_char0-83 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1184_utterance2_char0-83" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:feminism,
+            leolaniWorld:victim ;
+        gaf:denotes leolaniWorld:We_are-victim-of_feminism,
+            leolaniWorld:We_are_victim ;
+        grasp:hasAttribution leolaniTalk:We_are-victim-of_feminism_00022,
+            leolaniTalk:We_are_victim_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:37:29.515537"^^xml1:string,
+            "2024-06-05T23:37:29.515597"^^xml1:string ;
+        rdf:value "Whores are not the real victims! Why should we care? We are the victim of feminism."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1184_utterance2 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    leolaniTalk:chat1184_utterance1_char0-80 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1184_utterance1_char0-80" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:address,
+            leolaniWorld:root,
+            leolaniWorld:to_address ;
+        gaf:denotes leolaniWorld:We_address_root,
+            leolaniWorld:We_need_address,
+            leolaniWorld:We_need_to_address ;
+        grasp:hasAttribution leolaniTalk:We_address_root_00028,
+            leolaniTalk:We_need_address_00028,
+            leolaniTalk:We_need_to_address_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:37:29.377912"^^xml1:string,
+            "2024-06-05T23:37:29.378001"^^xml1:string,
+            "2024-06-05T23:37:29.378027"^^xml1:string ;
+        rdf:value "We need to address the root causes of the oppression of Women, not the symptoms."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1184_utterance1 .
+
+    leolaniTalk:chat1184_utterance0_char0-107 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1184_utterance0_char0-107" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:tired,
+            leolaniWorld:women,
+            leolaniWorld:women_whining,
+            leolaniWorld:women_whining_about_their_condition ;
+        gaf:denotes leolaniWorld:I_am-tired-of_women,
+            leolaniWorld:I_am-tired-of_women_whining,
+            leolaniWorld:I_am-tired-of_women_whining_about_their_condition,
+            leolaniWorld:I_am_tired ;
+        grasp:hasAttribution leolaniTalk:I_am-tired-of_women_00028,
+            leolaniTalk:I_am-tired-of_women_whining_00028,
+            leolaniTalk:I_am-tired-of_women_whining_about_their_condition_00028,
+            leolaniTalk:I_am_tired_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:37:22.718839"^^xml1:string,
+            "2024-06-05T23:37:22.718902"^^xml1:string,
+            "2024-06-05T23:37:22.718924"^^xml1:string,
+            "2024-06-05T23:37:22.718945"^^xml1:string ;
+        rdf:value "I am tired of women whining about their condition: they should just accept the fact that they're not equal."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1184_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -510,227 +601,136 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:I_am-tired-of_women {
+    leolaniWorld:I ns1:am_tired_of leolaniWorld:women .
 }
 
-leolaniWorld:We_are_victim {
-    leolaniWorld:We ns1:are leolaniWorld:victim .
+leolaniWorld:We_need_to_address {
+    leolaniWorld:We ns1:need leolaniWorld:to_address .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_am-tired-of_women_00028 a grasp:Attribution ;
-        rdfs:label "I_am-tired-of_women_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1184_utterance0_char0-107 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:I_am-tired-of_women a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_am-tired-of_women" ;
+        gaf:denotedBy leolaniTalk:chat1184_utterance0_char0-107 .
 
-    leolaniTalk:I_am-tired-of_women_whining_00028 a grasp:Attribution ;
-        rdfs:label "I_am-tired-of_women_whining_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1184_utterance0_char0-107 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:I_am-tired-of_women_whining a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_am-tired-of_women_whining" ;
+        gaf:denotedBy leolaniTalk:chat1184_utterance0_char0-107 .
 
-    leolaniTalk:I_am-tired-of_women_whining_about_their_condition_00028 a grasp:Attribution ;
-        rdfs:label "I_am-tired-of_women_whining_about_their_condition_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1184_utterance0_char0-107 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:I_am-tired-of_women_whining_about_their_condition a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_am-tired-of_women_whining_about_their_condition" ;
+        gaf:denotedBy leolaniTalk:chat1184_utterance0_char0-107 .
 
-    leolaniTalk:I_am_tired_00028 a grasp:Attribution ;
-        rdfs:label "I_am_tired_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1184_utterance0_char0-107 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:I_am_tired a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_am_tired" ;
+        gaf:denotedBy leolaniTalk:chat1184_utterance0_char0-107 .
 
-    leolaniTalk:We_address_root_00028 a grasp:Attribution ;
-        rdfs:label "We_address_root_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1184_utterance1_char0-80 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:We_address_root a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_address_root" ;
+        gaf:denotedBy leolaniTalk:chat1184_utterance1_char0-80 .
 
-    leolaniTalk:We_are-victim-of_feminism_00022 a grasp:Attribution ;
-        rdfs:label "We_are-victim-of_feminism_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1184_utterance2_char0-83 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:We_are-victim-of_feminism a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_are-victim-of_feminism" ;
+        gaf:denotedBy leolaniTalk:chat1184_utterance2_char0-83 .
 
-    leolaniTalk:We_are_victim_00022 a grasp:Attribution ;
-        rdfs:label "We_are_victim_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1184_utterance2_char0-83 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:We_are_victim a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_are_victim" ;
+        gaf:denotedBy leolaniTalk:chat1184_utterance2_char0-83 .
 
-    leolaniTalk:We_need_address_00028 a grasp:Attribution ;
-        rdfs:label "We_need_address_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1184_utterance1_char0-80 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:We_need_address a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_need_address" ;
+        gaf:denotedBy leolaniTalk:chat1184_utterance1_char0-80 .
 
-    leolaniTalk:We_need_to_address_00028 a grasp:Attribution ;
-        rdfs:label "We_need_to_address_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1184_utterance1_char0-80 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:We_need_to_address a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_need_to_address" ;
+        gaf:denotedBy leolaniTalk:chat1184_utterance1_char0-80 .
 
-    leolaniTalk:chat1184_utterance2_char0-83 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1184_utterance2_char0-83" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:feminism,
-            leolaniWorld:victim ;
-        gaf:denotes leolaniWorld:We_are-victim-of_feminism,
-            leolaniWorld:We_are_victim ;
-        grasp:hasAttribution leolaniTalk:We_are-victim-of_feminism_00022,
-            leolaniTalk:We_are_victim_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:37:29.515537"^^xml1:string,
-            "2024-06-05T23:37:29.515597"^^xml1:string ;
-        rdf:value "Whores are not the real victims! Why should we care? We are the victim of feminism."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1184_utterance2 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat1184_utterance1_char0-80 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1184_utterance1_char0-80" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:address,
-            leolaniWorld:root,
-            leolaniWorld:to_address ;
-        gaf:denotes leolaniWorld:We_address_root,
-            leolaniWorld:We_need_address,
-            leolaniWorld:We_need_to_address ;
-        grasp:hasAttribution leolaniTalk:We_address_root_00028,
-            leolaniTalk:We_need_address_00028,
-            leolaniTalk:We_need_to_address_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:37:29.377912"^^xml1:string,
-            "2024-06-05T23:37:29.378001"^^xml1:string,
-            "2024-06-05T23:37:29.378027"^^xml1:string ;
-        rdf:value "We need to address the root causes of the oppression of Women, not the symptoms."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1184_utterance1 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    leolaniTalk:chat1184_utterance0_char0-107 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1184_utterance0_char0-107" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:tired,
-            leolaniWorld:women,
-            leolaniWorld:women_whining,
-            leolaniWorld:women_whining_about_their_condition ;
-        gaf:denotes leolaniWorld:I_am-tired-of_women,
-            leolaniWorld:I_am-tired-of_women_whining,
-            leolaniWorld:I_am-tired-of_women_whining_about_their_condition,
-            leolaniWorld:I_am_tired ;
-        grasp:hasAttribution leolaniTalk:I_am-tired-of_women_00028,
-            leolaniTalk:I_am-tired-of_women_whining_00028,
-            leolaniTalk:I_am-tired-of_women_whining_about_their_condition_00028,
-            leolaniTalk:I_am_tired_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:37:22.718839"^^xml1:string,
-            "2024-06-05T23:37:22.718902"^^xml1:string,
-            "2024-06-05T23:37:22.718924"^^xml1:string,
-            "2024-06-05T23:37:22.718945"^^xml1:string ;
-        rdf:value "I am tired of women whining about their condition: they should just accept the fact that they're not equal."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1184_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context8 a eps:Context ;
-        rdfs:label "context8" ;
-        hs:id "8"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:We_need_address {
+    leolaniWorld:We ns1:need leolaniWorld:address .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1184 .
+leolaniWorld:I_am_tired {
+    leolaniWorld:I ns1:am leolaniWorld:tired .
+}
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "242"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance1_char0-80,
+            leolaniTalk:chat1184_utterance2_char0-83 .
 
-    leolaniTalk:chat1184 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1184" ;
-        hs:id "1184"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1184_utterance0,
-            leolaniTalk:chat1184_utterance1,
-            leolaniTalk:chat1184_utterance2 .
-
-    leolaniTalk:chat1184_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1184_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1184_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1184_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1184_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1184_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:address a gaf:Instance ;
+        rdfs:label "address" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance1_char0-80 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:feminism a gaf:Instance ;
+        rdfs:label "feminism" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance2_char0-83 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:root a gaf:Instance ;
+        rdfs:label "root" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance1_char0-80 .
+
+    leolaniWorld:tired a gaf:Instance ;
+        rdfs:label "tired" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
+
+    leolaniWorld:to_address a gaf:Instance ;
+        rdfs:label "to-address" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance1_char0-80 .
+
+    leolaniWorld:victim a gaf:Instance ;
+        rdfs:label "victim" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance2_char0-83 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
+
+    leolaniWorld:women_whining a gaf:Instance ;
+        rdfs:label "women-whining" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
+
+    leolaniWorld:women_whining_about_their_condition a gaf:Instance ;
+        rdfs:label "women-whining-about-their-condition" ;
+        gaf:denotedIn leolaniTalk:chat1184_utterance0_char0-107 .
 }
 

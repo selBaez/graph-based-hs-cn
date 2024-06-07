@@ -22,6 +22,84 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:world_is_why_filled {
+    leolaniWorld:world ns1:is leolaniWorld:why_filled .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context178 a eps:Context ;
+        rdfs:label "context178" ;
+        hs:id "178"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat245 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "85"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat245 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat245" ;
+        hs:id "245"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat245_utterance0,
+            leolaniTalk:chat245_utterance1,
+            leolaniTalk:chat245_utterance2 .
+
+    leolaniTalk:chat245_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat245_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat245_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat245_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat245_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat245_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:they_want_rights {
     leolaniWorld:they ns1:want leolaniWorld:rights .
 }
@@ -30,166 +108,179 @@ leolaniWorld:world_is-filled-with_problems {
     leolaniWorld:world ns1:is_filled_with leolaniWorld:problems .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Women_are-bad-for_economy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are-bad-for_economy" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:Women_are_bad a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_bad" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_want_equal_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_equal_rights" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance2_char0-147 .
-
-    leolaniWorld:they_want_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_rights" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance2_char0-147 .
-
-    leolaniWorld:women_are-disadvantaged-in_many_areas_of_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_are-disadvantaged-in_many_areas_of_life" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance1_char0-100 .
-
-    leolaniWorld:women_are_hypocrites a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_are_hypocrites" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance2_char0-147 .
-
-    leolaniWorld:world_is-filled-with_problems a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "world_is-filled-with_problems" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:world_is_filled a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "world_is_filled" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:world_is_why_filled a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "world_is_why_filled" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:world_is_why_filled_with_problems a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "world_is_why_filled_with_problems" ;
-        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:world_is_filled {
-    leolaniWorld:world ns1:is leolaniWorld:filled .
-}
-
-leolaniWorld:they_want_equal_rights {
-    leolaniWorld:they ns1:want leolaniWorld:equal_rights .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:bad a gaf:Instance ;
-        rdfs:label "bad" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:economy a gaf:Instance ;
-        rdfs:label "economy" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:equal_rights a gaf:Instance ;
-        rdfs:label "equal-rights" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance2_char0-147 .
-
-    leolaniWorld:filled a gaf:Instance ;
-        rdfs:label "filled" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:hypocrites a gaf:Instance ;
-        rdfs:label "hypocrites" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance2_char0-147 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_areas_of_life a gaf:Instance ;
-        rdfs:label "many-areas-of-life" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance1_char0-100 .
-
-    leolaniWorld:problems a gaf:Instance ;
-        rdfs:label "problems" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:rights a gaf:Instance ;
-        rdfs:label "rights" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance2_char0-147 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance2_char0-147 .
-
-    leolaniWorld:why_filled a gaf:Instance ;
-        rdfs:label "why-filled" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:why_filled_with_problems a gaf:Instance ;
-        rdfs:label "why-filled-with-problems" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance1_char0-100,
-            leolaniTalk:chat245_utterance2_char0-147 .
-
-    leolaniWorld:world a gaf:Instance ;
-        rdfs:label "world" ;
-        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
-}
-
-leolaniWorld:women_are_hypocrites {
-    leolaniWorld:women ns1:are leolaniWorld:hypocrites .
+leolaniWorld:women_are-disadvantaged-in_many_areas_of_life {
+    leolaniWorld:women ns1:are_disadvantaged_in leolaniWorld:many_areas_of_life .
 }
 
 leolaniWorld:world_is_why_filled_with_problems {
     leolaniWorld:world ns1:is leolaniWorld:why_filled_with_problems .
 }
 
-leolaniWorld:world_is_why_filled {
-    leolaniWorld:world ns1:is leolaniWorld:why_filled .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Women_are-bad-for_economy_00017 a grasp:Attribution ;
+        rdfs:label "Women_are-bad-for_economy_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Women_are-bad-for_economy {
-    leolaniWorld:Women ns1:are_bad_for leolaniWorld:economy .
+    leolaniTalk:Women_are_bad_00017 a grasp:Attribution ;
+        rdfs:label "Women_are_bad_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat245_utterance1_char0-100 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat245_utterance1_char0-100" ;
+        gaf:containsDenotation leolaniWorld:many_areas_of_life,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:women_are-disadvantaged-in_many_areas_of_life ;
+        grasp:hasAttribution leolaniTalk:women_are-disadvantaged-in_many_areas_of_life_00023 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:59.661397"^^xml1:string ;
+        rdf:value "The fact that women are disadvantaged in many areas of life does not imply that they are bad people."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat245_utterance1 .
+
+    leolaniTalk:they_want_equal_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_want_equal_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance2_char0-147 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_want_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance2_char0-147 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_are-disadvantaged-in_many_areas_of_life_00023 a grasp:Attribution ;
+        rdfs:label "women_are-disadvantaged-in_many_areas_of_life_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance1_char0-100 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_are_hypocrites_00028 a grasp:Attribution ;
+        rdfs:label "women_are_hypocrites_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance2_char0-147 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:world_is-filled-with_problems_00017 a grasp:Attribution ;
+        rdfs:label "world_is-filled-with_problems_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:world_is_filled_00017 a grasp:Attribution ;
+        rdfs:label "world_is_filled_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:world_is_why_filled_00017 a grasp:Attribution ;
+        rdfs:label "world_is_why_filled_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:world_is_why_filled_with_problems_00017 a grasp:Attribution ;
+        rdfs:label "world_is_why_filled_with_problems_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat245_utterance2_char0-147 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat245_utterance2_char0-147" ;
+        gaf:containsDenotation leolaniWorld:equal_rights,
+            leolaniWorld:hypocrites,
+            leolaniWorld:rights,
+            leolaniWorld:they,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:they_want_equal_rights,
+            leolaniWorld:they_want_rights,
+            leolaniWorld:women_are_hypocrites ;
+        grasp:hasAttribution leolaniTalk:they_want_equal_rights_00028,
+            leolaniTalk:they_want_rights_00028,
+            leolaniTalk:women_are_hypocrites_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:59.795317"^^xml1:string,
+            "2024-06-05T23:09:59.795372"^^xml1:string,
+            "2024-06-05T23:09:59.795396"^^xml1:string ;
+        rdf:value "They may not be bad, but women are hypocrites, they say they want equal rights, but then why they don't call it egalitarianism instead of feminism?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat245_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat245_utterance0_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat245_utterance0_char0-77" ;
+        gaf:containsDenotation leolaniWorld:Women,
+            leolaniWorld:bad,
+            leolaniWorld:economy,
+            leolaniWorld:filled,
+            leolaniWorld:problems,
+            leolaniWorld:why_filled,
+            leolaniWorld:why_filled_with_problems,
+            leolaniWorld:world ;
+        gaf:denotes leolaniWorld:Women_are-bad-for_economy,
+            leolaniWorld:Women_are_bad,
+            leolaniWorld:world_is-filled-with_problems,
+            leolaniWorld:world_is_filled,
+            leolaniWorld:world_is_why_filled,
+            leolaniWorld:world_is_why_filled_with_problems ;
+        grasp:hasAttribution leolaniTalk:Women_are-bad-for_economy_00017,
+            leolaniTalk:Women_are_bad_00017,
+            leolaniTalk:world_is-filled-with_problems_00017,
+            leolaniTalk:world_is_filled_00017,
+            leolaniTalk:world_is_why_filled_00017,
+            leolaniTalk:world_is_why_filled_with_problems_00017 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:59.580141"^^xml1:string,
+            "2024-06-05T23:09:59.580202"^^xml1:string,
+            "2024-06-05T23:09:59.580229"^^xml1:string,
+            "2024-06-05T23:09:59.580253"^^xml1:string,
+            "2024-06-05T23:09:59.580277"^^xml1:string,
+            "2024-06-05T23:09:59.580301"^^xml1:string ;
+        rdf:value "Women are bad for the economy, this is why the world is filled with problems."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat245_utterance0 .
+
+    graspe:DISAPPOINTMENT a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPOINTMENT" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -527,248 +618,157 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:women_are_hypocrites {
+    leolaniWorld:women ns1:are leolaniWorld:hypocrites .
 }
 
-leolaniWorld:women_are-disadvantaged-in_many_areas_of_life {
-    leolaniWorld:women ns1:are_disadvantaged_in leolaniWorld:many_areas_of_life .
+leolaniWorld:Women_are-bad-for_economy {
+    leolaniWorld:Women ns1:are_bad_for leolaniWorld:economy .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Women_are-bad-for_economy_00017 a grasp:Attribution ;
-        rdfs:label "Women_are-bad-for_economy_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_are_bad_00017 a grasp:Attribution ;
-        rdfs:label "Women_are_bad_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat245_utterance1_char0-100 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat245_utterance1_char0-100" ;
-        gaf:containsDenotation leolaniWorld:many_areas_of_life,
-            leolaniWorld:women ;
-        gaf:denotes leolaniWorld:women_are-disadvantaged-in_many_areas_of_life ;
-        grasp:hasAttribution leolaniTalk:women_are-disadvantaged-in_many_areas_of_life_00023 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:59.661397"^^xml1:string ;
-        rdf:value "The fact that women are disadvantaged in many areas of life does not imply that they are bad people."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat245_utterance1 .
-
-    leolaniTalk:they_want_equal_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_want_equal_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance2_char0-147 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_want_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_want_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance2_char0-147 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_are-disadvantaged-in_many_areas_of_life_00023 a grasp:Attribution ;
-        rdfs:label "women_are-disadvantaged-in_many_areas_of_life_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance1_char0-100 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_are_hypocrites_00028 a grasp:Attribution ;
-        rdfs:label "women_are_hypocrites_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance2_char0-147 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:world_is-filled-with_problems_00017 a grasp:Attribution ;
-        rdfs:label "world_is-filled-with_problems_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:world_is_filled_00017 a grasp:Attribution ;
-        rdfs:label "world_is_filled_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:world_is_why_filled_00017 a grasp:Attribution ;
-        rdfs:label "world_is_why_filled_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:world_is_why_filled_with_problems_00017 a grasp:Attribution ;
-        rdfs:label "world_is_why_filled_with_problems_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat245_utterance0_char0-77 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat245_utterance2_char0-147 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat245_utterance2_char0-147" ;
-        gaf:containsDenotation leolaniWorld:equal_rights,
-            leolaniWorld:hypocrites,
-            leolaniWorld:rights,
-            leolaniWorld:they,
-            leolaniWorld:women ;
-        gaf:denotes leolaniWorld:they_want_equal_rights,
-            leolaniWorld:they_want_rights,
-            leolaniWorld:women_are_hypocrites ;
-        grasp:hasAttribution leolaniTalk:they_want_equal_rights_00028,
-            leolaniTalk:they_want_rights_00028,
-            leolaniTalk:women_are_hypocrites_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:59.795317"^^xml1:string,
-            "2024-06-05T23:09:59.795372"^^xml1:string,
-            "2024-06-05T23:09:59.795396"^^xml1:string ;
-        rdf:value "They may not be bad, but women are hypocrites, they say they want equal rights, but then why they don't call it egalitarianism instead of feminism?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat245_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat245_utterance0_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat245_utterance0_char0-77" ;
-        gaf:containsDenotation leolaniWorld:Women,
-            leolaniWorld:bad,
-            leolaniWorld:economy,
-            leolaniWorld:filled,
-            leolaniWorld:problems,
-            leolaniWorld:why_filled,
-            leolaniWorld:why_filled_with_problems,
-            leolaniWorld:world ;
-        gaf:denotes leolaniWorld:Women_are-bad-for_economy,
-            leolaniWorld:Women_are_bad,
-            leolaniWorld:world_is-filled-with_problems,
-            leolaniWorld:world_is_filled,
-            leolaniWorld:world_is_why_filled,
-            leolaniWorld:world_is_why_filled_with_problems ;
-        grasp:hasAttribution leolaniTalk:Women_are-bad-for_economy_00017,
-            leolaniTalk:Women_are_bad_00017,
-            leolaniTalk:world_is-filled-with_problems_00017,
-            leolaniTalk:world_is_filled_00017,
-            leolaniTalk:world_is_why_filled_00017,
-            leolaniTalk:world_is_why_filled_with_problems_00017 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:59.580141"^^xml1:string,
-            "2024-06-05T23:09:59.580202"^^xml1:string,
-            "2024-06-05T23:09:59.580229"^^xml1:string,
-            "2024-06-05T23:09:59.580253"^^xml1:string,
-            "2024-06-05T23:09:59.580277"^^xml1:string,
-            "2024-06-05T23:09:59.580301"^^xml1:string ;
-        rdf:value "Women are bad for the economy, this is why the world is filled with problems."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat245_utterance0 .
-
-    graspe:DISAPPOINTMENT a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPOINTMENT" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context178 a eps:Context ;
-        rdfs:label "context178" ;
-        hs:id "178"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat245 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "85"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat245 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Women_are-bad-for_economy a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat245" ;
-        hs:id "245"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat245_utterance0,
-            leolaniTalk:chat245_utterance1,
-            leolaniTalk:chat245_utterance2 .
+        rdfs:label "Women_are-bad-for_economy" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
 
-    leolaniTalk:chat245_utterance0 a grasp:Utterance,
+    leolaniWorld:Women_are_bad a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat245_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Women_are_bad" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
 
-    leolaniTalk:chat245_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat245_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat245_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat245_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:they_want_equal_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_equal_rights" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance2_char0-147 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:they_want_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_rights" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance2_char0-147 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:women_are-disadvantaged-in_many_areas_of_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are-disadvantaged-in_many_areas_of_life" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance1_char0-100 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:women_are_hypocrites a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are_hypocrites" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance2_char0-147 .
+
+    leolaniWorld:world_is-filled-with_problems a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_is-filled-with_problems" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:world_is_filled a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_is_filled" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:world_is_why_filled a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_is_why_filled" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:world_is_why_filled_with_problems a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_is_why_filled_with_problems" ;
+        gaf:denotedBy leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:Women_are_bad {
     leolaniWorld:Women ns1:are leolaniWorld:bad .
+}
+
+leolaniWorld:world_is_filled {
+    leolaniWorld:world ns1:is leolaniWorld:filled .
+}
+
+leolaniWorld:they_want_equal_rights {
+    leolaniWorld:they ns1:want leolaniWorld:equal_rights .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:bad a gaf:Instance ;
+        rdfs:label "bad" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:economy a gaf:Instance ;
+        rdfs:label "economy" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:equal_rights a gaf:Instance ;
+        rdfs:label "equal-rights" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance2_char0-147 .
+
+    leolaniWorld:filled a gaf:Instance ;
+        rdfs:label "filled" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:hypocrites a gaf:Instance ;
+        rdfs:label "hypocrites" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance2_char0-147 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_areas_of_life a gaf:Instance ;
+        rdfs:label "many-areas-of-life" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance1_char0-100 .
+
+    leolaniWorld:problems a gaf:Instance ;
+        rdfs:label "problems" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:rights a gaf:Instance ;
+        rdfs:label "rights" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance2_char0-147 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance2_char0-147 .
+
+    leolaniWorld:why_filled a gaf:Instance ;
+        rdfs:label "why-filled" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:why_filled_with_problems a gaf:Instance ;
+        rdfs:label "why-filled-with-problems" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance1_char0-100,
+            leolaniTalk:chat245_utterance2_char0-147 .
+
+    leolaniWorld:world a gaf:Instance ;
+        rdfs:label "world" ;
+        gaf:denotedIn leolaniTalk:chat245_utterance0_char0-77 .
 }
 

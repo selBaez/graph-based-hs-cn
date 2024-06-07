@@ -22,106 +22,192 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context234 a eps:Context ;
+        rdfs:label "context234" ;
+        hs:id "234"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:EU_become_Border_Patrol a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2448 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "153"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2448 a grasp:Chat,
             sem:Event ;
-        rdfs:label "EU_become_Border_Patrol" ;
-        gaf:denotedBy leolaniTalk:chat2448_utterance1_char0-134 .
+        rdfs:label "chat2448" ;
+        hs:id "2448"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2448_utterance0,
+            leolaniTalk:chat2448_utterance1 .
 
-    leolaniWorld:EU_is-bunch-of_incompetent a gaf:Assertion,
+    leolaniTalk:chat2448_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "EU_is-bunch-of_incompetent" ;
-        gaf:denotedBy leolaniTalk:chat2448_utterance0_char0-89 .
+        rdfs:label "chat2448_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:EU_is_bunch a gaf:Assertion,
+    leolaniTalk:chat2448_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "EU_is_bunch" ;
-        gaf:denotedBy leolaniTalk:chat2448_utterance0_char0-89 .
+        rdfs:label "chat2448_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:You_want_EU a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_want_EU" ;
-        gaf:denotedBy leolaniTalk:chat2448_utterance1_char0-134 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:You_want_become a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_want_become" ;
-        gaf:denotedBy leolaniTalk:chat2448_utterance1_char0-134 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:You_want_to_become a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_want_to_become" ;
-        gaf:denotedBy leolaniTalk:chat2448_utterance1_char0-134 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:EU_become_Border_Patrol {
-    leolaniWorld:EU ns1:become leolaniWorld:Border_Patrol .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:You_want_EU {
     leolaniWorld:You ns1:want leolaniWorld:EU .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Border_Patrol a gaf:Instance ;
-        rdfs:label "border-patrol" ;
-        gaf:denotedIn leolaniTalk:chat2448_utterance1_char0-134 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:EU a gaf:Instance ;
-        rdfs:label "eu" ;
-        gaf:denotedIn leolaniTalk:chat2448_utterance0_char0-89,
-            leolaniTalk:chat2448_utterance1_char0-134 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:You a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat2448_utterance1_char0-134 .
+leolaniWorld:EU_is-bunch-of_incompetent {
+    leolaniWorld:EU ns1:is_bunch_of leolaniWorld:incompetent .
+}
 
-    leolaniWorld:become a gaf:Instance ;
-        rdfs:label "become" ;
-        gaf:denotedIn leolaniTalk:chat2448_utterance1_char0-134 .
+leolaniTalk:Perspectives {
+    leolaniTalk:EU_become_Border_Patrol_00028 a grasp:Attribution ;
+        rdfs:label "EU_become_Border_Patrol_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2448_utterance1_char0-134 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:bunch a gaf:Instance ;
-        rdfs:label "bunch" ;
-        gaf:denotedIn leolaniTalk:chat2448_utterance0_char0-89 .
+    leolaniTalk:EU_is-bunch-of_incompetent_00028 a grasp:Attribution ;
+        rdfs:label "EU_is-bunch-of_incompetent_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2448_utterance0_char0-89 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:EU_is_bunch_00028 a grasp:Attribution ;
+        rdfs:label "EU_is_bunch_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2448_utterance0_char0-89 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:You_want_EU_00028 a grasp:Attribution ;
+        rdfs:label "You_want_EU_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2448_utterance1_char0-134 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:incompetent a gaf:Instance ;
-        rdfs:label "incompetent" ;
-        gaf:denotedIn leolaniTalk:chat2448_utterance0_char0-89 .
+    leolaniTalk:You_want_become_00028 a grasp:Attribution ;
+        rdfs:label "You_want_become_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2448_utterance1_char0-134 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:You_want_to_become_00028 a grasp:Attribution ;
+        rdfs:label "You_want_to_become_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2448_utterance1_char0-134 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:to_become a gaf:Instance ;
-        rdfs:label "to-become" ;
-        gaf:denotedIn leolaniTalk:chat2448_utterance1_char0-134 .
+    leolaniTalk:chat2448_utterance0_char0-89 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2448_utterance0_char0-89" ;
+        gaf:containsDenotation leolaniWorld:EU,
+            leolaniWorld:bunch,
+            leolaniWorld:incompetent ;
+        gaf:denotes leolaniWorld:EU_is-bunch-of_incompetent,
+            leolaniWorld:EU_is_bunch ;
+        grasp:hasAttribution leolaniTalk:EU_is-bunch-of_incompetent_00028,
+            leolaniTalk:EU_is_bunch_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:45:02.199826"^^xml1:string,
+            "2024-06-05T23:45:02.199889"^^xml1:string ;
+        rdf:value "The EU is a bunch of incompetent and they let foreigners snooping all around our borders."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2448_utterance0 .
+
+    leolaniTalk:chat2448_utterance1_char0-134 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2448_utterance1_char0-134" ;
+        gaf:containsDenotation leolaniWorld:Border_Patrol,
+            leolaniWorld:EU,
+            leolaniWorld:You,
+            leolaniWorld:become,
+            leolaniWorld:to_become ;
+        gaf:denotes leolaniWorld:EU_become_Border_Patrol,
+            leolaniWorld:You_want_EU,
+            leolaniWorld:You_want_become,
+            leolaniWorld:You_want_to_become ;
+        grasp:hasAttribution leolaniTalk:EU_become_Border_Patrol_00028,
+            leolaniTalk:You_want_EU_00028,
+            leolaniTalk:You_want_become_00028,
+            leolaniTalk:You_want_to_become_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:45:02.342589"^^xml1:string,
+            "2024-06-05T23:45:02.342645"^^xml1:string,
+            "2024-06-05T23:45:02.342667"^^xml1:string,
+            "2024-06-05T23:45:02.342688"^^xml1:string ;
+        rdf:value "You want the EU to become a Border Patrol? That would undermine the whole idea of the European Union as an inclusive and open society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2448_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:You_want_become {
+    leolaniWorld:You ns1:want leolaniWorld:become .
+}
+
+leolaniWorld:EU_is_bunch {
+    leolaniWorld:EU ns1:is leolaniWorld:bunch .
 }
 
 leolaniWorld:Ontology {
@@ -459,183 +545,97 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:EU_become_Border_Patrol a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "EU_become_Border_Patrol" ;
+        gaf:denotedBy leolaniTalk:chat2448_utterance1_char0-134 .
+
+    leolaniWorld:EU_is-bunch-of_incompetent a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "EU_is-bunch-of_incompetent" ;
+        gaf:denotedBy leolaniTalk:chat2448_utterance0_char0-89 .
+
+    leolaniWorld:EU_is_bunch a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "EU_is_bunch" ;
+        gaf:denotedBy leolaniTalk:chat2448_utterance0_char0-89 .
+
+    leolaniWorld:You_want_EU a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_want_EU" ;
+        gaf:denotedBy leolaniTalk:chat2448_utterance1_char0-134 .
+
+    leolaniWorld:You_want_become a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_want_become" ;
+        gaf:denotedBy leolaniTalk:chat2448_utterance1_char0-134 .
+
+    leolaniWorld:You_want_to_become a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_want_to_become" ;
+        gaf:denotedBy leolaniTalk:chat2448_utterance1_char0-134 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:EU_become_Border_Patrol {
+    leolaniWorld:EU ns1:become leolaniWorld:Border_Patrol .
+}
+
 leolaniWorld:You_want_to_become {
     leolaniWorld:You ns1:want leolaniWorld:to_become .
 }
 
-leolaniWorld:EU_is-bunch-of_incompetent {
-    leolaniWorld:EU ns1:is_bunch_of leolaniWorld:incompetent .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Border_Patrol a gaf:Instance ;
+        rdfs:label "border-patrol" ;
+        gaf:denotedIn leolaniTalk:chat2448_utterance1_char0-134 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:EU_become_Border_Patrol_00028 a grasp:Attribution ;
-        rdfs:label "EU_become_Border_Patrol_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2448_utterance1_char0-134 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:EU a gaf:Instance ;
+        rdfs:label "eu" ;
+        gaf:denotedIn leolaniTalk:chat2448_utterance0_char0-89,
+            leolaniTalk:chat2448_utterance1_char0-134 .
 
-    leolaniTalk:EU_is-bunch-of_incompetent_00028 a grasp:Attribution ;
-        rdfs:label "EU_is-bunch-of_incompetent_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2448_utterance0_char0-89 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat2448_utterance1_char0-134 .
 
-    leolaniTalk:EU_is_bunch_00028 a grasp:Attribution ;
-        rdfs:label "EU_is_bunch_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2448_utterance0_char0-89 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:become a gaf:Instance ;
+        rdfs:label "become" ;
+        gaf:denotedIn leolaniTalk:chat2448_utterance1_char0-134 .
 
-    leolaniTalk:You_want_EU_00028 a grasp:Attribution ;
-        rdfs:label "You_want_EU_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2448_utterance1_char0-134 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:You_want_become_00028 a grasp:Attribution ;
-        rdfs:label "You_want_become_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2448_utterance1_char0-134 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:You_want_to_become_00028 a grasp:Attribution ;
-        rdfs:label "You_want_to_become_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2448_utterance1_char0-134 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2448_utterance0_char0-89 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2448_utterance0_char0-89" ;
-        gaf:containsDenotation leolaniWorld:EU,
-            leolaniWorld:bunch,
-            leolaniWorld:incompetent ;
-        gaf:denotes leolaniWorld:EU_is-bunch-of_incompetent,
-            leolaniWorld:EU_is_bunch ;
-        grasp:hasAttribution leolaniTalk:EU_is-bunch-of_incompetent_00028,
-            leolaniTalk:EU_is_bunch_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:45:02.199826"^^xml1:string,
-            "2024-06-05T23:45:02.199889"^^xml1:string ;
-        rdf:value "The EU is a bunch of incompetent and they let foreigners snooping all around our borders."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2448_utterance0 .
-
-    leolaniTalk:chat2448_utterance1_char0-134 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2448_utterance1_char0-134" ;
-        gaf:containsDenotation leolaniWorld:Border_Patrol,
-            leolaniWorld:EU,
-            leolaniWorld:You,
-            leolaniWorld:become,
-            leolaniWorld:to_become ;
-        gaf:denotes leolaniWorld:EU_become_Border_Patrol,
-            leolaniWorld:You_want_EU,
-            leolaniWorld:You_want_become,
-            leolaniWorld:You_want_to_become ;
-        grasp:hasAttribution leolaniTalk:EU_become_Border_Patrol_00028,
-            leolaniTalk:You_want_EU_00028,
-            leolaniTalk:You_want_become_00028,
-            leolaniTalk:You_want_to_become_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:45:02.342589"^^xml1:string,
-            "2024-06-05T23:45:02.342645"^^xml1:string,
-            "2024-06-05T23:45:02.342667"^^xml1:string,
-            "2024-06-05T23:45:02.342688"^^xml1:string ;
-        rdf:value "You want the EU to become a Border Patrol? That would undermine the whole idea of the European Union as an inclusive and open society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2448_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context234 a eps:Context ;
-        rdfs:label "context234" ;
-        hs:id "234"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2448 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "153"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2448 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2448" ;
-        hs:id "2448"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2448_utterance0,
-            leolaniTalk:chat2448_utterance1 .
-
-    leolaniTalk:chat2448_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2448_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2448_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2448_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:bunch a gaf:Instance ;
+        rdfs:label "bunch" ;
+        gaf:denotedIn leolaniTalk:chat2448_utterance0_char0-89 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:You_want_become {
-    leolaniWorld:You ns1:want leolaniWorld:become .
-}
+    leolaniWorld:incompetent a gaf:Instance ;
+        rdfs:label "incompetent" ;
+        gaf:denotedIn leolaniTalk:chat2448_utterance0_char0-89 .
 
-leolaniWorld:EU_is_bunch {
-    leolaniWorld:EU ns1:is leolaniWorld:bunch .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:to_become a gaf:Instance ;
+        rdfs:label "to-become" ;
+        gaf:denotedIn leolaniTalk:chat2448_utterance1_char0-134 .
 }
 

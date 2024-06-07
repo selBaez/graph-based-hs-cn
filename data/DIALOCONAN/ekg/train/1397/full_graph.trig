@@ -22,105 +22,199 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:I_prejudice-against_Jews {
-    leolaniWorld:I ns1:prejudice_against leolaniWorld:Jews .
+leolaniWorld:I_have_prejudice {
+    leolaniWorld:I ns1:have leolaniWorld:prejudice .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:I_have_prejudice a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context97 a eps:Context ;
+        rdfs:label "context97" ;
+        hs:id "97"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1397 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "207"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1397 a grasp:Chat,
             sem:Event ;
-        rdfs:label "I_have_prejudice" ;
-        gaf:denotedBy leolaniTalk:chat1397_utterance2_char0-58 .
+        rdfs:label "chat1397" ;
+        hs:id "1397"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1397_utterance0,
+            leolaniTalk:chat1397_utterance2 .
 
-    leolaniWorld:I_have_prejudice_against_Jews a gaf:Assertion,
+    leolaniTalk:chat1397_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "I_have_prejudice_against_Jews" ;
-        gaf:denotedBy leolaniTalk:chat1397_utterance2_char0-58 .
+        rdfs:label "chat1397_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:I_prejudice-against_Jews a gaf:Assertion,
+    leolaniTalk:chat1397_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "I_prejudice-against_Jews" ;
-        gaf:denotedBy leolaniTalk:chat1397_utterance2_char0-58 .
+        rdfs:label "chat1397_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Jews_can-act-in_bad_way a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_can-act-in_bad_way" ;
-        gaf:denotedBy leolaniTalk:chat1397_utterance0_char0-31 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:Jews_can-act-in_way a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_can-act-in_way" ;
-        gaf:denotedBy leolaniTalk:chat1397_utterance0_char0-31 .
-
-    leolaniWorld:Jews_can-only-act-in_bad_way a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_can-only-act-in_bad_way" ;
-        gaf:denotedBy leolaniTalk:chat1397_utterance0_char0-31 .
-
-    leolaniWorld:Jews_can-only-act-in_way a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_can-only-act-in_way" ;
-        gaf:denotedBy leolaniTalk:chat1397_utterance0_char0-31 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Jews_can-only-act-in_bad_way {
-    leolaniWorld:Jews ns1:can_only_act_in leolaniWorld:bad_way .
-}
-
-leolaniWorld:Jews_can-act-in_way {
-    leolaniWorld:Jews ns1:can_act_in leolaniWorld:way .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1397_utterance2_char0-58 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1397_utterance0_char0-31,
-            leolaniTalk:chat1397_utterance2_char0-58 .
-
-    leolaniWorld:bad_way a gaf:Instance ;
-        rdfs:label "bad-way" ;
-        gaf:denotedIn leolaniTalk:chat1397_utterance0_char0-31 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:prejudice a gaf:Instance ;
-        rdfs:label "prejudice" ;
-        gaf:denotedIn leolaniTalk:chat1397_utterance2_char0-58 .
-
-    leolaniWorld:prejudice_against_Jews a gaf:Instance ;
-        rdfs:label "prejudice-against-jews" ;
-        gaf:denotedIn leolaniTalk:chat1397_utterance2_char0-58 .
-
-    leolaniWorld:way a gaf:Instance ;
-        rdfs:label "way" ;
-        gaf:denotedIn leolaniTalk:chat1397_utterance0_char0-31 .
-}
-
-leolaniWorld:Jews_can-act-in_bad_way {
-    leolaniWorld:Jews ns1:can_act_in leolaniWorld:bad_way .
 }
 
 leolaniWorld:I_have_prejudice_against_Jews {
     leolaniWorld:I ns1:have leolaniWorld:prejudice_against_Jews .
 }
 
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Jews_can-only-act-in_bad_way {
+    leolaniWorld:Jews ns1:can_only_act_in leolaniWorld:bad_way .
+}
+
 leolaniWorld:Jews_can-only-act-in_way {
     leolaniWorld:Jews ns1:can_only_act_in leolaniWorld:way .
+}
+
+leolaniWorld:Jews_can-act-in_way {
+    leolaniWorld:Jews ns1:can_act_in leolaniWorld:way .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_have_prejudice_00028 a grasp:Attribution ;
+        rdfs:label "I_have_prejudice_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1397_utterance2_char0-58 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_have_prejudice_against_Jews_00028 a grasp:Attribution ;
+        rdfs:label "I_have_prejudice_against_Jews_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1397_utterance2_char0-58 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_prejudice-against_Jews_00028 a grasp:Attribution ;
+        rdfs:label "I_prejudice-against_Jews_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1397_utterance2_char0-58 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_can-act-in_bad_way_00028 a grasp:Attribution ;
+        rdfs:label "Jews_can-act-in_bad_way_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1397_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_can-act-in_way_00028 a grasp:Attribution ;
+        rdfs:label "Jews_can-act-in_way_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1397_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_can-only-act-in_bad_way_00028 a grasp:Attribution ;
+        rdfs:label "Jews_can-only-act-in_bad_way_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1397_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_can-only-act-in_way_00028 a grasp:Attribution ;
+        rdfs:label "Jews_can-only-act-in_way_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1397_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1397_utterance2_char0-58 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1397_utterance2_char0-58" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:Jews,
+            leolaniWorld:prejudice,
+            leolaniWorld:prejudice_against_Jews ;
+        gaf:denotes leolaniWorld:I_have_prejudice,
+            leolaniWorld:I_have_prejudice_against_Jews,
+            leolaniWorld:I_prejudice-against_Jews ;
+        grasp:hasAttribution leolaniTalk:I_have_prejudice_00028,
+            leolaniTalk:I_have_prejudice_against_Jews_00028,
+            leolaniTalk:I_prejudice-against_Jews_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:58.589613"^^xml1:string,
+            "2024-06-05T23:07:58.589677"^^xml1:string,
+            "2024-06-05T23:07:58.589701"^^xml1:string ;
+        rdf:value "Ok, are you impying that I have a prejudice against Jews? "^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1397_utterance2 .
+
+    leolaniTalk:chat1397_utterance0_char0-31 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1397_utterance0_char0-31" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:bad_way,
+            leolaniWorld:way ;
+        gaf:denotes leolaniWorld:Jews_can-act-in_bad_way,
+            leolaniWorld:Jews_can-act-in_way,
+            leolaniWorld:Jews_can-only-act-in_bad_way,
+            leolaniWorld:Jews_can-only-act-in_way ;
+        grasp:hasAttribution leolaniTalk:Jews_can-act-in_bad_way_00028,
+            leolaniTalk:Jews_can-act-in_way_00028,
+            leolaniTalk:Jews_can-only-act-in_bad_way_00028,
+            leolaniTalk:Jews_can-only-act-in_way_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:58.410627"^^xml1:string,
+            "2024-06-05T23:07:58.410687"^^xml1:string,
+            "2024-06-05T23:07:58.410710"^^xml1:string,
+            "2024-06-05T23:07:58.410732"^^xml1:string ;
+        rdf:value "Jews can only act in a bad way."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1397_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:Jews_can-act-in_bad_way {
+    leolaniWorld:Jews ns1:can_act_in leolaniWorld:bad_way .
 }
 
 leolaniWorld:Ontology {
@@ -458,178 +552,84 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:I_have_prejudice a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_have_prejudice" ;
+        gaf:denotedBy leolaniTalk:chat1397_utterance2_char0-58 .
+
+    leolaniWorld:I_have_prejudice_against_Jews a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_have_prejudice_against_Jews" ;
+        gaf:denotedBy leolaniTalk:chat1397_utterance2_char0-58 .
+
+    leolaniWorld:I_prejudice-against_Jews a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_prejudice-against_Jews" ;
+        gaf:denotedBy leolaniTalk:chat1397_utterance2_char0-58 .
+
+    leolaniWorld:Jews_can-act-in_bad_way a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_can-act-in_bad_way" ;
+        gaf:denotedBy leolaniTalk:chat1397_utterance0_char0-31 .
+
+    leolaniWorld:Jews_can-act-in_way a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_can-act-in_way" ;
+        gaf:denotedBy leolaniTalk:chat1397_utterance0_char0-31 .
+
+    leolaniWorld:Jews_can-only-act-in_bad_way a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_can-only-act-in_bad_way" ;
+        gaf:denotedBy leolaniTalk:chat1397_utterance0_char0-31 .
+
+    leolaniWorld:Jews_can-only-act-in_way a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_can-only-act-in_way" ;
+        gaf:denotedBy leolaniTalk:chat1397_utterance0_char0-31 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_have_prejudice_00028 a grasp:Attribution ;
-        rdfs:label "I_have_prejudice_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1397_utterance2_char0-58 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_have_prejudice_against_Jews_00028 a grasp:Attribution ;
-        rdfs:label "I_have_prejudice_against_Jews_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1397_utterance2_char0-58 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_prejudice-against_Jews_00028 a grasp:Attribution ;
-        rdfs:label "I_prejudice-against_Jews_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1397_utterance2_char0-58 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_can-act-in_bad_way_00028 a grasp:Attribution ;
-        rdfs:label "Jews_can-act-in_bad_way_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1397_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_can-act-in_way_00028 a grasp:Attribution ;
-        rdfs:label "Jews_can-act-in_way_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1397_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_can-only-act-in_bad_way_00028 a grasp:Attribution ;
-        rdfs:label "Jews_can-only-act-in_bad_way_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1397_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_can-only-act-in_way_00028 a grasp:Attribution ;
-        rdfs:label "Jews_can-only-act-in_way_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1397_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1397_utterance2_char0-58 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1397_utterance2_char0-58" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:Jews,
-            leolaniWorld:prejudice,
-            leolaniWorld:prejudice_against_Jews ;
-        gaf:denotes leolaniWorld:I_have_prejudice,
-            leolaniWorld:I_have_prejudice_against_Jews,
-            leolaniWorld:I_prejudice-against_Jews ;
-        grasp:hasAttribution leolaniTalk:I_have_prejudice_00028,
-            leolaniTalk:I_have_prejudice_against_Jews_00028,
-            leolaniTalk:I_prejudice-against_Jews_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:58.589613"^^xml1:string,
-            "2024-06-05T23:07:58.589677"^^xml1:string,
-            "2024-06-05T23:07:58.589701"^^xml1:string ;
-        rdf:value "Ok, are you impying that I have a prejudice against Jews? "^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1397_utterance2 .
-
-    leolaniTalk:chat1397_utterance0_char0-31 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1397_utterance0_char0-31" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:bad_way,
-            leolaniWorld:way ;
-        gaf:denotes leolaniWorld:Jews_can-act-in_bad_way,
-            leolaniWorld:Jews_can-act-in_way,
-            leolaniWorld:Jews_can-only-act-in_bad_way,
-            leolaniWorld:Jews_can-only-act-in_way ;
-        grasp:hasAttribution leolaniTalk:Jews_can-act-in_bad_way_00028,
-            leolaniTalk:Jews_can-act-in_way_00028,
-            leolaniTalk:Jews_can-only-act-in_bad_way_00028,
-            leolaniTalk:Jews_can-only-act-in_way_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:58.410627"^^xml1:string,
-            "2024-06-05T23:07:58.410687"^^xml1:string,
-            "2024-06-05T23:07:58.410710"^^xml1:string,
-            "2024-06-05T23:07:58.410732"^^xml1:string ;
-        rdf:value "Jews can only act in a bad way."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1397_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:I_prejudice-against_Jews {
+    leolaniWorld:I ns1:prejudice_against leolaniWorld:Jews .
 }
 
-leolaniWorld:I_have_prejudice {
-    leolaniWorld:I ns1:have leolaniWorld:prejudice .
-}
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1397_utterance2_char0-58 .
 
-leolaniTalk:Interactions {
-    leolaniContext:context97 a eps:Context ;
-        rdfs:label "context97" ;
-        hs:id "97"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1397_utterance0_char0-31,
+            leolaniTalk:chat1397_utterance2_char0-58 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1397 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "207"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1397 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1397" ;
-        hs:id "1397"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1397_utterance0,
-            leolaniTalk:chat1397_utterance2 .
-
-    leolaniTalk:chat1397_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1397_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1397_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1397_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:bad_way a gaf:Instance ;
+        rdfs:label "bad-way" ;
+        gaf:denotedIn leolaniTalk:chat1397_utterance0_char0-31 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:prejudice a gaf:Instance ;
+        rdfs:label "prejudice" ;
+        gaf:denotedIn leolaniTalk:chat1397_utterance2_char0-58 .
+
+    leolaniWorld:prejudice_against_Jews a gaf:Instance ;
+        rdfs:label "prejudice-against-jews" ;
+        gaf:denotedIn leolaniTalk:chat1397_utterance2_char0-58 .
+
+    leolaniWorld:way a gaf:Instance ;
+        rdfs:label "way" ;
+        gaf:denotedIn leolaniTalk:chat1397_utterance0_char0-31 .
 }
 

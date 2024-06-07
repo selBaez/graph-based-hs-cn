@@ -22,138 +22,219 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:this_includes_our_language {
-    leolaniWorld:this ns11:includes leolaniWorld:our_language .
+leolaniWorld:they_want_to_come_here {
+    leolaniWorld:they ns11:want leolaniWorld:to_come_here .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context216 a eps:Context ;
+        rdfs:label "context216" ;
+        hs:id "216"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:Immigrants_are_entitled a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2160 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "150"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2160 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Immigrants_are_entitled" ;
-        gaf:denotedBy leolaniTalk:chat2160_utterance1_char0-101 .
+        rdfs:label "chat2160" ;
+        hs:id "2160"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2160_utterance0,
+            leolaniTalk:chat2160_utterance1,
+            leolaniTalk:chat2160_utterance2 .
 
-    leolaniWorld:immigrants_cant_speak_English a gaf:Assertion,
+    leolaniTalk:chat2160_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "immigrants_cant_speak_English" ;
-        gaf:denotedBy leolaniTalk:chat2160_utterance0_char0-29 .
+        rdfs:label "chat2160_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat2160_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2160_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat2160_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat2160_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:they_want_come a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_come" ;
-        gaf:denotedBy leolaniTalk:chat2160_utterance2_char0-66 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:they_want_come_here a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_come_here" ;
-        gaf:denotedBy leolaniTalk:chat2160_utterance2_char0-66 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:they_want_to_come a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_to_come" ;
-        gaf:denotedBy leolaniTalk:chat2160_utterance2_char0-66 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:they_want_to_come_here a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_to_come_here" ;
-        gaf:denotedBy leolaniTalk:chat2160_utterance2_char0-66 .
-
-    leolaniWorld:this_includes_our_language a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "this_includes_our_language" ;
-        gaf:denotedBy leolaniTalk:chat2160_utterance1_char0-101 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Immigrants_are_entitled {
-    leolaniWorld:Immigrants ns11:are leolaniWorld:entitled .
-}
-
-leolaniWorld:they_want_come {
-    leolaniWorld:they ns11:want leolaniWorld:come .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:they_want_to_come {
     leolaniWorld:they ns11:want leolaniWorld:to_come .
 }
 
-leolaniWorld:immigrants_cant_speak_English {
-    leolaniWorld:immigrants_cant ns11:speak leolaniWorld:English .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:English a gaf:Instance ;
-        rdfs:label "english" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance0_char0-29 .
-
-    leolaniWorld:Immigrants a gaf:Instance ;
-        rdfs:label "immigrants" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance1_char0-101 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:come a gaf:Instance ;
-        rdfs:label "come" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
-
-    leolaniWorld:come_here a gaf:Instance ;
-        rdfs:label "come-here" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
-
-    leolaniWorld:entitled a gaf:Instance ;
-        rdfs:label "entitled" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance1_char0-101 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:immigrants_cant a gaf:Instance ;
-        rdfs:label "immigrants-cant" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance0_char0-29 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_language a gaf:Instance ;
-        rdfs:label "our-language" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance1_char0-101 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
-
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance1_char0-101 .
-
-    leolaniWorld:to_come a gaf:Instance ;
-        rdfs:label "to-come" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
-
-    leolaniWorld:to_come_here a gaf:Instance ;
-        rdfs:label "to-come-here" ;
-        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:they_want_to_come_here {
-    leolaniWorld:they ns11:want leolaniWorld:to_come_here .
+leolaniWorld:they_want_come_here {
+    leolaniWorld:they ns11:want leolaniWorld:come_here .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Immigrants_are_entitled_00028 a grasp:Attribution ;
+        rdfs:label "Immigrants_are_entitled_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2160_utterance1_char0-101 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2160_utterance0_char0-29 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2160_utterance0_char0-29" ;
+        gaf:containsDenotation leolaniWorld:English,
+            leolaniWorld:immigrants_cant ;
+        gaf:denotes leolaniWorld:immigrants_cant_speak_English ;
+        grasp:hasAttribution leolaniTalk:immigrants_cant_speak_English_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:45:29.781296"^^xml1:string ;
+        rdf:value "immigrants cant speak English"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2160_utterance0 .
+
+    leolaniTalk:immigrants_cant_speak_English_00028 a grasp:Attribution ;
+        rdfs:label "immigrants_cant_speak_English_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2160_utterance0_char0-29 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_come_00028 a grasp:Attribution ;
+        rdfs:label "they_want_come_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2160_utterance2_char0-66 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_come_here_00028 a grasp:Attribution ;
+        rdfs:label "they_want_come_here_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2160_utterance2_char0-66 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_to_come_00028 a grasp:Attribution ;
+        rdfs:label "they_want_to_come_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2160_utterance2_char0-66 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_to_come_here_00028 a grasp:Attribution ;
+        rdfs:label "they_want_to_come_here_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2160_utterance2_char0-66 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:this_includes_our_language_00028 a grasp:Attribution ;
+        rdfs:label "this_includes_our_language_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2160_utterance1_char0-101 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2160_utterance1_char0-101 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2160_utterance1_char0-101" ;
+        gaf:containsDenotation leolaniWorld:Immigrants,
+            leolaniWorld:entitled,
+            leolaniWorld:our_language,
+            leolaniWorld:this ;
+        gaf:denotes leolaniWorld:Immigrants_are_entitled,
+            leolaniWorld:this_includes_our_language ;
+        grasp:hasAttribution leolaniTalk:Immigrants_are_entitled_00028,
+            leolaniTalk:this_includes_our_language_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:45:29.886780"^^xml1:string,
+            "2024-06-05T23:45:29.886837"^^xml1:string ;
+        rdf:value "Immigrants are entitled to learn what they usually don't get to know, and this includes our language."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2160_utterance1 .
+
+    leolaniTalk:chat2160_utterance2_char0-66 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2160_utterance2_char0-66" ;
+        gaf:containsDenotation leolaniWorld:come,
+            leolaniWorld:come_here,
+            leolaniWorld:they,
+            leolaniWorld:to_come,
+            leolaniWorld:to_come_here ;
+        gaf:denotes leolaniWorld:they_want_come,
+            leolaniWorld:they_want_come_here,
+            leolaniWorld:they_want_to_come,
+            leolaniWorld:they_want_to_come_here ;
+        grasp:hasAttribution leolaniTalk:they_want_come_00028,
+            leolaniTalk:they_want_come_here_00028,
+            leolaniTalk:they_want_to_come_00028,
+            leolaniTalk:they_want_to_come_here_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:45:29.977255"^^xml1:string,
+            "2024-06-05T23:45:29.977310"^^xml1:string,
+            "2024-06-05T23:45:29.977334"^^xml1:string,
+            "2024-06-05T23:45:29.977356"^^xml1:string ;
+        rdf:value "If they want to come here they should know English, but they don't"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2160_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:this_includes_our_language {
+    leolaniWorld:this ns11:includes leolaniWorld:our_language .
 }
 
 leolaniWorld:Ontology {
@@ -491,202 +572,121 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_want_come {
+    leolaniWorld:they ns11:want leolaniWorld:come .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Immigrants_are_entitled_00028 a grasp:Attribution ;
-        rdfs:label "Immigrants_are_entitled_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2160_utterance1_char0-101 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Immigrants_are_entitled a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigrants_are_entitled" ;
+        gaf:denotedBy leolaniTalk:chat2160_utterance1_char0-101 .
 
-    leolaniTalk:chat2160_utterance0_char0-29 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2160_utterance0_char0-29" ;
-        gaf:containsDenotation leolaniWorld:English,
-            leolaniWorld:immigrants_cant ;
-        gaf:denotes leolaniWorld:immigrants_cant_speak_English ;
-        grasp:hasAttribution leolaniTalk:immigrants_cant_speak_English_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:45:29.781296"^^xml1:string ;
-        rdf:value "immigrants cant speak English"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2160_utterance0 .
+    leolaniWorld:immigrants_cant_speak_English a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "immigrants_cant_speak_English" ;
+        gaf:denotedBy leolaniTalk:chat2160_utterance0_char0-29 .
 
-    leolaniTalk:immigrants_cant_speak_English_00028 a grasp:Attribution ;
-        rdfs:label "immigrants_cant_speak_English_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2160_utterance0_char0-29 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:they_want_come_00028 a grasp:Attribution ;
-        rdfs:label "they_want_come_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2160_utterance2_char0-66 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:they_want_come_here_00028 a grasp:Attribution ;
-        rdfs:label "they_want_come_here_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2160_utterance2_char0-66 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_want_come a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_come" ;
+        gaf:denotedBy leolaniTalk:chat2160_utterance2_char0-66 .
 
-    leolaniTalk:they_want_to_come_00028 a grasp:Attribution ;
-        rdfs:label "they_want_to_come_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2160_utterance2_char0-66 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_want_come_here a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_come_here" ;
+        gaf:denotedBy leolaniTalk:chat2160_utterance2_char0-66 .
 
-    leolaniTalk:they_want_to_come_here_00028 a grasp:Attribution ;
-        rdfs:label "they_want_to_come_here_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2160_utterance2_char0-66 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_want_to_come a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_to_come" ;
+        gaf:denotedBy leolaniTalk:chat2160_utterance2_char0-66 .
 
-    leolaniTalk:this_includes_our_language_00028 a grasp:Attribution ;
-        rdfs:label "this_includes_our_language_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2160_utterance1_char0-101 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_want_to_come_here a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_to_come_here" ;
+        gaf:denotedBy leolaniTalk:chat2160_utterance2_char0-66 .
 
-    leolaniTalk:chat2160_utterance1_char0-101 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2160_utterance1_char0-101" ;
-        gaf:containsDenotation leolaniWorld:Immigrants,
-            leolaniWorld:entitled,
-            leolaniWorld:our_language,
-            leolaniWorld:this ;
-        gaf:denotes leolaniWorld:Immigrants_are_entitled,
-            leolaniWorld:this_includes_our_language ;
-        grasp:hasAttribution leolaniTalk:Immigrants_are_entitled_00028,
-            leolaniTalk:this_includes_our_language_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:45:29.886780"^^xml1:string,
-            "2024-06-05T23:45:29.886837"^^xml1:string ;
-        rdf:value "Immigrants are entitled to learn what they usually don't get to know, and this includes our language."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2160_utterance1 .
+    leolaniWorld:this_includes_our_language a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "this_includes_our_language" ;
+        gaf:denotedBy leolaniTalk:chat2160_utterance1_char0-101 .
 
-    leolaniTalk:chat2160_utterance2_char0-66 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2160_utterance2_char0-66" ;
-        gaf:containsDenotation leolaniWorld:come,
-            leolaniWorld:come_here,
-            leolaniWorld:they,
-            leolaniWorld:to_come,
-            leolaniWorld:to_come_here ;
-        gaf:denotes leolaniWorld:they_want_come,
-            leolaniWorld:they_want_come_here,
-            leolaniWorld:they_want_to_come,
-            leolaniWorld:they_want_to_come_here ;
-        grasp:hasAttribution leolaniTalk:they_want_come_00028,
-            leolaniTalk:they_want_come_here_00028,
-            leolaniTalk:they_want_to_come_00028,
-            leolaniTalk:they_want_to_come_here_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:45:29.977255"^^xml1:string,
-            "2024-06-05T23:45:29.977310"^^xml1:string,
-            "2024-06-05T23:45:29.977334"^^xml1:string,
-            "2024-06-05T23:45:29.977356"^^xml1:string ;
-        rdf:value "If they want to come here they should know English, but they don't"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2160_utterance2 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:they_want_come_here {
-    leolaniWorld:they ns11:want leolaniWorld:come_here .
+leolaniWorld:immigrants_cant_speak_English {
+    leolaniWorld:immigrants_cant ns11:speak leolaniWorld:English .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context216 a eps:Context ;
-        rdfs:label "context216" ;
-        hs:id "216"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Immigrants_are_entitled {
+    leolaniWorld:Immigrants ns11:are leolaniWorld:entitled .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2160 .
+leolaniWorld:Instances {
+    leolaniWorld:English a gaf:Instance ;
+        rdfs:label "english" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance0_char0-29 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "150"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2160 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2160" ;
-        hs:id "2160"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2160_utterance0,
-            leolaniTalk:chat2160_utterance1,
-            leolaniTalk:chat2160_utterance2 .
-
-    leolaniTalk:chat2160_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2160_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2160_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2160_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2160_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2160_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Immigrants a gaf:Instance ;
+        rdfs:label "immigrants" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance1_char0-101 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:come a gaf:Instance ;
+        rdfs:label "come" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
+
+    leolaniWorld:come_here a gaf:Instance ;
+        rdfs:label "come-here" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
+
+    leolaniWorld:entitled a gaf:Instance ;
+        rdfs:label "entitled" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance1_char0-101 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:immigrants_cant a gaf:Instance ;
+        rdfs:label "immigrants-cant" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance0_char0-29 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_language a gaf:Instance ;
+        rdfs:label "our-language" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance1_char0-101 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance1_char0-101 .
+
+    leolaniWorld:to_come a gaf:Instance ;
+        rdfs:label "to-come" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
+
+    leolaniWorld:to_come_here a gaf:Instance ;
+        rdfs:label "to-come-here" ;
+        gaf:denotedIn leolaniTalk:chat2160_utterance2_char0-66 .
 }
 

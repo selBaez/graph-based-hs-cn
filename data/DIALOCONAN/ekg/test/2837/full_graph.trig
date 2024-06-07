@@ -22,6 +22,95 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Jewish_money_is-majority-in_most_banks {
+    leolaniWorld:Jewish_money ns1:is_majority_in leolaniWorld:most_banks .
+}
+
+leolaniWorld:Most_banks_are-run-by_people {
+    leolaniWorld:Most_banks ns1:are_run_by leolaniWorld:people .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context166 a eps:Context ;
+        rdfs:label "context166" ;
+        hs:id "166"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2837 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "108"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2837 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2837" ;
+        hs:id "2837"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2837_utterance0,
+            leolaniTalk:chat2837_utterance2 .
+
+    leolaniTalk:chat2837_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2837_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2837_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2837_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:money_is-majority-in_banks {
+    leolaniWorld:money ns1:is_majority_in leolaniWorld:banks .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:banks_are-run-by_Jewish_people {
+    leolaniWorld:banks ns1:are_run_by leolaniWorld:Jewish_people .
+}
+
+leolaniWorld:Most_banks_are-run-by_Jewish_people {
+    leolaniWorld:Most_banks ns1:are_run_by leolaniWorld:Jewish_people .
+}
+
+leolaniWorld:that_majority_is-in_most_banks {
+    leolaniWorld:that_majority ns1:is_in leolaniWorld:most_banks .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:Jewish_money_is-majority-in_banks_00012 a grasp:Attribution ;
         rdfs:label "Jewish_money_is-majority-in_banks_00012" ;
@@ -163,55 +252,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jewish_money a gaf:Instance ;
-        rdfs:label "jewish-money" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
-
-    leolaniWorld:Jewish_people a gaf:Instance ;
-        rdfs:label "jewish-people" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance0_char0-55 .
-
-    leolaniWorld:Most_banks a gaf:Instance ;
-        rdfs:label "most-banks" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
-
-    leolaniWorld:banks a gaf:Instance ;
-        rdfs:label "banks" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
-
-    leolaniWorld:finance a gaf:Instance ;
-        rdfs:label "finance" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance0_char0-55 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:money a gaf:Instance ;
-        rdfs:label "money" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
-
-    leolaniWorld:most_banks a gaf:Instance ;
-        rdfs:label "most-banks" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
-
-    leolaniWorld:that_majority a gaf:Instance ;
-        rdfs:label "that-majority" ;
-        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
 }
 
 leolaniWorld:Ontology {
@@ -549,77 +589,12 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Most_banks_are-run-by_Jewish_people {
-    leolaniWorld:Most_banks ns1:are_run_by leolaniWorld:Jewish_people .
+leolaniWorld:money_is-majority-in_most_banks {
+    leolaniWorld:money ns1:is_majority_in leolaniWorld:most_banks .
 }
 
-leolaniWorld:Jewish_money_is-majority-in_most_banks {
-    leolaniWorld:Jewish_money ns1:is_majority_in leolaniWorld:most_banks .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context166 a eps:Context ;
-        rdfs:label "context166" ;
-        hs:id "166"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2837 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "108"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2837 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2837" ;
-        hs:id "2837"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2837_utterance0,
-            leolaniTalk:chat2837_utterance2 .
-
-    leolaniTalk:chat2837_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2837_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2837_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2837_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:banks_are-run-by_Jewish_people {
-    leolaniWorld:banks ns1:are_run_by leolaniWorld:Jewish_people .
+leolaniWorld:Jewish_money_is-majority-in_banks {
+    leolaniWorld:Jewish_money ns1:is_majority_in leolaniWorld:banks .
 }
 
 leolaniWorld:Claims {
@@ -680,35 +655,60 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:money_is-majority-in_most_banks {
-    leolaniWorld:money ns1:is_majority_in leolaniWorld:most_banks .
-}
-
-leolaniWorld:money_is-majority-in_banks {
-    leolaniWorld:money ns1:is_majority_in leolaniWorld:banks .
-}
-
-leolaniWorld:that_majority_is-in_most_banks {
-    leolaniWorld:that_majority ns1:is_in leolaniWorld:most_banks .
-}
-
-leolaniWorld:Most_banks_are-run-by_people {
-    leolaniWorld:Most_banks ns1:are_run_by leolaniWorld:people .
-}
-
-leolaniWorld:Jewish_money_is-majority-in_banks {
-    leolaniWorld:Jewish_money ns1:is_majority_in leolaniWorld:banks .
+leolaniWorld:Jews_work-in_finance {
+    leolaniWorld:Jews ns1:work_in leolaniWorld:finance .
 }
 
 leolaniWorld:banks_are-run-by_people {
     leolaniWorld:banks ns1:are_run_by leolaniWorld:people .
 }
 
-leolaniWorld:Jews_work-in_finance {
-    leolaniWorld:Jews ns1:work_in leolaniWorld:finance .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Jewish_money a gaf:Instance ;
+        rdfs:label "jewish-money" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:Jewish_people a gaf:Instance ;
+        rdfs:label "jewish-people" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
+
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance0_char0-55 .
+
+    leolaniWorld:Most_banks a gaf:Instance ;
+        rdfs:label "most-banks" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
+
+    leolaniWorld:banks a gaf:Instance ;
+        rdfs:label "banks" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
+
+    leolaniWorld:finance a gaf:Instance ;
+        rdfs:label "finance" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance0_char0-55 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:money a gaf:Instance ;
+        rdfs:label "money" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
+
+    leolaniWorld:most_banks a gaf:Instance ;
+        rdfs:label "most-banks" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
+
+    leolaniWorld:that_majority a gaf:Instance ;
+        rdfs:label "that-majority" ;
+        gaf:denotedIn leolaniTalk:chat2837_utterance2_char0-107 .
 }
 

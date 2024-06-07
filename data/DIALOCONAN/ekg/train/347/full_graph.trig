@@ -22,104 +22,185 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:It_is_fact a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_is_fact" ;
-        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+leolaniWorld:they_should-have_rights {
+    leolaniWorld:they ns1:should_have leolaniWorld:rights .
+}
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+leolaniTalk:Interactions {
+    leolaniContext:context182 a eps:Context ;
+        rdfs:label "context182" ;
+        hs:id "182"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:they_kill_more_people_than_whites a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_kill_more_people_than_whites" ;
-        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat347 .
 
-    leolaniWorld:they_more-people-than_whites a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_more-people-than_whites" ;
-        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:they_should-have_less_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_should-have_less_rights" ;
-        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "202"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:they_should-have_rights a gaf:Assertion,
+    leolaniTalk:chat347 a grasp:Chat,
             sem:Event ;
-        rdfs:label "they_should-have_rights" ;
-        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+        rdfs:label "chat347" ;
+        hs:id "347"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat347_utterance2 .
 
-    leolaniWorld:they_so-should-have_less_rights a gaf:Assertion,
+    leolaniTalk:chat347_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "they_so-should-have_less_rights" ;
-        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+        rdfs:label "chat347_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:they_so-should-have_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_so-should-have_rights" ;
-        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:they_so-should-have_less_rights {
     leolaniWorld:they ns1:so_should_have leolaniWorld:less_rights .
 }
 
-leolaniWorld:It_is_fact {
-    leolaniWorld:It ns1:is leolaniWorld:fact .
+leolaniWorld:they_kill_more_people_than_whites {
+    leolaniWorld:they ns1:kill leolaniWorld:more_people_than_whites .
 }
 
-leolaniWorld:they_should-have_less_rights {
-    leolaniWorld:they ns1:should_have leolaniWorld:less_rights .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
-
-    leolaniWorld:fact a gaf:Instance ;
-        rdfs:label "fact" ;
-        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:less_rights a gaf:Instance ;
-        rdfs:label "less-rights" ;
-        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
-
-    leolaniWorld:more_people_than_whites a gaf:Instance ;
-        rdfs:label "more-people-than-whites" ;
-        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
-
-    leolaniWorld:rights a gaf:Instance ;
-        rdfs:label "rights" ;
-        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
-
-    leolaniWorld:whites a gaf:Instance ;
-        rdfs:label "whites" ;
-        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
-}
-
-leolaniWorld:they_should-have_rights {
-    leolaniWorld:they ns1:should_have leolaniWorld:rights .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:they_so-should-have_rights {
     leolaniWorld:they ns1:so_should_have leolaniWorld:rights .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:It_is_fact_00028 a grasp:Attribution ;
+        rdfs:label "It_is_fact_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_kill_more_people_than_whites_00028 a grasp:Attribution ;
+        rdfs:label "they_kill_more_people_than_whites_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_more-people-than_whites_00028 a grasp:Attribution ;
+        rdfs:label "they_more-people-than_whites_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_should-have_less_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_should-have_less_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_should-have_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_should-have_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_so-should-have_less_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_so-should-have_less_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_so-should-have_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_so-should-have_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat347_utterance2_char0-127 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat347_utterance2_char0-127" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:fact,
+            leolaniWorld:less_rights,
+            leolaniWorld:more_people_than_whites,
+            leolaniWorld:rights,
+            leolaniWorld:they,
+            leolaniWorld:whites ;
+        gaf:denotes leolaniWorld:It_is_fact,
+            leolaniWorld:they_kill_more_people_than_whites,
+            leolaniWorld:they_more-people-than_whites,
+            leolaniWorld:they_should-have_less_rights,
+            leolaniWorld:they_should-have_rights,
+            leolaniWorld:they_so-should-have_less_rights,
+            leolaniWorld:they_so-should-have_rights ;
+        grasp:hasAttribution leolaniTalk:It_is_fact_00028,
+            leolaniTalk:they_kill_more_people_than_whites_00028,
+            leolaniTalk:they_more-people-than_whites_00028,
+            leolaniTalk:they_should-have_less_rights_00028,
+            leolaniTalk:they_should-have_rights_00028,
+            leolaniTalk:they_so-should-have_less_rights_00028,
+            leolaniTalk:they_so-should-have_rights_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:33.094931"^^xml1:string,
+            "2024-06-05T23:08:33.094996"^^xml1:string,
+            "2024-06-05T23:08:33.095020"^^xml1:string,
+            "2024-06-05T23:08:33.095042"^^xml1:string,
+            "2024-06-05T23:08:33.095063"^^xml1:string,
+            "2024-06-05T23:08:33.095096"^^xml1:string,
+            "2024-06-05T23:08:33.095117"^^xml1:string ;
+        rdf:value "Blacks make up only 14% of the population but they kill more people than whites. It is a fact, so they should have less rights."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat347_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:they_more-people-than_whites {
+    leolaniWorld:they ns1:more_people_than leolaniWorld:whites .
+}
+
+leolaniWorld:It_is_fact {
+    leolaniWorld:It ns1:is leolaniWorld:fact .
 }
 
 leolaniWorld:Ontology {
@@ -457,168 +538,87 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:It_is_fact_00028 a grasp:Attribution ;
-        rdfs:label "It_is_fact_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_kill_more_people_than_whites_00028 a grasp:Attribution ;
-        rdfs:label "they_kill_more_people_than_whites_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_more-people-than_whites_00028 a grasp:Attribution ;
-        rdfs:label "they_more-people-than_whites_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_should-have_less_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_should-have_less_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_should-have_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_should-have_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_so-should-have_less_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_so-should-have_less_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_so-should-have_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_so-should-have_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat347_utterance2_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat347_utterance2_char0-127 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat347_utterance2_char0-127" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:fact,
-            leolaniWorld:less_rights,
-            leolaniWorld:more_people_than_whites,
-            leolaniWorld:rights,
-            leolaniWorld:they,
-            leolaniWorld:whites ;
-        gaf:denotes leolaniWorld:It_is_fact,
-            leolaniWorld:they_kill_more_people_than_whites,
-            leolaniWorld:they_more-people-than_whites,
-            leolaniWorld:they_should-have_less_rights,
-            leolaniWorld:they_should-have_rights,
-            leolaniWorld:they_so-should-have_less_rights,
-            leolaniWorld:they_so-should-have_rights ;
-        grasp:hasAttribution leolaniTalk:It_is_fact_00028,
-            leolaniTalk:they_kill_more_people_than_whites_00028,
-            leolaniTalk:they_more-people-than_whites_00028,
-            leolaniTalk:they_should-have_less_rights_00028,
-            leolaniTalk:they_should-have_rights_00028,
-            leolaniTalk:they_so-should-have_less_rights_00028,
-            leolaniTalk:they_so-should-have_rights_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:33.094931"^^xml1:string,
-            "2024-06-05T23:08:33.094996"^^xml1:string,
-            "2024-06-05T23:08:33.095020"^^xml1:string,
-            "2024-06-05T23:08:33.095042"^^xml1:string,
-            "2024-06-05T23:08:33.095063"^^xml1:string,
-            "2024-06-05T23:08:33.095096"^^xml1:string,
-            "2024-06-05T23:08:33.095117"^^xml1:string ;
-        rdf:value "Blacks make up only 14% of the population but they kill more people than whites. It is a fact, so they should have less rights."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat347_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:they_kill_more_people_than_whites {
-    leolaniWorld:they ns1:kill leolaniWorld:more_people_than_whites .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context182 a eps:Context ;
-        rdfs:label "context182" ;
-        hs:id "182"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat347 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "202"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat347 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:It_is_fact a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat347" ;
-        hs:id "347"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat347_utterance2 .
+        rdfs:label "It_is_fact" ;
+        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
 
-    leolaniTalk:chat347_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat347_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:they_kill_more_people_than_whites a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_kill_more_people_than_whites" ;
+        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:they_more-people-than_whites a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_more-people-than_whites" ;
+        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:they_should-have_less_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_should-have_less_rights" ;
+        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:they_should-have_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_should-have_rights" ;
+        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:they_so-should-have_less_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_so-should-have_less_rights" ;
+        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:they_so-should-have_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_so-should-have_rights" ;
+        gaf:denotedBy leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:they_should-have_less_rights {
+    leolaniWorld:they ns1:should_have leolaniWorld:less_rights .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:fact a gaf:Instance ;
+        rdfs:label "fact" ;
+        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:they_more-people-than_whites {
-    leolaniWorld:they ns1:more_people_than leolaniWorld:whites .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:less_rights a gaf:Instance ;
+        rdfs:label "less-rights" ;
+        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:more_people_than_whites a gaf:Instance ;
+        rdfs:label "more-people-than-whites" ;
+        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:rights a gaf:Instance ;
+        rdfs:label "rights" ;
+        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
+
+    leolaniWorld:whites a gaf:Instance ;
+        rdfs:label "whites" ;
+        gaf:denotedIn leolaniTalk:chat347_utterance2_char0-127 .
 }
 

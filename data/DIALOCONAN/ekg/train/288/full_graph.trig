@@ -22,151 +22,239 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:workers_lives-of_all {
-    leolaniWorld:workers ns11:lives_of leolaniWorld:all .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Migration_bring-in_resources a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migration_bring-in_resources" ;
-        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:Migration_is_necessary a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migration_is_necessary" ;
-        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:drug_addicts_ruin_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "drug_addicts_ruin_our_country" ;
-        gaf:denotedBy leolaniTalk:chat288_utterance0_char0-123 .
-
-    leolaniWorld:immigrants_break_our_laws a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "immigrants_break_our_laws" ;
-        gaf:denotedBy leolaniTalk:chat288_utterance2_char0-112 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are_rapists a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_rapists" ;
-        gaf:denotedBy leolaniTalk:chat288_utterance0_char0-123 .
-
-    leolaniWorld:workers_can-improve_lives a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "workers_can-improve_lives" ;
-        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:workers_can-improve_lives_of_all a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "workers_can-improve_lives_of_all" ;
-        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:workers_lives-of_all a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "workers_lives-of_all" ;
-        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:workers_can-improve_lives {
-    leolaniWorld:workers ns11:can_improve leolaniWorld:lives .
-}
-
 leolaniWorld:immigrants_break_our_laws {
     leolaniWorld:immigrants ns11:break leolaniWorld:our_laws .
+}
+
+leolaniWorld:drug_addicts_ruin_our_country {
+    leolaniWorld:drug_addicts ns11:ruin leolaniWorld:our_country .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context206 a eps:Context ;
+        rdfs:label "context206" ;
+        hs:id "206"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat288 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "179"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat288 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat288" ;
+        hs:id "288"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat288_utterance0,
+            leolaniTalk:chat288_utterance1,
+            leolaniTalk:chat288_utterance2 .
+
+    leolaniTalk:chat288_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat288_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat288_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat288_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat288_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat288_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:Migration_is_necessary {
     leolaniWorld:Migration ns11:is leolaniWorld:necessary .
 }
 
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
 leolaniWorld:workers_can-improve_lives_of_all {
     leolaniWorld:workers ns11:can_improve leolaniWorld:lives_of_all .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Migration a gaf:Instance ;
-        rdfs:label "migration" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:all a gaf:Instance ;
-        rdfs:label "all" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:drug_addicts a gaf:Instance ;
-        rdfs:label "drug-addicts" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance0_char0-123 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:immigrants a gaf:Instance ;
-        rdfs:label "immigrants" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance2_char0-112 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:lives a gaf:Instance ;
-        rdfs:label "lives" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:lives_of_all a gaf:Instance ;
-        rdfs:label "lives-of-all" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:necessary a gaf:Instance ;
-        rdfs:label "necessary" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:our_country a gaf:Instance ;
-        rdfs:label "our-country" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance0_char0-123 .
-
-    leolaniWorld:our_laws a gaf:Instance ;
-        rdfs:label "our-laws" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance2_char0-112 .
-
-    leolaniWorld:rapists a gaf:Instance ;
-        rdfs:label "rapists" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance0_char0-123 .
-
-    leolaniWorld:resources a gaf:Instance ;
-        rdfs:label "resources" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance0_char0-123 .
-
-    leolaniWorld:workers a gaf:Instance ;
-        rdfs:label "workers" ;
-        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:drug_addicts_ruin_our_country {
-    leolaniWorld:drug_addicts ns11:ruin leolaniWorld:our_country .
+leolaniWorld:they_are_rapists {
+    leolaniWorld:they ns11:are leolaniWorld:rapists .
+}
+
+leolaniWorld:Migration_bring-in_resources {
+    leolaniWorld:Migration ns11:bring_in leolaniWorld:resources .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Migration_bring-in_resources_00028 a grasp:Attribution ;
+        rdfs:label "Migration_bring-in_resources_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migration_is_necessary_00028 a grasp:Attribution ;
+        rdfs:label "Migration_is_necessary_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat288_utterance2_char0-112 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat288_utterance2_char0-112" ;
+        gaf:containsDenotation leolaniWorld:immigrants,
+            leolaniWorld:our_laws ;
+        gaf:denotes leolaniWorld:immigrants_break_our_laws ;
+        grasp:hasAttribution leolaniTalk:immigrants_break_our_laws_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:28.954335"^^xml1:string ;
+        rdf:value "They don't improve our lives, immigrants break our laws! They are not welcome here, they are not worth our time."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat288_utterance2 .
+
+    leolaniTalk:drug_addicts_ruin_our_country_00028 a grasp:Attribution ;
+        rdfs:label "drug_addicts_ruin_our_country_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat288_utterance0_char0-123 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:immigrants_break_our_laws_00028 a grasp:Attribution ;
+        rdfs:label "immigrants_break_our_laws_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat288_utterance2_char0-112 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_rapists_00028 a grasp:Attribution ;
+        rdfs:label "they_are_rapists_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat288_utterance0_char0-123 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:workers_can-improve_lives_00028 a grasp:Attribution ;
+        rdfs:label "workers_can-improve_lives_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:workers_can-improve_lives_of_all_00028 a grasp:Attribution ;
+        rdfs:label "workers_can-improve_lives_of_all_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:workers_lives-of_all_00028 a grasp:Attribution ;
+        rdfs:label "workers_lives-of_all_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat288_utterance0_char0-123 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat288_utterance0_char0-123" ;
+        gaf:containsDenotation leolaniWorld:drug_addicts,
+            leolaniWorld:our_country,
+            leolaniWorld:rapists,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:drug_addicts_ruin_our_country,
+            leolaniWorld:they_are_rapists ;
+        grasp:hasAttribution leolaniTalk:drug_addicts_ruin_our_country_00028,
+            leolaniTalk:they_are_rapists_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:28.776667"^^xml1:string,
+            "2024-06-05T23:33:28.776727"^^xml1:string ;
+        rdf:value "All these migrants are coming to ruin our country, they are all rapists, drug addicts, and don't have any right to be here."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat288_utterance0 .
+
+    leolaniTalk:chat288_utterance1_char0-150 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat288_utterance1_char0-150" ;
+        gaf:containsDenotation leolaniWorld:Migration,
+            leolaniWorld:all,
+            leolaniWorld:lives,
+            leolaniWorld:lives_of_all,
+            leolaniWorld:necessary,
+            leolaniWorld:resources,
+            leolaniWorld:workers ;
+        gaf:denotes leolaniWorld:Migration_bring-in_resources,
+            leolaniWorld:Migration_is_necessary,
+            leolaniWorld:workers_can-improve_lives,
+            leolaniWorld:workers_can-improve_lives_of_all,
+            leolaniWorld:workers_lives-of_all ;
+        grasp:hasAttribution leolaniTalk:Migration_bring-in_resources_00028,
+            leolaniTalk:Migration_is_necessary_00028,
+            leolaniTalk:workers_can-improve_lives_00028,
+            leolaniTalk:workers_can-improve_lives_of_all_00028,
+            leolaniTalk:workers_lives-of_all_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:28.867378"^^xml1:string,
+            "2024-06-05T23:33:28.867435"^^xml1:string,
+            "2024-06-05T23:33:28.867458"^^xml1:string,
+            "2024-06-05T23:33:28.867480"^^xml1:string,
+            "2024-06-05T23:33:28.867501"^^xml1:string ;
+        rdf:value "Migration is necessary, to bring in resources and workers that can improve the lives of all. The causes of addiction or sexual violence lie elsewhere."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat288_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -504,218 +592,130 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Migration_bring-in_resources a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migration_bring-in_resources" ;
+        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
+
+    leolaniWorld:Migration_is_necessary a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migration_is_necessary" ;
+        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
+
+    leolaniWorld:drug_addicts_ruin_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "drug_addicts_ruin_our_country" ;
+        gaf:denotedBy leolaniTalk:chat288_utterance0_char0-123 .
+
+    leolaniWorld:immigrants_break_our_laws a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "immigrants_break_our_laws" ;
+        gaf:denotedBy leolaniTalk:chat288_utterance2_char0-112 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_rapists a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_rapists" ;
+        gaf:denotedBy leolaniTalk:chat288_utterance0_char0-123 .
+
+    leolaniWorld:workers_can-improve_lives a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "workers_can-improve_lives" ;
+        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
+
+    leolaniWorld:workers_can-improve_lives_of_all a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "workers_can-improve_lives_of_all" ;
+        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
+
+    leolaniWorld:workers_lives-of_all a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "workers_lives-of_all" ;
+        gaf:denotedBy leolaniTalk:chat288_utterance1_char0-150 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Migration_bring-in_resources_00028 a grasp:Attribution ;
-        rdfs:label "Migration_bring-in_resources_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migration_is_necessary_00028 a grasp:Attribution ;
-        rdfs:label "Migration_is_necessary_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat288_utterance2_char0-112 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat288_utterance2_char0-112" ;
-        gaf:containsDenotation leolaniWorld:immigrants,
-            leolaniWorld:our_laws ;
-        gaf:denotes leolaniWorld:immigrants_break_our_laws ;
-        grasp:hasAttribution leolaniTalk:immigrants_break_our_laws_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:28.954335"^^xml1:string ;
-        rdf:value "They don't improve our lives, immigrants break our laws! They are not welcome here, they are not worth our time."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat288_utterance2 .
-
-    leolaniTalk:drug_addicts_ruin_our_country_00028 a grasp:Attribution ;
-        rdfs:label "drug_addicts_ruin_our_country_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat288_utterance0_char0-123 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:immigrants_break_our_laws_00028 a grasp:Attribution ;
-        rdfs:label "immigrants_break_our_laws_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat288_utterance2_char0-112 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_rapists_00028 a grasp:Attribution ;
-        rdfs:label "they_are_rapists_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat288_utterance0_char0-123 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:workers_can-improve_lives_00028 a grasp:Attribution ;
-        rdfs:label "workers_can-improve_lives_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:workers_can-improve_lives_of_all_00028 a grasp:Attribution ;
-        rdfs:label "workers_can-improve_lives_of_all_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:workers_lives-of_all_00028 a grasp:Attribution ;
-        rdfs:label "workers_lives-of_all_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat288_utterance1_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat288_utterance0_char0-123 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat288_utterance0_char0-123" ;
-        gaf:containsDenotation leolaniWorld:drug_addicts,
-            leolaniWorld:our_country,
-            leolaniWorld:rapists,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:drug_addicts_ruin_our_country,
-            leolaniWorld:they_are_rapists ;
-        grasp:hasAttribution leolaniTalk:drug_addicts_ruin_our_country_00028,
-            leolaniTalk:they_are_rapists_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:28.776667"^^xml1:string,
-            "2024-06-05T23:33:28.776727"^^xml1:string ;
-        rdf:value "All these migrants are coming to ruin our country, they are all rapists, drug addicts, and don't have any right to be here."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat288_utterance0 .
-
-    leolaniTalk:chat288_utterance1_char0-150 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat288_utterance1_char0-150" ;
-        gaf:containsDenotation leolaniWorld:Migration,
-            leolaniWorld:all,
-            leolaniWorld:lives,
-            leolaniWorld:lives_of_all,
-            leolaniWorld:necessary,
-            leolaniWorld:resources,
-            leolaniWorld:workers ;
-        gaf:denotes leolaniWorld:Migration_bring-in_resources,
-            leolaniWorld:Migration_is_necessary,
-            leolaniWorld:workers_can-improve_lives,
-            leolaniWorld:workers_can-improve_lives_of_all,
-            leolaniWorld:workers_lives-of_all ;
-        grasp:hasAttribution leolaniTalk:Migration_bring-in_resources_00028,
-            leolaniTalk:Migration_is_necessary_00028,
-            leolaniTalk:workers_can-improve_lives_00028,
-            leolaniTalk:workers_can-improve_lives_of_all_00028,
-            leolaniTalk:workers_lives-of_all_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:28.867378"^^xml1:string,
-            "2024-06-05T23:33:28.867435"^^xml1:string,
-            "2024-06-05T23:33:28.867458"^^xml1:string,
-            "2024-06-05T23:33:28.867480"^^xml1:string,
-            "2024-06-05T23:33:28.867501"^^xml1:string ;
-        rdf:value "Migration is necessary, to bring in resources and workers that can improve the lives of all. The causes of addiction or sexual violence lie elsewhere."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat288_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:workers_can-improve_lives {
+    leolaniWorld:workers ns11:can_improve leolaniWorld:lives .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context206 a eps:Context ;
-        rdfs:label "context206" ;
-        hs:id "206"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:workers_lives-of_all {
+    leolaniWorld:workers ns11:lives_of leolaniWorld:all .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat288 .
+leolaniWorld:Instances {
+    leolaniWorld:Migration a gaf:Instance ;
+        rdfs:label "migration" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "179"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat288 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat288" ;
-        hs:id "288"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat288_utterance0,
-            leolaniTalk:chat288_utterance1,
-            leolaniTalk:chat288_utterance2 .
-
-    leolaniTalk:chat288_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat288_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat288_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat288_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat288_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat288_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:all a gaf:Instance ;
+        rdfs:label "all" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:drug_addicts a gaf:Instance ;
+        rdfs:label "drug-addicts" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance0_char0-123 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:they_are_rapists {
-    leolaniWorld:they ns11:are leolaniWorld:rapists .
-}
+    leolaniWorld:immigrants a gaf:Instance ;
+        rdfs:label "immigrants" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance2_char0-112 .
 
-leolaniWorld:Migration_bring-in_resources {
-    leolaniWorld:Migration ns11:bring_in leolaniWorld:resources .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:lives a gaf:Instance ;
+        rdfs:label "lives" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
+
+    leolaniWorld:lives_of_all a gaf:Instance ;
+        rdfs:label "lives-of-all" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
+
+    leolaniWorld:necessary a gaf:Instance ;
+        rdfs:label "necessary" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
+
+    leolaniWorld:our_country a gaf:Instance ;
+        rdfs:label "our-country" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance0_char0-123 .
+
+    leolaniWorld:our_laws a gaf:Instance ;
+        rdfs:label "our-laws" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance2_char0-112 .
+
+    leolaniWorld:rapists a gaf:Instance ;
+        rdfs:label "rapists" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance0_char0-123 .
+
+    leolaniWorld:resources a gaf:Instance ;
+        rdfs:label "resources" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance0_char0-123 .
+
+    leolaniWorld:workers a gaf:Instance ;
+        rdfs:label "workers" ;
+        gaf:denotedIn leolaniTalk:chat288_utterance1_char0-150 .
 }
 

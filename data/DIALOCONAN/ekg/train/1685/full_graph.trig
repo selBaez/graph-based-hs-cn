@@ -24,160 +24,239 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Drag_is_sexual {
-    leolaniWorld:Drag ns12:is leolaniWorld:sexual .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Children_are_linked a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Children_are_linked" ;
-        gaf:denotedBy leolaniTalk:chat1685_utterance1_char0-84 .
-
-    leolaniWorld:Children_is-in_drag_of_children a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Children_is-in_drag_of_children" ;
-        gaf:denotedBy leolaniTalk:chat1685_utterance1_char0-84 .
-
-    leolaniWorld:Drag_is_sexual a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Drag_is_sexual" ;
-        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:Drag_is_very_sexual a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Drag_is_very_sexual" ;
-        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:boys_wearing_heels a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "boys_wearing_heels" ;
-        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
-
-    ns1:s-bound-to_mess a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_’s-bound-to_mess" ;
-        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
-
-    ns1:s-bound-with_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_’s-bound-with_them" ;
-        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
-
-    ns1:s_bound a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_’s_bound" ;
-        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
-
-    ns1:s_bound_to_mess_with_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_’s_bound_to_mess_with_them" ;
-        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Children_is-in_drag_of_children {
-    leolaniWorld:Children ns12:is_in leolaniWorld:drag_of_children .
-}
-
-ns1:s-bound-with_them {
-    leolaniWorld:it ns2:s_bound_with leolaniWorld:them .
+ns1:s_bound {
+    leolaniWorld:it ns2:s leolaniWorld:bound .
 }
 
 leolaniWorld:boys_wearing_heels {
     leolaniWorld:boys ns12:wearing leolaniWorld:heels .
 }
 
+leolaniWorld:Children_is-in_drag_of_children {
+    leolaniWorld:Children ns12:is_in leolaniWorld:drag_of_children .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context149 a eps:Context ;
+        rdfs:label "context149" ;
+        hs:id "149"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1685 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "23"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1685 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1685" ;
+        hs:id "1685"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1685_utterance1,
+            leolaniTalk:chat1685_utterance2 .
+
+    leolaniTalk:chat1685_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1685_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1685_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1685_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+ns1:s-bound-to_mess {
+    leolaniWorld:it ns2:s_bound_to leolaniWorld:mess .
+}
+
+ns1:s-bound-with_them {
+    leolaniWorld:it ns2:s_bound_with leolaniWorld:them .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 ns1:s_bound_to_mess_with_them {
     leolaniWorld:it ns2:s leolaniWorld:bound_to_mess_with_them .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Children a gaf:Instance ;
-        rdfs:label "children" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance1_char0-84 .
-
-    leolaniWorld:Drag a gaf:Instance ;
-        rdfs:label "drag" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:bound a gaf:Instance ;
-        rdfs:label "bound" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:bound_to_mess_with_them a gaf:Instance ;
-        rdfs:label "bound-to-mess-with-them" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:boys a gaf:Instance ;
-        rdfs:label "boys" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:drag_of_children a gaf:Instance ;
-        rdfs:label "drag-of-children" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance1_char0-84 .
-
-    leolaniWorld:heels a gaf:Instance ;
-        rdfs:label "heels" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:linked a gaf:Instance ;
-        rdfs:label "linked" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance1_char0-84 .
-
-    leolaniWorld:mess a gaf:Instance ;
-        rdfs:label "mess" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:sexual a gaf:Instance ;
-        rdfs:label "sexual" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
-
-    leolaniWorld:very_sexual a gaf:Instance ;
-        rdfs:label "very-sexual" ;
-        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Drag_is_very_sexual {
-    leolaniWorld:Drag ns12:is leolaniWorld:very_sexual .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Children_are_linked_00028 a grasp:Attribution ;
+        rdfs:label "Children_are_linked_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1685_utterance1_char0-84 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Children_are_linked {
-    leolaniWorld:Children ns12:are leolaniWorld:linked .
+    leolaniTalk:Children_is-in_drag_of_children_00028 a grasp:Attribution ;
+        rdfs:label "Children_is-in_drag_of_children_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1685_utterance1_char0-84 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Drag_is_sexual_00022 a grasp:Attribution ;
+        rdfs:label "Drag_is_sexual_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Drag_is_very_sexual_00022 a grasp:Attribution ;
+        rdfs:label "Drag_is_very_sexual_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:boys_wearing_heels_00022 a grasp:Attribution ;
+        rdfs:label "boys_wearing_heels_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/it_’s-bound-to_mess_00022> a grasp:Attribution ;
+        rdfs:label "it_’s-bound-to_mess_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/it_’s-bound-with_them_00022> a grasp:Attribution ;
+        rdfs:label "it_’s-bound-with_them_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/it_’s_bound_00022> a grasp:Attribution ;
+        rdfs:label "it_’s_bound_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/it_’s_bound_to_mess_with_them_00022> a grasp:Attribution ;
+        rdfs:label "it_’s_bound_to_mess_with_them_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1685_utterance1_char0-84 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1685_utterance1_char0-84" ;
+        gaf:containsDenotation leolaniWorld:Children,
+            leolaniWorld:drag_of_children,
+            leolaniWorld:linked ;
+        gaf:denotes leolaniWorld:Children_are_linked,
+            leolaniWorld:Children_is-in_drag_of_children ;
+        grasp:hasAttribution leolaniTalk:Children_are_linked_00028,
+            leolaniTalk:Children_is-in_drag_of_children_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:13.987928"^^xml1:string,
+            "2024-06-05T22:59:13.987986"^^xml1:string ;
+        rdf:value "Children in drag and sexualization of children aren't linked, why do you think that?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1685_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat1685_utterance2_char0-92 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1685_utterance2_char0-92" ;
+        gaf:containsDenotation leolaniWorld:Drag,
+            leolaniWorld:bound,
+            leolaniWorld:bound_to_mess_with_them,
+            leolaniWorld:boys,
+            leolaniWorld:heels,
+            leolaniWorld:it,
+            leolaniWorld:mess,
+            leolaniWorld:sexual,
+            leolaniWorld:them,
+            leolaniWorld:very_sexual ;
+        gaf:denotes leolaniWorld:Drag_is_sexual,
+            leolaniWorld:Drag_is_very_sexual,
+            leolaniWorld:boys_wearing_heels,
+            ns1:s-bound-to_mess,
+            ns1:s-bound-with_them,
+            ns1:s_bound,
+            ns1:s_bound_to_mess_with_them ;
+        grasp:hasAttribution leolaniTalk:Drag_is_sexual_00022,
+            leolaniTalk:Drag_is_very_sexual_00022,
+            leolaniTalk:boys_wearing_heels_00022,
+            <http://cltl.nl/leolani/talk/it_’s-bound-to_mess_00022>,
+            <http://cltl.nl/leolani/talk/it_’s-bound-with_them_00022>,
+            <http://cltl.nl/leolani/talk/it_’s_bound_00022>,
+            <http://cltl.nl/leolani/talk/it_’s_bound_to_mess_with_them_00022> ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:14.090924"^^xml1:string,
+            "2024-06-05T22:59:14.090980"^^xml1:string,
+            "2024-06-05T22:59:14.091006"^^xml1:string,
+            "2024-06-05T22:59:14.091031"^^xml1:string,
+            "2024-06-05T22:59:14.091055"^^xml1:string,
+            "2024-06-05T22:59:14.091079"^^xml1:string,
+            "2024-06-05T22:59:14.091105"^^xml1:string ;
+        rdf:value "Drag is very sexual, you’ve got boys wearing heels and makeup, it’s bound to mess with them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1685_utterance2 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -515,218 +594,139 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-ns1:s_bound {
-    leolaniWorld:it ns2:s leolaniWorld:bound .
+leolaniWorld:Drag_is_sexual {
+    leolaniWorld:Drag ns12:is leolaniWorld:sexual .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-ns1:s-bound-to_mess {
-    leolaniWorld:it ns2:s_bound_to leolaniWorld:mess .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Children_are_linked_00028 a grasp:Attribution ;
-        rdfs:label "Children_are_linked_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1685_utterance1_char0-84 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Children_is-in_drag_of_children_00028 a grasp:Attribution ;
-        rdfs:label "Children_is-in_drag_of_children_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1685_utterance1_char0-84 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Drag_is_sexual_00022 a grasp:Attribution ;
-        rdfs:label "Drag_is_sexual_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Drag_is_very_sexual_00022 a grasp:Attribution ;
-        rdfs:label "Drag_is_very_sexual_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:boys_wearing_heels_00022 a grasp:Attribution ;
-        rdfs:label "boys_wearing_heels_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/it_’s-bound-to_mess_00022> a grasp:Attribution ;
-        rdfs:label "it_’s-bound-to_mess_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/it_’s-bound-with_them_00022> a grasp:Attribution ;
-        rdfs:label "it_’s-bound-with_them_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/it_’s_bound_00022> a grasp:Attribution ;
-        rdfs:label "it_’s_bound_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/it_’s_bound_to_mess_with_them_00022> a grasp:Attribution ;
-        rdfs:label "it_’s_bound_to_mess_with_them_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1685_utterance2_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1685_utterance1_char0-84 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1685_utterance1_char0-84" ;
-        gaf:containsDenotation leolaniWorld:Children,
-            leolaniWorld:drag_of_children,
-            leolaniWorld:linked ;
-        gaf:denotes leolaniWorld:Children_are_linked,
-            leolaniWorld:Children_is-in_drag_of_children ;
-        grasp:hasAttribution leolaniTalk:Children_are_linked_00028,
-            leolaniTalk:Children_is-in_drag_of_children_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:13.987928"^^xml1:string,
-            "2024-06-05T22:59:13.987986"^^xml1:string ;
-        rdf:value "Children in drag and sexualization of children aren't linked, why do you think that?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1685_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat1685_utterance2_char0-92 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1685_utterance2_char0-92" ;
-        gaf:containsDenotation leolaniWorld:Drag,
-            leolaniWorld:bound,
-            leolaniWorld:bound_to_mess_with_them,
-            leolaniWorld:boys,
-            leolaniWorld:heels,
-            leolaniWorld:it,
-            leolaniWorld:mess,
-            leolaniWorld:sexual,
-            leolaniWorld:them,
-            leolaniWorld:very_sexual ;
-        gaf:denotes leolaniWorld:Drag_is_sexual,
-            leolaniWorld:Drag_is_very_sexual,
-            leolaniWorld:boys_wearing_heels,
-            ns1:s-bound-to_mess,
-            ns1:s-bound-with_them,
-            ns1:s_bound,
-            ns1:s_bound_to_mess_with_them ;
-        grasp:hasAttribution leolaniTalk:Drag_is_sexual_00022,
-            leolaniTalk:Drag_is_very_sexual_00022,
-            leolaniTalk:boys_wearing_heels_00022,
-            <http://cltl.nl/leolani/talk/it_’s-bound-to_mess_00022>,
-            <http://cltl.nl/leolani/talk/it_’s-bound-with_them_00022>,
-            <http://cltl.nl/leolani/talk/it_’s_bound_00022>,
-            <http://cltl.nl/leolani/talk/it_’s_bound_to_mess_with_them_00022> ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:14.090924"^^xml1:string,
-            "2024-06-05T22:59:14.090980"^^xml1:string,
-            "2024-06-05T22:59:14.091006"^^xml1:string,
-            "2024-06-05T22:59:14.091031"^^xml1:string,
-            "2024-06-05T22:59:14.091055"^^xml1:string,
-            "2024-06-05T22:59:14.091079"^^xml1:string,
-            "2024-06-05T22:59:14.091105"^^xml1:string ;
-        rdf:value "Drag is very sexual, you’ve got boys wearing heels and makeup, it’s bound to mess with them."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1685_utterance2 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context149 a eps:Context ;
-        rdfs:label "context149" ;
-        hs:id "149"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1685 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "23"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1685 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Children_are_linked a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1685" ;
-        hs:id "1685"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1685_utterance1,
-            leolaniTalk:chat1685_utterance2 .
+        rdfs:label "Children_are_linked" ;
+        gaf:denotedBy leolaniTalk:chat1685_utterance1_char0-84 .
 
-    leolaniTalk:chat1685_utterance1 a grasp:Utterance,
+    leolaniWorld:Children_is-in_drag_of_children a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1685_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Children_is-in_drag_of_children" ;
+        gaf:denotedBy leolaniTalk:chat1685_utterance1_char0-84 .
 
-    leolaniTalk:chat1685_utterance2 a grasp:Utterance,
+    leolaniWorld:Drag_is_sexual a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1685_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Drag_is_sexual" ;
+        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Drag_is_very_sexual a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Drag_is_very_sexual" ;
+        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:boys_wearing_heels a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "boys_wearing_heels" ;
+        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
+
+    ns1:s-bound-to_mess a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_’s-bound-to_mess" ;
+        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
+
+    ns1:s-bound-with_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_’s-bound-with_them" ;
+        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
+
+    ns1:s_bound a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_’s_bound" ;
+        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
+
+    ns1:s_bound_to_mess_with_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_’s_bound_to_mess_with_them" ;
+        gaf:denotedBy leolaniTalk:chat1685_utterance2_char0-92 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Drag_is_very_sexual {
+    leolaniWorld:Drag ns12:is leolaniWorld:very_sexual .
+}
+
+leolaniWorld:Children_are_linked {
+    leolaniWorld:Children ns12:are leolaniWorld:linked .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Children a gaf:Instance ;
+        rdfs:label "children" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance1_char0-84 .
+
+    leolaniWorld:Drag a gaf:Instance ;
+        rdfs:label "drag" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
+
+    leolaniWorld:bound a gaf:Instance ;
+        rdfs:label "bound" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
+
+    leolaniWorld:bound_to_mess_with_them a gaf:Instance ;
+        rdfs:label "bound-to-mess-with-them" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
+
+    leolaniWorld:boys a gaf:Instance ;
+        rdfs:label "boys" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:drag_of_children a gaf:Instance ;
+        rdfs:label "drag-of-children" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance1_char0-84 .
+
+    leolaniWorld:heels a gaf:Instance ;
+        rdfs:label "heels" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:linked a gaf:Instance ;
+        rdfs:label "linked" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance1_char0-84 .
+
+    leolaniWorld:mess a gaf:Instance ;
+        rdfs:label "mess" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
+
+    leolaniWorld:sexual a gaf:Instance ;
+        rdfs:label "sexual" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
+
+    leolaniWorld:very_sexual a gaf:Instance ;
+        rdfs:label "very-sexual" ;
+        gaf:denotedIn leolaniTalk:chat1685_utterance2_char0-92 .
 }
 

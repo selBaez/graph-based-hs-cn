@@ -22,48 +22,79 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Crime_are_brought_by_immigrants a gaf:Assertion,
+leolaniWorld:there_can-be_understanding {
+    leolaniWorld:there ns11:can_be leolaniWorld:understanding .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context120 a eps:Context ;
+        rdfs:label "context120" ;
+        hs:id "120"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat908 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "36"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat908 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Crime_are_brought_by_immigrants" ;
-        gaf:denotedBy leolaniTalk:chat908_utterance2_char0-92 .
+        rdfs:label "chat908" ;
+        hs:id "908"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat908_utterance1,
+            leolaniTalk:chat908_utterance2 .
 
-    leolaniWorld:Crime_are_brought_to_our_cities_by_immigrants a gaf:Assertion,
+    leolaniTalk:chat908_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Crime_are_brought_to_our_cities_by_immigrants" ;
-        gaf:denotedBy leolaniTalk:chat908_utterance2_char0-92 .
+        rdfs:label "chat908_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:Intolerance_will_will_resolved a gaf:Assertion,
+    leolaniTalk:chat908_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Intolerance_will_will_resolved" ;
-        gaf:denotedBy leolaniTalk:chat908_utterance1_char0-110 .
+        rdfs:label "chat908_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:there_can-be_understanding a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "there_can-be_understanding" ;
-        gaf:denotedBy leolaniTalk:chat908_utterance2_char0-92 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:theycannot_be_confronted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "theycannot_be_confronted" ;
-        gaf:denotedBy leolaniTalk:chat908_utterance1_char0-110 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:theycannot_be_if_confronted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "theycannot_be_if_confronted" ;
-        gaf:denotedBy leolaniTalk:chat908_utterance1_char0-110 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
@@ -74,69 +105,107 @@ leolaniWorld:theycannot_be_if_confronted {
     leolaniWorld:theycannot ns11:be leolaniWorld:if_confronted .
 }
 
-leolaniWorld:Crime_are_brought_by_immigrants {
-    leolaniWorld:Crime ns11:are leolaniWorld:brought_by_immigrants .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Crime a gaf:Instance ;
-        rdfs:label "crime" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
-
-    leolaniWorld:Intolerance a gaf:Instance ;
-        rdfs:label "intolerance" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
-
-    leolaniWorld:brought_by_immigrants a gaf:Instance ;
-        rdfs:label "brought-by-immigrants" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
-
-    leolaniWorld:brought_to_our_cities_by_immigrants a gaf:Instance ;
-        rdfs:label "brought-to-our-cities-by-immigrants" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:confronted a gaf:Instance ;
-        rdfs:label "confronted" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:if_confronted a gaf:Instance ;
-        rdfs:label "if-confronted" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:there a gaf:Instance ;
-        rdfs:label "there" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
-
-    leolaniWorld:theycannot a gaf:Instance ;
-        rdfs:label "theycannot" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
-
-    leolaniWorld:understanding a gaf:Instance ;
-        rdfs:label "understanding" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
-
-    leolaniWorld:will_resolved a gaf:Instance ;
-        rdfs:label "will-resolved" ;
-        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
-}
-
 leolaniWorld:Crime_are_brought_to_our_cities_by_immigrants {
     leolaniWorld:Crime ns11:are leolaniWorld:brought_to_our_cities_by_immigrants .
 }
 
-leolaniWorld:Intolerance_will_will_resolved {
-    leolaniWorld:Intolerance ns11:will leolaniWorld:will_resolved .
+leolaniTalk:Perspectives {
+    leolaniTalk:Crime_are_brought_by_immigrants_00028 a grasp:Attribution ;
+        rdfs:label "Crime_are_brought_by_immigrants_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat908_utterance2_char0-92 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Crime_are_brought_to_our_cities_by_immigrants_00028 a grasp:Attribution ;
+        rdfs:label "Crime_are_brought_to_our_cities_by_immigrants_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat908_utterance2_char0-92 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Intolerance_will_will_resolved_00028 a grasp:Attribution ;
+        rdfs:label "Intolerance_will_will_resolved_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat908_utterance1_char0-110 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:there_can-be_understanding_00028 a grasp:Attribution ;
+        rdfs:label "there_can-be_understanding_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat908_utterance2_char0-92 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:theycannot_be_confronted_00028 a grasp:Attribution ;
+        rdfs:label "theycannot_be_confronted_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat908_utterance1_char0-110 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:theycannot_be_if_confronted_00028 a grasp:Attribution ;
+        rdfs:label "theycannot_be_if_confronted_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat908_utterance1_char0-110 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat908_utterance1_char0-110 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat908_utterance1_char0-110" ;
+        gaf:containsDenotation leolaniWorld:Intolerance,
+            leolaniWorld:confronted,
+            leolaniWorld:if_confronted,
+            leolaniWorld:theycannot,
+            leolaniWorld:will_resolved ;
+        gaf:denotes leolaniWorld:Intolerance_will_will_resolved,
+            leolaniWorld:theycannot_be_confronted,
+            leolaniWorld:theycannot_be_if_confronted ;
+        grasp:hasAttribution leolaniTalk:Intolerance_will_will_resolved_00028,
+            leolaniTalk:theycannot_be_confronted_00028,
+            leolaniTalk:theycannot_be_if_confronted_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:21.576795"^^xml1:string,
+            "2024-06-05T23:09:21.576857"^^xml1:string,
+            "2024-06-05T23:09:21.576880"^^xml1:string ;
+        rdf:value "Intolerance and violence will never be resolved if theycannot be confronted and mutual understanding promoted."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat908_utterance1 .
+
+    leolaniTalk:chat908_utterance2_char0-92 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat908_utterance2_char0-92" ;
+        gaf:containsDenotation leolaniWorld:Crime,
+            leolaniWorld:brought_by_immigrants,
+            leolaniWorld:brought_to_our_cities_by_immigrants,
+            leolaniWorld:there,
+            leolaniWorld:understanding ;
+        gaf:denotes leolaniWorld:Crime_are_brought_by_immigrants,
+            leolaniWorld:Crime_are_brought_to_our_cities_by_immigrants,
+            leolaniWorld:there_can-be_understanding ;
+        grasp:hasAttribution leolaniTalk:Crime_are_brought_by_immigrants_00028,
+            leolaniTalk:Crime_are_brought_to_our_cities_by_immigrants_00028,
+            leolaniTalk:there_can-be_understanding_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:21.670126"^^xml1:string,
+            "2024-06-05T23:09:21.670181"^^xml1:string,
+            "2024-06-05T23:09:21.670205"^^xml1:string ;
+        rdf:value "Crime and violence are brought to our cities by immigrants, what understanding can there be?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat908_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -474,181 +543,112 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Intolerance_will_will_resolved {
+    leolaniWorld:Intolerance ns11:will leolaniWorld:will_resolved .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Crime_are_brought_by_immigrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Crime_are_brought_by_immigrants" ;
+        gaf:denotedBy leolaniTalk:chat908_utterance2_char0-92 .
+
+    leolaniWorld:Crime_are_brought_to_our_cities_by_immigrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Crime_are_brought_to_our_cities_by_immigrants" ;
+        gaf:denotedBy leolaniTalk:chat908_utterance2_char0-92 .
+
+    leolaniWorld:Intolerance_will_will_resolved a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Intolerance_will_will_resolved" ;
+        gaf:denotedBy leolaniTalk:chat908_utterance1_char0-110 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:there_can-be_understanding a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "there_can-be_understanding" ;
+        gaf:denotedBy leolaniTalk:chat908_utterance2_char0-92 .
+
+    leolaniWorld:theycannot_be_confronted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "theycannot_be_confronted" ;
+        gaf:denotedBy leolaniTalk:chat908_utterance1_char0-110 .
+
+    leolaniWorld:theycannot_be_if_confronted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "theycannot_be_if_confronted" ;
+        gaf:denotedBy leolaniTalk:chat908_utterance1_char0-110 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Crime_are_brought_by_immigrants {
+    leolaniWorld:Crime ns11:are leolaniWorld:brought_by_immigrants .
+}
+
 leolaniWorld:theycannot_be_confronted {
     leolaniWorld:theycannot ns11:be leolaniWorld:confronted .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Crime a gaf:Instance ;
+        rdfs:label "crime" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Crime_are_brought_by_immigrants_00028 a grasp:Attribution ;
-        rdfs:label "Crime_are_brought_by_immigrants_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat908_utterance2_char0-92 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Intolerance a gaf:Instance ;
+        rdfs:label "intolerance" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
 
-    leolaniTalk:Crime_are_brought_to_our_cities_by_immigrants_00028 a grasp:Attribution ;
-        rdfs:label "Crime_are_brought_to_our_cities_by_immigrants_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat908_utterance2_char0-92 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:brought_by_immigrants a gaf:Instance ;
+        rdfs:label "brought-by-immigrants" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
 
-    leolaniTalk:Intolerance_will_will_resolved_00028 a grasp:Attribution ;
-        rdfs:label "Intolerance_will_will_resolved_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat908_utterance1_char0-110 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:there_can-be_understanding_00028 a grasp:Attribution ;
-        rdfs:label "there_can-be_understanding_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat908_utterance2_char0-92 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:theycannot_be_confronted_00028 a grasp:Attribution ;
-        rdfs:label "theycannot_be_confronted_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat908_utterance1_char0-110 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:theycannot_be_if_confronted_00028 a grasp:Attribution ;
-        rdfs:label "theycannot_be_if_confronted_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat908_utterance1_char0-110 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat908_utterance1_char0-110 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat908_utterance1_char0-110" ;
-        gaf:containsDenotation leolaniWorld:Intolerance,
-            leolaniWorld:confronted,
-            leolaniWorld:if_confronted,
-            leolaniWorld:theycannot,
-            leolaniWorld:will_resolved ;
-        gaf:denotes leolaniWorld:Intolerance_will_will_resolved,
-            leolaniWorld:theycannot_be_confronted,
-            leolaniWorld:theycannot_be_if_confronted ;
-        grasp:hasAttribution leolaniTalk:Intolerance_will_will_resolved_00028,
-            leolaniTalk:theycannot_be_confronted_00028,
-            leolaniTalk:theycannot_be_if_confronted_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:21.576795"^^xml1:string,
-            "2024-06-05T23:09:21.576857"^^xml1:string,
-            "2024-06-05T23:09:21.576880"^^xml1:string ;
-        rdf:value "Intolerance and violence will never be resolved if theycannot be confronted and mutual understanding promoted."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat908_utterance1 .
-
-    leolaniTalk:chat908_utterance2_char0-92 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat908_utterance2_char0-92" ;
-        gaf:containsDenotation leolaniWorld:Crime,
-            leolaniWorld:brought_by_immigrants,
-            leolaniWorld:brought_to_our_cities_by_immigrants,
-            leolaniWorld:there,
-            leolaniWorld:understanding ;
-        gaf:denotes leolaniWorld:Crime_are_brought_by_immigrants,
-            leolaniWorld:Crime_are_brought_to_our_cities_by_immigrants,
-            leolaniWorld:there_can-be_understanding ;
-        grasp:hasAttribution leolaniTalk:Crime_are_brought_by_immigrants_00028,
-            leolaniTalk:Crime_are_brought_to_our_cities_by_immigrants_00028,
-            leolaniTalk:there_can-be_understanding_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:21.670126"^^xml1:string,
-            "2024-06-05T23:09:21.670181"^^xml1:string,
-            "2024-06-05T23:09:21.670205"^^xml1:string ;
-        rdf:value "Crime and violence are brought to our cities by immigrants, what understanding can there be?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat908_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context120 a eps:Context ;
-        rdfs:label "context120" ;
-        hs:id "120"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat908 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "36"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat908 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat908" ;
-        hs:id "908"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat908_utterance1,
-            leolaniTalk:chat908_utterance2 .
-
-    leolaniTalk:chat908_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat908_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat908_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat908_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:brought_to_our_cities_by_immigrants a gaf:Instance ;
+        rdfs:label "brought-to-our-cities-by-immigrants" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:confronted a gaf:Instance ;
+        rdfs:label "confronted" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
 
-leolaniWorld:there_can-be_understanding {
-    leolaniWorld:there ns11:can_be leolaniWorld:understanding .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:if_confronted a gaf:Instance ;
+        rdfs:label "if-confronted" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:there a gaf:Instance ;
+        rdfs:label "there" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
+
+    leolaniWorld:theycannot a gaf:Instance ;
+        rdfs:label "theycannot" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
+
+    leolaniWorld:understanding a gaf:Instance ;
+        rdfs:label "understanding" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance2_char0-92 .
+
+    leolaniWorld:will_resolved a gaf:Instance ;
+        rdfs:label "will-resolved" ;
+        gaf:denotedIn leolaniTalk:chat908_utterance1_char0-110 .
 }
 

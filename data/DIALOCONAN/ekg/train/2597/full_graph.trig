@@ -22,54 +22,81 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:It_has_time a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_time" ;
-        gaf:denotedBy leolaniTalk:chat2597_utterance2_char0-75 .
-
-    leolaniWorld:its_adherents_are_criminals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "its_adherents_are_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2597_utterance4_char0-70 .
-
-    leolaniWorld:its_adherents_are_why_criminals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "its_adherents_are_why_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2597_utterance4_char0-70 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:us_get_because_not_peaceful_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "us_get_because_not_peaceful_religion" ;
-        gaf:denotedBy leolaniTalk:chat2597_utterance2_char0-75 .
-
-    leolaniWorld:us_get_not_peaceful_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "us_get_not_peaceful_religion" ;
-        gaf:denotedBy leolaniTalk:chat2597_utterance2_char0-75 .
-
-    leolaniWorld:us_rid-of_Islam a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "us_rid-of_Islam" ;
-        gaf:denotedBy leolaniTalk:chat2597_utterance2_char0-75 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:its_adherents_are_criminals {
     leolaniWorld:its_adherents ns1:are leolaniWorld:criminals .
 }
 
-leolaniWorld:us_get_because_not_peaceful_religion {
-    leolaniWorld:us ns1:get leolaniWorld:because_not_peaceful_religion .
-}
-
 leolaniWorld:us_rid-of_Islam {
     leolaniWorld:us ns1:rid_of leolaniWorld:Islam .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context137 a eps:Context ;
+        rdfs:label "context137" ;
+        hs:id "137"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2597 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "34"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2597 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2597" ;
+        hs:id "2597"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2597_utterance2,
+            leolaniTalk:chat2597_utterance4 .
+
+    leolaniTalk:chat2597_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2597_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2597_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2597_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:us_get_because_not_peaceful_religion {
+    leolaniWorld:us ns1:get leolaniWorld:because_not_peaceful_religion .
 }
 
 leolaniWorld:It_has_time {
@@ -80,49 +107,106 @@ leolaniWorld:us_get_not_peaceful_religion {
     leolaniWorld:us ns1:get leolaniWorld:not_peaceful_religion .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
+leolaniTalk:Perspectives {
+    leolaniTalk:It_has_time_0007 a grasp:Attribution ;
+        rdfs:label "It_has_time_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat2597_utterance2_char0-75 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
+    leolaniTalk:its_adherents_are_criminals_00023 a grasp:Attribution ;
+        rdfs:label "its_adherents_are_criminals_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2597_utterance4_char0-70 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:because_not_peaceful_religion a gaf:Instance ;
-        rdfs:label "because-not-peaceful-religion" ;
-        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
+    leolaniTalk:its_adherents_are_why_criminals_00023 a grasp:Attribution ;
+        rdfs:label "its_adherents_are_why_criminals_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2597_utterance4_char0-70 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:criminals a gaf:Instance ;
-        rdfs:label "criminals" ;
-        gaf:denotedIn leolaniTalk:chat2597_utterance4_char0-70 .
+    leolaniTalk:us_get_because_not_peaceful_religion_0007 a grasp:Attribution ;
+        rdfs:label "us_get_because_not_peaceful_religion_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat2597_utterance2_char0-75 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:us_get_not_peaceful_religion_0007 a grasp:Attribution ;
+        rdfs:label "us_get_not_peaceful_religion_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat2597_utterance2_char0-75 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:its_adherents a gaf:Instance ;
-        rdfs:label "its-adherents" ;
-        gaf:denotedIn leolaniTalk:chat2597_utterance4_char0-70 .
+    leolaniTalk:us_rid-of_Islam_0007 a grasp:Attribution ;
+        rdfs:label "us_rid-of_Islam_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat2597_utterance2_char0-75 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat2597_utterance4_char0-70 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2597_utterance4_char0-70" ;
+        gaf:containsDenotation leolaniWorld:criminals,
+            leolaniWorld:its_adherents,
+            leolaniWorld:why_criminals ;
+        gaf:denotes leolaniWorld:its_adherents_are_criminals,
+            leolaniWorld:its_adherents_are_why_criminals ;
+        grasp:hasAttribution leolaniTalk:its_adherents_are_criminals_00023,
+            leolaniTalk:its_adherents_are_why_criminals_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:58.756450"^^xml1:string,
+            "2024-06-05T23:09:58.756511"^^xml1:string ;
+        rdf:value "No, Islam is not peaceful, that's why its adherents are all criminals."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2597_utterance4 .
 
-    leolaniWorld:not_peaceful_religion a gaf:Instance ;
-        rdfs:label "not-peaceful-religion" ;
-        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
 
-    leolaniWorld:time a gaf:Instance ;
-        rdfs:label "time" ;
-        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
+    leolaniTalk:chat2597_utterance2_char0-75 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2597_utterance2_char0-75" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:It,
+            leolaniWorld:because_not_peaceful_religion,
+            leolaniWorld:not_peaceful_religion,
+            leolaniWorld:time,
+            leolaniWorld:us ;
+        gaf:denotes leolaniWorld:It_has_time,
+            leolaniWorld:us_get_because_not_peaceful_religion,
+            leolaniWorld:us_get_not_peaceful_religion,
+            leolaniWorld:us_rid-of_Islam ;
+        grasp:hasAttribution leolaniTalk:It_has_time_0007,
+            leolaniTalk:us_get_because_not_peaceful_religion_0007,
+            leolaniTalk:us_get_not_peaceful_religion_0007,
+            leolaniTalk:us_rid-of_Islam_0007 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:58.575451"^^xml1:string,
+            "2024-06-05T23:09:58.575518"^^xml1:string,
+            "2024-06-05T23:09:58.575542"^^xml1:string,
+            "2024-06-05T23:09:58.575574"^^xml1:string ;
+        rdf:value "It's time for us to get rid of Islam because it is not a peaceful religion."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2597_utterance2 .
 
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
+    graspe:CARING a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CARING" .
 
-    leolaniWorld:why_criminals a gaf:Instance ;
-        rdfs:label "why-criminals" ;
-        gaf:denotedIn leolaniTalk:chat2597_utterance4_char0-70 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -464,170 +548,86 @@ leolaniWorld:its_adherents_are_why_criminals {
     leolaniWorld:its_adherents ns1:are leolaniWorld:why_criminals .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:It_has_time a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_time" ;
+        gaf:denotedBy leolaniTalk:chat2597_utterance2_char0-75 .
+
+    leolaniWorld:its_adherents_are_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "its_adherents_are_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2597_utterance4_char0-70 .
+
+    leolaniWorld:its_adherents_are_why_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "its_adherents_are_why_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2597_utterance4_char0-70 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:us_get_because_not_peaceful_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "us_get_because_not_peaceful_religion" ;
+        gaf:denotedBy leolaniTalk:chat2597_utterance2_char0-75 .
+
+    leolaniWorld:us_get_not_peaceful_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "us_get_not_peaceful_religion" ;
+        gaf:denotedBy leolaniTalk:chat2597_utterance2_char0-75 .
+
+    leolaniWorld:us_rid-of_Islam a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "us_rid-of_Islam" ;
+        gaf:denotedBy leolaniTalk:chat2597_utterance2_char0-75 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:It_has_time_0007 a grasp:Attribution ;
-        rdfs:label "It_has_time_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat2597_utterance2_char0-75 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
 
-    leolaniTalk:its_adherents_are_criminals_00023 a grasp:Attribution ;
-        rdfs:label "its_adherents_are_criminals_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2597_utterance4_char0-70 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
 
-    leolaniTalk:its_adherents_are_why_criminals_00023 a grasp:Attribution ;
-        rdfs:label "its_adherents_are_why_criminals_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2597_utterance4_char0-70 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:because_not_peaceful_religion a gaf:Instance ;
+        rdfs:label "because-not-peaceful-religion" ;
+        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
 
-    leolaniTalk:us_get_because_not_peaceful_religion_0007 a grasp:Attribution ;
-        rdfs:label "us_get_because_not_peaceful_religion_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat2597_utterance2_char0-75 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:us_get_not_peaceful_religion_0007 a grasp:Attribution ;
-        rdfs:label "us_get_not_peaceful_religion_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat2597_utterance2_char0-75 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:us_rid-of_Islam_0007 a grasp:Attribution ;
-        rdfs:label "us_rid-of_Islam_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat2597_utterance2_char0-75 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2597_utterance4_char0-70 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2597_utterance4_char0-70" ;
-        gaf:containsDenotation leolaniWorld:criminals,
-            leolaniWorld:its_adherents,
-            leolaniWorld:why_criminals ;
-        gaf:denotes leolaniWorld:its_adherents_are_criminals,
-            leolaniWorld:its_adherents_are_why_criminals ;
-        grasp:hasAttribution leolaniTalk:its_adherents_are_criminals_00023,
-            leolaniTalk:its_adherents_are_why_criminals_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:58.756450"^^xml1:string,
-            "2024-06-05T23:09:58.756511"^^xml1:string ;
-        rdf:value "No, Islam is not peaceful, that's why its adherents are all criminals."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2597_utterance4 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat2597_utterance2_char0-75 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2597_utterance2_char0-75" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:It,
-            leolaniWorld:because_not_peaceful_religion,
-            leolaniWorld:not_peaceful_religion,
-            leolaniWorld:time,
-            leolaniWorld:us ;
-        gaf:denotes leolaniWorld:It_has_time,
-            leolaniWorld:us_get_because_not_peaceful_religion,
-            leolaniWorld:us_get_not_peaceful_religion,
-            leolaniWorld:us_rid-of_Islam ;
-        grasp:hasAttribution leolaniTalk:It_has_time_0007,
-            leolaniTalk:us_get_because_not_peaceful_religion_0007,
-            leolaniTalk:us_get_not_peaceful_religion_0007,
-            leolaniTalk:us_rid-of_Islam_0007 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:58.575451"^^xml1:string,
-            "2024-06-05T23:09:58.575518"^^xml1:string,
-            "2024-06-05T23:09:58.575542"^^xml1:string,
-            "2024-06-05T23:09:58.575574"^^xml1:string ;
-        rdf:value "It's time for us to get rid of Islam because it is not a peaceful religion."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2597_utterance2 .
-
-    graspe:CARING a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CARING" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context137 a eps:Context ;
-        rdfs:label "context137" ;
-        hs:id "137"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2597 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "34"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2597 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2597" ;
-        hs:id "2597"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2597_utterance2,
-            leolaniTalk:chat2597_utterance4 .
-
-    leolaniTalk:chat2597_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2597_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2597_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2597_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:criminals a gaf:Instance ;
+        rdfs:label "criminals" ;
+        gaf:denotedIn leolaniTalk:chat2597_utterance4_char0-70 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:its_adherents a gaf:Instance ;
+        rdfs:label "its-adherents" ;
+        gaf:denotedIn leolaniTalk:chat2597_utterance4_char0-70 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:not_peaceful_religion a gaf:Instance ;
+        rdfs:label "not-peaceful-religion" ;
+        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
+
+    leolaniWorld:time a gaf:Instance ;
+        rdfs:label "time" ;
+        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat2597_utterance2_char0-75 .
+
+    leolaniWorld:why_criminals a gaf:Instance ;
+        rdfs:label "why-criminals" ;
+        gaf:denotedIn leolaniTalk:chat2597_utterance4_char0-70 .
 }
 

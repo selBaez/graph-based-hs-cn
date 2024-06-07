@@ -22,69 +22,82 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:gender_equality_is-actually-just-war-on_masculinity {
+    leolaniWorld:gender_equality ns1:is_actually_just_war_on leolaniWorld:masculinity .
+}
+
+leolaniWorld:gender_equality_is_war {
+    leolaniWorld:gender_equality ns1:is leolaniWorld:war .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context30 a eps:Context ;
+        rdfs:label "context30" ;
+        hs:id "30"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1453 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "143"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1453 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1453" ;
+        hs:id "1453"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1453_utterance2 .
+
+    leolaniTalk:chat1453_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1453_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:gender_equality_is_just_war {
     leolaniWorld:gender_equality ns1:is leolaniWorld:just_war .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:It_seems-to_me a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_seems-to_me" ;
-        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
-
-    leolaniWorld:gender_equality_is-actually-just-war-on_masculinity a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_equality_is-actually-just-war-on_masculinity" ;
-        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
-
-    leolaniWorld:gender_equality_is-actually-war-on_masculinity a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_equality_is-actually-war-on_masculinity" ;
-        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
-
-    leolaniWorld:gender_equality_is-just-war-on_masculinity a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_equality_is-just-war-on_masculinity" ;
-        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
-
-    leolaniWorld:gender_equality_is-war-on_masculinity a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_equality_is-war-on_masculinity" ;
-        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
-
-    leolaniWorld:gender_equality_is_actually_just_war a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_equality_is_actually_just_war" ;
-        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
-
-    leolaniWorld:gender_equality_is_actually_war a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_equality_is_actually_war" ;
-        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
-
-    leolaniWorld:gender_equality_is_just_war a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_equality_is_just_war" ;
-        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
-
-    leolaniWorld:gender_equality_is_war a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_equality_is_war" ;
-        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:It_seems-to_me {
-    leolaniWorld:It ns1:seems_to leolaniWorld:me .
-}
-
 leolaniWorld:gender_equality_is-actually-war-on_masculinity {
     leolaniWorld:gender_equality ns1:is_actually_war_on leolaniWorld:masculinity .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:gender_equality_is-just-war-on_masculinity {
+    leolaniWorld:gender_equality ns1:is_just_war_on leolaniWorld:masculinity .
 }
 
 leolaniWorld:gender_equality_is_actually_war {
@@ -95,57 +108,124 @@ leolaniWorld:gender_equality_is_actually_just_war {
     leolaniWorld:gender_equality ns1:is leolaniWorld:actually_just_war .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+leolaniTalk:Perspectives {
+    leolaniTalk:It_seems-to_me_00028 a grasp:Attribution ;
+        rdfs:label "It_seems-to_me_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:actually_just_war a gaf:Instance ;
-        rdfs:label "actually-just-war" ;
-        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+    leolaniTalk:gender_equality_is-actually-just-war-on_masculinity_00028 a grasp:Attribution ;
+        rdfs:label "gender_equality_is-actually-just-war-on_masculinity_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:actually_war a gaf:Instance ;
-        rdfs:label "actually-war" ;
-        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+    leolaniTalk:gender_equality_is-actually-war-on_masculinity_00028 a grasp:Attribution ;
+        rdfs:label "gender_equality_is-actually-war-on_masculinity_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:gender_equality a gaf:Instance ;
-        rdfs:label "gender-equality" ;
-        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+    leolaniTalk:gender_equality_is-just-war-on_masculinity_00028 a grasp:Attribution ;
+        rdfs:label "gender_equality_is-just-war-on_masculinity_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:gender_equality_is-war-on_masculinity_00028 a grasp:Attribution ;
+        rdfs:label "gender_equality_is-war-on_masculinity_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:just_war a gaf:Instance ;
-        rdfs:label "just-war" ;
-        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+    leolaniTalk:gender_equality_is_actually_just_war_00028 a grasp:Attribution ;
+        rdfs:label "gender_equality_is_actually_just_war_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:gender_equality_is_actually_war_00028 a grasp:Attribution ;
+        rdfs:label "gender_equality_is_actually_war_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:masculinity a gaf:Instance ;
-        rdfs:label "masculinity" ;
-        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+    leolaniTalk:gender_equality_is_just_war_00028 a grasp:Attribution ;
+        rdfs:label "gender_equality_is_just_war_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:me a gaf:Instance ;
-        rdfs:label "me" ;
-        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+    leolaniTalk:gender_equality_is_war_00028 a grasp:Attribution ;
+        rdfs:label "gender_equality_is_war_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:war a gaf:Instance ;
-        rdfs:label "war" ;
-        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
-}
+    leolaniTalk:chat1453_utterance2_char0-74 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1453_utterance2_char0-74" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:actually_just_war,
+            leolaniWorld:actually_war,
+            leolaniWorld:gender_equality,
+            leolaniWorld:just_war,
+            leolaniWorld:masculinity,
+            leolaniWorld:me,
+            leolaniWorld:war ;
+        gaf:denotes leolaniWorld:It_seems-to_me,
+            leolaniWorld:gender_equality_is-actually-just-war-on_masculinity,
+            leolaniWorld:gender_equality_is-actually-war-on_masculinity,
+            leolaniWorld:gender_equality_is-just-war-on_masculinity,
+            leolaniWorld:gender_equality_is-war-on_masculinity,
+            leolaniWorld:gender_equality_is_actually_just_war,
+            leolaniWorld:gender_equality_is_actually_war,
+            leolaniWorld:gender_equality_is_just_war,
+            leolaniWorld:gender_equality_is_war ;
+        grasp:hasAttribution leolaniTalk:It_seems-to_me_00028,
+            leolaniTalk:gender_equality_is-actually-just-war-on_masculinity_00028,
+            leolaniTalk:gender_equality_is-actually-war-on_masculinity_00028,
+            leolaniTalk:gender_equality_is-just-war-on_masculinity_00028,
+            leolaniTalk:gender_equality_is-war-on_masculinity_00028,
+            leolaniTalk:gender_equality_is_actually_just_war_00028,
+            leolaniTalk:gender_equality_is_actually_war_00028,
+            leolaniTalk:gender_equality_is_just_war_00028,
+            leolaniTalk:gender_equality_is_war_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:32.965236"^^xml1:string,
+            "2024-06-05T23:34:32.965295"^^xml1:string,
+            "2024-06-05T23:34:32.965318"^^xml1:string,
+            "2024-06-05T23:34:32.965341"^^xml1:string,
+            "2024-06-05T23:34:32.965362"^^xml1:string,
+            "2024-06-05T23:34:32.965384"^^xml1:string,
+            "2024-06-05T23:34:32.965405"^^xml1:string,
+            "2024-06-05T23:34:32.965425"^^xml1:string,
+            "2024-06-05T23:34:32.965447"^^xml1:string ;
+        rdf:value "It seems to me that gender equality is actually just a war on masculinity."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1453_utterance2 .
 
-leolaniWorld:gender_equality_is-just-war-on_masculinity {
-    leolaniWorld:gender_equality ns1:is_just_war_on leolaniWorld:masculinity .
-}
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-leolaniWorld:gender_equality_is-actually-just-war-on_masculinity {
-    leolaniWorld:gender_equality ns1:is_actually_just_war_on leolaniWorld:masculinity .
-}
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-leolaniWorld:gender_equality_is_war {
-    leolaniWorld:gender_equality ns1:is leolaniWorld:war .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -483,185 +563,105 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:It_seems-to_me a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_seems-to_me" ;
+        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:gender_equality_is-actually-just-war-on_masculinity a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gender_equality_is-actually-just-war-on_masculinity" ;
+        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:gender_equality_is-actually-war-on_masculinity a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gender_equality_is-actually-war-on_masculinity" ;
+        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:gender_equality_is-just-war-on_masculinity a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gender_equality_is-just-war-on_masculinity" ;
+        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:gender_equality_is-war-on_masculinity a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gender_equality_is-war-on_masculinity" ;
+        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:gender_equality_is_actually_just_war a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gender_equality_is_actually_just_war" ;
+        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:gender_equality_is_actually_war a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gender_equality_is_actually_war" ;
+        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:gender_equality_is_just_war a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gender_equality_is_just_war" ;
+        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:gender_equality_is_war a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gender_equality_is_war" ;
+        gaf:denotedBy leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:It_seems-to_me_00028 a grasp:Attribution ;
-        rdfs:label "It_seems-to_me_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:gender_equality_is-actually-just-war-on_masculinity_00028 a grasp:Attribution ;
-        rdfs:label "gender_equality_is-actually-just-war-on_masculinity_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:gender_equality_is-actually-war-on_masculinity_00028 a grasp:Attribution ;
-        rdfs:label "gender_equality_is-actually-war-on_masculinity_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:gender_equality_is-just-war-on_masculinity_00028 a grasp:Attribution ;
-        rdfs:label "gender_equality_is-just-war-on_masculinity_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:gender_equality_is-war-on_masculinity_00028 a grasp:Attribution ;
-        rdfs:label "gender_equality_is-war-on_masculinity_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:gender_equality_is_actually_just_war_00028 a grasp:Attribution ;
-        rdfs:label "gender_equality_is_actually_just_war_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:gender_equality_is_actually_war_00028 a grasp:Attribution ;
-        rdfs:label "gender_equality_is_actually_war_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:gender_equality_is_just_war_00028 a grasp:Attribution ;
-        rdfs:label "gender_equality_is_just_war_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:gender_equality_is_war_00028 a grasp:Attribution ;
-        rdfs:label "gender_equality_is_war_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1453_utterance2_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1453_utterance2_char0-74 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1453_utterance2_char0-74" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:actually_just_war,
-            leolaniWorld:actually_war,
-            leolaniWorld:gender_equality,
-            leolaniWorld:just_war,
-            leolaniWorld:masculinity,
-            leolaniWorld:me,
-            leolaniWorld:war ;
-        gaf:denotes leolaniWorld:It_seems-to_me,
-            leolaniWorld:gender_equality_is-actually-just-war-on_masculinity,
-            leolaniWorld:gender_equality_is-actually-war-on_masculinity,
-            leolaniWorld:gender_equality_is-just-war-on_masculinity,
-            leolaniWorld:gender_equality_is-war-on_masculinity,
-            leolaniWorld:gender_equality_is_actually_just_war,
-            leolaniWorld:gender_equality_is_actually_war,
-            leolaniWorld:gender_equality_is_just_war,
-            leolaniWorld:gender_equality_is_war ;
-        grasp:hasAttribution leolaniTalk:It_seems-to_me_00028,
-            leolaniTalk:gender_equality_is-actually-just-war-on_masculinity_00028,
-            leolaniTalk:gender_equality_is-actually-war-on_masculinity_00028,
-            leolaniTalk:gender_equality_is-just-war-on_masculinity_00028,
-            leolaniTalk:gender_equality_is-war-on_masculinity_00028,
-            leolaniTalk:gender_equality_is_actually_just_war_00028,
-            leolaniTalk:gender_equality_is_actually_war_00028,
-            leolaniTalk:gender_equality_is_just_war_00028,
-            leolaniTalk:gender_equality_is_war_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:32.965236"^^xml1:string,
-            "2024-06-05T23:34:32.965295"^^xml1:string,
-            "2024-06-05T23:34:32.965318"^^xml1:string,
-            "2024-06-05T23:34:32.965341"^^xml1:string,
-            "2024-06-05T23:34:32.965362"^^xml1:string,
-            "2024-06-05T23:34:32.965384"^^xml1:string,
-            "2024-06-05T23:34:32.965405"^^xml1:string,
-            "2024-06-05T23:34:32.965425"^^xml1:string,
-            "2024-06-05T23:34:32.965447"^^xml1:string ;
-        rdf:value "It seems to me that gender equality is actually just a war on masculinity."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1453_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:It_seems-to_me {
+    leolaniWorld:It ns1:seems_to leolaniWorld:me .
 }
 
 leolaniWorld:gender_equality_is-war-on_masculinity {
     leolaniWorld:gender_equality ns1:is_war_on leolaniWorld:masculinity .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context30 a eps:Context ;
-        rdfs:label "context30" ;
-        hs:id "30"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1453 .
+    leolaniWorld:actually_just_war a gaf:Instance ;
+        rdfs:label "actually-just-war" ;
+        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:actually_war a gaf:Instance ;
+        rdfs:label "actually-war" ;
+        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "143"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1453 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1453" ;
-        hs:id "1453"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1453_utterance2 .
-
-    leolaniTalk:chat1453_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1453_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:gender_equality a gaf:Instance ;
+        rdfs:label "gender-equality" ;
+        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:just_war a gaf:Instance ;
+        rdfs:label "just-war" ;
+        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:masculinity a gaf:Instance ;
+        rdfs:label "masculinity" ;
+        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:me a gaf:Instance ;
+        rdfs:label "me" ;
+        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
+
+    leolaniWorld:war a gaf:Instance ;
+        rdfs:label "war" ;
+        gaf:denotedIn leolaniTalk:chat1453_utterance2_char0-74 .
 }
 

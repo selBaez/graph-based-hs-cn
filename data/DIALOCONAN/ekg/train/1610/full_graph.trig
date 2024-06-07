@@ -23,82 +23,170 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:I_ll-call_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_ll-call_them" ;
-        gaf:denotedBy leolaniTalk:chat1610_utterance2_char0-26 .
-
-    leolaniWorld:it_even-talk-to_birds a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_even-talk-to_birds" ;
-        gaf:denotedBy leolaniTalk:chat1610_utterance0_char0-115 .
-
-    leolaniWorld:it_talk-to_birds a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_talk-to_birds" ;
-        gaf:denotedBy leolaniTalk:chat1610_utterance0_char0-115 .
-
-    leolaniWorld:it_will_Soon_will_sexist a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_will_Soon_will_sexist" ;
-        gaf:denotedBy leolaniTalk:chat1610_utterance0_char0-115 .
-
-    leolaniWorld:it_will_will_sexist a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_will_will_sexist" ;
-        gaf:denotedBy leolaniTalk:chat1610_utterance0_char0-115 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:it_will_will_sexist {
+    leolaniWorld:it ns1:will leolaniWorld:will_sexist .
 }
 
-leolaniWorld:I_ll-call_them {
-    leolaniWorld:I ns12:ll_call leolaniWorld:them .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context178 a eps:Context ;
+        rdfs:label "context178" ;
+        hs:id "178"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:it_will_Soon_will_sexist {
-    leolaniWorld:it ns1:will leolaniWorld:Soon_will_sexist .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1610 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "127"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1610 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1610" ;
+        hs:id "1610"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1610_utterance0,
+            leolaniTalk:chat1610_utterance2 .
+
+    leolaniTalk:chat1610_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1610_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1610_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1610_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:it_even-talk-to_birds {
     leolaniWorld:it ns1:even_talk_to leolaniWorld:birds .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1610_utterance2_char0-26 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:Soon_will_sexist a gaf:Instance ;
-        rdfs:label "soon-will-sexist" ;
-        gaf:denotedIn leolaniTalk:chat1610_utterance0_char0-115 .
+leolaniWorld:it_talk-to_birds {
+    leolaniWorld:it ns1:talk_to leolaniWorld:birds .
+}
 
-    leolaniWorld:birds a gaf:Instance ;
-        rdfs:label "birds" ;
-        gaf:denotedIn leolaniTalk:chat1610_utterance0_char0-115 .
+leolaniWorld:it_will_Soon_will_sexist {
+    leolaniWorld:it ns1:will leolaniWorld:Soon_will_sexist .
+}
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+leolaniTalk:Perspectives {
+    leolaniTalk:I_ll-call_them_00028 a grasp:Attribution ;
+        rdfs:label "I_ll-call_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1610_utterance2_char0-26 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1610_utterance0_char0-115 .
+    leolaniTalk:chat1610_utterance2_char0-26 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1610_utterance2_char0-26" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:them ;
+        gaf:denotes leolaniWorld:I_ll-call_them ;
+        grasp:hasAttribution leolaniTalk:I_ll-call_them_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:41.875241"^^xml1:string ;
+        rdf:value "I'll call them what I want"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1610_utterance2 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:it_even-talk-to_birds_00028 a grasp:Attribution ;
+        rdfs:label "it_even-talk-to_birds_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1610_utterance0_char0-115 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat1610_utterance2_char0-26 .
+    leolaniTalk:it_talk-to_birds_00028 a grasp:Attribution ;
+        rdfs:label "it_talk-to_birds_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1610_utterance0_char0-115 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:will_sexist a gaf:Instance ;
-        rdfs:label "will-sexist" ;
-        gaf:denotedIn leolaniTalk:chat1610_utterance0_char0-115 .
+    leolaniTalk:it_will_Soon_will_sexist_00028 a grasp:Attribution ;
+        rdfs:label "it_will_Soon_will_sexist_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1610_utterance0_char0-115 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_will_will_sexist_00028 a grasp:Attribution ;
+        rdfs:label "it_will_will_sexist_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1610_utterance0_char0-115 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1610_utterance0_char0-115 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1610_utterance0_char0-115" ;
+        gaf:containsDenotation leolaniWorld:Soon_will_sexist,
+            leolaniWorld:birds,
+            leolaniWorld:it,
+            leolaniWorld:will_sexist ;
+        gaf:denotes leolaniWorld:it_even-talk-to_birds,
+            leolaniWorld:it_talk-to_birds,
+            leolaniWorld:it_will_Soon_will_sexist,
+            leolaniWorld:it_will_will_sexist ;
+        grasp:hasAttribution leolaniTalk:it_even-talk-to_birds_00028,
+            leolaniTalk:it_talk-to_birds_00028,
+            leolaniTalk:it_will_Soon_will_sexist_00028,
+            leolaniTalk:it_will_will_sexist_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:41.718234"^^xml1:string,
+            "2024-06-05T23:24:41.718300"^^xml1:string,
+            "2024-06-05T23:24:41.718325"^^xml1:string,
+            "2024-06-05T23:24:41.718348"^^xml1:string ;
+        rdf:value "Soon it will be 'sexist' to even talk to birds, everyone gets offended so easily these days you can't say anything."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1610_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -436,161 +524,73 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:I_ll-call_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_ll-call_them" ;
+        gaf:denotedBy leolaniTalk:chat1610_utterance2_char0-26 .
+
+    leolaniWorld:it_even-talk-to_birds a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_even-talk-to_birds" ;
+        gaf:denotedBy leolaniTalk:chat1610_utterance0_char0-115 .
+
+    leolaniWorld:it_talk-to_birds a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_talk-to_birds" ;
+        gaf:denotedBy leolaniTalk:chat1610_utterance0_char0-115 .
+
+    leolaniWorld:it_will_Soon_will_sexist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_will_Soon_will_sexist" ;
+        gaf:denotedBy leolaniTalk:chat1610_utterance0_char0-115 .
+
+    leolaniWorld:it_will_will_sexist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_will_will_sexist" ;
+        gaf:denotedBy leolaniTalk:chat1610_utterance0_char0-115 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_ll-call_them_00028 a grasp:Attribution ;
-        rdfs:label "I_ll-call_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1610_utterance2_char0-26 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1610_utterance2_char0-26 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1610_utterance2_char0-26" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:them ;
-        gaf:denotes leolaniWorld:I_ll-call_them ;
-        grasp:hasAttribution leolaniTalk:I_ll-call_them_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:41.875241"^^xml1:string ;
-        rdf:value "I'll call them what I want"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1610_utterance2 .
-
-    leolaniTalk:it_even-talk-to_birds_00028 a grasp:Attribution ;
-        rdfs:label "it_even-talk-to_birds_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1610_utterance0_char0-115 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_talk-to_birds_00028 a grasp:Attribution ;
-        rdfs:label "it_talk-to_birds_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1610_utterance0_char0-115 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_will_Soon_will_sexist_00028 a grasp:Attribution ;
-        rdfs:label "it_will_Soon_will_sexist_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1610_utterance0_char0-115 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_will_will_sexist_00028 a grasp:Attribution ;
-        rdfs:label "it_will_will_sexist_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1610_utterance0_char0-115 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1610_utterance0_char0-115 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1610_utterance0_char0-115" ;
-        gaf:containsDenotation leolaniWorld:Soon_will_sexist,
-            leolaniWorld:birds,
-            leolaniWorld:it,
-            leolaniWorld:will_sexist ;
-        gaf:denotes leolaniWorld:it_even-talk-to_birds,
-            leolaniWorld:it_talk-to_birds,
-            leolaniWorld:it_will_Soon_will_sexist,
-            leolaniWorld:it_will_will_sexist ;
-        grasp:hasAttribution leolaniTalk:it_even-talk-to_birds_00028,
-            leolaniTalk:it_talk-to_birds_00028,
-            leolaniTalk:it_will_Soon_will_sexist_00028,
-            leolaniTalk:it_will_will_sexist_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:41.718234"^^xml1:string,
-            "2024-06-05T23:24:41.718300"^^xml1:string,
-            "2024-06-05T23:24:41.718325"^^xml1:string,
-            "2024-06-05T23:24:41.718348"^^xml1:string ;
-        rdf:value "Soon it will be 'sexist' to even talk to birds, everyone gets offended so easily these days you can't say anything."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1610_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:I_ll-call_them {
+    leolaniWorld:I ns12:ll_call leolaniWorld:them .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context178 a eps:Context ;
-        rdfs:label "context178" ;
-        hs:id "178"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1610_utterance2_char0-26 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1610 .
+    leolaniWorld:Soon_will_sexist a gaf:Instance ;
+        rdfs:label "soon-will-sexist" ;
+        gaf:denotedIn leolaniTalk:chat1610_utterance0_char0-115 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "127"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1610 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1610" ;
-        hs:id "1610"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1610_utterance0,
-            leolaniTalk:chat1610_utterance2 .
-
-    leolaniTalk:chat1610_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1610_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1610_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1610_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:birds a gaf:Instance ;
+        rdfs:label "birds" ;
+        gaf:denotedIn leolaniTalk:chat1610_utterance0_char0-115 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:it_will_will_sexist {
-    leolaniWorld:it ns1:will leolaniWorld:will_sexist .
-}
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1610_utterance0_char0-115 .
 
-leolaniWorld:it_talk-to_birds {
-    leolaniWorld:it ns1:talk_to leolaniWorld:birds .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat1610_utterance2_char0-26 .
+
+    leolaniWorld:will_sexist a gaf:Instance ;
+        rdfs:label "will-sexist" ;
+        gaf:denotedIn leolaniTalk:chat1610_utterance0_char0-115 .
 }
 

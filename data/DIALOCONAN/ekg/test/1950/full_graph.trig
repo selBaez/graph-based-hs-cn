@@ -22,6 +22,87 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context57 a eps:Context ;
+        rdfs:label "context57" ;
+        hs:id "57"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1950 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "66"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1950 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1950" ;
+        hs:id "1950"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1950_utterance0,
+            leolaniTalk:chat1950_utterance2 .
+
+    leolaniTalk:chat1950_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1950_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1950_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1950_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:feminists_are_imposters {
+    leolaniWorld:feminists ns1:are leolaniWorld:imposters .
+}
+
+leolaniWorld:Feminists_want_women_in_charge {
+    leolaniWorld:Feminists ns1:want leolaniWorld:women_in_charge .
+}
+
+leolaniWorld:Feminists_want-women-in_order {
+    leolaniWorld:Feminists ns1:want_women_in leolaniWorld:order .
+}
+
+leolaniWorld:Feminists_want-in_order_to_revenge {
+    leolaniWorld:Feminists ns1:want_in leolaniWorld:order_to_revenge .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:Feminists_want-in_order_00028 a grasp:Attribution ;
         rdfs:label "Feminists_want-in_order_00028" ;
@@ -139,49 +220,64 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Feminists a gaf:Instance ;
-        rdfs:label "feminists" ;
-        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:charge a gaf:Instance ;
-        rdfs:label "charge" ;
-        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:feminists a gaf:Instance ;
-        rdfs:label "feminists" ;
-        gaf:denotedIn leolaniTalk:chat1950_utterance2_char0-40 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:imposters a gaf:Instance ;
-        rdfs:label "imposters" ;
-        gaf:denotedIn leolaniTalk:chat1950_utterance2_char0-40 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:order a gaf:Instance ;
-        rdfs:label "order" ;
-        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:order_to_revenge a gaf:Instance ;
-        rdfs:label "order-to-revenge" ;
-        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:women_in_charge a gaf:Instance ;
-        rdfs:label "women-in-charge" ;
-        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
+leolaniWorld:Feminists_want-in_order {
+    leolaniWorld:Feminists ns1:want_in leolaniWorld:order .
 }
 
-leolaniWorld:Feminists_want_women_in_charge {
-    leolaniWorld:Feminists ns1:want leolaniWorld:women_in_charge .
+leolaniWorld:Feminists_want-women-in_order_to_revenge {
+    leolaniWorld:Feminists ns1:want_women_in leolaniWorld:order_to_revenge .
+}
+
+leolaniWorld:Feminists_want_women {
+    leolaniWorld:Feminists ns1:want leolaniWorld:women .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Feminists_want-in_order a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_want-in_order" ;
+        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:Feminists_want-in_order_to_revenge a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_want-in_order_to_revenge" ;
+        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:Feminists_want-women-in_order a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_want-women-in_order" ;
+        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:Feminists_want-women-in_order_to_revenge a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_want-women-in_order_to_revenge" ;
+        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:Feminists_want_women a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_want_women" ;
+        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:Feminists_want_women_in_charge a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_want_women_in_charge" ;
+        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:feminists_are_imposters a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "feminists_are_imposters" ;
+        gaf:denotedBy leolaniTalk:chat1950_utterance2_char0-40 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:women_is-in_charge a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_is-in_charge" ;
+        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:Ontology {
@@ -519,144 +615,48 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Feminists_want-in_order {
-    leolaniWorld:Feminists ns1:want_in leolaniWorld:order .
-}
-
-leolaniWorld:Feminists_want-women-in_order_to_revenge {
-    leolaniWorld:Feminists ns1:want_women_in leolaniWorld:order_to_revenge .
-}
-
-leolaniWorld:Feminists_want-women-in_order {
-    leolaniWorld:Feminists ns1:want_women_in leolaniWorld:order .
-}
-
-leolaniWorld:Feminists_want_women {
-    leolaniWorld:Feminists ns1:want leolaniWorld:women .
-}
-
-leolaniWorld:Feminists_want-in_order_to_revenge {
-    leolaniWorld:Feminists ns1:want_in leolaniWorld:order_to_revenge .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context57 a eps:Context ;
-        rdfs:label "context57" ;
-        hs:id "57"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1950 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "66"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1950 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1950" ;
-        hs:id "1950"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1950_utterance0,
-            leolaniTalk:chat1950_utterance2 .
-
-    leolaniTalk:chat1950_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1950_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1950_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1950_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Feminists_want-in_order a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_want-in_order" ;
-        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:Feminists_want-in_order_to_revenge a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_want-in_order_to_revenge" ;
-        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:Feminists_want-women-in_order a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_want-women-in_order" ;
-        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:Feminists_want-women-in_order_to_revenge a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_want-women-in_order_to_revenge" ;
-        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:Feminists_want_women a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_want_women" ;
-        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:Feminists_want_women_in_charge a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_want_women_in_charge" ;
-        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:feminists_are_imposters a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "feminists_are_imposters" ;
-        gaf:denotedBy leolaniTalk:chat1950_utterance2_char0-40 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:women_is-in_charge a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_is-in_charge" ;
-        gaf:denotedBy leolaniTalk:chat1950_utterance0_char0-61 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:feminists_are_imposters {
-    leolaniWorld:feminists ns1:are leolaniWorld:imposters .
-}
-
 leolaniWorld:women_is-in_charge {
     leolaniWorld:women ns1:is_in leolaniWorld:charge .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Instances {
+    leolaniWorld:Feminists a gaf:Instance ;
+        rdfs:label "feminists" ;
+        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:charge a gaf:Instance ;
+        rdfs:label "charge" ;
+        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:feminists a gaf:Instance ;
+        rdfs:label "feminists" ;
+        gaf:denotedIn leolaniTalk:chat1950_utterance2_char0-40 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:imposters a gaf:Instance ;
+        rdfs:label "imposters" ;
+        gaf:denotedIn leolaniTalk:chat1950_utterance2_char0-40 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:order a gaf:Instance ;
+        rdfs:label "order" ;
+        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:order_to_revenge a gaf:Instance ;
+        rdfs:label "order-to-revenge" ;
+        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
+
+    leolaniWorld:women_in_charge a gaf:Instance ;
+        rdfs:label "women-in-charge" ;
+        gaf:denotedIn leolaniTalk:chat1950_utterance0_char0-61 .
 }
 

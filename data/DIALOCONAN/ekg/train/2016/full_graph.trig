@@ -22,6 +22,93 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context57 a eps:Context ;
+        rdfs:label "context57" ;
+        hs:id "57"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2016 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "60"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2016 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2016" ;
+        hs:id "2016"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2016_utterance0,
+            leolaniTalk:chat2016_utterance1 .
+
+    leolaniTalk:chat2016_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2016_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2016_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2016_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:It_integrate_them {
+    leolaniWorld:It ns1:integrate leolaniWorld:them .
+}
+
+leolaniWorld:Jews_are_Maybe_descendants {
+    leolaniWorld:Jews ns1:are leolaniWorld:Maybe_descendants .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Jews_maybe-are-descendants-of_aliens {
+    leolaniWorld:Jews ns1:maybe_are_descendants_of leolaniWorld:aliens .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:It_integrate_them_00023 a grasp:Attribution ;
         rdfs:label "It_integrate_them_00023" ;
@@ -109,102 +196,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:It_integrate_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_integrate_them" ;
-        gaf:denotedBy leolaniTalk:chat2016_utterance0_char0-69 .
-
-    leolaniWorld:Jews_are-descendants-of_aliens a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are-descendants-of_aliens" ;
-        gaf:denotedBy leolaniTalk:chat2016_utterance1_char0-101 .
-
-    leolaniWorld:Jews_are_Maybe_descendants a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_Maybe_descendants" ;
-        gaf:denotedBy leolaniTalk:chat2016_utterance1_char0-101 .
-
-    leolaniWorld:Jews_are_descendants a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_descendants" ;
-        gaf:denotedBy leolaniTalk:chat2016_utterance1_char0-101 .
-
-    leolaniWorld:Jews_maybe-are-descendants-of_aliens a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_maybe-are-descendants-of_aliens" ;
-        gaf:denotedBy leolaniTalk:chat2016_utterance1_char0-101 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:It_integrate_them {
-    leolaniWorld:It ns1:integrate leolaniWorld:them .
-}
-
-leolaniWorld:Jews_are_descendants {
-    leolaniWorld:Jews ns1:are leolaniWorld:descendants .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2016_utterance0_char0-69 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2016_utterance1_char0-101 .
-
-    leolaniWorld:Maybe_descendants a gaf:Instance ;
-        rdfs:label "maybe-descendants" ;
-        gaf:denotedIn leolaniTalk:chat2016_utterance1_char0-101 .
-
-    leolaniWorld:aliens a gaf:Instance ;
-        rdfs:label "aliens" ;
-        gaf:denotedIn leolaniTalk:chat2016_utterance1_char0-101 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:descendants a gaf:Instance ;
-        rdfs:label "descendants" ;
-        gaf:denotedIn leolaniTalk:chat2016_utterance1_char0-101 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat2016_utterance0_char0-69 .
-}
-
-leolaniWorld:Jews_maybe-are-descendants-of_aliens {
-    leolaniWorld:Jews ns1:maybe_are_descendants_of leolaniWorld:aliens .
 }
 
 leolaniWorld:Ontology {
@@ -542,78 +533,87 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Jews_are_Maybe_descendants {
-    leolaniWorld:Jews ns1:are leolaniWorld:Maybe_descendants .
+leolaniWorld:Claims {
+    leolaniWorld:It_integrate_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_integrate_them" ;
+        gaf:denotedBy leolaniTalk:chat2016_utterance0_char0-69 .
+
+    leolaniWorld:Jews_are-descendants-of_aliens a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are-descendants-of_aliens" ;
+        gaf:denotedBy leolaniTalk:chat2016_utterance1_char0-101 .
+
+    leolaniWorld:Jews_are_Maybe_descendants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_Maybe_descendants" ;
+        gaf:denotedBy leolaniTalk:chat2016_utterance1_char0-101 .
+
+    leolaniWorld:Jews_are_descendants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_descendants" ;
+        gaf:denotedBy leolaniTalk:chat2016_utterance1_char0-101 .
+
+    leolaniWorld:Jews_maybe-are-descendants-of_aliens a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_maybe-are-descendants-of_aliens" ;
+        gaf:denotedBy leolaniTalk:chat2016_utterance1_char0-101 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Jews_are_descendants {
+    leolaniWorld:Jews ns1:are leolaniWorld:descendants .
 }
 
 leolaniWorld:Jews_are-descendants-of_aliens {
     leolaniWorld:Jews ns1:are_descendants_of leolaniWorld:aliens .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context57 a eps:Context ;
-        rdfs:label "context57" ;
-        hs:id "57"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2016_utterance0_char0-69 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2016 .
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2016_utterance1_char0-101 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:Maybe_descendants a gaf:Instance ;
+        rdfs:label "maybe-descendants" ;
+        gaf:denotedIn leolaniTalk:chat2016_utterance1_char0-101 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "60"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2016 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2016" ;
-        hs:id "2016"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2016_utterance0,
-            leolaniTalk:chat2016_utterance1 .
-
-    leolaniTalk:chat2016_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2016_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2016_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2016_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:aliens a gaf:Instance ;
+        rdfs:label "aliens" ;
+        gaf:denotedIn leolaniTalk:chat2016_utterance1_char0-101 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:descendants a gaf:Instance ;
+        rdfs:label "descendants" ;
+        gaf:denotedIn leolaniTalk:chat2016_utterance1_char0-101 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat2016_utterance0_char0-69 .
 }
 

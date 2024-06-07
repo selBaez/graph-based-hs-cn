@@ -22,78 +22,165 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Islam_is_death_cult a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_death_cult" ;
-        gaf:denotedBy leolaniTalk:chat1352_utterance0_char0-54 .
+leolaniWorld:Islam_is_death_cult {
+    leolaniWorld:Islam ns1:is leolaniWorld:death_cult .
+}
 
-    leolaniWorld:Muslim_is_potential_terrorist a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslim_is_potential_terrorist" ;
-        gaf:denotedBy leolaniTalk:chat1352_utterance2_char0-46 .
+leolaniTalk:Interactions {
+    leolaniContext:context190 a eps:Context ;
+        rdfs:label "context190" ;
+        hs:id "190"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Muslim_is_potential_terrorist_though a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslim_is_potential_terrorist_though" ;
-        gaf:denotedBy leolaniTalk:chat1352_utterance2_char0-46 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1352 .
 
-    leolaniWorld:Muslim_is_terrorist a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslim_is_terrorist" ;
-        gaf:denotedBy leolaniTalk:chat1352_utterance0_char0-54 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "84"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat1352 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1352" ;
+        hs:id "1352"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1352_utterance0,
+            leolaniTalk:chat1352_utterance2 .
+
+    leolaniTalk:chat1352_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1352_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1352_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1352_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Muslim_is_potential_terrorist {
+    leolaniWorld:Muslim ns1:is leolaniWorld:potential_terrorist .
 }
 
 leolaniWorld:Muslim_is_terrorist {
     leolaniWorld:Muslim ns1:is leolaniWorld:terrorist .
 }
 
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniWorld:Muslim_is_potential_terrorist_though {
     leolaniWorld:Muslim ns1:is leolaniWorld:potential_terrorist_though .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat1352_utterance0_char0-54 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Islam_is_death_cult_00018 a grasp:Attribution ;
+        rdfs:label "Islam_is_death_cult_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat1352_utterance0_char0-54 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Muslim a gaf:Instance ;
-        rdfs:label "muslim" ;
-        gaf:denotedIn leolaniTalk:chat1352_utterance0_char0-54,
-            leolaniTalk:chat1352_utterance2_char0-46 .
+    leolaniTalk:Muslim_is_potential_terrorist_00012 a grasp:Attribution ;
+        rdfs:label "Muslim_is_potential_terrorist_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat1352_utterance2_char0-46 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:death_cult a gaf:Instance ;
-        rdfs:label "death-cult" ;
-        gaf:denotedIn leolaniTalk:chat1352_utterance0_char0-54 .
+    leolaniTalk:Muslim_is_potential_terrorist_though_00012 a grasp:Attribution ;
+        rdfs:label "Muslim_is_potential_terrorist_though_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat1352_utterance2_char0-46 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:Muslim_is_terrorist_00018 a grasp:Attribution ;
+        rdfs:label "Muslim_is_terrorist_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat1352_utterance0_char0-54 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat1352_utterance0_char0-54 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1352_utterance0_char0-54" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:Muslim,
+            leolaniWorld:death_cult,
+            leolaniWorld:terrorist ;
+        gaf:denotes leolaniWorld:Islam_is_death_cult,
+            leolaniWorld:Muslim_is_terrorist ;
+        grasp:hasAttribution leolaniTalk:Islam_is_death_cult_00018,
+            leolaniTalk:Muslim_is_terrorist_00018 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:58:18.831758"^^xml1:string,
+            "2024-06-05T22:58:18.831836"^^xml1:string ;
+        rdf:value "Islam is a death cult and every Muslim is a terrorist."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1352_utterance0 .
 
-    leolaniWorld:potential_terrorist a gaf:Instance ;
-        rdfs:label "potential-terrorist" ;
-        gaf:denotedIn leolaniTalk:chat1352_utterance2_char0-46 .
+    leolaniTalk:chat1352_utterance2_char0-46 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1352_utterance2_char0-46" ;
+        gaf:containsDenotation leolaniWorld:Muslim,
+            leolaniWorld:potential_terrorist,
+            leolaniWorld:potential_terrorist_though ;
+        gaf:denotes leolaniWorld:Muslim_is_potential_terrorist,
+            leolaniWorld:Muslim_is_potential_terrorist_though ;
+        grasp:hasAttribution leolaniTalk:Muslim_is_potential_terrorist_00012,
+            leolaniTalk:Muslim_is_potential_terrorist_though_00012 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:58:19.002483"^^xml1:string,
+            "2024-06-05T22:58:19.002544"^^xml1:string ;
+        rdf:value "Every Muslim is a potential terrorist, though."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1352_utterance2 .
 
-    leolaniWorld:potential_terrorist_though a gaf:Instance ;
-        rdfs:label "potential-terrorist-though" ;
-        gaf:denotedIn leolaniTalk:chat1352_utterance2_char0-46 .
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
 
-    leolaniWorld:terrorist a gaf:Instance ;
-        rdfs:label "terrorist" ;
-        gaf:denotedIn leolaniTalk:chat1352_utterance0_char0-54 .
-}
+    graspe:SADNESS a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "SADNESS" .
 
-leolaniWorld:Islam_is_death_cult {
-    leolaniWorld:Islam ns1:is leolaniWorld:death_cult .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -431,152 +518,65 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Islam_is_death_cult a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_death_cult" ;
+        gaf:denotedBy leolaniTalk:chat1352_utterance0_char0-54 .
+
+    leolaniWorld:Muslim_is_potential_terrorist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslim_is_potential_terrorist" ;
+        gaf:denotedBy leolaniTalk:chat1352_utterance2_char0-46 .
+
+    leolaniWorld:Muslim_is_potential_terrorist_though a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslim_is_potential_terrorist_though" ;
+        gaf:denotedBy leolaniTalk:chat1352_utterance2_char0-46 .
+
+    leolaniWorld:Muslim_is_terrorist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslim_is_terrorist" ;
+        gaf:denotedBy leolaniTalk:chat1352_utterance0_char0-54 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Islam_is_death_cult_00018 a grasp:Attribution ;
-        rdfs:label "Islam_is_death_cult_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat1352_utterance0_char0-54 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat1352_utterance0_char0-54 .
 
-    leolaniTalk:Muslim_is_potential_terrorist_00012 a grasp:Attribution ;
-        rdfs:label "Muslim_is_potential_terrorist_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat1352_utterance2_char0-46 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Muslim a gaf:Instance ;
+        rdfs:label "muslim" ;
+        gaf:denotedIn leolaniTalk:chat1352_utterance0_char0-54,
+            leolaniTalk:chat1352_utterance2_char0-46 .
 
-    leolaniTalk:Muslim_is_potential_terrorist_though_00012 a grasp:Attribution ;
-        rdfs:label "Muslim_is_potential_terrorist_though_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat1352_utterance2_char0-46 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Muslim_is_terrorist_00018 a grasp:Attribution ;
-        rdfs:label "Muslim_is_terrorist_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat1352_utterance0_char0-54 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1352_utterance0_char0-54 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1352_utterance0_char0-54" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:Muslim,
-            leolaniWorld:death_cult,
-            leolaniWorld:terrorist ;
-        gaf:denotes leolaniWorld:Islam_is_death_cult,
-            leolaniWorld:Muslim_is_terrorist ;
-        grasp:hasAttribution leolaniTalk:Islam_is_death_cult_00018,
-            leolaniTalk:Muslim_is_terrorist_00018 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:58:18.831758"^^xml1:string,
-            "2024-06-05T22:58:18.831836"^^xml1:string ;
-        rdf:value "Islam is a death cult and every Muslim is a terrorist."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1352_utterance0 .
-
-    leolaniTalk:chat1352_utterance2_char0-46 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1352_utterance2_char0-46" ;
-        gaf:containsDenotation leolaniWorld:Muslim,
-            leolaniWorld:potential_terrorist,
-            leolaniWorld:potential_terrorist_though ;
-        gaf:denotes leolaniWorld:Muslim_is_potential_terrorist,
-            leolaniWorld:Muslim_is_potential_terrorist_though ;
-        grasp:hasAttribution leolaniTalk:Muslim_is_potential_terrorist_00012,
-            leolaniTalk:Muslim_is_potential_terrorist_though_00012 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:58:19.002483"^^xml1:string,
-            "2024-06-05T22:58:19.002544"^^xml1:string ;
-        rdf:value "Every Muslim is a potential terrorist, though."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1352_utterance2 .
-
-    graspe:APPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "APPROVAL" .
-
-    graspe:SADNESS a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "SADNESS" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context190 a eps:Context ;
-        rdfs:label "context190" ;
-        hs:id "190"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1352 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "84"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1352 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1352" ;
-        hs:id "1352"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1352_utterance0,
-            leolaniTalk:chat1352_utterance2 .
-
-    leolaniTalk:chat1352_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1352_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1352_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1352_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:death_cult a gaf:Instance ;
+        rdfs:label "death-cult" ;
+        gaf:denotedIn leolaniTalk:chat1352_utterance0_char0-54 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:Muslim_is_potential_terrorist {
-    leolaniWorld:Muslim ns1:is leolaniWorld:potential_terrorist .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:potential_terrorist a gaf:Instance ;
+        rdfs:label "potential-terrorist" ;
+        gaf:denotedIn leolaniTalk:chat1352_utterance2_char0-46 .
+
+    leolaniWorld:potential_terrorist_though a gaf:Instance ;
+        rdfs:label "potential-terrorist-though" ;
+        gaf:denotedIn leolaniTalk:chat1352_utterance2_char0-46 .
+
+    leolaniWorld:terrorist a gaf:Instance ;
+        rdfs:label "terrorist" ;
+        gaf:denotedIn leolaniTalk:chat1352_utterance0_char0-54 .
 }
 

@@ -22,163 +22,259 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:I_so-would-like_them {
-    leolaniWorld:I ns1:so_would_like leolaniWorld:them .
+leolaniWorld:I_find_it {
+    leolaniWorld:I ns1:find leolaniWorld:it .
 }
 
-leolaniWorld:I_find_very_hard_accept {
-    leolaniWorld:I ns1:find leolaniWorld:very_hard_accept .
+leolaniWorld:they_are_menace {
+    leolaniWorld:they ns1:are leolaniWorld:menace .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context29 a eps:Context ;
+        rdfs:label "context29" ;
+        hs:id "29"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:I_find_accept a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2912 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "15"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2912 a grasp:Chat,
             sem:Event ;
-        rdfs:label "I_find_accept" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
+        rdfs:label "chat2912" ;
+        hs:id "2912"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2912_utterance1,
+            leolaniTalk:chat2912_utterance2 .
 
-    leolaniWorld:I_find_hard_accept a gaf:Assertion,
+    leolaniTalk:chat2912_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "I_find_hard_accept" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
+        rdfs:label "chat2912_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:I_find_hard_to_accept a gaf:Assertion,
+    leolaniTalk:chat2912_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "I_find_hard_to_accept" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
+        rdfs:label "chat2912_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:I_find_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_find_it" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:I_find_to_accept a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_find_to_accept" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:I_find_very_hard_accept a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_find_very_hard_accept" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:I_find_very_hard_to_accept a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_find_very_hard_to_accept" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
-
-    leolaniWorld:I_so-would-like_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_so-would-like_them" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance2_char0-86 .
-
-    leolaniWorld:I_would-like_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_would-like_them" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance2_char0-86 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are-menace-to_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-menace-to_society" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance2_char0-86 .
-
-    leolaniWorld:they_are_menace a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_menace" ;
-        gaf:denotedBy leolaniTalk:chat2912_utterance2_char0-86 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:they_are-menace-to_society {
     leolaniWorld:they ns1:are_menace_to leolaniWorld:society .
 }
 
-leolaniWorld:I_find_accept {
-    leolaniWorld:I ns1:find leolaniWorld:accept .
-}
-
 leolaniWorld:I_find_to_accept {
     leolaniWorld:I ns1:find leolaniWorld:to_accept .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78,
-            leolaniTalk:chat2912_utterance2_char0-86 .
-
-    leolaniWorld:accept a gaf:Instance ;
-        rdfs:label "accept" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hard_accept a gaf:Instance ;
-        rdfs:label "hard-accept" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
-
-    leolaniWorld:hard_to_accept a gaf:Instance ;
-        rdfs:label "hard-to-accept" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:menace a gaf:Instance ;
-        rdfs:label "menace" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance2_char0-86 .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance2_char0-86 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance2_char0-86 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance2_char0-86 .
-
-    leolaniWorld:to_accept a gaf:Instance ;
-        rdfs:label "to-accept" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
-
-    leolaniWorld:very_hard_accept a gaf:Instance ;
-        rdfs:label "very-hard-accept" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
-
-    leolaniWorld:very_hard_to_accept a gaf:Instance ;
-        rdfs:label "very-hard-to-accept" ;
-        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:I_find_hard_accept {
-    leolaniWorld:I ns1:find leolaniWorld:hard_accept .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:I_find_very_hard_to_accept {
+    leolaniWorld:I ns1:find leolaniWorld:very_hard_to_accept .
+}
+
+leolaniWorld:I_find_hard_to_accept {
+    leolaniWorld:I ns1:find leolaniWorld:hard_to_accept .
+}
+
+leolaniWorld:I_find_very_hard_accept {
+    leolaniWorld:I ns1:find leolaniWorld:very_hard_accept .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_find_accept_00028 a grasp:Attribution ;
+        rdfs:label "I_find_accept_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_find_hard_accept_00028 a grasp:Attribution ;
+        rdfs:label "I_find_hard_accept_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_find_hard_to_accept_00028 a grasp:Attribution ;
+        rdfs:label "I_find_hard_to_accept_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_find_it_00028 a grasp:Attribution ;
+        rdfs:label "I_find_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_find_to_accept_00028 a grasp:Attribution ;
+        rdfs:label "I_find_to_accept_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_find_very_hard_accept_00028 a grasp:Attribution ;
+        rdfs:label "I_find_very_hard_accept_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_find_very_hard_to_accept_00028 a grasp:Attribution ;
+        rdfs:label "I_find_very_hard_to_accept_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_so-would-like_them_00028 a grasp:Attribution ;
+        rdfs:label "I_so-would-like_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance2_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_would-like_them_00028 a grasp:Attribution ;
+        rdfs:label "I_would-like_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance2_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-menace-to_society_00028 a grasp:Attribution ;
+        rdfs:label "they_are-menace-to_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance2_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_menace_00028 a grasp:Attribution ;
+        rdfs:label "they_are_menace_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2912_utterance2_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2912_utterance2_char0-86 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2912_utterance2_char0-86" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:menace,
+            leolaniWorld:society,
+            leolaniWorld:them,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:I_so-would-like_them,
+            leolaniWorld:I_would-like_them,
+            leolaniWorld:they_are-menace-to_society,
+            leolaniWorld:they_are_menace ;
+        grasp:hasAttribution leolaniTalk:I_so-would-like_them_00028,
+            leolaniTalk:I_would-like_them_00028,
+            leolaniTalk:they_are-menace-to_society_00028,
+            leolaniTalk:they_are_menace_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:11:15.533825"^^xml1:string,
+            "2024-06-05T23:11:15.533878"^^xml1:string,
+            "2024-06-05T23:11:15.533901"^^xml1:string,
+            "2024-06-05T23:11:15.533922"^^xml1:string ;
+        rdf:value "Well, they are controlling and they are a menace to society, so why would I like them?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2912_utterance2 .
+
+    leolaniTalk:chat2912_utterance1_char0-78 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2912_utterance1_char0-78" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:accept,
+            leolaniWorld:hard_accept,
+            leolaniWorld:hard_to_accept,
+            leolaniWorld:it,
+            leolaniWorld:to_accept,
+            leolaniWorld:very_hard_accept,
+            leolaniWorld:very_hard_to_accept ;
+        gaf:denotes leolaniWorld:I_find_accept,
+            leolaniWorld:I_find_hard_accept,
+            leolaniWorld:I_find_hard_to_accept,
+            leolaniWorld:I_find_it,
+            leolaniWorld:I_find_to_accept,
+            leolaniWorld:I_find_very_hard_accept,
+            leolaniWorld:I_find_very_hard_to_accept ;
+        grasp:hasAttribution leolaniTalk:I_find_accept_00028,
+            leolaniTalk:I_find_hard_accept_00028,
+            leolaniTalk:I_find_hard_to_accept_00028,
+            leolaniTalk:I_find_it_00028,
+            leolaniTalk:I_find_to_accept_00028,
+            leolaniTalk:I_find_very_hard_accept_00028,
+            leolaniTalk:I_find_very_hard_to_accept_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:11:15.435623"^^xml1:string,
+            "2024-06-05T23:11:15.435681"^^xml1:string,
+            "2024-06-05T23:11:15.435704"^^xml1:string,
+            "2024-06-05T23:11:15.435725"^^xml1:string,
+            "2024-06-05T23:11:15.435748"^^xml1:string,
+            "2024-06-05T23:11:15.435770"^^xml1:string,
+            "2024-06-05T23:11:15.435791"^^xml1:string ;
+        rdf:value "I find it very hard to accept that Jews are all \"controlling\" and all \"lying\"."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2912_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -516,246 +612,150 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:I_find_it {
-    leolaniWorld:I ns1:find leolaniWorld:it .
+leolaniWorld:I_so-would-like_them {
+    leolaniWorld:I ns1:so_would_like leolaniWorld:them .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:I_find_hard_accept {
+    leolaniWorld:I ns1:find leolaniWorld:hard_accept .
 }
 
-leolaniWorld:they_are_menace {
-    leolaniWorld:they ns1:are leolaniWorld:menace .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:I_find_accept_00028 a grasp:Attribution ;
-        rdfs:label "I_find_accept_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_find_hard_accept_00028 a grasp:Attribution ;
-        rdfs:label "I_find_hard_accept_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_find_hard_to_accept_00028 a grasp:Attribution ;
-        rdfs:label "I_find_hard_to_accept_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_find_it_00028 a grasp:Attribution ;
-        rdfs:label "I_find_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_find_to_accept_00028 a grasp:Attribution ;
-        rdfs:label "I_find_to_accept_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_find_very_hard_accept_00028 a grasp:Attribution ;
-        rdfs:label "I_find_very_hard_accept_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_find_very_hard_to_accept_00028 a grasp:Attribution ;
-        rdfs:label "I_find_very_hard_to_accept_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_so-would-like_them_00028 a grasp:Attribution ;
-        rdfs:label "I_so-would-like_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance2_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_would-like_them_00028 a grasp:Attribution ;
-        rdfs:label "I_would-like_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance2_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-menace-to_society_00028 a grasp:Attribution ;
-        rdfs:label "they_are-menace-to_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance2_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_menace_00028 a grasp:Attribution ;
-        rdfs:label "they_are_menace_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2912_utterance2_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2912_utterance2_char0-86 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2912_utterance2_char0-86" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:menace,
-            leolaniWorld:society,
-            leolaniWorld:them,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:I_so-would-like_them,
-            leolaniWorld:I_would-like_them,
-            leolaniWorld:they_are-menace-to_society,
-            leolaniWorld:they_are_menace ;
-        grasp:hasAttribution leolaniTalk:I_so-would-like_them_00028,
-            leolaniTalk:I_would-like_them_00028,
-            leolaniTalk:they_are-menace-to_society_00028,
-            leolaniTalk:they_are_menace_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:11:15.533825"^^xml1:string,
-            "2024-06-05T23:11:15.533878"^^xml1:string,
-            "2024-06-05T23:11:15.533901"^^xml1:string,
-            "2024-06-05T23:11:15.533922"^^xml1:string ;
-        rdf:value "Well, they are controlling and they are a menace to society, so why would I like them?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2912_utterance2 .
-
-    leolaniTalk:chat2912_utterance1_char0-78 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2912_utterance1_char0-78" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:accept,
-            leolaniWorld:hard_accept,
-            leolaniWorld:hard_to_accept,
-            leolaniWorld:it,
-            leolaniWorld:to_accept,
-            leolaniWorld:very_hard_accept,
-            leolaniWorld:very_hard_to_accept ;
-        gaf:denotes leolaniWorld:I_find_accept,
-            leolaniWorld:I_find_hard_accept,
-            leolaniWorld:I_find_hard_to_accept,
-            leolaniWorld:I_find_it,
-            leolaniWorld:I_find_to_accept,
-            leolaniWorld:I_find_very_hard_accept,
-            leolaniWorld:I_find_very_hard_to_accept ;
-        grasp:hasAttribution leolaniTalk:I_find_accept_00028,
-            leolaniTalk:I_find_hard_accept_00028,
-            leolaniTalk:I_find_hard_to_accept_00028,
-            leolaniTalk:I_find_it_00028,
-            leolaniTalk:I_find_to_accept_00028,
-            leolaniTalk:I_find_very_hard_accept_00028,
-            leolaniTalk:I_find_very_hard_to_accept_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:11:15.435623"^^xml1:string,
-            "2024-06-05T23:11:15.435681"^^xml1:string,
-            "2024-06-05T23:11:15.435704"^^xml1:string,
-            "2024-06-05T23:11:15.435725"^^xml1:string,
-            "2024-06-05T23:11:15.435748"^^xml1:string,
-            "2024-06-05T23:11:15.435770"^^xml1:string,
-            "2024-06-05T23:11:15.435791"^^xml1:string ;
-        rdf:value "I find it very hard to accept that Jews are all \"controlling\" and all \"lying\"."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2912_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:I_find_hard_to_accept {
-    leolaniWorld:I ns1:find leolaniWorld:hard_to_accept .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context29 a eps:Context ;
-        rdfs:label "context29" ;
-        hs:id "29"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2912 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "15"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2912 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:I_find_accept a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2912" ;
-        hs:id "2912"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2912_utterance1,
-            leolaniTalk:chat2912_utterance2 .
+        rdfs:label "I_find_accept" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
 
-    leolaniTalk:chat2912_utterance1 a grasp:Utterance,
+    leolaniWorld:I_find_hard_accept a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2912_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "I_find_hard_accept" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
 
-    leolaniTalk:chat2912_utterance2 a grasp:Utterance,
+    leolaniWorld:I_find_hard_to_accept a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2912_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "I_find_hard_to_accept" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:I_find_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_find_it" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:I_find_to_accept a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_find_to_accept" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:I_find_very_hard_accept a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_find_very_hard_accept" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:I_find_very_hard_to_accept a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_find_very_hard_to_accept" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance1_char0-78 .
 
-leolaniWorld:I_find_very_hard_to_accept {
-    leolaniWorld:I ns1:find leolaniWorld:very_hard_to_accept .
+    leolaniWorld:I_so-would-like_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_so-would-like_them" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance2_char0-86 .
+
+    leolaniWorld:I_would-like_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_would-like_them" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance2_char0-86 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are-menace-to_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-menace-to_society" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance2_char0-86 .
+
+    leolaniWorld:they_are_menace a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_menace" ;
+        gaf:denotedBy leolaniTalk:chat2912_utterance2_char0-86 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:I_would-like_them {
     leolaniWorld:I ns1:would_like leolaniWorld:them .
+}
+
+leolaniWorld:I_find_accept {
+    leolaniWorld:I ns1:find leolaniWorld:accept .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78,
+            leolaniTalk:chat2912_utterance2_char0-86 .
+
+    leolaniWorld:accept a gaf:Instance ;
+        rdfs:label "accept" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hard_accept a gaf:Instance ;
+        rdfs:label "hard-accept" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
+
+    leolaniWorld:hard_to_accept a gaf:Instance ;
+        rdfs:label "hard-to-accept" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:menace a gaf:Instance ;
+        rdfs:label "menace" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance2_char0-86 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance2_char0-86 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance2_char0-86 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance2_char0-86 .
+
+    leolaniWorld:to_accept a gaf:Instance ;
+        rdfs:label "to-accept" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
+
+    leolaniWorld:very_hard_accept a gaf:Instance ;
+        rdfs:label "very-hard-accept" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
+
+    leolaniWorld:very_hard_to_accept a gaf:Instance ;
+        rdfs:label "very-hard-to-accept" ;
+        gaf:denotedIn leolaniTalk:chat2912_utterance1_char0-78 .
 }
 

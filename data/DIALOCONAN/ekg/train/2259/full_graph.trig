@@ -22,74 +22,150 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:I_just-know-from_experience a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context26 a eps:Context ;
+        rdfs:label "context26" ;
+        hs:id "26"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2259 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "122"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2259 a grasp:Chat,
             sem:Event ;
-        rdfs:label "I_just-know-from_experience" ;
-        gaf:denotedBy leolaniTalk:chat2259_utterance0_char0-77 .
+        rdfs:label "chat2259" ;
+        hs:id "2259"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2259_utterance0,
+            leolaniTalk:chat2259_utterance1 .
 
-    leolaniWorld:I_know-from_experience a gaf:Assertion,
+    leolaniTalk:chat2259_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "I_know-from_experience" ;
-        gaf:denotedBy leolaniTalk:chat2259_utterance0_char0-77 .
+        rdfs:label "chat2259_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat2259_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2259_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:women_employment_is_time_high_of_72.4__ a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_employment_is_time_high_of_72.4__" ;
-        gaf:denotedBy leolaniTalk:chat2259_utterance1_char0-92 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:women_employment_is_time_high_of_72.4__ {
     leolaniWorld:women_employment ns1:is leolaniWorld:time_high_of_72.4__ .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat2259_utterance0_char0-77 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:experience a gaf:Instance ;
-        rdfs:label "experience" ;
-        gaf:denotedIn leolaniTalk:chat2259_utterance0_char0-77 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:time_high_of_72.4__ a gaf:Instance ;
-        rdfs:label "time-high-of-72-4" ;
-        gaf:denotedIn leolaniTalk:chat2259_utterance1_char0-92 .
-
-    leolaniWorld:women_employment a gaf:Instance ;
-        rdfs:label "women-employment" ;
-        gaf:denotedIn leolaniTalk:chat2259_utterance1_char0-92 .
-}
-
 leolaniWorld:I_just-know-from_experience {
     leolaniWorld:I ns1:just_know_from leolaniWorld:experience .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_just-know-from_experience_00028 a grasp:Attribution ;
+        rdfs:label "I_just-know-from_experience_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2259_utterance0_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_know-from_experience_00028 a grasp:Attribution ;
+        rdfs:label "I_know-from_experience_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2259_utterance0_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2259_utterance1_char0-92 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2259_utterance1_char0-92" ;
+        gaf:containsDenotation leolaniWorld:time_high_of_72.4__,
+            leolaniWorld:women_employment ;
+        gaf:denotes leolaniWorld:women_employment_is_time_high_of_72.4__ ;
+        grasp:hasAttribution leolaniTalk:women_employment_is_time_high_of_72.4___00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:13:26.716947"^^xml1:string ;
+        rdf:value "That's not true. According to recent research, women employment is an all time high of 72.4%"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2259_utterance1 .
+
+    leolaniTalk:women_employment_is_time_high_of_72.4___00028 a grasp:Attribution ;
+        rdfs:label "women_employment_is_time_high_of_72.4___00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2259_utterance1_char0-92 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2259_utterance0_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2259_utterance0_char0-77" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:experience ;
+        gaf:denotes leolaniWorld:I_just-know-from_experience,
+            leolaniWorld:I_know-from_experience ;
+        grasp:hasAttribution leolaniTalk:I_just-know-from_experience_00028,
+            leolaniTalk:I_know-from_experience_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:13:26.623530"^^xml1:string,
+            "2024-06-05T23:13:26.623588"^^xml1:string ;
+        rdf:value "I just know from experience that they are incompetent and don't want to work."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2259_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -427,141 +503,65 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
 leolaniWorld:I_know-from_experience {
     leolaniWorld:I ns1:know_from leolaniWorld:experience .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_just-know-from_experience_00028 a grasp:Attribution ;
-        rdfs:label "I_just-know-from_experience_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2259_utterance0_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:I_just-know-from_experience a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_just-know-from_experience" ;
+        gaf:denotedBy leolaniTalk:chat2259_utterance0_char0-77 .
 
-    leolaniTalk:I_know-from_experience_00028 a grasp:Attribution ;
-        rdfs:label "I_know-from_experience_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2259_utterance0_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:I_know-from_experience a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_know-from_experience" ;
+        gaf:denotedBy leolaniTalk:chat2259_utterance0_char0-77 .
 
-    leolaniTalk:chat2259_utterance1_char0-92 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2259_utterance1_char0-92" ;
-        gaf:containsDenotation leolaniWorld:time_high_of_72.4__,
-            leolaniWorld:women_employment ;
-        gaf:denotes leolaniWorld:women_employment_is_time_high_of_72.4__ ;
-        grasp:hasAttribution leolaniTalk:women_employment_is_time_high_of_72.4___00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:13:26.716947"^^xml1:string ;
-        rdf:value "That's not true. According to recent research, women employment is an all time high of 72.4%"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2259_utterance1 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:women_employment_is_time_high_of_72.4___00028 a grasp:Attribution ;
-        rdfs:label "women_employment_is_time_high_of_72.4___00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2259_utterance1_char0-92 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat2259_utterance0_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2259_utterance0_char0-77" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:experience ;
-        gaf:denotes leolaniWorld:I_just-know-from_experience,
-            leolaniWorld:I_know-from_experience ;
-        grasp:hasAttribution leolaniTalk:I_just-know-from_experience_00028,
-            leolaniTalk:I_know-from_experience_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:13:26.623530"^^xml1:string,
-            "2024-06-05T23:13:26.623588"^^xml1:string ;
-        rdf:value "I just know from experience that they are incompetent and don't want to work."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2259_utterance0 .
+    leolaniWorld:women_employment_is_time_high_of_72.4__ a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_employment_is_time_high_of_72.4__" ;
+        gaf:denotedBy leolaniTalk:chat2259_utterance1_char0-92 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context26 a eps:Context ;
-        rdfs:label "context26" ;
-        hs:id "26"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2259 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "122"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2259 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2259" ;
-        hs:id "2259"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2259_utterance0,
-            leolaniTalk:chat2259_utterance1 .
-
-    leolaniTalk:chat2259_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2259_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2259_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2259_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat2259_utterance0_char0-77 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:experience a gaf:Instance ;
+        rdfs:label "experience" ;
+        gaf:denotedIn leolaniTalk:chat2259_utterance0_char0-77 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:time_high_of_72.4__ a gaf:Instance ;
+        rdfs:label "time-high-of-72-4" ;
+        gaf:denotedIn leolaniTalk:chat2259_utterance1_char0-92 .
+
+    leolaniWorld:women_employment a gaf:Instance ;
+        rdfs:label "women-employment" ;
+        gaf:denotedIn leolaniTalk:chat2259_utterance1_char0-92 .
 }
 

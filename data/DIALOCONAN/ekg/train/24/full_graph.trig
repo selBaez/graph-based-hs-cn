@@ -23,174 +23,264 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:HIV_AIDS_epidemic_was-weaponised_spread {
-    leolaniWorld:HIV_AIDS_epidemic ns11:was_weaponised leolaniWorld:spread .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    ns1:s a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "HIV_AIDS_epidemic_is-in_80's" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:HIV_AIDS_epidemic_spread_homophobia a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "HIV_AIDS_epidemic_spread_homophobia" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:HIV_AIDS_epidemic_was-weaponised_spread a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "HIV_AIDS_epidemic_was-weaponised_spread" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:HIV_AIDS_epidemic_was-weaponised_to_spread a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "HIV_AIDS_epidemic_was-weaponised_to_spread" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:HIV_AIDS_epidemic_was_weaponised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "HIV_AIDS_epidemic_was_weaponised" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:It_has_gay a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_gay" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance2_char0-50 .
-
-    leolaniWorld:do_can-manage-with_daily_medication a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "do_can-manage-with_daily_medication" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:do_can-manage-with_medication a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "do_can-manage-with_medication" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:do_can-manage_their_condition a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "do_can-manage_their_condition" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:homophobia_demonise_gay_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "homophobia_demonise_gay_people" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:homophobia_demonise_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "homophobia_demonise_people" ;
-        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:do_can-manage_their_condition {
-    leolaniWorld:do ns11:can_manage leolaniWorld:their_condition .
-}
-
-leolaniWorld:It_has_gay {
-    leolaniWorld:It ns11:has leolaniWorld:gay .
+leolaniWorld:HIV_AIDS_epidemic_spread_homophobia {
+    leolaniWorld:HIV_AIDS_epidemic ns11:spread leolaniWorld:homophobia .
 }
 
 ns1:s {
     leolaniWorld:HIV_AIDS_epidemic ns11:is_in <http://cltl.nl/leolani/world/80's> .
 }
 
-leolaniWorld:Instances {
-    <http://cltl.nl/leolani/world/80's> a gaf:Instance ;
-        rdfs:label "80-s" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+leolaniTalk:Interactions {
+    leolaniContext:context51 a eps:Context ;
+        rdfs:label "context51" ;
+        hs:id "51"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:HIV_AIDS_epidemic a gaf:Instance ;
-        rdfs:label "hiv-aids-epidemic" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat24 .
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance2_char0-50 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "4"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat24 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat24" ;
+        hs:id "24"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat24_utterance1,
+            leolaniTalk:chat24_utterance2 .
+
+    leolaniTalk:chat24_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat24_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat24_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat24_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:daily_medication a gaf:Instance ;
-        rdfs:label "daily-medication" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:do a gaf:Instance ;
-        rdfs:label "do" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:gay a gaf:Instance ;
-        rdfs:label "gay" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance2_char0-50 .
-
-    leolaniWorld:gay_people a gaf:Instance ;
-        rdfs:label "gay-people" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:homophobia a gaf:Instance ;
-        rdfs:label "homophobia" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:medication a gaf:Instance ;
-        rdfs:label "medication" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:spread a gaf:Instance ;
-        rdfs:label "spread" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:their_condition a gaf:Instance ;
-        rdfs:label "their-condition" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:to_spread a gaf:Instance ;
-        rdfs:label "to-spread" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
-
-    leolaniWorld:weaponised a gaf:Instance ;
-        rdfs:label "weaponised" ;
-        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
 }
 
 leolaniWorld:do_can-manage-with_daily_medication {
     leolaniWorld:do ns11:can_manage_with leolaniWorld:daily_medication .
 }
 
+leolaniWorld:homophobia_demonise_people {
+    leolaniWorld:homophobia ns11:demonise leolaniWorld:people .
+}
+
+leolaniWorld:do_can-manage-with_medication {
+    leolaniWorld:do ns11:can_manage_with leolaniWorld:medication .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:It_has_gay {
+    leolaniWorld:It ns11:has leolaniWorld:gay .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:homophobia_demonise_gay_people {
+    leolaniWorld:homophobia ns11:demonise leolaniWorld:gay_people .
+}
+
 leolaniWorld:HIV_AIDS_epidemic_was_weaponised {
     leolaniWorld:HIV_AIDS_epidemic ns11:was leolaniWorld:weaponised .
 }
 
-leolaniWorld:homophobia_demonise_people {
-    leolaniWorld:homophobia ns11:demonise leolaniWorld:people .
+leolaniTalk:Perspectives {
+    <http://cltl.nl/leolani/talk/HIV_AIDS_epidemic_is-in_80's_00028> a grasp:Attribution ;
+        rdfs:label "HIV_AIDS_epidemic_is-in_80's_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:HIV_AIDS_epidemic_spread_homophobia_00028 a grasp:Attribution ;
+        rdfs:label "HIV_AIDS_epidemic_spread_homophobia_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:HIV_AIDS_epidemic_was-weaponised_spread_00028 a grasp:Attribution ;
+        rdfs:label "HIV_AIDS_epidemic_was-weaponised_spread_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:HIV_AIDS_epidemic_was-weaponised_to_spread_00028 a grasp:Attribution ;
+        rdfs:label "HIV_AIDS_epidemic_was-weaponised_to_spread_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:HIV_AIDS_epidemic_was_weaponised_00028 a grasp:Attribution ;
+        rdfs:label "HIV_AIDS_epidemic_was_weaponised_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_has_gay_00028 a grasp:Attribution ;
+        rdfs:label "It_has_gay_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat24_utterance2_char0-50 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat24_utterance2_char0-50" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:gay ;
+        gaf:denotes leolaniWorld:It_has_gay ;
+        grasp:hasAttribution leolaniTalk:It_has_gay_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:43:56.948797"^^xml1:string ;
+        rdf:value "It's a gay disease, straight people don't get AIDS"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat24_utterance2 .
+
+    leolaniTalk:do_can-manage-with_daily_medication_00028 a grasp:Attribution ;
+        rdfs:label "do_can-manage-with_daily_medication_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:do_can-manage-with_medication_00028 a grasp:Attribution ;
+        rdfs:label "do_can-manage-with_medication_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:do_can-manage_their_condition_00028 a grasp:Attribution ;
+        rdfs:label "do_can-manage_their_condition_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:homophobia_demonise_gay_people_00028 a grasp:Attribution ;
+        rdfs:label "homophobia_demonise_gay_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:homophobia_demonise_people_00028 a grasp:Attribution ;
+        rdfs:label "homophobia_demonise_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat24_utterance1_char0-296 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat24_utterance1_char0-296" ;
+        gaf:containsDenotation <http://cltl.nl/leolani/world/80's>,
+            leolaniWorld:HIV_AIDS_epidemic,
+            leolaniWorld:daily_medication,
+            leolaniWorld:do,
+            leolaniWorld:gay_people,
+            leolaniWorld:homophobia,
+            leolaniWorld:medication,
+            leolaniWorld:people,
+            leolaniWorld:spread,
+            leolaniWorld:their_condition,
+            leolaniWorld:to_spread,
+            leolaniWorld:weaponised ;
+        gaf:denotes ns1:s,
+            leolaniWorld:HIV_AIDS_epidemic_spread_homophobia,
+            leolaniWorld:HIV_AIDS_epidemic_was-weaponised_spread,
+            leolaniWorld:HIV_AIDS_epidemic_was-weaponised_to_spread,
+            leolaniWorld:HIV_AIDS_epidemic_was_weaponised,
+            leolaniWorld:do_can-manage-with_daily_medication,
+            leolaniWorld:do_can-manage-with_medication,
+            leolaniWorld:do_can-manage_their_condition,
+            leolaniWorld:homophobia_demonise_gay_people,
+            leolaniWorld:homophobia_demonise_people ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/HIV_AIDS_epidemic_is-in_80's_00028>,
+            leolaniTalk:HIV_AIDS_epidemic_spread_homophobia_00028,
+            leolaniTalk:HIV_AIDS_epidemic_was-weaponised_spread_00028,
+            leolaniTalk:HIV_AIDS_epidemic_was-weaponised_to_spread_00028,
+            leolaniTalk:HIV_AIDS_epidemic_was_weaponised_00028,
+            leolaniTalk:do_can-manage-with_daily_medication_00028,
+            leolaniTalk:do_can-manage-with_medication_00028,
+            leolaniTalk:do_can-manage_their_condition_00028,
+            leolaniTalk:homophobia_demonise_gay_people_00028,
+            leolaniTalk:homophobia_demonise_people_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:43:56.870812"^^xml1:string,
+            "2024-06-05T23:43:56.870875"^^xml1:string,
+            "2024-06-05T23:43:56.870897"^^xml1:string,
+            "2024-06-05T23:43:56.870919"^^xml1:string,
+            "2024-06-05T23:43:56.870940"^^xml1:string,
+            "2024-06-05T23:43:56.870961"^^xml1:string,
+            "2024-06-05T23:43:56.870981"^^xml1:string,
+            "2024-06-05T23:43:56.871004"^^xml1:string,
+            "2024-06-05T23:43:56.871026"^^xml1:string,
+            "2024-06-05T23:43:56.871048"^^xml1:string ;
+        rdf:value "The HIV AIDS epidemic in the 80's was weaponised to spread homophobia and demonise gay people. Anybody can get HIV, straight or gay, and the vast majority of gay people do not have this illness. Those who do can manage their condition with daily medication, which makes it impossible to transmit."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat24_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -528,243 +618,153 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:homophobia_demonise_gay_people {
-    leolaniWorld:homophobia ns11:demonise leolaniWorld:gay_people .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
 leolaniWorld:HIV_AIDS_epidemic_was-weaponised_to_spread {
     leolaniWorld:HIV_AIDS_epidemic ns11:was_weaponised leolaniWorld:to_spread .
 }
 
-leolaniTalk:Perspectives {
-    <http://cltl.nl/leolani/talk/HIV_AIDS_epidemic_is-in_80's_00028> a grasp:Attribution ;
-        rdfs:label "HIV_AIDS_epidemic_is-in_80's_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:HIV_AIDS_epidemic_spread_homophobia_00028 a grasp:Attribution ;
-        rdfs:label "HIV_AIDS_epidemic_spread_homophobia_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:HIV_AIDS_epidemic_was-weaponised_spread_00028 a grasp:Attribution ;
-        rdfs:label "HIV_AIDS_epidemic_was-weaponised_spread_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:HIV_AIDS_epidemic_was-weaponised_to_spread_00028 a grasp:Attribution ;
-        rdfs:label "HIV_AIDS_epidemic_was-weaponised_to_spread_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:HIV_AIDS_epidemic_was_weaponised_00028 a grasp:Attribution ;
-        rdfs:label "HIV_AIDS_epidemic_was_weaponised_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_has_gay_00028 a grasp:Attribution ;
-        rdfs:label "It_has_gay_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat24_utterance2_char0-50 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat24_utterance2_char0-50" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:gay ;
-        gaf:denotes leolaniWorld:It_has_gay ;
-        grasp:hasAttribution leolaniTalk:It_has_gay_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:43:56.948797"^^xml1:string ;
-        rdf:value "It's a gay disease, straight people don't get AIDS"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat24_utterance2 .
-
-    leolaniTalk:do_can-manage-with_daily_medication_00028 a grasp:Attribution ;
-        rdfs:label "do_can-manage-with_daily_medication_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:do_can-manage-with_medication_00028 a grasp:Attribution ;
-        rdfs:label "do_can-manage-with_medication_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:do_can-manage_their_condition_00028 a grasp:Attribution ;
-        rdfs:label "do_can-manage_their_condition_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:homophobia_demonise_gay_people_00028 a grasp:Attribution ;
-        rdfs:label "homophobia_demonise_gay_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:homophobia_demonise_people_00028 a grasp:Attribution ;
-        rdfs:label "homophobia_demonise_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat24_utterance1_char0-296 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat24_utterance1_char0-296 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat24_utterance1_char0-296" ;
-        gaf:containsDenotation <http://cltl.nl/leolani/world/80's>,
-            leolaniWorld:HIV_AIDS_epidemic,
-            leolaniWorld:daily_medication,
-            leolaniWorld:do,
-            leolaniWorld:gay_people,
-            leolaniWorld:homophobia,
-            leolaniWorld:medication,
-            leolaniWorld:people,
-            leolaniWorld:spread,
-            leolaniWorld:their_condition,
-            leolaniWorld:to_spread,
-            leolaniWorld:weaponised ;
-        gaf:denotes ns1:s,
-            leolaniWorld:HIV_AIDS_epidemic_spread_homophobia,
-            leolaniWorld:HIV_AIDS_epidemic_was-weaponised_spread,
-            leolaniWorld:HIV_AIDS_epidemic_was-weaponised_to_spread,
-            leolaniWorld:HIV_AIDS_epidemic_was_weaponised,
-            leolaniWorld:do_can-manage-with_daily_medication,
-            leolaniWorld:do_can-manage-with_medication,
-            leolaniWorld:do_can-manage_their_condition,
-            leolaniWorld:homophobia_demonise_gay_people,
-            leolaniWorld:homophobia_demonise_people ;
-        grasp:hasAttribution <http://cltl.nl/leolani/talk/HIV_AIDS_epidemic_is-in_80's_00028>,
-            leolaniTalk:HIV_AIDS_epidemic_spread_homophobia_00028,
-            leolaniTalk:HIV_AIDS_epidemic_was-weaponised_spread_00028,
-            leolaniTalk:HIV_AIDS_epidemic_was-weaponised_to_spread_00028,
-            leolaniTalk:HIV_AIDS_epidemic_was_weaponised_00028,
-            leolaniTalk:do_can-manage-with_daily_medication_00028,
-            leolaniTalk:do_can-manage-with_medication_00028,
-            leolaniTalk:do_can-manage_their_condition_00028,
-            leolaniTalk:homophobia_demonise_gay_people_00028,
-            leolaniTalk:homophobia_demonise_people_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:43:56.870812"^^xml1:string,
-            "2024-06-05T23:43:56.870875"^^xml1:string,
-            "2024-06-05T23:43:56.870897"^^xml1:string,
-            "2024-06-05T23:43:56.870919"^^xml1:string,
-            "2024-06-05T23:43:56.870940"^^xml1:string,
-            "2024-06-05T23:43:56.870961"^^xml1:string,
-            "2024-06-05T23:43:56.870981"^^xml1:string,
-            "2024-06-05T23:43:56.871004"^^xml1:string,
-            "2024-06-05T23:43:56.871026"^^xml1:string,
-            "2024-06-05T23:43:56.871048"^^xml1:string ;
-        rdf:value "The HIV AIDS epidemic in the 80's was weaponised to spread homophobia and demonise gay people. Anybody can get HIV, straight or gay, and the vast majority of gay people do not have this illness. Those who do can manage their condition with daily medication, which makes it impossible to transmit."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat24_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:do_can-manage_their_condition {
+    leolaniWorld:do ns11:can_manage leolaniWorld:their_condition .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context51 a eps:Context ;
-        rdfs:label "context51" ;
-        hs:id "51"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat24 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "4"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat24 a grasp:Chat,
+leolaniWorld:Claims {
+    ns1:s a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat24" ;
-        hs:id "24"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat24_utterance1,
-            leolaniTalk:chat24_utterance2 .
+        rdfs:label "HIV_AIDS_epidemic_is-in_80's" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
 
-    leolaniTalk:chat24_utterance1 a grasp:Utterance,
+    leolaniWorld:HIV_AIDS_epidemic_spread_homophobia a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat24_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "HIV_AIDS_epidemic_spread_homophobia" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
 
-    leolaniTalk:chat24_utterance2 a grasp:Utterance,
+    leolaniWorld:HIV_AIDS_epidemic_was-weaponised_spread a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat24_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "HIV_AIDS_epidemic_was-weaponised_spread" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:HIV_AIDS_epidemic_was-weaponised_to_spread a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "HIV_AIDS_epidemic_was-weaponised_to_spread" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:HIV_AIDS_epidemic_was_weaponised a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "HIV_AIDS_epidemic_was_weaponised" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:It_has_gay a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_gay" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance2_char0-50 .
+
+    leolaniWorld:do_can-manage-with_daily_medication a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "do_can-manage-with_daily_medication" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:do_can-manage-with_medication a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "do_can-manage-with_medication" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:do_can-manage_their_condition a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "do_can-manage_their_condition" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:homophobia_demonise_gay_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homophobia_demonise_gay_people" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:homophobia_demonise_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homophobia_demonise_people" ;
+        gaf:denotedBy leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:HIV_AIDS_epidemic_was-weaponised_spread {
+    leolaniWorld:HIV_AIDS_epidemic ns11:was_weaponised leolaniWorld:spread .
+}
+
+leolaniWorld:Instances {
+    <http://cltl.nl/leolani/world/80's> a gaf:Instance ;
+        rdfs:label "80-s" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:HIV_AIDS_epidemic a gaf:Instance ;
+        rdfs:label "hiv-aids-epidemic" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance2_char0-50 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:daily_medication a gaf:Instance ;
+        rdfs:label "daily-medication" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:do a gaf:Instance ;
+        rdfs:label "do" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:gay a gaf:Instance ;
+        rdfs:label "gay" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance2_char0-50 .
+
+    leolaniWorld:gay_people a gaf:Instance ;
+        rdfs:label "gay-people" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:homophobia a gaf:Instance ;
+        rdfs:label "homophobia" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:HIV_AIDS_epidemic_spread_homophobia {
-    leolaniWorld:HIV_AIDS_epidemic ns11:spread leolaniWorld:homophobia .
-}
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 
-leolaniWorld:do_can-manage-with_medication {
-    leolaniWorld:do ns11:can_manage_with leolaniWorld:medication .
+    leolaniWorld:medication a gaf:Instance ;
+        rdfs:label "medication" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:spread a gaf:Instance ;
+        rdfs:label "spread" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:their_condition a gaf:Instance ;
+        rdfs:label "their-condition" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:to_spread a gaf:Instance ;
+        rdfs:label "to-spread" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
+
+    leolaniWorld:weaponised a gaf:Instance ;
+        rdfs:label "weaponised" ;
+        gaf:denotedIn leolaniTalk:chat24_utterance1_char0-296 .
 }
 

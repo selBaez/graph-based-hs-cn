@@ -23,95 +23,166 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ns11:s_background {
-    leolaniWorld:You ns1:should_investigate <http://cltl.nl/leolani/world/person_'s_background> .
+leolaniTalk:Interactions {
+    leolaniContext:context94 a eps:Context ;
+        rdfs:label "context94" ;
+        hs:id "94"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat911 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "192"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat911 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat911" ;
+        hs:id "911"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat911_utterance1,
+            leolaniTalk:chat911_utterance2 .
+
+    leolaniTalk:chat911_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat911_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat911_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat911_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:They_raping_our_children a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_raping_our_children" ;
-        gaf:denotedBy leolaniTalk:chat911_utterance2_char0-134 .
-
-    leolaniWorld:You_should-investigate_background a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_should-investigate_background" ;
-        gaf:denotedBy leolaniTalk:chat911_utterance1_char0-103 .
-
-    ns11:s_background a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_should-investigate_person_'s_background" ;
-        gaf:denotedBy leolaniTalk:chat911_utterance1_char0-103 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:person_has_background a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "person_has_background" ;
-        gaf:denotedBy leolaniTalk:chat911_utterance1_char0-103 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
+leolaniWorld:You_should-investigate_background {
+    leolaniWorld:You ns1:should_investigate leolaniWorld:background .
+}
+
+ns11:s_background {
+    leolaniWorld:You ns1:should_investigate <http://cltl.nl/leolani/world/person_'s_background> .
+}
+
 leolaniWorld:person_has_background {
     leolaniWorld:person ns1:has leolaniWorld:background .
 }
 
-leolaniWorld:They_raping_our_children {
-    leolaniWorld:They ns1:raping leolaniWorld:our_children .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:They_raping_our_children_00028 a grasp:Attribution ;
+        rdfs:label "They_raping_our_children_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat911_utterance2_char0-134 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat911_utterance2_char0-134 .
+    leolaniTalk:You_should-investigate_background_00028 a grasp:Attribution ;
+        rdfs:label "You_should-investigate_background_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat911_utterance1_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:You a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat911_utterance1_char0-103 .
+    <http://cltl.nl/leolani/talk/You_should-investigate_person_'s_background_00028> a grasp:Attribution ;
+        rdfs:label "You_should-investigate_person_'s_background_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat911_utterance1_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:background a gaf:Instance ;
-        rdfs:label "background" ;
-        gaf:denotedIn leolaniTalk:chat911_utterance1_char0-103 .
+    leolaniTalk:chat911_utterance2_char0-134 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat911_utterance2_char0-134" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:our_children ;
+        gaf:denotes leolaniWorld:They_raping_our_children ;
+        grasp:hasAttribution leolaniTalk:They_raping_our_children_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:50.796702"^^xml1:string ;
+        rdf:value "There's no need to understand Islam, the world would be a better place without Muslims. They are only killing and raping our children."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat911_utterance2 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:person_has_background_00028 a grasp:Attribution ;
+        rdfs:label "person_has_background_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat911_utterance1_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat911_utterance1_char0-103 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat911_utterance1_char0-103" ;
+        gaf:containsDenotation leolaniWorld:You,
+            leolaniWorld:background,
+            leolaniWorld:person,
+            <http://cltl.nl/leolani/world/person_'s_background> ;
+        gaf:denotes leolaniWorld:You_should-investigate_background,
+            ns11:s_background,
+            leolaniWorld:person_has_background ;
+        grasp:hasAttribution leolaniTalk:You_should-investigate_background_00028,
+            <http://cltl.nl/leolani/talk/You_should-investigate_person_'s_background_00028>,
+            leolaniTalk:person_has_background_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:50.703598"^^xml1:string,
+            "2024-06-05T23:32:50.703661"^^xml1:string,
+            "2024-06-05T23:32:50.703684"^^xml1:string ;
+        rdf:value "You should investigate each person's background and try to understand it, not tell everyone what to do."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat911_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:our_children a gaf:Instance ;
-        rdfs:label "our-children" ;
-        gaf:denotedIn leolaniTalk:chat911_utterance2_char0-134 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:person a gaf:Instance ;
-        rdfs:label "person" ;
-        gaf:denotedIn leolaniTalk:chat911_utterance1_char0-103 .
-
-    <http://cltl.nl/leolani/world/person_'s_background> a gaf:Instance ;
-        rdfs:label "person-s-background" ;
-        gaf:denotedIn leolaniTalk:chat911_utterance1_char0-103 .
-}
-
-leolaniWorld:You_should-investigate_background {
-    leolaniWorld:You ns1:should_investigate leolaniWorld:background .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -449,149 +520,78 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:They_raping_our_children {
+    leolaniWorld:They ns1:raping leolaniWorld:our_children .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_raping_our_children_00028 a grasp:Attribution ;
-        rdfs:label "They_raping_our_children_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat911_utterance2_char0-134 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:They_raping_our_children a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_raping_our_children" ;
+        gaf:denotedBy leolaniTalk:chat911_utterance2_char0-134 .
 
-    leolaniTalk:You_should-investigate_background_00028 a grasp:Attribution ;
-        rdfs:label "You_should-investigate_background_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat911_utterance1_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_should-investigate_background a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_should-investigate_background" ;
+        gaf:denotedBy leolaniTalk:chat911_utterance1_char0-103 .
 
-    <http://cltl.nl/leolani/talk/You_should-investigate_person_'s_background_00028> a grasp:Attribution ;
-        rdfs:label "You_should-investigate_person_'s_background_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat911_utterance1_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    ns11:s_background a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_should-investigate_person_'s_background" ;
+        gaf:denotedBy leolaniTalk:chat911_utterance1_char0-103 .
 
-    leolaniTalk:chat911_utterance2_char0-134 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat911_utterance2_char0-134" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:our_children ;
-        gaf:denotes leolaniWorld:They_raping_our_children ;
-        grasp:hasAttribution leolaniTalk:They_raping_our_children_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:50.796702"^^xml1:string ;
-        rdf:value "There's no need to understand Islam, the world would be a better place without Muslims. They are only killing and raping our children."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat911_utterance2 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:person_has_background_00028 a grasp:Attribution ;
-        rdfs:label "person_has_background_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat911_utterance1_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat911_utterance1_char0-103 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat911_utterance1_char0-103" ;
-        gaf:containsDenotation leolaniWorld:You,
-            leolaniWorld:background,
-            leolaniWorld:person,
-            <http://cltl.nl/leolani/world/person_'s_background> ;
-        gaf:denotes leolaniWorld:You_should-investigate_background,
-            ns11:s_background,
-            leolaniWorld:person_has_background ;
-        grasp:hasAttribution leolaniTalk:You_should-investigate_background_00028,
-            <http://cltl.nl/leolani/talk/You_should-investigate_person_'s_background_00028>,
-            leolaniTalk:person_has_background_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:50.703598"^^xml1:string,
-            "2024-06-05T23:32:50.703661"^^xml1:string,
-            "2024-06-05T23:32:50.703684"^^xml1:string ;
-        rdf:value "You should investigate each person's background and try to understand it, not tell everyone what to do."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat911_utterance1 .
+    leolaniWorld:person_has_background a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "person_has_background" ;
+        gaf:denotedBy leolaniTalk:chat911_utterance1_char0-103 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context94 a eps:Context ;
-        rdfs:label "context94" ;
-        hs:id "94"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat911_utterance2_char0-134 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat911 .
+    leolaniWorld:You a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat911_utterance1_char0-103 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "192"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat911 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat911" ;
-        hs:id "911"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat911_utterance1,
-            leolaniTalk:chat911_utterance2 .
-
-    leolaniTalk:chat911_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat911_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat911_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat911_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:background a gaf:Instance ;
+        rdfs:label "background" ;
+        gaf:denotedIn leolaniTalk:chat911_utterance1_char0-103 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_children a gaf:Instance ;
+        rdfs:label "our-children" ;
+        gaf:denotedIn leolaniTalk:chat911_utterance2_char0-134 .
+
+    leolaniWorld:person a gaf:Instance ;
+        rdfs:label "person" ;
+        gaf:denotedIn leolaniTalk:chat911_utterance1_char0-103 .
+
+    <http://cltl.nl/leolani/world/person_'s_background> a gaf:Instance ;
+        rdfs:label "person-s-background" ;
+        gaf:denotedIn leolaniTalk:chat911_utterance1_char0-103 .
 }
 

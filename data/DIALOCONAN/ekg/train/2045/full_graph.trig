@@ -22,117 +22,215 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:I_hate_migrants a gaf:Assertion,
+leolaniWorld:I_hate_migrants {
+    leolaniWorld:I ns1:hate leolaniWorld:migrants .
+}
+
+leolaniWorld:They_are-animals-in_nutshell {
+    leolaniWorld:They ns1:are_animals_in leolaniWorld:nutshell .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context204 a eps:Context ;
+        rdfs:label "context204" ;
+        hs:id "204"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2045 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "7"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2045 a grasp:Chat,
             sem:Event ;
-        rdfs:label "I_hate_migrants" ;
-        gaf:denotedBy leolaniTalk:chat2045_utterance0_char0-43 .
+        rdfs:label "chat2045" ;
+        hs:id "2045"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2045_utterance0,
+            leolaniTalk:chat2045_utterance1,
+            leolaniTalk:chat2045_utterance2 .
 
-    leolaniWorld:They_are-animals-in_nutshell a gaf:Assertion,
+    leolaniTalk:chat2045_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_are-animals-in_nutshell" ;
-        gaf:denotedBy leolaniTalk:chat2045_utterance2_char0-197 .
+        rdfs:label "chat2045_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:They_are_animals a gaf:Assertion,
+    leolaniTalk:chat2045_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_are_animals" ;
-        gaf:denotedBy leolaniTalk:chat2045_utterance2_char0-197 .
+        rdfs:label "chat2045_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:animals_is-in_nutshell a gaf:Assertion,
+    leolaniTalk:chat2045_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "animals_is-in_nutshell" ;
-        gaf:denotedBy leolaniTalk:chat2045_utterance2_char0-197 .
+        rdfs:label "chat2045_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:constitution_says-about_this a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "constitution_says-about_this" ;
-        gaf:denotedBy leolaniTalk:chat2045_utterance1_char0-104 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:we_must-close_our_borders a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_must-close_our_borders" ;
-        gaf:denotedBy leolaniTalk:chat2045_utterance0_char0-43 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:constitution_says-about_this {
+    leolaniWorld:constitution ns1:says_about leolaniWorld:this .
+}
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat2045_utterance0_char0-43 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2045_utterance2_char0-197 .
-
-    leolaniWorld:animals a gaf:Instance ;
-        rdfs:label "animals" ;
-        gaf:denotedIn leolaniTalk:chat2045_utterance2_char0-197 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:constitution a gaf:Instance ;
-        rdfs:label "constitution" ;
-        gaf:denotedIn leolaniTalk:chat2045_utterance1_char0-104 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat2045_utterance0_char0-43 .
-
-    leolaniWorld:nutshell a gaf:Instance ;
-        rdfs:label "nutshell" ;
-        gaf:denotedIn leolaniTalk:chat2045_utterance2_char0-197 .
-
-    leolaniWorld:our_borders a gaf:Instance ;
-        rdfs:label "our-borders" ;
-        gaf:denotedIn leolaniTalk:chat2045_utterance0_char0-43 .
-
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat2045_utterance1_char0-104 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2045_utterance0_char0-43 .
-}
-
-leolaniWorld:animals_is-in_nutshell {
-    leolaniWorld:animals ns1:is_in leolaniWorld:nutshell .
-}
-
 leolaniWorld:They_are_animals {
     leolaniWorld:They ns1:are leolaniWorld:animals .
 }
 
-leolaniWorld:I_hate_migrants {
-    leolaniWorld:I ns1:hate leolaniWorld:migrants .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:I_hate_migrants_00021 a grasp:Attribution ;
+        rdfs:label "I_hate_migrants_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat2045_utterance0_char0-43 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:we_must-close_our_borders {
-    leolaniWorld:we ns1:must_close leolaniWorld:our_borders .
+    leolaniTalk:They_are-animals-in_nutshell_00028 a grasp:Attribution ;
+        rdfs:label "They_are-animals-in_nutshell_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2045_utterance2_char0-197 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_animals_00028 a grasp:Attribution ;
+        rdfs:label "They_are_animals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2045_utterance2_char0-197 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:animals_is-in_nutshell_00028 a grasp:Attribution ;
+        rdfs:label "animals_is-in_nutshell_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2045_utterance2_char0-197 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2045_utterance1_char0-104 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2045_utterance1_char0-104" ;
+        gaf:containsDenotation leolaniWorld:constitution,
+            leolaniWorld:this ;
+        gaf:denotes leolaniWorld:constitution_says-about_this ;
+        grasp:hasAttribution leolaniTalk:constitution_says-about_this_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:40:28.922568"^^xml1:string ;
+        rdf:value "Why do you think we should put a stop to immigration? Do you know that the constitution says about this?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2045_utterance1 .
+
+    leolaniTalk:constitution_says-about_this_00026 a grasp:Attribution ;
+        rdfs:label "constitution_says-about_this_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat2045_utterance1_char0-104 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_must-close_our_borders_00021 a grasp:Attribution ;
+        rdfs:label "we_must-close_our_borders_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat2045_utterance0_char0-43 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    leolaniTalk:chat2045_utterance0_char0-43 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2045_utterance0_char0-43" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:migrants,
+            leolaniWorld:our_borders,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:I_hate_migrants,
+            leolaniWorld:we_must-close_our_borders ;
+        grasp:hasAttribution leolaniTalk:I_hate_migrants_00021,
+            leolaniTalk:we_must-close_our_borders_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:40:28.835093"^^xml1:string,
+            "2024-06-05T23:40:28.835152"^^xml1:string ;
+        rdf:value "I hate migrants: we must close our borders."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2045_utterance0 .
+
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
+
+    leolaniTalk:chat2045_utterance2_char0-197 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2045_utterance2_char0-197" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:animals,
+            leolaniWorld:nutshell ;
+        gaf:denotes leolaniWorld:They_are-animals-in_nutshell,
+            leolaniWorld:They_are_animals,
+            leolaniWorld:animals_is-in_nutshell ;
+        grasp:hasAttribution leolaniTalk:They_are-animals-in_nutshell_00028,
+            leolaniTalk:They_are_animals_00028,
+            leolaniTalk:animals_is-in_nutshell_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:40:29.067228"^^xml1:string,
+            "2024-06-05T23:40:29.067351"^^xml1:string,
+            "2024-06-05T23:40:29.067384"^^xml1:string ;
+        rdf:value "I do not know what is written in our constitution, but I know what it shoud be written: that they are criminals, they are rapists, they are a burden to our society. They are animals, in a nutshell."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2045_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -470,202 +568,104 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:They_are-animals-in_nutshell {
-    leolaniWorld:They ns1:are_animals_in leolaniWorld:nutshell .
+leolaniWorld:we_must-close_our_borders {
+    leolaniWorld:we ns1:must_close leolaniWorld:our_borders .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:I_hate_migrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_hate_migrants" ;
+        gaf:denotedBy leolaniTalk:chat2045_utterance0_char0-43 .
+
+    leolaniWorld:They_are-animals-in_nutshell a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-animals-in_nutshell" ;
+        gaf:denotedBy leolaniTalk:chat2045_utterance2_char0-197 .
+
+    leolaniWorld:They_are_animals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_animals" ;
+        gaf:denotedBy leolaniTalk:chat2045_utterance2_char0-197 .
+
+    leolaniWorld:animals_is-in_nutshell a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "animals_is-in_nutshell" ;
+        gaf:denotedBy leolaniTalk:chat2045_utterance2_char0-197 .
+
+    leolaniWorld:constitution_says-about_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "constitution_says-about_this" ;
+        gaf:denotedBy leolaniTalk:chat2045_utterance1_char0-104 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:we_must-close_our_borders a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_must-close_our_borders" ;
+        gaf:denotedBy leolaniTalk:chat2045_utterance0_char0-43 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_hate_migrants_00021 a grasp:Attribution ;
-        rdfs:label "I_hate_migrants_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat2045_utterance0_char0-43 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are-animals-in_nutshell_00028 a grasp:Attribution ;
-        rdfs:label "They_are-animals-in_nutshell_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2045_utterance2_char0-197 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_animals_00028 a grasp:Attribution ;
-        rdfs:label "They_are_animals_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2045_utterance2_char0-197 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:animals_is-in_nutshell_00028 a grasp:Attribution ;
-        rdfs:label "animals_is-in_nutshell_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2045_utterance2_char0-197 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2045_utterance1_char0-104 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2045_utterance1_char0-104" ;
-        gaf:containsDenotation leolaniWorld:constitution,
-            leolaniWorld:this ;
-        gaf:denotes leolaniWorld:constitution_says-about_this ;
-        grasp:hasAttribution leolaniTalk:constitution_says-about_this_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:40:28.922568"^^xml1:string ;
-        rdf:value "Why do you think we should put a stop to immigration? Do you know that the constitution says about this?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2045_utterance1 .
-
-    leolaniTalk:constitution_says-about_this_00026 a grasp:Attribution ;
-        rdfs:label "constitution_says-about_this_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat2045_utterance1_char0-104 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_must-close_our_borders_00021 a grasp:Attribution ;
-        rdfs:label "we_must-close_our_borders_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat2045_utterance0_char0-43 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    leolaniTalk:chat2045_utterance0_char0-43 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2045_utterance0_char0-43" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:migrants,
-            leolaniWorld:our_borders,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:I_hate_migrants,
-            leolaniWorld:we_must-close_our_borders ;
-        grasp:hasAttribution leolaniTalk:I_hate_migrants_00021,
-            leolaniTalk:we_must-close_our_borders_00021 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:40:28.835093"^^xml1:string,
-            "2024-06-05T23:40:28.835152"^^xml1:string ;
-        rdf:value "I hate migrants: we must close our borders."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2045_utterance0 .
-
-    graspe:ANGER a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANGER" .
-
-    leolaniTalk:chat2045_utterance2_char0-197 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2045_utterance2_char0-197" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:animals,
-            leolaniWorld:nutshell ;
-        gaf:denotes leolaniWorld:They_are-animals-in_nutshell,
-            leolaniWorld:They_are_animals,
-            leolaniWorld:animals_is-in_nutshell ;
-        grasp:hasAttribution leolaniTalk:They_are-animals-in_nutshell_00028,
-            leolaniTalk:They_are_animals_00028,
-            leolaniTalk:animals_is-in_nutshell_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:40:29.067228"^^xml1:string,
-            "2024-06-05T23:40:29.067351"^^xml1:string,
-            "2024-06-05T23:40:29.067384"^^xml1:string ;
-        rdf:value "I do not know what is written in our constitution, but I know what it shoud be written: that they are criminals, they are rapists, they are a burden to our society. They are animals, in a nutshell."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2045_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:animals_is-in_nutshell {
+    leolaniWorld:animals ns1:is_in leolaniWorld:nutshell .
 }
 
-leolaniWorld:constitution_says-about_this {
-    leolaniWorld:constitution ns1:says_about leolaniWorld:this .
-}
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat2045_utterance0_char0-43 .
 
-leolaniTalk:Interactions {
-    leolaniContext:context204 a eps:Context ;
-        rdfs:label "context204" ;
-        hs:id "204"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2045_utterance2_char0-197 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2045 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "7"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2045 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2045" ;
-        hs:id "2045"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2045_utterance0,
-            leolaniTalk:chat2045_utterance1,
-            leolaniTalk:chat2045_utterance2 .
-
-    leolaniTalk:chat2045_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2045_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2045_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2045_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2045_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2045_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:animals a gaf:Instance ;
+        rdfs:label "animals" ;
+        gaf:denotedIn leolaniTalk:chat2045_utterance2_char0-197 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:constitution a gaf:Instance ;
+        rdfs:label "constitution" ;
+        gaf:denotedIn leolaniTalk:chat2045_utterance1_char0-104 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat2045_utterance0_char0-43 .
+
+    leolaniWorld:nutshell a gaf:Instance ;
+        rdfs:label "nutshell" ;
+        gaf:denotedIn leolaniTalk:chat2045_utterance2_char0-197 .
+
+    leolaniWorld:our_borders a gaf:Instance ;
+        rdfs:label "our-borders" ;
+        gaf:denotedIn leolaniTalk:chat2045_utterance0_char0-43 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat2045_utterance1_char0-104 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2045_utterance0_char0-43 .
 }
 

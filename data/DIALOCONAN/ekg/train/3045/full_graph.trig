@@ -22,162 +22,282 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Homosexuality_is-illness_is a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is-illness_is" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
-
-    leolaniWorld:Homosexuality_is-mental-illness_is a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is-mental-illness_is" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
-
-    leolaniWorld:Homosexuality_is-mental_is a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is-mental_is" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
-
-    leolaniWorld:Homosexuality_is-sexual_affect a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is-sexual_affect" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance5_char0-176 .
-
-    leolaniWorld:Homosexuality_is_illness a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is_illness" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
-
-    leolaniWorld:Homosexuality_is_mental_illness a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is_mental_illness" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
-
-    leolaniWorld:I_support_marriage_equality a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_support_marriage_equality" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance5_char0-176 .
-
-    leolaniWorld:children_having_fun a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "children_having_fun" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance1_char0-136 .
-
-    leolaniWorld:it_has_okay a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_okay" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance1_char0-136 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_do_do_disgusting a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_do_do_disgusting" ;
-        gaf:denotedBy leolaniTalk:chat3045_utterance2_char0-87 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Homosexuality_is-illness_is {
+    leolaniWorld:Homosexuality ns1:is_illness leolaniWorld:is .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:Homosexuality_is-mental_is {
+    leolaniWorld:Homosexuality ns1:is_mental leolaniWorld:is .
 }
 
-leolaniWorld:Homosexuality_is-sexual_affect {
-    leolaniWorld:Homosexuality ns1:is_sexual leolaniWorld:affect .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context238 a eps:Context ;
+        rdfs:label "context238" ;
+        hs:id "238"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Homosexuality_is_illness {
-    leolaniWorld:Homosexuality ns1:is leolaniWorld:illness .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat3045 .
 
-leolaniWorld:Homosexuality_is-mental-illness_is {
-    leolaniWorld:Homosexuality ns1:is_mental_illness leolaniWorld:is .
-}
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-leolaniWorld:Instances {
-    leolaniWorld:Homosexuality a gaf:Instance ;
-        rdfs:label "homosexuality" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance4_char0-69,
-            leolaniTalk:chat3045_utterance5_char0-176 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "239"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance5_char0-176 .
+    leolaniTalk:chat3045 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat3045" ;
+        hs:id "3045"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat3045_utterance1,
+            leolaniTalk:chat3045_utterance2,
+            leolaniTalk:chat3045_utterance4,
+            leolaniTalk:chat3045_utterance5 .
 
-    leolaniWorld:affect a gaf:Instance ;
-        rdfs:label "affect" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance5_char0-176 .
+    leolaniTalk:chat3045_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3045_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:children a gaf:Instance ;
-        rdfs:label "children" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance1_char0-136 .
+    leolaniTalk:chat3045_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3045_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat3045_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3045_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat3045_utterance5 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat3045_utterance5" ;
+        hs:id "5"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:do_disgusting a gaf:Instance ;
-        rdfs:label "do-disgusting" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance2_char0-87 .
-
-    leolaniWorld:fun a gaf:Instance ;
-        rdfs:label "fun" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance1_char0-136 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:illness a gaf:Instance ;
-        rdfs:label "illness" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance4_char0-69 .
-
-    leolaniWorld:is a gaf:Instance ;
-        rdfs:label "is" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance4_char0-69 .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance1_char0-136 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:marriage_equality a gaf:Instance ;
-        rdfs:label "marriage-equality" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance5_char0-176 .
-
-    leolaniWorld:mental_illness a gaf:Instance ;
-        rdfs:label "mental-illness" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance4_char0-69 .
-
-    leolaniWorld:okay a gaf:Instance ;
-        rdfs:label "okay" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance1_char0-136 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat3045_utterance2_char0-87 .
 }
 
 leolaniWorld:children_having_fun {
     leolaniWorld:children ns1:having leolaniWorld:fun .
 }
 
-leolaniWorld:they_do_do_disgusting {
-    leolaniWorld:they ns1:do leolaniWorld:do_disgusting .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:I_support_marriage_equality {
     leolaniWorld:I ns1:support leolaniWorld:marriage_equality .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Homosexuality_is-illness_is_00026 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is-illness_is_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Homosexuality_is-mental-illness_is_00026 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is-mental-illness_is_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Homosexuality_is-mental_is_00026 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is-mental_is_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Homosexuality_is-sexual_affect_00028 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is-sexual_affect_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance5_char0-176 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Homosexuality_is_illness_00026 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is_illness_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Homosexuality_is_mental_illness_00026 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is_mental_illness_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_support_marriage_equality_00028 a grasp:Attribution ;
+        rdfs:label "I_support_marriage_equality_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance5_char0-176 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat3045_utterance2_char0-87 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat3045_utterance2_char0-87" ;
+        gaf:containsDenotation leolaniWorld:do_disgusting,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_do_do_disgusting ;
+        grasp:hasAttribution leolaniTalk:they_do_do_disgusting_00020 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:36:45.888873"^^xml1:string ;
+        rdf:value "It's not a secret that gay people are a danger to children. What they do is disgusting."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat3045_utterance2 .
+
+    leolaniTalk:children_having_fun_0001 a grasp:Attribution ;
+        rdfs:label "children_having_fun_0001" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance1_char0-136 ;
+        rdf:value graspe:AMUSEMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_has_okay_0001 a grasp:Attribution ;
+        rdfs:label "it_has_okay_0001" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance1_char0-136 ;
+        rdf:value graspe:AMUSEMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_do_do_disgusting_00020 a grasp:Attribution ;
+        rdfs:label "they_do_do_disgusting_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat3045_utterance2_char0-87 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:DISGUST a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISGUST" .
+
+    leolaniTalk:chat3045_utterance1_char0-136 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat3045_utterance1_char0-136" ;
+        gaf:containsDenotation leolaniWorld:children,
+            leolaniWorld:fun,
+            leolaniWorld:it,
+            leolaniWorld:okay ;
+        gaf:denotes leolaniWorld:children_having_fun,
+            leolaniWorld:it_has_okay ;
+        grasp:hasAttribution leolaniTalk:children_having_fun_0001,
+            leolaniTalk:it_has_okay_0001 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:36:45.798160"^^xml1:string,
+            "2024-06-05T23:36:45.798216"^^xml1:string ;
+        rdf:value "They are children dressed up and having fun who are being taught that it's okay to be different, of course it's not about sexualization!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat3045_utterance1 .
+
+    leolaniTalk:chat3045_utterance5_char0-176 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat3045_utterance5_char0-176" ;
+        gaf:containsDenotation leolaniWorld:Homosexuality,
+            leolaniWorld:I,
+            leolaniWorld:affect,
+            leolaniWorld:marriage_equality ;
+        gaf:denotes leolaniWorld:Homosexuality_is-sexual_affect,
+            leolaniWorld:I_support_marriage_equality ;
+        grasp:hasAttribution leolaniTalk:Homosexuality_is-sexual_affect_00028,
+            leolaniTalk:I_support_marriage_equality_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:36:46.199227"^^xml1:string,
+            "2024-06-05T23:36:46.199284"^^xml1:string ;
+        rdf:value "That's not true. Homosexuality is a sexual orientation that doesn't affect anyone, and this is why I support marriage equality and the education of children about these topics."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat3045_utterance5 .
+
+    graspe:AMUSEMENT a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "AMUSEMENT" .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat3045_utterance4_char0-69 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat3045_utterance4_char0-69" ;
+        gaf:containsDenotation leolaniWorld:Homosexuality,
+            leolaniWorld:illness,
+            leolaniWorld:is,
+            leolaniWorld:mental_illness ;
+        gaf:denotes leolaniWorld:Homosexuality_is-illness_is,
+            leolaniWorld:Homosexuality_is-mental-illness_is,
+            leolaniWorld:Homosexuality_is-mental_is,
+            leolaniWorld:Homosexuality_is_illness,
+            leolaniWorld:Homosexuality_is_mental_illness ;
+        grasp:hasAttribution leolaniTalk:Homosexuality_is-illness_is_00026,
+            leolaniTalk:Homosexuality_is-mental-illness_is_00026,
+            leolaniTalk:Homosexuality_is-mental_is_00026,
+            leolaniTalk:Homosexuality_is_illness_00026,
+            leolaniTalk:Homosexuality_is_mental_illness_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:36:46.089716"^^xml1:string,
+            "2024-06-05T23:36:46.089775"^^xml1:string,
+            "2024-06-05T23:36:46.089799"^^xml1:string,
+            "2024-06-05T23:36:46.089820"^^xml1:string,
+            "2024-06-05T23:36:46.089842"^^xml1:string ;
+        rdf:value "Homosexuality is a mental illness, what else is there to teach about?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat3045_utterance4 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:Homosexuality_is_illness {
+    leolaniWorld:Homosexuality ns1:is leolaniWorld:illness .
 }
 
 leolaniWorld:Ontology {
@@ -515,273 +635,153 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Homosexuality_is_mental_illness {
-    leolaniWorld:Homosexuality ns1:is leolaniWorld:mental_illness .
+leolaniWorld:they_do_do_disgusting {
+    leolaniWorld:they ns1:do leolaniWorld:do_disgusting .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Homosexuality_is-illness_is a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is-illness_is" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
+
+    leolaniWorld:Homosexuality_is-mental-illness_is a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is-mental-illness_is" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
+
+    leolaniWorld:Homosexuality_is-mental_is a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is-mental_is" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
+
+    leolaniWorld:Homosexuality_is-sexual_affect a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is-sexual_affect" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance5_char0-176 .
+
+    leolaniWorld:Homosexuality_is_illness a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is_illness" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
+
+    leolaniWorld:Homosexuality_is_mental_illness a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is_mental_illness" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance4_char0-69 .
+
+    leolaniWorld:I_support_marriage_equality a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_support_marriage_equality" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance5_char0-176 .
+
+    leolaniWorld:children_having_fun a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "children_having_fun" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance1_char0-136 .
+
+    leolaniWorld:it_has_okay a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_okay" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance1_char0-136 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_do_do_disgusting a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_do_do_disgusting" ;
+        gaf:denotedBy leolaniTalk:chat3045_utterance2_char0-87 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Homosexuality_is-mental-illness_is {
+    leolaniWorld:Homosexuality ns1:is_mental_illness leolaniWorld:is .
+}
+
+leolaniWorld:Homosexuality_is-sexual_affect {
+    leolaniWorld:Homosexuality ns1:is_sexual leolaniWorld:affect .
 }
 
 leolaniWorld:it_has_okay {
     leolaniWorld:it ns1:has leolaniWorld:okay .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Homosexuality_is-illness_is_00026 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is-illness_is_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Homosexuality_is-mental-illness_is_00026 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is-mental-illness_is_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Homosexuality_is-mental_is_00026 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is-mental_is_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Homosexuality_is-sexual_affect_00028 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is-sexual_affect_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance5_char0-176 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Homosexuality_is_illness_00026 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is_illness_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Homosexuality_is_mental_illness_00026 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is_mental_illness_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance4_char0-69 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_support_marriage_equality_00028 a grasp:Attribution ;
-        rdfs:label "I_support_marriage_equality_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance5_char0-176 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat3045_utterance2_char0-87 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat3045_utterance2_char0-87" ;
-        gaf:containsDenotation leolaniWorld:do_disgusting,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_do_do_disgusting ;
-        grasp:hasAttribution leolaniTalk:they_do_do_disgusting_00020 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:36:45.888873"^^xml1:string ;
-        rdf:value "It's not a secret that gay people are a danger to children. What they do is disgusting."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat3045_utterance2 .
-
-    leolaniTalk:children_having_fun_0001 a grasp:Attribution ;
-        rdfs:label "children_having_fun_0001" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance1_char0-136 ;
-        rdf:value graspe:AMUSEMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_has_okay_0001 a grasp:Attribution ;
-        rdfs:label "it_has_okay_0001" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance1_char0-136 ;
-        rdf:value graspe:AMUSEMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_do_do_disgusting_00020 a grasp:Attribution ;
-        rdfs:label "they_do_do_disgusting_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat3045_utterance2_char0-87 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:DISGUST a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISGUST" .
-
-    leolaniTalk:chat3045_utterance1_char0-136 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat3045_utterance1_char0-136" ;
-        gaf:containsDenotation leolaniWorld:children,
-            leolaniWorld:fun,
-            leolaniWorld:it,
-            leolaniWorld:okay ;
-        gaf:denotes leolaniWorld:children_having_fun,
-            leolaniWorld:it_has_okay ;
-        grasp:hasAttribution leolaniTalk:children_having_fun_0001,
-            leolaniTalk:it_has_okay_0001 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:36:45.798160"^^xml1:string,
-            "2024-06-05T23:36:45.798216"^^xml1:string ;
-        rdf:value "They are children dressed up and having fun who are being taught that it's okay to be different, of course it's not about sexualization!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat3045_utterance1 .
-
-    leolaniTalk:chat3045_utterance5_char0-176 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat3045_utterance5_char0-176" ;
-        gaf:containsDenotation leolaniWorld:Homosexuality,
-            leolaniWorld:I,
-            leolaniWorld:affect,
-            leolaniWorld:marriage_equality ;
-        gaf:denotes leolaniWorld:Homosexuality_is-sexual_affect,
-            leolaniWorld:I_support_marriage_equality ;
-        grasp:hasAttribution leolaniTalk:Homosexuality_is-sexual_affect_00028,
-            leolaniTalk:I_support_marriage_equality_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:36:46.199227"^^xml1:string,
-            "2024-06-05T23:36:46.199284"^^xml1:string ;
-        rdf:value "That's not true. Homosexuality is a sexual orientation that doesn't affect anyone, and this is why I support marriage equality and the education of children about these topics."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat3045_utterance5 .
-
-    graspe:AMUSEMENT a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "AMUSEMENT" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat3045_utterance4_char0-69 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat3045_utterance4_char0-69" ;
-        gaf:containsDenotation leolaniWorld:Homosexuality,
-            leolaniWorld:illness,
-            leolaniWorld:is,
-            leolaniWorld:mental_illness ;
-        gaf:denotes leolaniWorld:Homosexuality_is-illness_is,
-            leolaniWorld:Homosexuality_is-mental-illness_is,
-            leolaniWorld:Homosexuality_is-mental_is,
-            leolaniWorld:Homosexuality_is_illness,
-            leolaniWorld:Homosexuality_is_mental_illness ;
-        grasp:hasAttribution leolaniTalk:Homosexuality_is-illness_is_00026,
-            leolaniTalk:Homosexuality_is-mental-illness_is_00026,
-            leolaniTalk:Homosexuality_is-mental_is_00026,
-            leolaniTalk:Homosexuality_is_illness_00026,
-            leolaniTalk:Homosexuality_is_mental_illness_00026 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:36:46.089716"^^xml1:string,
-            "2024-06-05T23:36:46.089775"^^xml1:string,
-            "2024-06-05T23:36:46.089799"^^xml1:string,
-            "2024-06-05T23:36:46.089820"^^xml1:string,
-            "2024-06-05T23:36:46.089842"^^xml1:string ;
-        rdf:value "Homosexuality is a mental illness, what else is there to teach about?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat3045_utterance4 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Homosexuality_is_mental_illness {
+    leolaniWorld:Homosexuality ns1:is leolaniWorld:mental_illness .
 }
 
-leolaniWorld:Homosexuality_is-mental_is {
-    leolaniWorld:Homosexuality ns1:is_mental leolaniWorld:is .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Homosexuality a gaf:Instance ;
+        rdfs:label "homosexuality" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance4_char0-69,
+            leolaniTalk:chat3045_utterance5_char0-176 .
 
-leolaniTalk:Interactions {
-    leolaniContext:context238 a eps:Context ;
-        rdfs:label "context238" ;
-        hs:id "238"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance5_char0-176 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat3045 .
+    leolaniWorld:affect a gaf:Instance ;
+        rdfs:label "affect" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance5_char0-176 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "239"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat3045 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat3045" ;
-        hs:id "3045"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat3045_utterance1,
-            leolaniTalk:chat3045_utterance2,
-            leolaniTalk:chat3045_utterance4,
-            leolaniTalk:chat3045_utterance5 .
-
-    leolaniTalk:chat3045_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat3045_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat3045_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat3045_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat3045_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat3045_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat3045_utterance5 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat3045_utterance5" ;
-        hs:id "5"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:children a gaf:Instance ;
+        rdfs:label "children" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance1_char0-136 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:do_disgusting a gaf:Instance ;
+        rdfs:label "do-disgusting" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance2_char0-87 .
 
-leolaniWorld:Homosexuality_is-illness_is {
-    leolaniWorld:Homosexuality ns1:is_illness leolaniWorld:is .
+    leolaniWorld:fun a gaf:Instance ;
+        rdfs:label "fun" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance1_char0-136 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:illness a gaf:Instance ;
+        rdfs:label "illness" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance4_char0-69 .
+
+    leolaniWorld:is a gaf:Instance ;
+        rdfs:label "is" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance4_char0-69 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance1_char0-136 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:marriage_equality a gaf:Instance ;
+        rdfs:label "marriage-equality" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance5_char0-176 .
+
+    leolaniWorld:mental_illness a gaf:Instance ;
+        rdfs:label "mental-illness" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance4_char0-69 .
+
+    leolaniWorld:okay a gaf:Instance ;
+        rdfs:label "okay" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance1_char0-136 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat3045_utterance2_char0-87 .
 }
 

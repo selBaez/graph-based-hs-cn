@@ -4,7 +4,7 @@
 #SBATCH --gpus=4
 #SBATCH --job-name=train_dialoconan_ekg
 #SBATCH --cpus-per-task=18
-#SBATCH --time=01:00:00
+#SBATCH --time=01:30:00
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=25G

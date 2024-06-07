@@ -22,123 +22,218 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context168 a eps:Context ;
+        rdfs:label "context168" ;
+        hs:id "168"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:NHS_been-underfunded-for_years a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1627 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "247"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1627 a grasp:Chat,
             sem:Event ;
-        rdfs:label "NHS_been-underfunded-for_years" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+        rdfs:label "chat1627" ;
+        hs:id "1627"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1627_utterance1 .
 
-    leolaniWorld:NHS_been_underfunded a gaf:Assertion,
+    leolaniTalk:chat1627_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "NHS_been_underfunded" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+        rdfs:label "chat1627_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:health_tourism_actually-only-takes_0.3__ a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "health_tourism_actually-only-takes_0.3__" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:health_tourism_actually-only-takes_0.3___of_budget a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "health_tourism_actually-only-takes_0.3___of_budget" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:health_tourism_actually-takes_0.3__ a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "health_tourism_actually-takes_0.3__" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:health_tourism_actually-takes_0.3___of_budget a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "health_tourism_actually-takes_0.3___of_budget" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:health_tourism_only-takes_0.3__ a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "health_tourism_only-takes_0.3__" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:health_tourism_only-takes_0.3___of_budget a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "health_tourism_only-takes_0.3___of_budget" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:health_tourism_takes_0.3__ a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "health_tourism_takes_0.3__" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:health_tourism_takes_0.3___of_budget a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "health_tourism_takes_0.3___of_budget" ;
-        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
-leolaniWorld:health_tourism_actually-takes_0.3__ {
-    leolaniWorld:health_tourism ns1:actually_takes leolaniWorld:0.3__ .
-}
-
-leolaniWorld:NHS_been-underfunded-for_years {
-    leolaniWorld:NHS ns1:been_underfunded_for leolaniWorld:years .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:0.3__ a gaf:Instance ;
-        rdfs:label "0-3" ;
-        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:0.3___of_budget a gaf:Instance ;
-        rdfs:label "0-3-of-budget" ;
-        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:NHS a gaf:Instance ;
-        rdfs:label "nhs" ;
-        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
-
-    leolaniWorld:health_tourism a gaf:Instance ;
-        rdfs:label "health-tourism" ;
-        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:underfunded a gaf:Instance ;
-        rdfs:label "underfunded" ;
-        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
-
-    leolaniWorld:years a gaf:Instance ;
-        rdfs:label "years" ;
-        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
 }
 
-leolaniWorld:health_tourism_only-takes_0.3__ {
-    leolaniWorld:health_tourism ns1:only_takes leolaniWorld:0.3__ .
+leolaniWorld:health_tourism_takes_0.3__ {
+    leolaniWorld:health_tourism ns1:takes leolaniWorld:0.3__ .
 }
 
-leolaniWorld:health_tourism_actually-only-takes_0.3___of_budget {
-    leolaniWorld:health_tourism ns1:actually_only_takes leolaniWorld:0.3___of_budget .
+leolaniWorld:health_tourism_takes_0.3___of_budget {
+    leolaniWorld:health_tourism ns1:takes leolaniWorld:0.3___of_budget .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:health_tourism_actually-takes_0.3___of_budget {
     leolaniWorld:health_tourism ns1:actually_takes leolaniWorld:0.3___of_budget .
 }
 
-leolaniWorld:health_tourism_takes_0.3___of_budget {
-    leolaniWorld:health_tourism ns1:takes leolaniWorld:0.3___of_budget .
+leolaniWorld:health_tourism_actually-takes_0.3__ {
+    leolaniWorld:health_tourism ns1:actually_takes leolaniWorld:0.3__ .
+}
+
+leolaniWorld:health_tourism_only-takes_0.3__ {
+    leolaniWorld:health_tourism ns1:only_takes leolaniWorld:0.3__ .
+}
+
+leolaniWorld:NHS_been-underfunded-for_years {
+    leolaniWorld:NHS ns1:been_underfunded_for leolaniWorld:years .
+}
+
+leolaniWorld:NHS_been_underfunded {
+    leolaniWorld:NHS ns1:been leolaniWorld:underfunded .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:NHS_been-underfunded-for_years_00028 a grasp:Attribution ;
+        rdfs:label "NHS_been-underfunded-for_years_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:NHS_been_underfunded_00028 a grasp:Attribution ;
+        rdfs:label "NHS_been_underfunded_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_tourism_actually-only-takes_0.3___00028 a grasp:Attribution ;
+        rdfs:label "health_tourism_actually-only-takes_0.3___00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_tourism_actually-only-takes_0.3___of_budget_00028 a grasp:Attribution ;
+        rdfs:label "health_tourism_actually-only-takes_0.3___of_budget_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_tourism_actually-takes_0.3___00028 a grasp:Attribution ;
+        rdfs:label "health_tourism_actually-takes_0.3___00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_tourism_actually-takes_0.3___of_budget_00028 a grasp:Attribution ;
+        rdfs:label "health_tourism_actually-takes_0.3___of_budget_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_tourism_only-takes_0.3___00028 a grasp:Attribution ;
+        rdfs:label "health_tourism_only-takes_0.3___00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_tourism_only-takes_0.3___of_budget_00028 a grasp:Attribution ;
+        rdfs:label "health_tourism_only-takes_0.3___of_budget_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_tourism_takes_0.3___00028 a grasp:Attribution ;
+        rdfs:label "health_tourism_takes_0.3___00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:health_tourism_takes_0.3___of_budget_00028 a grasp:Attribution ;
+        rdfs:label "health_tourism_takes_0.3___of_budget_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1627_utterance1_char0-173 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1627_utterance1_char0-173" ;
+        gaf:containsDenotation leolaniWorld:0.3__,
+            leolaniWorld:0.3___of_budget,
+            leolaniWorld:NHS,
+            leolaniWorld:health_tourism,
+            leolaniWorld:underfunded,
+            leolaniWorld:years ;
+        gaf:denotes leolaniWorld:NHS_been-underfunded-for_years,
+            leolaniWorld:NHS_been_underfunded,
+            leolaniWorld:health_tourism_actually-only-takes_0.3__,
+            leolaniWorld:health_tourism_actually-only-takes_0.3___of_budget,
+            leolaniWorld:health_tourism_actually-takes_0.3__,
+            leolaniWorld:health_tourism_actually-takes_0.3___of_budget,
+            leolaniWorld:health_tourism_only-takes_0.3__,
+            leolaniWorld:health_tourism_only-takes_0.3___of_budget,
+            leolaniWorld:health_tourism_takes_0.3__,
+            leolaniWorld:health_tourism_takes_0.3___of_budget ;
+        grasp:hasAttribution leolaniTalk:NHS_been-underfunded-for_years_00028,
+            leolaniTalk:NHS_been_underfunded_00028,
+            leolaniTalk:health_tourism_actually-only-takes_0.3___00028,
+            leolaniTalk:health_tourism_actually-only-takes_0.3___of_budget_00028,
+            leolaniTalk:health_tourism_actually-takes_0.3___00028,
+            leolaniTalk:health_tourism_actually-takes_0.3___of_budget_00028,
+            leolaniTalk:health_tourism_only-takes_0.3___00028,
+            leolaniTalk:health_tourism_only-takes_0.3___of_budget_00028,
+            leolaniTalk:health_tourism_takes_0.3___00028,
+            leolaniTalk:health_tourism_takes_0.3___of_budget_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:47.145486"^^xml1:string,
+            "2024-06-05T23:04:47.145542"^^xml1:string,
+            "2024-06-05T23:04:47.145565"^^xml1:string,
+            "2024-06-05T23:04:47.145586"^^xml1:string,
+            "2024-06-05T23:04:47.145607"^^xml1:string,
+            "2024-06-05T23:04:47.145628"^^xml1:string,
+            "2024-06-05T23:04:47.145649"^^xml1:string,
+            "2024-06-05T23:04:47.145670"^^xml1:string,
+            "2024-06-05T23:04:47.145691"^^xml1:string,
+            "2024-06-05T23:04:47.145715"^^xml1:string ;
+        rdf:value "The real problem is that the NHS has been underfunded for years, since health tourism actually only takes 0.3% of the budget. You can't blame migrants for a funding problem."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1627_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -476,6 +571,64 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:NHS_been-underfunded-for_years a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "NHS_been-underfunded-for_years" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:NHS_been_underfunded a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "NHS_been_underfunded" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:health_tourism_actually-only-takes_0.3__ a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_tourism_actually-only-takes_0.3__" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:health_tourism_actually-only-takes_0.3___of_budget a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_tourism_actually-only-takes_0.3___of_budget" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:health_tourism_actually-takes_0.3__ a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_tourism_actually-takes_0.3__" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:health_tourism_actually-takes_0.3___of_budget a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_tourism_actually-takes_0.3___of_budget" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:health_tourism_only-takes_0.3__ a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_tourism_only-takes_0.3__" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:health_tourism_only-takes_0.3___of_budget a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_tourism_only-takes_0.3___of_budget" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:health_tourism_takes_0.3__ a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_tourism_takes_0.3__" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:health_tourism_takes_0.3___of_budget a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "health_tourism_takes_0.3___of_budget" ;
+        gaf:denotedBy leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
 leolaniWorld:health_tourism_actually-only-takes_0.3__ {
     leolaniWorld:health_tourism ns1:actually_only_takes leolaniWorld:0.3__ .
 }
@@ -484,193 +637,40 @@ leolaniWorld:health_tourism_only-takes_0.3___of_budget {
     leolaniWorld:health_tourism ns1:only_takes leolaniWorld:0.3___of_budget .
 }
 
-leolaniWorld:NHS_been_underfunded {
-    leolaniWorld:NHS ns1:been leolaniWorld:underfunded .
+leolaniWorld:health_tourism_actually-only-takes_0.3___of_budget {
+    leolaniWorld:health_tourism ns1:actually_only_takes leolaniWorld:0.3___of_budget .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:NHS_been-underfunded-for_years_00028 a grasp:Attribution ;
-        rdfs:label "NHS_been-underfunded-for_years_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:0.3__ a gaf:Instance ;
+        rdfs:label "0-3" ;
+        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
 
-    leolaniTalk:NHS_been_underfunded_00028 a grasp:Attribution ;
-        rdfs:label "NHS_been_underfunded_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:0.3___of_budget a gaf:Instance ;
+        rdfs:label "0-3-of-budget" ;
+        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
 
-    leolaniTalk:health_tourism_actually-only-takes_0.3___00028 a grasp:Attribution ;
-        rdfs:label "health_tourism_actually-only-takes_0.3___00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:health_tourism_actually-only-takes_0.3___of_budget_00028 a grasp:Attribution ;
-        rdfs:label "health_tourism_actually-only-takes_0.3___of_budget_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:health_tourism_actually-takes_0.3___00028 a grasp:Attribution ;
-        rdfs:label "health_tourism_actually-takes_0.3___00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:health_tourism_actually-takes_0.3___of_budget_00028 a grasp:Attribution ;
-        rdfs:label "health_tourism_actually-takes_0.3___of_budget_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:health_tourism_only-takes_0.3___00028 a grasp:Attribution ;
-        rdfs:label "health_tourism_only-takes_0.3___00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:health_tourism_only-takes_0.3___of_budget_00028 a grasp:Attribution ;
-        rdfs:label "health_tourism_only-takes_0.3___of_budget_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:health_tourism_takes_0.3___00028 a grasp:Attribution ;
-        rdfs:label "health_tourism_takes_0.3___00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:health_tourism_takes_0.3___of_budget_00028 a grasp:Attribution ;
-        rdfs:label "health_tourism_takes_0.3___of_budget_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1627_utterance1_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1627_utterance1_char0-173 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1627_utterance1_char0-173" ;
-        gaf:containsDenotation leolaniWorld:0.3__,
-            leolaniWorld:0.3___of_budget,
-            leolaniWorld:NHS,
-            leolaniWorld:health_tourism,
-            leolaniWorld:underfunded,
-            leolaniWorld:years ;
-        gaf:denotes leolaniWorld:NHS_been-underfunded-for_years,
-            leolaniWorld:NHS_been_underfunded,
-            leolaniWorld:health_tourism_actually-only-takes_0.3__,
-            leolaniWorld:health_tourism_actually-only-takes_0.3___of_budget,
-            leolaniWorld:health_tourism_actually-takes_0.3__,
-            leolaniWorld:health_tourism_actually-takes_0.3___of_budget,
-            leolaniWorld:health_tourism_only-takes_0.3__,
-            leolaniWorld:health_tourism_only-takes_0.3___of_budget,
-            leolaniWorld:health_tourism_takes_0.3__,
-            leolaniWorld:health_tourism_takes_0.3___of_budget ;
-        grasp:hasAttribution leolaniTalk:NHS_been-underfunded-for_years_00028,
-            leolaniTalk:NHS_been_underfunded_00028,
-            leolaniTalk:health_tourism_actually-only-takes_0.3___00028,
-            leolaniTalk:health_tourism_actually-only-takes_0.3___of_budget_00028,
-            leolaniTalk:health_tourism_actually-takes_0.3___00028,
-            leolaniTalk:health_tourism_actually-takes_0.3___of_budget_00028,
-            leolaniTalk:health_tourism_only-takes_0.3___00028,
-            leolaniTalk:health_tourism_only-takes_0.3___of_budget_00028,
-            leolaniTalk:health_tourism_takes_0.3___00028,
-            leolaniTalk:health_tourism_takes_0.3___of_budget_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:47.145486"^^xml1:string,
-            "2024-06-05T23:04:47.145542"^^xml1:string,
-            "2024-06-05T23:04:47.145565"^^xml1:string,
-            "2024-06-05T23:04:47.145586"^^xml1:string,
-            "2024-06-05T23:04:47.145607"^^xml1:string,
-            "2024-06-05T23:04:47.145628"^^xml1:string,
-            "2024-06-05T23:04:47.145649"^^xml1:string,
-            "2024-06-05T23:04:47.145670"^^xml1:string,
-            "2024-06-05T23:04:47.145691"^^xml1:string,
-            "2024-06-05T23:04:47.145715"^^xml1:string ;
-        rdf:value "The real problem is that the NHS has been underfunded for years, since health tourism actually only takes 0.3% of the budget. You can't blame migrants for a funding problem."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1627_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context168 a eps:Context ;
-        rdfs:label "context168" ;
-        hs:id "168"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1627 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "247"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1627 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1627" ;
-        hs:id "1627"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1627_utterance1 .
-
-    leolaniTalk:chat1627_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1627_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:NHS a gaf:Instance ;
+        rdfs:label "nhs" ;
+        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
-}
 
-leolaniWorld:health_tourism_takes_0.3__ {
-    leolaniWorld:health_tourism ns1:takes leolaniWorld:0.3__ .
+    leolaniWorld:health_tourism a gaf:Instance ;
+        rdfs:label "health-tourism" ;
+        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:underfunded a gaf:Instance ;
+        rdfs:label "underfunded" ;
+        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
+
+    leolaniWorld:years a gaf:Instance ;
+        rdfs:label "years" ;
+        gaf:denotedIn leolaniTalk:chat1627_utterance1_char0-173 .
 }
 

@@ -22,6 +22,60 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context233 a eps:Context ;
+        rdfs:label "context233" ;
+        hs:id "233"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2661 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "61"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2661 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2661" ;
+        hs:id "2661"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2661_utterance1 .
+
+    leolaniTalk:chat2661_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2661_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
 leolaniWorld:We_are_proud {
     leolaniWorld:We ns1:are leolaniWorld:proud .
 }
@@ -30,43 +84,53 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:We_are-proud-of_their_heritage a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_are-proud-of_their_heritage" ;
-        gaf:denotedBy leolaniTalk:chat2661_utterance1_char0-160 .
-
-    leolaniWorld:We_are_proud a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_are_proud" ;
-        gaf:denotedBy leolaniTalk:chat2661_utterance1_char0-160 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:We_are-proud-of_their_heritage {
+    leolaniWorld:We ns1:are_proud_of leolaniWorld:their_heritage .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2661_utterance1_char0-160 .
+leolaniTalk:Perspectives {
+    leolaniTalk:We_are-proud-of_their_heritage_0009 a grasp:Attribution ;
+        rdfs:label "We_are-proud-of_their_heritage_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat2661_utterance1_char0-160 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:We_are_proud_0009 a grasp:Attribution ;
+        rdfs:label "We_are_proud_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat2661_utterance1_char0-160 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat2661_utterance1_char0-160 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2661_utterance1_char0-160" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:proud,
+            leolaniWorld:their_heritage ;
+        gaf:denotes leolaniWorld:We_are-proud-of_their_heritage,
+            leolaniWorld:We_are_proud ;
+        grasp:hasAttribution leolaniTalk:We_are-proud-of_their_heritage_0009,
+            leolaniTalk:We_are_proud_0009 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:04.136550"^^xml1:string,
+            "2024-06-05T23:07:04.136614"^^xml1:string ;
+        rdf:value "The Jews are great people and even if they have some influence over our society, this doesn't mean that they control everything. We are proud of their heritage."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2661_utterance1 .
 
-    leolaniWorld:proud a gaf:Instance ;
-        rdfs:label "proud" ;
-        gaf:denotedIn leolaniTalk:chat2661_utterance1_char0-160 .
+    graspe:ADMIRATION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ADMIRATION" .
 
-    leolaniWorld:their_heritage a gaf:Instance ;
-        rdfs:label "their-heritage" ;
-        gaf:denotedIn leolaniTalk:chat2661_utterance1_char0-160 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -404,106 +468,42 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:We_are-proud-of_their_heritage {
-    leolaniWorld:We ns1:are_proud_of leolaniWorld:their_heritage .
+leolaniWorld:Claims {
+    leolaniWorld:We_are-proud-of_their_heritage a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_are-proud-of_their_heritage" ;
+        gaf:denotedBy leolaniTalk:chat2661_utterance1_char0-160 .
+
+    leolaniWorld:We_are_proud a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_are_proud" ;
+        gaf:denotedBy leolaniTalk:chat2661_utterance1_char0-160 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:We_are-proud-of_their_heritage_0009 a grasp:Attribution ;
-        rdfs:label "We_are-proud-of_their_heritage_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat2661_utterance1_char0-160 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_are_proud_0009 a grasp:Attribution ;
-        rdfs:label "We_are_proud_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat2661_utterance1_char0-160 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2661_utterance1_char0-160 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2661_utterance1_char0-160" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:proud,
-            leolaniWorld:their_heritage ;
-        gaf:denotes leolaniWorld:We_are-proud-of_their_heritage,
-            leolaniWorld:We_are_proud ;
-        grasp:hasAttribution leolaniTalk:We_are-proud-of_their_heritage_0009,
-            leolaniTalk:We_are_proud_0009 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:04.136550"^^xml1:string,
-            "2024-06-05T23:07:04.136614"^^xml1:string ;
-        rdf:value "The Jews are great people and even if they have some influence over our society, this doesn't mean that they control everything. We are proud of their heritage."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2661_utterance1 .
-
-    graspe:ADMIRATION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ADMIRATION" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context233 a eps:Context ;
-        rdfs:label "context233" ;
-        hs:id "233"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2661 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "61"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2661 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2661" ;
-        hs:id "2661"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2661_utterance1 .
-
-    leolaniTalk:chat2661_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2661_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2661_utterance1_char0-160 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:proud a gaf:Instance ;
+        rdfs:label "proud" ;
+        gaf:denotedIn leolaniTalk:chat2661_utterance1_char0-160 .
+
+    leolaniWorld:their_heritage a gaf:Instance ;
+        rdfs:label "their-heritage" ;
+        gaf:denotedIn leolaniTalk:chat2661_utterance1_char0-160 .
 }
 

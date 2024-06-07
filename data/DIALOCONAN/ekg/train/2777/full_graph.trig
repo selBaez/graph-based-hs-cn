@@ -22,134 +22,199 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context175 a eps:Context ;
+        rdfs:label "context175" ;
+        hs:id "175"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2777 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "166"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2777 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2777" ;
+        hs:id "2777"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2777_utterance0,
+            leolaniTalk:chat2777_utterance1 .
+
+    leolaniTalk:chat2777_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2777_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2777_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2777_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:she_got-at_me {
     leolaniWorld:she ns1:got_at leolaniWorld:me .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Lasses_are-easily-offended-at-time_days a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Lasses_are-easily-offended-at-time_days" ;
-        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
-
-    leolaniWorld:Lasses_are-offended-at-time_days a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Lasses_are-offended-at-time_days" ;
-        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
-
-    leolaniWorld:Lasses_are-too-easily-offended-at-time_days a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Lasses_are-too-easily-offended-at-time_days" ;
-        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
-
-    leolaniWorld:it_has_offensive a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_offensive" ;
-        gaf:denotedBy leolaniTalk:chat2777_utterance1_char0-111 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:she_got-at_me a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "she_got-at_me" ;
-        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
-
-    leolaniWorld:she_got_mad a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "she_got_mad" ;
-        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
-
-    leolaniWorld:woman_is_person a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "woman_is_person" ;
-        gaf:denotedBy leolaniTalk:chat2777_utterance1_char0-111 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:Lasses_are-too-easily-offended-at-time_days {
     leolaniWorld:Lasses ns1:are_too_easily_offended_at_time leolaniWorld:days .
 }
 
-leolaniWorld:it_has_offensive {
-    leolaniWorld:it ns1:has leolaniWorld:offensive .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:she_got_mad {
     leolaniWorld:she ns1:got leolaniWorld:mad .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Lasses a gaf:Instance ;
-        rdfs:label "lasses" ;
-        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Lasses_are-easily-offended-at-time_days_00022 a grasp:Attribution ;
+        rdfs:label "Lasses_are-easily-offended-at-time_days_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:Lasses_are-offended-at-time_days_00022 a grasp:Attribution ;
+        rdfs:label "Lasses_are-offended-at-time_days_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:days a gaf:Instance ;
-        rdfs:label "days" ;
-        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
+    leolaniTalk:Lasses_are-too-easily-offended-at-time_days_00022 a grasp:Attribution ;
+        rdfs:label "Lasses_are-too-easily-offended-at-time_days_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:it_has_offensive_00022 a grasp:Attribution ;
+        rdfs:label "it_has_offensive_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2777_utterance1_char0-111 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2777_utterance1_char0-111 .
+    leolaniTalk:she_got-at_me_00022 a grasp:Attribution ;
+        rdfs:label "she_got-at_me_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:she_got_mad_00022 a grasp:Attribution ;
+        rdfs:label "she_got_mad_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:mad a gaf:Instance ;
-        rdfs:label "mad" ;
-        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
+    leolaniTalk:woman_is_person_00022 a grasp:Attribution ;
+        rdfs:label "woman_is_person_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2777_utterance1_char0-111 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:me a gaf:Instance ;
-        rdfs:label "me" ;
-        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
+    leolaniTalk:chat2777_utterance1_char0-111 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2777_utterance1_char0-111" ;
+        gaf:containsDenotation leolaniWorld:it,
+            leolaniWorld:offensive,
+            leolaniWorld:person,
+            leolaniWorld:woman ;
+        gaf:denotes leolaniWorld:it_has_offensive,
+            leolaniWorld:woman_is_person ;
+        grasp:hasAttribution leolaniTalk:it_has_offensive_00022,
+            leolaniTalk:woman_is_person_00022 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:17.213160"^^xml1:string,
+            "2024-06-05T23:23:17.213262"^^xml1:string ;
+        rdf:value "This woman is a person! She has rights as one, you can't just yell at her because you like her, it's offensive."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2777_utterance1 .
 
-    leolaniWorld:offensive a gaf:Instance ;
-        rdfs:label "offensive" ;
-        gaf:denotedIn leolaniTalk:chat2777_utterance1_char0-111 .
+    leolaniTalk:chat2777_utterance0_char0-135 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2777_utterance0_char0-135" ;
+        gaf:containsDenotation leolaniWorld:Lasses,
+            leolaniWorld:days,
+            leolaniWorld:mad,
+            leolaniWorld:me,
+            leolaniWorld:she ;
+        gaf:denotes leolaniWorld:Lasses_are-easily-offended-at-time_days,
+            leolaniWorld:Lasses_are-offended-at-time_days,
+            leolaniWorld:Lasses_are-too-easily-offended-at-time_days,
+            leolaniWorld:she_got-at_me,
+            leolaniWorld:she_got_mad ;
+        grasp:hasAttribution leolaniTalk:Lasses_are-easily-offended-at-time_days_00022,
+            leolaniTalk:Lasses_are-offended-at-time_days_00022,
+            leolaniTalk:Lasses_are-too-easily-offended-at-time_days_00022,
+            leolaniTalk:she_got-at_me_00022,
+            leolaniTalk:she_got_mad_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:17.114978"^^xml1:string,
+            "2024-06-05T23:23:17.115040"^^xml1:string,
+            "2024-06-05T23:23:17.115063"^^xml1:string,
+            "2024-06-05T23:23:17.115084"^^xml1:string,
+            "2024-06-05T23:23:17.115109"^^xml1:string ;
+        rdf:value "Called a woman a 'bird' the other day and she got mad at me. You can't say anything anymore! Lasses are too easily offended these days."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2777_utterance0 .
 
-    leolaniWorld:person a gaf:Instance ;
-        rdfs:label "person" ;
-        gaf:denotedIn leolaniTalk:chat2777_utterance1_char0-111 .
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
 
-    leolaniWorld:she a gaf:Instance ;
-        rdfs:label "she" ;
-        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:woman a gaf:Instance ;
-        rdfs:label "woman" ;
-        gaf:denotedIn leolaniTalk:chat2777_utterance1_char0-111 .
-}
-
-leolaniWorld:Lasses_are-offended-at-time_days {
-    leolaniWorld:Lasses ns1:are_offended_at_time leolaniWorld:days .
-}
-
-leolaniWorld:Lasses_are-easily-offended-at-time_days {
-    leolaniWorld:Lasses ns1:are_easily_offended_at_time leolaniWorld:days .
-}
-
-leolaniWorld:woman_is_person {
-    leolaniWorld:woman ns1:is leolaniWorld:person .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -487,182 +552,117 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Lasses_are-offended-at-time_days {
+    leolaniWorld:Lasses ns1:are_offended_at_time leolaniWorld:days .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Lasses_are-easily-offended-at-time_days_00022 a grasp:Attribution ;
-        rdfs:label "Lasses_are-easily-offended-at-time_days_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Lasses_are-easily-offended-at-time_days a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Lasses_are-easily-offended-at-time_days" ;
+        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
 
-    leolaniTalk:Lasses_are-offended-at-time_days_00022 a grasp:Attribution ;
-        rdfs:label "Lasses_are-offended-at-time_days_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Lasses_are-offended-at-time_days a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Lasses_are-offended-at-time_days" ;
+        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
 
-    leolaniTalk:Lasses_are-too-easily-offended-at-time_days_00022 a grasp:Attribution ;
-        rdfs:label "Lasses_are-too-easily-offended-at-time_days_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Lasses_are-too-easily-offended-at-time_days a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Lasses_are-too-easily-offended-at-time_days" ;
+        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
 
-    leolaniTalk:it_has_offensive_00022 a grasp:Attribution ;
-        rdfs:label "it_has_offensive_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2777_utterance1_char0-111 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:it_has_offensive a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_offensive" ;
+        gaf:denotedBy leolaniTalk:chat2777_utterance1_char0-111 .
 
-    leolaniTalk:she_got-at_me_00022 a grasp:Attribution ;
-        rdfs:label "she_got-at_me_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:she_got_mad_00022 a grasp:Attribution ;
-        rdfs:label "she_got_mad_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2777_utterance0_char0-135 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:woman_is_person_00022 a grasp:Attribution ;
-        rdfs:label "woman_is_person_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2777_utterance1_char0-111 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:she_got-at_me a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "she_got-at_me" ;
+        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
 
-    leolaniTalk:chat2777_utterance1_char0-111 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2777_utterance1_char0-111" ;
-        gaf:containsDenotation leolaniWorld:it,
-            leolaniWorld:offensive,
-            leolaniWorld:person,
-            leolaniWorld:woman ;
-        gaf:denotes leolaniWorld:it_has_offensive,
-            leolaniWorld:woman_is_person ;
-        grasp:hasAttribution leolaniTalk:it_has_offensive_00022,
-            leolaniTalk:woman_is_person_00022 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:17.213160"^^xml1:string,
-            "2024-06-05T23:23:17.213262"^^xml1:string ;
-        rdf:value "This woman is a person! She has rights as one, you can't just yell at her because you like her, it's offensive."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2777_utterance1 .
+    leolaniWorld:she_got_mad a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "she_got_mad" ;
+        gaf:denotedBy leolaniTalk:chat2777_utterance0_char0-135 .
 
-    leolaniTalk:chat2777_utterance0_char0-135 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2777_utterance0_char0-135" ;
-        gaf:containsDenotation leolaniWorld:Lasses,
-            leolaniWorld:days,
-            leolaniWorld:mad,
-            leolaniWorld:me,
-            leolaniWorld:she ;
-        gaf:denotes leolaniWorld:Lasses_are-easily-offended-at-time_days,
-            leolaniWorld:Lasses_are-offended-at-time_days,
-            leolaniWorld:Lasses_are-too-easily-offended-at-time_days,
-            leolaniWorld:she_got-at_me,
-            leolaniWorld:she_got_mad ;
-        grasp:hasAttribution leolaniTalk:Lasses_are-easily-offended-at-time_days_00022,
-            leolaniTalk:Lasses_are-offended-at-time_days_00022,
-            leolaniTalk:Lasses_are-too-easily-offended-at-time_days_00022,
-            leolaniTalk:she_got-at_me_00022,
-            leolaniTalk:she_got_mad_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:17.114978"^^xml1:string,
-            "2024-06-05T23:23:17.115040"^^xml1:string,
-            "2024-06-05T23:23:17.115063"^^xml1:string,
-            "2024-06-05T23:23:17.115084"^^xml1:string,
-            "2024-06-05T23:23:17.115109"^^xml1:string ;
-        rdf:value "Called a woman a 'bird' the other day and she got mad at me. You can't say anything anymore! Lasses are too easily offended these days."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2777_utterance0 .
+    leolaniWorld:woman_is_person a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "woman_is_person" ;
+        gaf:denotedBy leolaniTalk:chat2777_utterance1_char0-111 .
 
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context175 a eps:Context ;
-        rdfs:label "context175" ;
-        hs:id "175"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:woman_is_person {
+    leolaniWorld:woman ns1:is leolaniWorld:person .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2777 .
+leolaniWorld:it_has_offensive {
+    leolaniWorld:it ns1:has leolaniWorld:offensive .
+}
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+leolaniWorld:Lasses_are-easily-offended-at-time_days {
+    leolaniWorld:Lasses ns1:are_easily_offended_at_time leolaniWorld:days .
+}
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "166"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2777 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2777" ;
-        hs:id "2777"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2777_utterance0,
-            leolaniTalk:chat2777_utterance1 .
-
-    leolaniTalk:chat2777_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2777_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2777_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2777_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Lasses a gaf:Instance ;
+        rdfs:label "lasses" ;
+        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:days a gaf:Instance ;
+        rdfs:label "days" ;
+        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2777_utterance1_char0-111 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:mad a gaf:Instance ;
+        rdfs:label "mad" ;
+        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
+
+    leolaniWorld:me a gaf:Instance ;
+        rdfs:label "me" ;
+        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
+
+    leolaniWorld:offensive a gaf:Instance ;
+        rdfs:label "offensive" ;
+        gaf:denotedIn leolaniTalk:chat2777_utterance1_char0-111 .
+
+    leolaniWorld:person a gaf:Instance ;
+        rdfs:label "person" ;
+        gaf:denotedIn leolaniTalk:chat2777_utterance1_char0-111 .
+
+    leolaniWorld:she a gaf:Instance ;
+        rdfs:label "she" ;
+        gaf:denotedIn leolaniTalk:chat2777_utterance0_char0-135 .
+
+    leolaniWorld:woman a gaf:Instance ;
+        rdfs:label "woman" ;
+        gaf:denotedIn leolaniTalk:chat2777_utterance1_char0-111 .
 }
 

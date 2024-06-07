@@ -22,57 +22,6 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:people_are_subhuman {
-    leolaniWorld:people ns1:are leolaniWorld:subhuman .
-}
-
-leolaniWorld:they_start-in_school_curriculum {
-    leolaniWorld:they ns1:start_in leolaniWorld:school_curriculum .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Black_people_are_subhuman a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Black_people_are_subhuman" ;
-        gaf:denotedBy leolaniTalk:chat688_utterance2_char0-77 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_are_subhuman a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_are_subhuman" ;
-        gaf:denotedBy leolaniTalk:chat688_utterance2_char0-77 .
-
-    leolaniWorld:they_should-stay-in_their_caves a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_should-stay-in_their_caves" ;
-        gaf:denotedBy leolaniTalk:chat688_utterance2_char0-77 .
-
-    leolaniWorld:they_start-in_school_curriculum a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_start-in_school_curriculum" ;
-        gaf:denotedBy leolaniTalk:chat688_utterance1_char0-111 .
-
-    leolaniWorld:they_start-including_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_start-including_them" ;
-        gaf:denotedBy leolaniTalk:chat688_utterance1_char0-111 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
 leolaniWorld:they_should-stay-in_their_caves {
     leolaniWorld:they ns1:should_stay_in leolaniWorld:their_caves .
 }
@@ -81,50 +30,174 @@ leolaniWorld:they_start-including_them {
     leolaniWorld:they ns1:start_including leolaniWorld:them .
 }
 
-leolaniWorld:Black_people_are_subhuman {
-    leolaniWorld:Black_people ns1:are leolaniWorld:subhuman .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context145 a eps:Context ;
+        rdfs:label "context145" ;
+        hs:id "145"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:Black_people a gaf:Instance ;
-        rdfs:label "black-people" ;
-        gaf:denotedIn leolaniTalk:chat688_utterance2_char0-77 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat688 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "33"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat688 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat688" ;
+        hs:id "688"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat688_utterance1,
+            leolaniTalk:chat688_utterance2 .
+
+    leolaniTalk:chat688_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat688_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat688_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat688_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat688_utterance2_char0-77 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:school_curriculum a gaf:Instance ;
-        rdfs:label "school-curriculum" ;
-        gaf:denotedIn leolaniTalk:chat688_utterance1_char0-111 .
+leolaniWorld:people_are_subhuman {
+    leolaniWorld:people ns1:are leolaniWorld:subhuman .
+}
 
-    leolaniWorld:subhuman a gaf:Instance ;
-        rdfs:label "subhuman" ;
-        gaf:denotedIn leolaniTalk:chat688_utterance2_char0-77 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Black_people_are_subhuman_00023 a grasp:Attribution ;
+        rdfs:label "Black_people_are_subhuman_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat688_utterance2_char0-77 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:their_caves a gaf:Instance ;
-        rdfs:label "their-caves" ;
-        gaf:denotedIn leolaniTalk:chat688_utterance2_char0-77 .
+    leolaniTalk:people_are_subhuman_00023 a grasp:Attribution ;
+        rdfs:label "people_are_subhuman_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat688_utterance2_char0-77 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat688_utterance1_char0-111 .
+    leolaniTalk:they_should-stay-in_their_caves_00023 a grasp:Attribution ;
+        rdfs:label "they_should-stay-in_their_caves_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat688_utterance2_char0-77 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat688_utterance1_char0-111,
-            leolaniTalk:chat688_utterance2_char0-77 .
+    leolaniTalk:they_start-in_school_curriculum_00027 a grasp:Attribution ;
+        rdfs:label "they_start-in_school_curriculum_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat688_utterance1_char0-111 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_start-including_them_00027 a grasp:Attribution ;
+        rdfs:label "they_start-including_them_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat688_utterance1_char0-111 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat688_utterance1_char0-111 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat688_utterance1_char0-111" ;
+        gaf:containsDenotation leolaniWorld:school_curriculum,
+            leolaniWorld:them,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_start-in_school_curriculum,
+            leolaniWorld:they_start-including_them ;
+        grasp:hasAttribution leolaniTalk:they_start-in_school_curriculum_00027,
+            leolaniTalk:they_start-including_them_00027 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:46.834130"^^xml1:string,
+            "2024-06-05T23:07:46.834191"^^xml1:string ;
+        rdf:value "Maybe we should stop telling black people they are not human and start including them in the school curriculum?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat688_utterance1 .
+
+    graspe:CONFUSION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CONFUSION" .
+
+    leolaniTalk:chat688_utterance2_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat688_utterance2_char0-77" ;
+        gaf:containsDenotation leolaniWorld:Black_people,
+            leolaniWorld:people,
+            leolaniWorld:subhuman,
+            leolaniWorld:their_caves,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:Black_people_are_subhuman,
+            leolaniWorld:people_are_subhuman,
+            leolaniWorld:they_should-stay-in_their_caves ;
+        grasp:hasAttribution leolaniTalk:Black_people_are_subhuman_00023,
+            leolaniTalk:people_are_subhuman_00023,
+            leolaniTalk:they_should-stay-in_their_caves_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:46.935697"^^xml1:string,
+            "2024-06-05T23:07:46.935754"^^xml1:string,
+            "2024-06-05T23:07:46.935778"^^xml1:string ;
+        rdf:value "No, we shouldn't. Black people are subhuman, they should stay in their caves."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat688_utterance2 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -462,165 +535,92 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Black_people_are_subhuman a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are_subhuman" ;
+        gaf:denotedBy leolaniTalk:chat688_utterance2_char0-77 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_are_subhuman a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_subhuman" ;
+        gaf:denotedBy leolaniTalk:chat688_utterance2_char0-77 .
+
+    leolaniWorld:they_should-stay-in_their_caves a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_should-stay-in_their_caves" ;
+        gaf:denotedBy leolaniTalk:chat688_utterance2_char0-77 .
+
+    leolaniWorld:they_start-in_school_curriculum a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_start-in_school_curriculum" ;
+        gaf:denotedBy leolaniTalk:chat688_utterance1_char0-111 .
+
+    leolaniWorld:they_start-including_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_start-including_them" ;
+        gaf:denotedBy leolaniTalk:chat688_utterance1_char0-111 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Black_people_are_subhuman_00023 a grasp:Attribution ;
-        rdfs:label "Black_people_are_subhuman_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat688_utterance2_char0-77 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_are_subhuman_00023 a grasp:Attribution ;
-        rdfs:label "people_are_subhuman_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat688_utterance2_char0-77 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_should-stay-in_their_caves_00023 a grasp:Attribution ;
-        rdfs:label "they_should-stay-in_their_caves_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat688_utterance2_char0-77 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_start-in_school_curriculum_00027 a grasp:Attribution ;
-        rdfs:label "they_start-in_school_curriculum_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat688_utterance1_char0-111 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_start-including_them_00027 a grasp:Attribution ;
-        rdfs:label "they_start-including_them_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat688_utterance1_char0-111 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat688_utterance1_char0-111 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat688_utterance1_char0-111" ;
-        gaf:containsDenotation leolaniWorld:school_curriculum,
-            leolaniWorld:them,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_start-in_school_curriculum,
-            leolaniWorld:they_start-including_them ;
-        grasp:hasAttribution leolaniTalk:they_start-in_school_curriculum_00027,
-            leolaniTalk:they_start-including_them_00027 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:46.834130"^^xml1:string,
-            "2024-06-05T23:07:46.834191"^^xml1:string ;
-        rdf:value "Maybe we should stop telling black people they are not human and start including them in the school curriculum?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat688_utterance1 .
-
-    graspe:CONFUSION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CONFUSION" .
-
-    leolaniTalk:chat688_utterance2_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat688_utterance2_char0-77" ;
-        gaf:containsDenotation leolaniWorld:Black_people,
-            leolaniWorld:people,
-            leolaniWorld:subhuman,
-            leolaniWorld:their_caves,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:Black_people_are_subhuman,
-            leolaniWorld:people_are_subhuman,
-            leolaniWorld:they_should-stay-in_their_caves ;
-        grasp:hasAttribution leolaniTalk:Black_people_are_subhuman_00023,
-            leolaniTalk:people_are_subhuman_00023,
-            leolaniTalk:they_should-stay-in_their_caves_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:46.935697"^^xml1:string,
-            "2024-06-05T23:07:46.935754"^^xml1:string,
-            "2024-06-05T23:07:46.935778"^^xml1:string ;
-        rdf:value "No, we shouldn't. Black people are subhuman, they should stay in their caves."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat688_utterance2 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:they_start-in_school_curriculum {
+    leolaniWorld:they ns1:start_in leolaniWorld:school_curriculum .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context145 a eps:Context ;
-        rdfs:label "context145" ;
-        hs:id "145"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Black_people_are_subhuman {
+    leolaniWorld:Black_people ns1:are leolaniWorld:subhuman .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat688 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "33"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat688 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat688" ;
-        hs:id "688"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat688_utterance1,
-            leolaniTalk:chat688_utterance2 .
-
-    leolaniTalk:chat688_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat688_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat688_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat688_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Black_people a gaf:Instance ;
+        rdfs:label "black-people" ;
+        gaf:denotedIn leolaniTalk:chat688_utterance2_char0-77 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat688_utterance2_char0-77 .
+
+    leolaniWorld:school_curriculum a gaf:Instance ;
+        rdfs:label "school-curriculum" ;
+        gaf:denotedIn leolaniTalk:chat688_utterance1_char0-111 .
+
+    leolaniWorld:subhuman a gaf:Instance ;
+        rdfs:label "subhuman" ;
+        gaf:denotedIn leolaniTalk:chat688_utterance2_char0-77 .
+
+    leolaniWorld:their_caves a gaf:Instance ;
+        rdfs:label "their-caves" ;
+        gaf:denotedIn leolaniTalk:chat688_utterance2_char0-77 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat688_utterance1_char0-111 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat688_utterance1_char0-111,
+            leolaniTalk:chat688_utterance2_char0-77 .
 }
 

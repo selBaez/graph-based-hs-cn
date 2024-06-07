@@ -22,86 +22,156 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:AIDS_epidemic_is-in_80s a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "AIDS_epidemic_is-in_80s" ;
-        gaf:denotedBy leolaniTalk:chat1515_utterance1_char0-285 .
-
-    leolaniWorld:It_has_gay a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_gay" ;
-        gaf:denotedBy leolaniTalk:chat1515_utterance2_char0-50 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:medication_manage_their_condition a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "medication_manage_their_condition" ;
-        gaf:denotedBy leolaniTalk:chat1515_utterance1_char0-285 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:AIDS_epidemic_is-in_80s {
+    leolaniWorld:AIDS_epidemic ns1:is_in leolaniWorld:80s .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context171 a eps:Context ;
+        rdfs:label "context171" ;
+        hs:id "171"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1515 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "36"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1515 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1515" ;
+        hs:id "1515"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1515_utterance1,
+            leolaniTalk:chat1515_utterance2 .
+
+    leolaniTalk:chat1515_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1515_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1515_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1515_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:It_has_gay {
     leolaniWorld:It ns1:has leolaniWorld:gay .
 }
 
-leolaniWorld:AIDS_epidemic_is-in_80s {
-    leolaniWorld:AIDS_epidemic ns1:is_in leolaniWorld:80s .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:medication_manage_their_condition {
     leolaniWorld:medication ns1:manage leolaniWorld:their_condition .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:80s a gaf:Instance ;
-        rdfs:label "80s" ;
-        gaf:denotedIn leolaniTalk:chat1515_utterance1_char0-285 .
+leolaniTalk:Perspectives {
+    leolaniTalk:AIDS_epidemic_is-in_80s_00028 a grasp:Attribution ;
+        rdfs:label "AIDS_epidemic_is-in_80s_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1515_utterance1_char0-285 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:AIDS_epidemic a gaf:Instance ;
-        rdfs:label "aids-epidemic" ;
-        gaf:denotedIn leolaniTalk:chat1515_utterance1_char0-285 .
+    leolaniTalk:It_has_gay_00028 a grasp:Attribution ;
+        rdfs:label "It_has_gay_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1515_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1515_utterance2_char0-50 .
+    leolaniTalk:chat1515_utterance2_char0-50 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1515_utterance2_char0-50" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:gay ;
+        gaf:denotes leolaniWorld:It_has_gay ;
+        grasp:hasAttribution leolaniTalk:It_has_gay_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:50.251234"^^xml1:string ;
+        rdf:value "It's a gay disease, straight people don't get AIDS"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1515_utterance2 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:medication_manage_their_condition_00028 a grasp:Attribution ;
+        rdfs:label "medication_manage_their_condition_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1515_utterance1_char0-285 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:gay a gaf:Instance ;
-        rdfs:label "gay" ;
-        gaf:denotedIn leolaniTalk:chat1515_utterance2_char0-50 .
+    leolaniTalk:chat1515_utterance1_char0-285 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1515_utterance1_char0-285" ;
+        gaf:containsDenotation leolaniWorld:80s,
+            leolaniWorld:AIDS_epidemic,
+            leolaniWorld:medication,
+            leolaniWorld:their_condition ;
+        gaf:denotes leolaniWorld:AIDS_epidemic_is-in_80s,
+            leolaniWorld:medication_manage_their_condition ;
+        grasp:hasAttribution leolaniTalk:AIDS_epidemic_is-in_80s_00028,
+            leolaniTalk:medication_manage_their_condition_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:43.636993"^^xml1:string,
+            "2024-06-05T23:35:43.637054"^^xml1:string ;
+        rdf:value "The AIDS epidemic in the 80s gave way to homophobia and demonization of gays, but it's possible to get HIV regardless of sexuality, and the majority of gay people do not have it. The people who do take medication daily and can manage their condition, so it is not possible to transmit."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1515_utterance1 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:medication a gaf:Instance ;
-        rdfs:label "medication" ;
-        gaf:denotedIn leolaniTalk:chat1515_utterance1_char0-285 .
-
-    leolaniWorld:their_condition a gaf:Instance ;
-        rdfs:label "their-condition" ;
-        gaf:denotedIn leolaniTalk:chat1515_utterance1_char0-285 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -439,139 +509,69 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:AIDS_epidemic_is-in_80s a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "AIDS_epidemic_is-in_80s" ;
+        gaf:denotedBy leolaniTalk:chat1515_utterance1_char0-285 .
+
+    leolaniWorld:It_has_gay a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_gay" ;
+        gaf:denotedBy leolaniTalk:chat1515_utterance2_char0-50 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:medication_manage_their_condition a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "medication_manage_their_condition" ;
+        gaf:denotedBy leolaniTalk:chat1515_utterance1_char0-285 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:AIDS_epidemic_is-in_80s_00028 a grasp:Attribution ;
-        rdfs:label "AIDS_epidemic_is-in_80s_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1515_utterance1_char0-285 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:80s a gaf:Instance ;
+        rdfs:label "80s" ;
+        gaf:denotedIn leolaniTalk:chat1515_utterance1_char0-285 .
 
-    leolaniTalk:It_has_gay_00028 a grasp:Attribution ;
-        rdfs:label "It_has_gay_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1515_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:AIDS_epidemic a gaf:Instance ;
+        rdfs:label "aids-epidemic" ;
+        gaf:denotedIn leolaniTalk:chat1515_utterance1_char0-285 .
 
-    leolaniTalk:chat1515_utterance2_char0-50 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1515_utterance2_char0-50" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:gay ;
-        gaf:denotes leolaniWorld:It_has_gay ;
-        grasp:hasAttribution leolaniTalk:It_has_gay_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:50.251234"^^xml1:string ;
-        rdf:value "It's a gay disease, straight people don't get AIDS"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1515_utterance2 .
-
-    leolaniTalk:medication_manage_their_condition_00028 a grasp:Attribution ;
-        rdfs:label "medication_manage_their_condition_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1515_utterance1_char0-285 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1515_utterance1_char0-285 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1515_utterance1_char0-285" ;
-        gaf:containsDenotation leolaniWorld:80s,
-            leolaniWorld:AIDS_epidemic,
-            leolaniWorld:medication,
-            leolaniWorld:their_condition ;
-        gaf:denotes leolaniWorld:AIDS_epidemic_is-in_80s,
-            leolaniWorld:medication_manage_their_condition ;
-        grasp:hasAttribution leolaniTalk:AIDS_epidemic_is-in_80s_00028,
-            leolaniTalk:medication_manage_their_condition_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:43.636993"^^xml1:string,
-            "2024-06-05T23:35:43.637054"^^xml1:string ;
-        rdf:value "The AIDS epidemic in the 80s gave way to homophobia and demonization of gays, but it's possible to get HIV regardless of sexuality, and the majority of gay people do not have it. The people who do take medication daily and can manage their condition, so it is not possible to transmit."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1515_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context171 a eps:Context ;
-        rdfs:label "context171" ;
-        hs:id "171"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1515 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "36"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1515 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1515" ;
-        hs:id "1515"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1515_utterance1,
-            leolaniTalk:chat1515_utterance2 .
-
-    leolaniTalk:chat1515_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1515_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1515_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1515_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1515_utterance2_char0-50 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:gay a gaf:Instance ;
+        rdfs:label "gay" ;
+        gaf:denotedIn leolaniTalk:chat1515_utterance2_char0-50 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:medication a gaf:Instance ;
+        rdfs:label "medication" ;
+        gaf:denotedIn leolaniTalk:chat1515_utterance1_char0-285 .
+
+    leolaniWorld:their_condition a gaf:Instance ;
+        rdfs:label "their-condition" ;
+        gaf:denotedIn leolaniTalk:chat1515_utterance1_char0-285 .
 }
 

@@ -22,120 +22,194 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:European_Parliament_established_right a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "European_Parliament_established_right" ;
-        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
-
-    leolaniWorld:European_Parliament_established_to_vote_for_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "European_Parliament_established_to_vote_for_people" ;
-        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
-
-    leolaniWorld:European_Parliament_established_vote_for_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "European_Parliament_established_vote_for_people" ;
-        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
-
-    leolaniWorld:Women_are_citizens a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_citizens" ;
-        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
-
-    leolaniWorld:Women_can_choose_must_must_touched a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_can_choose_must_must_touched" ;
-        gaf:denotedBy leolaniTalk:chat2610_utterance1_char0-77 .
-
-    leolaniWorld:citizen_has_right a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "citizen_has_right" ;
-        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:right_vote-for_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "right_vote-for_people" ;
-        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:Women_can_choose_must_must_touched {
+    leolaniWorld:Women_can_choose ns1:must leolaniWorld:must_touched .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:European_Parliament_established_right {
-    leolaniWorld:European_Parliament ns1:established leolaniWorld:right .
-}
-
-leolaniWorld:citizen_has_right {
-    leolaniWorld:citizen ns1:has leolaniWorld:right .
+leolaniWorld:European_Parliament_established_vote_for_people {
+    leolaniWorld:European_Parliament ns1:established leolaniWorld:vote_for_people .
 }
 
 leolaniWorld:Women_are_citizens {
     leolaniWorld:Women ns1:are leolaniWorld:citizens .
 }
 
-leolaniWorld:European_Parliament_established_to_vote_for_people {
-    leolaniWorld:European_Parliament ns1:established leolaniWorld:to_vote_for_people .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context239 a eps:Context ;
+        rdfs:label "context239" ;
+        hs:id "239"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:European_Parliament a gaf:Instance ;
-        rdfs:label "european-parliament" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2610 .
 
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:Women_can_choose a gaf:Instance ;
-        rdfs:label "women-can-choose" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance1_char0-77 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "139"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:citizen a gaf:Instance ;
-        rdfs:label "citizen" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
+    leolaniTalk:chat2610 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2610" ;
+        hs:id "2610"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2610_utterance1,
+            leolaniTalk:chat2610_utterance3 .
 
-    leolaniWorld:citizens a gaf:Instance ;
-        rdfs:label "citizens" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
+    leolaniTalk:chat2610_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2610_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2610_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2610_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:must_touched a gaf:Instance ;
-        rdfs:label "must-touched" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance1_char0-77 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
-
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
-
-    leolaniWorld:to_vote_for_people a gaf:Instance ;
-        rdfs:label "to-vote-for-people" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
-
-    leolaniWorld:vote_for_people a gaf:Instance ;
-        rdfs:label "vote-for-people" ;
-        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
 }
 
-leolaniWorld:right_vote-for_people {
-    leolaniWorld:right ns1:vote_for leolaniWorld:people .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:citizen_has_right {
+    leolaniWorld:citizen ns1:has leolaniWorld:right .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:European_Parliament_established_right_00028 a grasp:Attribution ;
+        rdfs:label "European_Parliament_established_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:European_Parliament_established_to_vote_for_people_00028 a grasp:Attribution ;
+        rdfs:label "European_Parliament_established_to_vote_for_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:European_Parliament_established_vote_for_people_00028 a grasp:Attribution ;
+        rdfs:label "European_Parliament_established_vote_for_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Women_are_citizens_00028 a grasp:Attribution ;
+        rdfs:label "Women_are_citizens_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Women_can_choose_must_must_touched_00028 a grasp:Attribution ;
+        rdfs:label "Women_can_choose_must_must_touched_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2610_utterance1_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2610_utterance1_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2610_utterance1_char0-77" ;
+        gaf:containsDenotation leolaniWorld:Women_can_choose,
+            leolaniWorld:must_touched ;
+        gaf:denotes leolaniWorld:Women_can_choose_must_must_touched ;
+        grasp:hasAttribution leolaniTalk:Women_can_choose_must_must_touched_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:18.298148"^^xml1:string ;
+        rdf:value "Women can choose their own lives and their right to vote must not be touched."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2610_utterance1 .
+
+    leolaniTalk:citizen_has_right_00028 a grasp:Attribution ;
+        rdfs:label "citizen_has_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:right_vote-for_people_00028 a grasp:Attribution ;
+        rdfs:label "right_vote-for_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2610_utterance3_char0-148 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2610_utterance3_char0-148" ;
+        gaf:containsDenotation leolaniWorld:European_Parliament,
+            leolaniWorld:Women,
+            leolaniWorld:citizen,
+            leolaniWorld:citizens,
+            leolaniWorld:people,
+            leolaniWorld:right,
+            leolaniWorld:to_vote_for_people,
+            leolaniWorld:vote_for_people ;
+        gaf:denotes leolaniWorld:European_Parliament_established_right,
+            leolaniWorld:European_Parliament_established_to_vote_for_people,
+            leolaniWorld:European_Parliament_established_vote_for_people,
+            leolaniWorld:Women_are_citizens,
+            leolaniWorld:citizen_has_right,
+            leolaniWorld:right_vote-for_people ;
+        grasp:hasAttribution leolaniTalk:European_Parliament_established_right_00028,
+            leolaniTalk:European_Parliament_established_to_vote_for_people_00028,
+            leolaniTalk:European_Parliament_established_vote_for_people_00028,
+            leolaniTalk:Women_are_citizens_00028,
+            leolaniTalk:citizen_has_right_00028,
+            leolaniTalk:right_vote-for_people_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:18.517827"^^xml1:string,
+            "2024-06-05T23:08:18.517887"^^xml1:string,
+            "2024-06-05T23:08:18.517911"^^xml1:string,
+            "2024-06-05T23:08:18.517935"^^xml1:string,
+            "2024-06-05T23:08:18.517958"^^xml1:string,
+            "2024-06-05T23:08:18.517980"^^xml1:string ;
+        rdf:value "The European Parliament established the right to vote for all people, and every citizen has the right to vote. Women are citizens, so they can vote."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2610_utterance3 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -473,181 +547,107 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:European_Parliament_established_vote_for_people {
-    leolaniWorld:European_Parliament ns1:established leolaniWorld:vote_for_people .
+leolaniWorld:European_Parliament_established_to_vote_for_people {
+    leolaniWorld:European_Parliament ns1:established leolaniWorld:to_vote_for_people .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:European_Parliament_established_right_00028 a grasp:Attribution ;
-        rdfs:label "European_Parliament_established_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:European_Parliament_established_to_vote_for_people_00028 a grasp:Attribution ;
-        rdfs:label "European_Parliament_established_to_vote_for_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:European_Parliament_established_vote_for_people_00028 a grasp:Attribution ;
-        rdfs:label "European_Parliament_established_vote_for_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_are_citizens_00028 a grasp:Attribution ;
-        rdfs:label "Women_are_citizens_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_can_choose_must_must_touched_00028 a grasp:Attribution ;
-        rdfs:label "Women_can_choose_must_must_touched_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2610_utterance1_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2610_utterance1_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2610_utterance1_char0-77" ;
-        gaf:containsDenotation leolaniWorld:Women_can_choose,
-            leolaniWorld:must_touched ;
-        gaf:denotes leolaniWorld:Women_can_choose_must_must_touched ;
-        grasp:hasAttribution leolaniTalk:Women_can_choose_must_must_touched_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:18.298148"^^xml1:string ;
-        rdf:value "Women can choose their own lives and their right to vote must not be touched."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2610_utterance1 .
-
-    leolaniTalk:citizen_has_right_00028 a grasp:Attribution ;
-        rdfs:label "citizen_has_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:right_vote-for_people_00028 a grasp:Attribution ;
-        rdfs:label "right_vote-for_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2610_utterance3_char0-148 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2610_utterance3_char0-148 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2610_utterance3_char0-148" ;
-        gaf:containsDenotation leolaniWorld:European_Parliament,
-            leolaniWorld:Women,
-            leolaniWorld:citizen,
-            leolaniWorld:citizens,
-            leolaniWorld:people,
-            leolaniWorld:right,
-            leolaniWorld:to_vote_for_people,
-            leolaniWorld:vote_for_people ;
-        gaf:denotes leolaniWorld:European_Parliament_established_right,
-            leolaniWorld:European_Parliament_established_to_vote_for_people,
-            leolaniWorld:European_Parliament_established_vote_for_people,
-            leolaniWorld:Women_are_citizens,
-            leolaniWorld:citizen_has_right,
-            leolaniWorld:right_vote-for_people ;
-        grasp:hasAttribution leolaniTalk:European_Parliament_established_right_00028,
-            leolaniTalk:European_Parliament_established_to_vote_for_people_00028,
-            leolaniTalk:European_Parliament_established_vote_for_people_00028,
-            leolaniTalk:Women_are_citizens_00028,
-            leolaniTalk:citizen_has_right_00028,
-            leolaniTalk:right_vote-for_people_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:18.517827"^^xml1:string,
-            "2024-06-05T23:08:18.517887"^^xml1:string,
-            "2024-06-05T23:08:18.517911"^^xml1:string,
-            "2024-06-05T23:08:18.517935"^^xml1:string,
-            "2024-06-05T23:08:18.517958"^^xml1:string,
-            "2024-06-05T23:08:18.517980"^^xml1:string ;
-        rdf:value "The European Parliament established the right to vote for all people, and every citizen has the right to vote. Women are citizens, so they can vote."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2610_utterance3 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:right_vote-for_people {
+    leolaniWorld:right ns1:vote_for leolaniWorld:people .
 }
 
-leolaniWorld:Women_can_choose_must_must_touched {
-    leolaniWorld:Women_can_choose ns1:must leolaniWorld:must_touched .
+leolaniWorld:Claims {
+    leolaniWorld:European_Parliament_established_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "European_Parliament_established_right" ;
+        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
+
+    leolaniWorld:European_Parliament_established_to_vote_for_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "European_Parliament_established_to_vote_for_people" ;
+        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
+
+    leolaniWorld:European_Parliament_established_vote_for_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "European_Parliament_established_vote_for_people" ;
+        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
+
+    leolaniWorld:Women_are_citizens a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are_citizens" ;
+        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
+
+    leolaniWorld:Women_can_choose_must_must_touched a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_can_choose_must_must_touched" ;
+        gaf:denotedBy leolaniTalk:chat2610_utterance1_char0-77 .
+
+    leolaniWorld:citizen_has_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "citizen_has_right" ;
+        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:right_vote-for_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "right_vote-for_people" ;
+        gaf:denotedBy leolaniTalk:chat2610_utterance3_char0-148 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context239 a eps:Context ;
-        rdfs:label "context239" ;
-        hs:id "239"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:European_Parliament_established_right {
+    leolaniWorld:European_Parliament ns1:established leolaniWorld:right .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2610 .
+leolaniWorld:Instances {
+    leolaniWorld:European_Parliament a gaf:Instance ;
+        rdfs:label "european-parliament" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "139"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    leolaniWorld:Women_can_choose a gaf:Instance ;
+        rdfs:label "women-can-choose" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance1_char0-77 .
 
-    leolaniTalk:chat2610 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2610" ;
-        hs:id "2610"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2610_utterance1,
-            leolaniTalk:chat2610_utterance3 .
+    leolaniWorld:citizen a gaf:Instance ;
+        rdfs:label "citizen" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
 
-    leolaniTalk:chat2610_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2610_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2610_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2610_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:citizens a gaf:Instance ;
+        rdfs:label "citizens" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:must_touched a gaf:Instance ;
+        rdfs:label "must-touched" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance1_char0-77 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
+
+    leolaniWorld:to_vote_for_people a gaf:Instance ;
+        rdfs:label "to-vote-for-people" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
+
+    leolaniWorld:vote_for_people a gaf:Instance ;
+        rdfs:label "vote-for-people" ;
+        gaf:denotedIn leolaniTalk:chat2610_utterance3_char0-148 .
 }
 

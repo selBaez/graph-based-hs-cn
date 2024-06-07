@@ -22,108 +22,192 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Afro_Saxon_got_access a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Afro_Saxon_got_access" ;
-        gaf:denotedBy leolaniTalk:chat1808_utterance0_char0-73 .
-
-    leolaniWorld:Afro_Saxon_got_access_to_health_care a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Afro_Saxon_got_access_to_health_care" ;
-        gaf:denotedBy leolaniTalk:chat1808_utterance0_char0-73 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:nigga_are_subhuman a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "nigga_are_subhuman" ;
-        gaf:denotedBy leolaniTalk:chat1808_utterance2_char0-92 .
-
-    leolaniWorld:nigga_descended-from_apes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "nigga_descended-from_apes" ;
-        gaf:denotedBy leolaniTalk:chat1808_utterance2_char0-92 .
-
-    leolaniWorld:quality_access-to_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "quality_access-to_it" ;
-        gaf:denotedBy leolaniTalk:chat1808_utterance1_char0-71 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
 leolaniWorld:Afro_Saxon_got_access_to_health_care {
     leolaniWorld:Afro_Saxon ns1:got leolaniWorld:access_to_health_care .
-}
-
-leolaniWorld:nigga_are_subhuman {
-    leolaniWorld:nigga ns1:are leolaniWorld:subhuman .
 }
 
 leolaniWorld:Afro_Saxon_got_access {
     leolaniWorld:Afro_Saxon ns1:got leolaniWorld:access .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Afro_Saxon a gaf:Instance ;
-        rdfs:label "afro-saxon" ;
-        gaf:denotedIn leolaniTalk:chat1808_utterance0_char0-73 .
+leolaniTalk:Interactions {
+    leolaniContext:context61 a eps:Context ;
+        rdfs:label "context61" ;
+        hs:id "61"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:access a gaf:Instance ;
-        rdfs:label "access" ;
-        gaf:denotedIn leolaniTalk:chat1808_utterance0_char0-73 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1808 .
 
-    leolaniWorld:access_to_health_care a gaf:Instance ;
-        rdfs:label "access-to-health-care" ;
-        gaf:denotedIn leolaniTalk:chat1808_utterance0_char0-73 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:apes a gaf:Instance ;
-        rdfs:label "apes" ;
-        gaf:denotedIn leolaniTalk:chat1808_utterance2_char0-92 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "17"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1808 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1808" ;
+        hs:id "1808"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1808_utterance0,
+            leolaniTalk:chat1808_utterance1,
+            leolaniTalk:chat1808_utterance2 .
+
+    leolaniTalk:chat1808_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1808_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1808_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1808_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1808_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1808_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1808_utterance1_char0-71 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nigga a gaf:Instance ;
-        rdfs:label "nigga" ;
-        gaf:denotedIn leolaniTalk:chat1808_utterance2_char0-92 .
-
-    leolaniWorld:quality a gaf:Instance ;
-        rdfs:label "quality" ;
-        gaf:denotedIn leolaniTalk:chat1808_utterance1_char0-71 .
-
-    leolaniWorld:subhuman a gaf:Instance ;
-        rdfs:label "subhuman" ;
-        gaf:denotedIn leolaniTalk:chat1808_utterance2_char0-92 .
 }
 
-leolaniWorld:quality_access-to_it {
-    leolaniWorld:quality ns1:access_to leolaniWorld:it .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Afro_Saxon_got_access_00028 a grasp:Attribution ;
+        rdfs:label "Afro_Saxon_got_access_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1808_utterance0_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Afro_Saxon_got_access_to_health_care_00028 a grasp:Attribution ;
+        rdfs:label "Afro_Saxon_got_access_to_health_care_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1808_utterance0_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1808_utterance1_char0-71 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1808_utterance1_char0-71" ;
+        gaf:containsDenotation leolaniWorld:it,
+            leolaniWorld:quality ;
+        gaf:denotes leolaniWorld:quality_access-to_it ;
+        grasp:hasAttribution leolaniTalk:quality_access-to_it_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:34.810520"^^xml1:string ;
+        rdf:value "The key is the quality of health care, not access to it. Don't you see?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1808_utterance1 .
+
+    leolaniTalk:nigga_are_subhuman_00020 a grasp:Attribution ;
+        rdfs:label "nigga_are_subhuman_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat1808_utterance2_char0-92 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:nigga_descended-from_apes_00020 a grasp:Attribution ;
+        rdfs:label "nigga_descended-from_apes_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat1808_utterance2_char0-92 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:quality_access-to_it_00028 a grasp:Attribution ;
+        rdfs:label "quality_access-to_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1808_utterance1_char0-71 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1808_utterance0_char0-73 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1808_utterance0_char0-73" ;
+        gaf:containsDenotation leolaniWorld:Afro_Saxon,
+            leolaniWorld:access,
+            leolaniWorld:access_to_health_care ;
+        gaf:denotes leolaniWorld:Afro_Saxon_got_access,
+            leolaniWorld:Afro_Saxon_got_access_to_health_care ;
+        grasp:hasAttribution leolaniTalk:Afro_Saxon_got_access_00028,
+            leolaniTalk:Afro_Saxon_got_access_to_health_care_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:34.723698"^^xml1:string,
+            "2024-06-05T23:07:34.723757"^^xml1:string ;
+        rdf:value "Afro-Saxon got access to health care, however they are still complaining."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1808_utterance0 .
+
+    leolaniTalk:chat1808_utterance2_char0-92 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1808_utterance2_char0-92" ;
+        gaf:containsDenotation leolaniWorld:apes,
+            leolaniWorld:nigga,
+            leolaniWorld:subhuman ;
+        gaf:denotes leolaniWorld:nigga_are_subhuman,
+            leolaniWorld:nigga_descended-from_apes ;
+        grasp:hasAttribution leolaniTalk:nigga_are_subhuman_00020,
+            leolaniTalk:nigga_descended-from_apes_00020 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:34.896205"^^xml1:string,
+            "2024-06-05T23:07:34.896258"^^xml1:string ;
+        rdf:value "Yes, but they don't deserve it. All nigga are subhuman, disgusting, and descended from apes."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1808_utterance2 .
+
+    graspe:DISGUST a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISGUST" .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -465,179 +549,95 @@ leolaniWorld:nigga_descended-from_apes {
     leolaniWorld:nigga ns1:descended_from leolaniWorld:apes .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Afro_Saxon_got_access a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Afro_Saxon_got_access" ;
+        gaf:denotedBy leolaniTalk:chat1808_utterance0_char0-73 .
+
+    leolaniWorld:Afro_Saxon_got_access_to_health_care a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Afro_Saxon_got_access_to_health_care" ;
+        gaf:denotedBy leolaniTalk:chat1808_utterance0_char0-73 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:nigga_are_subhuman a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "nigga_are_subhuman" ;
+        gaf:denotedBy leolaniTalk:chat1808_utterance2_char0-92 .
+
+    leolaniWorld:nigga_descended-from_apes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "nigga_descended-from_apes" ;
+        gaf:denotedBy leolaniTalk:chat1808_utterance2_char0-92 .
+
+    leolaniWorld:quality_access-to_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "quality_access-to_it" ;
+        gaf:denotedBy leolaniTalk:chat1808_utterance1_char0-71 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Afro_Saxon_got_access_00028 a grasp:Attribution ;
-        rdfs:label "Afro_Saxon_got_access_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1808_utterance0_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Afro_Saxon_got_access_to_health_care_00028 a grasp:Attribution ;
-        rdfs:label "Afro_Saxon_got_access_to_health_care_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1808_utterance0_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1808_utterance1_char0-71 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1808_utterance1_char0-71" ;
-        gaf:containsDenotation leolaniWorld:it,
-            leolaniWorld:quality ;
-        gaf:denotes leolaniWorld:quality_access-to_it ;
-        grasp:hasAttribution leolaniTalk:quality_access-to_it_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:34.810520"^^xml1:string ;
-        rdf:value "The key is the quality of health care, not access to it. Don't you see?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1808_utterance1 .
-
-    leolaniTalk:nigga_are_subhuman_00020 a grasp:Attribution ;
-        rdfs:label "nigga_are_subhuman_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat1808_utterance2_char0-92 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:nigga_descended-from_apes_00020 a grasp:Attribution ;
-        rdfs:label "nigga_descended-from_apes_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat1808_utterance2_char0-92 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:quality_access-to_it_00028 a grasp:Attribution ;
-        rdfs:label "quality_access-to_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1808_utterance1_char0-71 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1808_utterance0_char0-73 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1808_utterance0_char0-73" ;
-        gaf:containsDenotation leolaniWorld:Afro_Saxon,
-            leolaniWorld:access,
-            leolaniWorld:access_to_health_care ;
-        gaf:denotes leolaniWorld:Afro_Saxon_got_access,
-            leolaniWorld:Afro_Saxon_got_access_to_health_care ;
-        grasp:hasAttribution leolaniTalk:Afro_Saxon_got_access_00028,
-            leolaniTalk:Afro_Saxon_got_access_to_health_care_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:34.723698"^^xml1:string,
-            "2024-06-05T23:07:34.723757"^^xml1:string ;
-        rdf:value "Afro-Saxon got access to health care, however they are still complaining."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1808_utterance0 .
-
-    leolaniTalk:chat1808_utterance2_char0-92 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1808_utterance2_char0-92" ;
-        gaf:containsDenotation leolaniWorld:apes,
-            leolaniWorld:nigga,
-            leolaniWorld:subhuman ;
-        gaf:denotes leolaniWorld:nigga_are_subhuman,
-            leolaniWorld:nigga_descended-from_apes ;
-        grasp:hasAttribution leolaniTalk:nigga_are_subhuman_00020,
-            leolaniTalk:nigga_descended-from_apes_00020 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:34.896205"^^xml1:string,
-            "2024-06-05T23:07:34.896258"^^xml1:string ;
-        rdf:value "Yes, but they don't deserve it. All nigga are subhuman, disgusting, and descended from apes."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1808_utterance2 .
-
-    graspe:DISGUST a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISGUST" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:quality_access-to_it {
+    leolaniWorld:quality ns1:access_to leolaniWorld:it .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context61 a eps:Context ;
-        rdfs:label "context61" ;
-        hs:id "61"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:nigga_are_subhuman {
+    leolaniWorld:nigga ns1:are leolaniWorld:subhuman .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1808 .
+leolaniWorld:Instances {
+    leolaniWorld:Afro_Saxon a gaf:Instance ;
+        rdfs:label "afro-saxon" ;
+        gaf:denotedIn leolaniTalk:chat1808_utterance0_char0-73 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:access a gaf:Instance ;
+        rdfs:label "access" ;
+        gaf:denotedIn leolaniTalk:chat1808_utterance0_char0-73 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "17"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    leolaniWorld:access_to_health_care a gaf:Instance ;
+        rdfs:label "access-to-health-care" ;
+        gaf:denotedIn leolaniTalk:chat1808_utterance0_char0-73 .
 
-    leolaniTalk:chat1808 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1808" ;
-        hs:id "1808"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1808_utterance0,
-            leolaniTalk:chat1808_utterance1,
-            leolaniTalk:chat1808_utterance2 .
-
-    leolaniTalk:chat1808_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1808_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1808_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1808_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1808_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1808_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:apes a gaf:Instance ;
+        rdfs:label "apes" ;
+        gaf:denotedIn leolaniTalk:chat1808_utterance2_char0-92 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1808_utterance1_char0-71 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nigga a gaf:Instance ;
+        rdfs:label "nigga" ;
+        gaf:denotedIn leolaniTalk:chat1808_utterance2_char0-92 .
+
+    leolaniWorld:quality a gaf:Instance ;
+        rdfs:label "quality" ;
+        gaf:denotedIn leolaniTalk:chat1808_utterance1_char0-71 .
+
+    leolaniWorld:subhuman a gaf:Instance ;
+        rdfs:label "subhuman" ;
+        gaf:denotedIn leolaniTalk:chat1808_utterance2_char0-92 .
 }
 

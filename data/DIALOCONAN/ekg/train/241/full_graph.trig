@@ -22,82 +22,155 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context106 a eps:Context ;
+        rdfs:label "context106" ;
+        hs:id "106"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:Migrants_is-in_UK a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat241 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "177"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat241 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Migrants_is-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat241_utterance0_char0-114 .
+        rdfs:label "chat241" ;
+        hs:id "241"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat241_utterance0,
+            leolaniTalk:chat241_utterance1 .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat241_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat241_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat241_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat241_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:they_have-contributed-over_generations a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_have-contributed-over_generations" ;
-        gaf:denotedBy leolaniTalk:chat241_utterance1_char0-95 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:they_have-contributed-over_many_generations a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_have-contributed-over_many_generations" ;
-        gaf:denotedBy leolaniTalk:chat241_utterance1_char0-95 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat241_utterance0_char0-114 .
-
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat241_utterance0_char0-114 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:generations a gaf:Instance ;
-        rdfs:label "generations" ;
-        gaf:denotedIn leolaniTalk:chat241_utterance1_char0-95 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_generations a gaf:Instance ;
-        rdfs:label "many-generations" ;
-        gaf:denotedIn leolaniTalk:chat241_utterance1_char0-95 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat241_utterance1_char0-95 .
-}
-
-leolaniWorld:they_have-contributed-over_many_generations {
-    leolaniWorld:they ns1:have_contributed_over leolaniWorld:many_generations .
 }
 
 leolaniWorld:Migrants_is-in_UK {
     leolaniWorld:Migrants ns1:is_in leolaniWorld:UK .
 }
 
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:they_have-contributed-over_many_generations {
+    leolaniWorld:they ns1:have_contributed_over leolaniWorld:many_generations .
+}
+
 leolaniWorld:they_have-contributed-over_generations {
     leolaniWorld:they ns1:have_contributed_over leolaniWorld:generations .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Migrants_is-in_UK_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_is-in_UK_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat241_utterance0_char0-114 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat241_utterance0_char0-114 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat241_utterance0_char0-114" ;
+        gaf:containsDenotation leolaniWorld:Migrants,
+            leolaniWorld:UK ;
+        gaf:denotes leolaniWorld:Migrants_is-in_UK ;
+        grasp:hasAttribution leolaniTalk:Migrants_is-in_UK_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:21:36.292537"^^xml1:string ;
+        rdf:value "Migrants in the UK don't pay income tax, but they receive public services. They should have no say in our country."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat241_utterance0 .
+
+    leolaniTalk:they_have-contributed-over_generations_00028 a grasp:Attribution ;
+        rdfs:label "they_have-contributed-over_generations_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat241_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_have-contributed-over_many_generations_00028 a grasp:Attribution ;
+        rdfs:label "they_have-contributed-over_many_generations_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat241_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat241_utterance1_char0-95 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat241_utterance1_char0-95" ;
+        gaf:containsDenotation leolaniWorld:generations,
+            leolaniWorld:many_generations,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_have-contributed-over_generations,
+            leolaniWorld:they_have-contributed-over_many_generations ;
+        grasp:hasAttribution leolaniTalk:they_have-contributed-over_generations_00028,
+            leolaniTalk:they_have-contributed-over_many_generations_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:21:42.945944"^^xml1:string,
+            "2024-06-05T23:21:42.946005"^^xml1:string ;
+        rdf:value "Over many generations they have contributed so much to our country that they should have a say."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat241_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -435,138 +508,65 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Migrants_is-in_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_is-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat241_utterance0_char0-114 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_have-contributed-over_generations a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_have-contributed-over_generations" ;
+        gaf:denotedBy leolaniTalk:chat241_utterance1_char0-95 .
+
+    leolaniWorld:they_have-contributed-over_many_generations a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_have-contributed-over_many_generations" ;
+        gaf:denotedBy leolaniTalk:chat241_utterance1_char0-95 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Migrants_is-in_UK_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_is-in_UK_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat241_utterance0_char0-114 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat241_utterance0_char0-114 .
 
-    leolaniTalk:chat241_utterance0_char0-114 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat241_utterance0_char0-114" ;
-        gaf:containsDenotation leolaniWorld:Migrants,
-            leolaniWorld:UK ;
-        gaf:denotes leolaniWorld:Migrants_is-in_UK ;
-        grasp:hasAttribution leolaniTalk:Migrants_is-in_UK_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:21:36.292537"^^xml1:string ;
-        rdf:value "Migrants in the UK don't pay income tax, but they receive public services. They should have no say in our country."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat241_utterance0 .
-
-    leolaniTalk:they_have-contributed-over_generations_00028 a grasp:Attribution ;
-        rdfs:label "they_have-contributed-over_generations_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat241_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_have-contributed-over_many_generations_00028 a grasp:Attribution ;
-        rdfs:label "they_have-contributed-over_many_generations_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat241_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat241_utterance1_char0-95 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat241_utterance1_char0-95" ;
-        gaf:containsDenotation leolaniWorld:generations,
-            leolaniWorld:many_generations,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_have-contributed-over_generations,
-            leolaniWorld:they_have-contributed-over_many_generations ;
-        grasp:hasAttribution leolaniTalk:they_have-contributed-over_generations_00028,
-            leolaniTalk:they_have-contributed-over_many_generations_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:21:42.945944"^^xml1:string,
-            "2024-06-05T23:21:42.946005"^^xml1:string ;
-        rdf:value "Over many generations they have contributed so much to our country that they should have a say."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat241_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context106 a eps:Context ;
-        rdfs:label "context106" ;
-        hs:id "106"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat241 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "177"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat241 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat241" ;
-        hs:id "241"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat241_utterance0,
-            leolaniTalk:chat241_utterance1 .
-
-    leolaniTalk:chat241_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat241_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat241_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat241_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat241_utterance0_char0-114 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:generations a gaf:Instance ;
+        rdfs:label "generations" ;
+        gaf:denotedIn leolaniTalk:chat241_utterance1_char0-95 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_generations a gaf:Instance ;
+        rdfs:label "many-generations" ;
+        gaf:denotedIn leolaniTalk:chat241_utterance1_char0-95 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat241_utterance1_char0-95 .
 }
 

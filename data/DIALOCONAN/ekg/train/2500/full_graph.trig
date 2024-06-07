@@ -22,64 +22,130 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context212 a eps:Context ;
+        rdfs:label "context212" ;
+        hs:id "212"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:Science_contradicts_statement a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2500 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "215"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2500 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Science_contradicts_statement" ;
-        gaf:denotedBy leolaniTalk:chat2500_utterance1_char0-108 .
+        rdfs:label "chat2500" ;
+        hs:id "2500"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2500_utterance1 .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat2500_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2500_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:they_can-use-too_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_can-use-too_it" ;
-        gaf:denotedBy leolaniTalk:chat2500_utterance1_char0-108 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:they_can-use_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_can-use_it" ;
-        gaf:denotedBy leolaniTalk:chat2500_utterance1_char0-108 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Science a gaf:Instance ;
-        rdfs:label "science" ;
-        gaf:denotedIn leolaniTalk:chat2500_utterance1_char0-108 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
+}
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2500_utterance1_char0-108 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:statement a gaf:Instance ;
-        rdfs:label "statement" ;
-        gaf:denotedIn leolaniTalk:chat2500_utterance1_char0-108 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2500_utterance1_char0-108 .
+leolaniWorld:they_can-use-too_it {
+    leolaniWorld:they ns11:can_use_too leolaniWorld:it .
 }
 
 leolaniWorld:Science_contradicts_statement {
     leolaniWorld:Science ns11:contradicts leolaniWorld:statement .
 }
 
-leolaniWorld:they_can-use-too_it {
-    leolaniWorld:they ns11:can_use_too leolaniWorld:it .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:they_can-use_it {
+    leolaniWorld:they ns11:can_use leolaniWorld:it .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Science_contradicts_statement_00028 a grasp:Attribution ;
+        rdfs:label "Science_contradicts_statement_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2500_utterance1_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_can-use-too_it_00028 a grasp:Attribution ;
+        rdfs:label "they_can-use-too_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2500_utterance1_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_can-use_it_00028 a grasp:Attribution ;
+        rdfs:label "they_can-use_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2500_utterance1_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2500_utterance1_char0-108 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2500_utterance1_char0-108" ;
+        gaf:containsDenotation leolaniWorld:Science,
+            leolaniWorld:it,
+            leolaniWorld:statement,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:Science_contradicts_statement,
+            leolaniWorld:they_can-use-too_it,
+            leolaniWorld:they_can-use_it ;
+        grasp:hasAttribution leolaniTalk:Science_contradicts_statement_00028,
+            leolaniTalk:they_can-use-too_it_00028,
+            leolaniTalk:they_can-use_it_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:19.417400"^^xml1:string,
+            "2024-06-05T23:23:19.417468"^^xml1:string,
+            "2024-06-05T23:23:19.417491"^^xml1:string ;
+        rdf:value "Science contradicts this statement. Blacks, like any other human being, have brains and they can use it too."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2500_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -417,117 +483,51 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:they_can-use_it {
-    leolaniWorld:they ns11:can_use leolaniWorld:it .
+leolaniWorld:Claims {
+    leolaniWorld:Science_contradicts_statement a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Science_contradicts_statement" ;
+        gaf:denotedBy leolaniTalk:chat2500_utterance1_char0-108 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:they_can-use-too_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_can-use-too_it" ;
+        gaf:denotedBy leolaniTalk:chat2500_utterance1_char0-108 .
+
+    leolaniWorld:they_can-use_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_can-use_it" ;
+        gaf:denotedBy leolaniTalk:chat2500_utterance1_char0-108 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Science_contradicts_statement_00028 a grasp:Attribution ;
-        rdfs:label "Science_contradicts_statement_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2500_utterance1_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_can-use-too_it_00028 a grasp:Attribution ;
-        rdfs:label "they_can-use-too_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2500_utterance1_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_can-use_it_00028 a grasp:Attribution ;
-        rdfs:label "they_can-use_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2500_utterance1_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2500_utterance1_char0-108 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2500_utterance1_char0-108" ;
-        gaf:containsDenotation leolaniWorld:Science,
-            leolaniWorld:it,
-            leolaniWorld:statement,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:Science_contradicts_statement,
-            leolaniWorld:they_can-use-too_it,
-            leolaniWorld:they_can-use_it ;
-        grasp:hasAttribution leolaniTalk:Science_contradicts_statement_00028,
-            leolaniTalk:they_can-use-too_it_00028,
-            leolaniTalk:they_can-use_it_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:19.417400"^^xml1:string,
-            "2024-06-05T23:23:19.417468"^^xml1:string,
-            "2024-06-05T23:23:19.417491"^^xml1:string ;
-        rdf:value "Science contradicts this statement. Blacks, like any other human being, have brains and they can use it too."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2500_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context212 a eps:Context ;
-        rdfs:label "context212" ;
-        hs:id "212"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2500 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "215"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2500 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2500" ;
-        hs:id "2500"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2500_utterance1 .
-
-    leolaniTalk:chat2500_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2500_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Science a gaf:Instance ;
+        rdfs:label "science" ;
+        gaf:denotedIn leolaniTalk:chat2500_utterance1_char0-108 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2500_utterance1_char0-108 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:statement a gaf:Instance ;
+        rdfs:label "statement" ;
+        gaf:denotedIn leolaniTalk:chat2500_utterance1_char0-108 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2500_utterance1_char0-108 .
 }
 

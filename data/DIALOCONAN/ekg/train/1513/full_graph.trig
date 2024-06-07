@@ -22,62 +22,6 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:If_you_think_is_stupid a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "If_you_think_is_stupid" ;
-        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:start_spreading_their_agenda a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "start_spreading_their_agenda" ;
-        gaf:denotedBy leolaniTalk:chat1513_utterance2_char0-132 .
-
-    leolaniWorld:that_is_your_problem a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "that_is_your_problem" ;
-        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:you_supporting_LGBT_community a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_supporting_LGBT_community" ;
-        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:you_think_is_stupid a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_think_is_stupid" ;
-        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:you_think_supporting a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_think_supporting" ;
-        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:start_spreading_their_agenda {
-    leolaniWorld:start ns11:spreading leolaniWorld:their_agenda .
-}
-
-leolaniWorld:you_supporting_LGBT_community {
-    leolaniWorld:you ns11:supporting leolaniWorld:LGBT_community .
-}
-
 leolaniWorld:you_think_supporting {
     leolaniWorld:you ns11:think leolaniWorld:supporting .
 }
@@ -86,65 +30,186 @@ leolaniWorld:that_is_your_problem {
     leolaniWorld:that ns11:is leolaniWorld:your_problem .
 }
 
-leolaniWorld:you_think_is_stupid {
-    leolaniWorld:you_think ns11:is leolaniWorld:stupid .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context40 a eps:Context ;
+        rdfs:label "context40" ;
+        hs:id "40"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:If_you_think a gaf:Instance ;
-        rdfs:label "if-you-think" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1513 .
 
-    leolaniWorld:LGBT_community a gaf:Instance ;
-        rdfs:label "lgbt-community" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "20"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1513 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1513" ;
+        hs:id "1513"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1513_utterance1,
+            leolaniTalk:chat1513_utterance2 .
+
+    leolaniTalk:chat1513_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1513_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1513_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1513_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:start a gaf:Instance ;
-        rdfs:label "start" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance2_char0-132 .
-
-    leolaniWorld:stupid a gaf:Instance ;
-        rdfs:label "stupid" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:supporting a gaf:Instance ;
-        rdfs:label "supporting" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:that a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:their_agenda a gaf:Instance ;
-        rdfs:label "their-agenda" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance2_char0-132 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:you_think a gaf:Instance ;
-        rdfs:label "you-think" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
-
-    leolaniWorld:your_problem a gaf:Instance ;
-        rdfs:label "your-problem" ;
-        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
 }
 
 leolaniWorld:If_you_think_is_stupid {
     leolaniWorld:If_you_think ns11:is leolaniWorld:stupid .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:If_you_think_is_stupid_00022 a grasp:Attribution ;
+        rdfs:label "If_you_think_is_stupid_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1513_utterance2_char0-132 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1513_utterance2_char0-132" ;
+        gaf:containsDenotation leolaniWorld:start,
+            leolaniWorld:their_agenda ;
+        gaf:denotes leolaniWorld:start_spreading_their_agenda ;
+        grasp:hasAttribution leolaniTalk:start_spreading_their_agenda_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:52.862033"^^xml1:string ;
+        rdf:value "We just don't need to see it everywhere, even the trains are no longer free of it. This is the start of them spreading their agenda."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1513_utterance2 .
+
+    leolaniTalk:start_spreading_their_agenda_00028 a grasp:Attribution ;
+        rdfs:label "start_spreading_their_agenda_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1513_utterance2_char0-132 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:that_is_your_problem_00022 a grasp:Attribution ;
+        rdfs:label "that_is_your_problem_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_supporting_LGBT_community_00022 a grasp:Attribution ;
+        rdfs:label "you_supporting_LGBT_community_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_think_is_stupid_00022 a grasp:Attribution ;
+        rdfs:label "you_think_is_stupid_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_think_supporting_00022 a grasp:Attribution ;
+        rdfs:label "you_think_supporting_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat1513_utterance1_char0-76 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1513_utterance1_char0-76" ;
+        gaf:containsDenotation leolaniWorld:If_you_think,
+            leolaniWorld:LGBT_community,
+            leolaniWorld:stupid,
+            leolaniWorld:supporting,
+            leolaniWorld:that,
+            leolaniWorld:you,
+            leolaniWorld:you_think,
+            leolaniWorld:your_problem ;
+        gaf:denotes leolaniWorld:If_you_think_is_stupid,
+            leolaniWorld:that_is_your_problem,
+            leolaniWorld:you_supporting_LGBT_community,
+            leolaniWorld:you_think_is_stupid,
+            leolaniWorld:you_think_supporting ;
+        grasp:hasAttribution leolaniTalk:If_you_think_is_stupid_00022,
+            leolaniTalk:that_is_your_problem_00022,
+            leolaniTalk:you_supporting_LGBT_community_00022,
+            leolaniTalk:you_think_is_stupid_00022,
+            leolaniTalk:you_think_supporting_00022 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:52.770080"^^xml1:string,
+            "2024-06-05T23:34:52.770153"^^xml1:string,
+            "2024-06-05T23:34:52.770175"^^xml1:string,
+            "2024-06-05T23:34:52.770197"^^xml1:string,
+            "2024-06-05T23:34:52.770218"^^xml1:string ;
+        rdf:value "If you think supporting the LGBT+ community is stupid, that is your problem."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1513_utterance1 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -482,177 +547,112 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:you_supporting_LGBT_community {
+    leolaniWorld:you ns11:supporting leolaniWorld:LGBT_community .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:If_you_think_is_stupid_00022 a grasp:Attribution ;
-        rdfs:label "If_you_think_is_stupid_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1513_utterance2_char0-132 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1513_utterance2_char0-132" ;
-        gaf:containsDenotation leolaniWorld:start,
-            leolaniWorld:their_agenda ;
-        gaf:denotes leolaniWorld:start_spreading_their_agenda ;
-        grasp:hasAttribution leolaniTalk:start_spreading_their_agenda_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:52.862033"^^xml1:string ;
-        rdf:value "We just don't need to see it everywhere, even the trains are no longer free of it. This is the start of them spreading their agenda."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1513_utterance2 .
-
-    leolaniTalk:start_spreading_their_agenda_00028 a grasp:Attribution ;
-        rdfs:label "start_spreading_their_agenda_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1513_utterance2_char0-132 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:that_is_your_problem_00022 a grasp:Attribution ;
-        rdfs:label "that_is_your_problem_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_supporting_LGBT_community_00022 a grasp:Attribution ;
-        rdfs:label "you_supporting_LGBT_community_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_think_is_stupid_00022 a grasp:Attribution ;
-        rdfs:label "you_think_is_stupid_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_think_supporting_00022 a grasp:Attribution ;
-        rdfs:label "you_think_supporting_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1513_utterance1_char0-76 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat1513_utterance1_char0-76 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1513_utterance1_char0-76" ;
-        gaf:containsDenotation leolaniWorld:If_you_think,
-            leolaniWorld:LGBT_community,
-            leolaniWorld:stupid,
-            leolaniWorld:supporting,
-            leolaniWorld:that,
-            leolaniWorld:you,
-            leolaniWorld:you_think,
-            leolaniWorld:your_problem ;
-        gaf:denotes leolaniWorld:If_you_think_is_stupid,
-            leolaniWorld:that_is_your_problem,
-            leolaniWorld:you_supporting_LGBT_community,
-            leolaniWorld:you_think_is_stupid,
-            leolaniWorld:you_think_supporting ;
-        grasp:hasAttribution leolaniTalk:If_you_think_is_stupid_00022,
-            leolaniTalk:that_is_your_problem_00022,
-            leolaniTalk:you_supporting_LGBT_community_00022,
-            leolaniTalk:you_think_is_stupid_00022,
-            leolaniTalk:you_think_supporting_00022 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:52.770080"^^xml1:string,
-            "2024-06-05T23:34:52.770153"^^xml1:string,
-            "2024-06-05T23:34:52.770175"^^xml1:string,
-            "2024-06-05T23:34:52.770197"^^xml1:string,
-            "2024-06-05T23:34:52.770218"^^xml1:string ;
-        rdf:value "If you think supporting the LGBT+ community is stupid, that is your problem."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1513_utterance1 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:you_think_is_stupid {
+    leolaniWorld:you_think ns11:is leolaniWorld:stupid .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context40 a eps:Context ;
-        rdfs:label "context40" ;
-        hs:id "40"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1513 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "20"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1513 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:If_you_think_is_stupid a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1513" ;
-        hs:id "1513"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1513_utterance1,
-            leolaniTalk:chat1513_utterance2 .
+        rdfs:label "If_you_think_is_stupid" ;
+        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
 
-    leolaniTalk:chat1513_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1513_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat1513_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1513_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:start_spreading_their_agenda a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "start_spreading_their_agenda" ;
+        gaf:denotedBy leolaniTalk:chat1513_utterance2_char0-132 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:that_is_your_problem a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "that_is_your_problem" ;
+        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:you_supporting_LGBT_community a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_supporting_LGBT_community" ;
+        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:you_think_is_stupid a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_think_is_stupid" ;
+        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:you_think_supporting a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_think_supporting" ;
+        gaf:denotedBy leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:start_spreading_their_agenda {
+    leolaniWorld:start ns11:spreading leolaniWorld:their_agenda .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:If_you_think a gaf:Instance ;
+        rdfs:label "if-you-think" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:LGBT_community a gaf:Instance ;
+        rdfs:label "lgbt-community" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:start a gaf:Instance ;
+        rdfs:label "start" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance2_char0-132 .
+
+    leolaniWorld:stupid a gaf:Instance ;
+        rdfs:label "stupid" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:supporting a gaf:Instance ;
+        rdfs:label "supporting" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:that a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:their_agenda a gaf:Instance ;
+        rdfs:label "their-agenda" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance2_char0-132 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:you_think a gaf:Instance ;
+        rdfs:label "you-think" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
+
+    leolaniWorld:your_problem a gaf:Instance ;
+        rdfs:label "your-problem" ;
+        gaf:denotedIn leolaniTalk:chat1513_utterance1_char0-76 .
 }
 

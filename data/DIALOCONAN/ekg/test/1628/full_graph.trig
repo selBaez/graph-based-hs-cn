@@ -22,8 +22,103 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:people_are-left-in_streets {
+    leolaniWorld:people ns1:are_left_in leolaniWorld:streets .
+}
+
+leolaniWorld:we_have_homeless_veterans {
+    leolaniWorld:we ns1:have leolaniWorld:homeless_veterans .
+}
+
 leolaniWorld:homeless_people_are_left {
     leolaniWorld:homeless_people ns1:are leolaniWorld:left .
+}
+
+leolaniWorld:homeless_people_are-left-in_streets {
+    leolaniWorld:homeless_people ns1:are_left_in leolaniWorld:streets .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context192 a eps:Context ;
+        rdfs:label "context192" ;
+        hs:id "192"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1628 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "23"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1628 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1628" ;
+        hs:id "1628"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1628_utterance0,
+            leolaniTalk:chat1628_utterance1 .
+
+    leolaniTalk:chat1628_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1628_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1628_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1628_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:people_are_left {
+    leolaniWorld:people ns1:are leolaniWorld:left .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:we_have_many_homeless_veterans {
+    leolaniWorld:we ns1:have leolaniWorld:many_homeless_veterans .
 }
 
 leolaniTalk:Perspectives {
@@ -156,73 +251,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
-
-    leolaniWorld:certainly_disgrace a gaf:Instance ;
-        rdfs:label "certainly-disgrace" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:disgrace a gaf:Instance ;
-        rdfs:label "disgrace" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
-
-    leolaniWorld:homeless_people a gaf:Instance ;
-        rdfs:label "homeless-people" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
-
-    leolaniWorld:homeless_veterans a gaf:Instance ;
-        rdfs:label "homeless-veterans" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance0_char0-185 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:left a gaf:Instance ;
-        rdfs:label "left" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_homeless_veterans a gaf:Instance ;
-        rdfs:label "many-homeless-veterans" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance0_char0-185 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
-
-    leolaniWorld:so_many_homeless_veterans a gaf:Instance ;
-        rdfs:label "so-many-homeless-veterans" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance0_char0-185 .
-
-    leolaniWorld:streets a gaf:Instance ;
-        rdfs:label "streets" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1628_utterance0_char0-185 .
-}
-
-leolaniWorld:we_have_so_many_homeless_veterans {
-    leolaniWorld:we ns1:have leolaniWorld:so_many_homeless_veterans .
-}
-
-leolaniWorld:we_have_many_homeless_veterans {
-    leolaniWorld:we ns1:have leolaniWorld:many_homeless_veterans .
-}
-
-leolaniWorld:we_have_homeless_veterans {
-    leolaniWorld:we ns1:have leolaniWorld:homeless_veterans .
+leolaniWorld:It_has_disgrace {
+    leolaniWorld:It ns1:has leolaniWorld:disgrace .
 }
 
 leolaniWorld:Ontology {
@@ -560,81 +590,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context192 a eps:Context ;
-        rdfs:label "context192" ;
-        hs:id "192"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1628 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "23"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1628 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1628" ;
-        hs:id "1628"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1628_utterance0,
-            leolaniTalk:chat1628_utterance1 .
-
-    leolaniTalk:chat1628_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1628_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1628_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1628_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:It_has_certainly_disgrace {
-    leolaniWorld:It ns1:has leolaniWorld:certainly_disgrace .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:It_has_certainly_disgrace a gaf:Assertion,
             sem:Event ;
@@ -694,23 +649,68 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:homeless_people_are-left-in_streets {
-    leolaniWorld:homeless_people ns1:are_left_in leolaniWorld:streets .
+leolaniWorld:we_have_so_many_homeless_veterans {
+    leolaniWorld:we ns1:have leolaniWorld:so_many_homeless_veterans .
 }
 
-leolaniWorld:It_has_disgrace {
-    leolaniWorld:It ns1:has leolaniWorld:disgrace .
+leolaniWorld:It_has_certainly_disgrace {
+    leolaniWorld:It ns1:has leolaniWorld:certainly_disgrace .
 }
 
-leolaniWorld:people_are_left {
-    leolaniWorld:people ns1:are leolaniWorld:left .
-}
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
 
-leolaniWorld:people_are-left-in_streets {
-    leolaniWorld:people ns1:are_left_in leolaniWorld:streets .
-}
+    leolaniWorld:certainly_disgrace a gaf:Instance ;
+        rdfs:label "certainly-disgrace" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:disgrace a gaf:Instance ;
+        rdfs:label "disgrace" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
+
+    leolaniWorld:homeless_people a gaf:Instance ;
+        rdfs:label "homeless-people" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
+
+    leolaniWorld:homeless_veterans a gaf:Instance ;
+        rdfs:label "homeless-veterans" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance0_char0-185 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:left a gaf:Instance ;
+        rdfs:label "left" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_homeless_veterans a gaf:Instance ;
+        rdfs:label "many-homeless-veterans" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance0_char0-185 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
+
+    leolaniWorld:so_many_homeless_veterans a gaf:Instance ;
+        rdfs:label "so-many-homeless-veterans" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance0_char0-185 .
+
+    leolaniWorld:streets a gaf:Instance ;
+        rdfs:label "streets" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance1_char0-315 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1628_utterance0_char0-185 .
 }
 

@@ -22,8 +22,106 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Jews_have_their_unique_culture {
+    leolaniWorld:Jews ns1:have leolaniWorld:their_unique_culture .
+}
+
+leolaniWorld:Jews_share_history {
+    leolaniWorld:Jews ns1:share leolaniWorld:history .
+}
+
 leolaniWorld:Jews_have_their_culture {
     leolaniWorld:Jews ns1:have leolaniWorld:their_culture .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context101 a eps:Context ;
+        rdfs:label "context101" ;
+        hs:id "101"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1052 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "182"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1052 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1052" ;
+        hs:id "1052"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1052_utterance0,
+            leolaniTalk:chat1052_utterance1,
+            leolaniTalk:chat1052_utterance2 .
+
+    leolaniTalk:chat1052_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1052_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1052_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1052_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1052_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1052_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:history_forced_conversion {
+    leolaniWorld:history ns1:forced leolaniWorld:conversion .
+}
+
+leolaniWorld:Jews_have_their_own_culture {
+    leolaniWorld:Jews ns1:have leolaniWorld:their_own_culture .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniTalk:Perspectives {
@@ -170,68 +268,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Holocaust a gaf:Instance ;
-        rdfs:label "holocaust" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance0_char0-109 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance0_char0-109,
-            leolaniTalk:chat1052_utterance1_char0-152,
-            leolaniTalk:chat1052_utterance2_char0-115 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:conversion a gaf:Instance ;
-        rdfs:label "conversion" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
-
-    leolaniWorld:despised a gaf:Instance ;
-        rdfs:label "despised" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance0_char0-109,
-            leolaniTalk:chat1052_utterance2_char0-115 .
-
-    leolaniWorld:history a gaf:Instance ;
-        rdfs:label "history" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
-
-    leolaniWorld:history_of_persecution a gaf:Instance ;
-        rdfs:label "history-of-persecution" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:myth a gaf:Instance ;
-        rdfs:label "myth" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance0_char0-109 .
-
-    leolaniWorld:their_culture a gaf:Instance ;
-        rdfs:label "their-culture" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
-
-    leolaniWorld:their_own_culture a gaf:Instance ;
-        rdfs:label "their-own-culture" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
-
-    leolaniWorld:their_own_unique_culture a gaf:Instance ;
-        rdfs:label "their-own-unique-culture" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
-
-    leolaniWorld:their_unique_culture a gaf:Instance ;
-        rdfs:label "their-unique-culture" ;
-        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
-}
-
-leolaniWorld:Jews_have_their_own_unique_culture {
-    leolaniWorld:Jews ns1:have leolaniWorld:their_own_unique_culture .
+leolaniWorld:Jews_be_despised {
+    leolaniWorld:Jews ns1:be leolaniWorld:despised .
 }
 
 leolaniWorld:Ontology {
@@ -569,94 +607,8 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Jews_share_history_of_persecution {
-    leolaniWorld:Jews ns1:share leolaniWorld:history_of_persecution .
-}
-
-leolaniWorld:history_forced_conversion {
-    leolaniWorld:history ns1:forced leolaniWorld:conversion .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Jews_share_history {
-    leolaniWorld:Jews ns1:share leolaniWorld:history .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context101 a eps:Context ;
-        rdfs:label "context101" ;
-        hs:id "101"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1052 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "182"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1052 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1052" ;
-        hs:id "1052"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1052_utterance0,
-            leolaniTalk:chat1052_utterance1,
-            leolaniTalk:chat1052_utterance2 .
-
-    leolaniTalk:chat1052_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1052_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1052_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1052_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1052_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1052_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:Holocaust_is_myth {
+    leolaniWorld:Holocaust ns1:is leolaniWorld:myth .
 }
 
 leolaniWorld:Claims {
@@ -719,23 +671,71 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Jews_have_their_unique_culture {
-    leolaniWorld:Jews ns1:have leolaniWorld:their_unique_culture .
+leolaniWorld:Jews_share_history_of_persecution {
+    leolaniWorld:Jews ns1:share leolaniWorld:history_of_persecution .
 }
 
-leolaniWorld:Jews_be_despised {
-    leolaniWorld:Jews ns1:be leolaniWorld:despised .
+leolaniWorld:Jews_have_their_own_unique_culture {
+    leolaniWorld:Jews ns1:have leolaniWorld:their_own_unique_culture .
 }
 
-leolaniWorld:Jews_have_their_own_culture {
-    leolaniWorld:Jews ns1:have leolaniWorld:their_own_culture .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Holocaust a gaf:Instance ;
+        rdfs:label "holocaust" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance0_char0-109 .
 
-leolaniWorld:Holocaust_is_myth {
-    leolaniWorld:Holocaust ns1:is leolaniWorld:myth .
-}
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance0_char0-109,
+            leolaniTalk:chat1052_utterance1_char0-152,
+            leolaniTalk:chat1052_utterance2_char0-115 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:conversion a gaf:Instance ;
+        rdfs:label "conversion" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
+
+    leolaniWorld:despised a gaf:Instance ;
+        rdfs:label "despised" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance0_char0-109,
+            leolaniTalk:chat1052_utterance2_char0-115 .
+
+    leolaniWorld:history a gaf:Instance ;
+        rdfs:label "history" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
+
+    leolaniWorld:history_of_persecution a gaf:Instance ;
+        rdfs:label "history-of-persecution" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:myth a gaf:Instance ;
+        rdfs:label "myth" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance0_char0-109 .
+
+    leolaniWorld:their_culture a gaf:Instance ;
+        rdfs:label "their-culture" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
+
+    leolaniWorld:their_own_culture a gaf:Instance ;
+        rdfs:label "their-own-culture" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
+
+    leolaniWorld:their_own_unique_culture a gaf:Instance ;
+        rdfs:label "their-own-unique-culture" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
+
+    leolaniWorld:their_unique_culture a gaf:Instance ;
+        rdfs:label "their-unique-culture" ;
+        gaf:denotedIn leolaniTalk:chat1052_utterance1_char0-152 .
 }
 

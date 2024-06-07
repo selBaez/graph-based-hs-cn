@@ -22,8 +22,79 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:They_have_gall {
+    leolaniWorld:They ns11:have leolaniWorld:gall .
+}
+
 leolaniWorld:People_have_right {
     leolaniWorld:People ns11:have leolaniWorld:right .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context202 a eps:Context ;
+        rdfs:label "context202" ;
+        hs:id "202"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1034 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "187"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1034 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1034" ;
+        hs:id "1034"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1034_utterance0,
+            leolaniTalk:chat1034_utterance1 .
+
+    leolaniTalk:chat1034_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1034_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1034_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1034_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:they_do-including_work {
@@ -34,87 +105,88 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:People_have_right a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "People_have_right" ;
-        gaf:denotedBy leolaniTalk:chat1034_utterance1_char0-95 .
-
-    leolaniWorld:They_have_gall a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_have_gall" ;
-        gaf:denotedBy leolaniTalk:chat1034_utterance0_char0-95 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_do-including_to_work a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_do-including_to_work" ;
-        gaf:denotedBy leolaniTalk:chat1034_utterance1_char0-95 .
-
-    leolaniWorld:they_do-including_work a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_do-including_work" ;
-        gaf:denotedBy leolaniTalk:chat1034_utterance1_char0-95 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:they_do-including_to_work {
     leolaniWorld:they ns11:do_including leolaniWorld:to_work .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:People a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
+leolaniTalk:Perspectives {
+    leolaniTalk:People_have_right_00028 a grasp:Attribution ;
+        rdfs:label "People_have_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1034_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1034_utterance0_char0-95 .
+    leolaniTalk:They_have_gall_00028 a grasp:Attribution ;
+        rdfs:label "They_have_gall_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1034_utterance0_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat1034_utterance0_char0-95 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1034_utterance0_char0-95" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:gall ;
+        gaf:denotes leolaniWorld:They_have_gall ;
+        grasp:hasAttribution leolaniTalk:They_have_gall_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:52.414750"^^xml1:string ;
+        rdf:value "Black people were here illegally. They cannot work and have the gall to want to take our money."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1034_utterance0 .
 
-    leolaniWorld:gall a gaf:Instance ;
-        rdfs:label "gall" ;
-        gaf:denotedIn leolaniTalk:chat1034_utterance0_char0-95 .
+    leolaniTalk:they_do-including_to_work_00028 a grasp:Attribution ;
+        rdfs:label "they_do-including_to_work_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1034_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:they_do-including_work_00028 a grasp:Attribution ;
+        rdfs:label "they_do-including_work_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1034_utterance1_char0-95 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat1034_utterance1_char0-95 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1034_utterance1_char0-95" ;
+        gaf:containsDenotation leolaniWorld:People,
+            leolaniWorld:right,
+            leolaniWorld:they,
+            leolaniWorld:to_work,
+            leolaniWorld:work ;
+        gaf:denotes leolaniWorld:People_have_right,
+            leolaniWorld:they_do-including_to_work,
+            leolaniWorld:they_do-including_work ;
+        grasp:hasAttribution leolaniTalk:People_have_right_00028,
+            leolaniTalk:they_do-including_to_work_00028,
+            leolaniTalk:they_do-including_work_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:52.506450"^^xml1:string,
+            "2024-06-05T23:02:52.506504"^^xml1:string,
+            "2024-06-05T23:02:52.506528"^^xml1:string ;
+        rdf:value "People who are in the US legally have the right to remain here, and they do, including to work."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1034_utterance1 .
 
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:to_work a gaf:Instance ;
-        rdfs:label "to-work" ;
-        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
-
-    leolaniWorld:work a gaf:Instance ;
-        rdfs:label "work" ;
-        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
-}
-
-leolaniWorld:They_have_gall {
-    leolaniWorld:They ns11:have leolaniWorld:gall .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -452,150 +524,78 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:People_have_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "People_have_right" ;
+        gaf:denotedBy leolaniTalk:chat1034_utterance1_char0-95 .
+
+    leolaniWorld:They_have_gall a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_gall" ;
+        gaf:denotedBy leolaniTalk:chat1034_utterance0_char0-95 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_do-including_to_work a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_do-including_to_work" ;
+        gaf:denotedBy leolaniTalk:chat1034_utterance1_char0-95 .
+
+    leolaniWorld:they_do-including_work a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_do-including_work" ;
+        gaf:denotedBy leolaniTalk:chat1034_utterance1_char0-95 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:People_have_right_00028 a grasp:Attribution ;
-        rdfs:label "People_have_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1034_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:People a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
 
-    leolaniTalk:They_have_gall_00028 a grasp:Attribution ;
-        rdfs:label "They_have_gall_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1034_utterance0_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1034_utterance0_char0-95 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1034_utterance0_char0-95" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:gall ;
-        gaf:denotes leolaniWorld:They_have_gall ;
-        grasp:hasAttribution leolaniTalk:They_have_gall_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:52.414750"^^xml1:string ;
-        rdf:value "Black people were here illegally. They cannot work and have the gall to want to take our money."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1034_utterance0 .
-
-    leolaniTalk:they_do-including_to_work_00028 a grasp:Attribution ;
-        rdfs:label "they_do-including_to_work_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1034_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_do-including_work_00028 a grasp:Attribution ;
-        rdfs:label "they_do-including_work_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1034_utterance1_char0-95 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1034_utterance1_char0-95 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1034_utterance1_char0-95" ;
-        gaf:containsDenotation leolaniWorld:People,
-            leolaniWorld:right,
-            leolaniWorld:they,
-            leolaniWorld:to_work,
-            leolaniWorld:work ;
-        gaf:denotes leolaniWorld:People_have_right,
-            leolaniWorld:they_do-including_to_work,
-            leolaniWorld:they_do-including_work ;
-        grasp:hasAttribution leolaniTalk:People_have_right_00028,
-            leolaniTalk:they_do-including_to_work_00028,
-            leolaniTalk:they_do-including_work_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:52.506450"^^xml1:string,
-            "2024-06-05T23:02:52.506504"^^xml1:string,
-            "2024-06-05T23:02:52.506528"^^xml1:string ;
-        rdf:value "People who are in the US legally have the right to remain here, and they do, including to work."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1034_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context202 a eps:Context ;
-        rdfs:label "context202" ;
-        hs:id "202"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1034 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "187"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1034 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1034" ;
-        hs:id "1034"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1034_utterance0,
-            leolaniTalk:chat1034_utterance1 .
-
-    leolaniTalk:chat1034_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1034_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1034_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1034_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1034_utterance0_char0-95 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:gall a gaf:Instance ;
+        rdfs:label "gall" ;
+        gaf:denotedIn leolaniTalk:chat1034_utterance0_char0-95 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
+
+    leolaniWorld:to_work a gaf:Instance ;
+        rdfs:label "to-work" ;
+        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
+
+    leolaniWorld:work a gaf:Instance ;
+        rdfs:label "work" ;
+        gaf:denotedIn leolaniTalk:chat1034_utterance1_char0-95 .
 }
 

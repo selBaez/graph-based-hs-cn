@@ -24,100 +24,180 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+ns13:t_exist_in_civilized_society {
+    leolaniWorld:Rape ns2:is_violent_crime <http://cltl.nl/leolani/world/should_n't_exist_in_civilized_society> .
 }
 
-leolaniWorld:Claims {
-    ns1:t_exist_in_civilized_society a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context218 a eps:Context ;
+        rdfs:label "context218" ;
+        hs:id "218"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1800 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "27"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1800 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Rape_is-crime_should_n't_exist_in_civilized_society" ;
-        gaf:denotedBy leolaniTalk:chat1800_utterance1_char0-151 .
+        rdfs:label "chat1800" ;
+        hs:id "1800"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1800_utterance0,
+            leolaniTalk:chat1800_utterance1 .
 
-    ns13:t_exist_in_civilized_society a gaf:Assertion,
+    leolaniTalk:chat1800_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Rape_is-violent-crime_should_n't_exist_in_civilized_society" ;
-        gaf:denotedBy leolaniTalk:chat1800_utterance1_char0-151 .
+        rdfs:label "chat1800_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Rape_is-violent_exist a gaf:Assertion,
+    leolaniTalk:chat1800_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Rape_is-violent_exist" ;
-        gaf:denotedBy leolaniTalk:chat1800_utterance1_char0-151 .
+        rdfs:label "chat1800_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:rape_is_When_committed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "rape_is_When_committed" ;
-        gaf:denotedBy leolaniTalk:chat1800_utterance0_char0-100 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:rape_is_committed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "rape_is_committed" ;
-        gaf:denotedBy leolaniTalk:chat1800_utterance0_char0-100 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-ns1:t_exist_in_civilized_society {
-    leolaniWorld:Rape ns2:is_crime <http://cltl.nl/leolani/world/should_n't_exist_in_civilized_society> .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:rape_is_committed {
     leolaniWorld:rape ns2:is leolaniWorld:committed .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Rape a gaf:Instance ;
-        rdfs:label "rape" ;
-        gaf:denotedIn leolaniTalk:chat1800_utterance1_char0-151 .
-
-    leolaniWorld:When_committed a gaf:Instance ;
-        rdfs:label "when-committed" ;
-        gaf:denotedIn leolaniTalk:chat1800_utterance0_char0-100 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:committed a gaf:Instance ;
-        rdfs:label "committed" ;
-        gaf:denotedIn leolaniTalk:chat1800_utterance0_char0-100 .
-
-    leolaniWorld:exist a gaf:Instance ;
-        rdfs:label "exist" ;
-        gaf:denotedIn leolaniTalk:chat1800_utterance1_char0-151 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:rape a gaf:Instance ;
-        rdfs:label "rape" ;
-        gaf:denotedIn leolaniTalk:chat1800_utterance0_char0-100 .
-
-    <http://cltl.nl/leolani/world/should_n't_exist_in_civilized_society> a gaf:Instance ;
-        rdfs:label "should-n-t-exist-in-civilized-society" ;
-        gaf:denotedIn leolaniTalk:chat1800_utterance1_char0-151 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Rape_is-violent_exist {
-    leolaniWorld:Rape ns2:is_violent leolaniWorld:exist .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:rape_is_When_committed {
     leolaniWorld:rape ns2:is leolaniWorld:When_committed .
+}
+
+leolaniTalk:Perspectives {
+    <http://cltl.nl/leolani/talk/Rape_is-crime_should_n't_exist_in_civilized_society_00022> a grasp:Attribution ;
+        rdfs:label "Rape_is-crime_should_n't_exist_in_civilized_society_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1800_utterance1_char0-151 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/Rape_is-violent-crime_should_n't_exist_in_civilized_society_00022> a grasp:Attribution ;
+        rdfs:label "Rape_is-violent-crime_should_n't_exist_in_civilized_society_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1800_utterance1_char0-151 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Rape_is-violent_exist_00022 a grasp:Attribution ;
+        rdfs:label "Rape_is-violent_exist_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1800_utterance1_char0-151 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:rape_is_When_committed_00028 a grasp:Attribution ;
+        rdfs:label "rape_is_When_committed_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1800_utterance0_char0-100 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:rape_is_committed_00028 a grasp:Attribution ;
+        rdfs:label "rape_is_committed_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1800_utterance0_char0-100 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1800_utterance0_char0-100 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1800_utterance0_char0-100" ;
+        gaf:containsDenotation leolaniWorld:When_committed,
+            leolaniWorld:committed,
+            leolaniWorld:rape ;
+        gaf:denotes leolaniWorld:rape_is_When_committed,
+            leolaniWorld:rape_is_committed ;
+        grasp:hasAttribution leolaniTalk:rape_is_When_committed_00028,
+            leolaniTalk:rape_is_committed_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:19.557074"^^xml1:string,
+            "2024-06-05T23:34:19.557134"^^xml1:string ;
+        rdf:value "All feminists do is complain. When rape is committed, women are to blame and they can't change that."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1800_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat1800_utterance1_char0-151 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1800_utterance1_char0-151" ;
+        gaf:containsDenotation leolaniWorld:Rape,
+            leolaniWorld:exist,
+            <http://cltl.nl/leolani/world/should_n't_exist_in_civilized_society> ;
+        gaf:denotes ns1:t_exist_in_civilized_society,
+            ns13:t_exist_in_civilized_society,
+            leolaniWorld:Rape_is-violent_exist ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/Rape_is-crime_should_n't_exist_in_civilized_society_00022>,
+            <http://cltl.nl/leolani/talk/Rape_is-violent-crime_should_n't_exist_in_civilized_society_00022>,
+            leolaniTalk:Rape_is-violent_exist_00022 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:19.664515"^^xml1:string,
+            "2024-06-05T23:34:19.664607"^^xml1:string,
+            "2024-06-05T23:34:19.664631"^^xml1:string ;
+        rdf:value "Rape is a violent crime that shouldn't exist in a civilized society. Do you really think that women are responsible for rape? Why would they want that?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1800_utterance1 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -455,167 +535,87 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+ns1:t_exist_in_civilized_society {
+    leolaniWorld:Rape ns2:is_crime <http://cltl.nl/leolani/world/should_n't_exist_in_civilized_society> .
 }
 
-ns13:t_exist_in_civilized_society {
-    leolaniWorld:Rape ns2:is_violent_crime <http://cltl.nl/leolani/world/should_n't_exist_in_civilized_society> .
+leolaniWorld:Rape_is-violent_exist {
+    leolaniWorld:Rape ns2:is_violent leolaniWorld:exist .
 }
 
-leolaniTalk:Perspectives {
-    <http://cltl.nl/leolani/talk/Rape_is-crime_should_n't_exist_in_civilized_society_00022> a grasp:Attribution ;
-        rdfs:label "Rape_is-crime_should_n't_exist_in_civilized_society_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1800_utterance1_char0-151 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    ns1:t_exist_in_civilized_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Rape_is-crime_should_n't_exist_in_civilized_society" ;
+        gaf:denotedBy leolaniTalk:chat1800_utterance1_char0-151 .
 
-    <http://cltl.nl/leolani/talk/Rape_is-violent-crime_should_n't_exist_in_civilized_society_00022> a grasp:Attribution ;
-        rdfs:label "Rape_is-violent-crime_should_n't_exist_in_civilized_society_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1800_utterance1_char0-151 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    ns13:t_exist_in_civilized_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Rape_is-violent-crime_should_n't_exist_in_civilized_society" ;
+        gaf:denotedBy leolaniTalk:chat1800_utterance1_char0-151 .
 
-    leolaniTalk:Rape_is-violent_exist_00022 a grasp:Attribution ;
-        rdfs:label "Rape_is-violent_exist_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1800_utterance1_char0-151 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Rape_is-violent_exist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Rape_is-violent_exist" ;
+        gaf:denotedBy leolaniTalk:chat1800_utterance1_char0-151 .
 
-    leolaniTalk:rape_is_When_committed_00028 a grasp:Attribution ;
-        rdfs:label "rape_is_When_committed_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1800_utterance0_char0-100 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:rape_is_committed_00028 a grasp:Attribution ;
-        rdfs:label "rape_is_committed_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1800_utterance0_char0-100 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat1800_utterance0_char0-100 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1800_utterance0_char0-100" ;
-        gaf:containsDenotation leolaniWorld:When_committed,
-            leolaniWorld:committed,
-            leolaniWorld:rape ;
-        gaf:denotes leolaniWorld:rape_is_When_committed,
-            leolaniWorld:rape_is_committed ;
-        grasp:hasAttribution leolaniTalk:rape_is_When_committed_00028,
-            leolaniTalk:rape_is_committed_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:19.557074"^^xml1:string,
-            "2024-06-05T23:34:19.557134"^^xml1:string ;
-        rdf:value "All feminists do is complain. When rape is committed, women are to blame and they can't change that."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1800_utterance0 .
+    leolaniWorld:rape_is_When_committed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "rape_is_When_committed" ;
+        gaf:denotedBy leolaniTalk:chat1800_utterance0_char0-100 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
+    leolaniWorld:rape_is_committed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "rape_is_committed" ;
+        gaf:denotedBy leolaniTalk:chat1800_utterance0_char0-100 .
 
-    leolaniTalk:chat1800_utterance1_char0-151 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1800_utterance1_char0-151" ;
-        gaf:containsDenotation leolaniWorld:Rape,
-            leolaniWorld:exist,
-            <http://cltl.nl/leolani/world/should_n't_exist_in_civilized_society> ;
-        gaf:denotes ns1:t_exist_in_civilized_society,
-            ns13:t_exist_in_civilized_society,
-            leolaniWorld:Rape_is-violent_exist ;
-        grasp:hasAttribution <http://cltl.nl/leolani/talk/Rape_is-crime_should_n't_exist_in_civilized_society_00022>,
-            <http://cltl.nl/leolani/talk/Rape_is-violent-crime_should_n't_exist_in_civilized_society_00022>,
-            leolaniTalk:Rape_is-violent_exist_00022 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:19.664515"^^xml1:string,
-            "2024-06-05T23:34:19.664607"^^xml1:string,
-            "2024-06-05T23:34:19.664631"^^xml1:string ;
-        rdf:value "Rape is a violent crime that shouldn't exist in a civilized society. Do you really think that women are responsible for rape? Why would they want that?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1800_utterance1 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context218 a eps:Context ;
-        rdfs:label "context218" ;
-        hs:id "218"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Rape a gaf:Instance ;
+        rdfs:label "rape" ;
+        gaf:denotedIn leolaniTalk:chat1800_utterance1_char0-151 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1800 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "27"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1800 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1800" ;
-        hs:id "1800"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1800_utterance0,
-            leolaniTalk:chat1800_utterance1 .
-
-    leolaniTalk:chat1800_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1800_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1800_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1800_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:When_committed a gaf:Instance ;
+        rdfs:label "when-committed" ;
+        gaf:denotedIn leolaniTalk:chat1800_utterance0_char0-100 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:committed a gaf:Instance ;
+        rdfs:label "committed" ;
+        gaf:denotedIn leolaniTalk:chat1800_utterance0_char0-100 .
+
+    leolaniWorld:exist a gaf:Instance ;
+        rdfs:label "exist" ;
+        gaf:denotedIn leolaniTalk:chat1800_utterance1_char0-151 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:rape a gaf:Instance ;
+        rdfs:label "rape" ;
+        gaf:denotedIn leolaniTalk:chat1800_utterance0_char0-100 .
+
+    <http://cltl.nl/leolani/world/should_n't_exist_in_civilized_society> a gaf:Instance ;
+        rdfs:label "should-n-t-exist-in-civilized-society" ;
+        gaf:denotedIn leolaniTalk:chat1800_utterance1_char0-151 .
 }
 

@@ -151,7 +151,7 @@ def parse_args():
     parser.add_argument('--data_root', type=str, default='./../data')
     parser.add_argument('--dataset', type=str, default='DIALOCONAN')
     parser.add_argument('--got_root', type=str, default='got/')
-    parser.add_argument('--output_dir', type=str, default='./../experiments')
+    parser.add_argument('--output_dir', type=str, default='./../experiments/DIALOCONAN')
     parser.add_argument('--model', type=str, default='declare-lab/flan-alpaca-base')
     parser.add_argument('--epoch', type=int, default=50)
     parser.add_argument('--lr', type=float, default=5e-5)

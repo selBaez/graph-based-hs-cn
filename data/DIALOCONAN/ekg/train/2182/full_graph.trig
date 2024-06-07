@@ -23,54 +23,6 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Feminists_destroy_our_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_destroy_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:Feminists_have-destroyed_Western_civilization a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_have-destroyed_Western_civilization" ;
-        gaf:denotedBy leolaniTalk:chat2182_utterance0_char0-46 .
-
-    leolaniWorld:Feminists_have-destroyed_civilization a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_have-destroyed_civilization" ;
-        gaf:denotedBy leolaniTalk:chat2182_utterance0_char0-46 .
-
-    leolaniWorld:Feminists_only-destroy_our_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_only-destroy_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:it_has_thanks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_thanks" ;
-        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:it_has_thanks_only a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_thanks_only" ;
-        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:it_s-thanks-only-to_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-thanks-only-to_men" ;
-        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:it_s-thanks-to_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-thanks-to_men" ;
-        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:it_s-thanks-to_men {
     leolaniWorld:it ns11:s_thanks_to leolaniWorld:men .
 }
@@ -79,70 +31,207 @@ leolaniWorld:Feminists_destroy_our_society {
     leolaniWorld:Feminists ns1:destroy leolaniWorld:our_society .
 }
 
-leolaniWorld:Feminists_have-destroyed_Western_civilization {
-    leolaniWorld:Feminists ns1:have_destroyed leolaniWorld:Western_civilization .
+leolaniWorld:it_s-thanks-only-to_men {
+    leolaniWorld:it ns11:s_thanks_only_to leolaniWorld:men .
 }
 
 leolaniWorld:Feminists_have-destroyed_civilization {
     leolaniWorld:Feminists ns1:have_destroyed leolaniWorld:civilization .
 }
 
-leolaniWorld:it_has_thanks_only {
-    leolaniWorld:it ns1:has leolaniWorld:thanks_only .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context229 a eps:Context ;
+        rdfs:label "context229" ;
+        hs:id "229"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Feminists_only-destroy_our_society {
-    leolaniWorld:Feminists ns1:only_destroy leolaniWorld:our_society .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2182 .
 
-leolaniWorld:Instances {
-    leolaniWorld:Feminists a gaf:Instance ;
-        rdfs:label "feminists" ;
-        gaf:denotedIn leolaniTalk:chat2182_utterance0_char0-46,
-            leolaniTalk:chat2182_utterance2_char0-64 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:Western_civilization a gaf:Instance ;
-        rdfs:label "western-civilization" ;
-        gaf:denotedIn leolaniTalk:chat2182_utterance0_char0-46 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "79"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:civilization a gaf:Instance ;
-        rdfs:label "civilization" ;
-        gaf:denotedIn leolaniTalk:chat2182_utterance0_char0-46 .
+    leolaniTalk:chat2182 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2182" ;
+        hs:id "2182"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2182_utterance0,
+            leolaniTalk:chat2182_utterance2 .
+
+    leolaniTalk:chat2182_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2182_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2182_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2182_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:our_society a gaf:Instance ;
-        rdfs:label "our-society" ;
-        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:thanks a gaf:Instance ;
-        rdfs:label "thanks" ;
-        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
-
-    leolaniWorld:thanks_only a gaf:Instance ;
-        rdfs:label "thanks-only" ;
-        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
 }
 
-leolaniWorld:it_s-thanks-only-to_men {
-    leolaniWorld:it ns11:s_thanks_only_to leolaniWorld:men .
+leolaniWorld:Feminists_have-destroyed_Western_civilization {
+    leolaniWorld:Feminists ns1:have_destroyed leolaniWorld:Western_civilization .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:it_has_thanks {
     leolaniWorld:it ns1:has leolaniWorld:thanks .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Feminists_destroy_our_society_00010 a grasp:Attribution ;
+        rdfs:label "Feminists_destroy_our_society_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Feminists_have-destroyed_Western_civilization_00022 a grasp:Attribution ;
+        rdfs:label "Feminists_have-destroyed_Western_civilization_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2182_utterance0_char0-46 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Feminists_have-destroyed_civilization_00022 a grasp:Attribution ;
+        rdfs:label "Feminists_have-destroyed_civilization_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2182_utterance0_char0-46 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Feminists_only-destroy_our_society_00010 a grasp:Attribution ;
+        rdfs:label "Feminists_only-destroy_our_society_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_has_thanks_00010 a grasp:Attribution ;
+        rdfs:label "it_has_thanks_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_has_thanks_only_00010 a grasp:Attribution ;
+        rdfs:label "it_has_thanks_only_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_s-thanks-only-to_men_00010 a grasp:Attribution ;
+        rdfs:label "it_s-thanks-only-to_men_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_s-thanks-to_men_00010 a grasp:Attribution ;
+        rdfs:label "it_s-thanks-to_men_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2182_utterance0_char0-46 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2182_utterance0_char0-46" ;
+        gaf:containsDenotation leolaniWorld:Feminists,
+            leolaniWorld:Western_civilization,
+            leolaniWorld:civilization ;
+        gaf:denotes leolaniWorld:Feminists_have-destroyed_Western_civilization,
+            leolaniWorld:Feminists_have-destroyed_civilization ;
+        grasp:hasAttribution leolaniTalk:Feminists_have-destroyed_Western_civilization_00022,
+            leolaniTalk:Feminists_have-destroyed_civilization_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:12:16.569952"^^xml1:string,
+            "2024-06-05T23:12:16.570021"^^xml1:string ;
+        rdf:value "Feminists have destroyed Western civilization."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2182_utterance0 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    leolaniTalk:chat2182_utterance2_char0-64 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2182_utterance2_char0-64" ;
+        gaf:containsDenotation leolaniWorld:Feminists,
+            leolaniWorld:it,
+            leolaniWorld:men,
+            leolaniWorld:our_society,
+            leolaniWorld:thanks,
+            leolaniWorld:thanks_only ;
+        gaf:denotes leolaniWorld:Feminists_destroy_our_society,
+            leolaniWorld:Feminists_only-destroy_our_society,
+            leolaniWorld:it_has_thanks,
+            leolaniWorld:it_has_thanks_only,
+            leolaniWorld:it_s-thanks-only-to_men,
+            leolaniWorld:it_s-thanks-to_men ;
+        grasp:hasAttribution leolaniTalk:Feminists_destroy_our_society_00010,
+            leolaniTalk:Feminists_only-destroy_our_society_00010,
+            leolaniTalk:it_has_thanks_00010,
+            leolaniTalk:it_has_thanks_only_00010,
+            leolaniTalk:it_s-thanks-only-to_men_00010,
+            leolaniTalk:it_s-thanks-to_men_00010 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:12:16.756857"^^xml1:string,
+            "2024-06-05T23:12:16.756914"^^xml1:string,
+            "2024-06-05T23:12:16.756937"^^xml1:string,
+            "2024-06-05T23:12:16.756959"^^xml1:string,
+            "2024-06-05T23:12:16.756981"^^xml1:string,
+            "2024-06-05T23:12:16.757005"^^xml1:string ;
+        rdf:value "No, it's thanks to men only. Feminists only destroy our society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2182_utterance2 .
+
+    graspe:GRATITUDE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "GRATITUDE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -480,190 +569,101 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Feminists_destroy_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_destroy_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:Feminists_have-destroyed_Western_civilization a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_have-destroyed_Western_civilization" ;
+        gaf:denotedBy leolaniTalk:chat2182_utterance0_char0-46 .
+
+    leolaniWorld:Feminists_have-destroyed_civilization a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_have-destroyed_civilization" ;
+        gaf:denotedBy leolaniTalk:chat2182_utterance0_char0-46 .
+
+    leolaniWorld:Feminists_only-destroy_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_only-destroy_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:it_has_thanks a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_thanks" ;
+        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:it_has_thanks_only a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_thanks_only" ;
+        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:it_s-thanks-only-to_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-thanks-only-to_men" ;
+        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:it_s-thanks-to_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-thanks-to_men" ;
+        gaf:denotedBy leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Feminists_destroy_our_society_00010 a grasp:Attribution ;
-        rdfs:label "Feminists_destroy_our_society_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Feminists_have-destroyed_Western_civilization_00022 a grasp:Attribution ;
-        rdfs:label "Feminists_have-destroyed_Western_civilization_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2182_utterance0_char0-46 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Feminists_have-destroyed_civilization_00022 a grasp:Attribution ;
-        rdfs:label "Feminists_have-destroyed_civilization_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2182_utterance0_char0-46 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Feminists_only-destroy_our_society_00010 a grasp:Attribution ;
-        rdfs:label "Feminists_only-destroy_our_society_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_has_thanks_00010 a grasp:Attribution ;
-        rdfs:label "it_has_thanks_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_has_thanks_only_00010 a grasp:Attribution ;
-        rdfs:label "it_has_thanks_only_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-thanks-only-to_men_00010 a grasp:Attribution ;
-        rdfs:label "it_s-thanks-only-to_men_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-thanks-to_men_00010 a grasp:Attribution ;
-        rdfs:label "it_s-thanks-to_men_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2182_utterance2_char0-64 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2182_utterance0_char0-46 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2182_utterance0_char0-46" ;
-        gaf:containsDenotation leolaniWorld:Feminists,
-            leolaniWorld:Western_civilization,
-            leolaniWorld:civilization ;
-        gaf:denotes leolaniWorld:Feminists_have-destroyed_Western_civilization,
-            leolaniWorld:Feminists_have-destroyed_civilization ;
-        grasp:hasAttribution leolaniTalk:Feminists_have-destroyed_Western_civilization_00022,
-            leolaniTalk:Feminists_have-destroyed_civilization_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:12:16.569952"^^xml1:string,
-            "2024-06-05T23:12:16.570021"^^xml1:string ;
-        rdf:value "Feminists have destroyed Western civilization."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2182_utterance0 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    leolaniTalk:chat2182_utterance2_char0-64 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2182_utterance2_char0-64" ;
-        gaf:containsDenotation leolaniWorld:Feminists,
-            leolaniWorld:it,
-            leolaniWorld:men,
-            leolaniWorld:our_society,
-            leolaniWorld:thanks,
-            leolaniWorld:thanks_only ;
-        gaf:denotes leolaniWorld:Feminists_destroy_our_society,
-            leolaniWorld:Feminists_only-destroy_our_society,
-            leolaniWorld:it_has_thanks,
-            leolaniWorld:it_has_thanks_only,
-            leolaniWorld:it_s-thanks-only-to_men,
-            leolaniWorld:it_s-thanks-to_men ;
-        grasp:hasAttribution leolaniTalk:Feminists_destroy_our_society_00010,
-            leolaniTalk:Feminists_only-destroy_our_society_00010,
-            leolaniTalk:it_has_thanks_00010,
-            leolaniTalk:it_has_thanks_only_00010,
-            leolaniTalk:it_s-thanks-only-to_men_00010,
-            leolaniTalk:it_s-thanks-to_men_00010 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:12:16.756857"^^xml1:string,
-            "2024-06-05T23:12:16.756914"^^xml1:string,
-            "2024-06-05T23:12:16.756937"^^xml1:string,
-            "2024-06-05T23:12:16.756959"^^xml1:string,
-            "2024-06-05T23:12:16.756981"^^xml1:string,
-            "2024-06-05T23:12:16.757005"^^xml1:string ;
-        rdf:value "No, it's thanks to men only. Feminists only destroy our society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2182_utterance2 .
-
-    graspe:GRATITUDE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "GRATITUDE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Feminists_only-destroy_our_society {
+    leolaniWorld:Feminists ns1:only_destroy leolaniWorld:our_society .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context229 a eps:Context ;
-        rdfs:label "context229" ;
-        hs:id "229"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:it_has_thanks_only {
+    leolaniWorld:it ns1:has leolaniWorld:thanks_only .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2182 .
+leolaniWorld:Instances {
+    leolaniWorld:Feminists a gaf:Instance ;
+        rdfs:label "feminists" ;
+        gaf:denotedIn leolaniTalk:chat2182_utterance0_char0-46,
+            leolaniTalk:chat2182_utterance2_char0-64 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:Western_civilization a gaf:Instance ;
+        rdfs:label "western-civilization" ;
+        gaf:denotedIn leolaniTalk:chat2182_utterance0_char0-46 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "79"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2182 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2182" ;
-        hs:id "2182"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2182_utterance0,
-            leolaniTalk:chat2182_utterance2 .
-
-    leolaniTalk:chat2182_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2182_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2182_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2182_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:civilization a gaf:Instance ;
+        rdfs:label "civilization" ;
+        gaf:denotedIn leolaniTalk:chat2182_utterance0_char0-46 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:our_society a gaf:Instance ;
+        rdfs:label "our-society" ;
+        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:thanks a gaf:Instance ;
+        rdfs:label "thanks" ;
+        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
+
+    leolaniWorld:thanks_only a gaf:Instance ;
+        rdfs:label "thanks-only" ;
+        gaf:denotedIn leolaniTalk:chat2182_utterance2_char0-64 .
 }
 

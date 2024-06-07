@@ -22,47 +22,115 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:we_do-keep_accepting {
+    leolaniWorld:we ns11:do_keep leolaniWorld:accepting .
+}
+
 leolaniWorld:we_accepting_this {
     leolaniWorld:we ns11:accepting leolaniWorld:this .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context134 a eps:Context ;
+        rdfs:label "context134" ;
+        hs:id "134"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat259 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "133"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat259 a grasp:Chat,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat259" ;
+        hs:id "259"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat259_utterance0 .
 
-    leolaniWorld:we_accepting_this a gaf:Assertion,
+    leolaniTalk:chat259_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "we_accepting_this" ;
-        gaf:denotedBy leolaniTalk:chat259_utterance0_char0-102 .
+        rdfs:label "chat259_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:we_do-keep_accepting a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_do-keep_accepting" ;
-        gaf:denotedBy leolaniTalk:chat259_utterance0_char0-102 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:accepting a gaf:Instance ;
-        rdfs:label "accepting" ;
-        gaf:denotedIn leolaniTalk:chat259_utterance0_char0-102 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat259_utterance0_char0-102 .
+leolaniTalk:Perspectives {
+    leolaniTalk:we_accepting_this_00022 a grasp:Attribution ;
+        rdfs:label "we_accepting_this_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat259_utterance0_char0-102 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat259_utterance0_char0-102 .
+    leolaniTalk:we_do-keep_accepting_00022 a grasp:Attribution ;
+        rdfs:label "we_do-keep_accepting_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat259_utterance0_char0-102 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat259_utterance0_char0-102 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat259_utterance0_char0-102" ;
+        gaf:containsDenotation leolaniWorld:accepting,
+            leolaniWorld:this,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_accepting_this,
+            leolaniWorld:we_do-keep_accepting ;
+        grasp:hasAttribution leolaniTalk:we_accepting_this_00022,
+            leolaniTalk:we_do-keep_accepting_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:50.688676"^^xml1:string,
+            "2024-06-05T23:02:50.688728"^^xml1:string ;
+        rdf:value "Thousands of our girls abused by Muslim rape gangs, commanded by Koran. Why do we keep accepting this?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat259_utterance0 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -400,110 +468,42 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:we_accepting_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_accepting_this" ;
+        gaf:denotedBy leolaniTalk:chat259_utterance0_char0-102 .
+
+    leolaniWorld:we_do-keep_accepting a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_do-keep_accepting" ;
+        gaf:denotedBy leolaniTalk:chat259_utterance0_char0-102 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:we_accepting_this_00022 a grasp:Attribution ;
-        rdfs:label "we_accepting_this_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat259_utterance0_char0-102 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_do-keep_accepting_00022 a grasp:Attribution ;
-        rdfs:label "we_do-keep_accepting_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat259_utterance0_char0-102 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat259_utterance0_char0-102 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat259_utterance0_char0-102" ;
-        gaf:containsDenotation leolaniWorld:accepting,
-            leolaniWorld:this,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_accepting_this,
-            leolaniWorld:we_do-keep_accepting ;
-        grasp:hasAttribution leolaniTalk:we_accepting_this_00022,
-            leolaniTalk:we_do-keep_accepting_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:50.688676"^^xml1:string,
-            "2024-06-05T23:02:50.688728"^^xml1:string ;
-        rdf:value "Thousands of our girls abused by Muslim rape gangs, commanded by Koran. Why do we keep accepting this?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat259_utterance0 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context134 a eps:Context ;
-        rdfs:label "context134" ;
-        hs:id "134"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat259 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "133"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat259 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat259" ;
-        hs:id "259"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat259_utterance0 .
-
-    leolaniTalk:chat259_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat259_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:accepting a gaf:Instance ;
+        rdfs:label "accepting" ;
+        gaf:denotedIn leolaniTalk:chat259_utterance0_char0-102 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:we_do-keep_accepting {
-    leolaniWorld:we ns11:do_keep leolaniWorld:accepting .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat259_utterance0_char0-102 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat259_utterance0_char0-102 .
 }
 

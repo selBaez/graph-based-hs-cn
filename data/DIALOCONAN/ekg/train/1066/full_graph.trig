@@ -22,85 +22,82 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context162 a eps:Context ;
+        rdfs:label "context162" ;
+        hs:id "162"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1066 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "177"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1066 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1066" ;
+        hs:id "1066"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1066_utterance0,
+            leolaniTalk:chat1066_utterance1,
+            leolaniTalk:chat1066_utterance2 .
+
+    leolaniTalk:chat1066_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1066_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1066_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1066_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1066_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1066_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:you_find_women_responsible {
     leolaniWorld:you ns1:find leolaniWorld:women_responsible .
-}
-
-leolaniWorld:women_are_blame {
-    leolaniWorld:women ns1:are leolaniWorld:blame .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Feminists_women_are-nothing-but_trouble_to_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminists_women_are-nothing-but_trouble_to_society" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance2_char0-119 .
-
-    leolaniWorld:It_has_feminism_fault a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_feminism_fault" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance2_char0-119 .
-
-    leolaniWorld:Rape_is-act-of_violence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Rape_is-act-of_violence" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:Rape_is_act a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Rape_is_act" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:message_take-from_your_comments a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "message_take-from_your_comments" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:rape_is_When_committed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "rape_is_When_committed" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance0_char0-43 .
-
-    leolaniWorld:rape_is_committed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "rape_is_committed" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance0_char0-43 .
-
-    leolaniWorld:women_are_blame a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_are_blame" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance0_char0-43 .
-
-    leolaniWorld:women_are_to_blame a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_are_to_blame" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance0_char0-43 .
-
-    leolaniWorld:you_find_women a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_find_women" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:you_find_women_responsible a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_find_women_responsible" ;
-        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:rape_is_committed {
@@ -111,102 +108,192 @@ leolaniWorld:message_take-from_your_comments {
     leolaniWorld:message ns1:take_from leolaniWorld:your_comments .
 }
 
-leolaniWorld:women_are_to_blame {
-    leolaniWorld:women ns1:are leolaniWorld:to_blame .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:Rape_is-act-of_violence {
     leolaniWorld:Rape ns1:is_act_of leolaniWorld:violence .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Feminists_women a gaf:Instance ;
-        rdfs:label "feminists-women" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance2_char0-119 .
-
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance2_char0-119 .
-
-    leolaniWorld:Rape a gaf:Instance ;
-        rdfs:label "rape" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:When_committed a gaf:Instance ;
-        rdfs:label "when-committed" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
-
-    leolaniWorld:act a gaf:Instance ;
-        rdfs:label "act" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:blame a gaf:Instance ;
-        rdfs:label "blame" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:committed a gaf:Instance ;
-        rdfs:label "committed" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
-
-    leolaniWorld:feminism_fault a gaf:Instance ;
-        rdfs:label "feminism-fault" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance2_char0-119 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:message a gaf:Instance ;
-        rdfs:label "message" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:rape a gaf:Instance ;
-        rdfs:label "rape" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
-
-    leolaniWorld:to_blame a gaf:Instance ;
-        rdfs:label "to-blame" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
-
-    leolaniWorld:trouble_to_society a gaf:Instance ;
-        rdfs:label "trouble-to-society" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance2_char0-119 .
-
-    leolaniWorld:violence a gaf:Instance ;
-        rdfs:label "violence" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43,
-            leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:women_responsible a gaf:Instance ;
-        rdfs:label "women-responsible" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
-
-    leolaniWorld:your_comments a gaf:Instance ;
-        rdfs:label "your-comments" ;
-        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
-}
-
-leolaniWorld:you_find_women {
-    leolaniWorld:you ns1:find leolaniWorld:women .
-}
-
 leolaniWorld:rape_is_When_committed {
     leolaniWorld:rape ns1:is leolaniWorld:When_committed .
+}
+
+leolaniWorld:Rape_is_act {
+    leolaniWorld:Rape ns1:is leolaniWorld:act .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Feminists_women_are-nothing-but_trouble_to_society_00020 a grasp:Attribution ;
+        rdfs:label "Feminists_women_are-nothing-but_trouble_to_society_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance2_char0-119 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_has_feminism_fault_00020 a grasp:Attribution ;
+        rdfs:label "It_has_feminism_fault_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance2_char0-119 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Rape_is-act-of_violence_00021 a grasp:Attribution ;
+        rdfs:label "Rape_is-act-of_violence_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Rape_is_act_00021 a grasp:Attribution ;
+        rdfs:label "Rape_is_act_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:message_take-from_your_comments_00021 a grasp:Attribution ;
+        rdfs:label "message_take-from_your_comments_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:rape_is_When_committed_00021 a grasp:Attribution ;
+        rdfs:label "rape_is_When_committed_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance0_char0-43 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:rape_is_committed_00021 a grasp:Attribution ;
+        rdfs:label "rape_is_committed_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance0_char0-43 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_are_blame_00021 a grasp:Attribution ;
+        rdfs:label "women_are_blame_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance0_char0-43 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_are_to_blame_00021 a grasp:Attribution ;
+        rdfs:label "women_are_to_blame_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance0_char0-43 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_find_women_00021 a grasp:Attribution ;
+        rdfs:label "you_find_women_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_find_women_responsible_00021 a grasp:Attribution ;
+        rdfs:label "you_find_women_responsible_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1066_utterance2_char0-119 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1066_utterance2_char0-119" ;
+        gaf:containsDenotation leolaniWorld:Feminists_women,
+            leolaniWorld:It,
+            leolaniWorld:feminism_fault,
+            leolaniWorld:trouble_to_society ;
+        gaf:denotes leolaniWorld:Feminists_women_are-nothing-but_trouble_to_society,
+            leolaniWorld:It_has_feminism_fault ;
+        grasp:hasAttribution leolaniTalk:Feminists_women_are-nothing-but_trouble_to_society_00020,
+            leolaniTalk:It_has_feminism_fault_00020 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:50.332853"^^xml1:string,
+            "2024-06-05T23:08:50.332905"^^xml1:string ;
+        rdf:value "It's feminism fault that these weird excuses are going around. Feminists women are nothing but trouble to this society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1066_utterance2 .
+
+    graspe:DISGUST a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISGUST" .
+
+    leolaniTalk:chat1066_utterance0_char0-43 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1066_utterance0_char0-43" ;
+        gaf:containsDenotation leolaniWorld:When_committed,
+            leolaniWorld:blame,
+            leolaniWorld:committed,
+            leolaniWorld:rape,
+            leolaniWorld:to_blame,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:rape_is_When_committed,
+            leolaniWorld:rape_is_committed,
+            leolaniWorld:women_are_blame,
+            leolaniWorld:women_are_to_blame ;
+        grasp:hasAttribution leolaniTalk:rape_is_When_committed_00021,
+            leolaniTalk:rape_is_committed_00021,
+            leolaniTalk:women_are_blame_00021,
+            leolaniTalk:women_are_to_blame_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:50.150819"^^xml1:string,
+            "2024-06-05T23:08:50.150880"^^xml1:string,
+            "2024-06-05T23:08:50.150904"^^xml1:string,
+            "2024-06-05T23:08:50.150925"^^xml1:string ;
+        rdf:value "When rape is committed, women are to blame."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1066_utterance0 .
+
+    leolaniTalk:chat1066_utterance1_char0-192 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1066_utterance1_char0-192" ;
+        gaf:containsDenotation leolaniWorld:Rape,
+            leolaniWorld:act,
+            leolaniWorld:message,
+            leolaniWorld:violence,
+            leolaniWorld:women,
+            leolaniWorld:women_responsible,
+            leolaniWorld:you,
+            leolaniWorld:your_comments ;
+        gaf:denotes leolaniWorld:Rape_is-act-of_violence,
+            leolaniWorld:Rape_is_act,
+            leolaniWorld:message_take-from_your_comments,
+            leolaniWorld:you_find_women,
+            leolaniWorld:you_find_women_responsible ;
+        grasp:hasAttribution leolaniTalk:Rape_is-act-of_violence_00021,
+            leolaniTalk:Rape_is_act_00021,
+            leolaniTalk:message_take-from_your_comments_00021,
+            leolaniTalk:you_find_women_00021,
+            leolaniTalk:you_find_women_responsible_00021 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:50.250295"^^xml1:string,
+            "2024-06-05T23:08:50.250345"^^xml1:string,
+            "2024-06-05T23:08:50.250368"^^xml1:string,
+            "2024-06-05T23:08:50.250391"^^xml1:string,
+            "2024-06-05T23:08:50.250412"^^xml1:string ;
+        rdf:value "Rape is an act of violence that has no place in a civilized society. The message to take from your comments is that you find women responsible for being raped. Who ever would want to be raped?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1066_utterance1 .
+
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -544,261 +631,174 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Feminists_women_are-nothing-but_trouble_to_society {
+    leolaniWorld:Feminists_women ns1:are_nothing_but leolaniWorld:trouble_to_society .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Feminists_women_are-nothing-but_trouble_to_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminists_women_are-nothing-but_trouble_to_society" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance2_char0-119 .
+
+    leolaniWorld:It_has_feminism_fault a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_feminism_fault" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance2_char0-119 .
+
+    leolaniWorld:Rape_is-act-of_violence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Rape_is-act-of_violence" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:Rape_is_act a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Rape_is_act" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:message_take-from_your_comments a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "message_take-from_your_comments" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:rape_is_When_committed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "rape_is_When_committed" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance0_char0-43 .
+
+    leolaniWorld:rape_is_committed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "rape_is_committed" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance0_char0-43 .
+
+    leolaniWorld:women_are_blame a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are_blame" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance0_char0-43 .
+
+    leolaniWorld:women_are_to_blame a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are_to_blame" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance0_char0-43 .
+
+    leolaniWorld:you_find_women a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_find_women" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:you_find_women_responsible a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_find_women_responsible" ;
+        gaf:denotedBy leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:women_are_blame {
+    leolaniWorld:women ns1:are leolaniWorld:blame .
+}
+
 leolaniWorld:It_has_feminism_fault {
     leolaniWorld:It ns1:has leolaniWorld:feminism_fault .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:you_find_women {
+    leolaniWorld:you ns1:find leolaniWorld:women .
 }
 
-leolaniWorld:Rape_is_act {
-    leolaniWorld:Rape ns1:is leolaniWorld:act .
+leolaniWorld:women_are_to_blame {
+    leolaniWorld:women ns1:are leolaniWorld:to_blame .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Feminists_women_are-nothing-but_trouble_to_society_00020 a grasp:Attribution ;
-        rdfs:label "Feminists_women_are-nothing-but_trouble_to_society_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance2_char0-119 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Feminists_women a gaf:Instance ;
+        rdfs:label "feminists-women" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance2_char0-119 .
 
-    leolaniTalk:It_has_feminism_fault_00020 a grasp:Attribution ;
-        rdfs:label "It_has_feminism_fault_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance2_char0-119 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance2_char0-119 .
 
-    leolaniTalk:Rape_is-act-of_violence_00021 a grasp:Attribution ;
-        rdfs:label "Rape_is-act-of_violence_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Rape a gaf:Instance ;
+        rdfs:label "rape" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
 
-    leolaniTalk:Rape_is_act_00021 a grasp:Attribution ;
-        rdfs:label "Rape_is_act_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:When_committed a gaf:Instance ;
+        rdfs:label "when-committed" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
 
-    leolaniTalk:message_take-from_your_comments_00021 a grasp:Attribution ;
-        rdfs:label "message_take-from_your_comments_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:act a gaf:Instance ;
+        rdfs:label "act" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
 
-    leolaniTalk:rape_is_When_committed_00021 a grasp:Attribution ;
-        rdfs:label "rape_is_When_committed_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance0_char0-43 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:rape_is_committed_00021 a grasp:Attribution ;
-        rdfs:label "rape_is_committed_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance0_char0-43 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_are_blame_00021 a grasp:Attribution ;
-        rdfs:label "women_are_blame_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance0_char0-43 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_are_to_blame_00021 a grasp:Attribution ;
-        rdfs:label "women_are_to_blame_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance0_char0-43 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_find_women_00021 a grasp:Attribution ;
-        rdfs:label "you_find_women_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_find_women_responsible_00021 a grasp:Attribution ;
-        rdfs:label "you_find_women_responsible_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1066_utterance1_char0-192 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1066_utterance2_char0-119 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1066_utterance2_char0-119" ;
-        gaf:containsDenotation leolaniWorld:Feminists_women,
-            leolaniWorld:It,
-            leolaniWorld:feminism_fault,
-            leolaniWorld:trouble_to_society ;
-        gaf:denotes leolaniWorld:Feminists_women_are-nothing-but_trouble_to_society,
-            leolaniWorld:It_has_feminism_fault ;
-        grasp:hasAttribution leolaniTalk:Feminists_women_are-nothing-but_trouble_to_society_00020,
-            leolaniTalk:It_has_feminism_fault_00020 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:50.332853"^^xml1:string,
-            "2024-06-05T23:08:50.332905"^^xml1:string ;
-        rdf:value "It's feminism fault that these weird excuses are going around. Feminists women are nothing but trouble to this society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1066_utterance2 .
-
-    graspe:DISGUST a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISGUST" .
-
-    leolaniTalk:chat1066_utterance0_char0-43 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1066_utterance0_char0-43" ;
-        gaf:containsDenotation leolaniWorld:When_committed,
-            leolaniWorld:blame,
-            leolaniWorld:committed,
-            leolaniWorld:rape,
-            leolaniWorld:to_blame,
-            leolaniWorld:women ;
-        gaf:denotes leolaniWorld:rape_is_When_committed,
-            leolaniWorld:rape_is_committed,
-            leolaniWorld:women_are_blame,
-            leolaniWorld:women_are_to_blame ;
-        grasp:hasAttribution leolaniTalk:rape_is_When_committed_00021,
-            leolaniTalk:rape_is_committed_00021,
-            leolaniTalk:women_are_blame_00021,
-            leolaniTalk:women_are_to_blame_00021 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:50.150819"^^xml1:string,
-            "2024-06-05T23:08:50.150880"^^xml1:string,
-            "2024-06-05T23:08:50.150904"^^xml1:string,
-            "2024-06-05T23:08:50.150925"^^xml1:string ;
-        rdf:value "When rape is committed, women are to blame."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1066_utterance0 .
-
-    leolaniTalk:chat1066_utterance1_char0-192 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1066_utterance1_char0-192" ;
-        gaf:containsDenotation leolaniWorld:Rape,
-            leolaniWorld:act,
-            leolaniWorld:message,
-            leolaniWorld:violence,
-            leolaniWorld:women,
-            leolaniWorld:women_responsible,
-            leolaniWorld:you,
-            leolaniWorld:your_comments ;
-        gaf:denotes leolaniWorld:Rape_is-act-of_violence,
-            leolaniWorld:Rape_is_act,
-            leolaniWorld:message_take-from_your_comments,
-            leolaniWorld:you_find_women,
-            leolaniWorld:you_find_women_responsible ;
-        grasp:hasAttribution leolaniTalk:Rape_is-act-of_violence_00021,
-            leolaniTalk:Rape_is_act_00021,
-            leolaniTalk:message_take-from_your_comments_00021,
-            leolaniTalk:you_find_women_00021,
-            leolaniTalk:you_find_women_responsible_00021 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:50.250295"^^xml1:string,
-            "2024-06-05T23:08:50.250345"^^xml1:string,
-            "2024-06-05T23:08:50.250368"^^xml1:string,
-            "2024-06-05T23:08:50.250391"^^xml1:string,
-            "2024-06-05T23:08:50.250412"^^xml1:string ;
-        rdf:value "Rape is an act of violence that has no place in a civilized society. The message to take from your comments is that you find women responsible for being raped. Who ever would want to be raped?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1066_utterance1 .
-
-    graspe:ANGER a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANGER" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context162 a eps:Context ;
-        rdfs:label "context162" ;
-        hs:id "162"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1066 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "177"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1066 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1066" ;
-        hs:id "1066"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1066_utterance0,
-            leolaniTalk:chat1066_utterance1,
-            leolaniTalk:chat1066_utterance2 .
-
-    leolaniTalk:chat1066_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1066_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1066_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1066_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1066_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1066_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:blame a gaf:Instance ;
+        rdfs:label "blame" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:committed a gaf:Instance ;
+        rdfs:label "committed" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
 
-leolaniWorld:Feminists_women_are-nothing-but_trouble_to_society {
-    leolaniWorld:Feminists_women ns1:are_nothing_but leolaniWorld:trouble_to_society .
+    leolaniWorld:feminism_fault a gaf:Instance ;
+        rdfs:label "feminism-fault" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance2_char0-119 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:message a gaf:Instance ;
+        rdfs:label "message" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:rape a gaf:Instance ;
+        rdfs:label "rape" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
+
+    leolaniWorld:to_blame a gaf:Instance ;
+        rdfs:label "to-blame" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43 .
+
+    leolaniWorld:trouble_to_society a gaf:Instance ;
+        rdfs:label "trouble-to-society" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance2_char0-119 .
+
+    leolaniWorld:violence a gaf:Instance ;
+        rdfs:label "violence" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance0_char0-43,
+            leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:women_responsible a gaf:Instance ;
+        rdfs:label "women-responsible" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
+
+    leolaniWorld:your_comments a gaf:Instance ;
+        rdfs:label "your-comments" ;
+        gaf:denotedIn leolaniTalk:chat1066_utterance1_char0-192 .
 }
 

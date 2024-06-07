@@ -22,70 +22,113 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:It_is_abomination {
-    leolaniWorld:It ns1:is leolaniWorld:abomination .
+leolaniWorld:people_has_individual_merits {
+    leolaniWorld:people ns1:has leolaniWorld:individual_merits .
+}
+
+leolaniWorld:you_do-consider_it_disease {
+    leolaniWorld:you ns1:do_consider leolaniWorld:it_disease .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context12 a eps:Context ;
+        rdfs:label "context12" ;
+        hs:id "12"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat223 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "81"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat223 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat223" ;
+        hs:id "223"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat223_utterance0,
+            leolaniTalk:chat223_utterance1,
+            leolaniTalk:chat223_utterance2,
+            leolaniTalk:chat223_utterance3 .
+
+    leolaniTalk:chat223_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat223_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat223_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat223_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat223_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat223_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat223_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat223_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:you_do-consider_it_disease_like_cold {
+    leolaniWorld:you ns1:do_consider leolaniWorld:it_disease_like_cold .
+}
+
+leolaniWorld:it_disease-like_cold {
+    leolaniWorld:it ns1:disease_like leolaniWorld:cold .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Gays_are_just_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gays_are_just_sick" ;
-        gaf:denotedBy leolaniTalk:chat223_utterance0_char0-40 .
-
-    leolaniWorld:Gays_are_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gays_are_sick" ;
-        gaf:denotedBy leolaniTalk:chat223_utterance0_char0-40 .
-
-    leolaniWorld:It_is_abomination a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_is_abomination" ;
-        gaf:denotedBy leolaniTalk:chat223_utterance0_char0-40 .
-
-    leolaniWorld:gays_are_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gays_are_sick" ;
-        gaf:denotedBy leolaniTalk:chat223_utterance2_char0-19 .
-
-    leolaniWorld:it_disease-like_cold a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_disease-like_cold" ;
-        gaf:denotedBy leolaniTalk:chat223_utterance1_char0-46 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_has_individual_merits a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_has_individual_merits" ;
-        gaf:denotedBy leolaniTalk:chat223_utterance3_char0-153 .
-
-    leolaniWorld:you_do-consider_it_disease a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-consider_it_disease" ;
-        gaf:denotedBy leolaniTalk:chat223_utterance1_char0-46 .
-
-    leolaniWorld:you_do-consider_it_disease_like_cold a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-consider_it_disease_like_cold" ;
-        gaf:denotedBy leolaniTalk:chat223_utterance1_char0-46 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:it_disease-like_cold {
-    leolaniWorld:it ns1:disease_like leolaniWorld:cold .
+leolaniWorld:Gays_are_sick {
+    leolaniWorld:Gays ns1:are leolaniWorld:sick .
 }
 
 leolaniTalk:Perspectives {
@@ -231,100 +274,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40 .
-
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40 .
-
-    leolaniWorld:abomination a gaf:Instance ;
-        rdfs:label "abomination" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:cold a gaf:Instance ;
-        rdfs:label "cold" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
-
-    leolaniWorld:gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance2_char0-19 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:individual_merits a gaf:Instance ;
-        rdfs:label "individual-merits" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance3_char0-153 .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
-
-    leolaniWorld:it_disease a gaf:Instance ;
-        rdfs:label "it-disease" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
-
-    leolaniWorld:it_disease_like_cold a gaf:Instance ;
-        rdfs:label "it-disease-like-cold" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
-
-    leolaniWorld:just_sick a gaf:Instance ;
-        rdfs:label "just-sick" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance3_char0-153 .
-
-    leolaniWorld:sick a gaf:Instance ;
-        rdfs:label "sick" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40,
-            leolaniTalk:chat223_utterance2_char0-19 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
-}
-
-leolaniWorld:you_do-consider_it_disease_like_cold {
-    leolaniWorld:you ns1:do_consider leolaniWorld:it_disease_like_cold .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:you_do-consider_it_disease {
-    leolaniWorld:you ns1:do_consider leolaniWorld:it_disease .
-}
-
-leolaniWorld:people_has_individual_merits {
-    leolaniWorld:people ns1:has leolaniWorld:individual_merits .
-}
-
-leolaniWorld:Gays_are_just_sick {
-    leolaniWorld:Gays ns1:are leolaniWorld:just_sick .
-}
-
-leolaniWorld:Gays_are_sick {
-    leolaniWorld:Gays ns1:are leolaniWorld:sick .
-}
-
-leolaniWorld:gays_are_sick {
-    leolaniWorld:gays ns1:are leolaniWorld:sick .
 }
 
 leolaniWorld:Ontology {
@@ -662,84 +611,135 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context12 a eps:Context ;
-        rdfs:label "context12" ;
-        hs:id "12"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:It_is_abomination {
+    leolaniWorld:It ns1:is leolaniWorld:abomination .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat223 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "81"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat223 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Gays_are_just_sick a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat223" ;
-        hs:id "223"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat223_utterance0,
-            leolaniTalk:chat223_utterance1,
-            leolaniTalk:chat223_utterance2,
-            leolaniTalk:chat223_utterance3 .
+        rdfs:label "Gays_are_just_sick" ;
+        gaf:denotedBy leolaniTalk:chat223_utterance0_char0-40 .
 
-    leolaniTalk:chat223_utterance0 a grasp:Utterance,
+    leolaniWorld:Gays_are_sick a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat223_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Gays_are_sick" ;
+        gaf:denotedBy leolaniTalk:chat223_utterance0_char0-40 .
 
-    leolaniTalk:chat223_utterance1 a grasp:Utterance,
+    leolaniWorld:It_is_abomination a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat223_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "It_is_abomination" ;
+        gaf:denotedBy leolaniTalk:chat223_utterance0_char0-40 .
 
-    leolaniTalk:chat223_utterance2 a grasp:Utterance,
+    leolaniWorld:gays_are_sick a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat223_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "gays_are_sick" ;
+        gaf:denotedBy leolaniTalk:chat223_utterance2_char0-19 .
 
-    leolaniTalk:chat223_utterance3 a grasp:Utterance,
+    leolaniWorld:it_disease-like_cold a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat223_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "it_disease-like_cold" ;
+        gaf:denotedBy leolaniTalk:chat223_utterance1_char0-46 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_has_individual_merits a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_has_individual_merits" ;
+        gaf:denotedBy leolaniTalk:chat223_utterance3_char0-153 .
+
+    leolaniWorld:you_do-consider_it_disease a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-consider_it_disease" ;
+        gaf:denotedBy leolaniTalk:chat223_utterance1_char0-46 .
+
+    leolaniWorld:you_do-consider_it_disease_like_cold a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-consider_it_disease_like_cold" ;
+        gaf:denotedBy leolaniTalk:chat223_utterance1_char0-46 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Gays_are_just_sick {
+    leolaniWorld:Gays ns1:are leolaniWorld:just_sick .
+}
+
+leolaniWorld:gays_are_sick {
+    leolaniWorld:gays ns1:are leolaniWorld:sick .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40 .
+
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40 .
+
+    leolaniWorld:abomination a gaf:Instance ;
+        rdfs:label "abomination" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:cold a gaf:Instance ;
+        rdfs:label "cold" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
+
+    leolaniWorld:gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance2_char0-19 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:individual_merits a gaf:Instance ;
+        rdfs:label "individual-merits" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance3_char0-153 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
+
+    leolaniWorld:it_disease a gaf:Instance ;
+        rdfs:label "it-disease" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
+
+    leolaniWorld:it_disease_like_cold a gaf:Instance ;
+        rdfs:label "it-disease-like-cold" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
+
+    leolaniWorld:just_sick a gaf:Instance ;
+        rdfs:label "just-sick" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance3_char0-153 .
+
+    leolaniWorld:sick a gaf:Instance ;
+        rdfs:label "sick" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance0_char0-40,
+            leolaniTalk:chat223_utterance2_char0-19 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat223_utterance1_char0-46 .
 }
 

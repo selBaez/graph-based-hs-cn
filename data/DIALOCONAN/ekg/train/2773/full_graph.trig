@@ -22,87 +22,158 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context38 a eps:Context ;
+        rdfs:label "context38" ;
+        hs:id "38"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2773 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "211"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2773 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2773" ;
+        hs:id "2773"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2773_utterance0,
+            leolaniTalk:chat2773_utterance1 .
+
+    leolaniTalk:chat2773_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2773_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2773_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2773_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Women_are-equal-to_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are-equal-to_men" ;
-        gaf:denotedBy leolaniTalk:chat2773_utterance1_char0-207 .
-
-    leolaniWorld:Women_are_equal a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_equal" ;
-        gaf:denotedBy leolaniTalk:chat2773_utterance1_char0-207 .
-
-    leolaniWorld:Women_have_right a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_have_right" ;
-        gaf:denotedBy leolaniTalk:chat2773_utterance1_char0-207 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:there_will_will_war a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "there_will_will_war" ;
-        gaf:denotedBy leolaniTalk:chat2773_utterance0_char0-115 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:there_will_will_war {
-    leolaniWorld:there ns1:will leolaniWorld:will_war .
+leolaniWorld:Women_are_equal {
+    leolaniWorld:Women ns1:are leolaniWorld:equal .
 }
 
-leolaniWorld:Women_have_right {
-    leolaniWorld:Women ns1:have leolaniWorld:right .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Women_are-equal-to_men_00028 a grasp:Attribution ;
+        rdfs:label "Women_are-equal-to_men_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2773_utterance1_char0-207 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat2773_utterance1_char0-207 .
+    leolaniTalk:Women_are_equal_00028 a grasp:Attribution ;
+        rdfs:label "Women_are_equal_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2773_utterance1_char0-207 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:Women_have_right_00028 a grasp:Attribution ;
+        rdfs:label "Women_have_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2773_utterance1_char0-207 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:equal a gaf:Instance ;
-        rdfs:label "equal" ;
-        gaf:denotedIn leolaniTalk:chat2773_utterance1_char0-207 .
+    leolaniTalk:chat2773_utterance0_char0-115 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2773_utterance0_char0-115" ;
+        gaf:containsDenotation leolaniWorld:there,
+            leolaniWorld:will_war ;
+        gaf:denotes leolaniWorld:there_will_will_war ;
+        grasp:hasAttribution leolaniTalk:there_will_will_war_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:43.830128"^^xml1:string ;
+        rdf:value "If women don't stop complaining, then men will find a solution. If a woman does not submit, then there will be war."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2773_utterance0 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:there_will_will_war_00028 a grasp:Attribution ;
+        rdfs:label "there_will_will_war_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2773_utterance0_char0-115 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat2773_utterance1_char0-207 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2773_utterance1_char0-207" ;
+        gaf:containsDenotation leolaniWorld:Women,
+            leolaniWorld:equal,
+            leolaniWorld:men,
+            leolaniWorld:right ;
+        gaf:denotes leolaniWorld:Women_are-equal-to_men,
+            leolaniWorld:Women_are_equal,
+            leolaniWorld:Women_have_right ;
+        grasp:hasAttribution leolaniTalk:Women_are-equal-to_men_00028,
+            leolaniTalk:Women_are_equal_00028,
+            leolaniTalk:Women_have_right_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:43.956227"^^xml1:string,
+            "2024-06-05T23:07:43.956282"^^xml1:string,
+            "2024-06-05T23:07:43.956307"^^xml1:string ;
+        rdf:value "There is no reason to fear women and force them into submission. Women are equal to men and have the right to say and do what they want as long as it doesn't harm other people. The same can't be said of war!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2773_utterance1 .
 
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat2773_utterance1_char0-207 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat2773_utterance1_char0-207 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:there a gaf:Instance ;
-        rdfs:label "there" ;
-        gaf:denotedIn leolaniTalk:chat2773_utterance0_char0-115 .
-
-    leolaniWorld:will_war a gaf:Instance ;
-        rdfs:label "will-war" ;
-        gaf:denotedIn leolaniTalk:chat2773_utterance0_char0-115 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -440,157 +511,86 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Women_are_equal {
-    leolaniWorld:Women ns1:are leolaniWorld:equal .
+leolaniWorld:Women_have_right {
+    leolaniWorld:Women ns1:have leolaniWorld:right .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Women_are-equal-to_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are-equal-to_men" ;
+        gaf:denotedBy leolaniTalk:chat2773_utterance1_char0-207 .
+
+    leolaniWorld:Women_are_equal a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are_equal" ;
+        gaf:denotedBy leolaniTalk:chat2773_utterance1_char0-207 .
+
+    leolaniWorld:Women_have_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_have_right" ;
+        gaf:denotedBy leolaniTalk:chat2773_utterance1_char0-207 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:there_will_will_war a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "there_will_will_war" ;
+        gaf:denotedBy leolaniTalk:chat2773_utterance0_char0-115 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Women_are-equal-to_men_00028 a grasp:Attribution ;
-        rdfs:label "Women_are-equal-to_men_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2773_utterance1_char0-207 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_are_equal_00028 a grasp:Attribution ;
-        rdfs:label "Women_are_equal_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2773_utterance1_char0-207 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_have_right_00028 a grasp:Attribution ;
-        rdfs:label "Women_have_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2773_utterance1_char0-207 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2773_utterance0_char0-115 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2773_utterance0_char0-115" ;
-        gaf:containsDenotation leolaniWorld:there,
-            leolaniWorld:will_war ;
-        gaf:denotes leolaniWorld:there_will_will_war ;
-        grasp:hasAttribution leolaniTalk:there_will_will_war_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:43.830128"^^xml1:string ;
-        rdf:value "If women don't stop complaining, then men will find a solution. If a woman does not submit, then there will be war."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2773_utterance0 .
-
-    leolaniTalk:there_will_will_war_00028 a grasp:Attribution ;
-        rdfs:label "there_will_will_war_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2773_utterance0_char0-115 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2773_utterance1_char0-207 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2773_utterance1_char0-207" ;
-        gaf:containsDenotation leolaniWorld:Women,
-            leolaniWorld:equal,
-            leolaniWorld:men,
-            leolaniWorld:right ;
-        gaf:denotes leolaniWorld:Women_are-equal-to_men,
-            leolaniWorld:Women_are_equal,
-            leolaniWorld:Women_have_right ;
-        grasp:hasAttribution leolaniTalk:Women_are-equal-to_men_00028,
-            leolaniTalk:Women_are_equal_00028,
-            leolaniTalk:Women_have_right_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:43.956227"^^xml1:string,
-            "2024-06-05T23:07:43.956282"^^xml1:string,
-            "2024-06-05T23:07:43.956307"^^xml1:string ;
-        rdf:value "There is no reason to fear women and force them into submission. Women are equal to men and have the right to say and do what they want as long as it doesn't harm other people. The same can't be said of war!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2773_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context38 a eps:Context ;
-        rdfs:label "context38" ;
-        hs:id "38"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2773 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "211"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2773 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2773" ;
-        hs:id "2773"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2773_utterance0,
-            leolaniTalk:chat2773_utterance1 .
-
-    leolaniTalk:chat2773_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2773_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2773_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2773_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:there_will_will_war {
+    leolaniWorld:there ns1:will leolaniWorld:will_war .
 }
 
 leolaniWorld:Women_are-equal-to_men {
     leolaniWorld:Women ns1:are_equal_to leolaniWorld:men .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat2773_utterance1_char0-207 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:equal a gaf:Instance ;
+        rdfs:label "equal" ;
+        gaf:denotedIn leolaniTalk:chat2773_utterance1_char0-207 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat2773_utterance1_char0-207 .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat2773_utterance1_char0-207 .
+
+    leolaniWorld:there a gaf:Instance ;
+        rdfs:label "there" ;
+        gaf:denotedIn leolaniTalk:chat2773_utterance0_char0-115 .
+
+    leolaniWorld:will_war a gaf:Instance ;
+        rdfs:label "will-war" ;
+        gaf:denotedIn leolaniTalk:chat2773_utterance0_char0-115 .
 }
 

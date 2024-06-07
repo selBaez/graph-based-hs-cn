@@ -23,121 +23,201 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Women_are_definitely_humans {
-    leolaniWorld:Women ns1:are leolaniWorld:definitely_humans .
+leolaniWorld:order_live-in_society {
+    leolaniWorld:order ns1:live_in leolaniWorld:society .
 }
 
 leolaniWorld:they_re_born {
     leolaniWorld:they ns11:re leolaniWorld:born .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Women_are_definitely_humans a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_definitely_humans" ;
-        gaf:denotedBy leolaniTalk:chat2059_utterance1_char0-166 .
-
-    leolaniWorld:Women_are_humans a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_humans" ;
-        gaf:denotedBy leolaniTalk:chat2059_utterance1_char0-166 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:order_live-in_diverse_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "order_live-in_diverse_society" ;
-        gaf:denotedBy leolaniTalk:chat2059_utterance1_char0-166 .
-
-    leolaniWorld:order_live-in_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "order_live-in_society" ;
-        gaf:denotedBy leolaniTalk:chat2059_utterance1_char0-166 .
-
-    leolaniWorld:they_re-born_subhuman a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_re-born_subhuman" ;
-        gaf:denotedBy leolaniTalk:chat2059_utterance2_char0-49 .
-
-    leolaniWorld:they_re_born a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_re_born" ;
-        gaf:denotedBy leolaniTalk:chat2059_utterance2_char0-49 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:order_live-in_society {
-    leolaniWorld:order ns1:live_in leolaniWorld:society .
-}
-
 leolaniWorld:Women_are_humans {
     leolaniWorld:Women ns1:are leolaniWorld:humans .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
+leolaniTalk:Interactions {
+    leolaniContext:context58 a eps:Context ;
+        rdfs:label "context58" ;
+        hs:id "58"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:born a gaf:Instance ;
-        rdfs:label "born" ;
-        gaf:denotedIn leolaniTalk:chat2059_utterance2_char0-49 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2059 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "155"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2059 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2059" ;
+        hs:id "2059"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2059_utterance1,
+            leolaniTalk:chat2059_utterance2 .
+
+    leolaniTalk:chat2059_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2059_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2059_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2059_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:definitely_humans a gaf:Instance ;
-        rdfs:label "definitely-humans" ;
-        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
-
-    leolaniWorld:diverse_society a gaf:Instance ;
-        rdfs:label "diverse-society" ;
-        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:humans a gaf:Instance ;
-        rdfs:label "humans" ;
-        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:order a gaf:Instance ;
-        rdfs:label "order" ;
-        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
-
-    leolaniWorld:subhuman a gaf:Instance ;
-        rdfs:label "subhuman" ;
-        gaf:denotedIn leolaniTalk:chat2059_utterance2_char0-49 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2059_utterance2_char0-49 .
+leolaniWorld:Women_are_definitely_humans {
+    leolaniWorld:Women ns1:are leolaniWorld:definitely_humans .
 }
 
 leolaniWorld:they_re-born_subhuman {
     leolaniWorld:they ns11:re_born leolaniWorld:subhuman .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Women_are_definitely_humans_00028 a grasp:Attribution ;
+        rdfs:label "Women_are_definitely_humans_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2059_utterance1_char0-166 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Women_are_humans_00028 a grasp:Attribution ;
+        rdfs:label "Women_are_humans_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2059_utterance1_char0-166 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:order_live-in_diverse_society_00028 a grasp:Attribution ;
+        rdfs:label "order_live-in_diverse_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2059_utterance1_char0-166 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:order_live-in_society_00028 a grasp:Attribution ;
+        rdfs:label "order_live-in_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2059_utterance1_char0-166 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_re-born_subhuman_00010 a grasp:Attribution ;
+        rdfs:label "they_re-born_subhuman_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2059_utterance2_char0-49 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_re_born_00010 a grasp:Attribution ;
+        rdfs:label "they_re_born_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2059_utterance2_char0-49 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2059_utterance2_char0-49 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2059_utterance2_char0-49" ;
+        gaf:containsDenotation leolaniWorld:born,
+            leolaniWorld:subhuman,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_re-born_subhuman,
+            leolaniWorld:they_re_born ;
+        grasp:hasAttribution leolaniTalk:they_re-born_subhuman_00010,
+            leolaniTalk:they_re_born_00010 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:16.694425"^^xml1:string,
+            "2024-06-05T23:07:16.694479"^^xml1:string ;
+        rdf:value "I can't welcome women, they're all born subhuman."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2059_utterance2 .
+
+    graspe:GRATITUDE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "GRATITUDE" .
+
+    leolaniTalk:chat2059_utterance1_char0-166 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2059_utterance1_char0-166" ;
+        gaf:containsDenotation leolaniWorld:Women,
+            leolaniWorld:definitely_humans,
+            leolaniWorld:diverse_society,
+            leolaniWorld:humans,
+            leolaniWorld:order,
+            leolaniWorld:society ;
+        gaf:denotes leolaniWorld:Women_are_definitely_humans,
+            leolaniWorld:Women_are_humans,
+            leolaniWorld:order_live-in_diverse_society,
+            leolaniWorld:order_live-in_society ;
+        grasp:hasAttribution leolaniTalk:Women_are_definitely_humans_00028,
+            leolaniTalk:Women_are_humans_00028,
+            leolaniTalk:order_live-in_diverse_society_00028,
+            leolaniTalk:order_live-in_society_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:16.613881"^^xml1:string,
+            "2024-06-05T23:07:16.613941"^^xml1:string,
+            "2024-06-05T23:07:16.613965"^^xml1:string,
+            "2024-06-05T23:07:16.613988"^^xml1:string ;
+        rdf:value "Women are definitely humans. In order to live in a diverse and interactive society, we people that are different from us must be welcomed, regardless of their gender."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2059_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -475,180 +555,100 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Women_are_definitely_humans_00028 a grasp:Attribution ;
-        rdfs:label "Women_are_definitely_humans_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2059_utterance1_char0-166 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_are_humans_00028 a grasp:Attribution ;
-        rdfs:label "Women_are_humans_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2059_utterance1_char0-166 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:order_live-in_diverse_society_00028 a grasp:Attribution ;
-        rdfs:label "order_live-in_diverse_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2059_utterance1_char0-166 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:order_live-in_society_00028 a grasp:Attribution ;
-        rdfs:label "order_live-in_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2059_utterance1_char0-166 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_re-born_subhuman_00010 a grasp:Attribution ;
-        rdfs:label "they_re-born_subhuman_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2059_utterance2_char0-49 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_re_born_00010 a grasp:Attribution ;
-        rdfs:label "they_re_born_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2059_utterance2_char0-49 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2059_utterance2_char0-49 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2059_utterance2_char0-49" ;
-        gaf:containsDenotation leolaniWorld:born,
-            leolaniWorld:subhuman,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_re-born_subhuman,
-            leolaniWorld:they_re_born ;
-        grasp:hasAttribution leolaniTalk:they_re-born_subhuman_00010,
-            leolaniTalk:they_re_born_00010 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:16.694425"^^xml1:string,
-            "2024-06-05T23:07:16.694479"^^xml1:string ;
-        rdf:value "I can't welcome women, they're all born subhuman."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2059_utterance2 .
-
-    graspe:GRATITUDE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "GRATITUDE" .
-
-    leolaniTalk:chat2059_utterance1_char0-166 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2059_utterance1_char0-166" ;
-        gaf:containsDenotation leolaniWorld:Women,
-            leolaniWorld:definitely_humans,
-            leolaniWorld:diverse_society,
-            leolaniWorld:humans,
-            leolaniWorld:order,
-            leolaniWorld:society ;
-        gaf:denotes leolaniWorld:Women_are_definitely_humans,
-            leolaniWorld:Women_are_humans,
-            leolaniWorld:order_live-in_diverse_society,
-            leolaniWorld:order_live-in_society ;
-        grasp:hasAttribution leolaniTalk:Women_are_definitely_humans_00028,
-            leolaniTalk:Women_are_humans_00028,
-            leolaniTalk:order_live-in_diverse_society_00028,
-            leolaniTalk:order_live-in_society_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:16.613881"^^xml1:string,
-            "2024-06-05T23:07:16.613941"^^xml1:string,
-            "2024-06-05T23:07:16.613965"^^xml1:string,
-            "2024-06-05T23:07:16.613988"^^xml1:string ;
-        rdf:value "Women are definitely humans. In order to live in a diverse and interactive society, we people that are different from us must be welcomed, regardless of their gender."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2059_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context58 a eps:Context ;
-        rdfs:label "context58" ;
-        hs:id "58"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2059 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "155"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2059 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Women_are_definitely_humans a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2059" ;
-        hs:id "2059"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2059_utterance1,
-            leolaniTalk:chat2059_utterance2 .
+        rdfs:label "Women_are_definitely_humans" ;
+        gaf:denotedBy leolaniTalk:chat2059_utterance1_char0-166 .
 
-    leolaniTalk:chat2059_utterance1 a grasp:Utterance,
+    leolaniWorld:Women_are_humans a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2059_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Women_are_humans" ;
+        gaf:denotedBy leolaniTalk:chat2059_utterance1_char0-166 .
 
-    leolaniTalk:chat2059_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2059_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:order_live-in_diverse_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "order_live-in_diverse_society" ;
+        gaf:denotedBy leolaniTalk:chat2059_utterance1_char0-166 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:order_live-in_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "order_live-in_society" ;
+        gaf:denotedBy leolaniTalk:chat2059_utterance1_char0-166 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:they_re-born_subhuman a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_re-born_subhuman" ;
+        gaf:denotedBy leolaniTalk:chat2059_utterance2_char0-49 .
+
+    leolaniWorld:they_re_born a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_re_born" ;
+        gaf:denotedBy leolaniTalk:chat2059_utterance2_char0-49 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:order_live-in_diverse_society {
     leolaniWorld:order ns1:live_in leolaniWorld:diverse_society .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
+
+    leolaniWorld:born a gaf:Instance ;
+        rdfs:label "born" ;
+        gaf:denotedIn leolaniTalk:chat2059_utterance2_char0-49 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:definitely_humans a gaf:Instance ;
+        rdfs:label "definitely-humans" ;
+        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
+
+    leolaniWorld:diverse_society a gaf:Instance ;
+        rdfs:label "diverse-society" ;
+        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:humans a gaf:Instance ;
+        rdfs:label "humans" ;
+        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:order a gaf:Instance ;
+        rdfs:label "order" ;
+        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2059_utterance1_char0-166 .
+
+    leolaniWorld:subhuman a gaf:Instance ;
+        rdfs:label "subhuman" ;
+        gaf:denotedIn leolaniTalk:chat2059_utterance2_char0-49 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2059_utterance2_char0-49 .
 }
 

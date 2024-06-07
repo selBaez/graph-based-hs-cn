@@ -22,51 +22,115 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:There_article-about_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "There_article-about_it" ;
-        gaf:denotedBy leolaniTalk:chat137_utterance2_char0-46 .
-
-    leolaniWorld:There_article-on_website a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "There_article-on_website" ;
-        gaf:denotedBy leolaniTalk:chat137_utterance2_char0-46 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:There_article-on_website {
     leolaniWorld:There ns11:article_on leolaniWorld:website .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:There a gaf:Instance ;
-        rdfs:label "there" ;
-        gaf:denotedIn leolaniTalk:chat137_utterance2_char0-46 .
+leolaniTalk:Interactions {
+    leolaniContext:context74 a eps:Context ;
+        rdfs:label "context74" ;
+        hs:id "74"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat137 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "144"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat137 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat137" ;
+        hs:id "137"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat137_utterance2 .
+
+    leolaniTalk:chat137_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat137_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat137_utterance2_char0-46 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:website a gaf:Instance ;
-        rdfs:label "website" ;
-        gaf:denotedIn leolaniTalk:chat137_utterance2_char0-46 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:There_article-about_it {
     leolaniWorld:There ns11:article_about leolaniWorld:it .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:There_article-about_it_00028 a grasp:Attribution ;
+        rdfs:label "There_article-about_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat137_utterance2_char0-46 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:There_article-on_website_00028 a grasp:Attribution ;
+        rdfs:label "There_article-on_website_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat137_utterance2_char0-46 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat137_utterance2_char0-46 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat137_utterance2_char0-46" ;
+        gaf:containsDenotation leolaniWorld:There,
+            leolaniWorld:it,
+            leolaniWorld:website ;
+        gaf:denotes leolaniWorld:There_article-about_it,
+            leolaniWorld:There_article-on_website ;
+        grasp:hasAttribution leolaniTalk:There_article-about_it_00028,
+            leolaniTalk:There_article-on_website_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:19:59.849014"^^xml1:string,
+            "2024-06-05T23:19:59.849082"^^xml1:string ;
+        rdf:value "There’s an article on this website about it..."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat137_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -404,106 +468,42 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:There_article-about_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "There_article-about_it" ;
+        gaf:denotedBy leolaniTalk:chat137_utterance2_char0-46 .
+
+    leolaniWorld:There_article-on_website a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "There_article-on_website" ;
+        gaf:denotedBy leolaniTalk:chat137_utterance2_char0-46 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:There_article-about_it_00028 a grasp:Attribution ;
-        rdfs:label "There_article-about_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat137_utterance2_char0-46 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:There_article-on_website_00028 a grasp:Attribution ;
-        rdfs:label "There_article-on_website_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat137_utterance2_char0-46 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat137_utterance2_char0-46 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat137_utterance2_char0-46" ;
-        gaf:containsDenotation leolaniWorld:There,
-            leolaniWorld:it,
-            leolaniWorld:website ;
-        gaf:denotes leolaniWorld:There_article-about_it,
-            leolaniWorld:There_article-on_website ;
-        grasp:hasAttribution leolaniTalk:There_article-about_it_00028,
-            leolaniTalk:There_article-on_website_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:19:59.849014"^^xml1:string,
-            "2024-06-05T23:19:59.849082"^^xml1:string ;
-        rdf:value "There’s an article on this website about it..."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat137_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context74 a eps:Context ;
-        rdfs:label "context74" ;
-        hs:id "74"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat137 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "144"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat137 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat137" ;
-        hs:id "137"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat137_utterance2 .
-
-    leolaniTalk:chat137_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat137_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:There a gaf:Instance ;
+        rdfs:label "there" ;
+        gaf:denotedIn leolaniTalk:chat137_utterance2_char0-46 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat137_utterance2_char0-46 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:website a gaf:Instance ;
+        rdfs:label "website" ;
+        gaf:denotedIn leolaniTalk:chat137_utterance2_char0-46 .
 }
 

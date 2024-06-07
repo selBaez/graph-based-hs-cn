@@ -23,6 +23,105 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:it_maybe-s_they_also_control {
+    leolaniWorld:it ns1:s leolaniWorld:they_also_control .
+}
+
+leolaniWorld:it_has_they_also_control {
+    leolaniWorld:it ns11:has leolaniWorld:they_also_control .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context32 a eps:Context ;
+        rdfs:label "context32" ;
+        hs:id "32"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat748 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "203"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat748 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat748" ;
+        hs:id "748"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat748_utterance0,
+            leolaniTalk:chat748_utterance1 .
+
+    leolaniTalk:chat748_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat748_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat748_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat748_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:it_maybe-s_because_they_control {
+    leolaniWorld:it ns1:s leolaniWorld:because_they_control .
+}
+
+leolaniWorld:it_has_they_control {
+    leolaniWorld:it ns11:has leolaniWorld:they_control .
+}
+
+leolaniWorld:it_has_because_they_control {
+    leolaniWorld:it ns11:has leolaniWorld:because_they_control .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Jews_control_banks {
+    leolaniWorld:Jews ns11:control leolaniWorld:banks .
+}
+
 leolaniWorld:it_maybe-s_because_they_also_control {
     leolaniWorld:it ns1:s leolaniWorld:because_they_also_control .
 }
@@ -31,154 +130,160 @@ leolaniWorld:it_maybe-s_they_control {
     leolaniWorld:it ns1:s leolaniWorld:they_control .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_control_banks_00028 a grasp:Attribution ;
+        rdfs:label "Jews_control_banks_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance0_char0-27 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_control_banks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_control_banks" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance0_char0-27 .
+    leolaniTalk:chat748_utterance0_char0-27 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat748_utterance0_char0-27" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:banks ;
+        gaf:denotes leolaniWorld:Jews_control_banks ;
+        grasp:hasAttribution leolaniTalk:Jews_control_banks_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:17.340867"^^xml1:string ;
+        rdf:value "The Jews control the banks."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat748_utterance0 .
 
-    leolaniWorld:it_has_because_they_also_control a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_because_they_also_control" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    leolaniTalk:it_has_because_they_also_control_00028 a grasp:Attribution ;
+        rdfs:label "it_has_because_they_also_control_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it_has_because_they_control a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_because_they_control" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    leolaniTalk:it_has_because_they_control_00028 a grasp:Attribution ;
+        rdfs:label "it_has_because_they_control_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it_has_they_also_control a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_they_also_control" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    leolaniTalk:it_has_they_also_control_00028 a grasp:Attribution ;
+        rdfs:label "it_has_they_also_control_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it_has_they_control a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_they_control" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    leolaniTalk:it_has_they_control_00028 a grasp:Attribution ;
+        rdfs:label "it_has_they_control_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it_maybe-s_because_they_also_control a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_maybe-s_because_they_also_control" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    leolaniTalk:it_maybe-s_because_they_also_control_00028 a grasp:Attribution ;
+        rdfs:label "it_maybe-s_because_they_also_control_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it_maybe-s_because_they_control a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_maybe-s_because_they_control" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    leolaniTalk:it_maybe-s_because_they_control_00028 a grasp:Attribution ;
+        rdfs:label "it_maybe-s_because_they_control_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it_maybe-s_they_also_control a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_maybe-s_they_also_control" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    leolaniTalk:it_maybe-s_they_also_control_00028 a grasp:Attribution ;
+        rdfs:label "it_maybe-s_they_also_control_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it_maybe-s_they_control a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_maybe-s_they_control" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    leolaniTalk:it_maybe-s_they_control_00028 a grasp:Attribution ;
+        rdfs:label "it_maybe-s_they_control_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniTalk:they_also-control_media_00028 a grasp:Attribution ;
+        rdfs:label "they_also-control_media_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniTalk:they_control_media_00028 a grasp:Attribution ;
+        rdfs:label "they_control_media_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:they_also-control_media a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_also-control_media" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    leolaniTalk:chat748_utterance1_char0-220 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat748_utterance1_char0-220" ;
+        gaf:containsDenotation leolaniWorld:because_they_also_control,
+            leolaniWorld:because_they_control,
+            leolaniWorld:it,
+            leolaniWorld:media,
+            leolaniWorld:they,
+            leolaniWorld:they_also_control,
+            leolaniWorld:they_control ;
+        gaf:denotes leolaniWorld:it_has_because_they_also_control,
+            leolaniWorld:it_has_because_they_control,
+            leolaniWorld:it_has_they_also_control,
+            leolaniWorld:it_has_they_control,
+            leolaniWorld:it_maybe-s_because_they_also_control,
+            leolaniWorld:it_maybe-s_because_they_control,
+            leolaniWorld:it_maybe-s_they_also_control,
+            leolaniWorld:it_maybe-s_they_control,
+            leolaniWorld:they_also-control_media,
+            leolaniWorld:they_control_media ;
+        grasp:hasAttribution leolaniTalk:it_has_because_they_also_control_00028,
+            leolaniTalk:it_has_because_they_control_00028,
+            leolaniTalk:it_has_they_also_control_00028,
+            leolaniTalk:it_has_they_control_00028,
+            leolaniTalk:it_maybe-s_because_they_also_control_00028,
+            leolaniTalk:it_maybe-s_because_they_control_00028,
+            leolaniTalk:it_maybe-s_they_also_control_00028,
+            leolaniTalk:it_maybe-s_they_control_00028,
+            leolaniTalk:they_also-control_media_00028,
+            leolaniTalk:they_control_media_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:17.453496"^^xml1:string,
+            "2024-06-05T23:10:17.453557"^^xml1:string,
+            "2024-06-05T23:10:17.453581"^^xml1:string,
+            "2024-06-05T23:10:17.453603"^^xml1:string,
+            "2024-06-05T23:10:17.453624"^^xml1:string,
+            "2024-06-05T23:10:17.453645"^^xml1:string,
+            "2024-06-05T23:10:17.453667"^^xml1:string,
+            "2024-06-05T23:10:17.453690"^^xml1:string,
+            "2024-06-05T23:10:17.453713"^^xml1:string,
+            "2024-06-05T23:10:17.453736"^^xml1:string ;
+        rdf:value "So how come the media doesn't report about Jewish power in the financial world? Maybe it's because they also control the media, the government, and have many powerful friends working for the Galactic Republic... #sarcasm"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat748_utterance1 .
 
-    leolaniWorld:they_control_media a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_control_media" ;
-        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Jews_control_banks {
-    leolaniWorld:Jews ns11:control leolaniWorld:banks .
-}
-
-leolaniWorld:it_has_because_they_also_control {
-    leolaniWorld:it ns11:has leolaniWorld:because_they_also_control .
-}
-
-leolaniWorld:it_has_they_also_control {
-    leolaniWorld:it ns11:has leolaniWorld:they_also_control .
-}
-
-leolaniWorld:it_has_because_they_control {
-    leolaniWorld:it ns11:has leolaniWorld:because_they_control .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:they_control_media {
     leolaniWorld:they ns11:control leolaniWorld:media .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat748_utterance0_char0-27 .
-
-    leolaniWorld:banks a gaf:Instance ;
-        rdfs:label "banks" ;
-        gaf:denotedIn leolaniTalk:chat748_utterance0_char0-27 .
-
-    leolaniWorld:because_they_also_control a gaf:Instance ;
-        rdfs:label "because-they-also-control" ;
-        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
-
-    leolaniWorld:because_they_control a gaf:Instance ;
-        rdfs:label "because-they-control" ;
-        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:media a gaf:Instance ;
-        rdfs:label "media" ;
-        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
-
-    leolaniWorld:they_also_control a gaf:Instance ;
-        rdfs:label "they-also-control" ;
-        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
-
-    leolaniWorld:they_control a gaf:Instance ;
-        rdfs:label "they-control" ;
-        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
-}
-
-leolaniWorld:it_has_they_control {
-    leolaniWorld:it ns11:has leolaniWorld:they_control .
-}
-
-leolaniWorld:it_maybe-s_they_also_control {
-    leolaniWorld:it ns1:s leolaniWorld:they_also_control .
+leolaniWorld:they_also-control_media {
+    leolaniWorld:they ns11:also_control leolaniWorld:media .
 }
 
 leolaniWorld:Ontology {
@@ -516,230 +621,125 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_control_banks a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_control_banks" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance0_char0-27 .
+
+    leolaniWorld:it_has_because_they_also_control a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_because_they_also_control" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:it_has_because_they_control a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_because_they_control" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:it_has_they_also_control a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_they_also_control" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:it_has_they_control a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_they_control" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:it_maybe-s_because_they_also_control a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_maybe-s_because_they_also_control" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:it_maybe-s_because_they_control a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_maybe-s_because_they_control" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:it_maybe-s_they_also_control a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_maybe-s_they_also_control" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:it_maybe-s_they_control a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_maybe-s_they_control" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_also-control_media a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_also-control_media" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:they_control_media a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_control_media" ;
+        gaf:denotedBy leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:they_also-control_media {
-    leolaniWorld:they ns11:also_control leolaniWorld:media .
+leolaniWorld:it_has_because_they_also_control {
+    leolaniWorld:it ns11:has leolaniWorld:because_they_also_control .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_control_banks_00028 a grasp:Attribution ;
-        rdfs:label "Jews_control_banks_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance0_char0-27 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat748_utterance0_char0-27 .
 
-    leolaniTalk:chat748_utterance0_char0-27 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat748_utterance0_char0-27" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:banks ;
-        gaf:denotes leolaniWorld:Jews_control_banks ;
-        grasp:hasAttribution leolaniTalk:Jews_control_banks_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:17.340867"^^xml1:string ;
-        rdf:value "The Jews control the banks."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat748_utterance0 .
+    leolaniWorld:banks a gaf:Instance ;
+        rdfs:label "banks" ;
+        gaf:denotedIn leolaniTalk:chat748_utterance0_char0-27 .
 
-    leolaniTalk:it_has_because_they_also_control_00028 a grasp:Attribution ;
-        rdfs:label "it_has_because_they_also_control_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:because_they_also_control a gaf:Instance ;
+        rdfs:label "because-they-also-control" ;
+        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
 
-    leolaniTalk:it_has_because_they_control_00028 a grasp:Attribution ;
-        rdfs:label "it_has_because_they_control_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_has_they_also_control_00028 a grasp:Attribution ;
-        rdfs:label "it_has_they_also_control_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_has_they_control_00028 a grasp:Attribution ;
-        rdfs:label "it_has_they_control_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_maybe-s_because_they_also_control_00028 a grasp:Attribution ;
-        rdfs:label "it_maybe-s_because_they_also_control_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_maybe-s_because_they_control_00028 a grasp:Attribution ;
-        rdfs:label "it_maybe-s_because_they_control_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_maybe-s_they_also_control_00028 a grasp:Attribution ;
-        rdfs:label "it_maybe-s_they_also_control_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_maybe-s_they_control_00028 a grasp:Attribution ;
-        rdfs:label "it_maybe-s_they_control_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_also-control_media_00028 a grasp:Attribution ;
-        rdfs:label "they_also-control_media_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_control_media_00028 a grasp:Attribution ;
-        rdfs:label "they_control_media_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat748_utterance1_char0-220 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat748_utterance1_char0-220 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat748_utterance1_char0-220" ;
-        gaf:containsDenotation leolaniWorld:because_they_also_control,
-            leolaniWorld:because_they_control,
-            leolaniWorld:it,
-            leolaniWorld:media,
-            leolaniWorld:they,
-            leolaniWorld:they_also_control,
-            leolaniWorld:they_control ;
-        gaf:denotes leolaniWorld:it_has_because_they_also_control,
-            leolaniWorld:it_has_because_they_control,
-            leolaniWorld:it_has_they_also_control,
-            leolaniWorld:it_has_they_control,
-            leolaniWorld:it_maybe-s_because_they_also_control,
-            leolaniWorld:it_maybe-s_because_they_control,
-            leolaniWorld:it_maybe-s_they_also_control,
-            leolaniWorld:it_maybe-s_they_control,
-            leolaniWorld:they_also-control_media,
-            leolaniWorld:they_control_media ;
-        grasp:hasAttribution leolaniTalk:it_has_because_they_also_control_00028,
-            leolaniTalk:it_has_because_they_control_00028,
-            leolaniTalk:it_has_they_also_control_00028,
-            leolaniTalk:it_has_they_control_00028,
-            leolaniTalk:it_maybe-s_because_they_also_control_00028,
-            leolaniTalk:it_maybe-s_because_they_control_00028,
-            leolaniTalk:it_maybe-s_they_also_control_00028,
-            leolaniTalk:it_maybe-s_they_control_00028,
-            leolaniTalk:they_also-control_media_00028,
-            leolaniTalk:they_control_media_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:17.453496"^^xml1:string,
-            "2024-06-05T23:10:17.453557"^^xml1:string,
-            "2024-06-05T23:10:17.453581"^^xml1:string,
-            "2024-06-05T23:10:17.453603"^^xml1:string,
-            "2024-06-05T23:10:17.453624"^^xml1:string,
-            "2024-06-05T23:10:17.453645"^^xml1:string,
-            "2024-06-05T23:10:17.453667"^^xml1:string,
-            "2024-06-05T23:10:17.453690"^^xml1:string,
-            "2024-06-05T23:10:17.453713"^^xml1:string,
-            "2024-06-05T23:10:17.453736"^^xml1:string ;
-        rdf:value "So how come the media doesn't report about Jewish power in the financial world? Maybe it's because they also control the media, the government, and have many powerful friends working for the Galactic Republic... #sarcasm"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat748_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context32 a eps:Context ;
-        rdfs:label "context32" ;
-        hs:id "32"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat748 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "203"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat748 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat748" ;
-        hs:id "748"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat748_utterance0,
-            leolaniTalk:chat748_utterance1 .
-
-    leolaniTalk:chat748_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat748_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat748_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat748_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:because_they_control a gaf:Instance ;
+        rdfs:label "because-they-control" ;
+        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:it_maybe-s_because_they_control {
-    leolaniWorld:it ns1:s leolaniWorld:because_they_control .
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:media a gaf:Instance ;
+        rdfs:label "media" ;
+        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:they_also_control a gaf:Instance ;
+        rdfs:label "they-also-control" ;
+        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
+
+    leolaniWorld:they_control a gaf:Instance ;
+        rdfs:label "they-control" ;
+        gaf:denotedIn leolaniTalk:chat748_utterance1_char0-220 .
 }
 

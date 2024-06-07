@@ -22,68 +22,91 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+leolaniWorld:they_are_people {
+    leolaniWorld:they ns11:are leolaniWorld:people .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context182 a eps:Context ;
+        rdfs:label "context182" ;
+        hs:id "182"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2277 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "139"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2277 a grasp:Chat,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2277" ;
+        hs:id "2277"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2277_utterance0,
+            leolaniTalk:chat2277_utterance1 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat2277_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat2277_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:rights_practice-as_other_people a gaf:Assertion,
+    leolaniTalk:chat2277_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "rights_practice-as_other_people" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance1_char0-82 .
+        rdfs:label "chat2277_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:same_rights_practice-as_other_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "same_rights_practice-as_other_people" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance1_char0-82 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:they_are-chosen-people_Jews_think a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-chosen-people_Jews_think" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:they_are-chosen-people_Since_Jews_think a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-chosen-people_Since_Jews_think" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:they_are-people_Jews_think a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-people_Jews_think" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:they_are-people_Since_Jews_think a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-people_Since_Jews_think" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+leolaniWorld:same_rights_practice-as_other_people {
+    leolaniWorld:same_rights ns11:practice_as leolaniWorld:other_people .
+}
 
-    leolaniWorld:they_are_chosen_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_chosen_people" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+leolaniWorld:they_are-chosen-people_Jews_think {
+    leolaniWorld:they ns11:are_chosen_people leolaniWorld:Jews_think .
+}
 
-    leolaniWorld:they_are_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_people" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+leolaniWorld:they_are_chosen_people {
+    leolaniWorld:they ns11:are leolaniWorld:chosen_people .
+}
 
-    leolaniWorld:they_ask-for_privileges a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_ask-for_privileges" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
-
-    leolaniWorld:they_ask-for_special_privileges a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_ask-for_special_privileges" ;
-        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
@@ -94,77 +117,155 @@ leolaniWorld:they_are-people_Jews_think {
     leolaniWorld:they ns11:are_people leolaniWorld:Jews_think .
 }
 
-leolaniWorld:they_are_people {
-    leolaniWorld:they ns11:are leolaniWorld:people .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jews_think a gaf:Instance ;
-        rdfs:label "jews-think" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
-
-    leolaniWorld:Since_Jews_think a gaf:Instance ;
-        rdfs:label "since-jews-think" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
-
-    leolaniWorld:chosen_people a gaf:Instance ;
-        rdfs:label "chosen-people" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:other_people a gaf:Instance ;
-        rdfs:label "other-people" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance1_char0-82 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
-
-    leolaniWorld:privileges a gaf:Instance ;
-        rdfs:label "privileges" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
-
-    leolaniWorld:rights a gaf:Instance ;
-        rdfs:label "rights" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance1_char0-82 .
-
-    leolaniWorld:same_rights a gaf:Instance ;
-        rdfs:label "same-rights" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance1_char0-82 .
-
-    leolaniWorld:special_privileges a gaf:Instance ;
-        rdfs:label "special-privileges" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
-}
-
-leolaniWorld:they_are-chosen-people_Jews_think {
-    leolaniWorld:they ns11:are_chosen_people leolaniWorld:Jews_think .
-}
-
-leolaniWorld:rights_practice-as_other_people {
-    leolaniWorld:rights ns11:practice_as leolaniWorld:other_people .
-}
-
-leolaniWorld:they_are-chosen-people_Since_Jews_think {
-    leolaniWorld:they ns11:are_chosen_people leolaniWorld:Since_Jews_think .
+leolaniWorld:they_are-people_Since_Jews_think {
+    leolaniWorld:they ns11:are_people leolaniWorld:Since_Jews_think .
 }
 
 leolaniWorld:they_ask-for_special_privileges {
     leolaniWorld:they ns11:ask_for leolaniWorld:special_privileges .
+}
+
+leolaniWorld:they_ask-for_privileges {
+    leolaniWorld:they ns11:ask_for leolaniWorld:privileges .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:rights_practice-as_other_people_00028 a grasp:Attribution ;
+        rdfs:label "rights_practice-as_other_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance1_char0-82 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:same_rights_practice-as_other_people_00028 a grasp:Attribution ;
+        rdfs:label "same_rights_practice-as_other_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance1_char0-82 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-chosen-people_Jews_think_00028 a grasp:Attribution ;
+        rdfs:label "they_are-chosen-people_Jews_think_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-chosen-people_Since_Jews_think_00028 a grasp:Attribution ;
+        rdfs:label "they_are-chosen-people_Since_Jews_think_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-people_Jews_think_00028 a grasp:Attribution ;
+        rdfs:label "they_are-people_Jews_think_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-people_Since_Jews_think_00028 a grasp:Attribution ;
+        rdfs:label "they_are-people_Since_Jews_think_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_chosen_people_00028 a grasp:Attribution ;
+        rdfs:label "they_are_chosen_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_people_00028 a grasp:Attribution ;
+        rdfs:label "they_are_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_ask-for_privileges_00028 a grasp:Attribution ;
+        rdfs:label "they_ask-for_privileges_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_ask-for_special_privileges_00028 a grasp:Attribution ;
+        rdfs:label "they_ask-for_special_privileges_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2277_utterance1_char0-82 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2277_utterance1_char0-82" ;
+        gaf:containsDenotation leolaniWorld:other_people,
+            leolaniWorld:rights,
+            leolaniWorld:same_rights ;
+        gaf:denotes leolaniWorld:rights_practice-as_other_people,
+            leolaniWorld:same_rights_practice-as_other_people ;
+        grasp:hasAttribution leolaniTalk:rights_practice-as_other_people_00028,
+            leolaniTalk:same_rights_practice-as_other_people_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:22.060233"^^xml1:string,
+            "2024-06-05T23:07:22.060315"^^xml1:string ;
+        rdf:value "Jews actually want the same rights to practice their religion as all other people."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2277_utterance1 .
+
+    leolaniTalk:chat2277_utterance0_char0-119 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2277_utterance0_char0-119" ;
+        gaf:containsDenotation leolaniWorld:Jews_think,
+            leolaniWorld:Since_Jews_think,
+            leolaniWorld:chosen_people,
+            leolaniWorld:people,
+            leolaniWorld:privileges,
+            leolaniWorld:special_privileges,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_are-chosen-people_Jews_think,
+            leolaniWorld:they_are-chosen-people_Since_Jews_think,
+            leolaniWorld:they_are-people_Jews_think,
+            leolaniWorld:they_are-people_Since_Jews_think,
+            leolaniWorld:they_are_chosen_people,
+            leolaniWorld:they_are_people,
+            leolaniWorld:they_ask-for_privileges,
+            leolaniWorld:they_ask-for_special_privileges ;
+        grasp:hasAttribution leolaniTalk:they_are-chosen-people_Jews_think_00028,
+            leolaniTalk:they_are-chosen-people_Since_Jews_think_00028,
+            leolaniTalk:they_are-people_Jews_think_00028,
+            leolaniTalk:they_are-people_Since_Jews_think_00028,
+            leolaniTalk:they_are_chosen_people_00028,
+            leolaniTalk:they_are_people_00028,
+            leolaniTalk:they_ask-for_privileges_00028,
+            leolaniTalk:they_ask-for_special_privileges_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:21.975291"^^xml1:string,
+            "2024-06-05T23:07:21.975349"^^xml1:string,
+            "2024-06-05T23:07:21.975372"^^xml1:string,
+            "2024-06-05T23:07:21.975394"^^xml1:string,
+            "2024-06-05T23:07:21.975416"^^xml1:string,
+            "2024-06-05T23:07:21.975438"^^xml1:string,
+            "2024-06-05T23:07:21.975458"^^xml1:string,
+            "2024-06-05T23:07:21.975482"^^xml1:string ;
+        rdf:value "Since Jews think they are the “chosen people”, they ask for special privileges and believe they can be above the rules."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2277_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -502,229 +603,128 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:they_are_chosen_people {
-    leolaniWorld:they ns11:are leolaniWorld:chosen_people .
+leolaniWorld:they_are-chosen-people_Since_Jews_think {
+    leolaniWorld:they ns11:are_chosen_people leolaniWorld:Since_Jews_think .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:same_rights_practice-as_other_people {
-    leolaniWorld:same_rights ns11:practice_as leolaniWorld:other_people .
-}
-
-leolaniWorld:they_are-people_Since_Jews_think {
-    leolaniWorld:they ns11:are_people leolaniWorld:Since_Jews_think .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:rights_practice-as_other_people_00028 a grasp:Attribution ;
-        rdfs:label "rights_practice-as_other_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance1_char0-82 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:same_rights_practice-as_other_people_00028 a grasp:Attribution ;
-        rdfs:label "same_rights_practice-as_other_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance1_char0-82 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-chosen-people_Jews_think_00028 a grasp:Attribution ;
-        rdfs:label "they_are-chosen-people_Jews_think_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-chosen-people_Since_Jews_think_00028 a grasp:Attribution ;
-        rdfs:label "they_are-chosen-people_Since_Jews_think_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-people_Jews_think_00028 a grasp:Attribution ;
-        rdfs:label "they_are-people_Jews_think_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-people_Since_Jews_think_00028 a grasp:Attribution ;
-        rdfs:label "they_are-people_Since_Jews_think_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_chosen_people_00028 a grasp:Attribution ;
-        rdfs:label "they_are_chosen_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_people_00028 a grasp:Attribution ;
-        rdfs:label "they_are_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_ask-for_privileges_00028 a grasp:Attribution ;
-        rdfs:label "they_ask-for_privileges_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_ask-for_special_privileges_00028 a grasp:Attribution ;
-        rdfs:label "they_ask-for_special_privileges_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2277_utterance0_char0-119 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2277_utterance1_char0-82 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2277_utterance1_char0-82" ;
-        gaf:containsDenotation leolaniWorld:other_people,
-            leolaniWorld:rights,
-            leolaniWorld:same_rights ;
-        gaf:denotes leolaniWorld:rights_practice-as_other_people,
-            leolaniWorld:same_rights_practice-as_other_people ;
-        grasp:hasAttribution leolaniTalk:rights_practice-as_other_people_00028,
-            leolaniTalk:same_rights_practice-as_other_people_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:22.060233"^^xml1:string,
-            "2024-06-05T23:07:22.060315"^^xml1:string ;
-        rdf:value "Jews actually want the same rights to practice their religion as all other people."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2277_utterance1 .
-
-    leolaniTalk:chat2277_utterance0_char0-119 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2277_utterance0_char0-119" ;
-        gaf:containsDenotation leolaniWorld:Jews_think,
-            leolaniWorld:Since_Jews_think,
-            leolaniWorld:chosen_people,
-            leolaniWorld:people,
-            leolaniWorld:privileges,
-            leolaniWorld:special_privileges,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_are-chosen-people_Jews_think,
-            leolaniWorld:they_are-chosen-people_Since_Jews_think,
-            leolaniWorld:they_are-people_Jews_think,
-            leolaniWorld:they_are-people_Since_Jews_think,
-            leolaniWorld:they_are_chosen_people,
-            leolaniWorld:they_are_people,
-            leolaniWorld:they_ask-for_privileges,
-            leolaniWorld:they_ask-for_special_privileges ;
-        grasp:hasAttribution leolaniTalk:they_are-chosen-people_Jews_think_00028,
-            leolaniTalk:they_are-chosen-people_Since_Jews_think_00028,
-            leolaniTalk:they_are-people_Jews_think_00028,
-            leolaniTalk:they_are-people_Since_Jews_think_00028,
-            leolaniTalk:they_are_chosen_people_00028,
-            leolaniTalk:they_are_people_00028,
-            leolaniTalk:they_ask-for_privileges_00028,
-            leolaniTalk:they_ask-for_special_privileges_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:21.975291"^^xml1:string,
-            "2024-06-05T23:07:21.975349"^^xml1:string,
-            "2024-06-05T23:07:21.975372"^^xml1:string,
-            "2024-06-05T23:07:21.975394"^^xml1:string,
-            "2024-06-05T23:07:21.975416"^^xml1:string,
-            "2024-06-05T23:07:21.975438"^^xml1:string,
-            "2024-06-05T23:07:21.975458"^^xml1:string,
-            "2024-06-05T23:07:21.975482"^^xml1:string ;
-        rdf:value "Since Jews think they are the “chosen people”, they ask for special privileges and believe they can be above the rules."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2277_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:they_ask-for_privileges {
-    leolaniWorld:they ns11:ask_for leolaniWorld:privileges .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context182 a eps:Context ;
-        rdfs:label "context182" ;
-        hs:id "182"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2277 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "139"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2277 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2277" ;
-        hs:id "2277"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2277_utterance0,
-            leolaniTalk:chat2277_utterance1 .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat2277_utterance0 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2277_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat2277_utterance1 a grasp:Utterance,
+    leolaniWorld:rights_practice-as_other_people a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2277_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "rights_practice-as_other_people" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance1_char0-82 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:same_rights_practice-as_other_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "same_rights_practice-as_other_people" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance1_char0-82 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:they_are-chosen-people_Jews_think a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-chosen-people_Jews_think" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:they_are-chosen-people_Since_Jews_think a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-chosen-people_Since_Jews_think" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:they_are-people_Jews_think a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-people_Jews_think" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:they_are-people_Since_Jews_think a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-people_Since_Jews_think" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:they_are_chosen_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_chosen_people" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:they_are_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_people" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:they_ask-for_privileges a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_ask-for_privileges" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:they_ask-for_special_privileges a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_ask-for_special_privileges" ;
+        gaf:denotedBy leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:rights_practice-as_other_people {
+    leolaniWorld:rights ns11:practice_as leolaniWorld:other_people .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Jews_think a gaf:Instance ;
+        rdfs:label "jews-think" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:Since_Jews_think a gaf:Instance ;
+        rdfs:label "since-jews-think" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:chosen_people a gaf:Instance ;
+        rdfs:label "chosen-people" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:other_people a gaf:Instance ;
+        rdfs:label "other-people" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance1_char0-82 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:privileges a gaf:Instance ;
+        rdfs:label "privileges" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:rights a gaf:Instance ;
+        rdfs:label "rights" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance1_char0-82 .
+
+    leolaniWorld:same_rights a gaf:Instance ;
+        rdfs:label "same-rights" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance1_char0-82 .
+
+    leolaniWorld:special_privileges a gaf:Instance ;
+        rdfs:label "special-privileges" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2277_utterance0_char0-119 .
 }
 

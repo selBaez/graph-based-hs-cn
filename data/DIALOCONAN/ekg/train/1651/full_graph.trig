@@ -22,38 +22,79 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_are_greedy a gaf:Assertion,
+leolaniWorld:Jews_are_greedy {
+    leolaniWorld:Jews ns1:are leolaniWorld:greedy .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context88 a eps:Context ;
+        rdfs:label "context88" ;
+        hs:id "88"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1651 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "192"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1651 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Jews_are_greedy" ;
-        gaf:denotedBy leolaniTalk:chat1651_utterance0_char0-74 .
+        rdfs:label "chat1651" ;
+        hs:id "1651"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1651_utterance0,
+            leolaniTalk:chat1651_utterance1 .
 
-    leolaniWorld:Jews_are_so_greedy a gaf:Assertion,
+    leolaniTalk:chat1651_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Jews_are_so_greedy" ;
-        gaf:denotedBy leolaniTalk:chat1651_utterance0_char0-74 .
+        rdfs:label "chat1651_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:That_has_anti-Semitic a gaf:Assertion,
+    leolaniTalk:chat1651_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "That_has_anti-Semitic" ;
-        gaf:denotedBy leolaniTalk:chat1651_utterance1_char0-139 .
+        rdfs:label "chat1651_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:ones_is-in_charge_of_banks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "ones_is-in_charge_of_banks" ;
-        gaf:denotedBy leolaniTalk:chat1651_utterance0_char0-74 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
@@ -64,45 +105,88 @@ leolaniWorld:ones_is-in_charge_of_banks {
     leolaniWorld:ones ns1:is_in leolaniWorld:charge_of_banks .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
+leolaniWorld:Jews_are_so_greedy {
+    leolaniWorld:Jews ns1:are leolaniWorld:so_greedy .
+}
 
-    leolaniWorld:That a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat1651_utterance1_char0-139 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_are_greedy_00025 a grasp:Attribution ;
+        rdfs:label "Jews_are_greedy_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat1651_utterance0_char0-74 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:anti-Semitic a gaf:Instance ;
-        rdfs:label "anti-semitic" ;
-        gaf:denotedIn leolaniTalk:chat1651_utterance1_char0-139 .
+    leolaniTalk:Jews_are_so_greedy_00025 a grasp:Attribution ;
+        rdfs:label "Jews_are_so_greedy_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat1651_utterance0_char0-74 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:charge_of_banks a gaf:Instance ;
-        rdfs:label "charge-of-banks" ;
-        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
+    leolaniTalk:That_has_anti-Semitic_00028 a grasp:Attribution ;
+        rdfs:label "That_has_anti-Semitic_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1651_utterance1_char0-139 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat1651_utterance1_char0-139 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1651_utterance1_char0-139" ;
+        gaf:containsDenotation leolaniWorld:That,
+            leolaniWorld:anti-Semitic ;
+        gaf:denotes leolaniWorld:That_has_anti-Semitic ;
+        grasp:hasAttribution leolaniTalk:That_has_anti-Semitic_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:57.249760"^^xml1:string ;
+        rdf:value "That's an anti-Semitic and outdated stereotype. There all different religions and beliefs that are represented by these high status bankers"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1651_utterance1 .
 
-    leolaniWorld:greedy a gaf:Instance ;
-        rdfs:label "greedy" ;
-        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
+    leolaniTalk:ones_is-in_charge_of_banks_00025 a grasp:Attribution ;
+        rdfs:label "ones_is-in_charge_of_banks_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat1651_utterance0_char0-74 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat1651_utterance0_char0-74 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1651_utterance0_char0-74" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:charge_of_banks,
+            leolaniWorld:greedy,
+            leolaniWorld:ones,
+            leolaniWorld:so_greedy ;
+        gaf:denotes leolaniWorld:Jews_are_greedy,
+            leolaniWorld:Jews_are_so_greedy,
+            leolaniWorld:ones_is-in_charge_of_banks ;
+        grasp:hasAttribution leolaniTalk:Jews_are_greedy_00025,
+            leolaniTalk:Jews_are_so_greedy_00025,
+            leolaniTalk:ones_is-in_charge_of_banks_00025 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:57.152893"^^xml1:string,
+            "2024-06-05T23:04:57.152962"^^xml1:string,
+            "2024-06-05T23:04:57.152986"^^xml1:string ;
+        rdf:value "Jews are so greedy, no wonder they're the ones in charge of all the banks."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1651_utterance0 .
 
-    leolaniWorld:ones a gaf:Instance ;
-        rdfs:label "ones" ;
-        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
+    graspe:SURPRISE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "SURPRISE" .
 
-    leolaniWorld:so_greedy a gaf:Instance ;
-        rdfs:label "so-greedy" ;
-        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -440,166 +524,82 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:Jews_are_greedy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_greedy" ;
+        gaf:denotedBy leolaniTalk:chat1651_utterance0_char0-74 .
+
+    leolaniWorld:Jews_are_so_greedy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_so_greedy" ;
+        gaf:denotedBy leolaniTalk:chat1651_utterance0_char0-74 .
+
+    leolaniWorld:That_has_anti-Semitic a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "That_has_anti-Semitic" ;
+        gaf:denotedBy leolaniTalk:chat1651_utterance1_char0-139 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:ones_is-in_charge_of_banks a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "ones_is-in_charge_of_banks" ;
+        gaf:denotedBy leolaniTalk:chat1651_utterance0_char0-74 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
 leolaniWorld:That_has_anti-Semitic {
     leolaniWorld:That ns1:has leolaniWorld:anti-Semitic .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
 
-leolaniWorld:Jews_are_greedy {
-    leolaniWorld:Jews ns1:are leolaniWorld:greedy .
-}
+    leolaniWorld:That a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat1651_utterance1_char0-139 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_are_greedy_00025 a grasp:Attribution ;
-        rdfs:label "Jews_are_greedy_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat1651_utterance0_char0-74 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:anti-Semitic a gaf:Instance ;
+        rdfs:label "anti-semitic" ;
+        gaf:denotedIn leolaniTalk:chat1651_utterance1_char0-139 .
 
-    leolaniTalk:Jews_are_so_greedy_00025 a grasp:Attribution ;
-        rdfs:label "Jews_are_so_greedy_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat1651_utterance0_char0-74 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:That_has_anti-Semitic_00028 a grasp:Attribution ;
-        rdfs:label "That_has_anti-Semitic_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1651_utterance1_char0-139 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1651_utterance1_char0-139 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1651_utterance1_char0-139" ;
-        gaf:containsDenotation leolaniWorld:That,
-            leolaniWorld:anti-Semitic ;
-        gaf:denotes leolaniWorld:That_has_anti-Semitic ;
-        grasp:hasAttribution leolaniTalk:That_has_anti-Semitic_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:57.249760"^^xml1:string ;
-        rdf:value "That's an anti-Semitic and outdated stereotype. There all different religions and beliefs that are represented by these high status bankers"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1651_utterance1 .
-
-    leolaniTalk:ones_is-in_charge_of_banks_00025 a grasp:Attribution ;
-        rdfs:label "ones_is-in_charge_of_banks_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat1651_utterance0_char0-74 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat1651_utterance0_char0-74 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1651_utterance0_char0-74" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:charge_of_banks,
-            leolaniWorld:greedy,
-            leolaniWorld:ones,
-            leolaniWorld:so_greedy ;
-        gaf:denotes leolaniWorld:Jews_are_greedy,
-            leolaniWorld:Jews_are_so_greedy,
-            leolaniWorld:ones_is-in_charge_of_banks ;
-        grasp:hasAttribution leolaniTalk:Jews_are_greedy_00025,
-            leolaniTalk:Jews_are_so_greedy_00025,
-            leolaniTalk:ones_is-in_charge_of_banks_00025 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:57.152893"^^xml1:string,
-            "2024-06-05T23:04:57.152962"^^xml1:string,
-            "2024-06-05T23:04:57.152986"^^xml1:string ;
-        rdf:value "Jews are so greedy, no wonder they're the ones in charge of all the banks."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1651_utterance0 .
-
-    graspe:SURPRISE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "SURPRISE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context88 a eps:Context ;
-        rdfs:label "context88" ;
-        hs:id "88"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1651 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "192"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1651 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1651" ;
-        hs:id "1651"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1651_utterance0,
-            leolaniTalk:chat1651_utterance1 .
-
-    leolaniTalk:chat1651_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1651_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1651_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1651_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:charge_of_banks a gaf:Instance ;
+        rdfs:label "charge-of-banks" ;
+        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:greedy a gaf:Instance ;
+        rdfs:label "greedy" ;
+        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
 
-leolaniWorld:Jews_are_so_greedy {
-    leolaniWorld:Jews ns1:are leolaniWorld:so_greedy .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:ones a gaf:Instance ;
+        rdfs:label "ones" ;
+        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
+
+    leolaniWorld:so_greedy a gaf:Instance ;
+        rdfs:label "so-greedy" ;
+        gaf:denotedIn leolaniTalk:chat1651_utterance0_char0-74 .
 }
 

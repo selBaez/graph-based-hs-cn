@@ -22,38 +22,96 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:They_raping_our_children a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context0 a eps:Context ;
+        rdfs:label "context0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2116 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "155"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2116 a grasp:Chat,
             sem:Event ;
-        rdfs:label "They_raping_our_children" ;
-        gaf:denotedBy leolaniTalk:chat2116_utterance0_char0-134 .
+        rdfs:label "chat2116" ;
+        hs:id "2116"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2116_utterance0 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat2116_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat2116_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-leolaniWorld:They_raping_our_children {
-    leolaniWorld:They ns11:raping leolaniWorld:our_children .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2116_utterance0_char0-134 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:our_children a gaf:Instance ;
-        rdfs:label "our-children" ;
-        gaf:denotedIn leolaniTalk:chat2116_utterance0_char0-134 .
+leolaniTalk:Perspectives {
+    leolaniTalk:They_raping_our_children_00028 a grasp:Attribution ;
+        rdfs:label "They_raping_our_children_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2116_utterance0_char0-134 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2116_utterance0_char0-134 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2116_utterance0_char0-134" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:our_children ;
+        gaf:denotes leolaniWorld:They_raping_our_children ;
+        grasp:hasAttribution leolaniTalk:They_raping_our_children_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:17:59.655480"^^xml1:string ;
+        rdf:value "There's no need to understand Islam, the world would be a better place without Muslims. They are only killing and raping our children."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2116_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -391,95 +449,37 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:They_raping_our_children {
+    leolaniWorld:They ns11:raping leolaniWorld:our_children .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_raping_our_children_00028 a grasp:Attribution ;
-        rdfs:label "They_raping_our_children_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2116_utterance0_char0-134 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:They_raping_our_children a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_raping_our_children" ;
+        gaf:denotedBy leolaniTalk:chat2116_utterance0_char0-134 .
 
-    leolaniTalk:chat2116_utterance0_char0-134 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2116_utterance0_char0-134" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:our_children ;
-        gaf:denotes leolaniWorld:They_raping_our_children ;
-        grasp:hasAttribution leolaniTalk:They_raping_our_children_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:17:59.655480"^^xml1:string ;
-        rdf:value "There's no need to understand Islam, the world would be a better place without Muslims. They are only killing and raping our children."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2116_utterance0 .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context0 a eps:Context ;
-        rdfs:label "context0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2116 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "155"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2116 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2116" ;
-        hs:id "2116"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2116_utterance0 .
-
-    leolaniTalk:chat2116_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2116_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2116_utterance0_char0-134 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_children a gaf:Instance ;
+        rdfs:label "our-children" ;
+        gaf:denotedIn leolaniTalk:chat2116_utterance0_char0-134 .
 }
 

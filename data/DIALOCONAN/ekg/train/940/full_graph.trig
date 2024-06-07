@@ -22,8 +22,83 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:400_Jews_died-in_September_11 {
-    leolaniWorld:400_Jews ns1:died_in leolaniWorld:September_11 .
+leolaniWorld:400_Jews_died_terrorist_attacks {
+    leolaniWorld:400_Jews ns1:died leolaniWorld:terrorist_attacks .
+}
+
+leolaniWorld:Jews_died-attacks-in_September_11 {
+    leolaniWorld:Jews ns1:died_attacks_in leolaniWorld:September_11 .
+}
+
+leolaniWorld:Jews_could_could_have_smart {
+    leolaniWorld:Jews ns1:could leolaniWorld:could_have_smart .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context205 a eps:Context ;
+        rdfs:label "context205" ;
+        hs:id "205"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat940 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "9"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat940 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat940" ;
+        hs:id "940"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat940_utterance0,
+            leolaniTalk:chat940_utterance1 .
+
+    leolaniTalk:chat940_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat940_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat940_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat940_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:400_Jews_died_attacks {
@@ -34,125 +109,146 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:400_Jews_died-attacks-in_September_11 a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "400_Jews_died-attacks-in_September_11" ;
-        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:400_Jews_died-in_September_11 a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "400_Jews_died-in_September_11" ;
-        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:400_Jews_died_attacks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "400_Jews_died_attacks" ;
-        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:400_Jews_died_terrorist_attacks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "400_Jews_died_terrorist_attacks" ;
-        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:Jews_could_could_have_smart a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_could_could_have_smart" ;
-        gaf:denotedBy leolaniTalk:chat940_utterance0_char0-104 .
-
-    leolaniWorld:Jews_died-attacks-in_September_11 a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_died-attacks-in_September_11" ;
-        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:Jews_died-in_September_11 a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_died-in_September_11" ;
-        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:Jews_died_attacks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_died_attacks" ;
-        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:Jews_died_terrorist_attacks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_died_terrorist_attacks" ;
-        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:400_Jews_died-attacks-in_September_11 {
     leolaniWorld:400_Jews ns1:died_attacks_in leolaniWorld:September_11 .
 }
 
-leolaniWorld:Jews_died_terrorist_attacks {
-    leolaniWorld:Jews ns1:died leolaniWorld:terrorist_attacks .
+leolaniTalk:Perspectives {
+    leolaniTalk:400_Jews_died-attacks-in_September_11_00018 a grasp:Attribution ;
+        rdfs:label "400_Jews_died-attacks-in_September_11_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:400_Jews_died-in_September_11_00018 a grasp:Attribution ;
+        rdfs:label "400_Jews_died-in_September_11_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:400_Jews_died_attacks_00018 a grasp:Attribution ;
+        rdfs:label "400_Jews_died_attacks_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:400_Jews_died_terrorist_attacks_00018 a grasp:Attribution ;
+        rdfs:label "400_Jews_died_terrorist_attacks_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_could_could_have_smart_00012 a grasp:Attribution ;
+        rdfs:label "Jews_could_could_have_smart_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat940_utterance0_char0-104 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_died-attacks-in_September_11_00018 a grasp:Attribution ;
+        rdfs:label "Jews_died-attacks-in_September_11_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_died-in_September_11_00018 a grasp:Attribution ;
+        rdfs:label "Jews_died-in_September_11_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_died_attacks_00018 a grasp:Attribution ;
+        rdfs:label "Jews_died_attacks_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_died_terrorist_attacks_00018 a grasp:Attribution ;
+        rdfs:label "Jews_died_terrorist_attacks_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat940_utterance0_char0-104 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat940_utterance0_char0-104" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:could_have_smart ;
+        gaf:denotes leolaniWorld:Jews_could_could_have_smart ;
+        grasp:hasAttribution leolaniTalk:Jews_could_could_have_smart_00012 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:27.895859"^^xml1:string ;
+        rdf:value "Only Jews could have been smart enough to plan and execute such a complicated and intricate plot as 9/11"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat940_utterance0 .
+
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
+
+    leolaniTalk:chat940_utterance1_char0-92 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat940_utterance1_char0-92" ;
+        gaf:containsDenotation leolaniWorld:400_Jews,
+            leolaniWorld:Jews,
+            leolaniWorld:September_11,
+            leolaniWorld:attacks,
+            leolaniWorld:terrorist_attacks ;
+        gaf:denotes leolaniWorld:400_Jews_died-attacks-in_September_11,
+            leolaniWorld:400_Jews_died-in_September_11,
+            leolaniWorld:400_Jews_died_attacks,
+            leolaniWorld:400_Jews_died_terrorist_attacks,
+            leolaniWorld:Jews_died-attacks-in_September_11,
+            leolaniWorld:Jews_died-in_September_11,
+            leolaniWorld:Jews_died_attacks,
+            leolaniWorld:Jews_died_terrorist_attacks ;
+        grasp:hasAttribution leolaniTalk:400_Jews_died-attacks-in_September_11_00018,
+            leolaniTalk:400_Jews_died-in_September_11_00018,
+            leolaniTalk:400_Jews_died_attacks_00018,
+            leolaniTalk:400_Jews_died_terrorist_attacks_00018,
+            leolaniTalk:Jews_died-attacks-in_September_11_00018,
+            leolaniTalk:Jews_died-in_September_11_00018,
+            leolaniTalk:Jews_died_attacks_00018,
+            leolaniTalk:Jews_died_terrorist_attacks_00018 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:27.987386"^^xml1:string,
+            "2024-06-05T23:10:27.987438"^^xml1:string,
+            "2024-06-05T23:10:27.987462"^^xml1:string,
+            "2024-06-05T23:10:27.987484"^^xml1:string,
+            "2024-06-05T23:10:27.987506"^^xml1:string,
+            "2024-06-05T23:10:27.987528"^^xml1:string,
+            "2024-06-05T23:10:27.987559"^^xml1:string,
+            "2024-06-05T23:10:27.987583"^^xml1:string ;
+        rdf:value "400 Jews died in September 11 terrorist attacks, so not one of the smartest plan I ever saw!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat940_utterance1 .
+
+    graspe:SADNESS a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "SADNESS" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Jews_died-attacks-in_September_11 {
-    leolaniWorld:Jews ns1:died_attacks_in leolaniWorld:September_11 .
-}
-
-leolaniWorld:Jews_died-in_September_11 {
-    leolaniWorld:Jews ns1:died_in leolaniWorld:September_11 .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:400_Jews a gaf:Instance ;
-        rdfs:label "400-jews" ;
-        gaf:denotedIn leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat940_utterance0_char0-104,
-            leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:September_11 a gaf:Instance ;
-        rdfs:label "september-11" ;
-        gaf:denotedIn leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:attacks a gaf:Instance ;
-        rdfs:label "attacks" ;
-        gaf:denotedIn leolaniTalk:chat940_utterance1_char0-92 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:could_have_smart a gaf:Instance ;
-        rdfs:label "could-have-smart" ;
-        gaf:denotedIn leolaniTalk:chat940_utterance0_char0-104 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:terrorist_attacks a gaf:Instance ;
-        rdfs:label "terrorist-attacks" ;
-        gaf:denotedIn leolaniTalk:chat940_utterance1_char0-92 .
-}
-
-leolaniWorld:Jews_could_could_have_smart {
-    leolaniWorld:Jews ns1:could leolaniWorld:could_have_smart .
-}
-
-leolaniWorld:400_Jews_died_terrorist_attacks {
-    leolaniWorld:400_Jews ns1:died leolaniWorld:terrorist_attacks .
+leolaniWorld:400_Jews_died-in_September_11 {
+    leolaniWorld:400_Jews ns1:died_in leolaniWorld:September_11 .
 }
 
 leolaniWorld:Ontology {
@@ -490,208 +586,112 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Jews_died_terrorist_attacks {
+    leolaniWorld:Jews ns1:died leolaniWorld:terrorist_attacks .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:400_Jews_died-attacks-in_September_11_00018 a grasp:Attribution ;
-        rdfs:label "400_Jews_died-attacks-in_September_11_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:400_Jews_died-attacks-in_September_11 a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "400_Jews_died-attacks-in_September_11" ;
+        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
 
-    leolaniTalk:400_Jews_died-in_September_11_00018 a grasp:Attribution ;
-        rdfs:label "400_Jews_died-in_September_11_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:400_Jews_died-in_September_11 a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "400_Jews_died-in_September_11" ;
+        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
 
-    leolaniTalk:400_Jews_died_attacks_00018 a grasp:Attribution ;
-        rdfs:label "400_Jews_died_attacks_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:400_Jews_died_attacks a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "400_Jews_died_attacks" ;
+        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
 
-    leolaniTalk:400_Jews_died_terrorist_attacks_00018 a grasp:Attribution ;
-        rdfs:label "400_Jews_died_terrorist_attacks_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:400_Jews_died_terrorist_attacks a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "400_Jews_died_terrorist_attacks" ;
+        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
 
-    leolaniTalk:Jews_could_could_have_smart_00012 a grasp:Attribution ;
-        rdfs:label "Jews_could_could_have_smart_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat940_utterance0_char0-104 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_could_could_have_smart a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_could_could_have_smart" ;
+        gaf:denotedBy leolaniTalk:chat940_utterance0_char0-104 .
 
-    leolaniTalk:Jews_died-attacks-in_September_11_00018 a grasp:Attribution ;
-        rdfs:label "Jews_died-attacks-in_September_11_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_died-attacks-in_September_11 a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_died-attacks-in_September_11" ;
+        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
 
-    leolaniTalk:Jews_died-in_September_11_00018 a grasp:Attribution ;
-        rdfs:label "Jews_died-in_September_11_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_died-in_September_11 a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_died-in_September_11" ;
+        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
 
-    leolaniTalk:Jews_died_attacks_00018 a grasp:Attribution ;
-        rdfs:label "Jews_died_attacks_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_died_attacks a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_died_attacks" ;
+        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
 
-    leolaniTalk:Jews_died_terrorist_attacks_00018 a grasp:Attribution ;
-        rdfs:label "Jews_died_terrorist_attacks_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat940_utterance1_char0-92 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_died_terrorist_attacks a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_died_terrorist_attacks" ;
+        gaf:denotedBy leolaniTalk:chat940_utterance1_char0-92 .
 
-    leolaniTalk:chat940_utterance0_char0-104 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat940_utterance0_char0-104" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:could_have_smart ;
-        gaf:denotes leolaniWorld:Jews_could_could_have_smart ;
-        grasp:hasAttribution leolaniTalk:Jews_could_could_have_smart_00012 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:27.895859"^^xml1:string ;
-        rdf:value "Only Jews could have been smart enough to plan and execute such a complicated and intricate plot as 9/11"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat940_utterance0 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    graspe:APPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "APPROVAL" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat940_utterance1_char0-92 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat940_utterance1_char0-92" ;
-        gaf:containsDenotation leolaniWorld:400_Jews,
-            leolaniWorld:Jews,
-            leolaniWorld:September_11,
-            leolaniWorld:attacks,
-            leolaniWorld:terrorist_attacks ;
-        gaf:denotes leolaniWorld:400_Jews_died-attacks-in_September_11,
-            leolaniWorld:400_Jews_died-in_September_11,
-            leolaniWorld:400_Jews_died_attacks,
-            leolaniWorld:400_Jews_died_terrorist_attacks,
-            leolaniWorld:Jews_died-attacks-in_September_11,
-            leolaniWorld:Jews_died-in_September_11,
-            leolaniWorld:Jews_died_attacks,
-            leolaniWorld:Jews_died_terrorist_attacks ;
-        grasp:hasAttribution leolaniTalk:400_Jews_died-attacks-in_September_11_00018,
-            leolaniTalk:400_Jews_died-in_September_11_00018,
-            leolaniTalk:400_Jews_died_attacks_00018,
-            leolaniTalk:400_Jews_died_terrorist_attacks_00018,
-            leolaniTalk:Jews_died-attacks-in_September_11_00018,
-            leolaniTalk:Jews_died-in_September_11_00018,
-            leolaniTalk:Jews_died_attacks_00018,
-            leolaniTalk:Jews_died_terrorist_attacks_00018 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:27.987386"^^xml1:string,
-            "2024-06-05T23:10:27.987438"^^xml1:string,
-            "2024-06-05T23:10:27.987462"^^xml1:string,
-            "2024-06-05T23:10:27.987484"^^xml1:string,
-            "2024-06-05T23:10:27.987506"^^xml1:string,
-            "2024-06-05T23:10:27.987528"^^xml1:string,
-            "2024-06-05T23:10:27.987559"^^xml1:string,
-            "2024-06-05T23:10:27.987583"^^xml1:string ;
-        rdf:value "400 Jews died in September 11 terrorist attacks, so not one of the smartest plan I ever saw!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat940_utterance1 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:SADNESS a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "SADNESS" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context205 a eps:Context ;
-        rdfs:label "context205" ;
-        hs:id "205"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat940 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "9"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat940 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat940" ;
-        hs:id "940"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat940_utterance0,
-            leolaniTalk:chat940_utterance1 .
-
-    leolaniTalk:chat940_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat940_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat940_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat940_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:Jews_died-in_September_11 {
+    leolaniWorld:Jews ns1:died_in leolaniWorld:September_11 .
 }
 
 leolaniWorld:Jews_died_attacks {
     leolaniWorld:Jews ns1:died leolaniWorld:attacks .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:400_Jews a gaf:Instance ;
+        rdfs:label "400-jews" ;
+        gaf:denotedIn leolaniTalk:chat940_utterance1_char0-92 .
+
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat940_utterance0_char0-104,
+            leolaniTalk:chat940_utterance1_char0-92 .
+
+    leolaniWorld:September_11 a gaf:Instance ;
+        rdfs:label "september-11" ;
+        gaf:denotedIn leolaniTalk:chat940_utterance1_char0-92 .
+
+    leolaniWorld:attacks a gaf:Instance ;
+        rdfs:label "attacks" ;
+        gaf:denotedIn leolaniTalk:chat940_utterance1_char0-92 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:could_have_smart a gaf:Instance ;
+        rdfs:label "could-have-smart" ;
+        gaf:denotedIn leolaniTalk:chat940_utterance0_char0-104 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:terrorist_attacks a gaf:Instance ;
+        rdfs:label "terrorist-attacks" ;
+        gaf:denotedIn leolaniTalk:chat940_utterance1_char0-92 .
 }
 

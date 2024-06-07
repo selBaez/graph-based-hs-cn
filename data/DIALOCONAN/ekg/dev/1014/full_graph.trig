@@ -22,74 +22,114 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:they_are_underpaid {
+    leolaniWorld:they ns11:are leolaniWorld:underpaid .
+}
+
 leolaniWorld:man_earns-on_average {
     leolaniWorld:man ns11:earns_on leolaniWorld:average .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context189 a eps:Context ;
+        rdfs:label "context189" ;
+        hs:id "189"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1014 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "93"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1014 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1014" ;
+        hs:id "1014"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1014_utterance0,
+            leolaniTalk:chat1014_utterance1,
+            leolaniTalk:chat1014_utterance2 .
+
+    leolaniTalk:chat1014_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1014_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1014_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1014_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1014_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1014_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:gender_pay_gap_is-in_Europe {
     leolaniWorld:gender_pay_gap ns11:is_in leolaniWorld:Europe .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:This_is-about_Europe a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "This_is-about_Europe" ;
-        gaf:denotedBy leolaniTalk:chat1014_utterance2_char0-45 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:Women_have_have_legalised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_have_have_legalised" ;
-        gaf:denotedBy leolaniTalk:chat1014_utterance0_char0-94 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:gender_pay_gap_is-in_Europe a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_pay_gap_is-in_Europe" ;
-        gaf:denotedBy leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:gender_pay_gap_is_around_15__ a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gender_pay_gap_is_around_15__" ;
-        gaf:denotedBy leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:man_earns-on_average a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "man_earns-on_average" ;
-        gaf:denotedBy leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:they_are_underpaid a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_underpaid" ;
-        gaf:denotedBy leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:we_live-in_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_live-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat1014_utterance2_char0-45 .
-
-    leolaniWorld:we_live-mate-in_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_live-mate-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat1014_utterance2_char0-45 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:we_live-mate-in_UK {
+    leolaniWorld:we ns11:live_mate_in leolaniWorld:UK .
 }
 
 leolaniWorld:gender_pay_gap_is_around_15__ {
     leolaniWorld:gender_pay_gap ns11:is leolaniWorld:around_15__ .
+}
+
+leolaniWorld:we_live-in_UK {
+    leolaniWorld:we ns11:live_in leolaniWorld:UK .
+}
+
+leolaniWorld:Women_have_have_legalised {
+    leolaniWorld:Women ns11:have leolaniWorld:have_legalised .
 }
 
 leolaniTalk:Perspectives {
@@ -223,92 +263,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Europe a gaf:Instance ;
-        rdfs:label "europe" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166,
-            leolaniTalk:chat1014_utterance2_char0-45 .
-
-    leolaniWorld:This a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance2_char0-45 .
-
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance2_char0-45 .
-
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance0_char0-94 .
-
-    leolaniWorld:around_15__ a gaf:Instance ;
-        rdfs:label "around-15" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:average a gaf:Instance ;
-        rdfs:label "average" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:gender_pay_gap a gaf:Instance ;
-        rdfs:label "gender-pay-gap" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:have_legalised a gaf:Instance ;
-        rdfs:label "have-legalised" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance0_char0-94 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:man a gaf:Instance ;
-        rdfs:label "man" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:underpaid a gaf:Instance ;
-        rdfs:label "underpaid" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1014_utterance2_char0-45 .
-}
-
-leolaniWorld:Women_have_have_legalised {
-    leolaniWorld:Women ns11:have leolaniWorld:have_legalised .
-}
-
-leolaniWorld:This_is-about_Europe {
-    leolaniWorld:This ns11:is_about leolaniWorld:Europe .
-}
-
-leolaniWorld:they_are_underpaid {
-    leolaniWorld:they ns11:are leolaniWorld:underpaid .
-}
-
-leolaniWorld:we_live-mate-in_UK {
-    leolaniWorld:we ns11:live_mate_in leolaniWorld:UK .
-}
-
-leolaniWorld:we_live-in_UK {
-    leolaniWorld:we ns11:live_in leolaniWorld:UK .
 }
 
 leolaniWorld:Ontology {
@@ -646,77 +600,123 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context189 a eps:Context ;
-        rdfs:label "context189" ;
-        hs:id "189"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1014 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "93"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1014 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:This_is-about_Europe a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1014" ;
-        hs:id "1014"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1014_utterance0,
-            leolaniTalk:chat1014_utterance1,
-            leolaniTalk:chat1014_utterance2 .
+        rdfs:label "This_is-about_Europe" ;
+        gaf:denotedBy leolaniTalk:chat1014_utterance2_char0-45 .
 
-    leolaniTalk:chat1014_utterance0 a grasp:Utterance,
+    leolaniWorld:Women_have_have_legalised a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1014_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Women_have_have_legalised" ;
+        gaf:denotedBy leolaniTalk:chat1014_utterance0_char0-94 .
 
-    leolaniTalk:chat1014_utterance1 a grasp:Utterance,
+    leolaniWorld:gender_pay_gap_is-in_Europe a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1014_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "gender_pay_gap_is-in_Europe" ;
+        gaf:denotedBy leolaniTalk:chat1014_utterance1_char0-166 .
 
-    leolaniTalk:chat1014_utterance2 a grasp:Utterance,
+    leolaniWorld:gender_pay_gap_is_around_15__ a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1014_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "gender_pay_gap_is_around_15__" ;
+        gaf:denotedBy leolaniTalk:chat1014_utterance1_char0-166 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:man_earns-on_average a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "man_earns-on_average" ;
+        gaf:denotedBy leolaniTalk:chat1014_utterance1_char0-166 .
+
+    leolaniWorld:they_are_underpaid a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_underpaid" ;
+        gaf:denotedBy leolaniTalk:chat1014_utterance1_char0-166 .
+
+    leolaniWorld:we_live-in_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_live-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat1014_utterance2_char0-45 .
+
+    leolaniWorld:we_live-mate-in_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_live-mate-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat1014_utterance2_char0-45 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:This_is-about_Europe {
+    leolaniWorld:This ns11:is_about leolaniWorld:Europe .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Europe a gaf:Instance ;
+        rdfs:label "europe" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166,
+            leolaniTalk:chat1014_utterance2_char0-45 .
+
+    leolaniWorld:This a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance2_char0-45 .
+
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance2_char0-45 .
+
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance0_char0-94 .
+
+    leolaniWorld:around_15__ a gaf:Instance ;
+        rdfs:label "around-15" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
+
+    leolaniWorld:average a gaf:Instance ;
+        rdfs:label "average" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:gender_pay_gap a gaf:Instance ;
+        rdfs:label "gender-pay-gap" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
+
+    leolaniWorld:have_legalised a gaf:Instance ;
+        rdfs:label "have-legalised" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance0_char0-94 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:man a gaf:Instance ;
+        rdfs:label "man" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
+
+    leolaniWorld:underpaid a gaf:Instance ;
+        rdfs:label "underpaid" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance1_char0-166 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1014_utterance2_char0-45 .
 }
 

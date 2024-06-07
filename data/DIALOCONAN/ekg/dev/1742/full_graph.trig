@@ -22,91 +22,103 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Blacks_do_more_crimes_than_whites {
+    leolaniWorld:Blacks ns1:do leolaniWorld:more_crimes_than_whites .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context30 a eps:Context ;
+        rdfs:label "context30" ;
+        hs:id "30"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1742 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "86"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1742 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1742" ;
+        hs:id "1742"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1742_utterance1,
+            leolaniTalk:chat1742_utterance2 .
+
+    leolaniTalk:chat1742_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1742_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1742_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1742_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:Rights_are_rights {
     leolaniWorld:Rights ns1:are leolaniWorld:rights .
 }
 
-leolaniWorld:Rights_are-rights-regardless_skin_color {
-    leolaniWorld:Rights ns1:are_rights_regardless leolaniWorld:skin_color .
+leolaniWorld:Blacks_do_crimes_than_whites {
+    leolaniWorld:Blacks ns1:do leolaniWorld:crimes_than_whites .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:they_therefore-deserve_rights {
-    leolaniWorld:they ns1:therefore_deserve leolaniWorld:rights .
+leolaniWorld:Rights_are-rights-regardless_skin_color_of_person {
+    leolaniWorld:Rights ns1:are_rights_regardless leolaniWorld:skin_color_of_person .
+}
+
+leolaniWorld:they_deserve_rights {
+    leolaniWorld:they ns1:deserve leolaniWorld:rights .
 }
 
 leolaniWorld:they_therefore-deserve_less_rights {
     leolaniWorld:they ns1:therefore_deserve leolaniWorld:less_rights .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Blacks_do_crimes_than_whites a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Blacks_do_crimes_than_whites" ;
-        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:Blacks_do_more_crimes_than_whites a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Blacks_do_more_crimes_than_whites" ;
-        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:Rights_are-rights-regardless_skin_color a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Rights_are-rights-regardless_skin_color" ;
-        gaf:denotedBy leolaniTalk:chat1742_utterance1_char0-59 .
-
-    leolaniWorld:Rights_are-rights-regardless_skin_color_of_person a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Rights_are-rights-regardless_skin_color_of_person" ;
-        gaf:denotedBy leolaniTalk:chat1742_utterance1_char0-59 .
-
-    leolaniWorld:Rights_are_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Rights_are_rights" ;
-        gaf:denotedBy leolaniTalk:chat1742_utterance1_char0-59 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_deserve_less_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_deserve_less_rights" ;
-        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:they_deserve_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_deserve_rights" ;
-        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:they_therefore-deserve_less_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_therefore-deserve_less_rights" ;
-        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:they_therefore-deserve_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_therefore-deserve_rights" ;
-        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:they_deserve_less_rights {
-    leolaniWorld:they ns1:deserve leolaniWorld:less_rights .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniTalk:Perspectives {
@@ -236,64 +248,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Blacks a gaf:Instance ;
-        rdfs:label "blacks" ;
-        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:Rights a gaf:Instance ;
-        rdfs:label "rights" ;
-        gaf:denotedIn leolaniTalk:chat1742_utterance1_char0-59 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:crimes_than_whites a gaf:Instance ;
-        rdfs:label "crimes-than-whites" ;
-        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:less_rights a gaf:Instance ;
-        rdfs:label "less-rights" ;
-        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:more_crimes_than_whites a gaf:Instance ;
-        rdfs:label "more-crimes-than-whites" ;
-        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:rights a gaf:Instance ;
-        rdfs:label "rights" ;
-        gaf:denotedIn leolaniTalk:chat1742_utterance1_char0-59,
-            leolaniTalk:chat1742_utterance2_char0-73 .
-
-    leolaniWorld:skin_color a gaf:Instance ;
-        rdfs:label "skin-color" ;
-        gaf:denotedIn leolaniTalk:chat1742_utterance1_char0-59 .
-
-    leolaniWorld:skin_color_of_person a gaf:Instance ;
-        rdfs:label "skin-color-of-person" ;
-        gaf:denotedIn leolaniTalk:chat1742_utterance1_char0-59 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
-}
-
-leolaniWorld:they_deserve_rights {
-    leolaniWorld:they ns1:deserve leolaniWorld:rights .
-}
-
-leolaniWorld:Blacks_do_crimes_than_whites {
-    leolaniWorld:Blacks ns1:do leolaniWorld:crimes_than_whites .
 }
 
 leolaniWorld:Ontology {
@@ -631,78 +585,124 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Rights_are-rights-regardless_skin_color_of_person {
-    leolaniWorld:Rights ns1:are_rights_regardless leolaniWorld:skin_color_of_person .
+leolaniWorld:they_deserve_less_rights {
+    leolaniWorld:they ns1:deserve leolaniWorld:less_rights .
 }
 
-leolaniWorld:Blacks_do_more_crimes_than_whites {
-    leolaniWorld:Blacks ns1:do leolaniWorld:more_crimes_than_whites .
+leolaniWorld:they_therefore-deserve_rights {
+    leolaniWorld:they ns1:therefore_deserve leolaniWorld:rights .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context30 a eps:Context ;
-        rdfs:label "context30" ;
-        hs:id "30"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1742 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "86"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1742 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Blacks_do_crimes_than_whites a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1742" ;
-        hs:id "1742"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1742_utterance1,
-            leolaniTalk:chat1742_utterance2 .
+        rdfs:label "Blacks_do_crimes_than_whites" ;
+        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
 
-    leolaniTalk:chat1742_utterance1 a grasp:Utterance,
+    leolaniWorld:Blacks_do_more_crimes_than_whites a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1742_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Blacks_do_more_crimes_than_whites" ;
+        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
 
-    leolaniTalk:chat1742_utterance2 a grasp:Utterance,
+    leolaniWorld:Rights_are-rights-regardless_skin_color a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1742_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Rights_are-rights-regardless_skin_color" ;
+        gaf:denotedBy leolaniTalk:chat1742_utterance1_char0-59 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Rights_are-rights-regardless_skin_color_of_person a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Rights_are-rights-regardless_skin_color_of_person" ;
+        gaf:denotedBy leolaniTalk:chat1742_utterance1_char0-59 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Rights_are_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Rights_are_rights" ;
+        gaf:denotedBy leolaniTalk:chat1742_utterance1_char0-59 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_deserve_less_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_deserve_less_rights" ;
+        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
+
+    leolaniWorld:they_deserve_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_deserve_rights" ;
+        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
+
+    leolaniWorld:they_therefore-deserve_less_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_therefore-deserve_less_rights" ;
+        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
+
+    leolaniWorld:they_therefore-deserve_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_therefore-deserve_rights" ;
+        gaf:denotedBy leolaniTalk:chat1742_utterance2_char0-73 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Rights_are-rights-regardless_skin_color {
+    leolaniWorld:Rights ns1:are_rights_regardless leolaniWorld:skin_color .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Blacks a gaf:Instance ;
+        rdfs:label "blacks" ;
+        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
+
+    leolaniWorld:Rights a gaf:Instance ;
+        rdfs:label "rights" ;
+        gaf:denotedIn leolaniTalk:chat1742_utterance1_char0-59 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:crimes_than_whites a gaf:Instance ;
+        rdfs:label "crimes-than-whites" ;
+        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:less_rights a gaf:Instance ;
+        rdfs:label "less-rights" ;
+        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
+
+    leolaniWorld:more_crimes_than_whites a gaf:Instance ;
+        rdfs:label "more-crimes-than-whites" ;
+        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
+
+    leolaniWorld:rights a gaf:Instance ;
+        rdfs:label "rights" ;
+        gaf:denotedIn leolaniTalk:chat1742_utterance1_char0-59,
+            leolaniTalk:chat1742_utterance2_char0-73 .
+
+    leolaniWorld:skin_color a gaf:Instance ;
+        rdfs:label "skin-color" ;
+        gaf:denotedIn leolaniTalk:chat1742_utterance1_char0-59 .
+
+    leolaniWorld:skin_color_of_person a gaf:Instance ;
+        rdfs:label "skin-color-of-person" ;
+        gaf:denotedIn leolaniTalk:chat1742_utterance1_char0-59 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1742_utterance2_char0-73 .
 }
 

@@ -26,129 +26,238 @@ leolaniWorld:everyone_is-in_country {
     leolaniWorld:everyone ns1:is_in leolaniWorld:country .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:I_think-in_general a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context14 a eps:Context ;
+        rdfs:label "context14" ;
+        hs:id "14"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2398 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "148"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2398 a grasp:Chat,
             sem:Event ;
-        rdfs:label "I_think-in_general" ;
-        gaf:denotedBy leolaniTalk:chat2398_utterance1_char0-156 .
+        rdfs:label "chat2398" ;
+        hs:id "2398"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2398_utterance0,
+            leolaniTalk:chat2398_utterance1,
+            leolaniTalk:chat2398_utterance2,
+            leolaniTalk:chat2398_utterance3,
+            leolaniTalk:chat2398_utterance4 .
 
-    leolaniWorld:They_are_rapists a gaf:Assertion,
+    leolaniTalk:chat2398_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_are_rapists" ;
-        gaf:denotedBy leolaniTalk:chat2398_utterance2_char0-61 .
+        rdfs:label "chat2398_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:We_should-block_them a gaf:Assertion,
+    leolaniTalk:chat2398_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "We_should-block_them" ;
-        gaf:denotedBy leolaniTalk:chat2398_utterance4_char0-102 .
+        rdfs:label "chat2398_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:everyone_is-in_country a gaf:Assertion,
+    leolaniTalk:chat2398_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "everyone_is-in_country" ;
-        gaf:denotedBy leolaniTalk:chat2398_utterance1_char0-156 .
+        rdfs:label "chat2398_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:goods_should-belong-to_us a gaf:Assertion,
+    leolaniTalk:chat2398_utterance3 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "goods_should-belong-to_us" ;
-        gaf:denotedBy leolaniTalk:chat2398_utterance0_char0-99 .
+        rdfs:label "chat2398_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat2398_utterance4 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2398_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:we_immigrants-in_principle a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_immigrants-in_principle" ;
-        gaf:denotedBy leolaniTalk:chat2398_utterance3_char0-106 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
+leolaniWorld:We_should-block_them {
+    leolaniWorld:We ns1:should_block leolaniWorld:them .
+}
+
 leolaniWorld:we_immigrants-in_principle {
     leolaniWorld:we ns1:immigrants_in leolaniWorld:principle .
 }
 
-leolaniWorld:They_are_rapists {
-    leolaniWorld:They ns1:are leolaniWorld:rapists .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:I_think-in_general_00012 a grasp:Attribution ;
+        rdfs:label "I_think-in_general_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2398_utterance1_char0-156 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:goods_should-belong-to_us {
-    leolaniWorld:goods ns1:should_belong_to leolaniWorld:us .
+    leolaniTalk:They_are_rapists_00028 a grasp:Attribution ;
+        rdfs:label "They_are_rapists_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2398_utterance2_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_should-block_them_00028 a grasp:Attribution ;
+        rdfs:label "We_should-block_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2398_utterance4_char0-102 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2398_utterance0_char0-99 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2398_utterance0_char0-99" ;
+        gaf:containsDenotation leolaniWorld:goods,
+            leolaniWorld:us ;
+        gaf:denotes leolaniWorld:goods_should-belong-to_us ;
+        grasp:hasAttribution leolaniTalk:goods_should-belong-to_us_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:55:26.129014"^^xml1:string ;
+        rdf:value "The goods that England offers should belong to us. Not to people who do not contribute to the state"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2398_utterance0 .
+
+    leolaniTalk:chat2398_utterance2_char0-61 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2398_utterance2_char0-61" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:rapists ;
+        gaf:denotes leolaniWorld:They_are_rapists ;
+        grasp:hasAttribution leolaniTalk:They_are_rapists_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:55:26.312209"^^xml1:string ;
+        rdf:value "Not if immigrants bring crime like they do. They are rapists."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2398_utterance2 .
+
+    leolaniTalk:chat2398_utterance3_char0-106 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2398_utterance3_char0-106" ;
+        gaf:containsDenotation leolaniWorld:principle,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_immigrants-in_principle ;
+        grasp:hasAttribution leolaniTalk:we_immigrants-in_principle_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:55:32.980618"^^xml1:string ;
+        rdf:value "We shouldn't let in people that are a threat to our society, but we can't ban all immigrants in principle."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2398_utterance3 .
+
+    leolaniTalk:chat2398_utterance4_char0-102 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2398_utterance4_char0-102" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:them ;
+        gaf:denotes leolaniWorld:We_should-block_them ;
+        grasp:hasAttribution leolaniTalk:We_should-block_them_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:55:39.591028"^^xml1:string ;
+        rdf:value "If we don't do anything, immigrants will replace the people born in our country. We should block them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2398_utterance4 .
+
+    leolaniTalk:everyone_is-in_country_00012 a grasp:Attribution ;
+        rdfs:label "everyone_is-in_country_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2398_utterance1_char0-156 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:goods_should-belong-to_us_00028 a grasp:Attribution ;
+        rdfs:label "goods_should-belong-to_us_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2398_utterance0_char0-99 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_immigrants-in_principle_00028 a grasp:Attribution ;
+        rdfs:label "we_immigrants-in_principle_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2398_utterance3_char0-106 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2398_utterance1_char0-156 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2398_utterance1_char0-156" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:country,
+            leolaniWorld:everyone,
+            leolaniWorld:general ;
+        gaf:denotes leolaniWorld:I_think-in_general,
+            leolaniWorld:everyone_is-in_country ;
+        grasp:hasAttribution leolaniTalk:I_think-in_general_00012,
+            leolaniTalk:everyone_is-in_country_00012 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:55:26.231648"^^xml1:string,
+            "2024-06-05T23:55:26.231703"^^xml1:string ;
+        rdf:value "There are enough homes for everyone in this country. In general I think it's pleasant to be treated like a human being, and immigrants have a right to that."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2398_utterance1 .
+
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:I_think-in_general {
     leolaniWorld:I ns1:think_in leolaniWorld:general .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance1_char0-156 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance2_char0-61 .
-
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance4_char0-102 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:country a gaf:Instance ;
-        rdfs:label "country" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance1_char0-156 .
-
-    leolaniWorld:everyone a gaf:Instance ;
-        rdfs:label "everyone" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance1_char0-156 .
-
-    leolaniWorld:general a gaf:Instance ;
-        rdfs:label "general" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance1_char0-156 .
-
-    leolaniWorld:goods a gaf:Instance ;
-        rdfs:label "goods" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance0_char0-99 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:principle a gaf:Instance ;
-        rdfs:label "principle" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance3_char0-106 .
-
-    leolaniWorld:rapists a gaf:Instance ;
-        rdfs:label "rapists" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance2_char0-61 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance4_char0-102 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance0_char0-99 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2398_utterance3_char0-106 .
 }
 
 leolaniWorld:Ontology {
@@ -486,225 +595,116 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:I_think-in_general a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_think-in_general" ;
+        gaf:denotedBy leolaniTalk:chat2398_utterance1_char0-156 .
+
+    leolaniWorld:They_are_rapists a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_rapists" ;
+        gaf:denotedBy leolaniTalk:chat2398_utterance2_char0-61 .
+
+    leolaniWorld:We_should-block_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_should-block_them" ;
+        gaf:denotedBy leolaniTalk:chat2398_utterance4_char0-102 .
+
+    leolaniWorld:everyone_is-in_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "everyone_is-in_country" ;
+        gaf:denotedBy leolaniTalk:chat2398_utterance1_char0-156 .
+
+    leolaniWorld:goods_should-belong-to_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "goods_should-belong-to_us" ;
+        gaf:denotedBy leolaniTalk:chat2398_utterance0_char0-99 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:we_immigrants-in_principle a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_immigrants-in_principle" ;
+        gaf:denotedBy leolaniTalk:chat2398_utterance3_char0-106 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_think-in_general_00012 a grasp:Attribution ;
-        rdfs:label "I_think-in_general_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat2398_utterance1_char0-156 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_rapists_00028 a grasp:Attribution ;
-        rdfs:label "They_are_rapists_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2398_utterance2_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_should-block_them_00028 a grasp:Attribution ;
-        rdfs:label "We_should-block_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2398_utterance4_char0-102 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2398_utterance0_char0-99 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2398_utterance0_char0-99" ;
-        gaf:containsDenotation leolaniWorld:goods,
-            leolaniWorld:us ;
-        gaf:denotes leolaniWorld:goods_should-belong-to_us ;
-        grasp:hasAttribution leolaniTalk:goods_should-belong-to_us_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:55:26.129014"^^xml1:string ;
-        rdf:value "The goods that England offers should belong to us. Not to people who do not contribute to the state"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2398_utterance0 .
-
-    leolaniTalk:chat2398_utterance2_char0-61 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2398_utterance2_char0-61" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:rapists ;
-        gaf:denotes leolaniWorld:They_are_rapists ;
-        grasp:hasAttribution leolaniTalk:They_are_rapists_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:55:26.312209"^^xml1:string ;
-        rdf:value "Not if immigrants bring crime like they do. They are rapists."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2398_utterance2 .
-
-    leolaniTalk:chat2398_utterance3_char0-106 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2398_utterance3_char0-106" ;
-        gaf:containsDenotation leolaniWorld:principle,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_immigrants-in_principle ;
-        grasp:hasAttribution leolaniTalk:we_immigrants-in_principle_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:55:32.980618"^^xml1:string ;
-        rdf:value "We shouldn't let in people that are a threat to our society, but we can't ban all immigrants in principle."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2398_utterance3 .
-
-    leolaniTalk:chat2398_utterance4_char0-102 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2398_utterance4_char0-102" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:them ;
-        gaf:denotes leolaniWorld:We_should-block_them ;
-        grasp:hasAttribution leolaniTalk:We_should-block_them_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:55:39.591028"^^xml1:string ;
-        rdf:value "If we don't do anything, immigrants will replace the people born in our country. We should block them."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2398_utterance4 .
-
-    leolaniTalk:everyone_is-in_country_00012 a grasp:Attribution ;
-        rdfs:label "everyone_is-in_country_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat2398_utterance1_char0-156 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:goods_should-belong-to_us_00028 a grasp:Attribution ;
-        rdfs:label "goods_should-belong-to_us_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2398_utterance0_char0-99 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_immigrants-in_principle_00028 a grasp:Attribution ;
-        rdfs:label "we_immigrants-in_principle_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2398_utterance3_char0-106 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2398_utterance1_char0-156 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2398_utterance1_char0-156" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:country,
-            leolaniWorld:everyone,
-            leolaniWorld:general ;
-        gaf:denotes leolaniWorld:I_think-in_general,
-            leolaniWorld:everyone_is-in_country ;
-        grasp:hasAttribution leolaniTalk:I_think-in_general_00012,
-            leolaniTalk:everyone_is-in_country_00012 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:55:26.231648"^^xml1:string,
-            "2024-06-05T23:55:26.231703"^^xml1:string ;
-        rdf:value "There are enough homes for everyone in this country. In general I think it's pleasant to be treated like a human being, and immigrants have a right to that."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2398_utterance1 .
-
-    graspe:APPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "APPROVAL" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:They_are_rapists {
+    leolaniWorld:They ns1:are leolaniWorld:rapists .
 }
 
-leolaniWorld:We_should-block_them {
-    leolaniWorld:We ns1:should_block leolaniWorld:them .
+leolaniWorld:goods_should-belong-to_us {
+    leolaniWorld:goods ns1:should_belong_to leolaniWorld:us .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context14 a eps:Context ;
-        rdfs:label "context14" ;
-        hs:id "14"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance1_char0-156 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2398 .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance2_char0-61 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "148"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2398 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2398" ;
-        hs:id "2398"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2398_utterance0,
-            leolaniTalk:chat2398_utterance1,
-            leolaniTalk:chat2398_utterance2,
-            leolaniTalk:chat2398_utterance3,
-            leolaniTalk:chat2398_utterance4 .
-
-    leolaniTalk:chat2398_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2398_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2398_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2398_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2398_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2398_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2398_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2398_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2398_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2398_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance4_char0-102 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:country a gaf:Instance ;
+        rdfs:label "country" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance1_char0-156 .
+
+    leolaniWorld:everyone a gaf:Instance ;
+        rdfs:label "everyone" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance1_char0-156 .
+
+    leolaniWorld:general a gaf:Instance ;
+        rdfs:label "general" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance1_char0-156 .
+
+    leolaniWorld:goods a gaf:Instance ;
+        rdfs:label "goods" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance0_char0-99 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:principle a gaf:Instance ;
+        rdfs:label "principle" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance3_char0-106 .
+
+    leolaniWorld:rapists a gaf:Instance ;
+        rdfs:label "rapists" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance2_char0-61 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance4_char0-102 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance0_char0-99 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2398_utterance3_char0-106 .
 }
 

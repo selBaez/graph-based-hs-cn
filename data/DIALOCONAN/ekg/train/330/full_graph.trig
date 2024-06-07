@@ -22,153 +22,248 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context145 a eps:Context ;
+        rdfs:label "context145" ;
+        hs:id "145"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat330 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "127"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat330 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat330" ;
+        hs:id "330"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat330_utterance0,
+            leolaniTalk:chat330_utterance1,
+            leolaniTalk:chat330_utterance2 .
+
+    leolaniTalk:chat330_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat330_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat330_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat330_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat330_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat330_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:you_do-have_evidence_for_statement {
     leolaniWorld:you ns1:do_have leolaniWorld:evidence_for_statement .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_control_financial_world a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_control_financial_world" ;
-        gaf:denotedBy leolaniTalk:chat330_utterance0_char0-88 .
-
-    leolaniWorld:Jews_control_world a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_control_world" ;
-        gaf:denotedBy leolaniTalk:chat330_utterance0_char0-88 .
-
-    leolaniWorld:Jews_had_advance_knowledge a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_had_advance_knowledge" ;
-        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:Jews_had_advance_knowledge_of_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_had_advance_knowledge_of_it" ;
-        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:Jews_had_knowledge a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_had_knowledge" ;
-        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:Jews_had_knowledge_of_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_had_knowledge_of_it" ;
-        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:Jews_said_nothing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_said_nothing" ;
-        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:you_do-have_evidence_for_statement a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-have_evidence_for_statement" ;
-        gaf:denotedBy leolaniTalk:chat330_utterance1_char0-199 .
-
-    leolaniWorld:you_do-have_evidence_for_your_statement a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-have_evidence_for_your_statement" ;
-        gaf:denotedBy leolaniTalk:chat330_utterance1_char0-199 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Jews_had_knowledge_of_it {
-    leolaniWorld:Jews ns1:had leolaniWorld:knowledge_of_it .
-}
-
 leolaniWorld:you_do-have_evidence_for_your_statement {
     leolaniWorld:you ns1:do_have leolaniWorld:evidence_for_your_statement .
 }
 
-leolaniWorld:Jews_had_advance_knowledge_of_it {
-    leolaniWorld:Jews ns1:had leolaniWorld:advance_knowledge_of_it .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Jews_had_advance_knowledge {
-    leolaniWorld:Jews ns1:had leolaniWorld:advance_knowledge .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:Jews_said_nothing {
     leolaniWorld:Jews ns1:said leolaniWorld:nothing .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance0_char0-88,
-            leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:advance_knowledge a gaf:Instance ;
-        rdfs:label "advance-knowledge" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:advance_knowledge_of_it a gaf:Instance ;
-        rdfs:label "advance-knowledge-of-it" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:evidence_for_statement a gaf:Instance ;
-        rdfs:label "evidence-for-statement" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance1_char0-199 .
-
-    leolaniWorld:evidence_for_your_statement a gaf:Instance ;
-        rdfs:label "evidence-for-your-statement" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance1_char0-199 .
-
-    leolaniWorld:financial_world a gaf:Instance ;
-        rdfs:label "financial-world" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance0_char0-88 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:knowledge a gaf:Instance ;
-        rdfs:label "knowledge" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:knowledge_of_it a gaf:Instance ;
-        rdfs:label "knowledge-of-it" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
-
-    leolaniWorld:world a gaf:Instance ;
-        rdfs:label "world" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance0_char0-88 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat330_utterance1_char0-199 .
+leolaniWorld:Jews_control_financial_world {
+    leolaniWorld:Jews ns1:control leolaniWorld:financial_world .
 }
 
 leolaniWorld:Jews_control_world {
     leolaniWorld:Jews ns1:control leolaniWorld:world .
+}
+
+leolaniWorld:Jews_had_advance_knowledge_of_it {
+    leolaniWorld:Jews ns1:had leolaniWorld:advance_knowledge_of_it .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_control_financial_world_00028 a grasp:Attribution ;
+        rdfs:label "Jews_control_financial_world_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat330_utterance0_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_control_world_00028 a grasp:Attribution ;
+        rdfs:label "Jews_control_world_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat330_utterance0_char0-88 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_had_advance_knowledge_00028 a grasp:Attribution ;
+        rdfs:label "Jews_had_advance_knowledge_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_had_advance_knowledge_of_it_00028 a grasp:Attribution ;
+        rdfs:label "Jews_had_advance_knowledge_of_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_had_knowledge_00028 a grasp:Attribution ;
+        rdfs:label "Jews_had_knowledge_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_had_knowledge_of_it_00028 a grasp:Attribution ;
+        rdfs:label "Jews_had_knowledge_of_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_said_nothing_00028 a grasp:Attribution ;
+        rdfs:label "Jews_said_nothing_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-have_evidence_for_statement_00028 a grasp:Attribution ;
+        rdfs:label "you_do-have_evidence_for_statement_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat330_utterance1_char0-199 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-have_evidence_for_your_statement_00028 a grasp:Attribution ;
+        rdfs:label "you_do-have_evidence_for_your_statement_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat330_utterance1_char0-199 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat330_utterance0_char0-88 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat330_utterance0_char0-88" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:financial_world,
+            leolaniWorld:world ;
+        gaf:denotes leolaniWorld:Jews_control_financial_world,
+            leolaniWorld:Jews_control_world ;
+        grasp:hasAttribution leolaniTalk:Jews_control_financial_world_00028,
+            leolaniTalk:Jews_control_world_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:41.539250"^^xml1:string,
+            "2024-06-05T23:10:41.539317"^^xml1:string ;
+        rdf:value "Jews control the financial world, Hollywood, academia, and most importantly: government."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat330_utterance0 .
+
+    leolaniTalk:chat330_utterance1_char0-199 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat330_utterance1_char0-199" ;
+        gaf:containsDenotation leolaniWorld:evidence_for_statement,
+            leolaniWorld:evidence_for_your_statement,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:you_do-have_evidence_for_statement,
+            leolaniWorld:you_do-have_evidence_for_your_statement ;
+        grasp:hasAttribution leolaniTalk:you_do-have_evidence_for_statement_00028,
+            leolaniTalk:you_do-have_evidence_for_your_statement_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:41.638712"^^xml1:string,
+            "2024-06-05T23:10:41.638772"^^xml1:string ;
+        rdf:value "Even if Jews controlled the financial world, Hollywood, academia, and the whole solar system, it doesn't mean they are evil, privileged, or greedy people. Do you have any evidence for your statement?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat330_utterance1 .
+
+    leolaniTalk:chat330_utterance2_char0-107 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat330_utterance2_char0-107" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:advance_knowledge,
+            leolaniWorld:advance_knowledge_of_it,
+            leolaniWorld:knowledge,
+            leolaniWorld:knowledge_of_it,
+            leolaniWorld:nothing ;
+        gaf:denotes leolaniWorld:Jews_had_advance_knowledge,
+            leolaniWorld:Jews_had_advance_knowledge_of_it,
+            leolaniWorld:Jews_had_knowledge,
+            leolaniWorld:Jews_had_knowledge_of_it,
+            leolaniWorld:Jews_said_nothing ;
+        grasp:hasAttribution leolaniTalk:Jews_had_advance_knowledge_00028,
+            leolaniTalk:Jews_had_advance_knowledge_of_it_00028,
+            leolaniTalk:Jews_had_knowledge_00028,
+            leolaniTalk:Jews_had_knowledge_of_it_00028,
+            leolaniTalk:Jews_said_nothing_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:41.725745"^^xml1:string,
+            "2024-06-05T23:10:41.725797"^^xml1:string,
+            "2024-06-05T23:10:41.725820"^^xml1:string,
+            "2024-06-05T23:10:41.725842"^^xml1:string,
+            "2024-06-05T23:10:41.725863"^^xml1:string ;
+        rdf:value "If they weren't evil they would have told us about 9/11. Jews had advance knowledge of it and said nothing."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat330_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -506,227 +601,132 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Jews_had_knowledge_of_it {
+    leolaniWorld:Jews ns1:had leolaniWorld:knowledge_of_it .
 }
 
-leolaniWorld:Jews_control_financial_world {
-    leolaniWorld:Jews ns1:control leolaniWorld:financial_world .
+leolaniWorld:Jews_had_advance_knowledge {
+    leolaniWorld:Jews ns1:had leolaniWorld:advance_knowledge .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Jews_control_financial_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_control_financial_world" ;
+        gaf:denotedBy leolaniTalk:chat330_utterance0_char0-88 .
+
+    leolaniWorld:Jews_control_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_control_world" ;
+        gaf:denotedBy leolaniTalk:chat330_utterance0_char0-88 .
+
+    leolaniWorld:Jews_had_advance_knowledge a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_had_advance_knowledge" ;
+        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
+
+    leolaniWorld:Jews_had_advance_knowledge_of_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_had_advance_knowledge_of_it" ;
+        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
+
+    leolaniWorld:Jews_had_knowledge a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_had_knowledge" ;
+        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
+
+    leolaniWorld:Jews_had_knowledge_of_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_had_knowledge_of_it" ;
+        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
+
+    leolaniWorld:Jews_said_nothing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_said_nothing" ;
+        gaf:denotedBy leolaniTalk:chat330_utterance2_char0-107 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:you_do-have_evidence_for_statement a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-have_evidence_for_statement" ;
+        gaf:denotedBy leolaniTalk:chat330_utterance1_char0-199 .
+
+    leolaniWorld:you_do-have_evidence_for_your_statement a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-have_evidence_for_your_statement" ;
+        gaf:denotedBy leolaniTalk:chat330_utterance1_char0-199 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:Jews_had_knowledge {
     leolaniWorld:Jews ns1:had leolaniWorld:knowledge .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_control_financial_world_00028 a grasp:Attribution ;
-        rdfs:label "Jews_control_financial_world_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat330_utterance0_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance0_char0-88,
+            leolaniTalk:chat330_utterance2_char0-107 .
 
-    leolaniTalk:Jews_control_world_00028 a grasp:Attribution ;
-        rdfs:label "Jews_control_world_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat330_utterance0_char0-88 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:advance_knowledge a gaf:Instance ;
+        rdfs:label "advance-knowledge" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
 
-    leolaniTalk:Jews_had_advance_knowledge_00028 a grasp:Attribution ;
-        rdfs:label "Jews_had_advance_knowledge_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_had_advance_knowledge_of_it_00028 a grasp:Attribution ;
-        rdfs:label "Jews_had_advance_knowledge_of_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_had_knowledge_00028 a grasp:Attribution ;
-        rdfs:label "Jews_had_knowledge_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_had_knowledge_of_it_00028 a grasp:Attribution ;
-        rdfs:label "Jews_had_knowledge_of_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_said_nothing_00028 a grasp:Attribution ;
-        rdfs:label "Jews_said_nothing_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat330_utterance2_char0-107 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_do-have_evidence_for_statement_00028 a grasp:Attribution ;
-        rdfs:label "you_do-have_evidence_for_statement_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat330_utterance1_char0-199 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_do-have_evidence_for_your_statement_00028 a grasp:Attribution ;
-        rdfs:label "you_do-have_evidence_for_your_statement_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat330_utterance1_char0-199 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat330_utterance0_char0-88 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat330_utterance0_char0-88" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:financial_world,
-            leolaniWorld:world ;
-        gaf:denotes leolaniWorld:Jews_control_financial_world,
-            leolaniWorld:Jews_control_world ;
-        grasp:hasAttribution leolaniTalk:Jews_control_financial_world_00028,
-            leolaniTalk:Jews_control_world_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:41.539250"^^xml1:string,
-            "2024-06-05T23:10:41.539317"^^xml1:string ;
-        rdf:value "Jews control the financial world, Hollywood, academia, and most importantly: government."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat330_utterance0 .
-
-    leolaniTalk:chat330_utterance1_char0-199 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat330_utterance1_char0-199" ;
-        gaf:containsDenotation leolaniWorld:evidence_for_statement,
-            leolaniWorld:evidence_for_your_statement,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:you_do-have_evidence_for_statement,
-            leolaniWorld:you_do-have_evidence_for_your_statement ;
-        grasp:hasAttribution leolaniTalk:you_do-have_evidence_for_statement_00028,
-            leolaniTalk:you_do-have_evidence_for_your_statement_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:41.638712"^^xml1:string,
-            "2024-06-05T23:10:41.638772"^^xml1:string ;
-        rdf:value "Even if Jews controlled the financial world, Hollywood, academia, and the whole solar system, it doesn't mean they are evil, privileged, or greedy people. Do you have any evidence for your statement?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat330_utterance1 .
-
-    leolaniTalk:chat330_utterance2_char0-107 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat330_utterance2_char0-107" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:advance_knowledge,
-            leolaniWorld:advance_knowledge_of_it,
-            leolaniWorld:knowledge,
-            leolaniWorld:knowledge_of_it,
-            leolaniWorld:nothing ;
-        gaf:denotes leolaniWorld:Jews_had_advance_knowledge,
-            leolaniWorld:Jews_had_advance_knowledge_of_it,
-            leolaniWorld:Jews_had_knowledge,
-            leolaniWorld:Jews_had_knowledge_of_it,
-            leolaniWorld:Jews_said_nothing ;
-        grasp:hasAttribution leolaniTalk:Jews_had_advance_knowledge_00028,
-            leolaniTalk:Jews_had_advance_knowledge_of_it_00028,
-            leolaniTalk:Jews_had_knowledge_00028,
-            leolaniTalk:Jews_had_knowledge_of_it_00028,
-            leolaniTalk:Jews_said_nothing_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:41.725745"^^xml1:string,
-            "2024-06-05T23:10:41.725797"^^xml1:string,
-            "2024-06-05T23:10:41.725820"^^xml1:string,
-            "2024-06-05T23:10:41.725842"^^xml1:string,
-            "2024-06-05T23:10:41.725863"^^xml1:string ;
-        rdf:value "If they weren't evil they would have told us about 9/11. Jews had advance knowledge of it and said nothing."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat330_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context145 a eps:Context ;
-        rdfs:label "context145" ;
-        hs:id "145"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat330 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "127"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat330 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat330" ;
-        hs:id "330"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat330_utterance0,
-            leolaniTalk:chat330_utterance1,
-            leolaniTalk:chat330_utterance2 .
-
-    leolaniTalk:chat330_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat330_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat330_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat330_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat330_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat330_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:advance_knowledge_of_it a gaf:Instance ;
+        rdfs:label "advance-knowledge-of-it" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:evidence_for_statement a gaf:Instance ;
+        rdfs:label "evidence-for-statement" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance1_char0-199 .
+
+    leolaniWorld:evidence_for_your_statement a gaf:Instance ;
+        rdfs:label "evidence-for-your-statement" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance1_char0-199 .
+
+    leolaniWorld:financial_world a gaf:Instance ;
+        rdfs:label "financial-world" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance0_char0-88 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:knowledge a gaf:Instance ;
+        rdfs:label "knowledge" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
+
+    leolaniWorld:knowledge_of_it a gaf:Instance ;
+        rdfs:label "knowledge-of-it" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance2_char0-107 .
+
+    leolaniWorld:world a gaf:Instance ;
+        rdfs:label "world" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance0_char0-88 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat330_utterance1_char0-199 .
 }
 

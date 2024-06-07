@@ -23,68 +23,123 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:children_has_cognitive_development a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "children_has_cognitive_development" ;
-        gaf:denotedBy leolaniTalk:chat962_utterance2_char0-68 .
+leolaniTalk:Interactions {
+    leolaniContext:context156 a eps:Context ;
+        rdfs:label "context156" ;
+        hs:id "156"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat962 .
 
-    ns1:s_cognitive_development a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_can-harm_our_children_'s_cognitive_development" ;
-        gaf:denotedBy leolaniTalk:chat962_utterance2_char0-68 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    ns1:s_development a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_can-harm_our_children_'s_development" ;
-        gaf:denotedBy leolaniTalk:chat962_utterance2_char0-68 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "129"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat962 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat962" ;
+        hs:id "962"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat962_utterance2 .
+
+    leolaniTalk:chat962_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat962_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 ns1:s_development {
     leolaniWorld:they ns2:can_harm <http://cltl.nl/leolani/world/our_children_'s_development> .
 }
 
-leolaniWorld:children_has_cognitive_development {
-    leolaniWorld:children ns2:has leolaniWorld:cognitive_development .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:children_has_cognitive_development_00028 a grasp:Attribution ;
+        rdfs:label "children_has_cognitive_development_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat962_utterance2_char0-68 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:children a gaf:Instance ;
-        rdfs:label "children" ;
-        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
+    <http://cltl.nl/leolani/talk/they_can-harm_our_children_'s_cognitive_development_00028> a grasp:Attribution ;
+        rdfs:label "they_can-harm_our_children_'s_cognitive_development_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat962_utterance2_char0-68 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cognitive_development a gaf:Instance ;
-        rdfs:label "cognitive-development" ;
-        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
+    <http://cltl.nl/leolani/talk/they_can-harm_our_children_'s_development_00028> a grasp:Attribution ;
+        rdfs:label "they_can-harm_our_children_'s_development_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat962_utterance2_char0-68 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat962_utterance2_char0-68 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat962_utterance2_char0-68" ;
+        gaf:containsDenotation leolaniWorld:children,
+            leolaniWorld:cognitive_development,
+            <http://cltl.nl/leolani/world/our_children_'s_cognitive_development>,
+            <http://cltl.nl/leolani/world/our_children_'s_development>,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:children_has_cognitive_development,
+            ns1:s_cognitive_development,
+            ns1:s_development ;
+        grasp:hasAttribution leolaniTalk:children_has_cognitive_development_00028,
+            <http://cltl.nl/leolani/talk/they_can-harm_our_children_'s_cognitive_development_00028>,
+            <http://cltl.nl/leolani/talk/they_can-harm_our_children_'s_development_00028> ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:56.993776"^^xml1:string,
+            "2024-06-05T23:35:56.993838"^^xml1:string,
+            "2024-06-05T23:35:56.993861"^^xml1:string ;
+        rdf:value "But they can harm our children's cognitive and emotional development"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat962_utterance2 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    <http://cltl.nl/leolani/world/our_children_'s_cognitive_development> a gaf:Instance ;
-        rdfs:label "our-children-s-cognitive-development" ;
-        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    <http://cltl.nl/leolani/world/our_children_'s_development> a gaf:Instance ;
-        rdfs:label "our-children-s-development" ;
-        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
-}
-
-ns1:s_cognitive_development {
-    leolaniWorld:they ns2:can_harm <http://cltl.nl/leolani/world/our_children_'s_cognitive_development> .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -422,118 +477,63 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:children_has_cognitive_development {
+    leolaniWorld:children ns2:has leolaniWorld:cognitive_development .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:children_has_cognitive_development_00028 a grasp:Attribution ;
-        rdfs:label "children_has_cognitive_development_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat962_utterance2_char0-68 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:children_has_cognitive_development a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "children_has_cognitive_development" ;
+        gaf:denotedBy leolaniTalk:chat962_utterance2_char0-68 .
 
-    <http://cltl.nl/leolani/talk/they_can-harm_our_children_'s_cognitive_development_00028> a grasp:Attribution ;
-        rdfs:label "they_can-harm_our_children_'s_cognitive_development_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat962_utterance2_char0-68 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    <http://cltl.nl/leolani/talk/they_can-harm_our_children_'s_development_00028> a grasp:Attribution ;
-        rdfs:label "they_can-harm_our_children_'s_development_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat962_utterance2_char0-68 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    ns1:s_cognitive_development a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_can-harm_our_children_'s_cognitive_development" ;
+        gaf:denotedBy leolaniTalk:chat962_utterance2_char0-68 .
 
-    leolaniTalk:chat962_utterance2_char0-68 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat962_utterance2_char0-68" ;
-        gaf:containsDenotation leolaniWorld:children,
-            leolaniWorld:cognitive_development,
-            <http://cltl.nl/leolani/world/our_children_'s_cognitive_development>,
-            <http://cltl.nl/leolani/world/our_children_'s_development>,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:children_has_cognitive_development,
-            ns1:s_cognitive_development,
-            ns1:s_development ;
-        grasp:hasAttribution leolaniTalk:children_has_cognitive_development_00028,
-            <http://cltl.nl/leolani/talk/they_can-harm_our_children_'s_cognitive_development_00028>,
-            <http://cltl.nl/leolani/talk/they_can-harm_our_children_'s_development_00028> ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:56.993776"^^xml1:string,
-            "2024-06-05T23:35:56.993838"^^xml1:string,
-            "2024-06-05T23:35:56.993861"^^xml1:string ;
-        rdf:value "But they can harm our children's cognitive and emotional development"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat962_utterance2 .
+    ns1:s_development a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_can-harm_our_children_'s_development" ;
+        gaf:denotedBy leolaniTalk:chat962_utterance2_char0-68 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context156 a eps:Context ;
-        rdfs:label "context156" ;
-        hs:id "156"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+ns1:s_cognitive_development {
+    leolaniWorld:they ns2:can_harm <http://cltl.nl/leolani/world/our_children_'s_cognitive_development> .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat962 .
+leolaniWorld:Instances {
+    leolaniWorld:children a gaf:Instance ;
+        rdfs:label "children" ;
+        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "129"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat962 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat962" ;
-        hs:id "962"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat962_utterance2 .
-
-    leolaniTalk:chat962_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat962_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:cognitive_development a gaf:Instance ;
+        rdfs:label "cognitive-development" ;
+        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    <http://cltl.nl/leolani/world/our_children_'s_cognitive_development> a gaf:Instance ;
+        rdfs:label "our-children-s-cognitive-development" ;
+        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
+
+    <http://cltl.nl/leolani/world/our_children_'s_development> a gaf:Instance ;
+        rdfs:label "our-children-s-development" ;
+        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat962_utterance2_char0-68 .
 }
 

@@ -22,126 +22,211 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context211 a eps:Context ;
+        rdfs:label "context211" ;
+        hs:id "211"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat242 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "43"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat242 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat242" ;
+        hs:id "242"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat242_utterance1,
+            leolaniTalk:chat242_utterance2 .
+
+    leolaniTalk:chat242_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat242_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat242_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat242_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:They_are-inferior-under_law a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are-inferior-under_law" ;
-        gaf:denotedBy leolaniTalk:chat242_utterance2_char0-85 .
-
-    leolaniWorld:They_are_inferior a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_inferior" ;
-        gaf:denotedBy leolaniTalk:chat242_utterance2_char0-85 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are_Because_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_Because_beings" ;
-        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:they_are_Because_human_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_Because_human_beings" ;
-        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:they_are_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_beings" ;
-        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:they_are_human_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_human_beings" ;
-        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:they_deserve_respect a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_deserve_respect" ;
-        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:they_are_beings {
-    leolaniWorld:they ns1:are leolaniWorld:beings .
-}
-
-leolaniWorld:they_are_human_beings {
-    leolaniWorld:they ns1:are leolaniWorld:human_beings .
-}
-
-leolaniWorld:they_are_Because_human_beings {
-    leolaniWorld:they ns1:are leolaniWorld:Because_human_beings .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Because_beings a gaf:Instance ;
-        rdfs:label "because-beings" ;
-        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:Because_human_beings a gaf:Instance ;
-        rdfs:label "because-human-beings" ;
-        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat242_utterance2_char0-85 .
-
-    leolaniWorld:beings a gaf:Instance ;
-        rdfs:label "beings" ;
-        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:human_beings a gaf:Instance ;
-        rdfs:label "human-beings" ;
-        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:inferior a gaf:Instance ;
-        rdfs:label "inferior" ;
-        gaf:denotedIn leolaniTalk:chat242_utterance2_char0-85 .
-
-    leolaniWorld:law a gaf:Instance ;
-        rdfs:label "law" ;
-        gaf:denotedIn leolaniTalk:chat242_utterance2_char0-85 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:respect a gaf:Instance ;
-        rdfs:label "respect" ;
-        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
+leolaniWorld:They_are-inferior-under_law {
+    leolaniWorld:They ns1:are_inferior_under leolaniWorld:law .
 }
 
 leolaniWorld:They_are_inferior {
     leolaniWorld:They ns1:are leolaniWorld:inferior .
+}
+
+leolaniWorld:they_are_Because_beings {
+    leolaniWorld:they ns1:are leolaniWorld:Because_beings .
+}
+
+leolaniWorld:they_deserve_respect {
+    leolaniWorld:they ns1:deserve leolaniWorld:respect .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:They_are-inferior-under_law_00023 a grasp:Attribution ;
+        rdfs:label "They_are-inferior-under_law_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat242_utterance2_char0-85 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_inferior_00023 a grasp:Attribution ;
+        rdfs:label "They_are_inferior_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat242_utterance2_char0-85 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_Because_beings_00028 a grasp:Attribution ;
+        rdfs:label "they_are_Because_beings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_Because_human_beings_00028 a grasp:Attribution ;
+        rdfs:label "they_are_Because_human_beings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_beings_00028 a grasp:Attribution ;
+        rdfs:label "they_are_beings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_human_beings_00028 a grasp:Attribution ;
+        rdfs:label "they_are_human_beings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_deserve_respect_00028 a grasp:Attribution ;
+        rdfs:label "they_deserve_respect_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat242_utterance2_char0-85 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat242_utterance2_char0-85" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:inferior,
+            leolaniWorld:law ;
+        gaf:denotes leolaniWorld:They_are-inferior-under_law,
+            leolaniWorld:They_are_inferior ;
+        grasp:hasAttribution leolaniTalk:They_are-inferior-under_law_00023,
+            leolaniTalk:They_are_inferior_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:28:15.306524"^^xml1:string,
+            "2024-06-05T23:28:15.306582"^^xml1:string ;
+        rdf:value "No, women aren't entitled to the same rights as men. They are inferior under the law."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat242_utterance2 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat242_utterance1_char0-56 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat242_utterance1_char0-56" ;
+        gaf:containsDenotation leolaniWorld:Because_beings,
+            leolaniWorld:Because_human_beings,
+            leolaniWorld:beings,
+            leolaniWorld:human_beings,
+            leolaniWorld:respect,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_are_Because_beings,
+            leolaniWorld:they_are_Because_human_beings,
+            leolaniWorld:they_are_beings,
+            leolaniWorld:they_are_human_beings,
+            leolaniWorld:they_deserve_respect ;
+        grasp:hasAttribution leolaniTalk:they_are_Because_beings_00028,
+            leolaniTalk:they_are_Because_human_beings_00028,
+            leolaniTalk:they_are_beings_00028,
+            leolaniTalk:they_are_human_beings_00028,
+            leolaniTalk:they_deserve_respect_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:28:08.614322"^^xml1:string,
+            "2024-06-05T23:28:08.614380"^^xml1:string,
+            "2024-06-05T23:28:08.614404"^^xml1:string,
+            "2024-06-05T23:28:08.614425"^^xml1:string,
+            "2024-06-05T23:28:08.614445"^^xml1:string ;
+        rdf:value "Because they are human beings, and they deserve respect."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat242_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:they_are_human_beings {
+    leolaniWorld:they ns1:are leolaniWorld:human_beings .
 }
 
 leolaniWorld:Ontology {
@@ -479,194 +564,109 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:they_deserve_respect {
-    leolaniWorld:they ns1:deserve leolaniWorld:respect .
+leolaniWorld:Claims {
+    leolaniWorld:They_are-inferior-under_law a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-inferior-under_law" ;
+        gaf:denotedBy leolaniTalk:chat242_utterance2_char0-85 .
+
+    leolaniWorld:They_are_inferior a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_inferior" ;
+        gaf:denotedBy leolaniTalk:chat242_utterance2_char0-85 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_Because_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_Because_beings" ;
+        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
+
+    leolaniWorld:they_are_Because_human_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_Because_human_beings" ;
+        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
+
+    leolaniWorld:they_are_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_beings" ;
+        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
+
+    leolaniWorld:they_are_human_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_human_beings" ;
+        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
+
+    leolaniWorld:they_deserve_respect a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_deserve_respect" ;
+        gaf:denotedBy leolaniTalk:chat242_utterance1_char0-56 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:They_are-inferior-under_law {
-    leolaniWorld:They ns1:are_inferior_under leolaniWorld:law .
+leolaniWorld:they_are_beings {
+    leolaniWorld:they ns1:are leolaniWorld:beings .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_are-inferior-under_law_00023 a grasp:Attribution ;
-        rdfs:label "They_are-inferior-under_law_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat242_utterance2_char0-85 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_inferior_00023 a grasp:Attribution ;
-        rdfs:label "They_are_inferior_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat242_utterance2_char0-85 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_Because_beings_00028 a grasp:Attribution ;
-        rdfs:label "they_are_Because_beings_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_Because_human_beings_00028 a grasp:Attribution ;
-        rdfs:label "they_are_Because_human_beings_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_beings_00028 a grasp:Attribution ;
-        rdfs:label "they_are_beings_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_human_beings_00028 a grasp:Attribution ;
-        rdfs:label "they_are_human_beings_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_deserve_respect_00028 a grasp:Attribution ;
-        rdfs:label "they_deserve_respect_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat242_utterance1_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat242_utterance2_char0-85 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat242_utterance2_char0-85" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:inferior,
-            leolaniWorld:law ;
-        gaf:denotes leolaniWorld:They_are-inferior-under_law,
-            leolaniWorld:They_are_inferior ;
-        grasp:hasAttribution leolaniTalk:They_are-inferior-under_law_00023,
-            leolaniTalk:They_are_inferior_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:28:15.306524"^^xml1:string,
-            "2024-06-05T23:28:15.306582"^^xml1:string ;
-        rdf:value "No, women aren't entitled to the same rights as men. They are inferior under the law."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat242_utterance2 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat242_utterance1_char0-56 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat242_utterance1_char0-56" ;
-        gaf:containsDenotation leolaniWorld:Because_beings,
-            leolaniWorld:Because_human_beings,
-            leolaniWorld:beings,
-            leolaniWorld:human_beings,
-            leolaniWorld:respect,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_are_Because_beings,
-            leolaniWorld:they_are_Because_human_beings,
-            leolaniWorld:they_are_beings,
-            leolaniWorld:they_are_human_beings,
-            leolaniWorld:they_deserve_respect ;
-        grasp:hasAttribution leolaniTalk:they_are_Because_beings_00028,
-            leolaniTalk:they_are_Because_human_beings_00028,
-            leolaniTalk:they_are_beings_00028,
-            leolaniTalk:they_are_human_beings_00028,
-            leolaniTalk:they_deserve_respect_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:28:08.614322"^^xml1:string,
-            "2024-06-05T23:28:08.614380"^^xml1:string,
-            "2024-06-05T23:28:08.614404"^^xml1:string,
-            "2024-06-05T23:28:08.614425"^^xml1:string,
-            "2024-06-05T23:28:08.614445"^^xml1:string ;
-        rdf:value "Because they are human beings, and they deserve respect."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat242_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:they_are_Because_human_beings {
+    leolaniWorld:they ns1:are leolaniWorld:Because_human_beings .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context211 a eps:Context ;
-        rdfs:label "context211" ;
-        hs:id "211"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Because_beings a gaf:Instance ;
+        rdfs:label "because-beings" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat242 .
+    leolaniWorld:Because_human_beings a gaf:Instance ;
+        rdfs:label "because-human-beings" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance2_char0-85 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "43"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat242 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat242" ;
-        hs:id "242"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat242_utterance1,
-            leolaniTalk:chat242_utterance2 .
-
-    leolaniTalk:chat242_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat242_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat242_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat242_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:beings a gaf:Instance ;
+        rdfs:label "beings" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:they_are_Because_beings {
-    leolaniWorld:they ns1:are leolaniWorld:Because_beings .
+    leolaniWorld:human_beings a gaf:Instance ;
+        rdfs:label "human-beings" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
+
+    leolaniWorld:inferior a gaf:Instance ;
+        rdfs:label "inferior" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance2_char0-85 .
+
+    leolaniWorld:law a gaf:Instance ;
+        rdfs:label "law" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance2_char0-85 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:respect a gaf:Instance ;
+        rdfs:label "respect" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat242_utterance1_char0-56 .
 }
 

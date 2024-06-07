@@ -22,69 +22,136 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Feminism_is_hate_movement a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context246 a eps:Context ;
+        rdfs:label "context246" ;
+        hs:id "246"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2178 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "109"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2178 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Feminism_is_hate_movement" ;
-        gaf:denotedBy leolaniTalk:chat2178_utterance0_char0-28 .
+        rdfs:label "chat2178" ;
+        hs:id "2178"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2178_utterance0,
+            leolaniTalk:chat2178_utterance1 .
 
-    leolaniWorld:It_has_fair a gaf:Assertion,
+    leolaniTalk:chat2178_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "It_has_fair" ;
-        gaf:denotedBy leolaniTalk:chat2178_utterance1_char0-68 .
+        rdfs:label "chat2178_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat2178_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2178_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Feminism_is_hate_movement {
-    leolaniWorld:Feminism ns11:is leolaniWorld:hate_movement .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Feminism_is_hate_movement_00021 a grasp:Attribution ;
+        rdfs:label "Feminism_is_hate_movement_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat2178_utterance0_char0-28 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:Feminism a gaf:Instance ;
-        rdfs:label "feminism" ;
-        gaf:denotedIn leolaniTalk:chat2178_utterance0_char0-28 .
+    leolaniTalk:It_has_fair_00028 a grasp:Attribution ;
+        rdfs:label "It_has_fair_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2178_utterance1_char0-68 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2178_utterance1_char0-68 .
+    leolaniTalk:chat2178_utterance0_char0-28 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2178_utterance0_char0-28" ;
+        gaf:containsDenotation leolaniWorld:Feminism,
+            leolaniWorld:hate_movement ;
+        gaf:denotes leolaniWorld:Feminism_is_hate_movement ;
+        grasp:hasAttribution leolaniTalk:Feminism_is_hate_movement_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:32.849057"^^xml1:string ;
+        rdf:value "Feminism is a hate movement."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2178_utterance0 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat2178_utterance1_char0-68 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2178_utterance1_char0-68" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:fair ;
+        gaf:denotes leolaniWorld:It_has_fair ;
+        grasp:hasAttribution leolaniTalk:It_has_fair_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:32.929530"^^xml1:string ;
+        rdf:value "Feminists believe that everyone should have equal rights. It's fair."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2178_utterance1 .
 
-    leolaniWorld:fair a gaf:Instance ;
-        rdfs:label "fair" ;
-        gaf:denotedIn leolaniTalk:chat2178_utterance1_char0-68 .
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
 
-    leolaniWorld:hate_movement a gaf:Instance ;
-        rdfs:label "hate-movement" ;
-        gaf:denotedIn leolaniTalk:chat2178_utterance0_char0-28 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-}
-
-leolaniWorld:It_has_fair {
-    leolaniWorld:It ns11:has leolaniWorld:fair .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -422,131 +489,64 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Feminism_is_hate_movement a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminism_is_hate_movement" ;
+        gaf:denotedBy leolaniTalk:chat2178_utterance0_char0-28 .
+
+    leolaniWorld:It_has_fair a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_fair" ;
+        gaf:denotedBy leolaniTalk:chat2178_utterance1_char0-68 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Feminism_is_hate_movement_00021 a grasp:Attribution ;
-        rdfs:label "Feminism_is_hate_movement_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat2178_utterance0_char0-28 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_has_fair_00028 a grasp:Attribution ;
-        rdfs:label "It_has_fair_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2178_utterance1_char0-68 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2178_utterance0_char0-28 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2178_utterance0_char0-28" ;
-        gaf:containsDenotation leolaniWorld:Feminism,
-            leolaniWorld:hate_movement ;
-        gaf:denotes leolaniWorld:Feminism_is_hate_movement ;
-        grasp:hasAttribution leolaniTalk:Feminism_is_hate_movement_00021 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:32.849057"^^xml1:string ;
-        rdf:value "Feminism is a hate movement."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2178_utterance0 .
-
-    leolaniTalk:chat2178_utterance1_char0-68 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2178_utterance1_char0-68" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:fair ;
-        gaf:denotes leolaniWorld:It_has_fair ;
-        grasp:hasAttribution leolaniTalk:It_has_fair_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:32.929530"^^xml1:string ;
-        rdf:value "Feminists believe that everyone should have equal rights. It's fair."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2178_utterance1 .
-
-    graspe:ANGER a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANGER" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:It_has_fair {
+    leolaniWorld:It ns11:has leolaniWorld:fair .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context246 a eps:Context ;
-        rdfs:label "context246" ;
-        hs:id "246"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Feminism_is_hate_movement {
+    leolaniWorld:Feminism ns11:is leolaniWorld:hate_movement .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2178 .
+leolaniWorld:Instances {
+    leolaniWorld:Feminism a gaf:Instance ;
+        rdfs:label "feminism" ;
+        gaf:denotedIn leolaniTalk:chat2178_utterance0_char0-28 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "109"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2178 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2178" ;
-        hs:id "2178"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2178_utterance0,
-            leolaniTalk:chat2178_utterance1 .
-
-    leolaniTalk:chat2178_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2178_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2178_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2178_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2178_utterance1_char0-68 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:fair a gaf:Instance ;
+        rdfs:label "fair" ;
+        gaf:denotedIn leolaniTalk:chat2178_utterance1_char0-68 .
+
+    leolaniWorld:hate_movement a gaf:Instance ;
+        rdfs:label "hate-movement" ;
+        gaf:denotedIn leolaniTalk:chat2178_utterance0_char0-28 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 }
 

@@ -157,8 +157,8 @@ def parse_args():
     parser.add_argument('--bs', type=int, default=4)  # TODO change
     parser.add_argument('--eval_bs', type=int, default=4)  # TODO change
     parser.add_argument('--eval_acc', type=int, default=None, help='evaluate accumulation step')
-    parser.add_argument('--input_len', type=int, default=512)  # TODO check
-    parser.add_argument('--output_len', type=int, default=64)  # TODO check
+    parser.add_argument('--input_len', type=int, default=512)
+    parser.add_argument('--output_len', type=int, default=256)
     parser.add_argument('--seed', type=int, default=42, help='random seed')
     parser.add_argument('--resume_from_checkpoint', type=str, default=None, help='resume from checkpoint')
     parser.add_argument('--eval_strategy', type=str, default="steps", help='evaluation strategy',

@@ -22,138 +22,248 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:You_see_it {
-    leolaniWorld:You ns1:see leolaniWorld:it .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Black_folks_are-like_apes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Black_folks_are-like_apes" ;
-        gaf:denotedBy leolaniTalk:chat1472_utterance0_char0-26 .
-
-    leolaniWorld:I_prefer-apes-over_racism a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_prefer-apes-over_racism" ;
-        gaf:denotedBy leolaniTalk:chat1472_utterance1_char0-96 .
-
-    leolaniWorld:I_prefer-over_racism a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_prefer-over_racism" ;
-        gaf:denotedBy leolaniTalk:chat1472_utterance1_char0-96 .
-
-    leolaniWorld:I_prefer_apes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_prefer_apes" ;
-        gaf:denotedBy leolaniTalk:chat1472_utterance1_char0-96 .
-
-    leolaniWorld:You_see-from_their_skin a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_see-from_their_skin" ;
-        gaf:denotedBy leolaniTalk:chat1472_utterance2_char0-150 .
-
-    leolaniWorld:You_see_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_see_it" ;
-        gaf:denotedBy leolaniTalk:chat1472_utterance2_char0-150 .
-
-    leolaniWorld:folks_are-like_apes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "folks_are-like_apes" ;
-        gaf:denotedBy leolaniTalk:chat1472_utterance0_char0-26 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are_apes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_apes" ;
-        gaf:denotedBy leolaniTalk:chat1472_utterance2_char0-150 .
-
-    leolaniWorld:they_are_trained_apes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_trained_apes" ;
-        gaf:denotedBy leolaniTalk:chat1472_utterance2_char0-150 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
 leolaniWorld:they_are_apes {
     leolaniWorld:they ns1:are leolaniWorld:apes .
+}
+
+leolaniWorld:folks_are-like_apes {
+    leolaniWorld:folks ns1:are_like leolaniWorld:apes .
 }
 
 leolaniWorld:I_prefer_apes {
     leolaniWorld:I ns1:prefer leolaniWorld:apes .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Black_folks a gaf:Instance ;
-        rdfs:label "black-folks" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance0_char0-26 .
+leolaniTalk:Interactions {
+    leolaniContext:context125 a eps:Context ;
+        rdfs:label "context125" ;
+        hs:id "125"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance1_char0-96 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1472 .
 
-    leolaniWorld:You a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:apes a gaf:Instance ;
-        rdfs:label "apes" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance0_char0-26,
-            leolaniTalk:chat1472_utterance1_char0-96,
-            leolaniTalk:chat1472_utterance2_char0-150 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "79"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1472 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1472" ;
+        hs:id "1472"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1472_utterance0,
+            leolaniTalk:chat1472_utterance1,
+            leolaniTalk:chat1472_utterance2 .
+
+    leolaniTalk:chat1472_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1472_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1472_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1472_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1472_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1472_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:folks a gaf:Instance ;
-        rdfs:label "folks" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance0_char0-26 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:racism a gaf:Instance ;
-        rdfs:label "racism" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance1_char0-96 .
-
-    leolaniWorld:their_skin a gaf:Instance ;
-        rdfs:label "their-skin" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
-
-    leolaniWorld:trained_apes a gaf:Instance ;
-        rdfs:label "trained-apes" ;
-        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
 }
 
-leolaniWorld:I_prefer-over_racism {
-    leolaniWorld:I ns1:prefer_over leolaniWorld:racism .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:they_are_trained_apes {
+    leolaniWorld:they ns1:are leolaniWorld:trained_apes .
+}
+
+leolaniWorld:You_see-from_their_skin {
+    leolaniWorld:You ns1:see_from leolaniWorld:their_skin .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Black_folks_are-like_apes_00028 a grasp:Attribution ;
+        rdfs:label "Black_folks_are-like_apes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1472_utterance0_char0-26 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_prefer-apes-over_racism_00026 a grasp:Attribution ;
+        rdfs:label "I_prefer-apes-over_racism_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1472_utterance1_char0-96 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_prefer-over_racism_00026 a grasp:Attribution ;
+        rdfs:label "I_prefer-over_racism_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1472_utterance1_char0-96 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_prefer_apes_00026 a grasp:Attribution ;
+        rdfs:label "I_prefer_apes_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1472_utterance1_char0-96 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_see-from_their_skin_00028 a grasp:Attribution ;
+        rdfs:label "You_see-from_their_skin_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1472_utterance2_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_see_it_00028 a grasp:Attribution ;
+        rdfs:label "You_see_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1472_utterance2_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:folks_are-like_apes_00028 a grasp:Attribution ;
+        rdfs:label "folks_are-like_apes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1472_utterance0_char0-26 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_apes_00028 a grasp:Attribution ;
+        rdfs:label "they_are_apes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1472_utterance2_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_trained_apes_00028 a grasp:Attribution ;
+        rdfs:label "they_are_trained_apes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1472_utterance2_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1472_utterance0_char0-26 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1472_utterance0_char0-26" ;
+        gaf:containsDenotation leolaniWorld:Black_folks,
+            leolaniWorld:apes,
+            leolaniWorld:folks ;
+        gaf:denotes leolaniWorld:Black_folks_are-like_apes,
+            leolaniWorld:folks_are-like_apes ;
+        grasp:hasAttribution leolaniTalk:Black_folks_are-like_apes_00028,
+            leolaniTalk:folks_are-like_apes_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:57.636691"^^xml1:string,
+            "2024-06-05T23:33:57.636755"^^xml1:string ;
+        rdf:value "Black folks are like apes."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1472_utterance0 .
+
+    leolaniTalk:chat1472_utterance1_char0-96 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1472_utterance1_char0-96" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:apes,
+            leolaniWorld:racism ;
+        gaf:denotes leolaniWorld:I_prefer-apes-over_racism,
+            leolaniWorld:I_prefer-over_racism,
+            leolaniWorld:I_prefer_apes ;
+        grasp:hasAttribution leolaniTalk:I_prefer-apes-over_racism_00026,
+            leolaniTalk:I_prefer-over_racism_00026,
+            leolaniTalk:I_prefer_apes_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:57.725818"^^xml1:string,
+            "2024-06-05T23:33:57.725877"^^xml1:string,
+            "2024-06-05T23:33:57.725900"^^xml1:string ;
+        rdf:value "Why do you say that? Are you saying that you don't like apes? Because I prefer apes over racism."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1472_utterance1 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    leolaniTalk:chat1472_utterance2_char0-150 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1472_utterance2_char0-150" ;
+        gaf:containsDenotation leolaniWorld:You,
+            leolaniWorld:apes,
+            leolaniWorld:it,
+            leolaniWorld:their_skin,
+            leolaniWorld:they,
+            leolaniWorld:trained_apes ;
+        gaf:denotes leolaniWorld:You_see-from_their_skin,
+            leolaniWorld:You_see_it,
+            leolaniWorld:they_are_apes,
+            leolaniWorld:they_are_trained_apes ;
+        grasp:hasAttribution leolaniTalk:You_see-from_their_skin_00028,
+            leolaniTalk:You_see_it_00028,
+            leolaniTalk:they_are_apes_00028,
+            leolaniTalk:they_are_trained_apes_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:57.825155"^^xml1:string,
+            "2024-06-05T23:33:57.825215"^^xml1:string,
+            "2024-06-05T23:33:57.825240"^^xml1:string,
+            "2024-06-05T23:33:57.825263"^^xml1:string ;
+        rdf:value "I'm just saying that they're not like us. Negroes can learn to read and write but they remain black. You see it from their skin they are trained apes."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1472_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -491,243 +601,133 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:they_are_trained_apes {
-    leolaniWorld:they ns1:are leolaniWorld:trained_apes .
+leolaniWorld:You_see_it {
+    leolaniWorld:You ns1:see leolaniWorld:it .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Black_folks_are-like_apes {
+    leolaniWorld:Black_folks ns1:are_like leolaniWorld:apes .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Black_folks_are-like_apes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_folks_are-like_apes" ;
+        gaf:denotedBy leolaniTalk:chat1472_utterance0_char0-26 .
+
+    leolaniWorld:I_prefer-apes-over_racism a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_prefer-apes-over_racism" ;
+        gaf:denotedBy leolaniTalk:chat1472_utterance1_char0-96 .
+
+    leolaniWorld:I_prefer-over_racism a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_prefer-over_racism" ;
+        gaf:denotedBy leolaniTalk:chat1472_utterance1_char0-96 .
+
+    leolaniWorld:I_prefer_apes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_prefer_apes" ;
+        gaf:denotedBy leolaniTalk:chat1472_utterance1_char0-96 .
+
+    leolaniWorld:You_see-from_their_skin a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_see-from_their_skin" ;
+        gaf:denotedBy leolaniTalk:chat1472_utterance2_char0-150 .
+
+    leolaniWorld:You_see_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_see_it" ;
+        gaf:denotedBy leolaniTalk:chat1472_utterance2_char0-150 .
+
+    leolaniWorld:folks_are-like_apes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "folks_are-like_apes" ;
+        gaf:denotedBy leolaniTalk:chat1472_utterance0_char0-26 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_apes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_apes" ;
+        gaf:denotedBy leolaniTalk:chat1472_utterance2_char0-150 .
+
+    leolaniWorld:they_are_trained_apes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_trained_apes" ;
+        gaf:denotedBy leolaniTalk:chat1472_utterance2_char0-150 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:I_prefer-apes-over_racism {
     leolaniWorld:I ns1:prefer_apes_over leolaniWorld:racism .
 }
 
-leolaniWorld:You_see-from_their_skin {
-    leolaniWorld:You ns1:see_from leolaniWorld:their_skin .
+leolaniWorld:I_prefer-over_racism {
+    leolaniWorld:I ns1:prefer_over leolaniWorld:racism .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Black_folks_are-like_apes_00028 a grasp:Attribution ;
-        rdfs:label "Black_folks_are-like_apes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1472_utterance0_char0-26 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Black_folks a gaf:Instance ;
+        rdfs:label "black-folks" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance0_char0-26 .
 
-    leolaniTalk:I_prefer-apes-over_racism_00026 a grasp:Attribution ;
-        rdfs:label "I_prefer-apes-over_racism_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1472_utterance1_char0-96 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance1_char0-96 .
 
-    leolaniTalk:I_prefer-over_racism_00026 a grasp:Attribution ;
-        rdfs:label "I_prefer-over_racism_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1472_utterance1_char0-96 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
 
-    leolaniTalk:I_prefer_apes_00026 a grasp:Attribution ;
-        rdfs:label "I_prefer_apes_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1472_utterance1_char0-96 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:You_see-from_their_skin_00028 a grasp:Attribution ;
-        rdfs:label "You_see-from_their_skin_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1472_utterance2_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:You_see_it_00028 a grasp:Attribution ;
-        rdfs:label "You_see_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1472_utterance2_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:folks_are-like_apes_00028 a grasp:Attribution ;
-        rdfs:label "folks_are-like_apes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1472_utterance0_char0-26 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_apes_00028 a grasp:Attribution ;
-        rdfs:label "they_are_apes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1472_utterance2_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_trained_apes_00028 a grasp:Attribution ;
-        rdfs:label "they_are_trained_apes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1472_utterance2_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1472_utterance0_char0-26 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1472_utterance0_char0-26" ;
-        gaf:containsDenotation leolaniWorld:Black_folks,
-            leolaniWorld:apes,
-            leolaniWorld:folks ;
-        gaf:denotes leolaniWorld:Black_folks_are-like_apes,
-            leolaniWorld:folks_are-like_apes ;
-        grasp:hasAttribution leolaniTalk:Black_folks_are-like_apes_00028,
-            leolaniTalk:folks_are-like_apes_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:57.636691"^^xml1:string,
-            "2024-06-05T23:33:57.636755"^^xml1:string ;
-        rdf:value "Black folks are like apes."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1472_utterance0 .
-
-    leolaniTalk:chat1472_utterance1_char0-96 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1472_utterance1_char0-96" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:apes,
-            leolaniWorld:racism ;
-        gaf:denotes leolaniWorld:I_prefer-apes-over_racism,
-            leolaniWorld:I_prefer-over_racism,
-            leolaniWorld:I_prefer_apes ;
-        grasp:hasAttribution leolaniTalk:I_prefer-apes-over_racism_00026,
-            leolaniTalk:I_prefer-over_racism_00026,
-            leolaniTalk:I_prefer_apes_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:57.725818"^^xml1:string,
-            "2024-06-05T23:33:57.725877"^^xml1:string,
-            "2024-06-05T23:33:57.725900"^^xml1:string ;
-        rdf:value "Why do you say that? Are you saying that you don't like apes? Because I prefer apes over racism."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1472_utterance1 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    leolaniTalk:chat1472_utterance2_char0-150 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1472_utterance2_char0-150" ;
-        gaf:containsDenotation leolaniWorld:You,
-            leolaniWorld:apes,
-            leolaniWorld:it,
-            leolaniWorld:their_skin,
-            leolaniWorld:they,
-            leolaniWorld:trained_apes ;
-        gaf:denotes leolaniWorld:You_see-from_their_skin,
-            leolaniWorld:You_see_it,
-            leolaniWorld:they_are_apes,
-            leolaniWorld:they_are_trained_apes ;
-        grasp:hasAttribution leolaniTalk:You_see-from_their_skin_00028,
-            leolaniTalk:You_see_it_00028,
-            leolaniTalk:they_are_apes_00028,
-            leolaniTalk:they_are_trained_apes_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:57.825155"^^xml1:string,
-            "2024-06-05T23:33:57.825215"^^xml1:string,
-            "2024-06-05T23:33:57.825240"^^xml1:string,
-            "2024-06-05T23:33:57.825263"^^xml1:string ;
-        rdf:value "I'm just saying that they're not like us. Negroes can learn to read and write but they remain black. You see it from their skin they are trained apes."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1472_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context125 a eps:Context ;
-        rdfs:label "context125" ;
-        hs:id "125"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1472 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "79"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1472 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1472" ;
-        hs:id "1472"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1472_utterance0,
-            leolaniTalk:chat1472_utterance1,
-            leolaniTalk:chat1472_utterance2 .
-
-    leolaniTalk:chat1472_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1472_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1472_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1472_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1472_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1472_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:apes a gaf:Instance ;
+        rdfs:label "apes" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance0_char0-26,
+            leolaniTalk:chat1472_utterance1_char0-96,
+            leolaniTalk:chat1472_utterance2_char0-150 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:folks a gaf:Instance ;
+        rdfs:label "folks" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance0_char0-26 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:folks_are-like_apes {
-    leolaniWorld:folks ns1:are_like leolaniWorld:apes .
-}
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
 
-leolaniWorld:Black_folks_are-like_apes {
-    leolaniWorld:Black_folks ns1:are_like leolaniWorld:apes .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:racism a gaf:Instance ;
+        rdfs:label "racism" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance1_char0-96 .
+
+    leolaniWorld:their_skin a gaf:Instance ;
+        rdfs:label "their-skin" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
+
+    leolaniWorld:trained_apes a gaf:Instance ;
+        rdfs:label "trained-apes" ;
+        gaf:denotedIn leolaniTalk:chat1472_utterance2_char0-150 .
 }
 

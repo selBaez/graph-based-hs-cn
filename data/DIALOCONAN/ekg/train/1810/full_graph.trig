@@ -22,80 +22,12 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:shot_is_funny {
-    leolaniWorld:shot ns11:is leolaniWorld:funny .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Anyone_could-become-regardless_their_orientation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Anyone_could-become-regardless_their_orientation" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance3_char0-128 .
-
-    leolaniWorld:Anyone_could-become-regardless_their_sexual_orientation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Anyone_could-become-regardless_their_sexual_orientation" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance3_char0-128 .
-
-    leolaniWorld:Anyone_could-become_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Anyone_could-become_sick" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance3_char0-128 .
-
-    leolaniWorld:Care_explain-for_me a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Care_explain-for_me" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance1_char0-71 .
-
-    leolaniWorld:Gay_men_being_shot a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_being_shot" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance0_char0-28 .
-
-    leolaniWorld:Gay_men_get_sort_of_diseases a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_get_sort_of_diseases" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance2_char0-53 .
-
-    leolaniWorld:They_are_dangerous a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_dangerous" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance2_char0-53 .
-
-    leolaniWorld:homosexuality_is_disease a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "homosexuality_is_disease" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance4_char0-31 .
-
-    leolaniWorld:humor_is-in_innocent_people_dying a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "humor_is-in_innocent_people_dying" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance1_char0-71 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:shot_is_funny a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "shot_is_funny" ;
-        gaf:denotedBy leolaniTalk:chat1810_utterance0_char0-28 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:humor_is-in_innocent_people_dying {
     leolaniWorld:humor ns11:is_in leolaniWorld:innocent_people_dying .
+}
+
+leolaniWorld:Care_explain-for_me {
+    leolaniWorld:Care ns11:explain_for leolaniWorld:me .
 }
 
 leolaniWorld:homosexuality_is_disease {
@@ -110,86 +42,287 @@ leolaniWorld:Anyone_could-become_sick {
     leolaniWorld:Anyone ns11:could_become leolaniWorld:sick .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Anyone a gaf:Instance ;
-        rdfs:label "anyone" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance3_char0-128 .
+leolaniTalk:Interactions {
+    leolaniContext:context210 a eps:Context ;
+        rdfs:label "context210" ;
+        hs:id "210"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Care a gaf:Instance ;
-        rdfs:label "care" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance1_char0-71 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1810 .
 
-    leolaniWorld:Gay_men a gaf:Instance ;
-        rdfs:label "gay-men" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance0_char0-28,
-            leolaniTalk:chat1810_utterance2_char0-53 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance2_char0-53 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "21"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1810 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1810" ;
+        hs:id "1810"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1810_utterance0,
+            leolaniTalk:chat1810_utterance1,
+            leolaniTalk:chat1810_utterance2,
+            leolaniTalk:chat1810_utterance3,
+            leolaniTalk:chat1810_utterance4 .
+
+    leolaniTalk:chat1810_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1810_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1810_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1810_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1810_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1810_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1810_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1810_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1810_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1810_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:dangerous a gaf:Instance ;
-        rdfs:label "dangerous" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance2_char0-53 .
-
-    leolaniWorld:disease a gaf:Instance ;
-        rdfs:label "disease" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance4_char0-31 .
-
-    leolaniWorld:funny a gaf:Instance ;
-        rdfs:label "funny" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance0_char0-28 .
-
-    leolaniWorld:homosexuality a gaf:Instance ;
-        rdfs:label "homosexuality" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance4_char0-31 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:humor a gaf:Instance ;
-        rdfs:label "humor" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance1_char0-71 .
-
-    leolaniWorld:innocent_people_dying a gaf:Instance ;
-        rdfs:label "innocent-people-dying" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance1_char0-71 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:me a gaf:Instance ;
-        rdfs:label "me" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance1_char0-71 .
-
-    leolaniWorld:shot a gaf:Instance ;
-        rdfs:label "shot" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance0_char0-28 .
-
-    leolaniWorld:sick a gaf:Instance ;
-        rdfs:label "sick" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance3_char0-128 .
-
-    leolaniWorld:sort_of_diseases a gaf:Instance ;
-        rdfs:label "sort-of-diseases" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance2_char0-53 .
-
-    leolaniWorld:their_orientation a gaf:Instance ;
-        rdfs:label "their-orientation" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance3_char0-128 .
-
-    leolaniWorld:their_sexual_orientation a gaf:Instance ;
-        rdfs:label "their-sexual-orientation" ;
-        gaf:denotedIn leolaniTalk:chat1810_utterance3_char0-128 .
 }
 
-leolaniWorld:Gay_men_being_shot {
-    leolaniWorld:Gay_men ns11:being leolaniWorld:shot .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:Anyone_could-become-regardless_their_orientation {
+    leolaniWorld:Anyone ns11:could_become_regardless leolaniWorld:their_orientation .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Anyone_could-become-regardless_their_sexual_orientation {
+    leolaniWorld:Anyone ns11:could_become_regardless leolaniWorld:their_sexual_orientation .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Anyone_could-become-regardless_their_orientation_00028 a grasp:Attribution ;
+        rdfs:label "Anyone_could-become-regardless_their_orientation_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance3_char0-128 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Anyone_could-become-regardless_their_sexual_orientation_00028 a grasp:Attribution ;
+        rdfs:label "Anyone_could-become-regardless_their_sexual_orientation_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance3_char0-128 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Anyone_could-become_sick_00028 a grasp:Attribution ;
+        rdfs:label "Anyone_could-become_sick_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance3_char0-128 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Care_explain-for_me_00026 a grasp:Attribution ;
+        rdfs:label "Care_explain-for_me_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance1_char0-71 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Gay_men_being_shot_0001 a grasp:Attribution ;
+        rdfs:label "Gay_men_being_shot_0001" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance0_char0-28 ;
+        rdf:value graspe:AMUSEMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Gay_men_get_sort_of_diseases_00013 a grasp:Attribution ;
+        rdfs:label "Gay_men_get_sort_of_diseases_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance2_char0-53 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_dangerous_00013 a grasp:Attribution ;
+        rdfs:label "They_are_dangerous_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance2_char0-53 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1810_utterance4_char0-31 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1810_utterance4_char0-31" ;
+        gaf:containsDenotation leolaniWorld:disease,
+            leolaniWorld:homosexuality ;
+        gaf:denotes leolaniWorld:homosexuality_is_disease ;
+        grasp:hasAttribution leolaniTalk:homosexuality_is_disease_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:04.283565"^^xml1:string ;
+        rdf:value "But homosexuality IS a disease!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1810_utterance4 .
+
+    leolaniTalk:homosexuality_is_disease_00028 a grasp:Attribution ;
+        rdfs:label "homosexuality_is_disease_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance4_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:humor_is-in_innocent_people_dying_00026 a grasp:Attribution ;
+        rdfs:label "humor_is-in_innocent_people_dying_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance1_char0-71 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:shot_is_funny_0001 a grasp:Attribution ;
+        rdfs:label "shot_is_funny_0001" ;
+        grasp:isAttributionFor leolaniTalk:chat1810_utterance0_char0-28 ;
+        rdf:value graspe:AMUSEMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1810_utterance0_char0-28 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1810_utterance0_char0-28" ;
+        gaf:containsDenotation leolaniWorld:Gay_men,
+            leolaniWorld:funny,
+            leolaniWorld:shot ;
+        gaf:denotes leolaniWorld:Gay_men_being_shot,
+            leolaniWorld:shot_is_funny ;
+        grasp:hasAttribution leolaniTalk:Gay_men_being_shot_0001,
+            leolaniTalk:shot_is_funny_0001 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:03.954681"^^xml1:string,
+            "2024-06-05T23:23:03.954741"^^xml1:string ;
+        rdf:value "Gay men being shot is funny."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1810_utterance0 .
+
+    leolaniTalk:chat1810_utterance1_char0-71 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1810_utterance1_char0-71" ;
+        gaf:containsDenotation leolaniWorld:Care,
+            leolaniWorld:humor,
+            leolaniWorld:innocent_people_dying,
+            leolaniWorld:me ;
+        gaf:denotes leolaniWorld:Care_explain-for_me,
+            leolaniWorld:humor_is-in_innocent_people_dying ;
+        grasp:hasAttribution leolaniTalk:Care_explain-for_me_00026,
+            leolaniTalk:humor_is-in_innocent_people_dying_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:04.040341"^^xml1:string,
+            "2024-06-05T23:23:04.040397"^^xml1:string ;
+        rdf:value "What's the humor in innocent people dying? Care to explain that for me?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1810_utterance1 .
+
+    leolaniTalk:chat1810_utterance2_char0-53 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1810_utterance2_char0-53" ;
+        gaf:containsDenotation leolaniWorld:Gay_men,
+            leolaniWorld:They,
+            leolaniWorld:dangerous,
+            leolaniWorld:sort_of_diseases ;
+        gaf:denotes leolaniWorld:Gay_men_get_sort_of_diseases,
+            leolaniWorld:They_are_dangerous ;
+        grasp:hasAttribution leolaniTalk:Gay_men_get_sort_of_diseases_00013,
+            leolaniTalk:They_are_dangerous_00013 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:04.114479"^^xml1:string,
+            "2024-06-05T23:23:04.114536"^^xml1:string ;
+        rdf:value "Gay men get all sort of diseases. They are dangerous."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1810_utterance2 .
+
+    graspe:AMUSEMENT a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "AMUSEMENT" .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspe:FEAR a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "FEAR" .
+
+    leolaniTalk:chat1810_utterance3_char0-128 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1810_utterance3_char0-128" ;
+        gaf:containsDenotation leolaniWorld:Anyone,
+            leolaniWorld:sick,
+            leolaniWorld:their_orientation,
+            leolaniWorld:their_sexual_orientation ;
+        gaf:denotes leolaniWorld:Anyone_could-become-regardless_their_orientation,
+            leolaniWorld:Anyone_could-become-regardless_their_sexual_orientation,
+            leolaniWorld:Anyone_could-become_sick ;
+        grasp:hasAttribution leolaniTalk:Anyone_could-become-regardless_their_orientation_00028,
+            leolaniTalk:Anyone_could-become-regardless_their_sexual_orientation_00028,
+            leolaniTalk:Anyone_could-become_sick_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:04.204462"^^xml1:string,
+            "2024-06-05T23:23:04.204521"^^xml1:string,
+            "2024-06-05T23:23:04.204543"^^xml1:string ;
+        rdf:value "Anyone could become sick, regardless of their sexual orientation. You can't randomly deduce someone's medical history like this."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1810_utterance3 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -527,290 +660,157 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Care_explain-for_me {
-    leolaniWorld:Care ns11:explain_for leolaniWorld:me .
-}
-
-leolaniWorld:Anyone_could-become-regardless_their_sexual_orientation {
-    leolaniWorld:Anyone ns11:could_become_regardless leolaniWorld:their_sexual_orientation .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Anyone_could-become-regardless_their_orientation_00028 a grasp:Attribution ;
-        rdfs:label "Anyone_could-become-regardless_their_orientation_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance3_char0-128 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Anyone_could-become-regardless_their_sexual_orientation_00028 a grasp:Attribution ;
-        rdfs:label "Anyone_could-become-regardless_their_sexual_orientation_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance3_char0-128 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Anyone_could-become_sick_00028 a grasp:Attribution ;
-        rdfs:label "Anyone_could-become_sick_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance3_char0-128 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Care_explain-for_me_00026 a grasp:Attribution ;
-        rdfs:label "Care_explain-for_me_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance1_char0-71 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Gay_men_being_shot_0001 a grasp:Attribution ;
-        rdfs:label "Gay_men_being_shot_0001" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance0_char0-28 ;
-        rdf:value graspe:AMUSEMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Gay_men_get_sort_of_diseases_00013 a grasp:Attribution ;
-        rdfs:label "Gay_men_get_sort_of_diseases_00013" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance2_char0-53 ;
-        rdf:value graspe:FEAR,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_dangerous_00013 a grasp:Attribution ;
-        rdfs:label "They_are_dangerous_00013" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance2_char0-53 ;
-        rdf:value graspe:FEAR,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1810_utterance4_char0-31 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1810_utterance4_char0-31" ;
-        gaf:containsDenotation leolaniWorld:disease,
-            leolaniWorld:homosexuality ;
-        gaf:denotes leolaniWorld:homosexuality_is_disease ;
-        grasp:hasAttribution leolaniTalk:homosexuality_is_disease_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:04.283565"^^xml1:string ;
-        rdf:value "But homosexuality IS a disease!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1810_utterance4 .
-
-    leolaniTalk:homosexuality_is_disease_00028 a grasp:Attribution ;
-        rdfs:label "homosexuality_is_disease_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance4_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:humor_is-in_innocent_people_dying_00026 a grasp:Attribution ;
-        rdfs:label "humor_is-in_innocent_people_dying_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance1_char0-71 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:shot_is_funny_0001 a grasp:Attribution ;
-        rdfs:label "shot_is_funny_0001" ;
-        grasp:isAttributionFor leolaniTalk:chat1810_utterance0_char0-28 ;
-        rdf:value graspe:AMUSEMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1810_utterance0_char0-28 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1810_utterance0_char0-28" ;
-        gaf:containsDenotation leolaniWorld:Gay_men,
-            leolaniWorld:funny,
-            leolaniWorld:shot ;
-        gaf:denotes leolaniWorld:Gay_men_being_shot,
-            leolaniWorld:shot_is_funny ;
-        grasp:hasAttribution leolaniTalk:Gay_men_being_shot_0001,
-            leolaniTalk:shot_is_funny_0001 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:03.954681"^^xml1:string,
-            "2024-06-05T23:23:03.954741"^^xml1:string ;
-        rdf:value "Gay men being shot is funny."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1810_utterance0 .
-
-    leolaniTalk:chat1810_utterance1_char0-71 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1810_utterance1_char0-71" ;
-        gaf:containsDenotation leolaniWorld:Care,
-            leolaniWorld:humor,
-            leolaniWorld:innocent_people_dying,
-            leolaniWorld:me ;
-        gaf:denotes leolaniWorld:Care_explain-for_me,
-            leolaniWorld:humor_is-in_innocent_people_dying ;
-        grasp:hasAttribution leolaniTalk:Care_explain-for_me_00026,
-            leolaniTalk:humor_is-in_innocent_people_dying_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:04.040341"^^xml1:string,
-            "2024-06-05T23:23:04.040397"^^xml1:string ;
-        rdf:value "What's the humor in innocent people dying? Care to explain that for me?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1810_utterance1 .
-
-    leolaniTalk:chat1810_utterance2_char0-53 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1810_utterance2_char0-53" ;
-        gaf:containsDenotation leolaniWorld:Gay_men,
-            leolaniWorld:They,
-            leolaniWorld:dangerous,
-            leolaniWorld:sort_of_diseases ;
-        gaf:denotes leolaniWorld:Gay_men_get_sort_of_diseases,
-            leolaniWorld:They_are_dangerous ;
-        grasp:hasAttribution leolaniTalk:Gay_men_get_sort_of_diseases_00013,
-            leolaniTalk:They_are_dangerous_00013 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:04.114479"^^xml1:string,
-            "2024-06-05T23:23:04.114536"^^xml1:string ;
-        rdf:value "Gay men get all sort of diseases. They are dangerous."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1810_utterance2 .
-
-    graspe:AMUSEMENT a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "AMUSEMENT" .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspe:FEAR a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "FEAR" .
-
-    leolaniTalk:chat1810_utterance3_char0-128 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1810_utterance3_char0-128" ;
-        gaf:containsDenotation leolaniWorld:Anyone,
-            leolaniWorld:sick,
-            leolaniWorld:their_orientation,
-            leolaniWorld:their_sexual_orientation ;
-        gaf:denotes leolaniWorld:Anyone_could-become-regardless_their_orientation,
-            leolaniWorld:Anyone_could-become-regardless_their_sexual_orientation,
-            leolaniWorld:Anyone_could-become_sick ;
-        grasp:hasAttribution leolaniTalk:Anyone_could-become-regardless_their_orientation_00028,
-            leolaniTalk:Anyone_could-become-regardless_their_sexual_orientation_00028,
-            leolaniTalk:Anyone_could-become_sick_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:04.204462"^^xml1:string,
-            "2024-06-05T23:23:04.204521"^^xml1:string,
-            "2024-06-05T23:23:04.204543"^^xml1:string ;
-        rdf:value "Anyone could become sick, regardless of their sexual orientation. You can't randomly deduce someone's medical history like this."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1810_utterance3 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context210 a eps:Context ;
-        rdfs:label "context210" ;
-        hs:id "210"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1810 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "21"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1810 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1810" ;
-        hs:id "1810"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1810_utterance0,
-            leolaniTalk:chat1810_utterance1,
-            leolaniTalk:chat1810_utterance2,
-            leolaniTalk:chat1810_utterance3,
-            leolaniTalk:chat1810_utterance4 .
-
-    leolaniTalk:chat1810_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1810_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1810_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1810_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1810_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1810_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1810_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1810_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1810_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1810_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:Anyone_could-become-regardless_their_orientation {
-    leolaniWorld:Anyone ns11:could_become_regardless leolaniWorld:their_orientation .
-}
-
 leolaniWorld:Gay_men_get_sort_of_diseases {
     leolaniWorld:Gay_men ns11:get leolaniWorld:sort_of_diseases .
+}
+
+leolaniWorld:shot_is_funny {
+    leolaniWorld:shot ns11:is leolaniWorld:funny .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Anyone_could-become-regardless_their_orientation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Anyone_could-become-regardless_their_orientation" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance3_char0-128 .
+
+    leolaniWorld:Anyone_could-become-regardless_their_sexual_orientation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Anyone_could-become-regardless_their_sexual_orientation" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance3_char0-128 .
+
+    leolaniWorld:Anyone_could-become_sick a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Anyone_could-become_sick" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance3_char0-128 .
+
+    leolaniWorld:Care_explain-for_me a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Care_explain-for_me" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance1_char0-71 .
+
+    leolaniWorld:Gay_men_being_shot a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Gay_men_being_shot" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance0_char0-28 .
+
+    leolaniWorld:Gay_men_get_sort_of_diseases a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Gay_men_get_sort_of_diseases" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance2_char0-53 .
+
+    leolaniWorld:They_are_dangerous a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_dangerous" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance2_char0-53 .
+
+    leolaniWorld:homosexuality_is_disease a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homosexuality_is_disease" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance4_char0-31 .
+
+    leolaniWorld:humor_is-in_innocent_people_dying a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "humor_is-in_innocent_people_dying" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance1_char0-71 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:shot_is_funny a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "shot_is_funny" ;
+        gaf:denotedBy leolaniTalk:chat1810_utterance0_char0-28 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Gay_men_being_shot {
+    leolaniWorld:Gay_men ns11:being leolaniWorld:shot .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Anyone a gaf:Instance ;
+        rdfs:label "anyone" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance3_char0-128 .
+
+    leolaniWorld:Care a gaf:Instance ;
+        rdfs:label "care" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance1_char0-71 .
+
+    leolaniWorld:Gay_men a gaf:Instance ;
+        rdfs:label "gay-men" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance0_char0-28,
+            leolaniTalk:chat1810_utterance2_char0-53 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance2_char0-53 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:dangerous a gaf:Instance ;
+        rdfs:label "dangerous" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance2_char0-53 .
+
+    leolaniWorld:disease a gaf:Instance ;
+        rdfs:label "disease" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance4_char0-31 .
+
+    leolaniWorld:funny a gaf:Instance ;
+        rdfs:label "funny" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance0_char0-28 .
+
+    leolaniWorld:homosexuality a gaf:Instance ;
+        rdfs:label "homosexuality" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance4_char0-31 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:humor a gaf:Instance ;
+        rdfs:label "humor" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance1_char0-71 .
+
+    leolaniWorld:innocent_people_dying a gaf:Instance ;
+        rdfs:label "innocent-people-dying" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance1_char0-71 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:me a gaf:Instance ;
+        rdfs:label "me" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance1_char0-71 .
+
+    leolaniWorld:shot a gaf:Instance ;
+        rdfs:label "shot" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance0_char0-28 .
+
+    leolaniWorld:sick a gaf:Instance ;
+        rdfs:label "sick" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance3_char0-128 .
+
+    leolaniWorld:sort_of_diseases a gaf:Instance ;
+        rdfs:label "sort-of-diseases" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance2_char0-53 .
+
+    leolaniWorld:their_orientation a gaf:Instance ;
+        rdfs:label "their-orientation" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance3_char0-128 .
+
+    leolaniWorld:their_sexual_orientation a gaf:Instance ;
+        rdfs:label "their-sexual-orientation" ;
+        gaf:denotedIn leolaniTalk:chat1810_utterance3_char0-128 .
 }
 

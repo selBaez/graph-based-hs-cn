@@ -22,44 +22,6 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:many_shelters_is-in_use_by_homeless a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_shelters_is-in_use_by_homeless" ;
-        gaf:denotedBy leolaniTalk:chat2794_utterance1_char0-120 .
-
-    leolaniWorld:we_have_homeless_veterans a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_have_homeless_veterans" ;
-        gaf:denotedBy leolaniTalk:chat2794_utterance0_char0-185 .
-
-    leolaniWorld:we_have_many_homeless_veterans a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_have_many_homeless_veterans" ;
-        gaf:denotedBy leolaniTalk:chat2794_utterance0_char0-185 .
-
-    leolaniWorld:we_have_so_many_homeless_veterans a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_have_so_many_homeless_veterans" ;
-        gaf:denotedBy leolaniTalk:chat2794_utterance0_char0-185 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
 leolaniWorld:we_have_homeless_veterans {
     leolaniWorld:we ns1:have leolaniWorld:homeless_veterans .
 }
@@ -68,45 +30,154 @@ leolaniWorld:we_have_so_many_homeless_veterans {
     leolaniWorld:we ns1:have leolaniWorld:so_many_homeless_veterans .
 }
 
-leolaniWorld:Instances {
+leolaniTalk:Interactions {
+    leolaniContext:context226 a eps:Context ;
+        rdfs:label "context226" ;
+        hs:id "226"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2794 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "145"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2794 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2794" ;
+        hs:id "2794"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2794_utterance0,
+            leolaniTalk:chat2794_utterance1 .
+
+    leolaniTalk:chat2794_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2794_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2794_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2794_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:homeless_veterans a gaf:Instance ;
-        rdfs:label "homeless-veterans" ;
-        gaf:denotedIn leolaniTalk:chat2794_utterance0_char0-185 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_homeless_veterans a gaf:Instance ;
-        rdfs:label "many-homeless-veterans" ;
-        gaf:denotedIn leolaniTalk:chat2794_utterance0_char0-185 .
-
-    leolaniWorld:many_shelters a gaf:Instance ;
-        rdfs:label "many-shelters" ;
-        gaf:denotedIn leolaniTalk:chat2794_utterance1_char0-120 .
-
-    leolaniWorld:so_many_homeless_veterans a gaf:Instance ;
-        rdfs:label "so-many-homeless-veterans" ;
-        gaf:denotedIn leolaniTalk:chat2794_utterance0_char0-185 .
-
-    leolaniWorld:use_by_homeless a gaf:Instance ;
-        rdfs:label "use-by-homeless" ;
-        gaf:denotedIn leolaniTalk:chat2794_utterance1_char0-120 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2794_utterance0_char0-185 .
 }
 
-leolaniWorld:many_shelters_is-in_use_by_homeless {
-    leolaniWorld:many_shelters ns1:is_in leolaniWorld:use_by_homeless .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat2794_utterance1_char0-120 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2794_utterance1_char0-120" ;
+        gaf:containsDenotation leolaniWorld:many_shelters,
+            leolaniWorld:use_by_homeless ;
+        gaf:denotes leolaniWorld:many_shelters_is-in_use_by_homeless ;
+        grasp:hasAttribution leolaniTalk:many_shelters_is-in_use_by_homeless_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:24.496899"^^xml1:string ;
+        rdf:value "There are many shelters in use by the homeless. There are many shelter houses that can host veterans, but also migrants."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2794_utterance1 .
+
+    leolaniTalk:many_shelters_is-in_use_by_homeless_00028 a grasp:Attribution ;
+        rdfs:label "many_shelters_is-in_use_by_homeless_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2794_utterance1_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_have_homeless_veterans_00028 a grasp:Attribution ;
+        rdfs:label "we_have_homeless_veterans_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2794_utterance0_char0-185 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_have_many_homeless_veterans_00028 a grasp:Attribution ;
+        rdfs:label "we_have_many_homeless_veterans_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2794_utterance0_char0-185 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_have_so_many_homeless_veterans_00028 a grasp:Attribution ;
+        rdfs:label "we_have_so_many_homeless_veterans_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2794_utterance0_char0-185 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2794_utterance0_char0-185 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2794_utterance0_char0-185" ;
+        gaf:containsDenotation leolaniWorld:homeless_veterans,
+            leolaniWorld:many_homeless_veterans,
+            leolaniWorld:so_many_homeless_veterans,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_have_homeless_veterans,
+            leolaniWorld:we_have_many_homeless_veterans,
+            leolaniWorld:we_have_so_many_homeless_veterans ;
+        grasp:hasAttribution leolaniTalk:we_have_homeless_veterans_00028,
+            leolaniTalk:we_have_many_homeless_veterans_00028,
+            leolaniTalk:we_have_so_many_homeless_veterans_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:24.410699"^^xml1:string,
+            "2024-06-05T23:09:24.410767"^^xml1:string,
+            "2024-06-05T23:09:24.410790"^^xml1:string ;
+        rdf:value "It's a disgrace that we have so many homeless veterans but we give free houses and stays in 4 star hotels to migrants who've just arrived here. They should go back where they came from."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2794_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -444,153 +515,82 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:many_shelters_is-in_use_by_homeless a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_shelters_is-in_use_by_homeless" ;
+        gaf:denotedBy leolaniTalk:chat2794_utterance1_char0-120 .
+
+    leolaniWorld:we_have_homeless_veterans a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have_homeless_veterans" ;
+        gaf:denotedBy leolaniTalk:chat2794_utterance0_char0-185 .
+
+    leolaniWorld:we_have_many_homeless_veterans a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have_many_homeless_veterans" ;
+        gaf:denotedBy leolaniTalk:chat2794_utterance0_char0-185 .
+
+    leolaniWorld:we_have_so_many_homeless_veterans a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have_so_many_homeless_veterans" ;
+        gaf:denotedBy leolaniTalk:chat2794_utterance0_char0-185 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:we_have_many_homeless_veterans {
     leolaniWorld:we ns1:have leolaniWorld:many_homeless_veterans .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat2794_utterance1_char0-120 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2794_utterance1_char0-120" ;
-        gaf:containsDenotation leolaniWorld:many_shelters,
-            leolaniWorld:use_by_homeless ;
-        gaf:denotes leolaniWorld:many_shelters_is-in_use_by_homeless ;
-        grasp:hasAttribution leolaniTalk:many_shelters_is-in_use_by_homeless_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:24.496899"^^xml1:string ;
-        rdf:value "There are many shelters in use by the homeless. There are many shelter houses that can host veterans, but also migrants."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2794_utterance1 .
-
-    leolaniTalk:many_shelters_is-in_use_by_homeless_00028 a grasp:Attribution ;
-        rdfs:label "many_shelters_is-in_use_by_homeless_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2794_utterance1_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_have_homeless_veterans_00028 a grasp:Attribution ;
-        rdfs:label "we_have_homeless_veterans_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2794_utterance0_char0-185 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_have_many_homeless_veterans_00028 a grasp:Attribution ;
-        rdfs:label "we_have_many_homeless_veterans_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2794_utterance0_char0-185 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_have_so_many_homeless_veterans_00028 a grasp:Attribution ;
-        rdfs:label "we_have_so_many_homeless_veterans_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2794_utterance0_char0-185 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2794_utterance0_char0-185 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2794_utterance0_char0-185" ;
-        gaf:containsDenotation leolaniWorld:homeless_veterans,
-            leolaniWorld:many_homeless_veterans,
-            leolaniWorld:so_many_homeless_veterans,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_have_homeless_veterans,
-            leolaniWorld:we_have_many_homeless_veterans,
-            leolaniWorld:we_have_so_many_homeless_veterans ;
-        grasp:hasAttribution leolaniTalk:we_have_homeless_veterans_00028,
-            leolaniTalk:we_have_many_homeless_veterans_00028,
-            leolaniTalk:we_have_so_many_homeless_veterans_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:24.410699"^^xml1:string,
-            "2024-06-05T23:09:24.410767"^^xml1:string,
-            "2024-06-05T23:09:24.410790"^^xml1:string ;
-        rdf:value "It's a disgrace that we have so many homeless veterans but we give free houses and stays in 4 star hotels to migrants who've just arrived here. They should go back where they came from."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2794_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:many_shelters_is-in_use_by_homeless {
+    leolaniWorld:many_shelters ns1:is_in leolaniWorld:use_by_homeless .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context226 a eps:Context ;
-        rdfs:label "context226" ;
-        hs:id "226"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2794 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "145"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2794 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2794" ;
-        hs:id "2794"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2794_utterance0,
-            leolaniTalk:chat2794_utterance1 .
-
-    leolaniTalk:chat2794_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2794_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2794_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2794_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:homeless_veterans a gaf:Instance ;
+        rdfs:label "homeless-veterans" ;
+        gaf:denotedIn leolaniTalk:chat2794_utterance0_char0-185 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_homeless_veterans a gaf:Instance ;
+        rdfs:label "many-homeless-veterans" ;
+        gaf:denotedIn leolaniTalk:chat2794_utterance0_char0-185 .
+
+    leolaniWorld:many_shelters a gaf:Instance ;
+        rdfs:label "many-shelters" ;
+        gaf:denotedIn leolaniTalk:chat2794_utterance1_char0-120 .
+
+    leolaniWorld:so_many_homeless_veterans a gaf:Instance ;
+        rdfs:label "so-many-homeless-veterans" ;
+        gaf:denotedIn leolaniTalk:chat2794_utterance0_char0-185 .
+
+    leolaniWorld:use_by_homeless a gaf:Instance ;
+        rdfs:label "use-by-homeless" ;
+        gaf:denotedIn leolaniTalk:chat2794_utterance1_char0-120 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2794_utterance0_char0-185 .
 }
 

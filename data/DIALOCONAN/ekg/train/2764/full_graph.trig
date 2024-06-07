@@ -23,126 +23,211 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Africans_are_welcome a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Africans_are_welcome" ;
-        gaf:denotedBy leolaniTalk:chat2764_utterance1_char0-104 .
-
-    leolaniWorld:Africans_are_welcome_here a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Africans_are_welcome_here" ;
-        gaf:denotedBy leolaniTalk:chat2764_utterance1_char0-104 .
-
-    leolaniWorld:They_re-contributing_nothing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_re-contributing_nothing" ;
-        gaf:denotedBy leolaniTalk:chat2764_utterance2_char0-55 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are-burden-to_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-burden-to_society" ;
-        gaf:denotedBy leolaniTalk:chat2764_utterance0_char0-88 .
-
-    leolaniWorld:they_are_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_burden" ;
-        gaf:denotedBy leolaniTalk:chat2764_utterance0_char0-88 .
-
-    leolaniWorld:they_deserve_nothing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_deserve_nothing" ;
-        gaf:denotedBy leolaniTalk:chat2764_utterance2_char0-55 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Africans_are_welcome_here {
-    leolaniWorld:Africans ns11:are leolaniWorld:welcome_here .
-}
-
 leolaniWorld:they_are_burden {
     leolaniWorld:they ns11:are leolaniWorld:burden .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Africans a gaf:Instance ;
-        rdfs:label "africans" ;
-        gaf:denotedIn leolaniTalk:chat2764_utterance1_char0-104 .
+leolaniTalk:Interactions {
+    leolaniContext:context233 a eps:Context ;
+        rdfs:label "context233" ;
+        hs:id "233"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2764_utterance2_char0-55 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2764 .
 
-    leolaniWorld:burden a gaf:Instance ;
-        rdfs:label "burden" ;
-        gaf:denotedIn leolaniTalk:chat2764_utterance0_char0-88 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "191"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2764 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2764" ;
+        hs:id "2764"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2764_utterance0,
+            leolaniTalk:chat2764_utterance1,
+            leolaniTalk:chat2764_utterance2 .
+
+    leolaniTalk:chat2764_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2764_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2764_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2764_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2764_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2764_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat2764_utterance2_char0-55 .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2764_utterance0_char0-88 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2764_utterance0_char0-88,
-            leolaniTalk:chat2764_utterance2_char0-55 .
-
-    leolaniWorld:welcome a gaf:Instance ;
-        rdfs:label "welcome" ;
-        gaf:denotedIn leolaniTalk:chat2764_utterance1_char0-104 .
-
-    leolaniWorld:welcome_here a gaf:Instance ;
-        rdfs:label "welcome-here" ;
-        gaf:denotedIn leolaniTalk:chat2764_utterance1_char0-104 .
-}
-
-leolaniWorld:they_deserve_nothing {
-    leolaniWorld:they ns11:deserve leolaniWorld:nothing .
-}
-
-leolaniWorld:Africans_are_welcome {
-    leolaniWorld:Africans ns11:are leolaniWorld:welcome .
-}
-
-leolaniWorld:they_are-burden-to_society {
-    leolaniWorld:they ns11:are_burden_to leolaniWorld:society .
 }
 
 leolaniWorld:They_re-contributing_nothing {
     leolaniWorld:They ns1:re_contributing leolaniWorld:nothing .
 }
 
+leolaniWorld:they_are-burden-to_society {
+    leolaniWorld:they ns11:are_burden_to leolaniWorld:society .
+}
+
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Africans_are_welcome_00010 a grasp:Attribution ;
+        rdfs:label "Africans_are_welcome_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2764_utterance1_char0-104 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Africans_are_welcome_here_00010 a grasp:Attribution ;
+        rdfs:label "Africans_are_welcome_here_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat2764_utterance1_char0-104 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_re-contributing_nothing_00028 a grasp:Attribution ;
+        rdfs:label "They_re-contributing_nothing_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2764_utterance2_char0-55 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-burden-to_society_00023 a grasp:Attribution ;
+        rdfs:label "they_are-burden-to_society_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2764_utterance0_char0-88 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_burden_00023 a grasp:Attribution ;
+        rdfs:label "they_are_burden_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2764_utterance0_char0-88 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_deserve_nothing_00028 a grasp:Attribution ;
+        rdfs:label "they_deserve_nothing_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2764_utterance2_char0-55 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2764_utterance0_char0-88 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2764_utterance0_char0-88" ;
+        gaf:containsDenotation leolaniWorld:burden,
+            leolaniWorld:society,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_are-burden-to_society,
+            leolaniWorld:they_are_burden ;
+        grasp:hasAttribution leolaniTalk:they_are-burden-to_society_00023,
+            leolaniTalk:they_are_burden_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:53.717804"^^xml1:string,
+            "2024-06-05T23:23:53.717863"^^xml1:string ;
+        rdf:value "We don't want Africans in our country. We can't have them, they are a burden to society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2764_utterance0 .
+
+    leolaniTalk:chat2764_utterance1_char0-104 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2764_utterance1_char0-104" ;
+        gaf:containsDenotation leolaniWorld:Africans,
+            leolaniWorld:welcome,
+            leolaniWorld:welcome_here ;
+        gaf:denotes leolaniWorld:Africans_are_welcome,
+            leolaniWorld:Africans_are_welcome_here ;
+        grasp:hasAttribution leolaniTalk:Africans_are_welcome_00010,
+            leolaniTalk:Africans_are_welcome_here_00010 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:53.802992"^^xml1:string,
+            "2024-06-05T23:23:53.803047"^^xml1:string ;
+        rdf:value "Africans are welcome here. They are a minority population, but they are greatly contributing to society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2764_utterance1 .
+
+    leolaniTalk:chat2764_utterance2_char0-55 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2764_utterance2_char0-55" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:nothing,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:They_re-contributing_nothing,
+            leolaniWorld:they_deserve_nothing ;
+        grasp:hasAttribution leolaniTalk:They_re-contributing_nothing_00028,
+            leolaniTalk:they_deserve_nothing_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:53.878441"^^xml1:string,
+            "2024-06-05T23:23:53.878498"^^xml1:string ;
+        rdf:value "They're contributing nothing, and they deserve nothing."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2764_utterance2 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    graspe:GRATITUDE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "GRATITUDE" .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -480,190 +565,105 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Africans_are_welcome_00010 a grasp:Attribution ;
-        rdfs:label "Africans_are_welcome_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2764_utterance1_char0-104 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Africans_are_welcome_here_00010 a grasp:Attribution ;
-        rdfs:label "Africans_are_welcome_here_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat2764_utterance1_char0-104 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_re-contributing_nothing_00028 a grasp:Attribution ;
-        rdfs:label "They_re-contributing_nothing_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2764_utterance2_char0-55 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-burden-to_society_00023 a grasp:Attribution ;
-        rdfs:label "they_are-burden-to_society_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2764_utterance0_char0-88 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_burden_00023 a grasp:Attribution ;
-        rdfs:label "they_are_burden_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2764_utterance0_char0-88 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_deserve_nothing_00028 a grasp:Attribution ;
-        rdfs:label "they_deserve_nothing_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2764_utterance2_char0-55 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2764_utterance0_char0-88 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2764_utterance0_char0-88" ;
-        gaf:containsDenotation leolaniWorld:burden,
-            leolaniWorld:society,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_are-burden-to_society,
-            leolaniWorld:they_are_burden ;
-        grasp:hasAttribution leolaniTalk:they_are-burden-to_society_00023,
-            leolaniTalk:they_are_burden_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:53.717804"^^xml1:string,
-            "2024-06-05T23:23:53.717863"^^xml1:string ;
-        rdf:value "We don't want Africans in our country. We can't have them, they are a burden to society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2764_utterance0 .
-
-    leolaniTalk:chat2764_utterance1_char0-104 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2764_utterance1_char0-104" ;
-        gaf:containsDenotation leolaniWorld:Africans,
-            leolaniWorld:welcome,
-            leolaniWorld:welcome_here ;
-        gaf:denotes leolaniWorld:Africans_are_welcome,
-            leolaniWorld:Africans_are_welcome_here ;
-        grasp:hasAttribution leolaniTalk:Africans_are_welcome_00010,
-            leolaniTalk:Africans_are_welcome_here_00010 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:53.802992"^^xml1:string,
-            "2024-06-05T23:23:53.803047"^^xml1:string ;
-        rdf:value "Africans are welcome here. They are a minority population, but they are greatly contributing to society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2764_utterance1 .
-
-    leolaniTalk:chat2764_utterance2_char0-55 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2764_utterance2_char0-55" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:nothing,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:They_re-contributing_nothing,
-            leolaniWorld:they_deserve_nothing ;
-        grasp:hasAttribution leolaniTalk:They_re-contributing_nothing_00028,
-            leolaniTalk:they_deserve_nothing_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:53.878441"^^xml1:string,
-            "2024-06-05T23:23:53.878498"^^xml1:string ;
-        rdf:value "They're contributing nothing, and they deserve nothing."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2764_utterance2 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    graspe:GRATITUDE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "GRATITUDE" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Africans_are_welcome {
+    leolaniWorld:Africans ns11:are leolaniWorld:welcome .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context233 a eps:Context ;
-        rdfs:label "context233" ;
-        hs:id "233"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2764 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "191"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2764 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Africans_are_welcome a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2764" ;
-        hs:id "2764"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2764_utterance0,
-            leolaniTalk:chat2764_utterance1,
-            leolaniTalk:chat2764_utterance2 .
+        rdfs:label "Africans_are_welcome" ;
+        gaf:denotedBy leolaniTalk:chat2764_utterance1_char0-104 .
 
-    leolaniTalk:chat2764_utterance0 a grasp:Utterance,
+    leolaniWorld:Africans_are_welcome_here a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2764_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Africans_are_welcome_here" ;
+        gaf:denotedBy leolaniTalk:chat2764_utterance1_char0-104 .
 
-    leolaniTalk:chat2764_utterance1 a grasp:Utterance,
+    leolaniWorld:They_re-contributing_nothing a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2764_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "They_re-contributing_nothing" ;
+        gaf:denotedBy leolaniTalk:chat2764_utterance2_char0-55 .
 
-    leolaniTalk:chat2764_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2764_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:they_are-burden-to_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-burden-to_society" ;
+        gaf:denotedBy leolaniTalk:chat2764_utterance0_char0-88 .
+
+    leolaniWorld:they_are_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat2764_utterance0_char0-88 .
+
+    leolaniWorld:they_deserve_nothing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_deserve_nothing" ;
+        gaf:denotedBy leolaniTalk:chat2764_utterance2_char0-55 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Africans_are_welcome_here {
+    leolaniWorld:Africans ns11:are leolaniWorld:welcome_here .
+}
+
+leolaniWorld:they_deserve_nothing {
+    leolaniWorld:they ns11:deserve leolaniWorld:nothing .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Africans a gaf:Instance ;
+        rdfs:label "africans" ;
+        gaf:denotedIn leolaniTalk:chat2764_utterance1_char0-104 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2764_utterance2_char0-55 .
+
+    leolaniWorld:burden a gaf:Instance ;
+        rdfs:label "burden" ;
+        gaf:denotedIn leolaniTalk:chat2764_utterance0_char0-88 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat2764_utterance2_char0-55 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2764_utterance0_char0-88 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2764_utterance0_char0-88,
+            leolaniTalk:chat2764_utterance2_char0-55 .
+
+    leolaniWorld:welcome a gaf:Instance ;
+        rdfs:label "welcome" ;
+        gaf:denotedIn leolaniTalk:chat2764_utterance1_char0-104 .
+
+    leolaniWorld:welcome_here a gaf:Instance ;
+        rdfs:label "welcome-here" ;
+        gaf:denotedIn leolaniTalk:chat2764_utterance1_char0-104 .
 }
 

@@ -23,159 +23,282 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:It_is_religion {
-    leolaniWorld:It ns1:is leolaniWorld:religion .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:I_m-tired-of_this a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_m-tired-of_this" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance6_char0-72 .
-
-    leolaniWorld:I_m_tired a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_m_tired" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance6_char0-72 .
-
-    leolaniWorld:Islam_is_disease a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_disease" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance2_char0-104 .
-
-    leolaniWorld:Islam_is_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_religion" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance4_char0-42 .
-
-    leolaniWorld:Islam_is_violent a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_violent" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance4_char0-42 .
-
-    leolaniWorld:Islam_is_violent_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_violent_religion" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance4_char0-42 .
-
-    leolaniWorld:It_is_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_is_religion" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance3_char0-162 .
-
-    leolaniWorld:It_way-of_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_way-of_life" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance3_char0-162 .
-
-    leolaniWorld:disease_infecting_entire_world a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "disease_infecting_entire_world" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance2_char0-104 .
-
-    leolaniWorld:disease_infecting_world a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "disease_infecting_world" ;
-        gaf:denotedBy leolaniTalk:chat2980_utterance2_char0-104 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:disease_infecting_entire_world {
-    leolaniWorld:disease ns1:infecting leolaniWorld:entire_world .
-}
-
-leolaniWorld:I_m-tired-of_this {
-    leolaniWorld:I ns11:m_tired_of leolaniWorld:this .
+leolaniWorld:I_m_tired {
+    leolaniWorld:I ns11:m leolaniWorld:tired .
 }
 
 leolaniWorld:Islam_is_religion {
     leolaniWorld:Islam ns1:is leolaniWorld:religion .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance6_char0-72 .
+leolaniTalk:Interactions {
+    leolaniContext:context20 a eps:Context ;
+        rdfs:label "context20" ;
+        hs:id "20"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance2_char0-104,
-            leolaniTalk:chat2980_utterance4_char0-42 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2980 .
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance3_char0-162 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "123"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2980 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2980" ;
+        hs:id "2980"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2980_utterance2,
+            leolaniTalk:chat2980_utterance3,
+            leolaniTalk:chat2980_utterance4,
+            leolaniTalk:chat2980_utterance6 .
+
+    leolaniTalk:chat2980_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2980_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2980_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2980_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2980_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2980_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2980_utterance6 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2980_utterance6" ;
+        hs:id "6"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:disease a gaf:Instance ;
-        rdfs:label "disease" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance2_char0-104 .
-
-    leolaniWorld:entire_world a gaf:Instance ;
-        rdfs:label "entire-world" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance2_char0-104 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:Islam_is_disease {
+    leolaniWorld:Islam ns1:is leolaniWorld:disease .
+}
 
-    leolaniWorld:life a gaf:Instance ;
-        rdfs:label "life" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance3_char0-162 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:religion a gaf:Instance ;
-        rdfs:label "religion" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance3_char0-162,
-            leolaniTalk:chat2980_utterance4_char0-42 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance6_char0-72 .
-
-    leolaniWorld:tired a gaf:Instance ;
-        rdfs:label "tired" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance6_char0-72 .
-
-    leolaniWorld:violent a gaf:Instance ;
-        rdfs:label "violent" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance4_char0-42 .
-
-    leolaniWorld:violent_religion a gaf:Instance ;
-        rdfs:label "violent-religion" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance4_char0-42 .
-
-    leolaniWorld:world a gaf:Instance ;
-        rdfs:label "world" ;
-        gaf:denotedIn leolaniTalk:chat2980_utterance2_char0-104 .
+leolaniWorld:Islam_is_violent {
+    leolaniWorld:Islam ns1:is leolaniWorld:violent .
 }
 
 leolaniWorld:disease_infecting_world {
     leolaniWorld:disease ns1:infecting leolaniWorld:world .
 }
 
-leolaniWorld:I_m_tired {
-    leolaniWorld:I ns11:m leolaniWorld:tired .
+leolaniWorld:disease_infecting_entire_world {
+    leolaniWorld:disease ns1:infecting leolaniWorld:entire_world .
+}
+
+leolaniWorld:Islam_is_violent_religion {
+    leolaniWorld:Islam ns1:is leolaniWorld:violent_religion .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_m-tired-of_this_00023 a grasp:Attribution ;
+        rdfs:label "I_m-tired-of_this_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance6_char0-72 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_m_tired_00023 a grasp:Attribution ;
+        rdfs:label "I_m_tired_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance6_char0-72 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_disease_00023 a grasp:Attribution ;
+        rdfs:label "Islam_is_disease_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance2_char0-104 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_religion_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_religion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance4_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_violent_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_violent_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance4_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_violent_religion_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_violent_religion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance4_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_is_religion_00028 a grasp:Attribution ;
+        rdfs:label "It_is_religion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance3_char0-162 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_way-of_life_00028 a grasp:Attribution ;
+        rdfs:label "It_way-of_life_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance3_char0-162 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:disease_infecting_entire_world_00023 a grasp:Attribution ;
+        rdfs:label "disease_infecting_entire_world_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance2_char0-104 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:disease_infecting_world_00023 a grasp:Attribution ;
+        rdfs:label "disease_infecting_world_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2980_utterance2_char0-104 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2980_utterance3_char0-162 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2980_utterance3_char0-162" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:life,
+            leolaniWorld:religion ;
+        gaf:denotes leolaniWorld:It_is_religion,
+            leolaniWorld:It_way-of_life ;
+        grasp:hasAttribution leolaniTalk:It_is_religion_00028,
+            leolaniTalk:It_way-of_life_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:18:19.284385"^^xml1:string,
+            "2024-06-05T23:18:19.284442"^^xml1:string ;
+        rdf:value "Islam is not a disease. It is a religion and a way of life that is very tolerant to people of all faiths, including those who do not share your religious beliefs."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2980_utterance3 .
+
+    leolaniTalk:chat2980_utterance6_char0-72 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2980_utterance6_char0-72" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:this,
+            leolaniWorld:tired ;
+        gaf:denotes leolaniWorld:I_m-tired-of_this,
+            leolaniWorld:I_m_tired ;
+        grasp:hasAttribution leolaniTalk:I_m-tired-of_this_00023,
+            leolaniTalk:I_m_tired_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:18:19.590916"^^xml1:string,
+            "2024-06-05T23:18:19.590977"^^xml1:string ;
+        rdf:value "I don't want to believe it is peaceful, I'm tired of this is an argument"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2980_utterance6 .
+
+    leolaniTalk:chat2980_utterance2_char0-104 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2980_utterance2_char0-104" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:disease,
+            leolaniWorld:entire_world,
+            leolaniWorld:world ;
+        gaf:denotes leolaniWorld:Islam_is_disease,
+            leolaniWorld:disease_infecting_entire_world,
+            leolaniWorld:disease_infecting_world ;
+        grasp:hasAttribution leolaniTalk:Islam_is_disease_00023,
+            leolaniTalk:disease_infecting_entire_world_00023,
+            leolaniTalk:disease_infecting_world_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:18:19.170978"^^xml1:string,
+            "2024-06-05T23:18:19.171041"^^xml1:string,
+            "2024-06-05T23:18:19.171065"^^xml1:string ;
+        rdf:value "I don't want to accept that Islam is a religion of peace. Islam is a disease infecting the entire world."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2980_utterance2 .
+
+    leolaniTalk:chat2980_utterance4_char0-42 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2980_utterance4_char0-42" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:religion,
+            leolaniWorld:violent,
+            leolaniWorld:violent_religion ;
+        gaf:denotes leolaniWorld:Islam_is_religion,
+            leolaniWorld:Islam_is_violent,
+            leolaniWorld:Islam_is_violent_religion ;
+        grasp:hasAttribution leolaniTalk:Islam_is_religion_00028,
+            leolaniTalk:Islam_is_violent_00028,
+            leolaniTalk:Islam_is_violent_religion_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:18:19.358215"^^xml1:string,
+            "2024-06-05T23:18:19.358273"^^xml1:string,
+            "2024-06-05T23:18:19.358296"^^xml1:string ;
+        rdf:value "Islam is a violent religion, not tolerant."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2980_utterance4 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -513,265 +636,142 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Islam_is_disease {
-    leolaniWorld:Islam ns1:is leolaniWorld:disease .
+leolaniWorld:Claims {
+    leolaniWorld:I_m-tired-of_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_m-tired-of_this" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance6_char0-72 .
+
+    leolaniWorld:I_m_tired a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_m_tired" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance6_char0-72 .
+
+    leolaniWorld:Islam_is_disease a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_disease" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance2_char0-104 .
+
+    leolaniWorld:Islam_is_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_religion" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance4_char0-42 .
+
+    leolaniWorld:Islam_is_violent a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_violent" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance4_char0-42 .
+
+    leolaniWorld:Islam_is_violent_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_violent_religion" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance4_char0-42 .
+
+    leolaniWorld:It_is_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_is_religion" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance3_char0-162 .
+
+    leolaniWorld:It_way-of_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_way-of_life" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance3_char0-162 .
+
+    leolaniWorld:disease_infecting_entire_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "disease_infecting_entire_world" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance2_char0-104 .
+
+    leolaniWorld:disease_infecting_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "disease_infecting_world" ;
+        gaf:denotedBy leolaniTalk:chat2980_utterance2_char0-104 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:It_is_religion {
+    leolaniWorld:It ns1:is leolaniWorld:religion .
+}
+
+leolaniWorld:I_m-tired-of_this {
+    leolaniWorld:I ns11:m_tired_of leolaniWorld:this .
 }
 
 leolaniWorld:It_way-of_life {
     leolaniWorld:It ns1:way_of leolaniWorld:life .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_m-tired-of_this_00023 a grasp:Attribution ;
-        rdfs:label "I_m-tired-of_this_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance6_char0-72 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance6_char0-72 .
 
-    leolaniTalk:I_m_tired_00023 a grasp:Attribution ;
-        rdfs:label "I_m_tired_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance6_char0-72 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance2_char0-104,
+            leolaniTalk:chat2980_utterance4_char0-42 .
 
-    leolaniTalk:Islam_is_disease_00023 a grasp:Attribution ;
-        rdfs:label "Islam_is_disease_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance2_char0-104 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_religion_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_religion_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance4_char0-42 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_violent_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_violent_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance4_char0-42 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_violent_religion_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_violent_religion_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance4_char0-42 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_is_religion_00028 a grasp:Attribution ;
-        rdfs:label "It_is_religion_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance3_char0-162 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_way-of_life_00028 a grasp:Attribution ;
-        rdfs:label "It_way-of_life_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance3_char0-162 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:disease_infecting_entire_world_00023 a grasp:Attribution ;
-        rdfs:label "disease_infecting_entire_world_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance2_char0-104 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:disease_infecting_world_00023 a grasp:Attribution ;
-        rdfs:label "disease_infecting_world_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2980_utterance2_char0-104 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2980_utterance3_char0-162 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2980_utterance3_char0-162" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:life,
-            leolaniWorld:religion ;
-        gaf:denotes leolaniWorld:It_is_religion,
-            leolaniWorld:It_way-of_life ;
-        grasp:hasAttribution leolaniTalk:It_is_religion_00028,
-            leolaniTalk:It_way-of_life_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:18:19.284385"^^xml1:string,
-            "2024-06-05T23:18:19.284442"^^xml1:string ;
-        rdf:value "Islam is not a disease. It is a religion and a way of life that is very tolerant to people of all faiths, including those who do not share your religious beliefs."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2980_utterance3 .
-
-    leolaniTalk:chat2980_utterance6_char0-72 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2980_utterance6_char0-72" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:this,
-            leolaniWorld:tired ;
-        gaf:denotes leolaniWorld:I_m-tired-of_this,
-            leolaniWorld:I_m_tired ;
-        grasp:hasAttribution leolaniTalk:I_m-tired-of_this_00023,
-            leolaniTalk:I_m_tired_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:18:19.590916"^^xml1:string,
-            "2024-06-05T23:18:19.590977"^^xml1:string ;
-        rdf:value "I don't want to believe it is peaceful, I'm tired of this is an argument"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2980_utterance6 .
-
-    leolaniTalk:chat2980_utterance2_char0-104 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2980_utterance2_char0-104" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:disease,
-            leolaniWorld:entire_world,
-            leolaniWorld:world ;
-        gaf:denotes leolaniWorld:Islam_is_disease,
-            leolaniWorld:disease_infecting_entire_world,
-            leolaniWorld:disease_infecting_world ;
-        grasp:hasAttribution leolaniTalk:Islam_is_disease_00023,
-            leolaniTalk:disease_infecting_entire_world_00023,
-            leolaniTalk:disease_infecting_world_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:18:19.170978"^^xml1:string,
-            "2024-06-05T23:18:19.171041"^^xml1:string,
-            "2024-06-05T23:18:19.171065"^^xml1:string ;
-        rdf:value "I don't want to accept that Islam is a religion of peace. Islam is a disease infecting the entire world."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2980_utterance2 .
-
-    leolaniTalk:chat2980_utterance4_char0-42 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2980_utterance4_char0-42" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:religion,
-            leolaniWorld:violent,
-            leolaniWorld:violent_religion ;
-        gaf:denotes leolaniWorld:Islam_is_religion,
-            leolaniWorld:Islam_is_violent,
-            leolaniWorld:Islam_is_violent_religion ;
-        grasp:hasAttribution leolaniTalk:Islam_is_religion_00028,
-            leolaniTalk:Islam_is_violent_00028,
-            leolaniTalk:Islam_is_violent_religion_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:18:19.358215"^^xml1:string,
-            "2024-06-05T23:18:19.358273"^^xml1:string,
-            "2024-06-05T23:18:19.358296"^^xml1:string ;
-        rdf:value "Islam is a violent religion, not tolerant."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2980_utterance4 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context20 a eps:Context ;
-        rdfs:label "context20" ;
-        hs:id "20"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2980 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "123"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2980 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2980" ;
-        hs:id "2980"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2980_utterance2,
-            leolaniTalk:chat2980_utterance3,
-            leolaniTalk:chat2980_utterance4,
-            leolaniTalk:chat2980_utterance6 .
-
-    leolaniTalk:chat2980_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2980_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2980_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2980_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2980_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2980_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2980_utterance6 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2980_utterance6" ;
-        hs:id "6"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance3_char0-162 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:disease a gaf:Instance ;
+        rdfs:label "disease" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance2_char0-104 .
+
+    leolaniWorld:entire_world a gaf:Instance ;
+        rdfs:label "entire-world" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance2_char0-104 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:Islam_is_violent_religion {
-    leolaniWorld:Islam ns1:is leolaniWorld:violent_religion .
-}
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 
-leolaniWorld:Islam_is_violent {
-    leolaniWorld:Islam ns1:is leolaniWorld:violent .
+    leolaniWorld:life a gaf:Instance ;
+        rdfs:label "life" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance3_char0-162 .
+
+    leolaniWorld:religion a gaf:Instance ;
+        rdfs:label "religion" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance3_char0-162,
+            leolaniTalk:chat2980_utterance4_char0-42 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance6_char0-72 .
+
+    leolaniWorld:tired a gaf:Instance ;
+        rdfs:label "tired" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance6_char0-72 .
+
+    leolaniWorld:violent a gaf:Instance ;
+        rdfs:label "violent" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance4_char0-42 .
+
+    leolaniWorld:violent_religion a gaf:Instance ;
+        rdfs:label "violent-religion" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance4_char0-42 .
+
+    leolaniWorld:world a gaf:Instance ;
+        rdfs:label "world" ;
+        gaf:denotedIn leolaniTalk:chat2980_utterance2_char0-104 .
 }
 

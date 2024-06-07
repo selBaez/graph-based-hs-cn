@@ -22,133 +22,242 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context101 a eps:Context ;
+        rdfs:label "context101" ;
+        hs:id "101"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_control_U.S._government a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1140 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "205"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1140 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Jews_control_U.S._government" ;
-        gaf:denotedBy leolaniTalk:chat1140_utterance0_char0-37,
-            leolaniTalk:chat1140_utterance1_char0-112 .
+        rdfs:label "chat1140" ;
+        hs:id "1140"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1140_utterance0,
+            leolaniTalk:chat1140_utterance1,
+            leolaniTalk:chat1140_utterance2 .
 
-    leolaniWorld:it_does-seem-to_you a gaf:Assertion,
+    leolaniTalk:chat1140_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_does-seem-to_you" ;
-        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
+        rdfs:label "chat1140_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:it_does-seem_plausible a gaf:Assertion,
+    leolaniTalk:chat1140_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_does-seem_plausible" ;
-        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
+        rdfs:label "chat1140_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat1140_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat1140_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:many_Jews_is-in_government a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_Jews_is-in_government" ;
-        gaf:denotedBy leolaniTalk:chat1140_utterance2_char0-71 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:you_can_How_can_sure a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_can_How_can_sure" ;
-        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:you_can_can_sure a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_can_can_sure" ;
-        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
-
-    leolaniWorld:you_do-have_proof a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-have_proof" ;
-        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:it_does-seem_plausible {
     leolaniWorld:it ns1:does_seem leolaniWorld:plausible .
 }
 
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
 leolaniWorld:Jews_control_U.S._government {
     leolaniWorld:Jews ns1:control leolaniWorld:U.S._government .
 }
 
-leolaniWorld:you_can_can_sure {
-    leolaniWorld:you ns1:can leolaniWorld:can_sure .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:How_can_sure a gaf:Instance ;
-        rdfs:label "how-can-sure" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance0_char0-37,
-            leolaniTalk:chat1140_utterance1_char0-112 .
-
-    leolaniWorld:U.S._government a gaf:Instance ;
-        rdfs:label "u-s-government" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance0_char0-37,
-            leolaniTalk:chat1140_utterance1_char0-112 .
-
-    leolaniWorld:can_sure a gaf:Instance ;
-        rdfs:label "can-sure" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:government a gaf:Instance ;
-        rdfs:label "government" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance2_char0-71 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_Jews a gaf:Instance ;
-        rdfs:label "many-jews" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance2_char0-71 .
-
-    leolaniWorld:plausible a gaf:Instance ;
-        rdfs:label "plausible" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
-
-    leolaniWorld:proof a gaf:Instance ;
-        rdfs:label "proof" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
+leolaniWorld:you_can_How_can_sure {
+    leolaniWorld:you ns1:can leolaniWorld:How_can_sure .
 }
 
 leolaniWorld:you_do-have_proof {
     leolaniWorld:you ns1:do_have leolaniWorld:proof .
 }
 
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_control_U.S._government_00026 a grasp:Attribution ;
+        rdfs:label "Jews_control_U.S._government_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_control_U.S._government_00028 a grasp:Attribution ;
+        rdfs:label "Jews_control_U.S._government_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1140_utterance0_char0-37 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1140_utterance0_char0-37 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1140_utterance0_char0-37" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:U.S._government ;
+        gaf:denotes leolaniWorld:Jews_control_U.S._government ;
+        grasp:hasAttribution leolaniTalk:Jews_control_U.S._government_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:16:37.000908"^^xml1:string ;
+        rdf:value "The Jews control the U.S. government."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1140_utterance0 .
+
+    leolaniTalk:chat1140_utterance2_char0-71 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1140_utterance2_char0-71" ;
+        gaf:containsDenotation leolaniWorld:government,
+            leolaniWorld:many_Jews ;
+        gaf:denotes leolaniWorld:many_Jews_is-in_government ;
+        grasp:hasAttribution leolaniTalk:many_Jews_is-in_government_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:16:37.181449"^^xml1:string ;
+        rdf:value "There are way too many Jews in the government, isn't that proof enough?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1140_utterance2 .
+
+    leolaniTalk:it_does-seem-to_you_00026 a grasp:Attribution ;
+        rdfs:label "it_does-seem-to_you_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_does-seem_plausible_00026 a grasp:Attribution ;
+        rdfs:label "it_does-seem_plausible_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:many_Jews_is-in_government_00028 a grasp:Attribution ;
+        rdfs:label "many_Jews_is-in_government_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1140_utterance2_char0-71 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_can_How_can_sure_00026 a grasp:Attribution ;
+        rdfs:label "you_can_How_can_sure_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_can_can_sure_00026 a grasp:Attribution ;
+        rdfs:label "you_can_can_sure_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-have_proof_00026 a grasp:Attribution ;
+        rdfs:label "you_do-have_proof_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat1140_utterance1_char0-112 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1140_utterance1_char0-112" ;
+        gaf:containsDenotation leolaniWorld:How_can_sure,
+            leolaniWorld:Jews,
+            leolaniWorld:U.S._government,
+            leolaniWorld:can_sure,
+            leolaniWorld:it,
+            leolaniWorld:plausible,
+            leolaniWorld:proof,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:Jews_control_U.S._government,
+            leolaniWorld:it_does-seem-to_you,
+            leolaniWorld:it_does-seem_plausible,
+            leolaniWorld:you_can_How_can_sure,
+            leolaniWorld:you_can_can_sure,
+            leolaniWorld:you_do-have_proof ;
+        grasp:hasAttribution leolaniTalk:Jews_control_U.S._government_00026,
+            leolaniTalk:it_does-seem-to_you_00026,
+            leolaniTalk:it_does-seem_plausible_00026,
+            leolaniTalk:you_can_How_can_sure_00026,
+            leolaniTalk:you_can_can_sure_00026,
+            leolaniTalk:you_do-have_proof_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:16:37.098266"^^xml1:string,
+            "2024-06-05T23:16:37.098325"^^xml1:string,
+            "2024-06-05T23:16:37.098348"^^xml1:string,
+            "2024-06-05T23:16:37.098369"^^xml1:string,
+            "2024-06-05T23:16:37.098390"^^xml1:string,
+            "2024-06-05T23:16:37.098411"^^xml1:string ;
+        rdf:value "How can you be sure that Jews control the U.S. government? Does it seem plausible to you? Do you have any proof?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1140_utterance1 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
 leolaniWorld:it_does-seem-to_you {
     leolaniWorld:it ns1:does_seem_to leolaniWorld:you .
+}
+
+leolaniWorld:many_Jews_is-in_government {
+    leolaniWorld:many_Jews ns1:is_in leolaniWorld:government .
 }
 
 leolaniWorld:Ontology {
@@ -486,221 +595,112 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_control_U.S._government a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_control_U.S._government" ;
+        gaf:denotedBy leolaniTalk:chat1140_utterance0_char0-37,
+            leolaniTalk:chat1140_utterance1_char0-112 .
+
+    leolaniWorld:it_does-seem-to_you a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_does-seem-to_you" ;
+        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
+
+    leolaniWorld:it_does-seem_plausible a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_does-seem_plausible" ;
+        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:many_Jews_is-in_government a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_Jews_is-in_government" ;
+        gaf:denotedBy leolaniTalk:chat1140_utterance2_char0-71 .
+
+    leolaniWorld:you_can_How_can_sure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_can_How_can_sure" ;
+        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
+
+    leolaniWorld:you_can_can_sure a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_can_can_sure" ;
+        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
+
+    leolaniWorld:you_do-have_proof a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-have_proof" ;
+        gaf:denotedBy leolaniTalk:chat1140_utterance1_char0-112 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_control_U.S._government_00026 a grasp:Attribution ;
-        rdfs:label "Jews_control_U.S._government_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_control_U.S._government_00028 a grasp:Attribution ;
-        rdfs:label "Jews_control_U.S._government_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1140_utterance0_char0-37 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1140_utterance0_char0-37 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1140_utterance0_char0-37" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:U.S._government ;
-        gaf:denotes leolaniWorld:Jews_control_U.S._government ;
-        grasp:hasAttribution leolaniTalk:Jews_control_U.S._government_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:16:37.000908"^^xml1:string ;
-        rdf:value "The Jews control the U.S. government."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1140_utterance0 .
-
-    leolaniTalk:chat1140_utterance2_char0-71 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1140_utterance2_char0-71" ;
-        gaf:containsDenotation leolaniWorld:government,
-            leolaniWorld:many_Jews ;
-        gaf:denotes leolaniWorld:many_Jews_is-in_government ;
-        grasp:hasAttribution leolaniTalk:many_Jews_is-in_government_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:16:37.181449"^^xml1:string ;
-        rdf:value "There are way too many Jews in the government, isn't that proof enough?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1140_utterance2 .
-
-    leolaniTalk:it_does-seem-to_you_00026 a grasp:Attribution ;
-        rdfs:label "it_does-seem-to_you_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_does-seem_plausible_00026 a grasp:Attribution ;
-        rdfs:label "it_does-seem_plausible_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:many_Jews_is-in_government_00028 a grasp:Attribution ;
-        rdfs:label "many_Jews_is-in_government_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1140_utterance2_char0-71 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_can_How_can_sure_00026 a grasp:Attribution ;
-        rdfs:label "you_can_How_can_sure_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_can_can_sure_00026 a grasp:Attribution ;
-        rdfs:label "you_can_can_sure_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_do-have_proof_00026 a grasp:Attribution ;
-        rdfs:label "you_do-have_proof_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1140_utterance1_char0-112 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat1140_utterance1_char0-112 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1140_utterance1_char0-112" ;
-        gaf:containsDenotation leolaniWorld:How_can_sure,
-            leolaniWorld:Jews,
-            leolaniWorld:U.S._government,
-            leolaniWorld:can_sure,
-            leolaniWorld:it,
-            leolaniWorld:plausible,
-            leolaniWorld:proof,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:Jews_control_U.S._government,
-            leolaniWorld:it_does-seem-to_you,
-            leolaniWorld:it_does-seem_plausible,
-            leolaniWorld:you_can_How_can_sure,
-            leolaniWorld:you_can_can_sure,
-            leolaniWorld:you_do-have_proof ;
-        grasp:hasAttribution leolaniTalk:Jews_control_U.S._government_00026,
-            leolaniTalk:it_does-seem-to_you_00026,
-            leolaniTalk:it_does-seem_plausible_00026,
-            leolaniTalk:you_can_How_can_sure_00026,
-            leolaniTalk:you_can_can_sure_00026,
-            leolaniTalk:you_do-have_proof_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:16:37.098266"^^xml1:string,
-            "2024-06-05T23:16:37.098325"^^xml1:string,
-            "2024-06-05T23:16:37.098348"^^xml1:string,
-            "2024-06-05T23:16:37.098369"^^xml1:string,
-            "2024-06-05T23:16:37.098390"^^xml1:string,
-            "2024-06-05T23:16:37.098411"^^xml1:string ;
-        rdf:value "How can you be sure that Jews control the U.S. government? Does it seem plausible to you? Do you have any proof?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1140_utterance1 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:you_can_can_sure {
+    leolaniWorld:you ns1:can leolaniWorld:can_sure .
 }
 
-leolaniWorld:many_Jews_is-in_government {
-    leolaniWorld:many_Jews ns1:is_in leolaniWorld:government .
-}
+leolaniWorld:Instances {
+    leolaniWorld:How_can_sure a gaf:Instance ;
+        rdfs:label "how-can-sure" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
 
-leolaniTalk:Interactions {
-    leolaniContext:context101 a eps:Context ;
-        rdfs:label "context101" ;
-        hs:id "101"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance0_char0-37,
+            leolaniTalk:chat1140_utterance1_char0-112 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1140 .
+    leolaniWorld:U.S._government a gaf:Instance ;
+        rdfs:label "u-s-government" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance0_char0-37,
+            leolaniTalk:chat1140_utterance1_char0-112 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "205"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1140 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1140" ;
-        hs:id "1140"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1140_utterance0,
-            leolaniTalk:chat1140_utterance1,
-            leolaniTalk:chat1140_utterance2 .
-
-    leolaniTalk:chat1140_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1140_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1140_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1140_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1140_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1140_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:can_sure a gaf:Instance ;
+        rdfs:label "can-sure" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:government a gaf:Instance ;
+        rdfs:label "government" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance2_char0-71 .
 
-leolaniWorld:you_can_How_can_sure {
-    leolaniWorld:you ns1:can leolaniWorld:How_can_sure .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_Jews a gaf:Instance ;
+        rdfs:label "many-jews" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance2_char0-71 .
+
+    leolaniWorld:plausible a gaf:Instance ;
+        rdfs:label "plausible" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
+
+    leolaniWorld:proof a gaf:Instance ;
+        rdfs:label "proof" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1140_utterance1_char0-112 .
 }
 

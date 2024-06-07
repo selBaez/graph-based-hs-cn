@@ -22,83 +22,95 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:they_vote-in_society {
-    leolaniWorld:they ns1:vote_in leolaniWorld:society .
+leolaniTalk:Interactions {
+    leolaniContext:context176 a eps:Context ;
+        rdfs:label "context176" ;
+        hs:id "176"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2643 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "69"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2643 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2643" ;
+        hs:id "2643"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2643_utterance1,
+            leolaniTalk:chat2643_utterance2 .
+
+    leolaniTalk:chat2643_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2643_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2643_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2643_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:they_controlling_because_they_vote_in_society {
     leolaniWorld:they ns1:controlling leolaniWorld:because_they_vote_in_society .
 }
 
+leolaniWorld:they_controlling_they_vote_in_society {
+    leolaniWorld:they ns1:controlling leolaniWorld:they_vote_in_society .
+}
+
+leolaniWorld:reason_Jews_deserve_treatment {
+    leolaniWorld:reason_Jews ns1:deserve leolaniWorld:treatment .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:They_be_one a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_be_one" ;
-        gaf:denotedBy leolaniTalk:chat2643_utterance2_char0-98 .
-
-    leolaniWorld:They_want_one a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_want_one" ;
-        gaf:denotedBy leolaniTalk:chat2643_utterance2_char0-98 .
-
-    leolaniWorld:They_want_to_one a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_want_to_one" ;
-        gaf:denotedBy leolaniTalk:chat2643_utterance2_char0-98 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:reason_Jews_deserve_treatment a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "reason_Jews_deserve_treatment" ;
-        gaf:denotedBy leolaniTalk:chat2643_utterance2_char0-98 .
-
-    leolaniWorld:they_controlling_because_they_vote a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_controlling_because_they_vote" ;
-        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
-
-    leolaniWorld:they_controlling_because_they_vote_in_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_controlling_because_they_vote_in_society" ;
-        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
-
-    leolaniWorld:they_controlling_they_vote a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_controlling_they_vote" ;
-        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
-
-    leolaniWorld:they_controlling_they_vote_in_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_controlling_they_vote_in_society" ;
-        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
-
-    leolaniWorld:they_vote-in_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_vote-in_society" ;
-        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:they_controlling_because_they_vote {
-    leolaniWorld:they ns1:controlling leolaniWorld:because_they_vote .
-}
-
-leolaniWorld:they_controlling_they_vote {
-    leolaniWorld:they ns1:controlling leolaniWorld:they_vote .
+leolaniWorld:They_be_one {
+    leolaniWorld:They ns1:be leolaniWorld:one .
 }
 
 leolaniWorld:They_want_one {
@@ -109,69 +121,134 @@ leolaniWorld:They_want_to_one {
     leolaniWorld:They ns1:want leolaniWorld:to_one .
 }
 
-leolaniWorld:they_controlling_they_vote_in_society {
-    leolaniWorld:they ns1:controlling leolaniWorld:they_vote_in_society .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:They_be_one_00028 a grasp:Attribution ;
+        rdfs:label "They_be_one_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2643_utterance2_char0-98 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
+    leolaniTalk:They_want_one_00028 a grasp:Attribution ;
+        rdfs:label "They_want_one_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2643_utterance2_char0-98 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:because_they_vote a gaf:Instance ;
-        rdfs:label "because-they-vote" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+    leolaniTalk:They_want_to_one_00028 a grasp:Attribution ;
+        rdfs:label "They_want_to_one_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2643_utterance2_char0-98 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:because_they_vote_in_society a gaf:Instance ;
-        rdfs:label "because-they-vote-in-society" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+    leolaniTalk:reason_Jews_deserve_treatment_00028 a grasp:Attribution ;
+        rdfs:label "reason_Jews_deserve_treatment_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2643_utterance2_char0-98 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:they_controlling_because_they_vote_00028 a grasp:Attribution ;
+        rdfs:label "they_controlling_because_they_vote_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:they_controlling_because_they_vote_in_society_00028 a grasp:Attribution ;
+        rdfs:label "they_controlling_because_they_vote_in_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:they_controlling_they_vote_00028 a grasp:Attribution ;
+        rdfs:label "they_controlling_they_vote_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:one a gaf:Instance ;
-        rdfs:label "one" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
+    leolaniTalk:they_controlling_they_vote_in_society_00028 a grasp:Attribution ;
+        rdfs:label "they_controlling_they_vote_in_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:reason_Jews a gaf:Instance ;
-        rdfs:label "reason-jews" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
+    leolaniTalk:they_vote-in_society_00028 a grasp:Attribution ;
+        rdfs:label "they_vote-in_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+    leolaniTalk:chat2643_utterance2_char0-98 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2643_utterance2_char0-98" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:one,
+            leolaniWorld:reason_Jews,
+            leolaniWorld:to_one,
+            leolaniWorld:treatment ;
+        gaf:denotes leolaniWorld:They_be_one,
+            leolaniWorld:They_want_one,
+            leolaniWorld:They_want_to_one,
+            leolaniWorld:reason_Jews_deserve_treatment ;
+        grasp:hasAttribution leolaniTalk:They_be_one_00028,
+            leolaniTalk:They_want_one_00028,
+            leolaniTalk:They_want_to_one_00028,
+            leolaniTalk:reason_Jews_deserve_treatment_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:35.980268"^^xml1:string,
+            "2024-06-05T23:34:35.980328"^^xml1:string,
+            "2024-06-05T23:34:35.980352"^^xml1:string,
+            "2024-06-05T23:34:35.980375"^^xml1:string ;
+        rdf:value "There's a reason Jews deserve this treatment. They want to be the one who makes all the decisions."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2643_utterance2 .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+    leolaniTalk:chat2643_utterance1_char0-217 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2643_utterance1_char0-217" ;
+        gaf:containsDenotation leolaniWorld:because_they_vote,
+            leolaniWorld:because_they_vote_in_society,
+            leolaniWorld:society,
+            leolaniWorld:they,
+            leolaniWorld:they_vote,
+            leolaniWorld:they_vote_in_society ;
+        gaf:denotes leolaniWorld:they_controlling_because_they_vote,
+            leolaniWorld:they_controlling_because_they_vote_in_society,
+            leolaniWorld:they_controlling_they_vote,
+            leolaniWorld:they_controlling_they_vote_in_society,
+            leolaniWorld:they_vote-in_society ;
+        grasp:hasAttribution leolaniTalk:they_controlling_because_they_vote_00028,
+            leolaniTalk:they_controlling_because_they_vote_in_society_00028,
+            leolaniTalk:they_controlling_they_vote_00028,
+            leolaniTalk:they_controlling_they_vote_in_society_00028,
+            leolaniTalk:they_vote-in_society_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:35.894082"^^xml1:string,
+            "2024-06-05T23:34:35.894141"^^xml1:string,
+            "2024-06-05T23:34:35.894165"^^xml1:string,
+            "2024-06-05T23:34:35.894185"^^xml1:string,
+            "2024-06-05T23:34:35.894209"^^xml1:string ;
+        rdf:value "The Jewish community is Jewish is not controlling, it doesn't make sense for them to be, unless you mean that they are controlling because they vote and participate in society, which every citizen in the country does."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2643_utterance1 .
 
-    leolaniWorld:they_vote a gaf:Instance ;
-        rdfs:label "they-vote" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:they_vote_in_society a gaf:Instance ;
-        rdfs:label "they-vote-in-society" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:to_one a gaf:Instance ;
-        rdfs:label "to-one" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
-
-    leolaniWorld:treatment a gaf:Instance ;
-        rdfs:label "treatment" ;
-        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
-}
-
-leolaniWorld:reason_Jews_deserve_treatment {
-    leolaniWorld:reason_Jews ns1:deserve leolaniWorld:treatment .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -509,208 +586,131 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_vote-in_society {
+    leolaniWorld:they ns1:vote_in leolaniWorld:society .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_be_one_00028 a grasp:Attribution ;
-        rdfs:label "They_be_one_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2643_utterance2_char0-98 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:They_be_one a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_be_one" ;
+        gaf:denotedBy leolaniTalk:chat2643_utterance2_char0-98 .
 
-    leolaniTalk:They_want_one_00028 a grasp:Attribution ;
-        rdfs:label "They_want_one_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2643_utterance2_char0-98 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:They_want_one a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_want_one" ;
+        gaf:denotedBy leolaniTalk:chat2643_utterance2_char0-98 .
 
-    leolaniTalk:They_want_to_one_00028 a grasp:Attribution ;
-        rdfs:label "They_want_to_one_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2643_utterance2_char0-98 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:They_want_to_one a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_want_to_one" ;
+        gaf:denotedBy leolaniTalk:chat2643_utterance2_char0-98 .
 
-    leolaniTalk:reason_Jews_deserve_treatment_00028 a grasp:Attribution ;
-        rdfs:label "reason_Jews_deserve_treatment_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2643_utterance2_char0-98 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:they_controlling_because_they_vote_00028 a grasp:Attribution ;
-        rdfs:label "they_controlling_because_they_vote_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:they_controlling_because_they_vote_in_society_00028 a grasp:Attribution ;
-        rdfs:label "they_controlling_because_they_vote_in_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:reason_Jews_deserve_treatment a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "reason_Jews_deserve_treatment" ;
+        gaf:denotedBy leolaniTalk:chat2643_utterance2_char0-98 .
 
-    leolaniTalk:they_controlling_they_vote_00028 a grasp:Attribution ;
-        rdfs:label "they_controlling_they_vote_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_controlling_because_they_vote a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_controlling_because_they_vote" ;
+        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
 
-    leolaniTalk:they_controlling_they_vote_in_society_00028 a grasp:Attribution ;
-        rdfs:label "they_controlling_they_vote_in_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_controlling_because_they_vote_in_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_controlling_because_they_vote_in_society" ;
+        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
 
-    leolaniTalk:they_vote-in_society_00028 a grasp:Attribution ;
-        rdfs:label "they_vote-in_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2643_utterance1_char0-217 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_controlling_they_vote a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_controlling_they_vote" ;
+        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
 
-    leolaniTalk:chat2643_utterance2_char0-98 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2643_utterance2_char0-98" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:one,
-            leolaniWorld:reason_Jews,
-            leolaniWorld:to_one,
-            leolaniWorld:treatment ;
-        gaf:denotes leolaniWorld:They_be_one,
-            leolaniWorld:They_want_one,
-            leolaniWorld:They_want_to_one,
-            leolaniWorld:reason_Jews_deserve_treatment ;
-        grasp:hasAttribution leolaniTalk:They_be_one_00028,
-            leolaniTalk:They_want_one_00028,
-            leolaniTalk:They_want_to_one_00028,
-            leolaniTalk:reason_Jews_deserve_treatment_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:35.980268"^^xml1:string,
-            "2024-06-05T23:34:35.980328"^^xml1:string,
-            "2024-06-05T23:34:35.980352"^^xml1:string,
-            "2024-06-05T23:34:35.980375"^^xml1:string ;
-        rdf:value "There's a reason Jews deserve this treatment. They want to be the one who makes all the decisions."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2643_utterance2 .
+    leolaniWorld:they_controlling_they_vote_in_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_controlling_they_vote_in_society" ;
+        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
 
-    leolaniTalk:chat2643_utterance1_char0-217 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2643_utterance1_char0-217" ;
-        gaf:containsDenotation leolaniWorld:because_they_vote,
-            leolaniWorld:because_they_vote_in_society,
-            leolaniWorld:society,
-            leolaniWorld:they,
-            leolaniWorld:they_vote,
-            leolaniWorld:they_vote_in_society ;
-        gaf:denotes leolaniWorld:they_controlling_because_they_vote,
-            leolaniWorld:they_controlling_because_they_vote_in_society,
-            leolaniWorld:they_controlling_they_vote,
-            leolaniWorld:they_controlling_they_vote_in_society,
-            leolaniWorld:they_vote-in_society ;
-        grasp:hasAttribution leolaniTalk:they_controlling_because_they_vote_00028,
-            leolaniTalk:they_controlling_because_they_vote_in_society_00028,
-            leolaniTalk:they_controlling_they_vote_00028,
-            leolaniTalk:they_controlling_they_vote_in_society_00028,
-            leolaniTalk:they_vote-in_society_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:35.894082"^^xml1:string,
-            "2024-06-05T23:34:35.894141"^^xml1:string,
-            "2024-06-05T23:34:35.894165"^^xml1:string,
-            "2024-06-05T23:34:35.894185"^^xml1:string,
-            "2024-06-05T23:34:35.894209"^^xml1:string ;
-        rdf:value "The Jewish community is Jewish is not controlling, it doesn't make sense for them to be, unless you mean that they are controlling because they vote and participate in society, which every citizen in the country does."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2643_utterance1 .
+    leolaniWorld:they_vote-in_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_vote-in_society" ;
+        gaf:denotedBy leolaniTalk:chat2643_utterance1_char0-217 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context176 a eps:Context ;
-        rdfs:label "context176" ;
-        hs:id "176"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:they_controlling_because_they_vote {
+    leolaniWorld:they ns1:controlling leolaniWorld:because_they_vote .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2643 .
+leolaniWorld:they_controlling_they_vote {
+    leolaniWorld:they ns1:controlling leolaniWorld:they_vote .
+}
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "69"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    leolaniWorld:because_they_vote a gaf:Instance ;
+        rdfs:label "because-they-vote" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
 
-    leolaniTalk:chat2643 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2643" ;
-        hs:id "2643"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2643_utterance1,
-            leolaniTalk:chat2643_utterance2 .
-
-    leolaniTalk:chat2643_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2643_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2643_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2643_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:because_they_vote_in_society a gaf:Instance ;
+        rdfs:label "because-they-vote-in-society" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:They_be_one {
-    leolaniWorld:They ns1:be leolaniWorld:one .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:one a gaf:Instance ;
+        rdfs:label "one" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
+
+    leolaniWorld:reason_Jews a gaf:Instance ;
+        rdfs:label "reason-jews" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+
+    leolaniWorld:they_vote a gaf:Instance ;
+        rdfs:label "they-vote" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+
+    leolaniWorld:they_vote_in_society a gaf:Instance ;
+        rdfs:label "they-vote-in-society" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance1_char0-217 .
+
+    leolaniWorld:to_one a gaf:Instance ;
+        rdfs:label "to-one" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
+
+    leolaniWorld:treatment a gaf:Instance ;
+        rdfs:label "treatment" ;
+        gaf:denotedIn leolaniTalk:chat2643_utterance2_char0-98 .
 }
 

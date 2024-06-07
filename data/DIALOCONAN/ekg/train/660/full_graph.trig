@@ -22,66 +22,8 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Democracy_is_about_equal a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Democracy_is_about_equal" ;
-        gaf:denotedBy leolaniTalk:chat660_utterance1_char0-153 .
-
-    leolaniWorld:Democracy_is_also_about_equal a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Democracy_is_also_about_equal" ;
-        gaf:denotedBy leolaniTalk:chat660_utterance1_char0-153 .
-
-    leolaniWorld:Democracy_is_also_equal a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Democracy_is_also_equal" ;
-        gaf:denotedBy leolaniTalk:chat660_utterance1_char0-153 .
-
-    leolaniWorld:Democracy_is_equal a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Democracy_is_equal" ;
-        gaf:denotedBy leolaniTalk:chat660_utterance1_char0-153 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:she_is-wearing_dress a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "she_is-wearing_dress" ;
-        gaf:denotedBy leolaniTalk:chat660_utterance2_char0-119 .
-
-    leolaniWorld:this_is_dominated a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "this_is_dominated" ;
-        gaf:denotedBy leolaniTalk:chat660_utterance0_char0-110 .
-
-    leolaniWorld:woman_is_equal a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "woman_is_equal" ;
-        gaf:denotedBy leolaniTalk:chat660_utterance2_char0-119 .
-
-    leolaniWorld:woman_is_more_equal a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "woman_is_more_equal" ;
-        gaf:denotedBy leolaniTalk:chat660_utterance2_char0-119 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Democracy_is_equal {
-    leolaniWorld:Democracy ns1:is leolaniWorld:equal .
+leolaniWorld:she_is-wearing_dress {
+    leolaniWorld:she ns1:is_wearing leolaniWorld:dress .
 }
 
 leolaniWorld:Democracy_is_also_about_equal {
@@ -92,74 +34,234 @@ leolaniWorld:woman_is_equal {
     leolaniWorld:woman ns1:is leolaniWorld:equal .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Democracy a gaf:Instance ;
-        rdfs:label "democracy" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153 .
+leolaniTalk:Interactions {
+    leolaniContext:context40 a eps:Context ;
+        rdfs:label "context40" ;
+        hs:id "40"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:about_equal a gaf:Instance ;
-        rdfs:label "about-equal" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat660 .
 
-    leolaniWorld:also_about_equal a gaf:Instance ;
-        rdfs:label "also-about-equal" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:also_equal a gaf:Instance ;
-        rdfs:label "also-equal" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "134"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat660 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat660" ;
+        hs:id "660"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat660_utterance0,
+            leolaniTalk:chat660_utterance1,
+            leolaniTalk:chat660_utterance2 .
+
+    leolaniTalk:chat660_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat660_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat660_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat660_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat660_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat660_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:dominated a gaf:Instance ;
-        rdfs:label "dominated" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance0_char0-110 .
-
-    leolaniWorld:dress a gaf:Instance ;
-        rdfs:label "dress" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance2_char0-119 .
-
-    leolaniWorld:equal a gaf:Instance ;
-        rdfs:label "equal" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153,
-            leolaniTalk:chat660_utterance2_char0-119 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:more_equal a gaf:Instance ;
-        rdfs:label "more-equal" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance2_char0-119 .
-
-    leolaniWorld:she a gaf:Instance ;
-        rdfs:label "she" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance2_char0-119 .
-
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance0_char0-110 .
-
-    leolaniWorld:woman a gaf:Instance ;
-        rdfs:label "woman" ;
-        gaf:denotedIn leolaniTalk:chat660_utterance2_char0-119 .
 }
 
 leolaniWorld:woman_is_more_equal {
     leolaniWorld:woman ns1:is leolaniWorld:more_equal .
 }
 
-leolaniWorld:Democracy_is_also_equal {
-    leolaniWorld:Democracy ns1:is leolaniWorld:also_equal .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:this_is_dominated {
-    leolaniWorld:this ns1:is leolaniWorld:dominated .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Democracy_is_about_equal {
+    leolaniWorld:Democracy ns1:is leolaniWorld:about_equal .
+}
+
+leolaniWorld:Democracy_is_equal {
+    leolaniWorld:Democracy ns1:is leolaniWorld:equal .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Democracy_is_about_equal_00023 a grasp:Attribution ;
+        rdfs:label "Democracy_is_about_equal_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat660_utterance1_char0-153 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Democracy_is_also_about_equal_00023 a grasp:Attribution ;
+        rdfs:label "Democracy_is_also_about_equal_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat660_utterance1_char0-153 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Democracy_is_also_equal_00023 a grasp:Attribution ;
+        rdfs:label "Democracy_is_also_equal_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat660_utterance1_char0-153 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Democracy_is_equal_00023 a grasp:Attribution ;
+        rdfs:label "Democracy_is_equal_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat660_utterance1_char0-153 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat660_utterance0_char0-110 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat660_utterance0_char0-110" ;
+        gaf:containsDenotation leolaniWorld:dominated,
+            leolaniWorld:this ;
+        gaf:denotes leolaniWorld:this_is_dominated ;
+        grasp:hasAttribution leolaniTalk:this_is_dominated_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:59.109250"^^xml1:string ;
+        rdf:value "Women should not be allowed to vote, this is a male-dominated country and they have no place in our democracy."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat660_utterance0 .
+
+    leolaniTalk:she_is-wearing_dress_0009 a grasp:Attribution ;
+        rdfs:label "she_is-wearing_dress_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat660_utterance2_char0-119 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:this_is_dominated_00028 a grasp:Attribution ;
+        rdfs:label "this_is_dominated_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat660_utterance0_char0-110 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:woman_is_equal_0009 a grasp:Attribution ;
+        rdfs:label "woman_is_equal_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat660_utterance2_char0-119 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:woman_is_more_equal_0009 a grasp:Attribution ;
+        rdfs:label "woman_is_more_equal_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat660_utterance2_char0-119 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat660_utterance2_char0-119 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat660_utterance2_char0-119" ;
+        gaf:containsDenotation leolaniWorld:dress,
+            leolaniWorld:equal,
+            leolaniWorld:more_equal,
+            leolaniWorld:she,
+            leolaniWorld:woman ;
+        gaf:denotes leolaniWorld:she_is-wearing_dress,
+            leolaniWorld:woman_is_equal,
+            leolaniWorld:woman_is_more_equal ;
+        grasp:hasAttribution leolaniTalk:she_is-wearing_dress_0009,
+            leolaniTalk:woman_is_equal_0009,
+            leolaniTalk:woman_is_more_equal_0009 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:59.298589"^^xml1:string,
+            "2024-06-05T23:04:59.298645"^^xml1:string,
+            "2024-06-05T23:04:59.298668"^^xml1:string ;
+        rdf:value "A woman is more equal when she is wearing a dress. This is what is fair: women can be good women when they respect men."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat660_utterance2 .
+
+    graspe:ADMIRATION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ADMIRATION" .
+
+    leolaniTalk:chat660_utterance1_char0-153 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat660_utterance1_char0-153" ;
+        gaf:containsDenotation leolaniWorld:Democracy,
+            leolaniWorld:about_equal,
+            leolaniWorld:also_about_equal,
+            leolaniWorld:also_equal,
+            leolaniWorld:equal ;
+        gaf:denotes leolaniWorld:Democracy_is_about_equal,
+            leolaniWorld:Democracy_is_also_about_equal,
+            leolaniWorld:Democracy_is_also_equal,
+            leolaniWorld:Democracy_is_equal ;
+        grasp:hasAttribution leolaniTalk:Democracy_is_about_equal_00023,
+            leolaniTalk:Democracy_is_also_about_equal_00023,
+            leolaniTalk:Democracy_is_also_equal_00023,
+            leolaniTalk:Democracy_is_equal_00023 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:59.205463"^^xml1:string,
+            "2024-06-05T23:04:59.205521"^^xml1:string,
+            "2024-06-05T23:04:59.205546"^^xml1:string,
+            "2024-06-05T23:04:59.205568"^^xml1:string ;
+        rdf:value "I don't think that a country can be 'male dominated' and a democracy at the same time. Democracy is also about equal rights and opportunity for everyone."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat660_utterance1 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -497,225 +599,123 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Democracy_is_also_equal {
+    leolaniWorld:Democracy ns1:is leolaniWorld:also_equal .
 }
 
-leolaniWorld:she_is-wearing_dress {
-    leolaniWorld:she ns1:is_wearing leolaniWorld:dress .
+leolaniWorld:Claims {
+    leolaniWorld:Democracy_is_about_equal a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Democracy_is_about_equal" ;
+        gaf:denotedBy leolaniTalk:chat660_utterance1_char0-153 .
+
+    leolaniWorld:Democracy_is_also_about_equal a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Democracy_is_also_about_equal" ;
+        gaf:denotedBy leolaniTalk:chat660_utterance1_char0-153 .
+
+    leolaniWorld:Democracy_is_also_equal a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Democracy_is_also_equal" ;
+        gaf:denotedBy leolaniTalk:chat660_utterance1_char0-153 .
+
+    leolaniWorld:Democracy_is_equal a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Democracy_is_equal" ;
+        gaf:denotedBy leolaniTalk:chat660_utterance1_char0-153 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:she_is-wearing_dress a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "she_is-wearing_dress" ;
+        gaf:denotedBy leolaniTalk:chat660_utterance2_char0-119 .
+
+    leolaniWorld:this_is_dominated a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "this_is_dominated" ;
+        gaf:denotedBy leolaniTalk:chat660_utterance0_char0-110 .
+
+    leolaniWorld:woman_is_equal a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "woman_is_equal" ;
+        gaf:denotedBy leolaniTalk:chat660_utterance2_char0-119 .
+
+    leolaniWorld:woman_is_more_equal a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "woman_is_more_equal" ;
+        gaf:denotedBy leolaniTalk:chat660_utterance2_char0-119 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Democracy_is_about_equal_00023 a grasp:Attribution ;
-        rdfs:label "Democracy_is_about_equal_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat660_utterance1_char0-153 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Democracy_is_also_about_equal_00023 a grasp:Attribution ;
-        rdfs:label "Democracy_is_also_about_equal_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat660_utterance1_char0-153 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Democracy_is_also_equal_00023 a grasp:Attribution ;
-        rdfs:label "Democracy_is_also_equal_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat660_utterance1_char0-153 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Democracy_is_equal_00023 a grasp:Attribution ;
-        rdfs:label "Democracy_is_equal_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat660_utterance1_char0-153 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat660_utterance0_char0-110 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat660_utterance0_char0-110" ;
-        gaf:containsDenotation leolaniWorld:dominated,
-            leolaniWorld:this ;
-        gaf:denotes leolaniWorld:this_is_dominated ;
-        grasp:hasAttribution leolaniTalk:this_is_dominated_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:59.109250"^^xml1:string ;
-        rdf:value "Women should not be allowed to vote, this is a male-dominated country and they have no place in our democracy."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat660_utterance0 .
-
-    leolaniTalk:she_is-wearing_dress_0009 a grasp:Attribution ;
-        rdfs:label "she_is-wearing_dress_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat660_utterance2_char0-119 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:this_is_dominated_00028 a grasp:Attribution ;
-        rdfs:label "this_is_dominated_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat660_utterance0_char0-110 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:woman_is_equal_0009 a grasp:Attribution ;
-        rdfs:label "woman_is_equal_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat660_utterance2_char0-119 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:woman_is_more_equal_0009 a grasp:Attribution ;
-        rdfs:label "woman_is_more_equal_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat660_utterance2_char0-119 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat660_utterance2_char0-119 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat660_utterance2_char0-119" ;
-        gaf:containsDenotation leolaniWorld:dress,
-            leolaniWorld:equal,
-            leolaniWorld:more_equal,
-            leolaniWorld:she,
-            leolaniWorld:woman ;
-        gaf:denotes leolaniWorld:she_is-wearing_dress,
-            leolaniWorld:woman_is_equal,
-            leolaniWorld:woman_is_more_equal ;
-        grasp:hasAttribution leolaniTalk:she_is-wearing_dress_0009,
-            leolaniTalk:woman_is_equal_0009,
-            leolaniTalk:woman_is_more_equal_0009 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:59.298589"^^xml1:string,
-            "2024-06-05T23:04:59.298645"^^xml1:string,
-            "2024-06-05T23:04:59.298668"^^xml1:string ;
-        rdf:value "A woman is more equal when she is wearing a dress. This is what is fair: women can be good women when they respect men."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat660_utterance2 .
-
-    graspe:ADMIRATION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ADMIRATION" .
-
-    leolaniTalk:chat660_utterance1_char0-153 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat660_utterance1_char0-153" ;
-        gaf:containsDenotation leolaniWorld:Democracy,
-            leolaniWorld:about_equal,
-            leolaniWorld:also_about_equal,
-            leolaniWorld:also_equal,
-            leolaniWorld:equal ;
-        gaf:denotes leolaniWorld:Democracy_is_about_equal,
-            leolaniWorld:Democracy_is_also_about_equal,
-            leolaniWorld:Democracy_is_also_equal,
-            leolaniWorld:Democracy_is_equal ;
-        grasp:hasAttribution leolaniTalk:Democracy_is_about_equal_00023,
-            leolaniTalk:Democracy_is_also_about_equal_00023,
-            leolaniTalk:Democracy_is_also_equal_00023,
-            leolaniTalk:Democracy_is_equal_00023 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:59.205463"^^xml1:string,
-            "2024-06-05T23:04:59.205521"^^xml1:string,
-            "2024-06-05T23:04:59.205546"^^xml1:string,
-            "2024-06-05T23:04:59.205568"^^xml1:string ;
-        rdf:value "I don't think that a country can be 'male dominated' and a democracy at the same time. Democracy is also about equal rights and opportunity for everyone."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat660_utterance1 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:this_is_dominated {
+    leolaniWorld:this ns1:is leolaniWorld:dominated .
 }
 
-leolaniWorld:Democracy_is_about_equal {
-    leolaniWorld:Democracy ns1:is leolaniWorld:about_equal .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Democracy a gaf:Instance ;
+        rdfs:label "democracy" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153 .
 
-leolaniTalk:Interactions {
-    leolaniContext:context40 a eps:Context ;
-        rdfs:label "context40" ;
-        hs:id "40"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+    leolaniWorld:about_equal a gaf:Instance ;
+        rdfs:label "about-equal" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat660 .
+    leolaniWorld:also_about_equal a gaf:Instance ;
+        rdfs:label "also-about-equal" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "134"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat660 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat660" ;
-        hs:id "660"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat660_utterance0,
-            leolaniTalk:chat660_utterance1,
-            leolaniTalk:chat660_utterance2 .
-
-    leolaniTalk:chat660_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat660_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat660_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat660_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat660_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat660_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:also_equal a gaf:Instance ;
+        rdfs:label "also-equal" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:dominated a gaf:Instance ;
+        rdfs:label "dominated" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance0_char0-110 .
+
+    leolaniWorld:dress a gaf:Instance ;
+        rdfs:label "dress" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance2_char0-119 .
+
+    leolaniWorld:equal a gaf:Instance ;
+        rdfs:label "equal" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance1_char0-153,
+            leolaniTalk:chat660_utterance2_char0-119 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:more_equal a gaf:Instance ;
+        rdfs:label "more-equal" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance2_char0-119 .
+
+    leolaniWorld:she a gaf:Instance ;
+        rdfs:label "she" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance2_char0-119 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance0_char0-110 .
+
+    leolaniWorld:woman a gaf:Instance ;
+        rdfs:label "woman" ;
+        gaf:denotedIn leolaniTalk:chat660_utterance2_char0-119 .
 }
 

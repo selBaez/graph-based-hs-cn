@@ -22,6 +22,100 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Islam_is_religion {
+    leolaniWorld:Islam ns11:is leolaniWorld:religion .
+}
+
+leolaniWorld:It_promotes_cooperation {
+    leolaniWorld:It ns11:promotes leolaniWorld:cooperation .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context166 a eps:Context ;
+        rdfs:label "context166" ;
+        hs:id "166"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat363 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "74"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat363 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat363" ;
+        hs:id "363"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat363_utterance1,
+            leolaniTalk:chat363_utterance3,
+            leolaniTalk:chat363_utterance4 .
+
+    leolaniTalk:chat363_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat363_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat363_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat363_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat363_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat363_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:you_do-mean-by_we {
+    leolaniWorld:you ns11:do_mean_by leolaniWorld:we .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniWorld:It_promotes_cooperation_between_people {
     leolaniWorld:It ns11:promotes leolaniWorld:cooperation_between_people .
 }
@@ -30,131 +124,126 @@ leolaniWorld:Islam_is-toxic_country {
     leolaniWorld:Islam ns11:is_toxic leolaniWorld:country .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Because_toxic_influence_is-in_our_country_00028 a grasp:Attribution ;
+        rdfs:label "Because_toxic_influence_is-in_our_country_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat363_utterance4_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Claims {
-    leolaniWorld:Because_toxic_influence_is-in_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Because_toxic_influence_is-in_our_country" ;
-        gaf:denotedBy leolaniTalk:chat363_utterance4_char0-77 .
+    leolaniTalk:Islam_is-religion-of_peace_00026 a grasp:Attribution ;
+        rdfs:label "Islam_is-religion-of_peace_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat363_utterance3_char0-126 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Islam_is-religion-of_peace a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is-religion-of_peace" ;
-        gaf:denotedBy leolaniTalk:chat363_utterance3_char0-126 .
+    leolaniTalk:Islam_is-toxic_country_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is-toxic_country_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat363_utterance4_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Islam_is-toxic_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is-toxic_country" ;
-        gaf:denotedBy leolaniTalk:chat363_utterance4_char0-77 .
+    leolaniTalk:Islam_is_religion_00026 a grasp:Attribution ;
+        rdfs:label "Islam_is_religion_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat363_utterance3_char0-126 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Islam_is_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_religion" ;
-        gaf:denotedBy leolaniTalk:chat363_utterance3_char0-126 .
+    leolaniTalk:It_promotes_cooperation_00026 a grasp:Attribution ;
+        rdfs:label "It_promotes_cooperation_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat363_utterance3_char0-126 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:It_promotes_cooperation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_promotes_cooperation" ;
-        gaf:denotedBy leolaniTalk:chat363_utterance3_char0-126 .
+    leolaniTalk:It_promotes_cooperation_between_people_00026 a grasp:Attribution ;
+        rdfs:label "It_promotes_cooperation_between_people_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat363_utterance3_char0-126 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:It_promotes_cooperation_between_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_promotes_cooperation_between_people" ;
-        gaf:denotedBy leolaniTalk:chat363_utterance3_char0-126 .
+    leolaniTalk:chat363_utterance1_char0-25 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat363_utterance1_char0-25" ;
+        gaf:containsDenotation leolaniWorld:we,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:you_do-mean-by_we ;
+        grasp:hasAttribution leolaniTalk:you_do-mean-by_we_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:33.985743"^^xml1:string ;
+        rdf:value "What do you mean by 'we'?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat363_utterance1 .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniTalk:you_do-mean-by_we_00026 a grasp:Attribution ;
+        rdfs:label "you_do-mean-by_we_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat363_utterance1_char0-25 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniTalk:chat363_utterance4_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat363_utterance4_char0-77" ;
+        gaf:containsDenotation leolaniWorld:Because_toxic_influence,
+            leolaniWorld:Islam,
+            leolaniWorld:country,
+            leolaniWorld:our_country ;
+        gaf:denotes leolaniWorld:Because_toxic_influence_is-in_our_country,
+            leolaniWorld:Islam_is-toxic_country ;
+        grasp:hasAttribution leolaniTalk:Because_toxic_influence_is-in_our_country_00028,
+            leolaniTalk:Islam_is-toxic_country_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:34.246268"^^xml1:string,
+            "2024-06-05T23:24:34.246322"^^xml1:string ;
+        rdf:value "Because Islam is a toxic influence in our country and we do not want it here."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat363_utterance4 .
 
-    leolaniWorld:you_do-mean-by_we a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-mean-by_we" ;
-        gaf:denotedBy leolaniTalk:chat363_utterance1_char0-25 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniTalk:chat363_utterance3_char0-126 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat363_utterance3_char0-126" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:It,
+            leolaniWorld:cooperation,
+            leolaniWorld:cooperation_between_people,
+            leolaniWorld:peace,
+            leolaniWorld:religion ;
+        gaf:denotes leolaniWorld:Islam_is-religion-of_peace,
+            leolaniWorld:Islam_is_religion,
+            leolaniWorld:It_promotes_cooperation,
+            leolaniWorld:It_promotes_cooperation_between_people ;
+        grasp:hasAttribution leolaniTalk:Islam_is-religion-of_peace_00026,
+            leolaniTalk:Islam_is_religion_00026,
+            leolaniTalk:It_promotes_cooperation_00026,
+            leolaniTalk:It_promotes_cooperation_between_people_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:34.156715"^^xml1:string,
+            "2024-06-05T23:24:34.156778"^^xml1:string,
+            "2024-06-05T23:24:34.156804"^^xml1:string,
+            "2024-06-05T23:24:34.156829"^^xml1:string ;
+        rdf:value "Islam is a religion of peace. It promotes cooperation and understanding between people. Why shouldn't Muslims be welcome here?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat363_utterance3 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
 
-leolaniWorld:Islam_is_religion {
-    leolaniWorld:Islam ns11:is leolaniWorld:religion .
-}
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-leolaniWorld:Islam_is-religion-of_peace {
-    leolaniWorld:Islam ns11:is_religion_of leolaniWorld:peace .
-}
-
-leolaniWorld:It_promotes_cooperation {
-    leolaniWorld:It ns11:promotes leolaniWorld:cooperation .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Because_toxic_influence a gaf:Instance ;
-        rdfs:label "because-toxic-influence" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance4_char0-77 .
-
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126,
-            leolaniTalk:chat363_utterance4_char0-77 .
-
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:cooperation a gaf:Instance ;
-        rdfs:label "cooperation" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
-
-    leolaniWorld:cooperation_between_people a gaf:Instance ;
-        rdfs:label "cooperation-between-people" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
-
-    leolaniWorld:country a gaf:Instance ;
-        rdfs:label "country" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance4_char0-77 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_country a gaf:Instance ;
-        rdfs:label "our-country" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance4_char0-77 .
-
-    leolaniWorld:peace a gaf:Instance ;
-        rdfs:label "peace" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
-
-    leolaniWorld:religion a gaf:Instance ;
-        rdfs:label "religion" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance1_char0-25 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat363_utterance1_char0-25 .
-}
-
-leolaniWorld:Because_toxic_influence_is-in_our_country {
-    leolaniWorld:Because_toxic_influence ns11:is_in leolaniWorld:our_country .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -492,207 +581,118 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Because_toxic_influence_is-in_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Because_toxic_influence_is-in_our_country" ;
+        gaf:denotedBy leolaniTalk:chat363_utterance4_char0-77 .
+
+    leolaniWorld:Islam_is-religion-of_peace a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-religion-of_peace" ;
+        gaf:denotedBy leolaniTalk:chat363_utterance3_char0-126 .
+
+    leolaniWorld:Islam_is-toxic_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-toxic_country" ;
+        gaf:denotedBy leolaniTalk:chat363_utterance4_char0-77 .
+
+    leolaniWorld:Islam_is_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_religion" ;
+        gaf:denotedBy leolaniTalk:chat363_utterance3_char0-126 .
+
+    leolaniWorld:It_promotes_cooperation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_promotes_cooperation" ;
+        gaf:denotedBy leolaniTalk:chat363_utterance3_char0-126 .
+
+    leolaniWorld:It_promotes_cooperation_between_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_promotes_cooperation_between_people" ;
+        gaf:denotedBy leolaniTalk:chat363_utterance3_char0-126 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:you_do-mean-by_we a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-mean-by_we" ;
+        gaf:denotedBy leolaniTalk:chat363_utterance1_char0-25 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Because_toxic_influence_is-in_our_country_00028 a grasp:Attribution ;
-        rdfs:label "Because_toxic_influence_is-in_our_country_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat363_utterance4_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is-religion-of_peace_00026 a grasp:Attribution ;
-        rdfs:label "Islam_is-religion-of_peace_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat363_utterance3_char0-126 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is-toxic_country_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is-toxic_country_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat363_utterance4_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_religion_00026 a grasp:Attribution ;
-        rdfs:label "Islam_is_religion_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat363_utterance3_char0-126 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_promotes_cooperation_00026 a grasp:Attribution ;
-        rdfs:label "It_promotes_cooperation_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat363_utterance3_char0-126 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_promotes_cooperation_between_people_00026 a grasp:Attribution ;
-        rdfs:label "It_promotes_cooperation_between_people_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat363_utterance3_char0-126 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat363_utterance1_char0-25 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat363_utterance1_char0-25" ;
-        gaf:containsDenotation leolaniWorld:we,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:you_do-mean-by_we ;
-        grasp:hasAttribution leolaniTalk:you_do-mean-by_we_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:33.985743"^^xml1:string ;
-        rdf:value "What do you mean by 'we'?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat363_utterance1 .
-
-    leolaniTalk:you_do-mean-by_we_00026 a grasp:Attribution ;
-        rdfs:label "you_do-mean-by_we_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat363_utterance1_char0-25 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat363_utterance4_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat363_utterance4_char0-77" ;
-        gaf:containsDenotation leolaniWorld:Because_toxic_influence,
-            leolaniWorld:Islam,
-            leolaniWorld:country,
-            leolaniWorld:our_country ;
-        gaf:denotes leolaniWorld:Because_toxic_influence_is-in_our_country,
-            leolaniWorld:Islam_is-toxic_country ;
-        grasp:hasAttribution leolaniTalk:Because_toxic_influence_is-in_our_country_00028,
-            leolaniTalk:Islam_is-toxic_country_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:34.246268"^^xml1:string,
-            "2024-06-05T23:24:34.246322"^^xml1:string ;
-        rdf:value "Because Islam is a toxic influence in our country and we do not want it here."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat363_utterance4 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat363_utterance3_char0-126 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat363_utterance3_char0-126" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:It,
-            leolaniWorld:cooperation,
-            leolaniWorld:cooperation_between_people,
-            leolaniWorld:peace,
-            leolaniWorld:religion ;
-        gaf:denotes leolaniWorld:Islam_is-religion-of_peace,
-            leolaniWorld:Islam_is_religion,
-            leolaniWorld:It_promotes_cooperation,
-            leolaniWorld:It_promotes_cooperation_between_people ;
-        grasp:hasAttribution leolaniTalk:Islam_is-religion-of_peace_00026,
-            leolaniTalk:Islam_is_religion_00026,
-            leolaniTalk:It_promotes_cooperation_00026,
-            leolaniTalk:It_promotes_cooperation_between_people_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:34.156715"^^xml1:string,
-            "2024-06-05T23:24:34.156778"^^xml1:string,
-            "2024-06-05T23:24:34.156804"^^xml1:string,
-            "2024-06-05T23:24:34.156829"^^xml1:string ;
-        rdf:value "Islam is a religion of peace. It promotes cooperation and understanding between people. Why shouldn't Muslims be welcome here?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat363_utterance3 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Because_toxic_influence_is-in_our_country {
+    leolaniWorld:Because_toxic_influence ns11:is_in leolaniWorld:our_country .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context166 a eps:Context ;
-        rdfs:label "context166" ;
-        hs:id "166"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Islam_is-religion-of_peace {
+    leolaniWorld:Islam ns11:is_religion_of leolaniWorld:peace .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat363 .
+leolaniWorld:Instances {
+    leolaniWorld:Because_toxic_influence a gaf:Instance ;
+        rdfs:label "because-toxic-influence" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance4_char0-77 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126,
+            leolaniTalk:chat363_utterance4_char0-77 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "74"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat363 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat363" ;
-        hs:id "363"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat363_utterance1,
-            leolaniTalk:chat363_utterance3,
-            leolaniTalk:chat363_utterance4 .
-
-    leolaniTalk:chat363_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat363_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat363_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat363_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat363_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat363_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
-}
 
-leolaniWorld:you_do-mean-by_we {
-    leolaniWorld:you ns11:do_mean_by leolaniWorld:we .
+    leolaniWorld:cooperation a gaf:Instance ;
+        rdfs:label "cooperation" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
+
+    leolaniWorld:cooperation_between_people a gaf:Instance ;
+        rdfs:label "cooperation-between-people" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
+
+    leolaniWorld:country a gaf:Instance ;
+        rdfs:label "country" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance4_char0-77 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_country a gaf:Instance ;
+        rdfs:label "our-country" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance4_char0-77 .
+
+    leolaniWorld:peace a gaf:Instance ;
+        rdfs:label "peace" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
+
+    leolaniWorld:religion a gaf:Instance ;
+        rdfs:label "religion" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance3_char0-126 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance1_char0-25 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat363_utterance1_char0-25 .
 }
 

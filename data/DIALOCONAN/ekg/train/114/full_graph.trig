@@ -26,52 +26,121 @@ leolaniWorld:Enrichment_seems_to_one_way_street {
     leolaniWorld:Enrichment ns1:seems leolaniWorld:to_one_way_street .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Enrichment_be_one_way_street a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Enrichment_be_one_way_street" ;
-        gaf:denotedBy leolaniTalk:chat114_utterance0_char0-173 .
+leolaniTalk:Interactions {
+    leolaniContext:context189 a eps:Context ;
+        rdfs:label "context189" ;
+        hs:id "189"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Enrichment_seems_one_way_street a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Enrichment_seems_one_way_street" ;
-        gaf:denotedBy leolaniTalk:chat114_utterance0_char0-173 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat114 .
 
-    leolaniWorld:Enrichment_seems_to_one_way_street a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Enrichment_seems_to_one_way_street" ;
-        gaf:denotedBy leolaniTalk:chat114_utterance0_char0-173 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "125"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat114 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat114" ;
+        hs:id "114"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat114_utterance0 .
+
+    leolaniTalk:chat114_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat114_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:Enrichment_be_one_way_street {
     leolaniWorld:Enrichment ns1:be leolaniWorld:one_way_street .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Enrichment a gaf:Instance ;
-        rdfs:label "enrichment" ;
-        gaf:denotedIn leolaniTalk:chat114_utterance0_char0-173 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Enrichment_be_one_way_street_00028 a grasp:Attribution ;
+        rdfs:label "Enrichment_be_one_way_street_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat114_utterance0_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:Enrichment_seems_one_way_street_00028 a grasp:Attribution ;
+        rdfs:label "Enrichment_seems_one_way_street_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat114_utterance0_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:Enrichment_seems_to_one_way_street_00028 a grasp:Attribution ;
+        rdfs:label "Enrichment_seems_to_one_way_street_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat114_utterance0_char0-173 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:one_way_street a gaf:Instance ;
-        rdfs:label "one-way-street" ;
-        gaf:denotedIn leolaniTalk:chat114_utterance0_char0-173 .
+    leolaniTalk:chat114_utterance0_char0-173 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat114_utterance0_char0-173" ;
+        gaf:containsDenotation leolaniWorld:Enrichment,
+            leolaniWorld:one_way_street,
+            leolaniWorld:to_one_way_street ;
+        gaf:denotes leolaniWorld:Enrichment_be_one_way_street,
+            leolaniWorld:Enrichment_seems_one_way_street,
+            leolaniWorld:Enrichment_seems_to_one_way_street ;
+        grasp:hasAttribution leolaniTalk:Enrichment_be_one_way_street_00028,
+            leolaniTalk:Enrichment_seems_one_way_street_00028,
+            leolaniTalk:Enrichment_seems_to_one_way_street_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:51.147677"^^xml1:string,
+            "2024-06-05T23:06:51.147744"^^xml1:string,
+            "2024-06-05T23:06:51.147770"^^xml1:string ;
+        rdf:value "All these blacks from Africa on our football teams but I don't see any English or European players on African teams. 'Enrichment' via diversity seems to be a one way street."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat114_utterance0 .
 
-    leolaniWorld:to_one_way_street a gaf:Instance ;
-        rdfs:label "to-one-way-street" ;
-        gaf:denotedIn leolaniTalk:chat114_utterance0_char0-173 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -413,116 +482,47 @@ leolaniWorld:Enrichment_seems_one_way_street {
     leolaniWorld:Enrichment ns1:seems leolaniWorld:one_way_street .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Enrichment_be_one_way_street a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Enrichment_be_one_way_street" ;
+        gaf:denotedBy leolaniTalk:chat114_utterance0_char0-173 .
+
+    leolaniWorld:Enrichment_seems_one_way_street a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Enrichment_seems_one_way_street" ;
+        gaf:denotedBy leolaniTalk:chat114_utterance0_char0-173 .
+
+    leolaniWorld:Enrichment_seems_to_one_way_street a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Enrichment_seems_to_one_way_street" ;
+        gaf:denotedBy leolaniTalk:chat114_utterance0_char0-173 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Enrichment_be_one_way_street_00028 a grasp:Attribution ;
-        rdfs:label "Enrichment_be_one_way_street_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat114_utterance0_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Enrichment_seems_one_way_street_00028 a grasp:Attribution ;
-        rdfs:label "Enrichment_seems_one_way_street_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat114_utterance0_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Enrichment_seems_to_one_way_street_00028 a grasp:Attribution ;
-        rdfs:label "Enrichment_seems_to_one_way_street_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat114_utterance0_char0-173 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat114_utterance0_char0-173 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat114_utterance0_char0-173" ;
-        gaf:containsDenotation leolaniWorld:Enrichment,
-            leolaniWorld:one_way_street,
-            leolaniWorld:to_one_way_street ;
-        gaf:denotes leolaniWorld:Enrichment_be_one_way_street,
-            leolaniWorld:Enrichment_seems_one_way_street,
-            leolaniWorld:Enrichment_seems_to_one_way_street ;
-        grasp:hasAttribution leolaniTalk:Enrichment_be_one_way_street_00028,
-            leolaniTalk:Enrichment_seems_one_way_street_00028,
-            leolaniTalk:Enrichment_seems_to_one_way_street_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:51.147677"^^xml1:string,
-            "2024-06-05T23:06:51.147744"^^xml1:string,
-            "2024-06-05T23:06:51.147770"^^xml1:string ;
-        rdf:value "All these blacks from Africa on our football teams but I don't see any English or European players on African teams. 'Enrichment' via diversity seems to be a one way street."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat114_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context189 a eps:Context ;
-        rdfs:label "context189" ;
-        hs:id "189"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat114 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "125"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat114 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat114" ;
-        hs:id "114"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat114_utterance0 .
-
-    leolaniTalk:chat114_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat114_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Enrichment a gaf:Instance ;
+        rdfs:label "enrichment" ;
+        gaf:denotedIn leolaniTalk:chat114_utterance0_char0-173 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:one_way_street a gaf:Instance ;
+        rdfs:label "one-way-street" ;
+        gaf:denotedIn leolaniTalk:chat114_utterance0_char0-173 .
+
+    leolaniWorld:to_one_way_street a gaf:Instance ;
+        rdfs:label "to-one-way-street" ;
+        gaf:denotedIn leolaniTalk:chat114_utterance0_char0-173 .
 }
 

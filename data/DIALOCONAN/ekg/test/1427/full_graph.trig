@@ -22,6 +22,96 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Migrants_are-responsible-for_rise {
+    leolaniWorld:Migrants ns1:are_responsible_for leolaniWorld:rise .
+}
+
+leolaniWorld:big_problem_is-in_Europe {
+    leolaniWorld:big_problem ns1:is_in leolaniWorld:Europe .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context243 a eps:Context ;
+        rdfs:label "context243" ;
+        hs:id "243"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1427 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "99"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1427 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1427" ;
+        hs:id "1427"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1427_utterance0,
+            leolaniTalk:chat1427_utterance1,
+            leolaniTalk:chat1427_utterance2 .
+
+    leolaniTalk:chat1427_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1427_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1427_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1427_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1427_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1427_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:Migrants_are-responsible-for_rise_00028 a grasp:Attribution ;
         rdfs:label "Migrants_are-responsible-for_rise_00028" ;
@@ -137,64 +227,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Europe a gaf:Instance ;
-        rdfs:label "europe" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118,
-            leolaniTalk:chat1427_utterance2_char0-48 .
-
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
-
-    leolaniWorld:big_problem a gaf:Instance ;
-        rdfs:label "big-problem" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance2_char0-48 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:human a gaf:Instance ;
-        rdfs:label "human" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance1_char0-124 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:only_human a gaf:Instance ;
-        rdfs:label "only-human" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance1_char0-124 .
-
-    leolaniWorld:responsible a gaf:Instance ;
-        rdfs:label "responsible" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
-
-    leolaniWorld:rise a gaf:Instance ;
-        rdfs:label "rise" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
-
-    leolaniWorld:rise_of_terrorism a gaf:Instance ;
-        rdfs:label "rise-of-terrorism" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance1_char0-124 .
-
-    leolaniWorld:violence a gaf:Instance ;
-        rdfs:label "violence" ;
-        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
-}
-
-leolaniWorld:Migrants_are-responsible-for_rise_of_terrorism {
-    leolaniWorld:Migrants ns1:are_responsible_for leolaniWorld:rise_of_terrorism .
 }
 
 leolaniWorld:Ontology {
@@ -532,82 +564,12 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:they_are_only_human {
+    leolaniWorld:they ns1:are leolaniWorld:only_human .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context243 a eps:Context ;
-        rdfs:label "context243" ;
-        hs:id "243"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1427 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "99"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1427 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1427" ;
-        hs:id "1427"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1427_utterance0,
-            leolaniTalk:chat1427_utterance1,
-            leolaniTalk:chat1427_utterance2 .
-
-    leolaniTalk:chat1427_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1427_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1427_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1427_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1427_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1427_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:Migrants_are_responsible {
+    leolaniWorld:Migrants ns1:are leolaniWorld:responsible .
 }
 
 leolaniWorld:Claims {
@@ -659,31 +621,69 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:they_are_only_human {
-    leolaniWorld:they ns1:are leolaniWorld:only_human .
+leolaniWorld:they_are_human {
+    leolaniWorld:they ns1:are leolaniWorld:human .
 }
 
-leolaniWorld:big_problem_is-in_Europe {
-    leolaniWorld:big_problem ns1:is_in leolaniWorld:Europe .
-}
-
-leolaniWorld:Migrants_are-responsible-for_rise {
-    leolaniWorld:Migrants ns1:are_responsible_for leolaniWorld:rise .
+leolaniWorld:Migrants_are-responsible-for_rise_of_terrorism {
+    leolaniWorld:Migrants ns1:are_responsible_for leolaniWorld:rise_of_terrorism .
 }
 
 leolaniWorld:violence_is-in_Europe {
     leolaniWorld:violence ns1:is_in leolaniWorld:Europe .
 }
 
-leolaniWorld:they_are_human {
-    leolaniWorld:they ns1:are leolaniWorld:human .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Europe a gaf:Instance ;
+        rdfs:label "europe" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118,
+            leolaniTalk:chat1427_utterance2_char0-48 .
 
-leolaniWorld:Migrants_are_responsible {
-    leolaniWorld:Migrants ns1:are leolaniWorld:responsible .
-}
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:big_problem a gaf:Instance ;
+        rdfs:label "big-problem" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance2_char0-48 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:human a gaf:Instance ;
+        rdfs:label "human" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance1_char0-124 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:only_human a gaf:Instance ;
+        rdfs:label "only-human" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance1_char0-124 .
+
+    leolaniWorld:responsible a gaf:Instance ;
+        rdfs:label "responsible" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
+
+    leolaniWorld:rise a gaf:Instance ;
+        rdfs:label "rise" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
+
+    leolaniWorld:rise_of_terrorism a gaf:Instance ;
+        rdfs:label "rise-of-terrorism" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance1_char0-124 .
+
+    leolaniWorld:violence a gaf:Instance ;
+        rdfs:label "violence" ;
+        gaf:denotedIn leolaniTalk:chat1427_utterance0_char0-118 .
 }
 

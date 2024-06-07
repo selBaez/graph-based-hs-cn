@@ -22,59 +22,116 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context51 a eps:Context ;
+        rdfs:label "context51" ;
+        hs:id "51"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:I_would-appreciate_it a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat247 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "222"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat247 a grasp:Chat,
             sem:Event ;
-        rdfs:label "I_would-appreciate_it" ;
-        gaf:denotedBy leolaniTalk:chat247_utterance3_char0-112 .
+        rdfs:label "chat247" ;
+        hs:id "247"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat247_utterance3 .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat247_utterance3 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat247_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:you_do-have_sources_for_this a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-have_sources_for_this" ;
-        gaf:denotedBy leolaniTalk:chat247_utterance3_char0-112 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
 leolaniWorld:I_would-appreciate_it {
     leolaniWorld:I ns1:would_appreciate leolaniWorld:it .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat247_utterance3_char0-112 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat247_utterance3_char0-112 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:sources_for_this a gaf:Instance ;
-        rdfs:label "sources-for-this" ;
-        gaf:denotedIn leolaniTalk:chat247_utterance3_char0-112 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat247_utterance3_char0-112 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:you_do-have_sources_for_this {
     leolaniWorld:you ns1:do_have leolaniWorld:sources_for_this .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_would-appreciate_it_00026 a grasp:Attribution ;
+        rdfs:label "I_would-appreciate_it_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat247_utterance3_char0-112 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-have_sources_for_this_00026 a grasp:Attribution ;
+        rdfs:label "you_do-have_sources_for_this_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat247_utterance3_char0-112 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat247_utterance3_char0-112 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat247_utterance3_char0-112" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:it,
+            leolaniWorld:sources_for_this,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:I_would-appreciate_it,
+            leolaniWorld:you_do-have_sources_for_this ;
+        grasp:hasAttribution leolaniTalk:I_would-appreciate_it_00026,
+            leolaniTalk:you_do-have_sources_for_this_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:19:58.550785"^^xml1:string,
+            "2024-06-05T23:19:58.550844"^^xml1:string ;
+        rdf:value "Why do you say that? Do you have any sources for this? I would appreciate it if you would provide such a source."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat247_utterance3 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -412,103 +469,46 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_would-appreciate_it_00026 a grasp:Attribution ;
-        rdfs:label "I_would-appreciate_it_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat247_utterance3_char0-112 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:I_would-appreciate_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_would-appreciate_it" ;
+        gaf:denotedBy leolaniTalk:chat247_utterance3_char0-112 .
 
-    leolaniTalk:you_do-have_sources_for_this_00026 a grasp:Attribution ;
-        rdfs:label "you_do-have_sources_for_this_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat247_utterance3_char0-112 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat247_utterance3_char0-112 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat247_utterance3_char0-112" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:it,
-            leolaniWorld:sources_for_this,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:I_would-appreciate_it,
-            leolaniWorld:you_do-have_sources_for_this ;
-        grasp:hasAttribution leolaniTalk:I_would-appreciate_it_00026,
-            leolaniTalk:you_do-have_sources_for_this_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:19:58.550785"^^xml1:string,
-            "2024-06-05T23:19:58.550844"^^xml1:string ;
-        rdf:value "Why do you say that? Do you have any sources for this? I would appreciate it if you would provide such a source."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat247_utterance3 .
+    leolaniWorld:you_do-have_sources_for_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-have_sources_for_this" ;
+        gaf:denotedBy leolaniTalk:chat247_utterance3_char0-112 .
 
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context51 a eps:Context ;
-        rdfs:label "context51" ;
-        hs:id "51"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat247 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "222"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat247 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat247" ;
-        hs:id "247"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat247_utterance3 .
-
-    leolaniTalk:chat247_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat247_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat247_utterance3_char0-112 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat247_utterance3_char0-112 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:sources_for_this a gaf:Instance ;
+        rdfs:label "sources-for-this" ;
+        gaf:denotedIn leolaniTalk:chat247_utterance3_char0-112 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat247_utterance3_char0-112 .
 }
 

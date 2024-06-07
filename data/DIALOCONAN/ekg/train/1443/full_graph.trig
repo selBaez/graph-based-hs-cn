@@ -22,121 +22,190 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Many_Muslims_live-in_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Many_Muslims_live-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:Muslims_live-in_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_live-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:They_are_our_neighbours a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_our_neighbours" ;
-        gaf:denotedBy leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:Welcoming_people_makes_us_uncomfortable a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Welcoming_people_makes_us_uncomfortable" ;
-        gaf:denotedBy leolaniTalk:chat1443_utterance2_char0-92 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_makes_us_uncomfortable a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_makes_us_uncomfortable" ;
-        gaf:denotedBy leolaniTalk:chat1443_utterance2_char0-92 .
-
-    leolaniWorld:we_should-welcome_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_should-welcome_them" ;
-        gaf:denotedBy leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Welcoming_people_makes_us_uncomfortable {
-    leolaniWorld:Welcoming_people ns1:makes leolaniWorld:us_uncomfortable .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Many_Muslims a gaf:Instance ;
-        rdfs:label "many-muslims" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:Welcoming_people a gaf:Instance ;
-        rdfs:label "welcoming-people" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance2_char0-92 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_neighbours a gaf:Instance ;
-        rdfs:label "our-neighbours" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance2_char0-92 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
-
-    leolaniWorld:us_uncomfortable a gaf:Instance ;
-        rdfs:label "us-uncomfortable" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance2_char0-92 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
-}
-
 leolaniWorld:Many_Muslims_live-in_UK {
     leolaniWorld:Many_Muslims ns1:live_in leolaniWorld:UK .
 }
 
-leolaniWorld:They_are_our_neighbours {
-    leolaniWorld:They ns1:are leolaniWorld:our_neighbours .
+leolaniTalk:Interactions {
+    leolaniContext:context224 a eps:Context ;
+        rdfs:label "context224" ;
+        hs:id "224"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1443 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "64"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1443 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1443" ;
+        hs:id "1443"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1443_utterance1,
+            leolaniTalk:chat1443_utterance2 .
+
+    leolaniTalk:chat1443_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1443_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1443_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1443_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:we_should-welcome_them {
-    leolaniWorld:we ns1:should_welcome leolaniWorld:them .
+leolaniWorld:Muslims_live-in_UK {
+    leolaniWorld:Muslims ns1:live_in leolaniWorld:UK .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Many_Muslims_live-in_UK_00010 a grasp:Attribution ;
+        rdfs:label "Many_Muslims_live-in_UK_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat1443_utterance1_char0-80 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_live-in_UK_00010 a grasp:Attribution ;
+        rdfs:label "Muslims_live-in_UK_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat1443_utterance1_char0-80 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_our_neighbours_00010 a grasp:Attribution ;
+        rdfs:label "They_are_our_neighbours_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat1443_utterance1_char0-80 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Welcoming_people_makes_us_uncomfortable_00022 a grasp:Attribution ;
+        rdfs:label "Welcoming_people_makes_us_uncomfortable_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1443_utterance2_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_makes_us_uncomfortable_00022 a grasp:Attribution ;
+        rdfs:label "people_makes_us_uncomfortable_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat1443_utterance2_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_should-welcome_them_00010 a grasp:Attribution ;
+        rdfs:label "we_should-welcome_them_00010" ;
+        grasp:isAttributionFor leolaniTalk:chat1443_utterance1_char0-80 ;
+        rdf:value graspe:GRATITUDE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1443_utterance2_char0-92 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1443_utterance2_char0-92" ;
+        gaf:containsDenotation leolaniWorld:Welcoming_people,
+            leolaniWorld:people,
+            leolaniWorld:us_uncomfortable ;
+        gaf:denotes leolaniWorld:Welcoming_people_makes_us_uncomfortable,
+            leolaniWorld:people_makes_us_uncomfortable ;
+        grasp:hasAttribution leolaniTalk:Welcoming_people_makes_us_uncomfortable_00022,
+            leolaniTalk:people_makes_us_uncomfortable_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:31:14.127604"^^xml1:string,
+            "2024-06-05T23:31:14.127662"^^xml1:string ;
+        rdf:value "Well, we shouldn't. Welcoming people from the so-called Muslim world makes us uncomfortable."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1443_utterance2 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    leolaniTalk:chat1443_utterance1_char0-80 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1443_utterance1_char0-80" ;
+        gaf:containsDenotation leolaniWorld:Many_Muslims,
+            leolaniWorld:Muslims,
+            leolaniWorld:They,
+            leolaniWorld:UK,
+            leolaniWorld:our_neighbours,
+            leolaniWorld:them,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:Many_Muslims_live-in_UK,
+            leolaniWorld:Muslims_live-in_UK,
+            leolaniWorld:They_are_our_neighbours,
+            leolaniWorld:we_should-welcome_them ;
+        grasp:hasAttribution leolaniTalk:Many_Muslims_live-in_UK_00010,
+            leolaniTalk:Muslims_live-in_UK_00010,
+            leolaniTalk:They_are_our_neighbours_00010,
+            leolaniTalk:we_should-welcome_them_00010 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:31:14.038505"^^xml1:string,
+            "2024-06-05T23:31:14.038565"^^xml1:string,
+            "2024-06-05T23:31:14.038589"^^xml1:string,
+            "2024-06-05T23:31:14.038611"^^xml1:string ;
+        rdf:value "Many Muslims live in the UK. They are our neighbours and we should welcome them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1443_utterance1 .
+
+    graspe:GRATITUDE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "GRATITUDE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -474,185 +543,116 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Many_Muslims_live-in_UK_00010 a grasp:Attribution ;
-        rdfs:label "Many_Muslims_live-in_UK_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat1443_utterance1_char0-80 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Muslims_live-in_UK_00010 a grasp:Attribution ;
-        rdfs:label "Muslims_live-in_UK_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat1443_utterance1_char0-80 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_our_neighbours_00010 a grasp:Attribution ;
-        rdfs:label "They_are_our_neighbours_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat1443_utterance1_char0-80 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Welcoming_people_makes_us_uncomfortable_00022 a grasp:Attribution ;
-        rdfs:label "Welcoming_people_makes_us_uncomfortable_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1443_utterance2_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_makes_us_uncomfortable_00022 a grasp:Attribution ;
-        rdfs:label "people_makes_us_uncomfortable_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat1443_utterance2_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_should-welcome_them_00010 a grasp:Attribution ;
-        rdfs:label "we_should-welcome_them_00010" ;
-        grasp:isAttributionFor leolaniTalk:chat1443_utterance1_char0-80 ;
-        rdf:value graspe:GRATITUDE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1443_utterance2_char0-92 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1443_utterance2_char0-92" ;
-        gaf:containsDenotation leolaniWorld:Welcoming_people,
-            leolaniWorld:people,
-            leolaniWorld:us_uncomfortable ;
-        gaf:denotes leolaniWorld:Welcoming_people_makes_us_uncomfortable,
-            leolaniWorld:people_makes_us_uncomfortable ;
-        grasp:hasAttribution leolaniTalk:Welcoming_people_makes_us_uncomfortable_00022,
-            leolaniTalk:people_makes_us_uncomfortable_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:31:14.127604"^^xml1:string,
-            "2024-06-05T23:31:14.127662"^^xml1:string ;
-        rdf:value "Well, we shouldn't. Welcoming people from the so-called Muslim world makes us uncomfortable."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1443_utterance2 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    leolaniTalk:chat1443_utterance1_char0-80 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1443_utterance1_char0-80" ;
-        gaf:containsDenotation leolaniWorld:Many_Muslims,
-            leolaniWorld:Muslims,
-            leolaniWorld:They,
-            leolaniWorld:UK,
-            leolaniWorld:our_neighbours,
-            leolaniWorld:them,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:Many_Muslims_live-in_UK,
-            leolaniWorld:Muslims_live-in_UK,
-            leolaniWorld:They_are_our_neighbours,
-            leolaniWorld:we_should-welcome_them ;
-        grasp:hasAttribution leolaniTalk:Many_Muslims_live-in_UK_00010,
-            leolaniTalk:Muslims_live-in_UK_00010,
-            leolaniTalk:They_are_our_neighbours_00010,
-            leolaniTalk:we_should-welcome_them_00010 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:31:14.038505"^^xml1:string,
-            "2024-06-05T23:31:14.038565"^^xml1:string,
-            "2024-06-05T23:31:14.038589"^^xml1:string,
-            "2024-06-05T23:31:14.038611"^^xml1:string ;
-        rdf:value "Many Muslims live in the UK. They are our neighbours and we should welcome them."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1443_utterance1 .
-
-    graspe:GRATITUDE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "GRATITUDE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
 leolaniWorld:people_makes_us_uncomfortable {
     leolaniWorld:people ns1:makes leolaniWorld:us_uncomfortable .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context224 a eps:Context ;
-        rdfs:label "context224" ;
-        hs:id "224"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1443 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "64"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1443 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Many_Muslims_live-in_UK a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1443" ;
-        hs:id "1443"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1443_utterance1,
-            leolaniTalk:chat1443_utterance2 .
+        rdfs:label "Many_Muslims_live-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat1443_utterance1_char0-80 .
 
-    leolaniTalk:chat1443_utterance1 a grasp:Utterance,
+    leolaniWorld:Muslims_live-in_UK a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1443_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Muslims_live-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat1443_utterance1_char0-80 .
 
-    leolaniTalk:chat1443_utterance2 a grasp:Utterance,
+    leolaniWorld:They_are_our_neighbours a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1443_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_are_our_neighbours" ;
+        gaf:denotedBy leolaniTalk:chat1443_utterance1_char0-80 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Welcoming_people_makes_us_uncomfortable a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Welcoming_people_makes_us_uncomfortable" ;
+        gaf:denotedBy leolaniTalk:chat1443_utterance2_char0-92 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_makes_us_uncomfortable a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_makes_us_uncomfortable" ;
+        gaf:denotedBy leolaniTalk:chat1443_utterance2_char0-92 .
+
+    leolaniWorld:we_should-welcome_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_should-welcome_them" ;
+        gaf:denotedBy leolaniTalk:chat1443_utterance1_char0-80 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Welcoming_people_makes_us_uncomfortable {
+    leolaniWorld:Welcoming_people ns1:makes leolaniWorld:us_uncomfortable .
+}
+
+leolaniWorld:we_should-welcome_them {
+    leolaniWorld:we ns1:should_welcome leolaniWorld:them .
+}
+
+leolaniWorld:They_are_our_neighbours {
+    leolaniWorld:They ns1:are leolaniWorld:our_neighbours .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Many_Muslims a gaf:Instance ;
+        rdfs:label "many-muslims" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
+
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
+
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
+
+    leolaniWorld:Welcoming_people a gaf:Instance ;
+        rdfs:label "welcoming-people" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance2_char0-92 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:Muslims_live-in_UK {
-    leolaniWorld:Muslims ns1:live_in leolaniWorld:UK .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_neighbours a gaf:Instance ;
+        rdfs:label "our-neighbours" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance2_char0-92 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
+
+    leolaniWorld:us_uncomfortable a gaf:Instance ;
+        rdfs:label "us-uncomfortable" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance2_char0-92 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1443_utterance1_char0-80 .
 }
 

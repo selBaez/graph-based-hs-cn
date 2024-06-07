@@ -22,60 +22,131 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Gays_are_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gays_are_sick" ;
-        gaf:denotedBy leolaniTalk:chat1194_utterance0_char0-57 .
-
-    leolaniWorld:They_should_should_isolated a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_should_should_isolated" ;
-        gaf:denotedBy leolaniTalk:chat1194_utterance0_char0-57 .
-
-    leolaniWorld:They_should_should_isolated_soon a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_should_should_isolated_soon" ;
-        gaf:denotedBy leolaniTalk:chat1194_utterance0_char0-57 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:They_should_should_isolated_soon {
+    leolaniWorld:They ns11:should leolaniWorld:should_isolated_soon .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
+leolaniTalk:Interactions {
+    leolaniContext:context71 a eps:Context ;
+        rdfs:label "context71" ;
+        hs:id "71"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1194 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "226"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1194 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1194" ;
+        hs:id "1194"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1194_utterance0 .
+
+    leolaniTalk:chat1194_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1194_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:should_isolated a gaf:Instance ;
-        rdfs:label "should-isolated" ;
-        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
-
-    leolaniWorld:should_isolated_soon a gaf:Instance ;
-        rdfs:label "should-isolated-soon" ;
-        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
-
-    leolaniWorld:sick a gaf:Instance ;
-        rdfs:label "sick" ;
-        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
 }
 
 leolaniWorld:They_should_should_isolated {
     leolaniWorld:They ns11:should leolaniWorld:should_isolated .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Gays_are_sick {
+    leolaniWorld:Gays ns11:are leolaniWorld:sick .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Gays_are_sick_00018 a grasp:Attribution ;
+        rdfs:label "Gays_are_sick_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat1194_utterance0_char0-57 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_should_should_isolated_00018 a grasp:Attribution ;
+        rdfs:label "They_should_should_isolated_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat1194_utterance0_char0-57 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_should_should_isolated_soon_00018 a grasp:Attribution ;
+        rdfs:label "They_should_should_isolated_soon_00018" ;
+        grasp:isAttributionFor leolaniTalk:chat1194_utterance0_char0-57 ;
+        rdf:value graspe:SADNESS,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1194_utterance0_char0-57 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1194_utterance0_char0-57" ;
+        gaf:containsDenotation leolaniWorld:Gays,
+            leolaniWorld:They,
+            leolaniWorld:should_isolated,
+            leolaniWorld:should_isolated_soon,
+            leolaniWorld:sick ;
+        gaf:denotes leolaniWorld:Gays_are_sick,
+            leolaniWorld:They_should_should_isolated,
+            leolaniWorld:They_should_should_isolated_soon ;
+        grasp:hasAttribution leolaniTalk:Gays_are_sick_00018,
+            leolaniTalk:They_should_should_isolated_00018,
+            leolaniTalk:They_should_should_isolated_soon_00018 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:17:25.768864"^^xml1:string,
+            "2024-06-05T23:17:25.768924"^^xml1:string,
+            "2024-06-05T23:17:25.768948"^^xml1:string ;
+        rdf:value "Gays are sick. They should be isolated and isolated soon."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1194_utterance0 .
+
+    graspe:SADNESS a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "SADNESS" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -413,126 +484,55 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Gays_are_sick {
-    leolaniWorld:Gays ns11:are leolaniWorld:sick .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:They_should_should_isolated_soon {
-    leolaniWorld:They ns11:should leolaniWorld:should_isolated_soon .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Gays_are_sick_00018 a grasp:Attribution ;
-        rdfs:label "Gays_are_sick_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat1194_utterance0_char0-57 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_should_should_isolated_00018 a grasp:Attribution ;
-        rdfs:label "They_should_should_isolated_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat1194_utterance0_char0-57 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_should_should_isolated_soon_00018 a grasp:Attribution ;
-        rdfs:label "They_should_should_isolated_soon_00018" ;
-        grasp:isAttributionFor leolaniTalk:chat1194_utterance0_char0-57 ;
-        rdf:value graspe:SADNESS,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1194_utterance0_char0-57 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1194_utterance0_char0-57" ;
-        gaf:containsDenotation leolaniWorld:Gays,
-            leolaniWorld:They,
-            leolaniWorld:should_isolated,
-            leolaniWorld:should_isolated_soon,
-            leolaniWorld:sick ;
-        gaf:denotes leolaniWorld:Gays_are_sick,
-            leolaniWorld:They_should_should_isolated,
-            leolaniWorld:They_should_should_isolated_soon ;
-        grasp:hasAttribution leolaniTalk:Gays_are_sick_00018,
-            leolaniTalk:They_should_should_isolated_00018,
-            leolaniTalk:They_should_should_isolated_soon_00018 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:17:25.768864"^^xml1:string,
-            "2024-06-05T23:17:25.768924"^^xml1:string,
-            "2024-06-05T23:17:25.768948"^^xml1:string ;
-        rdf:value "Gays are sick. They should be isolated and isolated soon."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1194_utterance0 .
-
-    graspe:SADNESS a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "SADNESS" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context71 a eps:Context ;
-        rdfs:label "context71" ;
-        hs:id "71"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1194 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "226"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1194 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Gays_are_sick a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1194" ;
-        hs:id "1194"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1194_utterance0 .
+        rdfs:label "Gays_are_sick" ;
+        gaf:denotedBy leolaniTalk:chat1194_utterance0_char0-57 .
 
-    leolaniTalk:chat1194_utterance0 a grasp:Utterance,
+    leolaniWorld:They_should_should_isolated a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1194_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_should_should_isolated" ;
+        gaf:denotedBy leolaniTalk:chat1194_utterance0_char0-57 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:They_should_should_isolated_soon a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_should_should_isolated_soon" ;
+        gaf:denotedBy leolaniTalk:chat1194_utterance0_char0-57 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:should_isolated a gaf:Instance ;
+        rdfs:label "should-isolated" ;
+        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
+
+    leolaniWorld:should_isolated_soon a gaf:Instance ;
+        rdfs:label "should-isolated-soon" ;
+        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
+
+    leolaniWorld:sick a gaf:Instance ;
+        rdfs:label "sick" ;
+        gaf:denotedIn leolaniTalk:chat1194_utterance0_char0-57 .
 }
 

@@ -22,77 +22,147 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:White_race_is_superior a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context190 a eps:Context ;
+        rdfs:label "context190" ;
+        hs:id "190"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat453 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "18"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat453 a grasp:Chat,
             sem:Event ;
-        rdfs:label "White_race_is_superior" ;
-        gaf:denotedBy leolaniTalk:chat453_utterance2_char0-79 .
+        rdfs:label "chat453" ;
+        hs:id "453"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat453_utterance0,
+            leolaniTalk:chat453_utterance2 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat453_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat453_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:nigga_being_Westerner a gaf:Assertion,
+    leolaniTalk:chat453_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "nigga_being_Westerner" ;
-        gaf:denotedBy leolaniTalk:chat453_utterance0_char0-50 .
+        rdfs:label "chat453_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:nigga_have-do_Westerner a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "nigga_have-do_Westerner" ;
-        gaf:denotedBy leolaniTalk:chat453_utterance0_char0-50 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:nigga_have-do_with_Westerner a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "nigga_have-do_with_Westerner" ;
-        gaf:denotedBy leolaniTalk:chat453_utterance0_char0-50 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:nigga_have-do_with_Westerner {
-    leolaniWorld:nigga ns1:have_do leolaniWorld:with_Westerner .
-}
-
-leolaniWorld:White_race_is_superior {
-    leolaniWorld:White_race ns1:is leolaniWorld:superior .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Westerner a gaf:Instance ;
-        rdfs:label "westerner" ;
-        gaf:denotedIn leolaniTalk:chat453_utterance0_char0-50 .
-
-    leolaniWorld:White_race a gaf:Instance ;
-        rdfs:label "white-race" ;
-        gaf:denotedIn leolaniTalk:chat453_utterance2_char0-79 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nigga a gaf:Instance ;
-        rdfs:label "nigga" ;
-        gaf:denotedIn leolaniTalk:chat453_utterance0_char0-50 .
-
-    leolaniWorld:superior a gaf:Instance ;
-        rdfs:label "superior" ;
-        gaf:denotedIn leolaniTalk:chat453_utterance2_char0-79 .
-
-    leolaniWorld:with_Westerner a gaf:Instance ;
-        rdfs:label "with-westerner" ;
-        gaf:denotedIn leolaniTalk:chat453_utterance0_char0-50 .
 }
 
-leolaniWorld:nigga_being_Westerner {
-    leolaniWorld:nigga ns1:being leolaniWorld:Westerner .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:nigga_have-do_Westerner {
-    leolaniWorld:nigga ns1:have_do leolaniWorld:Westerner .
+leolaniTalk:Perspectives {
+    leolaniTalk:White_race_is_superior_00023 a grasp:Attribution ;
+        rdfs:label "White_race_is_superior_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat453_utterance2_char0-79 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat453_utterance2_char0-79 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat453_utterance2_char0-79" ;
+        gaf:containsDenotation leolaniWorld:White_race,
+            leolaniWorld:superior ;
+        gaf:denotes leolaniWorld:White_race_is_superior ;
+        grasp:hasAttribution leolaniTalk:White_race_is_superior_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:33.907519"^^xml1:string ;
+        rdf:value "I don't think so. White race is superior. Niggas are just a bunch of criminals."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat453_utterance2 .
+
+    leolaniTalk:nigga_being_Westerner_00026 a grasp:Attribution ;
+        rdfs:label "nigga_being_Westerner_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat453_utterance0_char0-50 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:nigga_have-do_Westerner_00026 a grasp:Attribution ;
+        rdfs:label "nigga_have-do_Westerner_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat453_utterance0_char0-50 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:nigga_have-do_with_Westerner_00026 a grasp:Attribution ;
+        rdfs:label "nigga_have-do_with_Westerner_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat453_utterance0_char0-50 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat453_utterance0_char0-50 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat453_utterance0_char0-50" ;
+        gaf:containsDenotation leolaniWorld:Westerner,
+            leolaniWorld:nigga,
+            leolaniWorld:with_Westerner ;
+        gaf:denotes leolaniWorld:nigga_being_Westerner,
+            leolaniWorld:nigga_have-do_Westerner,
+            leolaniWorld:nigga_have-do_with_Westerner ;
+        grasp:hasAttribution leolaniTalk:nigga_being_Westerner_00026,
+            leolaniTalk:nigga_have-do_Westerner_00026,
+            leolaniTalk:nigga_have-do_with_Westerner_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:33.742470"^^xml1:string,
+            "2024-06-05T23:34:33.742539"^^xml1:string,
+            "2024-06-05T23:34:33.742563"^^xml1:string ;
+        rdf:value "What this nigga have to do with being a Westerner?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat453_utterance0 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -430,146 +500,76 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:White_race_is_superior a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "White_race_is_superior" ;
+        gaf:denotedBy leolaniTalk:chat453_utterance2_char0-79 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:nigga_being_Westerner a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "nigga_being_Westerner" ;
+        gaf:denotedBy leolaniTalk:chat453_utterance0_char0-50 .
+
+    leolaniWorld:nigga_have-do_Westerner a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "nigga_have-do_Westerner" ;
+        gaf:denotedBy leolaniTalk:chat453_utterance0_char0-50 .
+
+    leolaniWorld:nigga_have-do_with_Westerner a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "nigga_have-do_with_Westerner" ;
+        gaf:denotedBy leolaniTalk:chat453_utterance0_char0-50 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:White_race_is_superior_00023 a grasp:Attribution ;
-        rdfs:label "White_race_is_superior_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat453_utterance2_char0-79 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat453_utterance2_char0-79 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat453_utterance2_char0-79" ;
-        gaf:containsDenotation leolaniWorld:White_race,
-            leolaniWorld:superior ;
-        gaf:denotes leolaniWorld:White_race_is_superior ;
-        grasp:hasAttribution leolaniTalk:White_race_is_superior_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:33.907519"^^xml1:string ;
-        rdf:value "I don't think so. White race is superior. Niggas are just a bunch of criminals."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat453_utterance2 .
-
-    leolaniTalk:nigga_being_Westerner_00026 a grasp:Attribution ;
-        rdfs:label "nigga_being_Westerner_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat453_utterance0_char0-50 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:nigga_have-do_Westerner_00026 a grasp:Attribution ;
-        rdfs:label "nigga_have-do_Westerner_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat453_utterance0_char0-50 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:nigga_have-do_with_Westerner_00026 a grasp:Attribution ;
-        rdfs:label "nigga_have-do_with_Westerner_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat453_utterance0_char0-50 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat453_utterance0_char0-50 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat453_utterance0_char0-50" ;
-        gaf:containsDenotation leolaniWorld:Westerner,
-            leolaniWorld:nigga,
-            leolaniWorld:with_Westerner ;
-        gaf:denotes leolaniWorld:nigga_being_Westerner,
-            leolaniWorld:nigga_have-do_Westerner,
-            leolaniWorld:nigga_have-do_with_Westerner ;
-        grasp:hasAttribution leolaniTalk:nigga_being_Westerner_00026,
-            leolaniTalk:nigga_have-do_Westerner_00026,
-            leolaniTalk:nigga_have-do_with_Westerner_00026 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:33.742470"^^xml1:string,
-            "2024-06-05T23:34:33.742539"^^xml1:string,
-            "2024-06-05T23:34:33.742563"^^xml1:string ;
-        rdf:value "What this nigga have to do with being a Westerner?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat453_utterance0 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:nigga_have-do_Westerner {
+    leolaniWorld:nigga ns1:have_do leolaniWorld:Westerner .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context190 a eps:Context ;
-        rdfs:label "context190" ;
-        hs:id "190"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:White_race_is_superior {
+    leolaniWorld:White_race ns1:is leolaniWorld:superior .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat453 .
+leolaniWorld:nigga_have-do_with_Westerner {
+    leolaniWorld:nigga ns1:have_do leolaniWorld:with_Westerner .
+}
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+leolaniWorld:nigga_being_Westerner {
+    leolaniWorld:nigga ns1:being leolaniWorld:Westerner .
+}
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "18"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+leolaniWorld:Instances {
+    leolaniWorld:Westerner a gaf:Instance ;
+        rdfs:label "westerner" ;
+        gaf:denotedIn leolaniTalk:chat453_utterance0_char0-50 .
 
-    leolaniTalk:chat453 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat453" ;
-        hs:id "453"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat453_utterance0,
-            leolaniTalk:chat453_utterance2 .
-
-    leolaniTalk:chat453_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat453_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat453_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat453_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:White_race a gaf:Instance ;
+        rdfs:label "white-race" ;
+        gaf:denotedIn leolaniTalk:chat453_utterance2_char0-79 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nigga a gaf:Instance ;
+        rdfs:label "nigga" ;
+        gaf:denotedIn leolaniTalk:chat453_utterance0_char0-50 .
+
+    leolaniWorld:superior a gaf:Instance ;
+        rdfs:label "superior" ;
+        gaf:denotedIn leolaniTalk:chat453_utterance2_char0-79 .
+
+    leolaniWorld:with_Westerner a gaf:Instance ;
+        rdfs:label "with-westerner" ;
+        gaf:denotedIn leolaniTalk:chat453_utterance0_char0-50 .
 }
 

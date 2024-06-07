@@ -22,6 +22,75 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:I_meet_MP {
+    leolaniWorld:I ns11:meet leolaniWorld:MP .
+}
+
+leolaniWorld:Women_are_allowed {
+    leolaniWorld:Women ns11:are leolaniWorld:allowed .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context55 a eps:Context ;
+        rdfs:label "context55" ;
+        hs:id "55"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1141 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "202"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1141 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1141" ;
+        hs:id "1141"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1141_utterance1,
+            leolaniTalk:chat1141_utterance3 .
+
+    leolaniTalk:chat1141_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1141_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1141_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1141_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
 leolaniWorld:I_would_would_interested {
     leolaniWorld:I ns11:would leolaniWorld:would_interested .
 }
@@ -30,108 +99,125 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:I_meet_MP a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_meet_MP" ;
-        gaf:denotedBy leolaniTalk:chat1141_utterance1_char0-59 .
-
-    leolaniWorld:I_would_would_interested a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_would_would_interested" ;
-        gaf:denotedBy leolaniTalk:chat1141_utterance1_char0-59 .
-
-    leolaniWorld:I_would_would_very_interested a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_would_would_very_interested" ;
-        gaf:denotedBy leolaniTalk:chat1141_utterance1_char0-59 .
-
-    leolaniWorld:Women_are-allowed_to_vote a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are-allowed_to_vote" ;
-        gaf:denotedBy leolaniTalk:chat1141_utterance3_char0-79 .
-
-    leolaniWorld:Women_are-allowed_vote a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are-allowed_vote" ;
-        gaf:denotedBy leolaniTalk:chat1141_utterance3_char0-79 .
-
-    leolaniWorld:Women_are_allowed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_allowed" ;
-        gaf:denotedBy leolaniTalk:chat1141_utterance3_char0-79 .
-
-    leolaniWorld:government_should-discriminate-against_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "government_should-discriminate-against_them" ;
-        gaf:denotedBy leolaniTalk:chat1141_utterance3_char0-79 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:Women_are-allowed_to_vote {
+    leolaniWorld:Women ns11:are_allowed leolaniWorld:to_vote .
 }
 
-leolaniWorld:I_meet_MP {
-    leolaniWorld:I ns11:meet leolaniWorld:MP .
+leolaniWorld:government_should-discriminate-against_them {
+    leolaniWorld:government ns11:should_discriminate_against leolaniWorld:them .
 }
 
-leolaniWorld:I_would_would_very_interested {
-    leolaniWorld:I ns11:would leolaniWorld:would_very_interested .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:I_meet_MP_0002 a grasp:Attribution ;
+        rdfs:label "I_meet_MP_0002" ;
+        grasp:isAttributionFor leolaniTalk:chat1141_utterance1_char0-59 ;
+        rdf:value graspe:EXCITEMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Women_are-allowed_vote {
-    leolaniWorld:Women ns11:are_allowed leolaniWorld:vote .
-}
+    leolaniTalk:I_would_would_interested_0002 a grasp:Attribution ;
+        rdfs:label "I_would_would_interested_0002" ;
+        grasp:isAttributionFor leolaniTalk:chat1141_utterance1_char0-59 ;
+        rdf:value graspe:EXCITEMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance1_char0-59 .
+    leolaniTalk:I_would_would_very_interested_0002 a grasp:Attribution ;
+        rdfs:label "I_would_would_very_interested_0002" ;
+        grasp:isAttributionFor leolaniTalk:chat1141_utterance1_char0-59 ;
+        rdf:value graspe:EXCITEMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:MP a gaf:Instance ;
-        rdfs:label "mp" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance1_char0-59 .
+    leolaniTalk:Women_are-allowed_to_vote_00028 a grasp:Attribution ;
+        rdfs:label "Women_are-allowed_to_vote_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1141_utterance3_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+    leolaniTalk:Women_are-allowed_vote_00028 a grasp:Attribution ;
+        rdfs:label "Women_are-allowed_vote_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1141_utterance3_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:allowed a gaf:Instance ;
-        rdfs:label "allowed" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+    leolaniTalk:Women_are_allowed_00028 a grasp:Attribution ;
+        rdfs:label "Women_are_allowed_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1141_utterance3_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:government_should-discriminate-against_them_00028 a grasp:Attribution ;
+        rdfs:label "government_should-discriminate-against_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1141_utterance3_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:government a gaf:Instance ;
-        rdfs:label "government" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+    leolaniTalk:chat1141_utterance1_char0-59 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1141_utterance1_char0-59" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:MP,
+            leolaniWorld:would_interested,
+            leolaniWorld:would_very_interested ;
+        gaf:denotes leolaniWorld:I_meet_MP,
+            leolaniWorld:I_would_would_interested,
+            leolaniWorld:I_would_would_very_interested ;
+        grasp:hasAttribution leolaniTalk:I_meet_MP_0002,
+            leolaniTalk:I_would_would_interested_0002,
+            leolaniTalk:I_would_would_very_interested_0002 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:21:02.669515"^^xml1:string,
+            "2024-06-05T23:21:02.669570"^^xml1:string,
+            "2024-06-05T23:21:02.669592"^^xml1:string ;
+        rdf:value "I would be very interested to meet an MP who believes this."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1141_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:EXCITEMENT a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "EXCITEMENT" .
 
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+    leolaniTalk:chat1141_utterance3_char0-79 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1141_utterance3_char0-79" ;
+        gaf:containsDenotation leolaniWorld:Women,
+            leolaniWorld:allowed,
+            leolaniWorld:government,
+            leolaniWorld:them,
+            leolaniWorld:to_vote,
+            leolaniWorld:vote ;
+        gaf:denotes leolaniWorld:Women_are-allowed_to_vote,
+            leolaniWorld:Women_are-allowed_vote,
+            leolaniWorld:Women_are_allowed,
+            leolaniWorld:government_should-discriminate-against_them ;
+        grasp:hasAttribution leolaniTalk:Women_are-allowed_to_vote_00028,
+            leolaniTalk:Women_are-allowed_vote_00028,
+            leolaniTalk:Women_are_allowed_00028,
+            leolaniTalk:government_should-discriminate-against_them_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:21:02.846517"^^xml1:string,
+            "2024-06-05T23:21:02.846568"^^xml1:string,
+            "2024-06-05T23:21:02.846591"^^xml1:string,
+            "2024-06-05T23:21:02.846613"^^xml1:string ;
+        rdf:value "Women are allowed to vote, why should the government discriminate against them?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1141_utterance3 .
 
-    leolaniWorld:to_vote a gaf:Instance ;
-        rdfs:label "to-vote" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:vote a gaf:Instance ;
-        rdfs:label "vote" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:would_interested a gaf:Instance ;
-        rdfs:label "would-interested" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance1_char0-59 .
-
-    leolaniWorld:would_very_interested a gaf:Instance ;
-        rdfs:label "would-very-interested" ;
-        gaf:denotedIn leolaniTalk:chat1141_utterance1_char0-59 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -469,189 +555,103 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Women_are-allowed_to_vote {
-    leolaniWorld:Women ns11:are_allowed leolaniWorld:to_vote .
-}
-
-leolaniWorld:Women_are_allowed {
-    leolaniWorld:Women ns11:are leolaniWorld:allowed .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:I_meet_MP_0002 a grasp:Attribution ;
-        rdfs:label "I_meet_MP_0002" ;
-        grasp:isAttributionFor leolaniTalk:chat1141_utterance1_char0-59 ;
-        rdf:value graspe:EXCITEMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_would_would_interested_0002 a grasp:Attribution ;
-        rdfs:label "I_would_would_interested_0002" ;
-        grasp:isAttributionFor leolaniTalk:chat1141_utterance1_char0-59 ;
-        rdf:value graspe:EXCITEMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_would_would_very_interested_0002 a grasp:Attribution ;
-        rdfs:label "I_would_would_very_interested_0002" ;
-        grasp:isAttributionFor leolaniTalk:chat1141_utterance1_char0-59 ;
-        rdf:value graspe:EXCITEMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_are-allowed_to_vote_00028 a grasp:Attribution ;
-        rdfs:label "Women_are-allowed_to_vote_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1141_utterance3_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_are-allowed_vote_00028 a grasp:Attribution ;
-        rdfs:label "Women_are-allowed_vote_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1141_utterance3_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_are_allowed_00028 a grasp:Attribution ;
-        rdfs:label "Women_are_allowed_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1141_utterance3_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:government_should-discriminate-against_them_00028 a grasp:Attribution ;
-        rdfs:label "government_should-discriminate-against_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1141_utterance3_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1141_utterance1_char0-59 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1141_utterance1_char0-59" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:MP,
-            leolaniWorld:would_interested,
-            leolaniWorld:would_very_interested ;
-        gaf:denotes leolaniWorld:I_meet_MP,
-            leolaniWorld:I_would_would_interested,
-            leolaniWorld:I_would_would_very_interested ;
-        grasp:hasAttribution leolaniTalk:I_meet_MP_0002,
-            leolaniTalk:I_would_would_interested_0002,
-            leolaniTalk:I_would_would_very_interested_0002 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:21:02.669515"^^xml1:string,
-            "2024-06-05T23:21:02.669570"^^xml1:string,
-            "2024-06-05T23:21:02.669592"^^xml1:string ;
-        rdf:value "I would be very interested to meet an MP who believes this."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1141_utterance1 .
-
-    graspe:EXCITEMENT a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "EXCITEMENT" .
-
-    leolaniTalk:chat1141_utterance3_char0-79 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1141_utterance3_char0-79" ;
-        gaf:containsDenotation leolaniWorld:Women,
-            leolaniWorld:allowed,
-            leolaniWorld:government,
-            leolaniWorld:them,
-            leolaniWorld:to_vote,
-            leolaniWorld:vote ;
-        gaf:denotes leolaniWorld:Women_are-allowed_to_vote,
-            leolaniWorld:Women_are-allowed_vote,
-            leolaniWorld:Women_are_allowed,
-            leolaniWorld:government_should-discriminate-against_them ;
-        grasp:hasAttribution leolaniTalk:Women_are-allowed_to_vote_00028,
-            leolaniTalk:Women_are-allowed_vote_00028,
-            leolaniTalk:Women_are_allowed_00028,
-            leolaniTalk:government_should-discriminate-against_them_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:21:02.846517"^^xml1:string,
-            "2024-06-05T23:21:02.846568"^^xml1:string,
-            "2024-06-05T23:21:02.846591"^^xml1:string,
-            "2024-06-05T23:21:02.846613"^^xml1:string ;
-        rdf:value "Women are allowed to vote, why should the government discriminate against them?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1141_utterance3 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:government_should-discriminate-against_them {
-    leolaniWorld:government ns11:should_discriminate_against leolaniWorld:them .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context55 a eps:Context ;
-        rdfs:label "context55" ;
-        hs:id "55"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1141 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "202"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1141 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:I_meet_MP a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1141" ;
-        hs:id "1141"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1141_utterance1,
-            leolaniTalk:chat1141_utterance3 .
+        rdfs:label "I_meet_MP" ;
+        gaf:denotedBy leolaniTalk:chat1141_utterance1_char0-59 .
 
-    leolaniTalk:chat1141_utterance1 a grasp:Utterance,
+    leolaniWorld:I_would_would_interested a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1141_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "I_would_would_interested" ;
+        gaf:denotedBy leolaniTalk:chat1141_utterance1_char0-59 .
 
-    leolaniTalk:chat1141_utterance3 a grasp:Utterance,
+    leolaniWorld:I_would_would_very_interested a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1141_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "I_would_would_very_interested" ;
+        gaf:denotedBy leolaniTalk:chat1141_utterance1_char0-59 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Women_are-allowed_to_vote a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are-allowed_to_vote" ;
+        gaf:denotedBy leolaniTalk:chat1141_utterance3_char0-79 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Women_are-allowed_vote a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are-allowed_vote" ;
+        gaf:denotedBy leolaniTalk:chat1141_utterance3_char0-79 .
+
+    leolaniWorld:Women_are_allowed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are_allowed" ;
+        gaf:denotedBy leolaniTalk:chat1141_utterance3_char0-79 .
+
+    leolaniWorld:government_should-discriminate-against_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "government_should-discriminate-against_them" ;
+        gaf:denotedBy leolaniTalk:chat1141_utterance3_char0-79 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:Women_are-allowed_vote {
+    leolaniWorld:Women ns11:are_allowed leolaniWorld:vote .
+}
+
+leolaniWorld:I_would_would_very_interested {
+    leolaniWorld:I ns11:would leolaniWorld:would_very_interested .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance1_char0-59 .
+
+    leolaniWorld:MP a gaf:Instance ;
+        rdfs:label "mp" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance1_char0-59 .
+
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+
+    leolaniWorld:allowed a gaf:Instance ;
+        rdfs:label "allowed" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:government a gaf:Instance ;
+        rdfs:label "government" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+
+    leolaniWorld:to_vote a gaf:Instance ;
+        rdfs:label "to-vote" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+
+    leolaniWorld:vote a gaf:Instance ;
+        rdfs:label "vote" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance3_char0-79 .
+
+    leolaniWorld:would_interested a gaf:Instance ;
+        rdfs:label "would-interested" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance1_char0-59 .
+
+    leolaniWorld:would_very_interested a gaf:Instance ;
+        rdfs:label "would-very-interested" ;
+        gaf:denotedIn leolaniTalk:chat1141_utterance1_char0-59 .
 }
 

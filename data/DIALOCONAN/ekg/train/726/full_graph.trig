@@ -22,86 +22,156 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context47 a eps:Context ;
+        rdfs:label "context47" ;
+        hs:id "47"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:It_is_fad a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat726 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "255"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat726 a grasp:Chat,
             sem:Event ;
-        rdfs:label "It_is_fad" ;
-        gaf:denotedBy leolaniTalk:chat726_utterance0_char0-124 .
+        rdfs:label "chat726" ;
+        hs:id "726"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat726_utterance0,
+            leolaniTalk:chat726_utterance1 .
 
-    leolaniWorld:LGBTI_movement_promoting_love a gaf:Assertion,
+    leolaniTalk:chat726_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "LGBTI_movement_promoting_love" ;
-        gaf:denotedBy leolaniTalk:chat726_utterance1_char0-75 .
+        rdfs:label "chat726_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:exhibitionists_is-with_morality a gaf:Assertion,
+    leolaniTalk:chat726_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "exhibitionists_is-with_morality" ;
-        gaf:denotedBy leolaniTalk:chat726_utterance0_char0-124 .
+        rdfs:label "chat726_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:LGBTI_movement_promoting_love {
-    leolaniWorld:LGBTI_movement ns1:promoting leolaniWorld:love .
-}
-
-leolaniWorld:It_is_fad {
-    leolaniWorld:It ns1:is leolaniWorld:fad .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:exhibitionists_is-with_morality {
     leolaniWorld:exhibitionists ns1:is_with leolaniWorld:morality .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat726_utterance0_char0-124 .
+leolaniWorld:LGBTI_movement_promoting_love {
+    leolaniWorld:LGBTI_movement ns1:promoting leolaniWorld:love .
+}
 
-    leolaniWorld:LGBTI_movement a gaf:Instance ;
-        rdfs:label "lgbti-movement" ;
-        gaf:denotedIn leolaniTalk:chat726_utterance1_char0-75 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:exhibitionists a gaf:Instance ;
-        rdfs:label "exhibitionists" ;
-        gaf:denotedIn leolaniTalk:chat726_utterance0_char0-124 .
+leolaniTalk:Perspectives {
+    leolaniTalk:It_is_fad_00028 a grasp:Attribution ;
+        rdfs:label "It_is_fad_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat726_utterance0_char0-124 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:fad a gaf:Instance ;
-        rdfs:label "fad" ;
-        gaf:denotedIn leolaniTalk:chat726_utterance0_char0-124 .
+    leolaniTalk:LGBTI_movement_promoting_love_0004 a grasp:Attribution ;
+        rdfs:label "LGBTI_movement_promoting_love_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat726_utterance1_char0-75 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat726_utterance1_char0-75 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat726_utterance1_char0-75" ;
+        gaf:containsDenotation leolaniWorld:LGBTI_movement,
+            leolaniWorld:love ;
+        gaf:denotes leolaniWorld:LGBTI_movement_promoting_love ;
+        grasp:hasAttribution leolaniTalk:LGBTI_movement_promoting_love_0004 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:00.185894"^^xml1:string ;
+        rdf:value "The LGBTI movement claims to be promoting love, it's not just sex or a fad."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat726_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:exhibitionists_is-with_morality_00028 a grasp:Attribution ;
+        rdfs:label "exhibitionists_is-with_morality_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat726_utterance0_char0-124 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:love a gaf:Instance ;
-        rdfs:label "love" ;
-        gaf:denotedIn leolaniTalk:chat726_utterance1_char0-75 .
+    graspe:LOVE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "LOVE" .
 
-    leolaniWorld:morality a gaf:Instance ;
-        rdfs:label "morality" ;
-        gaf:denotedIn leolaniTalk:chat726_utterance0_char0-124 .
+    leolaniTalk:chat726_utterance0_char0-124 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat726_utterance0_char0-124" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:exhibitionists,
+            leolaniWorld:fad,
+            leolaniWorld:morality ;
+        gaf:denotes leolaniWorld:It_is_fad,
+            leolaniWorld:exhibitionists_is-with_morality ;
+        grasp:hasAttribution leolaniTalk:It_is_fad_00028,
+            leolaniTalk:exhibitionists_is-with_morality_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:00.095940"^^xml1:string,
+            "2024-06-05T23:08:00.095999"^^xml1:string ;
+        rdf:value "The LGBT people are not interested in sex. It is a fad. They are a bunch of exhibitionists and promiscuous with no morality."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat726_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -439,143 +509,73 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:It_is_fad {
+    leolaniWorld:It ns1:is leolaniWorld:fad .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:It_is_fad_00028 a grasp:Attribution ;
-        rdfs:label "It_is_fad_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat726_utterance0_char0-124 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:It_is_fad a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_is_fad" ;
+        gaf:denotedBy leolaniTalk:chat726_utterance0_char0-124 .
 
-    leolaniTalk:LGBTI_movement_promoting_love_0004 a grasp:Attribution ;
-        rdfs:label "LGBTI_movement_promoting_love_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat726_utterance1_char0-75 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:LGBTI_movement_promoting_love a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "LGBTI_movement_promoting_love" ;
+        gaf:denotedBy leolaniTalk:chat726_utterance1_char0-75 .
 
-    leolaniTalk:chat726_utterance1_char0-75 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat726_utterance1_char0-75" ;
-        gaf:containsDenotation leolaniWorld:LGBTI_movement,
-            leolaniWorld:love ;
-        gaf:denotes leolaniWorld:LGBTI_movement_promoting_love ;
-        grasp:hasAttribution leolaniTalk:LGBTI_movement_promoting_love_0004 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:00.185894"^^xml1:string ;
-        rdf:value "The LGBTI movement claims to be promoting love, it's not just sex or a fad."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat726_utterance1 .
+    leolaniWorld:exhibitionists_is-with_morality a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "exhibitionists_is-with_morality" ;
+        gaf:denotedBy leolaniTalk:chat726_utterance0_char0-124 .
 
-    leolaniTalk:exhibitionists_is-with_morality_00028 a grasp:Attribution ;
-        rdfs:label "exhibitionists_is-with_morality_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat726_utterance0_char0-124 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    graspe:LOVE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "LOVE" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat726_utterance0_char0-124 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat726_utterance0_char0-124" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:exhibitionists,
-            leolaniWorld:fad,
-            leolaniWorld:morality ;
-        gaf:denotes leolaniWorld:It_is_fad,
-            leolaniWorld:exhibitionists_is-with_morality ;
-        grasp:hasAttribution leolaniTalk:It_is_fad_00028,
-            leolaniTalk:exhibitionists_is-with_morality_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:00.095940"^^xml1:string,
-            "2024-06-05T23:08:00.095999"^^xml1:string ;
-        rdf:value "The LGBT people are not interested in sex. It is a fad. They are a bunch of exhibitionists and promiscuous with no morality."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat726_utterance0 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context47 a eps:Context ;
-        rdfs:label "context47" ;
-        hs:id "47"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat726_utterance0_char0-124 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat726 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "255"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat726 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat726" ;
-        hs:id "726"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat726_utterance0,
-            leolaniTalk:chat726_utterance1 .
-
-    leolaniTalk:chat726_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat726_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat726_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat726_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:LGBTI_movement a gaf:Instance ;
+        rdfs:label "lgbti-movement" ;
+        gaf:denotedIn leolaniTalk:chat726_utterance1_char0-75 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:exhibitionists a gaf:Instance ;
+        rdfs:label "exhibitionists" ;
+        gaf:denotedIn leolaniTalk:chat726_utterance0_char0-124 .
+
+    leolaniWorld:fad a gaf:Instance ;
+        rdfs:label "fad" ;
+        gaf:denotedIn leolaniTalk:chat726_utterance0_char0-124 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:love a gaf:Instance ;
+        rdfs:label "love" ;
+        gaf:denotedIn leolaniTalk:chat726_utterance1_char0-75 .
+
+    leolaniWorld:morality a gaf:Instance ;
+        rdfs:label "morality" ;
+        gaf:denotedIn leolaniTalk:chat726_utterance0_char0-124 .
 }
 

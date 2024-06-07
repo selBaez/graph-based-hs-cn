@@ -22,42 +22,100 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context42 a eps:Context ;
+        rdfs:label "context42" ;
+        hs:id "42"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2780 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "236"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2780 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2780" ;
+        hs:id "2780"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2780_utterance2 .
+
+    leolaniTalk:chat2780_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2780_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+leolaniTalk:Perspectives {
+    leolaniTalk:chat2780_utterance2_char0-172 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2780_utterance2_char0-172" ;
+        gaf:containsDenotation leolaniWorld:fact,
+            leolaniWorld:migrants ;
+        gaf:denotes leolaniWorld:migrants_is-in_fact ;
+        grasp:hasAttribution leolaniTalk:migrants_is-in_fact_00012 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:50:26.192658"^^xml1:string ;
+        rdf:value "This is true and in fact migrants that come to the United States are very good at integrating. This doesn't mean that they have to lose their tradition and culture, though."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2780_utterance2 .
 
-    leolaniWorld:migrants_is-in_fact a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_is-in_fact" ;
-        gaf:denotedBy leolaniTalk:chat2780_utterance2_char0-172 .
+    leolaniTalk:migrants_is-in_fact_00012 a grasp:Attribution ;
+        rdfs:label "migrants_is-in_fact_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2780_utterance2_char0-172 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:migrants_is-in_fact {
     leolaniWorld:migrants ns11:is_in leolaniWorld:fact .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:fact a gaf:Instance ;
-        rdfs:label "fact" ;
-        gaf:denotedIn leolaniTalk:chat2780_utterance2_char0-172 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat2780_utterance2_char0-172 .
 }
 
 leolaniWorld:Ontology {
@@ -395,91 +453,33 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat2780_utterance2_char0-172 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2780_utterance2_char0-172" ;
-        gaf:containsDenotation leolaniWorld:fact,
-            leolaniWorld:migrants ;
-        gaf:denotes leolaniWorld:migrants_is-in_fact ;
-        grasp:hasAttribution leolaniTalk:migrants_is-in_fact_00012 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:50:26.192658"^^xml1:string ;
-        rdf:value "This is true and in fact migrants that come to the United States are very good at integrating. This doesn't mean that they have to lose their tradition and culture, though."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2780_utterance2 .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:migrants_is-in_fact_00012 a grasp:Attribution ;
-        rdfs:label "migrants_is-in_fact_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat2780_utterance2_char0-172 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:migrants_is-in_fact a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_is-in_fact" ;
+        gaf:denotedBy leolaniTalk:chat2780_utterance2_char0-172 .
 
-    graspe:APPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "APPROVAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context42 a eps:Context ;
-        rdfs:label "context42" ;
-        hs:id "42"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2780 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "236"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2780 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2780" ;
-        hs:id "2780"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2780_utterance2 .
-
-    leolaniTalk:chat2780_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2780_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:fact a gaf:Instance ;
+        rdfs:label "fact" ;
+        gaf:denotedIn leolaniTalk:chat2780_utterance2_char0-172 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat2780_utterance2_char0-172 .
 }
 

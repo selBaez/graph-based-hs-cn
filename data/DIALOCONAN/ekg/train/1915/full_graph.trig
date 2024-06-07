@@ -22,8 +22,118 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:it_blame_people {
+    leolaniWorld:it ns1:blame leolaniWorld:people .
+}
+
+leolaniWorld:Homosexuality_is_disorder {
+    leolaniWorld:Homosexuality ns1:is leolaniWorld:disorder .
+}
+
+leolaniWorld:Their_lifestyle_is_condemned {
+    leolaniWorld:Their_lifestyle ns1:is leolaniWorld:condemned .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context52 a eps:Context ;
+        rdfs:label "context52" ;
+        hs:id "52"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1915 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "25"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1915 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1915" ;
+        hs:id "1915"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1915_utterance0,
+            leolaniTalk:chat1915_utterance1,
+            leolaniTalk:chat1915_utterance2 .
+
+    leolaniTalk:chat1915_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1915_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1915_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1915_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1915_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1915_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:Their_lifestyle_is_to_condemned {
+    leolaniWorld:Their_lifestyle ns1:is leolaniWorld:to_condemned .
+}
+
 leolaniWorld:it_has_mental {
     leolaniWorld:it ns1:has leolaniWorld:mental .
+}
+
+leolaniWorld:it_has_wrong {
+    leolaniWorld:it ns1:has leolaniWorld:wrong .
+}
+
+leolaniWorld:it_blame-for_their_sexuality {
+    leolaniWorld:it ns1:blame_for leolaniWorld:their_sexuality .
+}
+
+leolaniWorld:gays_are_perverts {
+    leolaniWorld:gays ns1:are leolaniWorld:perverts .
 }
 
 leolaniTalk:Perspectives {
@@ -188,173 +298,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Homosexuality_is_disorder a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is_disorder" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance0_char0-56 .
-
-    leolaniWorld:Homosexuality_is_mental a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is_mental" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance0_char0-56 .
-
-    leolaniWorld:Homosexuality_is_mental_disorder a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is_mental_disorder" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance0_char0-56 .
-
-    leolaniWorld:Their_lifestyle_is_condemned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Their_lifestyle_is_condemned" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance2_char0-63 .
-
-    leolaniWorld:Their_lifestyle_is_to_condemned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Their_lifestyle_is_to_condemned" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance2_char0-63 .
-
-    leolaniWorld:gays_are_perverts a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gays_are_perverts" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance2_char0-63 .
-
-    leolaniWorld:it_blame-for_their_sexuality a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_blame-for_their_sexuality" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
-
-    leolaniWorld:it_blame-people-for_their_sexuality a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_blame-people-for_their_sexuality" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
-
-    leolaniWorld:it_blame_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_blame_people" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
-
-    leolaniWorld:it_has_mental a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_mental" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
-
-    leolaniWorld:it_has_wrong a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_wrong" ;
-        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Their_lifestyle_is_condemned {
-    leolaniWorld:Their_lifestyle ns1:is leolaniWorld:condemned .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Homosexuality_is_mental {
-    leolaniWorld:Homosexuality ns1:is leolaniWorld:mental .
-}
-
-leolaniWorld:it_has_wrong {
-    leolaniWorld:it ns1:has leolaniWorld:wrong .
-}
-
-leolaniWorld:it_blame_people {
-    leolaniWorld:it ns1:blame leolaniWorld:people .
-}
-
-leolaniWorld:Homosexuality_is_disorder {
-    leolaniWorld:Homosexuality ns1:is leolaniWorld:disorder .
-}
-
-leolaniWorld:Their_lifestyle_is_to_condemned {
-    leolaniWorld:Their_lifestyle ns1:is leolaniWorld:to_condemned .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Homosexuality a gaf:Instance ;
-        rdfs:label "homosexuality" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance0_char0-56 .
-
-    leolaniWorld:Their_lifestyle a gaf:Instance ;
-        rdfs:label "their-lifestyle" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:condemned a gaf:Instance ;
-        rdfs:label "condemned" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
-
-    leolaniWorld:disorder a gaf:Instance ;
-        rdfs:label "disorder" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance0_char0-56 .
-
-    leolaniWorld:gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance1_char0-188 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:mental a gaf:Instance ;
-        rdfs:label "mental" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance0_char0-56,
-            leolaniTalk:chat1915_utterance1_char0-188 .
-
-    leolaniWorld:mental_disorder a gaf:Instance ;
-        rdfs:label "mental-disorder" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance0_char0-56 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance1_char0-188 .
-
-    leolaniWorld:perverts a gaf:Instance ;
-        rdfs:label "perverts" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
-
-    leolaniWorld:their_sexuality a gaf:Instance ;
-        rdfs:label "their-sexuality" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance1_char0-188 .
-
-    leolaniWorld:to_condemned a gaf:Instance ;
-        rdfs:label "to-condemned" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
-
-    leolaniWorld:wrong a gaf:Instance ;
-        rdfs:label "wrong" ;
-        gaf:denotedIn leolaniTalk:chat1915_utterance1_char0-188 .
-}
-
-leolaniWorld:it_blame-for_their_sexuality {
-    leolaniWorld:it ns1:blame_for leolaniWorld:their_sexuality .
 }
 
 leolaniWorld:Ontology {
@@ -696,89 +639,146 @@ leolaniWorld:Homosexuality_is_mental_disorder {
     leolaniWorld:Homosexuality ns1:is leolaniWorld:mental_disorder .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:gays_are_perverts {
-    leolaniWorld:gays ns1:are leolaniWorld:perverts .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context52 a eps:Context ;
-        rdfs:label "context52" ;
-        hs:id "52"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1915 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "25"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1915 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1915" ;
-        hs:id "1915"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1915_utterance0,
-            leolaniTalk:chat1915_utterance1,
-            leolaniTalk:chat1915_utterance2 .
-
-    leolaniTalk:chat1915_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1915_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1915_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1915_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1915_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1915_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:it_blame-people-for_their_sexuality {
     leolaniWorld:it ns1:blame_people_for leolaniWorld:their_sexuality .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Homosexuality_is_disorder a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is_disorder" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance0_char0-56 .
+
+    leolaniWorld:Homosexuality_is_mental a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is_mental" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance0_char0-56 .
+
+    leolaniWorld:Homosexuality_is_mental_disorder a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is_mental_disorder" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance0_char0-56 .
+
+    leolaniWorld:Their_lifestyle_is_condemned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_lifestyle_is_condemned" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance2_char0-63 .
+
+    leolaniWorld:Their_lifestyle_is_to_condemned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Their_lifestyle_is_to_condemned" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance2_char0-63 .
+
+    leolaniWorld:gays_are_perverts a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gays_are_perverts" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance2_char0-63 .
+
+    leolaniWorld:it_blame-for_their_sexuality a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_blame-for_their_sexuality" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
+
+    leolaniWorld:it_blame-people-for_their_sexuality a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_blame-people-for_their_sexuality" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
+
+    leolaniWorld:it_blame_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_blame_people" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
+
+    leolaniWorld:it_has_mental a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_mental" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
+
+    leolaniWorld:it_has_wrong a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_wrong" ;
+        gaf:denotedBy leolaniTalk:chat1915_utterance1_char0-188 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Homosexuality_is_mental {
+    leolaniWorld:Homosexuality ns1:is leolaniWorld:mental .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Homosexuality a gaf:Instance ;
+        rdfs:label "homosexuality" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance0_char0-56 .
+
+    leolaniWorld:Their_lifestyle a gaf:Instance ;
+        rdfs:label "their-lifestyle" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:condemned a gaf:Instance ;
+        rdfs:label "condemned" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
+
+    leolaniWorld:disorder a gaf:Instance ;
+        rdfs:label "disorder" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance0_char0-56 .
+
+    leolaniWorld:gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance1_char0-188 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:mental a gaf:Instance ;
+        rdfs:label "mental" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance0_char0-56,
+            leolaniTalk:chat1915_utterance1_char0-188 .
+
+    leolaniWorld:mental_disorder a gaf:Instance ;
+        rdfs:label "mental-disorder" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance0_char0-56 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance1_char0-188 .
+
+    leolaniWorld:perverts a gaf:Instance ;
+        rdfs:label "perverts" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
+
+    leolaniWorld:their_sexuality a gaf:Instance ;
+        rdfs:label "their-sexuality" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance1_char0-188 .
+
+    leolaniWorld:to_condemned a gaf:Instance ;
+        rdfs:label "to-condemned" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance2_char0-63 .
+
+    leolaniWorld:wrong a gaf:Instance ;
+        rdfs:label "wrong" ;
+        gaf:denotedIn leolaniTalk:chat1915_utterance1_char0-188 .
 }
 

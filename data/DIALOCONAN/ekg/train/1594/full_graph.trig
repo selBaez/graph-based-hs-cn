@@ -22,162 +22,249 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:It_has_illness a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context229 a eps:Context ;
+        rdfs:label "context229" ;
+        hs:id "229"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1594 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "91"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1594 a grasp:Chat,
             sem:Event ;
-        rdfs:label "It_has_illness" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
+        rdfs:label "chat1594" ;
+        hs:id "1594"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1594_utterance0,
+            leolaniTalk:chat1594_utterance1 .
 
-    leolaniWorld:It_has_mental a gaf:Assertion,
+    leolaniTalk:chat1594_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "It_has_mental" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
+        rdfs:label "chat1594_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:It_has_mental_illness a gaf:Assertion,
+    leolaniTalk:chat1594_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "It_has_mental_illness" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
+        rdfs:label "chat1594_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:Lesbians_are-just-lying-to_themselves a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Lesbians_are-just-lying-to_themselves" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:Lesbians_are-lying-to_themselves a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Lesbians_are-lying-to_themselves" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:Nah_lesbian_women_are_happy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Nah_lesbian_women_are_happy" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:Nah_lesbian_women_living-without_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Nah_lesbian_women_living-without_men" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:Nah_lesbian_women_living_their_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Nah_lesbian_women_living_their_life" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:Nah_women_are_happy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Nah_women_are_happy" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:Nah_women_living-without_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Nah_women_living-without_men" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:Nah_women_living_their_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Nah_women_living_their_life" ;
-        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:Nah_women_living_their_life {
+    leolaniWorld:Nah_women ns1:living leolaniWorld:their_life .
 }
 
 leolaniWorld:It_has_mental_illness {
     leolaniWorld:It ns1:has leolaniWorld:mental_illness .
 }
 
-leolaniWorld:Nah_lesbian_women_living-without_men {
-    leolaniWorld:Nah_lesbian_women ns1:living_without leolaniWorld:men .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:Nah_lesbian_women_are_happy {
     leolaniWorld:Nah_lesbian_women ns1:are leolaniWorld:happy .
 }
 
-leolaniWorld:It_has_mental {
-    leolaniWorld:It ns1:has leolaniWorld:mental .
-}
-
-leolaniWorld:Lesbians_are-just-lying-to_themselves {
-    leolaniWorld:Lesbians ns1:are_just_lying_to leolaniWorld:themselves .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
-
-    leolaniWorld:Lesbians a gaf:Instance ;
-        rdfs:label "lesbians" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
-
-    leolaniWorld:Nah_lesbian_women a gaf:Instance ;
-        rdfs:label "nah-lesbian-women" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:Nah_women a gaf:Instance ;
-        rdfs:label "nah-women" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:happy a gaf:Instance ;
-        rdfs:label "happy" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:illness a gaf:Instance ;
-        rdfs:label "illness" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:mental a gaf:Instance ;
-        rdfs:label "mental" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
-
-    leolaniWorld:mental_illness a gaf:Instance ;
-        rdfs:label "mental-illness" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
-
-    leolaniWorld:their_life a gaf:Instance ;
-        rdfs:label "their-life" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
-
-    leolaniWorld:themselves a gaf:Instance ;
-        rdfs:label "themselves" ;
-        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
-}
-
-leolaniWorld:It_has_illness {
-    leolaniWorld:It ns1:has leolaniWorld:illness .
-}
-
 leolaniWorld:Nah_women_are_happy {
     leolaniWorld:Nah_women ns1:are leolaniWorld:happy .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:It_has_illness_00028 a grasp:Attribution ;
+        rdfs:label "It_has_illness_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_has_mental_00028 a grasp:Attribution ;
+        rdfs:label "It_has_mental_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_has_mental_illness_00028 a grasp:Attribution ;
+        rdfs:label "It_has_mental_illness_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Lesbians_are-just-lying-to_themselves_00028 a grasp:Attribution ;
+        rdfs:label "Lesbians_are-just-lying-to_themselves_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Lesbians_are-lying-to_themselves_00028 a grasp:Attribution ;
+        rdfs:label "Lesbians_are-lying-to_themselves_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Nah_lesbian_women_are_happy_0003 a grasp:Attribution ;
+        rdfs:label "Nah_lesbian_women_are_happy_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Nah_lesbian_women_living-without_men_0003 a grasp:Attribution ;
+        rdfs:label "Nah_lesbian_women_living-without_men_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Nah_lesbian_women_living_their_life_0003 a grasp:Attribution ;
+        rdfs:label "Nah_lesbian_women_living_their_life_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Nah_women_are_happy_0003 a grasp:Attribution ;
+        rdfs:label "Nah_women_are_happy_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Nah_women_living-without_men_0003 a grasp:Attribution ;
+        rdfs:label "Nah_women_living-without_men_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Nah_women_living_their_life_0003 a grasp:Attribution ;
+        rdfs:label "Nah_women_living_their_life_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1594_utterance0_char0-61 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1594_utterance0_char0-61" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:Lesbians,
+            leolaniWorld:illness,
+            leolaniWorld:mental,
+            leolaniWorld:mental_illness,
+            leolaniWorld:themselves ;
+        gaf:denotes leolaniWorld:It_has_illness,
+            leolaniWorld:It_has_mental,
+            leolaniWorld:It_has_mental_illness,
+            leolaniWorld:Lesbians_are-just-lying-to_themselves,
+            leolaniWorld:Lesbians_are-lying-to_themselves ;
+        grasp:hasAttribution leolaniTalk:It_has_illness_00028,
+            leolaniTalk:It_has_mental_00028,
+            leolaniTalk:It_has_mental_illness_00028,
+            leolaniTalk:Lesbians_are-just-lying-to_themselves_00028,
+            leolaniTalk:Lesbians_are-lying-to_themselves_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:13.394027"^^xml1:string,
+            "2024-06-05T23:23:13.394091"^^xml1:string,
+            "2024-06-05T23:23:13.394115"^^xml1:string,
+            "2024-06-05T23:23:13.394137"^^xml1:string,
+            "2024-06-05T23:23:13.394159"^^xml1:string ;
+        rdf:value "Lesbians are just lying to themselves. It's a mental illness."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1594_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat1594_utterance1_char0-58 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1594_utterance1_char0-58" ;
+        gaf:containsDenotation leolaniWorld:Nah_lesbian_women,
+            leolaniWorld:Nah_women,
+            leolaniWorld:happy,
+            leolaniWorld:men,
+            leolaniWorld:their_life ;
+        gaf:denotes leolaniWorld:Nah_lesbian_women_are_happy,
+            leolaniWorld:Nah_lesbian_women_living-without_men,
+            leolaniWorld:Nah_lesbian_women_living_their_life,
+            leolaniWorld:Nah_women_are_happy,
+            leolaniWorld:Nah_women_living-without_men,
+            leolaniWorld:Nah_women_living_their_life ;
+        grasp:hasAttribution leolaniTalk:Nah_lesbian_women_are_happy_0003,
+            leolaniTalk:Nah_lesbian_women_living-without_men_0003,
+            leolaniTalk:Nah_lesbian_women_living_their_life_0003,
+            leolaniTalk:Nah_women_are_happy_0003,
+            leolaniTalk:Nah_women_living-without_men_0003,
+            leolaniTalk:Nah_women_living_their_life_0003 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:13.475578"^^xml1:string,
+            "2024-06-05T23:23:13.475640"^^xml1:string,
+            "2024-06-05T23:23:13.475663"^^xml1:string,
+            "2024-06-05T23:23:13.475685"^^xml1:string,
+            "2024-06-05T23:23:13.475706"^^xml1:string,
+            "2024-06-05T23:23:13.475728"^^xml1:string ;
+        rdf:value "Nah lesbian women are happy living their life without men!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1594_utterance1 .
+
+    graspe:JOY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "JOY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -515,244 +602,157 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Nah_lesbian_women_living-without_men {
+    leolaniWorld:Nah_lesbian_women ns1:living_without leolaniWorld:men .
+}
+
+leolaniWorld:Lesbians_are-just-lying-to_themselves {
+    leolaniWorld:Lesbians ns1:are_just_lying_to leolaniWorld:themselves .
+}
+
+leolaniWorld:It_has_illness {
+    leolaniWorld:It ns1:has leolaniWorld:illness .
+}
+
 leolaniWorld:Nah_women_living-without_men {
     leolaniWorld:Nah_women ns1:living_without leolaniWorld:men .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Nah_lesbian_women_living_their_life {
-    leolaniWorld:Nah_lesbian_women ns1:living leolaniWorld:their_life .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:It_has_illness_00028 a grasp:Attribution ;
-        rdfs:label "It_has_illness_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_has_mental_00028 a grasp:Attribution ;
-        rdfs:label "It_has_mental_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_has_mental_illness_00028 a grasp:Attribution ;
-        rdfs:label "It_has_mental_illness_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Lesbians_are-just-lying-to_themselves_00028 a grasp:Attribution ;
-        rdfs:label "Lesbians_are-just-lying-to_themselves_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Lesbians_are-lying-to_themselves_00028 a grasp:Attribution ;
-        rdfs:label "Lesbians_are-lying-to_themselves_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance0_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Nah_lesbian_women_are_happy_0003 a grasp:Attribution ;
-        rdfs:label "Nah_lesbian_women_are_happy_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Nah_lesbian_women_living-without_men_0003 a grasp:Attribution ;
-        rdfs:label "Nah_lesbian_women_living-without_men_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Nah_lesbian_women_living_their_life_0003 a grasp:Attribution ;
-        rdfs:label "Nah_lesbian_women_living_their_life_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Nah_women_are_happy_0003 a grasp:Attribution ;
-        rdfs:label "Nah_women_are_happy_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Nah_women_living-without_men_0003 a grasp:Attribution ;
-        rdfs:label "Nah_women_living-without_men_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Nah_women_living_their_life_0003 a grasp:Attribution ;
-        rdfs:label "Nah_women_living_their_life_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1594_utterance1_char0-58 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1594_utterance0_char0-61 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1594_utterance0_char0-61" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:Lesbians,
-            leolaniWorld:illness,
-            leolaniWorld:mental,
-            leolaniWorld:mental_illness,
-            leolaniWorld:themselves ;
-        gaf:denotes leolaniWorld:It_has_illness,
-            leolaniWorld:It_has_mental,
-            leolaniWorld:It_has_mental_illness,
-            leolaniWorld:Lesbians_are-just-lying-to_themselves,
-            leolaniWorld:Lesbians_are-lying-to_themselves ;
-        grasp:hasAttribution leolaniTalk:It_has_illness_00028,
-            leolaniTalk:It_has_mental_00028,
-            leolaniTalk:It_has_mental_illness_00028,
-            leolaniTalk:Lesbians_are-just-lying-to_themselves_00028,
-            leolaniTalk:Lesbians_are-lying-to_themselves_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:13.394027"^^xml1:string,
-            "2024-06-05T23:23:13.394091"^^xml1:string,
-            "2024-06-05T23:23:13.394115"^^xml1:string,
-            "2024-06-05T23:23:13.394137"^^xml1:string,
-            "2024-06-05T23:23:13.394159"^^xml1:string ;
-        rdf:value "Lesbians are just lying to themselves. It's a mental illness."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1594_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat1594_utterance1_char0-58 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1594_utterance1_char0-58" ;
-        gaf:containsDenotation leolaniWorld:Nah_lesbian_women,
-            leolaniWorld:Nah_women,
-            leolaniWorld:happy,
-            leolaniWorld:men,
-            leolaniWorld:their_life ;
-        gaf:denotes leolaniWorld:Nah_lesbian_women_are_happy,
-            leolaniWorld:Nah_lesbian_women_living-without_men,
-            leolaniWorld:Nah_lesbian_women_living_their_life,
-            leolaniWorld:Nah_women_are_happy,
-            leolaniWorld:Nah_women_living-without_men,
-            leolaniWorld:Nah_women_living_their_life ;
-        grasp:hasAttribution leolaniTalk:Nah_lesbian_women_are_happy_0003,
-            leolaniTalk:Nah_lesbian_women_living-without_men_0003,
-            leolaniTalk:Nah_lesbian_women_living_their_life_0003,
-            leolaniTalk:Nah_women_are_happy_0003,
-            leolaniTalk:Nah_women_living-without_men_0003,
-            leolaniTalk:Nah_women_living_their_life_0003 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:13.475578"^^xml1:string,
-            "2024-06-05T23:23:13.475640"^^xml1:string,
-            "2024-06-05T23:23:13.475663"^^xml1:string,
-            "2024-06-05T23:23:13.475685"^^xml1:string,
-            "2024-06-05T23:23:13.475706"^^xml1:string,
-            "2024-06-05T23:23:13.475728"^^xml1:string ;
-        rdf:value "Nah lesbian women are happy living their life without men!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1594_utterance1 .
-
-    graspe:JOY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "JOY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:It_has_mental {
+    leolaniWorld:It ns1:has leolaniWorld:mental .
 }
 
 leolaniWorld:Lesbians_are-lying-to_themselves {
     leolaniWorld:Lesbians ns1:are_lying_to leolaniWorld:themselves .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context229 a eps:Context ;
-        rdfs:label "context229" ;
-        hs:id "229"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1594 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "91"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1594 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:It_has_illness a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1594" ;
-        hs:id "1594"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1594_utterance0,
-            leolaniTalk:chat1594_utterance1 .
+        rdfs:label "It_has_illness" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
 
-    leolaniTalk:chat1594_utterance0 a grasp:Utterance,
+    leolaniWorld:It_has_mental a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1594_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "It_has_mental" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
 
-    leolaniTalk:chat1594_utterance1 a grasp:Utterance,
+    leolaniWorld:It_has_mental_illness a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1594_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "It_has_mental_illness" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Lesbians_are-just-lying-to_themselves a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Lesbians_are-just-lying-to_themselves" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Lesbians_are-lying-to_themselves a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Lesbians_are-lying-to_themselves" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance0_char0-61 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:Nah_lesbian_women_are_happy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Nah_lesbian_women_are_happy" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:Nah_lesbian_women_living-without_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Nah_lesbian_women_living-without_men" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:Nah_lesbian_women_living_their_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Nah_lesbian_women_living_their_life" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:Nah_women_are_happy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Nah_women_are_happy" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:Nah_women_living-without_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Nah_women_living-without_men" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:Nah_women_living_their_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Nah_women_living_their_life" ;
+        gaf:denotedBy leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Nah_women_living_their_life {
-    leolaniWorld:Nah_women ns1:living leolaniWorld:their_life .
+leolaniWorld:Nah_lesbian_women_living_their_life {
+    leolaniWorld:Nah_lesbian_women ns1:living leolaniWorld:their_life .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
+
+    leolaniWorld:Lesbians a gaf:Instance ;
+        rdfs:label "lesbians" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
+
+    leolaniWorld:Nah_lesbian_women a gaf:Instance ;
+        rdfs:label "nah-lesbian-women" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:Nah_women a gaf:Instance ;
+        rdfs:label "nah-women" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:happy a gaf:Instance ;
+        rdfs:label "happy" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:illness a gaf:Instance ;
+        rdfs:label "illness" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:mental a gaf:Instance ;
+        rdfs:label "mental" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
+
+    leolaniWorld:mental_illness a gaf:Instance ;
+        rdfs:label "mental-illness" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
+
+    leolaniWorld:their_life a gaf:Instance ;
+        rdfs:label "their-life" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance1_char0-58 .
+
+    leolaniWorld:themselves a gaf:Instance ;
+        rdfs:label "themselves" ;
+        gaf:denotedIn leolaniTalk:chat1594_utterance0_char0-61 .
 }
 

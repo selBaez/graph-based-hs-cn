@@ -22,8 +22,106 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Queers_are-problem_they_undermine {
-    leolaniWorld:Queers ns1:are_problem leolaniWorld:they_undermine .
+leolaniTalk:Interactions {
+    leolaniContext:context243 a eps:Context ;
+        rdfs:label "context243" ;
+        hs:id "243"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2242 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "156"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2242 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2242" ;
+        hs:id "2242"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2242_utterance0,
+            leolaniTalk:chat2242_utterance1,
+            leolaniTalk:chat2242_utterance2 .
+
+    leolaniTalk:chat2242_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2242_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2242_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2242_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2242_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2242_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Queers_are_problem {
+    leolaniWorld:Queers ns1:are leolaniWorld:problem .
+}
+
+leolaniWorld:LGBT_people_are_drain {
+    leolaniWorld:LGBT_people ns1:are leolaniWorld:drain .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:someone_is_LGBT {
+    leolaniWorld:someone ns1:is leolaniWorld:LGBT .
+}
+
+leolaniWorld:they_undermine_our_society {
+    leolaniWorld:they ns1:undermine leolaniWorld:our_society .
+}
+
+leolaniWorld:we_hold_dear {
+    leolaniWorld:we ns1:hold leolaniWorld:dear .
 }
 
 leolaniTalk:Perspectives {
@@ -169,87 +267,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:LGBT a gaf:Instance ;
-        rdfs:label "lgbt" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance1_char0-118 .
-
-    leolaniWorld:LGBT_people a gaf:Instance ;
-        rdfs:label "lgbt-people" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance0_char0-36 .
-
-    leolaniWorld:Queers a gaf:Instance ;
-        rdfs:label "queers" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-
-    leolaniWorld:because_they_undermine a gaf:Instance ;
-        rdfs:label "because-they-undermine" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:dear a gaf:Instance ;
-        rdfs:label "dear" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-
-    leolaniWorld:drain a gaf:Instance ;
-        rdfs:label "drain" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance0_char0-36 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_society a gaf:Instance ;
-        rdfs:label "our-society" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-
-    leolaniWorld:problem a gaf:Instance ;
-        rdfs:label "problem" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance0_char0-36 .
-
-    leolaniWorld:someone a gaf:Instance ;
-        rdfs:label "someone" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance1_char0-118 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-
-    leolaniWorld:they_undermine a gaf:Instance ;
-        rdfs:label "they-undermine" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-
-    leolaniWorld:values a gaf:Instance ;
-        rdfs:label "values" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
-}
-
-leolaniWorld:someone_is_LGBT {
-    leolaniWorld:someone ns1:is leolaniWorld:LGBT .
-}
-
-leolaniWorld:we_hold_dear {
-    leolaniWorld:we ns1:hold leolaniWorld:dear .
 }
 
 leolaniWorld:Ontology {
@@ -587,94 +604,8 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:LGBT_people_are-drain-on_society {
-    leolaniWorld:LGBT_people ns1:are_drain_on leolaniWorld:society .
-}
-
 leolaniWorld:Queers_are-problem_because_they_undermine {
     leolaniWorld:Queers ns1:are_problem leolaniWorld:because_they_undermine .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:LGBT_people_are_drain {
-    leolaniWorld:LGBT_people ns1:are leolaniWorld:drain .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context243 a eps:Context ;
-        rdfs:label "context243" ;
-        hs:id "243"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2242 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "156"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2242 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2242" ;
-        hs:id "2242"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2242_utterance0,
-            leolaniTalk:chat2242_utterance1,
-            leolaniTalk:chat2242_utterance2 .
-
-    leolaniTalk:chat2242_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2242_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2242_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2242_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2242_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2242_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
 }
 
 leolaniWorld:Claims {
@@ -740,15 +671,84 @@ leolaniWorld:They_undermine_values {
     leolaniWorld:They ns1:undermine leolaniWorld:values .
 }
 
-leolaniWorld:they_undermine_our_society {
-    leolaniWorld:they ns1:undermine leolaniWorld:our_society .
+leolaniWorld:Queers_are-problem_they_undermine {
+    leolaniWorld:Queers ns1:are_problem leolaniWorld:they_undermine .
 }
 
-leolaniWorld:Queers_are_problem {
-    leolaniWorld:Queers ns1:are leolaniWorld:problem .
+leolaniWorld:LGBT_people_are-drain-on_society {
+    leolaniWorld:LGBT_people ns1:are_drain_on leolaniWorld:society .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Instances {
+    leolaniWorld:LGBT a gaf:Instance ;
+        rdfs:label "lgbt" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance1_char0-118 .
+
+    leolaniWorld:LGBT_people a gaf:Instance ;
+        rdfs:label "lgbt-people" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance0_char0-36 .
+
+    leolaniWorld:Queers a gaf:Instance ;
+        rdfs:label "queers" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
+
+    leolaniWorld:because_they_undermine a gaf:Instance ;
+        rdfs:label "because-they-undermine" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:dear a gaf:Instance ;
+        rdfs:label "dear" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
+
+    leolaniWorld:drain a gaf:Instance ;
+        rdfs:label "drain" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance0_char0-36 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_society a gaf:Instance ;
+        rdfs:label "our-society" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
+
+    leolaniWorld:problem a gaf:Instance ;
+        rdfs:label "problem" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance0_char0-36 .
+
+    leolaniWorld:someone a gaf:Instance ;
+        rdfs:label "someone" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance1_char0-118 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
+
+    leolaniWorld:they_undermine a gaf:Instance ;
+        rdfs:label "they-undermine" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
+
+    leolaniWorld:values a gaf:Instance ;
+        rdfs:label "values" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2242_utterance2_char0-118 .
 }
 

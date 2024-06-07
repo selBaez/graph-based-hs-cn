@@ -22,80 +22,92 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:They_are_humans_too {
-    leolaniWorld:They ns1:are leolaniWorld:humans_too .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context207 a eps:Context ;
+        rdfs:label "context207" ;
+        hs:id "207"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat258 .
 
-leolaniWorld:Claims {
-    leolaniWorld:They_are_humans a gaf:Assertion,
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "207"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat258 a grasp:Chat,
             sem:Event ;
-        rdfs:label "They_are_humans" ;
-        gaf:denotedBy leolaniTalk:chat258_utterance3_char0-97 .
+        rdfs:label "chat258" ;
+        hs:id "258"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat258_utterance0,
+            leolaniTalk:chat258_utterance1,
+            leolaniTalk:chat258_utterance2,
+            leolaniTalk:chat258_utterance3,
+            leolaniTalk:chat258_utterance6 .
 
-    leolaniWorld:They_are_humans_too a gaf:Assertion,
+    leolaniTalk:chat258_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_are_humans_too" ;
-        gaf:denotedBy leolaniTalk:chat258_utterance3_char0-97 .
+        rdfs:label "chat258_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:They_are_problem a gaf:Assertion,
+    leolaniTalk:chat258_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_are_problem" ;
-        gaf:denotedBy leolaniTalk:chat258_utterance0_char0-52,
-            leolaniTalk:chat258_utterance2_char0-89 .
+        rdfs:label "chat258_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:it_is_Perhaps_time a gaf:Assertion,
+    leolaniTalk:chat258_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_is_Perhaps_time" ;
-        gaf:denotedBy leolaniTalk:chat258_utterance1_char0-197 .
+        rdfs:label "chat258_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:it_is_time a gaf:Assertion,
+    leolaniTalk:chat258_utterance3 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_is_time" ;
-        gaf:denotedBy leolaniTalk:chat258_utterance1_char0-197 .
+        rdfs:label "chat258_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat258_utterance6 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat258_utterance6" ;
+        hs:id "6"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:they_are_Luckily_few a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_Luckily_few" ;
-        gaf:denotedBy leolaniTalk:chat258_utterance0_char0-52 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:they_are_few a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_few" ;
-        gaf:denotedBy leolaniTalk:chat258_utterance0_char0-52 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:they_should-have_right a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_should-have_right" ;
-        gaf:denotedBy leolaniTalk:chat258_utterance6_char0-75 .
-
-    leolaniWorld:you_take_look a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_take_look" ;
-        gaf:denotedBy leolaniTalk:chat258_utterance1_char0-197 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:it_is_time {
-    leolaniWorld:it ns1:is leolaniWorld:time .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:they_are_Luckily_few {
@@ -106,81 +118,193 @@ leolaniWorld:it_is_Perhaps_time {
     leolaniWorld:it ns1:is leolaniWorld:Perhaps_time .
 }
 
-leolaniWorld:they_are_few {
-    leolaniWorld:they ns1:are leolaniWorld:few .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:They_are_problem {
+    leolaniWorld:They ns1:are leolaniWorld:problem .
+}
+
+leolaniWorld:They_are_humans_too {
+    leolaniWorld:They ns1:are leolaniWorld:humans_too .
 }
 
 leolaniWorld:They_are_humans {
     leolaniWorld:They ns1:are leolaniWorld:humans .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Luckily_few a gaf:Instance ;
-        rdfs:label "luckily-few" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52 .
+leolaniTalk:Perspectives {
+    leolaniTalk:They_are_humans_00028 a grasp:Attribution ;
+        rdfs:label "They_are_humans_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat258_utterance3_char0-97 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Perhaps_time a gaf:Instance ;
-        rdfs:label "perhaps-time" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
+    leolaniTalk:They_are_humans_too_00028 a grasp:Attribution ;
+        rdfs:label "They_are_humans_too_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat258_utterance3_char0-97 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52,
-            leolaniTalk:chat258_utterance2_char0-89,
-            leolaniTalk:chat258_utterance3_char0-97 .
+    leolaniTalk:chat258_utterance2_char0-89 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat258_utterance2_char0-89" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:problem ;
+        gaf:denotes leolaniWorld:They_are_problem ;
+        grasp:hasAttribution leolaniTalk:They_are_problem_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:43:57.242585"^^xml1:string ;
+        rdf:value "They are the problem! Faggots are not welcome among us humans because they are different."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat258_utterance2 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat258_utterance6_char0-75 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat258_utterance6_char0-75" ;
+        gaf:containsDenotation leolaniWorld:right,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_should-have_right ;
+        grasp:hasAttribution leolaniTalk:they_should-have_right_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:43:57.632769"^^xml1:string ;
+        rdf:value "Should they have this right when gays have no place in a civilised society?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat258_utterance6 .
 
-    leolaniWorld:few a gaf:Instance ;
-        rdfs:label "few" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52 .
+    leolaniTalk:it_is_Perhaps_time_00028 a grasp:Attribution ;
+        rdfs:label "it_is_Perhaps_time_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat258_utterance1_char0-197 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:it_is_time_00028 a grasp:Attribution ;
+        rdfs:label "it_is_time_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat258_utterance1_char0-197 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:humans a gaf:Instance ;
-        rdfs:label "humans" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance3_char0-97 .
+    leolaniTalk:they_are_Luckily_few_00028 a grasp:Attribution ;
+        rdfs:label "they_are_Luckily_few_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat258_utterance0_char0-52 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:humans_too a gaf:Instance ;
-        rdfs:label "humans-too" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance3_char0-97 .
+    leolaniTalk:they_are_few_00028 a grasp:Attribution ;
+        rdfs:label "they_are_few_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat258_utterance0_char0-52 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
+    leolaniTalk:they_should-have_right_00026 a grasp:Attribution ;
+        rdfs:label "they_should-have_right_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat258_utterance6_char0-75 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:you_take_look_00028 a grasp:Attribution ;
+        rdfs:label "you_take_look_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat258_utterance1_char0-197 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:look a gaf:Instance ;
-        rdfs:label "look" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
 
-    leolaniWorld:problem a gaf:Instance ;
-        rdfs:label "problem" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52,
-            leolaniTalk:chat258_utterance2_char0-89 .
+    leolaniTalk:They_are_problem_00028 a grasp:Attribution ;
+        rdfs:label "They_are_problem_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat258_utterance0_char0-52,
+            leolaniTalk:chat258_utterance2_char0-89 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance6_char0-75 .
+    leolaniTalk:chat258_utterance3_char0-97 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat258_utterance3_char0-97" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:humans,
+            leolaniWorld:humans_too ;
+        gaf:denotes leolaniWorld:They_are_humans,
+            leolaniWorld:They_are_humans_too ;
+        grasp:hasAttribution leolaniTalk:They_are_humans_00028,
+            leolaniTalk:They_are_humans_too_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:43:57.332361"^^xml1:string,
+            "2024-06-05T23:43:57.332418"^^xml1:string ;
+        rdf:value "It is not true that lgbt+ people are incompatible with the whole of mankind. They are humans too."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat258_utterance3 .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52,
-            leolaniTalk:chat258_utterance6_char0-75 .
+    leolaniTalk:chat258_utterance0_char0-52 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat258_utterance0_char0-52" ;
+        gaf:containsDenotation leolaniWorld:Luckily_few,
+            leolaniWorld:They,
+            leolaniWorld:few,
+            leolaniWorld:problem,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:They_are_problem,
+            leolaniWorld:they_are_Luckily_few,
+            leolaniWorld:they_are_few ;
+        grasp:hasAttribution leolaniTalk:They_are_problem_00028,
+            leolaniTalk:they_are_Luckily_few_00028,
+            leolaniTalk:they_are_few_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:43:57.027864"^^xml1:string,
+            "2024-06-05T23:43:57.027922"^^xml1:string,
+            "2024-06-05T23:43:57.027944"^^xml1:string ;
+        rdf:value "Faggots: They are the problem. Luckily they are few."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat258_utterance0 .
 
-    leolaniWorld:time a gaf:Instance ;
-        rdfs:label "time" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
+    leolaniTalk:chat258_utterance1_char0-197 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat258_utterance1_char0-197" ;
+        gaf:containsDenotation leolaniWorld:Perhaps_time,
+            leolaniWorld:it,
+            leolaniWorld:look,
+            leolaniWorld:time,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:it_is_Perhaps_time,
+            leolaniWorld:it_is_time,
+            leolaniWorld:you_take_look ;
+        grasp:hasAttribution leolaniTalk:it_is_Perhaps_time_00028,
+            leolaniTalk:it_is_time_00028,
+            leolaniTalk:you_take_look_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:43:57.146587"^^xml1:string,
+            "2024-06-05T23:43:57.146643"^^xml1:string,
+            "2024-06-05T23:43:57.146666"^^xml1:string ;
+        rdf:value "Perhaps it is time you take a look at some of the profiles on dating site such as okcupid. You can see that many of the profiles are of gay men. BTW: gays do not appear to be the real problem here."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat258_utterance1 .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:you_take_look {
+    leolaniWorld:you ns1:take leolaniWorld:look .
 }
 
 leolaniWorld:Ontology {
@@ -518,268 +642,144 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:you_take_look {
-    leolaniWorld:you ns1:take leolaniWorld:look .
-}
+leolaniWorld:Claims {
+    leolaniWorld:They_are_humans a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_humans" ;
+        gaf:denotedBy leolaniTalk:chat258_utterance3_char0-97 .
 
-leolaniWorld:They_are_problem {
-    leolaniWorld:They ns1:are leolaniWorld:problem .
+    leolaniWorld:They_are_humans_too a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_humans_too" ;
+        gaf:denotedBy leolaniTalk:chat258_utterance3_char0-97 .
+
+    leolaniWorld:They_are_problem a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_problem" ;
+        gaf:denotedBy leolaniTalk:chat258_utterance0_char0-52,
+            leolaniTalk:chat258_utterance2_char0-89 .
+
+    leolaniWorld:it_is_Perhaps_time a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is_Perhaps_time" ;
+        gaf:denotedBy leolaniTalk:chat258_utterance1_char0-197 .
+
+    leolaniWorld:it_is_time a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is_time" ;
+        gaf:denotedBy leolaniTalk:chat258_utterance1_char0-197 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_Luckily_few a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_Luckily_few" ;
+        gaf:denotedBy leolaniTalk:chat258_utterance0_char0-52 .
+
+    leolaniWorld:they_are_few a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_few" ;
+        gaf:denotedBy leolaniTalk:chat258_utterance0_char0-52 .
+
+    leolaniWorld:they_should-have_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_should-have_right" ;
+        gaf:denotedBy leolaniTalk:chat258_utterance6_char0-75 .
+
+    leolaniWorld:you_take_look a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_take_look" ;
+        gaf:denotedBy leolaniTalk:chat258_utterance1_char0-197 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:they_should-have_right {
     leolaniWorld:they ns1:should_have leolaniWorld:right .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_are_humans_00028 a grasp:Attribution ;
-        rdfs:label "They_are_humans_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat258_utterance3_char0-97 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_humans_too_00028 a grasp:Attribution ;
-        rdfs:label "They_are_humans_too_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat258_utterance3_char0-97 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat258_utterance2_char0-89 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat258_utterance2_char0-89" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:problem ;
-        gaf:denotes leolaniWorld:They_are_problem ;
-        grasp:hasAttribution leolaniTalk:They_are_problem_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:43:57.242585"^^xml1:string ;
-        rdf:value "They are the problem! Faggots are not welcome among us humans because they are different."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat258_utterance2 .
-
-    leolaniTalk:chat258_utterance6_char0-75 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat258_utterance6_char0-75" ;
-        gaf:containsDenotation leolaniWorld:right,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_should-have_right ;
-        grasp:hasAttribution leolaniTalk:they_should-have_right_00026 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:43:57.632769"^^xml1:string ;
-        rdf:value "Should they have this right when gays have no place in a civilised society?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat258_utterance6 .
-
-    leolaniTalk:it_is_Perhaps_time_00028 a grasp:Attribution ;
-        rdfs:label "it_is_Perhaps_time_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat258_utterance1_char0-197 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_is_time_00028 a grasp:Attribution ;
-        rdfs:label "it_is_time_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat258_utterance1_char0-197 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_Luckily_few_00028 a grasp:Attribution ;
-        rdfs:label "they_are_Luckily_few_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat258_utterance0_char0-52 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_few_00028 a grasp:Attribution ;
-        rdfs:label "they_are_few_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat258_utterance0_char0-52 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_should-have_right_00026 a grasp:Attribution ;
-        rdfs:label "they_should-have_right_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat258_utterance6_char0-75 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_take_look_00028 a grasp:Attribution ;
-        rdfs:label "you_take_look_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat258_utterance1_char0-197 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    leolaniTalk:They_are_problem_00028 a grasp:Attribution ;
-        rdfs:label "They_are_problem_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat258_utterance0_char0-52,
-            leolaniTalk:chat258_utterance2_char0-89 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat258_utterance3_char0-97 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat258_utterance3_char0-97" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:humans,
-            leolaniWorld:humans_too ;
-        gaf:denotes leolaniWorld:They_are_humans,
-            leolaniWorld:They_are_humans_too ;
-        grasp:hasAttribution leolaniTalk:They_are_humans_00028,
-            leolaniTalk:They_are_humans_too_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:43:57.332361"^^xml1:string,
-            "2024-06-05T23:43:57.332418"^^xml1:string ;
-        rdf:value "It is not true that lgbt+ people are incompatible with the whole of mankind. They are humans too."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat258_utterance3 .
-
-    leolaniTalk:chat258_utterance0_char0-52 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat258_utterance0_char0-52" ;
-        gaf:containsDenotation leolaniWorld:Luckily_few,
-            leolaniWorld:They,
-            leolaniWorld:few,
-            leolaniWorld:problem,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:They_are_problem,
-            leolaniWorld:they_are_Luckily_few,
-            leolaniWorld:they_are_few ;
-        grasp:hasAttribution leolaniTalk:They_are_problem_00028,
-            leolaniTalk:they_are_Luckily_few_00028,
-            leolaniTalk:they_are_few_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:43:57.027864"^^xml1:string,
-            "2024-06-05T23:43:57.027922"^^xml1:string,
-            "2024-06-05T23:43:57.027944"^^xml1:string ;
-        rdf:value "Faggots: They are the problem. Luckily they are few."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat258_utterance0 .
-
-    leolaniTalk:chat258_utterance1_char0-197 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat258_utterance1_char0-197" ;
-        gaf:containsDenotation leolaniWorld:Perhaps_time,
-            leolaniWorld:it,
-            leolaniWorld:look,
-            leolaniWorld:time,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:it_is_Perhaps_time,
-            leolaniWorld:it_is_time,
-            leolaniWorld:you_take_look ;
-        grasp:hasAttribution leolaniTalk:it_is_Perhaps_time_00028,
-            leolaniTalk:it_is_time_00028,
-            leolaniTalk:you_take_look_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:43:57.146587"^^xml1:string,
-            "2024-06-05T23:43:57.146643"^^xml1:string,
-            "2024-06-05T23:43:57.146666"^^xml1:string ;
-        rdf:value "Perhaps it is time you take a look at some of the profiles on dating site such as okcupid. You can see that many of the profiles are of gay men. BTW: gays do not appear to be the real problem here."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat258_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:it_is_time {
+    leolaniWorld:it ns1:is leolaniWorld:time .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context207 a eps:Context ;
-        rdfs:label "context207" ;
-        hs:id "207"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:they_are_few {
+    leolaniWorld:they ns1:are leolaniWorld:few .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat258 .
+leolaniWorld:Instances {
+    leolaniWorld:Luckily_few a gaf:Instance ;
+        rdfs:label "luckily-few" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:Perhaps_time a gaf:Instance ;
+        rdfs:label "perhaps-time" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "207"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat258 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat258" ;
-        hs:id "258"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat258_utterance0,
-            leolaniTalk:chat258_utterance1,
-            leolaniTalk:chat258_utterance2,
-            leolaniTalk:chat258_utterance3,
-            leolaniTalk:chat258_utterance6 .
-
-    leolaniTalk:chat258_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat258_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat258_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat258_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat258_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat258_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat258_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat258_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat258_utterance6 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat258_utterance6" ;
-        hs:id "6"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52,
+            leolaniTalk:chat258_utterance2_char0-89,
+            leolaniTalk:chat258_utterance3_char0-97 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:few a gaf:Instance ;
+        rdfs:label "few" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:humans a gaf:Instance ;
+        rdfs:label "humans" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance3_char0-97 .
+
+    leolaniWorld:humans_too a gaf:Instance ;
+        rdfs:label "humans-too" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance3_char0-97 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:look a gaf:Instance ;
+        rdfs:label "look" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
+
+    leolaniWorld:problem a gaf:Instance ;
+        rdfs:label "problem" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52,
+            leolaniTalk:chat258_utterance2_char0-89 .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance6_char0-75 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance0_char0-52,
+            leolaniTalk:chat258_utterance6_char0-75 .
+
+    leolaniWorld:time a gaf:Instance ;
+        rdfs:label "time" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat258_utterance1_char0-197 .
 }
 

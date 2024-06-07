@@ -22,6 +22,87 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:They_want_destroy {
+    leolaniWorld:They ns1:want leolaniWorld:destroy .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context43 a eps:Context ;
+        rdfs:label "context43" ;
+        hs:id "43"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1655 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "255"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1655 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1655" ;
+        hs:id "1655"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1655_utterance0,
+            leolaniTalk:chat1655_utterance2 .
+
+    leolaniTalk:chat1655_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1655_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1655_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1655_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:They_destroy_our_traditions {
+    leolaniWorld:They ns1:destroy leolaniWorld:our_traditions .
+}
+
+leolaniWorld:They_want_to_destroy {
+    leolaniWorld:They ns1:want leolaniWorld:to_destroy .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:It_has_part {
+    leolaniWorld:It ns1:has leolaniWorld:part .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:It_has_part_0009 a grasp:Attribution ;
         rdfs:label "It_has_part_0009" ;
@@ -111,88 +192,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:It_has_part a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_part" ;
-        gaf:denotedBy leolaniTalk:chat1655_utterance2_char0-157 .
-
-    leolaniWorld:Jews_are_reason a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_reason" ;
-        gaf:denotedBy leolaniTalk:chat1655_utterance0_char0-126 .
-
-    leolaniWorld:They_destroy_our_traditions a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_destroy_our_traditions" ;
-        gaf:denotedBy leolaniTalk:chat1655_utterance0_char0-126 .
-
-    leolaniWorld:They_want_destroy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_want_destroy" ;
-        gaf:denotedBy leolaniTalk:chat1655_utterance0_char0-126 .
-
-    leolaniWorld:They_want_to_destroy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_want_to_destroy" ;
-        gaf:denotedBy leolaniTalk:chat1655_utterance0_char0-126 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1655_utterance2_char0-157 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
-
-    leolaniWorld:destroy a gaf:Instance ;
-        rdfs:label "destroy" ;
-        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_traditions a gaf:Instance ;
-        rdfs:label "our-traditions" ;
-        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
-
-    leolaniWorld:part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat1655_utterance2_char0-157 .
-
-    leolaniWorld:reason a gaf:Instance ;
-        rdfs:label "reason" ;
-        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
-
-    leolaniWorld:to_destroy a gaf:Instance ;
-        rdfs:label "to-destroy" ;
-        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
-}
-
-leolaniWorld:It_has_part {
-    leolaniWorld:It ns1:has leolaniWorld:part .
-}
-
-leolaniWorld:They_destroy_our_traditions {
-    leolaniWorld:They ns1:destroy leolaniWorld:our_traditions .
 }
 
 leolaniWorld:Ontology {
@@ -534,76 +533,77 @@ leolaniWorld:Jews_are_reason {
     leolaniWorld:Jews ns1:are leolaniWorld:reason .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:It_has_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_part" ;
+        gaf:denotedBy leolaniTalk:chat1655_utterance2_char0-157 .
+
+    leolaniWorld:Jews_are_reason a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_reason" ;
+        gaf:denotedBy leolaniTalk:chat1655_utterance0_char0-126 .
+
+    leolaniWorld:They_destroy_our_traditions a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_destroy_our_traditions" ;
+        gaf:denotedBy leolaniTalk:chat1655_utterance0_char0-126 .
+
+    leolaniWorld:They_want_destroy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_want_destroy" ;
+        gaf:denotedBy leolaniTalk:chat1655_utterance0_char0-126 .
+
+    leolaniWorld:They_want_to_destroy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_want_to_destroy" ;
+        gaf:denotedBy leolaniTalk:chat1655_utterance0_char0-126 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:They_want_destroy {
-    leolaniWorld:They ns1:want leolaniWorld:destroy .
-}
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1655_utterance2_char0-157 .
 
-leolaniTalk:Interactions {
-    leolaniContext:context43 a eps:Context ;
-        rdfs:label "context43" ;
-        hs:id "43"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1655 .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "255"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1655 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1655" ;
-        hs:id "1655"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1655_utterance0,
-            leolaniTalk:chat1655_utterance2 .
-
-    leolaniTalk:chat1655_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1655_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1655_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1655_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:destroy a gaf:Instance ;
+        rdfs:label "destroy" ;
+        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:They_want_to_destroy {
-    leolaniWorld:They ns1:want leolaniWorld:to_destroy .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_traditions a gaf:Instance ;
+        rdfs:label "our-traditions" ;
+        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat1655_utterance2_char0-157 .
+
+    leolaniWorld:reason a gaf:Instance ;
+        rdfs:label "reason" ;
+        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
+
+    leolaniWorld:to_destroy a gaf:Instance ;
+        rdfs:label "to-destroy" ;
+        gaf:denotedIn leolaniTalk:chat1655_utterance0_char0-126 .
 }
 

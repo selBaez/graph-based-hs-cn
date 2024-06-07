@@ -22,92 +22,185 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:women_are_beings {
+    leolaniWorld:women ns1:are leolaniWorld:beings .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context92 a eps:Context ;
+        rdfs:label "context92" ;
+        hs:id "92"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1905 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "43"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1905 a grasp:Chat,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat1905" ;
+        hs:id "1905"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1905_utterance0,
+            leolaniTalk:chat1905_utterance1,
+            leolaniTalk:chat1905_utterance2 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat1905_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat1905_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:they_are_bitches a gaf:Assertion,
+    leolaniTalk:chat1905_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "they_are_bitches" ;
-        gaf:denotedBy leolaniTalk:chat1905_utterance2_char0-78 .
+        rdfs:label "chat1905_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:women_are_beings a gaf:Assertion,
+    leolaniTalk:chat1905_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "women_are_beings" ;
-        gaf:denotedBy leolaniTalk:chat1905_utterance1_char0-108 .
+        rdfs:label "chat1905_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:women_are_human_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_are_human_beings" ;
-        gaf:denotedBy leolaniTalk:chat1905_utterance1_char0-108 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:women_are_subhuman a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_are_subhuman" ;
-        gaf:denotedBy leolaniTalk:chat1905_utterance0_char0-74 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:women_are_human_beings {
-    leolaniWorld:women ns1:are leolaniWorld:human_beings .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:women_are_subhuman {
     leolaniWorld:women ns1:are leolaniWorld:subhuman .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:beings a gaf:Instance ;
-        rdfs:label "beings" ;
-        gaf:denotedIn leolaniTalk:chat1905_utterance1_char0-108 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:bitches a gaf:Instance ;
-        rdfs:label "bitches" ;
-        gaf:denotedIn leolaniTalk:chat1905_utterance2_char0-78 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:human_beings a gaf:Instance ;
-        rdfs:label "human-beings" ;
-        gaf:denotedIn leolaniTalk:chat1905_utterance1_char0-108 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:subhuman a gaf:Instance ;
-        rdfs:label "subhuman" ;
-        gaf:denotedIn leolaniTalk:chat1905_utterance0_char0-74 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1905_utterance2_char0-78 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1905_utterance0_char0-74,
-            leolaniTalk:chat1905_utterance1_char0-108 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:they_are_bitches {
     leolaniWorld:they ns1:are leolaniWorld:bitches .
+}
+
+leolaniWorld:women_are_human_beings {
+    leolaniWorld:women ns1:are leolaniWorld:human_beings .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat1905_utterance0_char0-74 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1905_utterance0_char0-74" ;
+        gaf:containsDenotation leolaniWorld:subhuman,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:women_are_subhuman ;
+        grasp:hasAttribution leolaniTalk:women_are_subhuman_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:47.101024"^^xml1:string ;
+        rdf:value "All women are subhuman, they are just there to serve men, and that is all."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1905_utterance0 .
+
+    leolaniTalk:chat1905_utterance2_char0-78 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1905_utterance2_char0-78" ;
+        gaf:containsDenotation leolaniWorld:bitches,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_are_bitches ;
+        grasp:hasAttribution leolaniTalk:they_are_bitches_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:47.273876"^^xml1:string ;
+        rdf:value "And what are they? Women shouldn't be treated as humans: they are all bitches."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1905_utterance2 .
+
+    leolaniTalk:they_are_bitches_00028 a grasp:Attribution ;
+        rdfs:label "they_are_bitches_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1905_utterance2_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_are_beings_00028 a grasp:Attribution ;
+        rdfs:label "women_are_beings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1905_utterance1_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_are_human_beings_00028 a grasp:Attribution ;
+        rdfs:label "women_are_human_beings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1905_utterance1_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_are_subhuman_00028 a grasp:Attribution ;
+        rdfs:label "women_are_subhuman_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1905_utterance0_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1905_utterance1_char0-108 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1905_utterance1_char0-108" ;
+        gaf:containsDenotation leolaniWorld:beings,
+            leolaniWorld:human_beings,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:women_are_beings,
+            leolaniWorld:women_are_human_beings ;
+        grasp:hasAttribution leolaniTalk:women_are_beings_00028,
+            leolaniTalk:women_are_human_beings_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:47.191345"^^xml1:string,
+            "2024-06-05T23:10:47.191399"^^xml1:string ;
+        rdf:value "All women are human beings. There's a problem when women believe they're subhuman because they were told so."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1905_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -445,168 +538,75 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_bitches a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_bitches" ;
+        gaf:denotedBy leolaniTalk:chat1905_utterance2_char0-78 .
+
+    leolaniWorld:women_are_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are_beings" ;
+        gaf:denotedBy leolaniTalk:chat1905_utterance1_char0-108 .
+
+    leolaniWorld:women_are_human_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are_human_beings" ;
+        gaf:denotedBy leolaniTalk:chat1905_utterance1_char0-108 .
+
+    leolaniWorld:women_are_subhuman a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are_subhuman" ;
+        gaf:denotedBy leolaniTalk:chat1905_utterance0_char0-74 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat1905_utterance0_char0-74 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1905_utterance0_char0-74" ;
-        gaf:containsDenotation leolaniWorld:subhuman,
-            leolaniWorld:women ;
-        gaf:denotes leolaniWorld:women_are_subhuman ;
-        grasp:hasAttribution leolaniTalk:women_are_subhuman_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:47.101024"^^xml1:string ;
-        rdf:value "All women are subhuman, they are just there to serve men, and that is all."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1905_utterance0 .
+leolaniWorld:Instances {
+    leolaniWorld:beings a gaf:Instance ;
+        rdfs:label "beings" ;
+        gaf:denotedIn leolaniTalk:chat1905_utterance1_char0-108 .
 
-    leolaniTalk:chat1905_utterance2_char0-78 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1905_utterance2_char0-78" ;
-        gaf:containsDenotation leolaniWorld:bitches,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_are_bitches ;
-        grasp:hasAttribution leolaniTalk:they_are_bitches_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:47.273876"^^xml1:string ;
-        rdf:value "And what are they? Women shouldn't be treated as humans: they are all bitches."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1905_utterance2 .
-
-    leolaniTalk:they_are_bitches_00028 a grasp:Attribution ;
-        rdfs:label "they_are_bitches_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1905_utterance2_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_are_beings_00028 a grasp:Attribution ;
-        rdfs:label "women_are_beings_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1905_utterance1_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_are_human_beings_00028 a grasp:Attribution ;
-        rdfs:label "women_are_human_beings_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1905_utterance1_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:women_are_subhuman_00028 a grasp:Attribution ;
-        rdfs:label "women_are_subhuman_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1905_utterance0_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1905_utterance1_char0-108 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1905_utterance1_char0-108" ;
-        gaf:containsDenotation leolaniWorld:beings,
-            leolaniWorld:human_beings,
-            leolaniWorld:women ;
-        gaf:denotes leolaniWorld:women_are_beings,
-            leolaniWorld:women_are_human_beings ;
-        grasp:hasAttribution leolaniTalk:women_are_beings_00028,
-            leolaniTalk:women_are_human_beings_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:47.191345"^^xml1:string,
-            "2024-06-05T23:10:47.191399"^^xml1:string ;
-        rdf:value "All women are human beings. There's a problem when women believe they're subhuman because they were told so."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1905_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context92 a eps:Context ;
-        rdfs:label "context92" ;
-        hs:id "92"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1905 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "43"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1905 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1905" ;
-        hs:id "1905"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1905_utterance0,
-            leolaniTalk:chat1905_utterance1,
-            leolaniTalk:chat1905_utterance2 .
-
-    leolaniTalk:chat1905_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1905_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1905_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1905_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1905_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1905_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:bitches a gaf:Instance ;
+        rdfs:label "bitches" ;
+        gaf:denotedIn leolaniTalk:chat1905_utterance2_char0-78 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:women_are_beings {
-    leolaniWorld:women ns1:are leolaniWorld:beings .
+    leolaniWorld:human_beings a gaf:Instance ;
+        rdfs:label "human-beings" ;
+        gaf:denotedIn leolaniTalk:chat1905_utterance1_char0-108 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:subhuman a gaf:Instance ;
+        rdfs:label "subhuman" ;
+        gaf:denotedIn leolaniTalk:chat1905_utterance0_char0-74 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1905_utterance2_char0-78 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1905_utterance0_char0-74,
+            leolaniTalk:chat1905_utterance1_char0-108 .
 }
 

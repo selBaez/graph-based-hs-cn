@@ -23,133 +23,204 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:it_s-filled-with_Jews {
-    leolaniWorld:it ns1:s_filled_with leolaniWorld:Jews .
+leolaniTalk:Interactions {
+    leolaniContext:context57 a eps:Context ;
+        rdfs:label "context57" ;
+        hs:id "57"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat105 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "230"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat105 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat105" ;
+        hs:id "105"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat105_utterance0,
+            leolaniTalk:chat105_utterance2 .
+
+    leolaniTalk:chat105_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat105_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat105_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat105_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:it_has_filled a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_filled" ;
-        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
-
-    leolaniWorld:it_makes_lot_more_sense a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_makes_lot_more_sense" ;
-        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
-
-    leolaniWorld:it_makes_sense a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_makes_sense" ;
-        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
-
-    leolaniWorld:it_s-filled-with_Jews a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-filled-with_Jews" ;
-        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_just-think-about_themselves a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_just-think-about_themselves" ;
-        gaf:denotedBy leolaniTalk:chat105_utterance2_char0-75 .
-
-    leolaniWorld:they_think-about_themselves a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_think-about_themselves" ;
-        gaf:denotedBy leolaniTalk:chat105_utterance2_char0-75 .
-
-    leolaniWorld:you_look-at_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_look-at_job" ;
-        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
-
-    leolaniWorld:you_look-at_shocking_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_look-at_shocking_job" ;
-        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:it_has_filled {
-    leolaniWorld:it ns12:has leolaniWorld:filled .
-}
-
-leolaniWorld:you_look-at_job {
-    leolaniWorld:you ns12:look_at leolaniWorld:job .
-}
-
-leolaniWorld:they_just-think-about_themselves {
-    leolaniWorld:they ns12:just_think_about leolaniWorld:themselves .
-}
-
-leolaniWorld:they_think-about_themselves {
-    leolaniWorld:they ns12:think_about leolaniWorld:themselves .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:it_makes_sense {
     leolaniWorld:it ns12:makes leolaniWorld:sense .
 }
 
+leolaniWorld:they_think-about_themselves {
+    leolaniWorld:they ns12:think_about leolaniWorld:themselves .
+}
+
 leolaniWorld:you_look-at_shocking_job {
     leolaniWorld:you ns12:look_at leolaniWorld:shocking_job .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+leolaniTalk:Perspectives {
+    leolaniTalk:it_has_filled_00025 a grasp:Attribution ;
+        rdfs:label "it_has_filled_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:filled a gaf:Instance ;
-        rdfs:label "filled" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+    leolaniTalk:it_makes_lot_more_sense_00025 a grasp:Attribution ;
+        rdfs:label "it_makes_lot_more_sense_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:it_makes_sense_00025 a grasp:Attribution ;
+        rdfs:label "it_makes_sense_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+    leolaniTalk:it_s-filled-with_Jews_00025 a grasp:Attribution ;
+        rdfs:label "it_s-filled-with_Jews_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:job a gaf:Instance ;
-        rdfs:label "job" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+    leolaniTalk:they_just-think-about_themselves_00028 a grasp:Attribution ;
+        rdfs:label "they_just-think-about_themselves_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat105_utterance2_char0-75 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:they_think-about_themselves_00028 a grasp:Attribution ;
+        rdfs:label "they_think-about_themselves_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat105_utterance2_char0-75 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:lot_more_sense a gaf:Instance ;
-        rdfs:label "lot-more-sense" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+    leolaniTalk:you_look-at_job_00025 a grasp:Attribution ;
+        rdfs:label "you_look-at_job_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:sense a gaf:Instance ;
-        rdfs:label "sense" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+    leolaniTalk:you_look-at_shocking_job_00025 a grasp:Attribution ;
+        rdfs:label "you_look-at_shocking_job_00025" ;
+        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
+        rdf:value graspe:SURPRISE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:shocking_job a gaf:Instance ;
-        rdfs:label "shocking-job" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+    leolaniTalk:chat105_utterance2_char0-75 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat105_utterance2_char0-75" ;
+        gaf:containsDenotation leolaniWorld:themselves,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_just-think-about_themselves,
+            leolaniWorld:they_think-about_themselves ;
+        grasp:hasAttribution leolaniTalk:they_just-think-about_themselves_00028,
+            leolaniTalk:they_think-about_themselves_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:19.437330"^^xml1:string,
+            "2024-06-05T22:59:19.437390"^^xml1:string ;
+        rdf:value "You can't trust them, they're greedy, and they just think about themselves."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat105_utterance2 .
 
-    leolaniWorld:themselves a gaf:Instance ;
-        rdfs:label "themselves" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance2_char0-75 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance2_char0-75 .
+    leolaniTalk:chat105_utterance0_char0-124 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat105_utterance0_char0-124" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:filled,
+            leolaniWorld:it,
+            leolaniWorld:job,
+            leolaniWorld:lot_more_sense,
+            leolaniWorld:sense,
+            leolaniWorld:shocking_job,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:it_has_filled,
+            leolaniWorld:it_makes_lot_more_sense,
+            leolaniWorld:it_makes_sense,
+            leolaniWorld:it_s-filled-with_Jews,
+            leolaniWorld:you_look-at_job,
+            leolaniWorld:you_look-at_shocking_job ;
+        grasp:hasAttribution leolaniTalk:it_has_filled_00025,
+            leolaniTalk:it_makes_lot_more_sense_00025,
+            leolaniTalk:it_makes_sense_00025,
+            leolaniTalk:it_s-filled-with_Jews_00025,
+            leolaniTalk:you_look-at_job_00025,
+            leolaniTalk:you_look-at_shocking_job_00025 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:19.265684"^^xml1:string,
+            "2024-06-05T22:59:19.265743"^^xml1:string,
+            "2024-06-05T22:59:19.265765"^^xml1:string,
+            "2024-06-05T22:59:19.265786"^^xml1:string,
+            "2024-06-05T22:59:19.265808"^^xml1:string,
+            "2024-06-05T22:59:19.265828"^^xml1:string ;
+        rdf:value "When you look at the shocking job our government is doing, it makes a lot more sense when you realise it's filled with Jews."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat105_utterance0 .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
-}
+    graspe:SURPRISE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "SURPRISE" .
 
-leolaniWorld:it_makes_lot_more_sense {
-    leolaniWorld:it ns12:makes leolaniWorld:lot_more_sense .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -487,191 +558,120 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:it_makes_lot_more_sense {
+    leolaniWorld:it ns12:makes leolaniWorld:lot_more_sense .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:it_has_filled_00025 a grasp:Attribution ;
-        rdfs:label "it_has_filled_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_makes_lot_more_sense_00025 a grasp:Attribution ;
-        rdfs:label "it_makes_lot_more_sense_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_makes_sense_00025 a grasp:Attribution ;
-        rdfs:label "it_makes_sense_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-filled-with_Jews_00025 a grasp:Attribution ;
-        rdfs:label "it_s-filled-with_Jews_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_just-think-about_themselves_00028 a grasp:Attribution ;
-        rdfs:label "they_just-think-about_themselves_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat105_utterance2_char0-75 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_think-about_themselves_00028 a grasp:Attribution ;
-        rdfs:label "they_think-about_themselves_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat105_utterance2_char0-75 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_look-at_job_00025 a grasp:Attribution ;
-        rdfs:label "you_look-at_job_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_look-at_shocking_job_00025 a grasp:Attribution ;
-        rdfs:label "you_look-at_shocking_job_00025" ;
-        grasp:isAttributionFor leolaniTalk:chat105_utterance0_char0-124 ;
-        rdf:value graspe:SURPRISE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat105_utterance2_char0-75 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat105_utterance2_char0-75" ;
-        gaf:containsDenotation leolaniWorld:themselves,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_just-think-about_themselves,
-            leolaniWorld:they_think-about_themselves ;
-        grasp:hasAttribution leolaniTalk:they_just-think-about_themselves_00028,
-            leolaniTalk:they_think-about_themselves_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:19.437330"^^xml1:string,
-            "2024-06-05T22:59:19.437390"^^xml1:string ;
-        rdf:value "You can't trust them, they're greedy, and they just think about themselves."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat105_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat105_utterance0_char0-124 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat105_utterance0_char0-124" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:filled,
-            leolaniWorld:it,
-            leolaniWorld:job,
-            leolaniWorld:lot_more_sense,
-            leolaniWorld:sense,
-            leolaniWorld:shocking_job,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:it_has_filled,
-            leolaniWorld:it_makes_lot_more_sense,
-            leolaniWorld:it_makes_sense,
-            leolaniWorld:it_s-filled-with_Jews,
-            leolaniWorld:you_look-at_job,
-            leolaniWorld:you_look-at_shocking_job ;
-        grasp:hasAttribution leolaniTalk:it_has_filled_00025,
-            leolaniTalk:it_makes_lot_more_sense_00025,
-            leolaniTalk:it_makes_sense_00025,
-            leolaniTalk:it_s-filled-with_Jews_00025,
-            leolaniTalk:you_look-at_job_00025,
-            leolaniTalk:you_look-at_shocking_job_00025 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:19.265684"^^xml1:string,
-            "2024-06-05T22:59:19.265743"^^xml1:string,
-            "2024-06-05T22:59:19.265765"^^xml1:string,
-            "2024-06-05T22:59:19.265786"^^xml1:string,
-            "2024-06-05T22:59:19.265808"^^xml1:string,
-            "2024-06-05T22:59:19.265828"^^xml1:string ;
-        rdf:value "When you look at the shocking job our government is doing, it makes a lot more sense when you realise it's filled with Jews."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat105_utterance0 .
-
-    graspe:SURPRISE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "SURPRISE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:it_has_filled {
+    leolaniWorld:it ns12:has leolaniWorld:filled .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context57 a eps:Context ;
-        rdfs:label "context57" ;
-        hs:id "57"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat105 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "230"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat105 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:it_has_filled a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat105" ;
-        hs:id "105"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat105_utterance0,
-            leolaniTalk:chat105_utterance2 .
+        rdfs:label "it_has_filled" ;
+        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
 
-    leolaniTalk:chat105_utterance0 a grasp:Utterance,
+    leolaniWorld:it_makes_lot_more_sense a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat105_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "it_makes_lot_more_sense" ;
+        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
 
-    leolaniTalk:chat105_utterance2 a grasp:Utterance,
+    leolaniWorld:it_makes_sense a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat105_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "it_makes_sense" ;
+        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:it_s-filled-with_Jews a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-filled-with_Jews" ;
+        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_just-think-about_themselves a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_just-think-about_themselves" ;
+        gaf:denotedBy leolaniTalk:chat105_utterance2_char0-75 .
+
+    leolaniWorld:they_think-about_themselves a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_think-about_themselves" ;
+        gaf:denotedBy leolaniTalk:chat105_utterance2_char0-75 .
+
+    leolaniWorld:you_look-at_job a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_look-at_job" ;
+        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
+
+    leolaniWorld:you_look-at_shocking_job a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_look-at_shocking_job" ;
+        gaf:denotedBy leolaniTalk:chat105_utterance0_char0-124 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:they_just-think-about_themselves {
+    leolaniWorld:they ns12:just_think_about leolaniWorld:themselves .
+}
+
+leolaniWorld:it_s-filled-with_Jews {
+    leolaniWorld:it ns1:s_filled_with leolaniWorld:Jews .
+}
+
+leolaniWorld:you_look-at_job {
+    leolaniWorld:you ns12:look_at leolaniWorld:job .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+
+    leolaniWorld:filled a gaf:Instance ;
+        rdfs:label "filled" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+
+    leolaniWorld:job a gaf:Instance ;
+        rdfs:label "job" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:lot_more_sense a gaf:Instance ;
+        rdfs:label "lot-more-sense" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+
+    leolaniWorld:sense a gaf:Instance ;
+        rdfs:label "sense" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+
+    leolaniWorld:shocking_job a gaf:Instance ;
+        rdfs:label "shocking-job" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
+
+    leolaniWorld:themselves a gaf:Instance ;
+        rdfs:label "themselves" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance2_char0-75 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance2_char0-75 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat105_utterance0_char0-124 .
 }
 

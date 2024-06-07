@@ -22,41 +22,91 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context57 a eps:Context ;
+        rdfs:label "context57" ;
+        hs:id "57"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1173 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "190"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1173 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1173" ;
+        hs:id "1173"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1173_utterance1,
+            leolaniTalk:chat1173_utterance2 .
+
+    leolaniTalk:chat1173_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1173_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1173_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1173_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:religion_platform-for_hate {
     leolaniWorld:religion ns11:platform_for leolaniWorld:hate .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Islam_is-about_peace a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is-about_peace" ;
-        gaf:denotedBy leolaniTalk:chat1173_utterance1_char0-82 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:Islam_is_violent a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_violent" ;
-        gaf:denotedBy leolaniTalk:chat1173_utterance2_char0-55 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+leolaniWorld:Islam_is_violent {
+    leolaniWorld:Islam ns11:is leolaniWorld:violent .
+}
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:religion_platform-for_hate a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "religion_platform-for_hate" ;
-        gaf:denotedBy leolaniTalk:chat1173_utterance1_char0-82 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Islam_is-about_peace {
+    leolaniWorld:Islam ns11:is_about leolaniWorld:peace .
 }
 
 leolaniTalk:Perspectives {
@@ -126,52 +176,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat1173_utterance1_char0-82,
-            leolaniTalk:chat1173_utterance2_char0-55 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hate a gaf:Instance ;
-        rdfs:label "hate" ;
-        gaf:denotedIn leolaniTalk:chat1173_utterance1_char0-82 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:peace a gaf:Instance ;
-        rdfs:label "peace" ;
-        gaf:denotedIn leolaniTalk:chat1173_utterance1_char0-82 .
-
-    leolaniWorld:religion a gaf:Instance ;
-        rdfs:label "religion" ;
-        gaf:denotedIn leolaniTalk:chat1173_utterance1_char0-82 .
-
-    leolaniWorld:violent a gaf:Instance ;
-        rdfs:label "violent" ;
-        gaf:denotedIn leolaniTalk:chat1173_utterance2_char0-55 .
-}
-
-leolaniWorld:Islam_is-about_peace {
-    leolaniWorld:Islam ns11:is_about leolaniWorld:peace .
-}
-
-leolaniWorld:Islam_is_violent {
-    leolaniWorld:Islam ns11:is leolaniWorld:violent .
 }
 
 leolaniWorld:Ontology {
@@ -509,70 +513,66 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context57 a eps:Context ;
-        rdfs:label "context57" ;
-        hs:id "57"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1173 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "190"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1173 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Islam_is-about_peace a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1173" ;
-        hs:id "1173"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1173_utterance1,
-            leolaniTalk:chat1173_utterance2 .
+        rdfs:label "Islam_is-about_peace" ;
+        gaf:denotedBy leolaniTalk:chat1173_utterance1_char0-82 .
 
-    leolaniTalk:chat1173_utterance1 a grasp:Utterance,
+    leolaniWorld:Islam_is_violent a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1173_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Islam_is_violent" ;
+        gaf:denotedBy leolaniTalk:chat1173_utterance2_char0-55 .
 
-    leolaniTalk:chat1173_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1173_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:religion_platform-for_hate a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "religion_platform-for_hate" ;
+        gaf:denotedBy leolaniTalk:chat1173_utterance1_char0-82 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat1173_utterance1_char0-82,
+            leolaniTalk:chat1173_utterance2_char0-55 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:hate a gaf:Instance ;
+        rdfs:label "hate" ;
+        gaf:denotedIn leolaniTalk:chat1173_utterance1_char0-82 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:peace a gaf:Instance ;
+        rdfs:label "peace" ;
+        gaf:denotedIn leolaniTalk:chat1173_utterance1_char0-82 .
+
+    leolaniWorld:religion a gaf:Instance ;
+        rdfs:label "religion" ;
+        gaf:denotedIn leolaniTalk:chat1173_utterance1_char0-82 .
+
+    leolaniWorld:violent a gaf:Instance ;
+        rdfs:label "violent" ;
+        gaf:denotedIn leolaniTalk:chat1173_utterance2_char0-55 .
 }
 

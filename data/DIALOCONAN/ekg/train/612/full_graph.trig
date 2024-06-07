@@ -22,170 +22,273 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:world_belongs-to_everyone {
+    leolaniWorld:world ns11:belongs_to leolaniWorld:everyone .
+}
+
+leolaniWorld:someone_is-in_need {
+    leolaniWorld:someone ns11:is_in leolaniWorld:need .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context60 a eps:Context ;
+        rdfs:label "context60" ;
+        hs:id "60"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat612 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "47"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat612 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat612" ;
+        hs:id "612"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat612_utterance1,
+            leolaniTalk:chat612_utterance2 .
+
+    leolaniTalk:chat612_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat612_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat612_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat612_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:I_can_how_can_kind_hearted_to_them {
     leolaniWorld:I ns11:can leolaniWorld:how_can_kind_hearted_to_them .
-}
-
-leolaniWorld:Migrants_steal_our_jobs {
-    leolaniWorld:Migrants ns11:steal leolaniWorld:our_jobs .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:I_can_can_hearted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_can_can_hearted" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:I_can_can_hearted_to_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_can_can_hearted_to_them" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:I_can_can_kind_hearted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_can_can_kind_hearted" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:I_can_can_kind_hearted_to_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_can_can_kind_hearted_to_them" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:I_can_how_can_hearted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_can_how_can_hearted" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:I_can_how_can_hearted_to_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_can_how_can_hearted_to_them" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:I_can_how_can_kind_hearted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_can_how_can_kind_hearted" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:I_can_how_can_kind_hearted_to_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_can_how_can_kind_hearted_to_them" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:Migrants_steal_our_jobs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_steal_our_jobs" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:someone_is-in_need a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "someone_is-in_need" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance1_char0-111 .
-
-    leolaniWorld:world_belongs-to_everyone a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "world_belongs-to_everyone" ;
-        gaf:denotedBy leolaniTalk:chat612_utterance1_char0-111 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:I_can_can_kind_hearted_to_them {
     leolaniWorld:I ns11:can leolaniWorld:can_kind_hearted_to_them .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:can_hearted a gaf:Instance ;
-        rdfs:label "can-hearted" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:can_hearted_to_them a gaf:Instance ;
-        rdfs:label "can-hearted-to-them" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:can_kind_hearted a gaf:Instance ;
-        rdfs:label "can-kind-hearted" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:can_kind_hearted_to_them a gaf:Instance ;
-        rdfs:label "can-kind-hearted-to-them" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:everyone a gaf:Instance ;
-        rdfs:label "everyone" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance1_char0-111 .
-
-    leolaniWorld:how_can_hearted a gaf:Instance ;
-        rdfs:label "how-can-hearted" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:how_can_hearted_to_them a gaf:Instance ;
-        rdfs:label "how-can-hearted-to-them" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:how_can_kind_hearted a gaf:Instance ;
-        rdfs:label "how-can-kind-hearted" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:how_can_kind_hearted_to_them a gaf:Instance ;
-        rdfs:label "how-can-kind-hearted-to-them" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:need a gaf:Instance ;
-        rdfs:label "need" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance1_char0-111 .
-
-    leolaniWorld:our_jobs a gaf:Instance ;
-        rdfs:label "our-jobs" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
-
-    leolaniWorld:someone a gaf:Instance ;
-        rdfs:label "someone" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance1_char0-111 .
-
-    leolaniWorld:world a gaf:Instance ;
-        rdfs:label "world" ;
-        gaf:denotedIn leolaniTalk:chat612_utterance1_char0-111 .
+leolaniWorld:I_can_how_can_hearted {
+    leolaniWorld:I ns11:can leolaniWorld:how_can_hearted .
 }
 
-leolaniWorld:I_can_how_can_hearted_to_them {
-    leolaniWorld:I ns11:can leolaniWorld:how_can_hearted_to_them .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:I_can_how_can_kind_hearted {
+    leolaniWorld:I ns11:can leolaniWorld:how_can_kind_hearted .
+}
+
+leolaniWorld:I_can_can_kind_hearted {
+    leolaniWorld:I ns11:can leolaniWorld:can_kind_hearted .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:I_can_can_hearted {
+    leolaniWorld:I ns11:can leolaniWorld:can_hearted .
 }
 
 leolaniWorld:I_can_can_hearted_to_them {
     leolaniWorld:I ns11:can leolaniWorld:can_hearted_to_them .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_can_can_hearted_00026 a grasp:Attribution ;
+        rdfs:label "I_can_can_hearted_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_can_can_hearted_to_them_00026 a grasp:Attribution ;
+        rdfs:label "I_can_can_hearted_to_them_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_can_can_kind_hearted_00026 a grasp:Attribution ;
+        rdfs:label "I_can_can_kind_hearted_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_can_can_kind_hearted_to_them_00026 a grasp:Attribution ;
+        rdfs:label "I_can_can_kind_hearted_to_them_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_can_how_can_hearted_00026 a grasp:Attribution ;
+        rdfs:label "I_can_how_can_hearted_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_can_how_can_hearted_to_them_00026 a grasp:Attribution ;
+        rdfs:label "I_can_how_can_hearted_to_them_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_can_how_can_kind_hearted_00026 a grasp:Attribution ;
+        rdfs:label "I_can_how_can_kind_hearted_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_can_how_can_kind_hearted_to_them_00026 a grasp:Attribution ;
+        rdfs:label "I_can_how_can_kind_hearted_to_them_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_steal_our_jobs_00026 a grasp:Attribution ;
+        rdfs:label "Migrants_steal_our_jobs_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:someone_is-in_need_0007 a grasp:Attribution ;
+        rdfs:label "someone_is-in_need_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance1_char0-111 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:world_belongs-to_everyone_0007 a grasp:Attribution ;
+        rdfs:label "world_belongs-to_everyone_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat612_utterance1_char0-111 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat612_utterance1_char0-111 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat612_utterance1_char0-111" ;
+        gaf:containsDenotation leolaniWorld:everyone,
+            leolaniWorld:need,
+            leolaniWorld:someone,
+            leolaniWorld:world ;
+        gaf:denotes leolaniWorld:someone_is-in_need,
+            leolaniWorld:world_belongs-to_everyone ;
+        grasp:hasAttribution leolaniTalk:someone_is-in_need_0007,
+            leolaniTalk:world_belongs-to_everyone_0007 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:32.888305"^^xml1:string,
+            "2024-06-05T23:10:32.888377"^^xml1:string ;
+        rdf:value "The world belongs to everyone and helping someone in need wouldn't be a problem for a kind hearted human being."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat612_utterance1 .
+
+    graspe:CARING a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CARING" .
+
+    leolaniTalk:chat612_utterance2_char0-61 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat612_utterance2_char0-61" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:Migrants,
+            leolaniWorld:can_hearted,
+            leolaniWorld:can_hearted_to_them,
+            leolaniWorld:can_kind_hearted,
+            leolaniWorld:can_kind_hearted_to_them,
+            leolaniWorld:how_can_hearted,
+            leolaniWorld:how_can_hearted_to_them,
+            leolaniWorld:how_can_kind_hearted,
+            leolaniWorld:how_can_kind_hearted_to_them,
+            leolaniWorld:our_jobs ;
+        gaf:denotes leolaniWorld:I_can_can_hearted,
+            leolaniWorld:I_can_can_hearted_to_them,
+            leolaniWorld:I_can_can_kind_hearted,
+            leolaniWorld:I_can_can_kind_hearted_to_them,
+            leolaniWorld:I_can_how_can_hearted,
+            leolaniWorld:I_can_how_can_hearted_to_them,
+            leolaniWorld:I_can_how_can_kind_hearted,
+            leolaniWorld:I_can_how_can_kind_hearted_to_them,
+            leolaniWorld:Migrants_steal_our_jobs ;
+        grasp:hasAttribution leolaniTalk:I_can_can_hearted_00026,
+            leolaniTalk:I_can_can_hearted_to_them_00026,
+            leolaniTalk:I_can_can_kind_hearted_00026,
+            leolaniTalk:I_can_can_kind_hearted_to_them_00026,
+            leolaniTalk:I_can_how_can_hearted_00026,
+            leolaniTalk:I_can_how_can_hearted_to_them_00026,
+            leolaniTalk:I_can_how_can_kind_hearted_00026,
+            leolaniTalk:I_can_how_can_kind_hearted_to_them_00026,
+            leolaniTalk:Migrants_steal_our_jobs_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:32.970023"^^xml1:string,
+            "2024-06-05T23:10:32.970080"^^xml1:string,
+            "2024-06-05T23:10:32.970103"^^xml1:string,
+            "2024-06-05T23:10:32.970126"^^xml1:string,
+            "2024-06-05T23:10:32.970149"^^xml1:string,
+            "2024-06-05T23:10:32.970171"^^xml1:string,
+            "2024-06-05T23:10:32.970196"^^xml1:string,
+            "2024-06-05T23:10:32.970222"^^xml1:string,
+            "2024-06-05T23:10:32.970246"^^xml1:string ;
+        rdf:value "Migrants steal our jobs, how can I be 'kind hearted' to them?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat612_utterance2 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -523,256 +626,153 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:I_can_how_can_hearted {
-    leolaniWorld:I ns11:can leolaniWorld:how_can_hearted .
+leolaniWorld:I_can_how_can_hearted_to_them {
+    leolaniWorld:I ns11:can leolaniWorld:how_can_hearted_to_them .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:I_can_can_kind_hearted {
-    leolaniWorld:I ns11:can leolaniWorld:can_kind_hearted .
-}
-
-leolaniWorld:someone_is-in_need {
-    leolaniWorld:someone ns11:is_in leolaniWorld:need .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:I_can_can_hearted_00026 a grasp:Attribution ;
-        rdfs:label "I_can_can_hearted_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_can_can_hearted_to_them_00026 a grasp:Attribution ;
-        rdfs:label "I_can_can_hearted_to_them_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_can_can_kind_hearted_00026 a grasp:Attribution ;
-        rdfs:label "I_can_can_kind_hearted_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_can_can_kind_hearted_to_them_00026 a grasp:Attribution ;
-        rdfs:label "I_can_can_kind_hearted_to_them_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_can_how_can_hearted_00026 a grasp:Attribution ;
-        rdfs:label "I_can_how_can_hearted_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_can_how_can_hearted_to_them_00026 a grasp:Attribution ;
-        rdfs:label "I_can_how_can_hearted_to_them_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_can_how_can_kind_hearted_00026 a grasp:Attribution ;
-        rdfs:label "I_can_how_can_kind_hearted_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_can_how_can_kind_hearted_to_them_00026 a grasp:Attribution ;
-        rdfs:label "I_can_how_can_kind_hearted_to_them_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_steal_our_jobs_00026 a grasp:Attribution ;
-        rdfs:label "Migrants_steal_our_jobs_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance2_char0-61 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:someone_is-in_need_0007 a grasp:Attribution ;
-        rdfs:label "someone_is-in_need_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance1_char0-111 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:world_belongs-to_everyone_0007 a grasp:Attribution ;
-        rdfs:label "world_belongs-to_everyone_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat612_utterance1_char0-111 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat612_utterance1_char0-111 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat612_utterance1_char0-111" ;
-        gaf:containsDenotation leolaniWorld:everyone,
-            leolaniWorld:need,
-            leolaniWorld:someone,
-            leolaniWorld:world ;
-        gaf:denotes leolaniWorld:someone_is-in_need,
-            leolaniWorld:world_belongs-to_everyone ;
-        grasp:hasAttribution leolaniTalk:someone_is-in_need_0007,
-            leolaniTalk:world_belongs-to_everyone_0007 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:32.888305"^^xml1:string,
-            "2024-06-05T23:10:32.888377"^^xml1:string ;
-        rdf:value "The world belongs to everyone and helping someone in need wouldn't be a problem for a kind hearted human being."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat612_utterance1 .
-
-    graspe:CARING a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CARING" .
-
-    leolaniTalk:chat612_utterance2_char0-61 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat612_utterance2_char0-61" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:Migrants,
-            leolaniWorld:can_hearted,
-            leolaniWorld:can_hearted_to_them,
-            leolaniWorld:can_kind_hearted,
-            leolaniWorld:can_kind_hearted_to_them,
-            leolaniWorld:how_can_hearted,
-            leolaniWorld:how_can_hearted_to_them,
-            leolaniWorld:how_can_kind_hearted,
-            leolaniWorld:how_can_kind_hearted_to_them,
-            leolaniWorld:our_jobs ;
-        gaf:denotes leolaniWorld:I_can_can_hearted,
-            leolaniWorld:I_can_can_hearted_to_them,
-            leolaniWorld:I_can_can_kind_hearted,
-            leolaniWorld:I_can_can_kind_hearted_to_them,
-            leolaniWorld:I_can_how_can_hearted,
-            leolaniWorld:I_can_how_can_hearted_to_them,
-            leolaniWorld:I_can_how_can_kind_hearted,
-            leolaniWorld:I_can_how_can_kind_hearted_to_them,
-            leolaniWorld:Migrants_steal_our_jobs ;
-        grasp:hasAttribution leolaniTalk:I_can_can_hearted_00026,
-            leolaniTalk:I_can_can_hearted_to_them_00026,
-            leolaniTalk:I_can_can_kind_hearted_00026,
-            leolaniTalk:I_can_can_kind_hearted_to_them_00026,
-            leolaniTalk:I_can_how_can_hearted_00026,
-            leolaniTalk:I_can_how_can_hearted_to_them_00026,
-            leolaniTalk:I_can_how_can_kind_hearted_00026,
-            leolaniTalk:I_can_how_can_kind_hearted_to_them_00026,
-            leolaniTalk:Migrants_steal_our_jobs_00026 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:32.970023"^^xml1:string,
-            "2024-06-05T23:10:32.970080"^^xml1:string,
-            "2024-06-05T23:10:32.970103"^^xml1:string,
-            "2024-06-05T23:10:32.970126"^^xml1:string,
-            "2024-06-05T23:10:32.970149"^^xml1:string,
-            "2024-06-05T23:10:32.970171"^^xml1:string,
-            "2024-06-05T23:10:32.970196"^^xml1:string,
-            "2024-06-05T23:10:32.970222"^^xml1:string,
-            "2024-06-05T23:10:32.970246"^^xml1:string ;
-        rdf:value "Migrants steal our jobs, how can I be 'kind hearted' to them?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat612_utterance2 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:I_can_can_hearted {
-    leolaniWorld:I ns11:can leolaniWorld:can_hearted .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context60 a eps:Context ;
-        rdfs:label "context60" ;
-        hs:id "60"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat612 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "47"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat612 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:I_can_can_hearted a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat612" ;
-        hs:id "612"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat612_utterance1,
-            leolaniTalk:chat612_utterance2 .
+        rdfs:label "I_can_can_hearted" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
 
-    leolaniTalk:chat612_utterance1 a grasp:Utterance,
+    leolaniWorld:I_can_can_hearted_to_them a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat612_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "I_can_can_hearted_to_them" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
 
-    leolaniTalk:chat612_utterance2 a grasp:Utterance,
+    leolaniWorld:I_can_can_kind_hearted a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat612_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "I_can_can_kind_hearted" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:I_can_can_kind_hearted_to_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_can_can_kind_hearted_to_them" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:I_can_how_can_hearted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_can_how_can_hearted" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:I_can_how_can_hearted_to_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_can_how_can_hearted_to_them" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:I_can_how_can_kind_hearted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_can_how_can_kind_hearted" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:I_can_how_can_kind_hearted_to_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_can_how_can_kind_hearted_to_them" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:Migrants_steal_our_jobs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_steal_our_jobs" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:someone_is-in_need a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "someone_is-in_need" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance1_char0-111 .
+
+    leolaniWorld:world_belongs-to_everyone a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_belongs-to_everyone" ;
+        gaf:denotedBy leolaniTalk:chat612_utterance1_char0-111 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Migrants_steal_our_jobs {
+    leolaniWorld:Migrants ns11:steal leolaniWorld:our_jobs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:can_hearted a gaf:Instance ;
+        rdfs:label "can-hearted" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:can_hearted_to_them a gaf:Instance ;
+        rdfs:label "can-hearted-to-them" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:can_kind_hearted a gaf:Instance ;
+        rdfs:label "can-kind-hearted" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:can_kind_hearted_to_them a gaf:Instance ;
+        rdfs:label "can-kind-hearted-to-them" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:everyone a gaf:Instance ;
+        rdfs:label "everyone" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance1_char0-111 .
+
+    leolaniWorld:how_can_hearted a gaf:Instance ;
+        rdfs:label "how-can-hearted" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:how_can_hearted_to_them a gaf:Instance ;
+        rdfs:label "how-can-hearted-to-them" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:how_can_kind_hearted a gaf:Instance ;
+        rdfs:label "how-can-kind-hearted" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:how_can_kind_hearted_to_them a gaf:Instance ;
+        rdfs:label "how-can-kind-hearted-to-them" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:world_belongs-to_everyone {
-    leolaniWorld:world ns11:belongs_to leolaniWorld:everyone .
-}
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 
-leolaniWorld:I_can_how_can_kind_hearted {
-    leolaniWorld:I ns11:can leolaniWorld:how_can_kind_hearted .
+    leolaniWorld:need a gaf:Instance ;
+        rdfs:label "need" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance1_char0-111 .
+
+    leolaniWorld:our_jobs a gaf:Instance ;
+        rdfs:label "our-jobs" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance2_char0-61 .
+
+    leolaniWorld:someone a gaf:Instance ;
+        rdfs:label "someone" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance1_char0-111 .
+
+    leolaniWorld:world a gaf:Instance ;
+        rdfs:label "world" ;
+        gaf:denotedIn leolaniTalk:chat612_utterance1_char0-111 .
 }
 

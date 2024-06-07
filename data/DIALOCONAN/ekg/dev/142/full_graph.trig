@@ -23,8 +23,8 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:it_has_migrants {
+    leolaniWorld:it ns11:has leolaniWorld:migrants .
 }
 
 leolaniWorld:They_re_too_uncivilised {
@@ -35,56 +35,83 @@ leolaniWorld:It_could_could_have_anyone {
     leolaniWorld:It ns11:could leolaniWorld:could_have_anyone .
 }
 
-leolaniWorld:They_re_uncivilised {
-    leolaniWorld:They ns12:re leolaniWorld:uncivilised .
+leolaniTalk:Interactions {
+    leolaniContext:context47 a eps:Context ;
+        rdfs:label "context47" ;
+        hs:id "47"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat142 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "25"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat142 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat142" ;
+        hs:id "142"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat142_utterance1,
+            leolaniTalk:chat142_utterance2 .
+
+    leolaniTalk:chat142_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat142_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat142_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat142_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:It_could_could_have_anyone a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_could_could_have_anyone" ;
-        gaf:denotedBy leolaniTalk:chat142_utterance1_char0-82 .
-
-    leolaniWorld:That_has_big a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "That_has_big" ;
-        gaf:denotedBy leolaniTalk:chat142_utterance1_char0-82 .
-
-    leolaniWorld:They_re_too_uncivilised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_re_too_uncivilised" ;
-        gaf:denotedBy leolaniTalk:chat142_utterance2_char0-87 .
-
-    leolaniWorld:They_re_uncivilised a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_re_uncivilised" ;
-        gaf:denotedBy leolaniTalk:chat142_utterance2_char0-87 .
-
-    leolaniWorld:They_respect_our_war_heroes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_respect_our_war_heroes" ;
-        gaf:denotedBy leolaniTalk:chat142_utterance2_char0-87 .
-
-    leolaniWorld:it_has_migrants a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_migrants" ;
-        gaf:denotedBy leolaniTalk:chat142_utterance1_char0-82 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:That_has_big {
+    leolaniWorld:That ns11:has leolaniWorld:big .
 }
 
-leolaniWorld:They_respect_our_war_heroes {
-    leolaniWorld:They ns11:respect leolaniWorld:our_war_heroes .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniTalk:Perspectives {
@@ -188,71 +215,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
-
-    leolaniWorld:That a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance2_char0-87 .
-
-    leolaniWorld:big a gaf:Instance ;
-        rdfs:label "big" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:could_have_anyone a gaf:Instance ;
-        rdfs:label "could-have-anyone" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
-
-    leolaniWorld:our_war_heroes a gaf:Instance ;
-        rdfs:label "our-war-heroes" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance2_char0-87 .
-
-    leolaniWorld:too_uncivilised a gaf:Instance ;
-        rdfs:label "too-uncivilised" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance2_char0-87 .
-
-    leolaniWorld:uncivilised a gaf:Instance ;
-        rdfs:label "uncivilised" ;
-        gaf:denotedIn leolaniTalk:chat142_utterance2_char0-87 .
-}
-
-leolaniWorld:That_has_big {
-    leolaniWorld:That ns11:has leolaniWorld:big .
-}
-
-leolaniWorld:it_has_migrants {
-    leolaniWorld:it ns11:has leolaniWorld:migrants .
 }
 
 leolaniWorld:Ontology {
@@ -590,70 +552,108 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context47 a eps:Context ;
-        rdfs:label "context47" ;
-        hs:id "47"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat142 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "25"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat142 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:It_could_could_have_anyone a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat142" ;
-        hs:id "142"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat142_utterance1,
-            leolaniTalk:chat142_utterance2 .
+        rdfs:label "It_could_could_have_anyone" ;
+        gaf:denotedBy leolaniTalk:chat142_utterance1_char0-82 .
 
-    leolaniTalk:chat142_utterance1 a grasp:Utterance,
+    leolaniWorld:That_has_big a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat142_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "That_has_big" ;
+        gaf:denotedBy leolaniTalk:chat142_utterance1_char0-82 .
 
-    leolaniTalk:chat142_utterance2 a grasp:Utterance,
+    leolaniWorld:They_re_too_uncivilised a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat142_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_re_too_uncivilised" ;
+        gaf:denotedBy leolaniTalk:chat142_utterance2_char0-87 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:They_re_uncivilised a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_re_uncivilised" ;
+        gaf:denotedBy leolaniTalk:chat142_utterance2_char0-87 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They_respect_our_war_heroes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_respect_our_war_heroes" ;
+        gaf:denotedBy leolaniTalk:chat142_utterance2_char0-87 .
+
+    leolaniWorld:it_has_migrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_migrants" ;
+        gaf:denotedBy leolaniTalk:chat142_utterance1_char0-82 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:They_re_uncivilised {
+    leolaniWorld:They ns12:re leolaniWorld:uncivilised .
+}
+
+leolaniWorld:They_respect_our_war_heroes {
+    leolaniWorld:They ns11:respect leolaniWorld:our_war_heroes .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
+
+    leolaniWorld:That a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance2_char0-87 .
+
+    leolaniWorld:big a gaf:Instance ;
+        rdfs:label "big" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:could_have_anyone a gaf:Instance ;
+        rdfs:label "could-have-anyone" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance1_char0-82 .
+
+    leolaniWorld:our_war_heroes a gaf:Instance ;
+        rdfs:label "our-war-heroes" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance2_char0-87 .
+
+    leolaniWorld:too_uncivilised a gaf:Instance ;
+        rdfs:label "too-uncivilised" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance2_char0-87 .
+
+    leolaniWorld:uncivilised a gaf:Instance ;
+        rdfs:label "uncivilised" ;
+        gaf:denotedIn leolaniTalk:chat142_utterance2_char0-87 .
 }
 

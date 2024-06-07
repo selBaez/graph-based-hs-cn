@@ -22,135 +22,242 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:They_might-start_trying a gaf:Assertion,
+leolaniWorld:men_dressed-like_dogs {
+    leolaniWorld:men ns1:dressed_like leolaniWorld:dogs .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context57 a eps:Context ;
+        rdfs:label "context57" ;
+        hs:id "57"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat201 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "99"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat201 a grasp:Chat,
             sem:Event ;
-        rdfs:label "They_might-start_trying" ;
-        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
+        rdfs:label "chat201" ;
+        hs:id "201"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat201_utterance0,
+            leolaniTalk:chat201_utterance3,
+            leolaniTalk:chat201_utterance4 .
 
-    leolaniWorld:it_would_why_would_bad a gaf:Assertion,
+    leolaniTalk:chat201_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_would_why_would_bad" ;
-        gaf:denotedBy leolaniTalk:chat201_utterance3_char0-74 .
+        rdfs:label "chat201_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:it_would_would_bad a gaf:Assertion,
+    leolaniTalk:chat201_utterance3 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_would_would_bad" ;
-        gaf:denotedBy leolaniTalk:chat201_utterance3_char0-74 .
+        rdfs:label "chat201_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat201_utterance4 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat201_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:men_dressed-in_pride_parades a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_dressed-in_pride_parades" ;
-        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:men_dressed-like_dogs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_dressed-like_dogs" ;
-        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:this_affect_my_children a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "this_affect_my_children" ;
-        gaf:denotedBy leolaniTalk:chat201_utterance0_char0-109 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:trying_normalise_deviant_parts_of_lifestyle a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "trying_normalise_deviant_parts_of_lifestyle" ;
-        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
-
-    leolaniWorld:trying_normalise_more_deviant_parts_of_lifestyle a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "trying_normalise_more_deviant_parts_of_lifestyle" ;
-        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:men_dressed-in_pride_parades {
+    leolaniWorld:men ns1:dressed_in leolaniWorld:pride_parades .
 }
 
 leolaniWorld:trying_normalise_deviant_parts_of_lifestyle {
     leolaniWorld:trying ns1:normalise leolaniWorld:deviant_parts_of_lifestyle .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:this_affect_my_children {
-    leolaniWorld:this ns1:affect leolaniWorld:my_children .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:it_would_why_would_bad {
     leolaniWorld:it ns1:would leolaniWorld:why_would_bad .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+leolaniWorld:this_affect_my_children {
+    leolaniWorld:this ns1:affect leolaniWorld:my_children .
+}
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+leolaniTalk:Perspectives {
+    leolaniTalk:They_might-start_trying_00028 a grasp:Attribution ;
+        rdfs:label "They_might-start_trying_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:deviant_parts_of_lifestyle a gaf:Instance ;
-        rdfs:label "deviant-parts-of-lifestyle" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+    leolaniTalk:chat201_utterance0_char0-109 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat201_utterance0_char0-109" ;
+        gaf:containsDenotation leolaniWorld:my_children,
+            leolaniWorld:this ;
+        gaf:denotes leolaniWorld:this_affect_my_children ;
+        grasp:hasAttribution leolaniTalk:this_affect_my_children_0007 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:53.733676"^^xml1:string ;
+        rdf:value "I don't care if some gays somewhere get married. What I care about is when this begins to affect my children."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat201_utterance0 .
 
-    leolaniWorld:dogs a gaf:Instance ;
-        rdfs:label "dogs" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+    leolaniTalk:it_would_why_would_bad_00026 a grasp:Attribution ;
+        rdfs:label "it_would_why_would_bad_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat201_utterance3_char0-74 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:it_would_would_bad_00026 a grasp:Attribution ;
+        rdfs:label "it_would_would_bad_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat201_utterance3_char0-74 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance3_char0-74 .
+    leolaniTalk:men_dressed-in_pride_parades_00028 a grasp:Attribution ;
+        rdfs:label "men_dressed-in_pride_parades_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:men_dressed-like_dogs_00028 a grasp:Attribution ;
+        rdfs:label "men_dressed-like_dogs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+    leolaniTalk:this_affect_my_children_0007 a grasp:Attribution ;
+        rdfs:label "this_affect_my_children_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat201_utterance0_char0-109 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:more_deviant_parts_of_lifestyle a gaf:Instance ;
-        rdfs:label "more-deviant-parts-of-lifestyle" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+    leolaniTalk:trying_normalise_deviant_parts_of_lifestyle_00028 a grasp:Attribution ;
+        rdfs:label "trying_normalise_deviant_parts_of_lifestyle_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:my_children a gaf:Instance ;
-        rdfs:label "my-children" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance0_char0-109 .
+    leolaniTalk:trying_normalise_more_deviant_parts_of_lifestyle_00028 a grasp:Attribution ;
+        rdfs:label "trying_normalise_more_deviant_parts_of_lifestyle_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:pride_parades a gaf:Instance ;
-        rdfs:label "pride-parades" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+    graspe:CARING a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CARING" .
 
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance0_char0-109 .
+    leolaniTalk:chat201_utterance3_char0-74 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat201_utterance3_char0-74" ;
+        gaf:containsDenotation leolaniWorld:it,
+            leolaniWorld:why_would_bad,
+            leolaniWorld:would_bad ;
+        gaf:denotes leolaniWorld:it_would_why_would_bad,
+            leolaniWorld:it_would_would_bad ;
+        grasp:hasAttribution leolaniTalk:it_would_why_would_bad_00026,
+            leolaniTalk:it_would_would_bad_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:54.035283"^^xml1:string,
+            "2024-06-05T23:32:54.035342"^^xml1:string ;
+        rdf:value "Genuinely curious what you think would come next? And why it would be bad?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat201_utterance3 .
 
-    leolaniWorld:trying a gaf:Instance ;
-        rdfs:label "trying" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
 
-    leolaniWorld:why_would_bad a gaf:Instance ;
-        rdfs:label "why-would-bad" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance3_char0-74 .
+    leolaniTalk:chat201_utterance4_char0-211 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat201_utterance4_char0-211" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:deviant_parts_of_lifestyle,
+            leolaniWorld:dogs,
+            leolaniWorld:men,
+            leolaniWorld:more_deviant_parts_of_lifestyle,
+            leolaniWorld:pride_parades,
+            leolaniWorld:trying ;
+        gaf:denotes leolaniWorld:They_might-start_trying,
+            leolaniWorld:men_dressed-in_pride_parades,
+            leolaniWorld:men_dressed-like_dogs,
+            leolaniWorld:trying_normalise_deviant_parts_of_lifestyle,
+            leolaniWorld:trying_normalise_more_deviant_parts_of_lifestyle ;
+        grasp:hasAttribution leolaniTalk:They_might-start_trying_00028,
+            leolaniTalk:men_dressed-in_pride_parades_00028,
+            leolaniTalk:men_dressed-like_dogs_00028,
+            leolaniTalk:trying_normalise_deviant_parts_of_lifestyle_00028,
+            leolaniTalk:trying_normalise_more_deviant_parts_of_lifestyle_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:54.169207"^^xml1:string,
+            "2024-06-05T23:32:54.169266"^^xml1:string,
+            "2024-06-05T23:32:54.169290"^^xml1:string,
+            "2024-06-05T23:32:54.169311"^^xml1:string,
+            "2024-06-05T23:32:54.169333"^^xml1:string ;
+        rdf:value "They might start trying to normalise the more deviant parts of the lifestyle, you see those men dressed like dogs and stuff in pride parades, that stuff is messed up and we can't start telling kids thats normal."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat201_utterance4 .
 
-    leolaniWorld:would_bad a gaf:Instance ;
-        rdfs:label "would-bad" ;
-        gaf:denotedIn leolaniTalk:chat201_utterance3_char0-74 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -488,237 +595,130 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:They_might-start_trying a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_might-start_trying" ;
+        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:it_would_why_would_bad a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_would_why_would_bad" ;
+        gaf:denotedBy leolaniTalk:chat201_utterance3_char0-74 .
+
+    leolaniWorld:it_would_would_bad a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_would_would_bad" ;
+        gaf:denotedBy leolaniTalk:chat201_utterance3_char0-74 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:men_dressed-in_pride_parades a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_dressed-in_pride_parades" ;
+        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:men_dressed-like_dogs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_dressed-like_dogs" ;
+        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:this_affect_my_children a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "this_affect_my_children" ;
+        gaf:denotedBy leolaniTalk:chat201_utterance0_char0-109 .
+
+    leolaniWorld:trying_normalise_deviant_parts_of_lifestyle a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "trying_normalise_deviant_parts_of_lifestyle" ;
+        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:trying_normalise_more_deviant_parts_of_lifestyle a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "trying_normalise_more_deviant_parts_of_lifestyle" ;
+        gaf:denotedBy leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
 leolaniWorld:They_might-start_trying {
     leolaniWorld:They ns1:might_start leolaniWorld:trying .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:men_dressed-in_pride_parades {
-    leolaniWorld:men ns1:dressed_in leolaniWorld:pride_parades .
+leolaniWorld:trying_normalise_more_deviant_parts_of_lifestyle {
+    leolaniWorld:trying ns1:normalise leolaniWorld:more_deviant_parts_of_lifestyle .
 }
 
 leolaniWorld:it_would_would_bad {
     leolaniWorld:it ns1:would leolaniWorld:would_bad .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_might-start_trying_00028 a grasp:Attribution ;
-        rdfs:label "They_might-start_trying_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat201_utterance0_char0-109 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat201_utterance0_char0-109" ;
-        gaf:containsDenotation leolaniWorld:my_children,
-            leolaniWorld:this ;
-        gaf:denotes leolaniWorld:this_affect_my_children ;
-        grasp:hasAttribution leolaniTalk:this_affect_my_children_0007 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:53.733676"^^xml1:string ;
-        rdf:value "I don't care if some gays somewhere get married. What I care about is when this begins to affect my children."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat201_utterance0 .
-
-    leolaniTalk:it_would_why_would_bad_00026 a grasp:Attribution ;
-        rdfs:label "it_would_why_would_bad_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat201_utterance3_char0-74 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_would_would_bad_00026 a grasp:Attribution ;
-        rdfs:label "it_would_would_bad_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat201_utterance3_char0-74 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:men_dressed-in_pride_parades_00028 a grasp:Attribution ;
-        rdfs:label "men_dressed-in_pride_parades_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:men_dressed-like_dogs_00028 a grasp:Attribution ;
-        rdfs:label "men_dressed-like_dogs_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:this_affect_my_children_0007 a grasp:Attribution ;
-        rdfs:label "this_affect_my_children_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat201_utterance0_char0-109 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:trying_normalise_deviant_parts_of_lifestyle_00028 a grasp:Attribution ;
-        rdfs:label "trying_normalise_deviant_parts_of_lifestyle_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:trying_normalise_more_deviant_parts_of_lifestyle_00028 a grasp:Attribution ;
-        rdfs:label "trying_normalise_more_deviant_parts_of_lifestyle_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat201_utterance4_char0-211 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:CARING a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CARING" .
-
-    leolaniTalk:chat201_utterance3_char0-74 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat201_utterance3_char0-74" ;
-        gaf:containsDenotation leolaniWorld:it,
-            leolaniWorld:why_would_bad,
-            leolaniWorld:would_bad ;
-        gaf:denotes leolaniWorld:it_would_why_would_bad,
-            leolaniWorld:it_would_would_bad ;
-        grasp:hasAttribution leolaniTalk:it_would_why_would_bad_00026,
-            leolaniTalk:it_would_would_bad_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:54.035283"^^xml1:string,
-            "2024-06-05T23:32:54.035342"^^xml1:string ;
-        rdf:value "Genuinely curious what you think would come next? And why it would be bad?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat201_utterance3 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    leolaniTalk:chat201_utterance4_char0-211 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat201_utterance4_char0-211" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:deviant_parts_of_lifestyle,
-            leolaniWorld:dogs,
-            leolaniWorld:men,
-            leolaniWorld:more_deviant_parts_of_lifestyle,
-            leolaniWorld:pride_parades,
-            leolaniWorld:trying ;
-        gaf:denotes leolaniWorld:They_might-start_trying,
-            leolaniWorld:men_dressed-in_pride_parades,
-            leolaniWorld:men_dressed-like_dogs,
-            leolaniWorld:trying_normalise_deviant_parts_of_lifestyle,
-            leolaniWorld:trying_normalise_more_deviant_parts_of_lifestyle ;
-        grasp:hasAttribution leolaniTalk:They_might-start_trying_00028,
-            leolaniTalk:men_dressed-in_pride_parades_00028,
-            leolaniTalk:men_dressed-like_dogs_00028,
-            leolaniTalk:trying_normalise_deviant_parts_of_lifestyle_00028,
-            leolaniTalk:trying_normalise_more_deviant_parts_of_lifestyle_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:54.169207"^^xml1:string,
-            "2024-06-05T23:32:54.169266"^^xml1:string,
-            "2024-06-05T23:32:54.169290"^^xml1:string,
-            "2024-06-05T23:32:54.169311"^^xml1:string,
-            "2024-06-05T23:32:54.169333"^^xml1:string ;
-        rdf:value "They might start trying to normalise the more deviant parts of the lifestyle, you see those men dressed like dogs and stuff in pride parades, that stuff is messed up and we can't start telling kids thats normal."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat201_utterance4 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:men_dressed-like_dogs {
-    leolaniWorld:men ns1:dressed_like leolaniWorld:dogs .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context57 a eps:Context ;
-        rdfs:label "context57" ;
-        hs:id "57"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat201 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "99"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat201 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat201" ;
-        hs:id "201"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat201_utterance0,
-            leolaniTalk:chat201_utterance3,
-            leolaniTalk:chat201_utterance4 .
-
-    leolaniTalk:chat201_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat201_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat201_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat201_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat201_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat201_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:deviant_parts_of_lifestyle a gaf:Instance ;
+        rdfs:label "deviant-parts-of-lifestyle" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
 
-leolaniWorld:trying_normalise_more_deviant_parts_of_lifestyle {
-    leolaniWorld:trying ns1:normalise leolaniWorld:more_deviant_parts_of_lifestyle .
+    leolaniWorld:dogs a gaf:Instance ;
+        rdfs:label "dogs" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance3_char0-74 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:more_deviant_parts_of_lifestyle a gaf:Instance ;
+        rdfs:label "more-deviant-parts-of-lifestyle" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:my_children a gaf:Instance ;
+        rdfs:label "my-children" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance0_char0-109 .
+
+    leolaniWorld:pride_parades a gaf:Instance ;
+        rdfs:label "pride-parades" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance0_char0-109 .
+
+    leolaniWorld:trying a gaf:Instance ;
+        rdfs:label "trying" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance4_char0-211 .
+
+    leolaniWorld:why_would_bad a gaf:Instance ;
+        rdfs:label "why-would-bad" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance3_char0-74 .
+
+    leolaniWorld:would_bad a gaf:Instance ;
+        rdfs:label "would-bad" ;
+        gaf:denotedIn leolaniTalk:chat201_utterance3_char0-74 .
 }
 

@@ -22,8 +22,83 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:they_learn_racist {
+    leolaniWorld:they ns1:learn leolaniWorld:racist .
+}
+
 leolaniWorld:they_need_learn {
     leolaniWorld:they ns1:need leolaniWorld:learn .
+}
+
+leolaniWorld:people_can-play_cricket {
+    leolaniWorld:people ns1:can_play leolaniWorld:cricket .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context78 a eps:Context ;
+        rdfs:label "context78" ;
+        hs:id "78"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1508 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "194"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1508 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1508" ;
+        hs:id "1508"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1508_utterance2,
+            leolaniTalk:chat1508_utterance3 .
+
+    leolaniTalk:chat1508_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1508_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1508_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1508_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:white_people_can-play_cricket {
@@ -34,163 +109,175 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_can-play_cricket a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_can-play_cricket" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they_just-need_learn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_just-need_learn" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they_just-need_to_learn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_just-need_to_learn" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they_learn_not_racist a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_learn_not_racist" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they_learn_not_to_racist a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_learn_not_to_racist" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they_learn_racist a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_learn_racist" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they_learn_to_racist a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_learn_to_racist" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they_need_learn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_need_learn" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they_need_to_learn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_need_to_learn" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they_said-ago_4_years a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_said-ago_4_years" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance2_char0-91 .
-
-    leolaniWorld:white_people_can-play_cricket a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "white_people_can-play_cricket" ;
-        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:they_learn_to_racist {
-    leolaniWorld:they ns1:learn leolaniWorld:to_racist .
-}
-
-leolaniWorld:they_need_to_learn {
-    leolaniWorld:they ns1:need leolaniWorld:to_learn .
-}
-
-leolaniWorld:they_just-need_learn {
-    leolaniWorld:they ns1:just_need leolaniWorld:learn .
 }
 
 leolaniWorld:they_learn_not_racist {
     leolaniWorld:they ns1:learn leolaniWorld:not_racist .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:4_years a gaf:Instance ;
-        rdfs:label "4-years" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance2_char0-91 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:cricket a gaf:Instance ;
-        rdfs:label "cricket" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:learn a gaf:Instance ;
-        rdfs:label "learn" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:not_racist a gaf:Instance ;
-        rdfs:label "not-racist" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:not_to_racist a gaf:Instance ;
-        rdfs:label "not-to-racist" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:racist a gaf:Instance ;
-        rdfs:label "racist" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance2_char0-91,
-            leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:to_learn a gaf:Instance ;
-        rdfs:label "to-learn" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:to_racist a gaf:Instance ;
-        rdfs:label "to-racist" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
-
-    leolaniWorld:white_people a gaf:Instance ;
-        rdfs:label "white-people" ;
-        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
+leolaniWorld:they_just-need_learn {
+    leolaniWorld:they ns1:just_need leolaniWorld:learn .
 }
 
-leolaniWorld:they_just-need_to_learn {
-    leolaniWorld:they ns1:just_need leolaniWorld:to_learn .
+leolaniWorld:they_learn_to_racist {
+    leolaniWorld:they ns1:learn leolaniWorld:to_racist .
 }
 
-leolaniWorld:people_can-play_cricket {
-    leolaniWorld:people ns1:can_play leolaniWorld:cricket .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:chat1508_utterance2_char0-91 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1508_utterance2_char0-91" ;
+        gaf:containsDenotation leolaniWorld:4_years,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_said-ago_4_years ;
+        grasp:hasAttribution leolaniTalk:they_said-ago_4_years_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:11.088793"^^xml1:string ;
+        rdf:value "Who remembers what they said 4 years ago? End of cricket, the white man can’t play anymore!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1508_utterance2 .
 
-leolaniWorld:they_learn_not_to_racist {
-    leolaniWorld:they ns1:learn leolaniWorld:not_to_racist .
+    leolaniTalk:people_can-play_cricket_00028 a grasp:Attribution ;
+        rdfs:label "people_can-play_cricket_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_just-need_learn_00028 a grasp:Attribution ;
+        rdfs:label "they_just-need_learn_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_just-need_to_learn_00028 a grasp:Attribution ;
+        rdfs:label "they_just-need_to_learn_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_learn_not_racist_00028 a grasp:Attribution ;
+        rdfs:label "they_learn_not_racist_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_learn_not_to_racist_00028 a grasp:Attribution ;
+        rdfs:label "they_learn_not_to_racist_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_learn_racist_00028 a grasp:Attribution ;
+        rdfs:label "they_learn_racist_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_learn_to_racist_00028 a grasp:Attribution ;
+        rdfs:label "they_learn_to_racist_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_need_learn_00028 a grasp:Attribution ;
+        rdfs:label "they_need_learn_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_need_to_learn_00028 a grasp:Attribution ;
+        rdfs:label "they_need_to_learn_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_said-ago_4_years_00026 a grasp:Attribution ;
+        rdfs:label "they_said-ago_4_years_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance2_char0-91 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:white_people_can-play_cricket_00028 a grasp:Attribution ;
+        rdfs:label "white_people_can-play_cricket_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    leolaniTalk:chat1508_utterance3_char0-189 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1508_utterance3_char0-189" ;
+        gaf:containsDenotation leolaniWorld:cricket,
+            leolaniWorld:learn,
+            leolaniWorld:not_racist,
+            leolaniWorld:not_to_racist,
+            leolaniWorld:people,
+            leolaniWorld:racist,
+            leolaniWorld:they,
+            leolaniWorld:to_learn,
+            leolaniWorld:to_racist,
+            leolaniWorld:white_people ;
+        gaf:denotes leolaniWorld:people_can-play_cricket,
+            leolaniWorld:they_just-need_learn,
+            leolaniWorld:they_just-need_to_learn,
+            leolaniWorld:they_learn_not_racist,
+            leolaniWorld:they_learn_not_to_racist,
+            leolaniWorld:they_learn_racist,
+            leolaniWorld:they_learn_to_racist,
+            leolaniWorld:they_need_learn,
+            leolaniWorld:they_need_to_learn,
+            leolaniWorld:white_people_can-play_cricket ;
+        grasp:hasAttribution leolaniTalk:people_can-play_cricket_00028,
+            leolaniTalk:they_just-need_learn_00028,
+            leolaniTalk:they_just-need_to_learn_00028,
+            leolaniTalk:they_learn_not_racist_00028,
+            leolaniTalk:they_learn_not_to_racist_00028,
+            leolaniTalk:they_learn_racist_00028,
+            leolaniTalk:they_learn_to_racist_00028,
+            leolaniTalk:they_need_learn_00028,
+            leolaniTalk:they_need_to_learn_00028,
+            leolaniTalk:white_people_can-play_cricket_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:11.225018"^^xml1:string,
+            "2024-06-05T23:10:11.225073"^^xml1:string,
+            "2024-06-05T23:10:11.225096"^^xml1:string,
+            "2024-06-05T23:10:11.225118"^^xml1:string,
+            "2024-06-05T23:10:11.225141"^^xml1:string,
+            "2024-06-05T23:10:11.225162"^^xml1:string,
+            "2024-06-05T23:10:11.225185"^^xml1:string,
+            "2024-06-05T23:10:11.225208"^^xml1:string,
+            "2024-06-05T23:10:11.225233"^^xml1:string,
+            "2024-06-05T23:10:11.225258"^^xml1:string ;
+        rdf:value "I think I wouldn't forget an unacceptable and deeply offensive insult despite how much time has passed, and of course white people can play cricket, they just need to learn not to be racist"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1508_utterance3 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -528,233 +615,146 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:they_just-need_to_learn {
+    leolaniWorld:they ns1:just_need leolaniWorld:to_learn .
+}
+
+leolaniWorld:they_learn_not_to_racist {
+    leolaniWorld:they ns1:learn leolaniWorld:not_to_racist .
+}
+
+leolaniWorld:they_need_to_learn {
+    leolaniWorld:they ns1:need leolaniWorld:to_learn .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_can-play_cricket a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_can-play_cricket" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they_just-need_learn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_just-need_learn" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they_just-need_to_learn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_just-need_to_learn" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they_learn_not_racist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_learn_not_racist" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they_learn_not_to_racist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_learn_not_to_racist" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they_learn_racist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_learn_racist" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they_learn_to_racist a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_learn_to_racist" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they_need_learn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_need_learn" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they_need_to_learn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_need_to_learn" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they_said-ago_4_years a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_said-ago_4_years" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance2_char0-91 .
+
+    leolaniWorld:white_people_can-play_cricket a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "white_people_can-play_cricket" ;
+        gaf:denotedBy leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
 leolaniWorld:they_said-ago_4_years {
     leolaniWorld:they ns1:said_ago leolaniWorld:4_years .
 }
 
-leolaniWorld:they_learn_racist {
-    leolaniWorld:they ns1:learn leolaniWorld:racist .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:chat1508_utterance2_char0-91 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1508_utterance2_char0-91" ;
-        gaf:containsDenotation leolaniWorld:4_years,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_said-ago_4_years ;
-        grasp:hasAttribution leolaniTalk:they_said-ago_4_years_00026 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:11.088793"^^xml1:string ;
-        rdf:value "Who remembers what they said 4 years ago? End of cricket, the white man can’t play anymore!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1508_utterance2 .
-
-    leolaniTalk:people_can-play_cricket_00028 a grasp:Attribution ;
-        rdfs:label "people_can-play_cricket_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_just-need_learn_00028 a grasp:Attribution ;
-        rdfs:label "they_just-need_learn_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_just-need_to_learn_00028 a grasp:Attribution ;
-        rdfs:label "they_just-need_to_learn_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_learn_not_racist_00028 a grasp:Attribution ;
-        rdfs:label "they_learn_not_racist_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_learn_not_to_racist_00028 a grasp:Attribution ;
-        rdfs:label "they_learn_not_to_racist_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_learn_racist_00028 a grasp:Attribution ;
-        rdfs:label "they_learn_racist_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_learn_to_racist_00028 a grasp:Attribution ;
-        rdfs:label "they_learn_to_racist_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_need_learn_00028 a grasp:Attribution ;
-        rdfs:label "they_need_learn_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_need_to_learn_00028 a grasp:Attribution ;
-        rdfs:label "they_need_to_learn_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_said-ago_4_years_00026 a grasp:Attribution ;
-        rdfs:label "they_said-ago_4_years_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance2_char0-91 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:white_people_can-play_cricket_00028 a grasp:Attribution ;
-        rdfs:label "white_people_can-play_cricket_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1508_utterance3_char0-189 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    leolaniTalk:chat1508_utterance3_char0-189 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1508_utterance3_char0-189" ;
-        gaf:containsDenotation leolaniWorld:cricket,
-            leolaniWorld:learn,
-            leolaniWorld:not_racist,
-            leolaniWorld:not_to_racist,
-            leolaniWorld:people,
-            leolaniWorld:racist,
-            leolaniWorld:they,
-            leolaniWorld:to_learn,
-            leolaniWorld:to_racist,
-            leolaniWorld:white_people ;
-        gaf:denotes leolaniWorld:people_can-play_cricket,
-            leolaniWorld:they_just-need_learn,
-            leolaniWorld:they_just-need_to_learn,
-            leolaniWorld:they_learn_not_racist,
-            leolaniWorld:they_learn_not_to_racist,
-            leolaniWorld:they_learn_racist,
-            leolaniWorld:they_learn_to_racist,
-            leolaniWorld:they_need_learn,
-            leolaniWorld:they_need_to_learn,
-            leolaniWorld:white_people_can-play_cricket ;
-        grasp:hasAttribution leolaniTalk:people_can-play_cricket_00028,
-            leolaniTalk:they_just-need_learn_00028,
-            leolaniTalk:they_just-need_to_learn_00028,
-            leolaniTalk:they_learn_not_racist_00028,
-            leolaniTalk:they_learn_not_to_racist_00028,
-            leolaniTalk:they_learn_racist_00028,
-            leolaniTalk:they_learn_to_racist_00028,
-            leolaniTalk:they_need_learn_00028,
-            leolaniTalk:they_need_to_learn_00028,
-            leolaniTalk:white_people_can-play_cricket_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:11.225018"^^xml1:string,
-            "2024-06-05T23:10:11.225073"^^xml1:string,
-            "2024-06-05T23:10:11.225096"^^xml1:string,
-            "2024-06-05T23:10:11.225118"^^xml1:string,
-            "2024-06-05T23:10:11.225141"^^xml1:string,
-            "2024-06-05T23:10:11.225162"^^xml1:string,
-            "2024-06-05T23:10:11.225185"^^xml1:string,
-            "2024-06-05T23:10:11.225208"^^xml1:string,
-            "2024-06-05T23:10:11.225233"^^xml1:string,
-            "2024-06-05T23:10:11.225258"^^xml1:string ;
-        rdf:value "I think I wouldn't forget an unacceptable and deeply offensive insult despite how much time has passed, and of course white people can play cricket, they just need to learn not to be racist"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1508_utterance3 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context78 a eps:Context ;
-        rdfs:label "context78" ;
-        hs:id "78"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1508 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "194"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1508 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1508" ;
-        hs:id "1508"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1508_utterance2,
-            leolaniTalk:chat1508_utterance3 .
-
-    leolaniTalk:chat1508_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1508_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1508_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1508_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:4_years a gaf:Instance ;
+        rdfs:label "4-years" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance2_char0-91 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:cricket a gaf:Instance ;
+        rdfs:label "cricket" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:learn a gaf:Instance ;
+        rdfs:label "learn" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:not_racist a gaf:Instance ;
+        rdfs:label "not-racist" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:not_to_racist a gaf:Instance ;
+        rdfs:label "not-to-racist" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:racist a gaf:Instance ;
+        rdfs:label "racist" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance2_char0-91,
+            leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:to_learn a gaf:Instance ;
+        rdfs:label "to-learn" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:to_racist a gaf:Instance ;
+        rdfs:label "to-racist" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
+
+    leolaniWorld:white_people a gaf:Instance ;
+        rdfs:label "white-people" ;
+        gaf:denotedIn leolaniTalk:chat1508_utterance3_char0-189 .
 }
 

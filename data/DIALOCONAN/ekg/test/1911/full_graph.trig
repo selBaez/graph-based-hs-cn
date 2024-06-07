@@ -22,6 +22,68 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context57 a eps:Context ;
+        rdfs:label "context57" ;
+        hs:id "57"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1911 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "29"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1911 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1911" ;
+        hs:id "1911"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1911_utterance1 .
+
+    leolaniTalk:chat1911_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1911_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Lesbians_have_their_problems {
+    leolaniWorld:Lesbians ns1:have leolaniWorld:their_problems .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:Lesbians_have_their_own_problems_00028 a grasp:Attribution ;
         rdfs:label "Lesbians_have_their_own_problems_00028" ;
@@ -65,27 +127,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Lesbians a gaf:Instance ;
-        rdfs:label "lesbians" ;
-        gaf:denotedIn leolaniTalk:chat1911_utterance1_char0-167 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:their_own_problems a gaf:Instance ;
-        rdfs:label "their-own-problems" ;
-        gaf:denotedIn leolaniTalk:chat1911_utterance1_char0-167 .
-
-    leolaniWorld:their_problems a gaf:Instance ;
-        rdfs:label "their-problems" ;
-        gaf:denotedIn leolaniTalk:chat1911_utterance1_char0-167 .
 }
 
 leolaniWorld:Ontology {
@@ -423,62 +464,8 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context57 a eps:Context ;
-        rdfs:label "context57" ;
-        hs:id "57"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1911 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "29"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1911 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1911" ;
-        hs:id "1911"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1911_utterance1 .
-
-    leolaniTalk:chat1911_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1911_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+leolaniWorld:Lesbians_have_their_own_problems {
+    leolaniWorld:Lesbians ns1:have leolaniWorld:their_own_problems .
 }
 
 leolaniWorld:Claims {
@@ -499,11 +486,24 @@ leolaniWorld:Claims {
     leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniWorld:Lesbians_have_their_own_problems {
-    leolaniWorld:Lesbians ns1:have leolaniWorld:their_own_problems .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Lesbians a gaf:Instance ;
+        rdfs:label "lesbians" ;
+        gaf:denotedIn leolaniTalk:chat1911_utterance1_char0-167 .
 
-leolaniWorld:Lesbians_have_their_problems {
-    leolaniWorld:Lesbians ns1:have leolaniWorld:their_problems .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:their_own_problems a gaf:Instance ;
+        rdfs:label "their-own-problems" ;
+        gaf:denotedIn leolaniTalk:chat1911_utterance1_char0-167 .
+
+    leolaniWorld:their_problems a gaf:Instance ;
+        rdfs:label "their-problems" ;
+        gaf:denotedIn leolaniTalk:chat1911_utterance1_char0-167 .
 }
 

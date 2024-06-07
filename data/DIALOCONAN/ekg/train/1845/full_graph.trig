@@ -22,136 +22,234 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:homosexuality_is_illness a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "homosexuality_is_illness" ;
-        gaf:denotedBy leolaniTalk:chat1845_utterance0_char0-58 .
-
-    leolaniWorld:homosexuality_is_mental a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "homosexuality_is_mental" ;
-        gaf:denotedBy leolaniTalk:chat1845_utterance0_char0-58 .
-
-    leolaniWorld:homosexuality_is_mental_illness a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "homosexuality_is_mental_illness" ;
-        gaf:denotedBy leolaniTalk:chat1845_utterance0_char0-58 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:owners_probably-profit-from_misinformation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "owners_probably-profit-from_misinformation" ;
-        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
-
-    leolaniWorld:owners_probably-profit-from_misinformation_about_gay_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "owners_probably-profit-from_misinformation_about_gay_people" ;
-        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
-
-    leolaniWorld:owners_probably-profit-from_misinformation_about_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "owners_probably-profit-from_misinformation_about_people" ;
-        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
-
-    leolaniWorld:owners_profit-from_misinformation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "owners_profit-from_misinformation" ;
-        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
-
-    leolaniWorld:owners_profit-from_misinformation_about_gay_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "owners_profit-from_misinformation_about_gay_people" ;
-        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
-
-    leolaniWorld:owners_profit-from_misinformation_about_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "owners_profit-from_misinformation_about_people" ;
-        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:homosexuality_is_mental {
+    leolaniWorld:homosexuality ns1:is leolaniWorld:mental .
 }
 
 leolaniWorld:homosexuality_is_illness {
     leolaniWorld:homosexuality ns1:is leolaniWorld:illness .
 }
 
-leolaniWorld:owners_profit-from_misinformation_about_people {
-    leolaniWorld:owners ns1:profit_from leolaniWorld:misinformation_about_people .
+leolaniWorld:owners_probably-profit-from_misinformation_about_people {
+    leolaniWorld:owners ns1:probably_profit_from leolaniWorld:misinformation_about_people .
 }
 
-leolaniWorld:Instances {
+leolaniTalk:Interactions {
+    leolaniContext:context168 a eps:Context ;
+        rdfs:label "context168" ;
+        hs:id "168"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1845 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "106"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1845 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1845" ;
+        hs:id "1845"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1845_utterance0,
+            leolaniTalk:chat1845_utterance1 .
+
+    leolaniTalk:chat1845_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1845_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1845_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1845_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:homosexuality a gaf:Instance ;
-        rdfs:label "homosexuality" ;
-        gaf:denotedIn leolaniTalk:chat1845_utterance0_char0-58 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:illness a gaf:Instance ;
-        rdfs:label "illness" ;
-        gaf:denotedIn leolaniTalk:chat1845_utterance0_char0-58 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:mental a gaf:Instance ;
-        rdfs:label "mental" ;
-        gaf:denotedIn leolaniTalk:chat1845_utterance0_char0-58 .
-
-    leolaniWorld:mental_illness a gaf:Instance ;
-        rdfs:label "mental-illness" ;
-        gaf:denotedIn leolaniTalk:chat1845_utterance0_char0-58 .
-
-    leolaniWorld:misinformation a gaf:Instance ;
-        rdfs:label "misinformation" ;
-        gaf:denotedIn leolaniTalk:chat1845_utterance1_char0-191 .
-
-    leolaniWorld:misinformation_about_gay_people a gaf:Instance ;
-        rdfs:label "misinformation-about-gay-people" ;
-        gaf:denotedIn leolaniTalk:chat1845_utterance1_char0-191 .
-
-    leolaniWorld:misinformation_about_people a gaf:Instance ;
-        rdfs:label "misinformation-about-people" ;
-        gaf:denotedIn leolaniTalk:chat1845_utterance1_char0-191 .
-
-    leolaniWorld:owners a gaf:Instance ;
-        rdfs:label "owners" ;
-        gaf:denotedIn leolaniTalk:chat1845_utterance1_char0-191 .
 }
 
-leolaniWorld:owners_probably-profit-from_misinformation {
-    leolaniWorld:owners ns1:probably_profit_from leolaniWorld:misinformation .
-}
-
-leolaniWorld:owners_profit-from_misinformation_about_gay_people {
-    leolaniWorld:owners ns1:profit_from leolaniWorld:misinformation_about_gay_people .
+leolaniWorld:owners_probably-profit-from_misinformation_about_gay_people {
+    leolaniWorld:owners ns1:probably_profit_from leolaniWorld:misinformation_about_gay_people .
 }
 
 leolaniWorld:owners_profit-from_misinformation {
     leolaniWorld:owners ns1:profit_from leolaniWorld:misinformation .
 }
 
-leolaniWorld:homosexuality_is_mental {
-    leolaniWorld:homosexuality ns1:is leolaniWorld:mental .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:owners_profit-from_misinformation_about_people {
+    leolaniWorld:owners ns1:profit_from leolaniWorld:misinformation_about_people .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:homosexuality_is_illness_00028 a grasp:Attribution ;
+        rdfs:label "homosexuality_is_illness_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1845_utterance0_char0-58 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:homosexuality_is_mental_00028 a grasp:Attribution ;
+        rdfs:label "homosexuality_is_mental_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1845_utterance0_char0-58 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:homosexuality_is_mental_illness_00028 a grasp:Attribution ;
+        rdfs:label "homosexuality_is_mental_illness_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1845_utterance0_char0-58 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:owners_probably-profit-from_misinformation_00023 a grasp:Attribution ;
+        rdfs:label "owners_probably-profit-from_misinformation_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:owners_probably-profit-from_misinformation_about_gay_people_00023 a grasp:Attribution ;
+        rdfs:label "owners_probably-profit-from_misinformation_about_gay_people_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:owners_probably-profit-from_misinformation_about_people_00023 a grasp:Attribution ;
+        rdfs:label "owners_probably-profit-from_misinformation_about_people_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:owners_profit-from_misinformation_00023 a grasp:Attribution ;
+        rdfs:label "owners_profit-from_misinformation_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:owners_profit-from_misinformation_about_gay_people_00023 a grasp:Attribution ;
+        rdfs:label "owners_profit-from_misinformation_about_gay_people_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:owners_profit-from_misinformation_about_people_00023 a grasp:Attribution ;
+        rdfs:label "owners_profit-from_misinformation_about_people_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1845_utterance0_char0-58 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1845_utterance0_char0-58" ;
+        gaf:containsDenotation leolaniWorld:homosexuality,
+            leolaniWorld:illness,
+            leolaniWorld:mental,
+            leolaniWorld:mental_illness ;
+        gaf:denotes leolaniWorld:homosexuality_is_illness,
+            leolaniWorld:homosexuality_is_mental,
+            leolaniWorld:homosexuality_is_mental_illness ;
+        grasp:hasAttribution leolaniTalk:homosexuality_is_illness_00028,
+            leolaniTalk:homosexuality_is_mental_00028,
+            leolaniTalk:homosexuality_is_mental_illness_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:20.684517"^^xml1:string,
+            "2024-06-05T23:34:20.684580"^^xml1:string,
+            "2024-06-05T23:34:20.684605"^^xml1:string ;
+        rdf:value "homosexuality is a mental illness that can be cured [link]"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1845_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat1845_utterance1_char0-191 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1845_utterance1_char0-191" ;
+        gaf:containsDenotation leolaniWorld:misinformation,
+            leolaniWorld:misinformation_about_gay_people,
+            leolaniWorld:misinformation_about_people,
+            leolaniWorld:owners ;
+        gaf:denotes leolaniWorld:owners_probably-profit-from_misinformation,
+            leolaniWorld:owners_probably-profit-from_misinformation_about_gay_people,
+            leolaniWorld:owners_probably-profit-from_misinformation_about_people,
+            leolaniWorld:owners_profit-from_misinformation,
+            leolaniWorld:owners_profit-from_misinformation_about_gay_people,
+            leolaniWorld:owners_profit-from_misinformation_about_people ;
+        grasp:hasAttribution leolaniTalk:owners_probably-profit-from_misinformation_00023,
+            leolaniTalk:owners_probably-profit-from_misinformation_about_gay_people_00023,
+            leolaniTalk:owners_probably-profit-from_misinformation_about_people_00023,
+            leolaniTalk:owners_profit-from_misinformation_00023,
+            leolaniTalk:owners_profit-from_misinformation_about_gay_people_00023,
+            leolaniTalk:owners_profit-from_misinformation_about_people_00023 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:20.783573"^^xml1:string,
+            "2024-06-05T23:34:20.783628"^^xml1:string,
+            "2024-06-05T23:34:20.783651"^^xml1:string,
+            "2024-06-05T23:34:20.783675"^^xml1:string,
+            "2024-06-05T23:34:20.783700"^^xml1:string,
+            "2024-06-05T23:34:20.783723"^^xml1:string ;
+        rdf:value "This website is not reliable since it promotes \"reorientation therapy\", which is not backed up by science. The owners probably profit from misinformation and bad stereotypes about gay people."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1845_utterance1 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:homosexuality_is_mental_illness {
@@ -493,213 +591,115 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:homosexuality_is_illness a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homosexuality_is_illness" ;
+        gaf:denotedBy leolaniTalk:chat1845_utterance0_char0-58 .
+
+    leolaniWorld:homosexuality_is_mental a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homosexuality_is_mental" ;
+        gaf:denotedBy leolaniTalk:chat1845_utterance0_char0-58 .
+
+    leolaniWorld:homosexuality_is_mental_illness a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "homosexuality_is_mental_illness" ;
+        gaf:denotedBy leolaniTalk:chat1845_utterance0_char0-58 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:owners_probably-profit-from_misinformation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_probably-profit-from_misinformation" ;
+        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
+
+    leolaniWorld:owners_probably-profit-from_misinformation_about_gay_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_probably-profit-from_misinformation_about_gay_people" ;
+        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
+
+    leolaniWorld:owners_probably-profit-from_misinformation_about_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_probably-profit-from_misinformation_about_people" ;
+        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
+
+    leolaniWorld:owners_profit-from_misinformation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_profit-from_misinformation" ;
+        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
+
+    leolaniWorld:owners_profit-from_misinformation_about_gay_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_profit-from_misinformation_about_gay_people" ;
+        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
+
+    leolaniWorld:owners_profit-from_misinformation_about_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_profit-from_misinformation_about_people" ;
+        gaf:denotedBy leolaniTalk:chat1845_utterance1_char0-191 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:owners_probably-profit-from_misinformation_about_people {
-    leolaniWorld:owners ns1:probably_profit_from leolaniWorld:misinformation_about_people .
+leolaniWorld:owners_profit-from_misinformation_about_gay_people {
+    leolaniWorld:owners ns1:profit_from leolaniWorld:misinformation_about_gay_people .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:homosexuality_is_illness_00028 a grasp:Attribution ;
-        rdfs:label "homosexuality_is_illness_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1845_utterance0_char0-58 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:homosexuality_is_mental_00028 a grasp:Attribution ;
-        rdfs:label "homosexuality_is_mental_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1845_utterance0_char0-58 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:homosexuality_is_mental_illness_00028 a grasp:Attribution ;
-        rdfs:label "homosexuality_is_mental_illness_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1845_utterance0_char0-58 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:owners_probably-profit-from_misinformation_00023 a grasp:Attribution ;
-        rdfs:label "owners_probably-profit-from_misinformation_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:owners_probably-profit-from_misinformation_about_gay_people_00023 a grasp:Attribution ;
-        rdfs:label "owners_probably-profit-from_misinformation_about_gay_people_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:owners_probably-profit-from_misinformation_about_people_00023 a grasp:Attribution ;
-        rdfs:label "owners_probably-profit-from_misinformation_about_people_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:owners_profit-from_misinformation_00023 a grasp:Attribution ;
-        rdfs:label "owners_profit-from_misinformation_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:owners_profit-from_misinformation_about_gay_people_00023 a grasp:Attribution ;
-        rdfs:label "owners_profit-from_misinformation_about_gay_people_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:owners_profit-from_misinformation_about_people_00023 a grasp:Attribution ;
-        rdfs:label "owners_profit-from_misinformation_about_people_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1845_utterance1_char0-191 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1845_utterance0_char0-58 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1845_utterance0_char0-58" ;
-        gaf:containsDenotation leolaniWorld:homosexuality,
-            leolaniWorld:illness,
-            leolaniWorld:mental,
-            leolaniWorld:mental_illness ;
-        gaf:denotes leolaniWorld:homosexuality_is_illness,
-            leolaniWorld:homosexuality_is_mental,
-            leolaniWorld:homosexuality_is_mental_illness ;
-        grasp:hasAttribution leolaniTalk:homosexuality_is_illness_00028,
-            leolaniTalk:homosexuality_is_mental_00028,
-            leolaniTalk:homosexuality_is_mental_illness_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:20.684517"^^xml1:string,
-            "2024-06-05T23:34:20.684580"^^xml1:string,
-            "2024-06-05T23:34:20.684605"^^xml1:string ;
-        rdf:value "homosexuality is a mental illness that can be cured [link]"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1845_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat1845_utterance1_char0-191 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1845_utterance1_char0-191" ;
-        gaf:containsDenotation leolaniWorld:misinformation,
-            leolaniWorld:misinformation_about_gay_people,
-            leolaniWorld:misinformation_about_people,
-            leolaniWorld:owners ;
-        gaf:denotes leolaniWorld:owners_probably-profit-from_misinformation,
-            leolaniWorld:owners_probably-profit-from_misinformation_about_gay_people,
-            leolaniWorld:owners_probably-profit-from_misinformation_about_people,
-            leolaniWorld:owners_profit-from_misinformation,
-            leolaniWorld:owners_profit-from_misinformation_about_gay_people,
-            leolaniWorld:owners_profit-from_misinformation_about_people ;
-        grasp:hasAttribution leolaniTalk:owners_probably-profit-from_misinformation_00023,
-            leolaniTalk:owners_probably-profit-from_misinformation_about_gay_people_00023,
-            leolaniTalk:owners_probably-profit-from_misinformation_about_people_00023,
-            leolaniTalk:owners_profit-from_misinformation_00023,
-            leolaniTalk:owners_profit-from_misinformation_about_gay_people_00023,
-            leolaniTalk:owners_profit-from_misinformation_about_people_00023 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:20.783573"^^xml1:string,
-            "2024-06-05T23:34:20.783628"^^xml1:string,
-            "2024-06-05T23:34:20.783651"^^xml1:string,
-            "2024-06-05T23:34:20.783675"^^xml1:string,
-            "2024-06-05T23:34:20.783700"^^xml1:string,
-            "2024-06-05T23:34:20.783723"^^xml1:string ;
-        rdf:value "This website is not reliable since it promotes \"reorientation therapy\", which is not backed up by science. The owners probably profit from misinformation and bad stereotypes about gay people."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1845_utterance1 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:owners_probably-profit-from_misinformation {
+    leolaniWorld:owners ns1:probably_profit_from leolaniWorld:misinformation .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context168 a eps:Context ;
-        rdfs:label "context168" ;
-        hs:id "168"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1845 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "106"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1845 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1845" ;
-        hs:id "1845"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1845_utterance0,
-            leolaniTalk:chat1845_utterance1 .
-
-    leolaniTalk:chat1845_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1845_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1845_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1845_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:homosexuality a gaf:Instance ;
+        rdfs:label "homosexuality" ;
+        gaf:denotedIn leolaniTalk:chat1845_utterance0_char0-58 .
 
-leolaniWorld:owners_probably-profit-from_misinformation_about_gay_people {
-    leolaniWorld:owners ns1:probably_profit_from leolaniWorld:misinformation_about_gay_people .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:illness a gaf:Instance ;
+        rdfs:label "illness" ;
+        gaf:denotedIn leolaniTalk:chat1845_utterance0_char0-58 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:mental a gaf:Instance ;
+        rdfs:label "mental" ;
+        gaf:denotedIn leolaniTalk:chat1845_utterance0_char0-58 .
+
+    leolaniWorld:mental_illness a gaf:Instance ;
+        rdfs:label "mental-illness" ;
+        gaf:denotedIn leolaniTalk:chat1845_utterance0_char0-58 .
+
+    leolaniWorld:misinformation a gaf:Instance ;
+        rdfs:label "misinformation" ;
+        gaf:denotedIn leolaniTalk:chat1845_utterance1_char0-191 .
+
+    leolaniWorld:misinformation_about_gay_people a gaf:Instance ;
+        rdfs:label "misinformation-about-gay-people" ;
+        gaf:denotedIn leolaniTalk:chat1845_utterance1_char0-191 .
+
+    leolaniWorld:misinformation_about_people a gaf:Instance ;
+        rdfs:label "misinformation-about-people" ;
+        gaf:denotedIn leolaniTalk:chat1845_utterance1_char0-191 .
+
+    leolaniWorld:owners a gaf:Instance ;
+        rdfs:label "owners" ;
+        gaf:denotedIn leolaniTalk:chat1845_utterance1_char0-191 .
 }
 

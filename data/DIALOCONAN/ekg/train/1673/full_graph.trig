@@ -22,86 +22,148 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:people_benefits-from_state a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_benefits-from_state" ;
-        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
-
-    leolaniWorld:people_have_big_families a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_have_big_families" ;
-        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
-
-    leolaniWorld:people_have_families a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_have_families" ;
-        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
-
-    leolaniWorld:people_need_benefits a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_need_benefits" ;
-        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
-
-    leolaniWorld:people_need_benefits_from_state a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_need_benefits_from_state" ;
-        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
 leolaniWorld:people_benefits-from_state {
     leolaniWorld:people ns1:benefits_from leolaniWorld:state .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:benefits a gaf:Instance ;
-        rdfs:label "benefits" ;
-        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
+leolaniWorld:people_need_benefits_from_state {
+    leolaniWorld:people ns1:need leolaniWorld:benefits_from_state .
+}
 
-    leolaniWorld:benefits_from_state a gaf:Instance ;
-        rdfs:label "benefits-from-state" ;
-        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
+leolaniTalk:Interactions {
+    leolaniContext:context53 a eps:Context ;
+        rdfs:label "context53" ;
+        hs:id "53"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:big_families a gaf:Instance ;
-        rdfs:label "big-families" ;
-        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1673 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "191"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1673 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1673" ;
+        hs:id "1673"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1673_utterance1 .
+
+    leolaniTalk:chat1673_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1673_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
-
-    leolaniWorld:families a gaf:Instance ;
-        rdfs:label "families" ;
-        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
-
-    leolaniWorld:state a gaf:Instance ;
-        rdfs:label "state" ;
-        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
 }
 
-leolaniWorld:people_have_families {
-    leolaniWorld:people ns1:have leolaniWorld:families .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:people_need_benefits {
-    leolaniWorld:people ns1:need leolaniWorld:benefits .
+leolaniTalk:Perspectives {
+    leolaniTalk:people_benefits-from_state_00023 a grasp:Attribution ;
+        rdfs:label "people_benefits-from_state_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_have_big_families_00023 a grasp:Attribution ;
+        rdfs:label "people_have_big_families_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_have_families_00023 a grasp:Attribution ;
+        rdfs:label "people_have_families_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_need_benefits_00023 a grasp:Attribution ;
+        rdfs:label "people_need_benefits_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_need_benefits_from_state_00023 a grasp:Attribution ;
+        rdfs:label "people_need_benefits_from_state_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1673_utterance1_char0-158 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1673_utterance1_char0-158" ;
+        gaf:containsDenotation leolaniWorld:benefits,
+            leolaniWorld:benefits_from_state,
+            leolaniWorld:big_families,
+            leolaniWorld:families,
+            leolaniWorld:people,
+            leolaniWorld:state ;
+        gaf:denotes leolaniWorld:people_benefits-from_state,
+            leolaniWorld:people_have_big_families,
+            leolaniWorld:people_have_families,
+            leolaniWorld:people_need_benefits,
+            leolaniWorld:people_need_benefits_from_state ;
+        grasp:hasAttribution leolaniTalk:people_benefits-from_state_00023,
+            leolaniTalk:people_have_big_families_00023,
+            leolaniTalk:people_have_families_00023,
+            leolaniTalk:people_need_benefits_00023,
+            leolaniTalk:people_need_benefits_from_state_00023 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:18:23.150461"^^xml1:string,
+            "2024-06-05T23:18:23.150571"^^xml1:string,
+            "2024-06-05T23:18:23.150599"^^xml1:string,
+            "2024-06-05T23:18:23.150624"^^xml1:string,
+            "2024-06-05T23:18:23.150647"^^xml1:string ;
+        rdf:value "I don't believe this can be generalized to all Muslims. Some people have big families, some people need benefits from the state, but they're not all Muslims. "^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1673_utterance1 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -439,143 +501,81 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:people_need_benefits_from_state {
-    leolaniWorld:people ns1:need leolaniWorld:benefits_from_state .
+leolaniWorld:people_need_benefits {
+    leolaniWorld:people ns1:need leolaniWorld:benefits .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:people_benefits-from_state a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_benefits-from_state" ;
+        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
+
+    leolaniWorld:people_have_big_families a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_have_big_families" ;
+        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
+
+    leolaniWorld:people_have_families a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_have_families" ;
+        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
+
+    leolaniWorld:people_need_benefits a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_need_benefits" ;
+        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
+
+    leolaniWorld:people_need_benefits_from_state a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_need_benefits_from_state" ;
+        gaf:denotedBy leolaniTalk:chat1673_utterance1_char0-158 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:people_have_families {
+    leolaniWorld:people ns1:have leolaniWorld:families .
 }
 
 leolaniWorld:people_have_big_families {
     leolaniWorld:people ns1:have leolaniWorld:big_families .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:people_benefits-from_state_00023 a grasp:Attribution ;
-        rdfs:label "people_benefits-from_state_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:benefits a gaf:Instance ;
+        rdfs:label "benefits" ;
+        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
 
-    leolaniTalk:people_have_big_families_00023 a grasp:Attribution ;
-        rdfs:label "people_have_big_families_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:benefits_from_state a gaf:Instance ;
+        rdfs:label "benefits-from-state" ;
+        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
 
-    leolaniTalk:people_have_families_00023 a grasp:Attribution ;
-        rdfs:label "people_have_families_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_need_benefits_00023 a grasp:Attribution ;
-        rdfs:label "people_need_benefits_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_need_benefits_from_state_00023 a grasp:Attribution ;
-        rdfs:label "people_need_benefits_from_state_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1673_utterance1_char0-158 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1673_utterance1_char0-158 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1673_utterance1_char0-158" ;
-        gaf:containsDenotation leolaniWorld:benefits,
-            leolaniWorld:benefits_from_state,
-            leolaniWorld:big_families,
-            leolaniWorld:families,
-            leolaniWorld:people,
-            leolaniWorld:state ;
-        gaf:denotes leolaniWorld:people_benefits-from_state,
-            leolaniWorld:people_have_big_families,
-            leolaniWorld:people_have_families,
-            leolaniWorld:people_need_benefits,
-            leolaniWorld:people_need_benefits_from_state ;
-        grasp:hasAttribution leolaniTalk:people_benefits-from_state_00023,
-            leolaniTalk:people_have_big_families_00023,
-            leolaniTalk:people_have_families_00023,
-            leolaniTalk:people_need_benefits_00023,
-            leolaniTalk:people_need_benefits_from_state_00023 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:18:23.150461"^^xml1:string,
-            "2024-06-05T23:18:23.150571"^^xml1:string,
-            "2024-06-05T23:18:23.150599"^^xml1:string,
-            "2024-06-05T23:18:23.150624"^^xml1:string,
-            "2024-06-05T23:18:23.150647"^^xml1:string ;
-        rdf:value "I don't believe this can be generalized to all Muslims. Some people have big families, some people need benefits from the state, but they're not all Muslims. "^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1673_utterance1 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context53 a eps:Context ;
-        rdfs:label "context53" ;
-        hs:id "53"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1673 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "191"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1673 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1673" ;
-        hs:id "1673"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1673_utterance1 .
-
-    leolaniTalk:chat1673_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1673_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:big_families a gaf:Instance ;
+        rdfs:label "big-families" ;
+        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:families a gaf:Instance ;
+        rdfs:label "families" ;
+        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
+
+    leolaniWorld:state a gaf:Instance ;
+        rdfs:label "state" ;
+        gaf:denotedIn leolaniTalk:chat1673_utterance1_char0-158 .
 }
 

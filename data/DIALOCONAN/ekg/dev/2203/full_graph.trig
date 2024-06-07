@@ -22,55 +22,98 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:religion_has_side {
+    leolaniWorld:religion ns1:has leolaniWorld:side .
 }
 
 leolaniWorld:religion_has_political_side {
     leolaniWorld:religion ns1:has leolaniWorld:political_side .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_take-to_extreme a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context178 a eps:Context ;
+        rdfs:label "context178" ;
+        hs:id "178"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2203 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "96"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2203 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Jews_take-to_extreme" ;
-        gaf:denotedBy leolaniTalk:chat2203_utterance2_char0-124 .
+        rdfs:label "chat2203" ;
+        hs:id "2203"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2203_utterance0,
+            leolaniTalk:chat2203_utterance1,
+            leolaniTalk:chat2203_utterance2 .
 
-    leolaniWorld:Jews_take_it a gaf:Assertion,
+    leolaniTalk:chat2203_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Jews_take_it" ;
-        gaf:denotedBy leolaniTalk:chat2203_utterance2_char0-124 .
+        rdfs:label "chat2203_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:They_rule_our_society a gaf:Assertion,
+    leolaniTalk:chat2203_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_rule_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2203_utterance0_char0-100 .
+        rdfs:label "chat2203_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat2203_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2203_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:religion_has_political_side a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "religion_has_political_side" ;
-        gaf:denotedBy leolaniTalk:chat2203_utterance1_char0-82 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:religion_has_side a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "religion_has_side" ;
-        gaf:denotedBy leolaniTalk:chat2203_utterance1_char0-82 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:Jews_take_it {
+    leolaniWorld:Jews ns1:take leolaniWorld:it .
 }
 
 leolaniTalk:Perspectives {
@@ -169,67 +212,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2203_utterance2_char0-124 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2203_utterance0_char0-100 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:extreme a gaf:Instance ;
-        rdfs:label "extreme" ;
-        gaf:denotedIn leolaniTalk:chat2203_utterance2_char0-124 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2203_utterance2_char0-124 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_society a gaf:Instance ;
-        rdfs:label "our-society" ;
-        gaf:denotedIn leolaniTalk:chat2203_utterance0_char0-100 .
-
-    leolaniWorld:political_side a gaf:Instance ;
-        rdfs:label "political-side" ;
-        gaf:denotedIn leolaniTalk:chat2203_utterance1_char0-82 .
-
-    leolaniWorld:religion a gaf:Instance ;
-        rdfs:label "religion" ;
-        gaf:denotedIn leolaniTalk:chat2203_utterance1_char0-82 .
-
-    leolaniWorld:side a gaf:Instance ;
-        rdfs:label "side" ;
-        gaf:denotedIn leolaniTalk:chat2203_utterance1_char0-82 .
-}
-
-leolaniWorld:religion_has_side {
-    leolaniWorld:religion ns1:has leolaniWorld:side .
-}
-
-leolaniWorld:Jews_take_it {
-    leolaniWorld:Jews ns1:take leolaniWorld:it .
-}
-
-leolaniWorld:They_rule_our_society {
-    leolaniWorld:They ns1:rule leolaniWorld:our_society .
-}
-
-leolaniWorld:Jews_take-to_extreme {
-    leolaniWorld:Jews ns1:take_to leolaniWorld:extreme .
 }
 
 leolaniWorld:Ontology {
@@ -567,77 +549,95 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context178 a eps:Context ;
-        rdfs:label "context178" ;
-        hs:id "178"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Jews_take-to_extreme {
+    leolaniWorld:Jews ns1:take_to leolaniWorld:extreme .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2203 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "96"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2203 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Jews_take-to_extreme a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2203" ;
-        hs:id "2203"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2203_utterance0,
-            leolaniTalk:chat2203_utterance1,
-            leolaniTalk:chat2203_utterance2 .
+        rdfs:label "Jews_take-to_extreme" ;
+        gaf:denotedBy leolaniTalk:chat2203_utterance2_char0-124 .
 
-    leolaniTalk:chat2203_utterance0 a grasp:Utterance,
+    leolaniWorld:Jews_take_it a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2203_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Jews_take_it" ;
+        gaf:denotedBy leolaniTalk:chat2203_utterance2_char0-124 .
 
-    leolaniTalk:chat2203_utterance1 a grasp:Utterance,
+    leolaniWorld:They_rule_our_society a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2203_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "They_rule_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2203_utterance0_char0-100 .
 
-    leolaniTalk:chat2203_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2203_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:religion_has_political_side a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "religion_has_political_side" ;
+        gaf:denotedBy leolaniTalk:chat2203_utterance1_char0-82 .
+
+    leolaniWorld:religion_has_side a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "religion_has_side" ;
+        gaf:denotedBy leolaniTalk:chat2203_utterance1_char0-82 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:They_rule_our_society {
+    leolaniWorld:They ns1:rule leolaniWorld:our_society .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2203_utterance2_char0-124 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2203_utterance0_char0-100 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:extreme a gaf:Instance ;
+        rdfs:label "extreme" ;
+        gaf:denotedIn leolaniTalk:chat2203_utterance2_char0-124 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2203_utterance2_char0-124 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_society a gaf:Instance ;
+        rdfs:label "our-society" ;
+        gaf:denotedIn leolaniTalk:chat2203_utterance0_char0-100 .
+
+    leolaniWorld:political_side a gaf:Instance ;
+        rdfs:label "political-side" ;
+        gaf:denotedIn leolaniTalk:chat2203_utterance1_char0-82 .
+
+    leolaniWorld:religion a gaf:Instance ;
+        rdfs:label "religion" ;
+        gaf:denotedIn leolaniTalk:chat2203_utterance1_char0-82 .
+
+    leolaniWorld:side a gaf:Instance ;
+        rdfs:label "side" ;
+        gaf:denotedIn leolaniTalk:chat2203_utterance1_char0-82 .
 }
 

@@ -23,69 +23,103 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:they_take_ours {
+    leolaniWorld:they ns11:take leolaniWorld:ours .
+}
+
 leolaniWorld:They_re_not {
     leolaniWorld:They ns1:re leolaniWorld:not .
+}
+
+leolaniWorld:onyl_job_take_ours {
+    leolaniWorld:onyl_job ns11:take leolaniWorld:ours .
+}
+
+leolaniWorld:they_keep_stealing {
+    leolaniWorld:they ns11:keep leolaniWorld:stealing .
+}
+
+leolaniWorld:they_keep-from_us {
+    leolaniWorld:they ns11:keep_from leolaniWorld:us .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context139 a eps:Context ;
+        rdfs:label "context139" ;
+        hs:id "139"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1219 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "35"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1219 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1219" ;
+        hs:id "1219"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1219_utterance3,
+            leolaniTalk:chat1219_utterance4 .
+
+    leolaniTalk:chat1219_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1219_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1219_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1219_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:They_are_good_workers a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_good_workers" ;
-        gaf:denotedBy leolaniTalk:chat1219_utterance3_char0-72 .
-
-    leolaniWorld:They_are_workers a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_workers" ;
-        gaf:denotedBy leolaniTalk:chat1219_utterance3_char0-72 .
-
-    leolaniWorld:They_re_not a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_re_not" ;
-        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:onyl_job_take_ours a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "onyl_job_take_ours" ;
-        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:they_keep-from_us a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_keep-from_us" ;
-        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:they_keep_stealing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_keep_stealing" ;
-        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:they_take_ours a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_take_ours" ;
-        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:they_take_ours {
-    leolaniWorld:they ns11:take leolaniWorld:ours .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:They_are_workers {
+    leolaniWorld:They ns11:are leolaniWorld:workers .
 }
 
 leolaniTalk:Perspectives {
@@ -197,74 +231,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1219_utterance3_char0-72,
-            leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:good_workers a gaf:Instance ;
-        rdfs:label "good-workers" ;
-        gaf:denotedIn leolaniTalk:chat1219_utterance3_char0-72 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:not a gaf:Instance ;
-        rdfs:label "not" ;
-        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:onyl_job a gaf:Instance ;
-        rdfs:label "onyl-job" ;
-        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:ours a gaf:Instance ;
-        rdfs:label "ours" ;
-        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:stealing a gaf:Instance ;
-        rdfs:label "stealing" ;
-        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
-
-    leolaniWorld:workers a gaf:Instance ;
-        rdfs:label "workers" ;
-        gaf:denotedIn leolaniTalk:chat1219_utterance3_char0-72 .
-}
-
-leolaniWorld:they_keep_stealing {
-    leolaniWorld:they ns11:keep leolaniWorld:stealing .
-}
-
 leolaniWorld:They_are_good_workers {
     leolaniWorld:They ns11:are leolaniWorld:good_workers .
-}
-
-leolaniWorld:They_are_workers {
-    leolaniWorld:They ns11:are leolaniWorld:workers .
-}
-
-leolaniWorld:they_keep-from_us {
-    leolaniWorld:they ns11:keep_from leolaniWorld:us .
-}
-
-leolaniWorld:onyl_job_take_ours {
-    leolaniWorld:onyl_job ns11:take leolaniWorld:ours .
 }
 
 leolaniWorld:Ontology {
@@ -602,70 +570,102 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context139 a eps:Context ;
-        rdfs:label "context139" ;
-        hs:id "139"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1219 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "35"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1219 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:They_are_good_workers a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1219" ;
-        hs:id "1219"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1219_utterance3,
-            leolaniTalk:chat1219_utterance4 .
+        rdfs:label "They_are_good_workers" ;
+        gaf:denotedBy leolaniTalk:chat1219_utterance3_char0-72 .
 
-    leolaniTalk:chat1219_utterance3 a grasp:Utterance,
+    leolaniWorld:They_are_workers a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1219_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "They_are_workers" ;
+        gaf:denotedBy leolaniTalk:chat1219_utterance3_char0-72 .
 
-    leolaniTalk:chat1219_utterance4 a grasp:Utterance,
+    leolaniWorld:They_re_not a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1219_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_re_not" ;
+        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:onyl_job_take_ours a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "onyl_job_take_ours" ;
+        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:they_keep-from_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_keep-from_us" ;
+        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:they_keep_stealing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_keep_stealing" ;
+        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:they_take_ours a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_take_ours" ;
+        gaf:denotedBy leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1219_utterance3_char0-72,
+            leolaniTalk:chat1219_utterance4_char0-73 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:good_workers a gaf:Instance ;
+        rdfs:label "good-workers" ;
+        gaf:denotedIn leolaniTalk:chat1219_utterance3_char0-72 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:not a gaf:Instance ;
+        rdfs:label "not" ;
+        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:onyl_job a gaf:Instance ;
+        rdfs:label "onyl-job" ;
+        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:ours a gaf:Instance ;
+        rdfs:label "ours" ;
+        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:stealing a gaf:Instance ;
+        rdfs:label "stealing" ;
+        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat1219_utterance4_char0-73 .
+
+    leolaniWorld:workers a gaf:Instance ;
+        rdfs:label "workers" ;
+        gaf:denotedIn leolaniTalk:chat1219_utterance3_char0-72 .
 }
 

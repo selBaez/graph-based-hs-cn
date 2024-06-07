@@ -22,6 +22,97 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context100 a eps:Context ;
+        rdfs:label "context100" ;
+        hs:id "100"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat184 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "4"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat184 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat184" ;
+        hs:id "184"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat184_utterance0,
+            leolaniTalk:chat184_utterance1 .
+
+    leolaniTalk:chat184_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat184_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat184_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat184_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:women_having_self_esteem {
+    leolaniWorld:women ns1:having leolaniWorld:self_esteem .
+}
+
+leolaniWorld:bitches_are_when_vain {
+    leolaniWorld:bitches ns1:are leolaniWorld:when_vain .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:shit_is_unattractive {
+    leolaniWorld:shit ns1:is leolaniWorld:unattractive .
+}
+
+leolaniWorld:bitches_are_vain {
+    leolaniWorld:bitches ns1:are leolaniWorld:vain .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:bitches_are_vain_00021 a grasp:Attribution ;
         rdfs:label "bitches_are_vain_00021" ;
@@ -111,51 +202,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:bitches a gaf:Instance ;
-        rdfs:label "bitches" ;
-        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:self_esteem a gaf:Instance ;
-        rdfs:label "self-esteem" ;
-        gaf:denotedIn leolaniTalk:chat184_utterance1_char0-65 .
-
-    leolaniWorld:shit a gaf:Instance ;
-        rdfs:label "shit" ;
-        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
-
-    leolaniWorld:themselves a gaf:Instance ;
-        rdfs:label "themselves" ;
-        gaf:denotedIn leolaniTalk:chat184_utterance1_char0-65 .
-
-    leolaniWorld:unattractive a gaf:Instance ;
-        rdfs:label "unattractive" ;
-        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
-
-    leolaniWorld:vain a gaf:Instance ;
-        rdfs:label "vain" ;
-        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
-
-    leolaniWorld:when_vain a gaf:Instance ;
-        rdfs:label "when-vain" ;
-        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat184_utterance1_char0-65 .
 }
 
 leolaniWorld:Ontology {
@@ -493,81 +539,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context100 a eps:Context ;
-        rdfs:label "context100" ;
-        hs:id "100"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat184 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "4"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat184 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat184" ;
-        hs:id "184"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat184_utterance0,
-            leolaniTalk:chat184_utterance1 .
-
-    leolaniTalk:chat184_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat184_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat184_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat184_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:bitches_are_vain {
-    leolaniWorld:bitches ns1:are leolaniWorld:vain .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:bitches_are_vain a gaf:Assertion,
             sem:Event ;
@@ -607,23 +578,52 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:bitches_are_when_vain {
-    leolaniWorld:bitches ns1:are leolaniWorld:when_vain .
-}
-
-leolaniWorld:shit_is_unattractive {
-    leolaniWorld:shit ns1:is leolaniWorld:unattractive .
-}
-
-leolaniWorld:women_having_self_esteem {
-    leolaniWorld:women ns1:having leolaniWorld:self_esteem .
-}
-
 leolaniWorld:women_loving_themselves {
     leolaniWorld:women ns1:loving leolaniWorld:themselves .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Instances {
+    leolaniWorld:bitches a gaf:Instance ;
+        rdfs:label "bitches" ;
+        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:self_esteem a gaf:Instance ;
+        rdfs:label "self-esteem" ;
+        gaf:denotedIn leolaniTalk:chat184_utterance1_char0-65 .
+
+    leolaniWorld:shit a gaf:Instance ;
+        rdfs:label "shit" ;
+        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
+
+    leolaniWorld:themselves a gaf:Instance ;
+        rdfs:label "themselves" ;
+        gaf:denotedIn leolaniTalk:chat184_utterance1_char0-65 .
+
+    leolaniWorld:unattractive a gaf:Instance ;
+        rdfs:label "unattractive" ;
+        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
+
+    leolaniWorld:vain a gaf:Instance ;
+        rdfs:label "vain" ;
+        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
+
+    leolaniWorld:when_vain a gaf:Instance ;
+        rdfs:label "when-vain" ;
+        gaf:denotedIn leolaniTalk:chat184_utterance0_char0-103 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat184_utterance1_char0-65 .
 }
 

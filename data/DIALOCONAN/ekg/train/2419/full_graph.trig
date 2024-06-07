@@ -23,165 +23,262 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:I_talk-with_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_talk-with_them" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+leolaniTalk:Interactions {
+    leolaniContext:context149 a eps:Context ;
+        rdfs:label "context149" ;
+        hs:id "149"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Jews_are-drain-on_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are-drain-on_society" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance2_char0-28 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2419 .
 
-    leolaniWorld:Jews_are_drain a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_drain" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance2_char0-28 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:They_have_stranglehold a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_have_stranglehold" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "142"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:They_have_stranglehold_on_American_culture a gaf:Assertion,
+    leolaniTalk:chat2419 a grasp:Chat,
             sem:Event ;
-        rdfs:label "They_have_stranglehold_on_American_culture" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+        rdfs:label "chat2419" ;
+        hs:id "2419"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2419_utterance0,
+            leolaniTalk:chat2419_utterance2 .
 
-    leolaniWorld:They_have_stranglehold_on_culture a gaf:Assertion,
+    leolaniTalk:chat2419_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_have_stranglehold_on_culture" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+        rdfs:label "chat2419_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:it_has_time a gaf:Assertion,
+    leolaniTalk:chat2419_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_has_time" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+        rdfs:label "chat2419_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:it_s-time_for_stop a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-time_for_stop" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:it_s-time_for_that_to_stop a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-time_for_that_to_stop" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:it_s-time_for_to_stop a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-time_for_to_stop" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:it_s-time_stop a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-time_stop" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+leolaniWorld:it_s-time_to_stop {
+    leolaniWorld:it ns11:s_time leolaniWorld:to_stop .
+}
 
-    leolaniWorld:it_s-time_to_stop a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-time_to_stop" ;
-        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:it_s-time_for_that_to_stop {
     leolaniWorld:it ns11:s_time leolaniWorld:for_that_to_stop .
 }
 
-leolaniWorld:Jews_are_drain {
-    leolaniWorld:Jews ns1:are leolaniWorld:drain .
+leolaniWorld:it_s-time_stop {
+    leolaniWorld:it ns11:s_time leolaniWorld:stop .
+}
+
+leolaniWorld:it_s-time_for_stop {
+    leolaniWorld:it ns11:s_time leolaniWorld:for_stop .
+}
+
+leolaniWorld:They_have_stranglehold_on_culture {
+    leolaniWorld:They ns1:have leolaniWorld:stranglehold_on_culture .
 }
 
 leolaniWorld:it_has_time {
     leolaniWorld:it ns1:has leolaniWorld:time .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance2_char0-28 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:drain a gaf:Instance ;
-        rdfs:label "drain" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance2_char0-28 .
-
-    leolaniWorld:for_stop a gaf:Instance ;
-        rdfs:label "for-stop" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:for_that_to_stop a gaf:Instance ;
-        rdfs:label "for-that-to-stop" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:for_to_stop a gaf:Instance ;
-        rdfs:label "for-to-stop" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance2_char0-28 .
-
-    leolaniWorld:stop a gaf:Instance ;
-        rdfs:label "stop" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:stranglehold a gaf:Instance ;
-        rdfs:label "stranglehold" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:stranglehold_on_American_culture a gaf:Instance ;
-        rdfs:label "stranglehold-on-american-culture" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:stranglehold_on_culture a gaf:Instance ;
-        rdfs:label "stranglehold-on-culture" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:time a gaf:Instance ;
-        rdfs:label "time" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-
-    leolaniWorld:to_stop a gaf:Instance ;
-        rdfs:label "to-stop" ;
-        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
-}
-
 leolaniWorld:Jews_are-drain-on_society {
     leolaniWorld:Jews ns1:are_drain_on leolaniWorld:society .
 }
 
-leolaniWorld:it_s-time_stop {
-    leolaniWorld:it ns11:s_time leolaniWorld:stop .
+leolaniTalk:Perspectives {
+    leolaniTalk:I_talk-with_them_00028 a grasp:Attribution ;
+        rdfs:label "I_talk-with_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_are-drain-on_society_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are-drain-on_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance2_char0-28 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_are_drain_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_drain_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance2_char0-28 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_have_stranglehold_00028 a grasp:Attribution ;
+        rdfs:label "They_have_stranglehold_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_have_stranglehold_on_American_culture_00028 a grasp:Attribution ;
+        rdfs:label "They_have_stranglehold_on_American_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_have_stranglehold_on_culture_00028 a grasp:Attribution ;
+        rdfs:label "They_have_stranglehold_on_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_has_time_00028 a grasp:Attribution ;
+        rdfs:label "it_has_time_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_s-time_for_stop_00028 a grasp:Attribution ;
+        rdfs:label "it_s-time_for_stop_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_s-time_for_that_to_stop_00028 a grasp:Attribution ;
+        rdfs:label "it_s-time_for_that_to_stop_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_s-time_for_to_stop_00028 a grasp:Attribution ;
+        rdfs:label "it_s-time_for_to_stop_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_s-time_stop_00028 a grasp:Attribution ;
+        rdfs:label "it_s-time_stop_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_s-time_to_stop_00028 a grasp:Attribution ;
+        rdfs:label "it_s-time_to_stop_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2419_utterance2_char0-28 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2419_utterance2_char0-28" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:drain,
+            leolaniWorld:society ;
+        gaf:denotes leolaniWorld:Jews_are-drain-on_society,
+            leolaniWorld:Jews_are_drain ;
+        grasp:hasAttribution leolaniTalk:Jews_are-drain-on_society_00028,
+            leolaniTalk:Jews_are_drain_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:33.625942"^^xml1:string,
+            "2024-06-05T23:08:33.625992"^^xml1:string ;
+        rdf:value "Jews are a drain on society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2419_utterance2 .
+
+    leolaniTalk:chat2419_utterance0_char0-108 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2419_utterance0_char0-108" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:They,
+            leolaniWorld:for_stop,
+            leolaniWorld:for_that_to_stop,
+            leolaniWorld:for_to_stop,
+            leolaniWorld:it,
+            leolaniWorld:stop,
+            leolaniWorld:stranglehold,
+            leolaniWorld:stranglehold_on_American_culture,
+            leolaniWorld:stranglehold_on_culture,
+            leolaniWorld:them,
+            leolaniWorld:time,
+            leolaniWorld:to_stop ;
+        gaf:denotes leolaniWorld:I_talk-with_them,
+            leolaniWorld:They_have_stranglehold,
+            leolaniWorld:They_have_stranglehold_on_American_culture,
+            leolaniWorld:They_have_stranglehold_on_culture,
+            leolaniWorld:it_has_time,
+            leolaniWorld:it_s-time_for_stop,
+            leolaniWorld:it_s-time_for_that_to_stop,
+            leolaniWorld:it_s-time_for_to_stop,
+            leolaniWorld:it_s-time_stop,
+            leolaniWorld:it_s-time_to_stop ;
+        grasp:hasAttribution leolaniTalk:I_talk-with_them_00028,
+            leolaniTalk:They_have_stranglehold_00028,
+            leolaniTalk:They_have_stranglehold_on_American_culture_00028,
+            leolaniTalk:They_have_stranglehold_on_culture_00028,
+            leolaniTalk:it_has_time_00028,
+            leolaniTalk:it_s-time_for_stop_00028,
+            leolaniTalk:it_s-time_for_that_to_stop_00028,
+            leolaniTalk:it_s-time_for_to_stop_00028,
+            leolaniTalk:it_s-time_stop_00028,
+            leolaniTalk:it_s-time_to_stop_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:33.468510"^^xml1:string,
+            "2024-06-05T23:08:33.468571"^^xml1:string,
+            "2024-06-05T23:08:33.468594"^^xml1:string,
+            "2024-06-05T23:08:33.468617"^^xml1:string,
+            "2024-06-05T23:08:33.468640"^^xml1:string,
+            "2024-06-05T23:08:33.468662"^^xml1:string,
+            "2024-06-05T23:08:33.468684"^^xml1:string,
+            "2024-06-05T23:08:33.468706"^^xml1:string,
+            "2024-06-05T23:08:33.468729"^^xml1:string,
+            "2024-06-05T23:08:33.468756"^^xml1:string ;
+        rdf:value "I'm not going to talk with them. They have a stranglehold on American culture and it's time for that to stop"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2419_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -519,261 +616,164 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:it_s-time_for_to_stop {
+    leolaniWorld:it ns11:s_time leolaniWorld:for_to_stop .
+}
+
 leolaniWorld:They_have_stranglehold {
     leolaniWorld:They ns1:have leolaniWorld:stranglehold .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:I_talk-with_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_talk-with_them" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:Jews_are-drain-on_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are-drain-on_society" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance2_char0-28 .
+
+    leolaniWorld:Jews_are_drain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_drain" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance2_char0-28 .
+
+    leolaniWorld:They_have_stranglehold a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_stranglehold" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:They_have_stranglehold_on_American_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_stranglehold_on_American_culture" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:They_have_stranglehold_on_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_stranglehold_on_culture" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:it_has_time a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_time" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:it_s-time_for_stop a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-time_for_stop" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:it_s-time_for_that_to_stop a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-time_for_that_to_stop" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:it_s-time_for_to_stop a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-time_for_to_stop" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:it_s-time_stop a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-time_stop" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:it_s-time_to_stop a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-time_to_stop" ;
+        gaf:denotedBy leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:They_have_stranglehold_on_American_culture {
     leolaniWorld:They ns1:have leolaniWorld:stranglehold_on_American_culture .
 }
 
-leolaniWorld:it_s-time_for_stop {
-    leolaniWorld:it ns11:s_time leolaniWorld:for_stop .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:I_talk-with_them_00028 a grasp:Attribution ;
-        rdfs:label "I_talk-with_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_are-drain-on_society_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are-drain-on_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance2_char0-28 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_are_drain_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_drain_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance2_char0-28 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_have_stranglehold_00028 a grasp:Attribution ;
-        rdfs:label "They_have_stranglehold_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_have_stranglehold_on_American_culture_00028 a grasp:Attribution ;
-        rdfs:label "They_have_stranglehold_on_American_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_have_stranglehold_on_culture_00028 a grasp:Attribution ;
-        rdfs:label "They_have_stranglehold_on_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_has_time_00028 a grasp:Attribution ;
-        rdfs:label "it_has_time_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-time_for_stop_00028 a grasp:Attribution ;
-        rdfs:label "it_s-time_for_stop_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-time_for_that_to_stop_00028 a grasp:Attribution ;
-        rdfs:label "it_s-time_for_that_to_stop_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-time_for_to_stop_00028 a grasp:Attribution ;
-        rdfs:label "it_s-time_for_to_stop_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-time_stop_00028 a grasp:Attribution ;
-        rdfs:label "it_s-time_stop_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-time_to_stop_00028 a grasp:Attribution ;
-        rdfs:label "it_s-time_to_stop_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2419_utterance0_char0-108 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2419_utterance2_char0-28 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2419_utterance2_char0-28" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:drain,
-            leolaniWorld:society ;
-        gaf:denotes leolaniWorld:Jews_are-drain-on_society,
-            leolaniWorld:Jews_are_drain ;
-        grasp:hasAttribution leolaniTalk:Jews_are-drain-on_society_00028,
-            leolaniTalk:Jews_are_drain_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:33.625942"^^xml1:string,
-            "2024-06-05T23:08:33.625992"^^xml1:string ;
-        rdf:value "Jews are a drain on society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2419_utterance2 .
-
-    leolaniTalk:chat2419_utterance0_char0-108 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2419_utterance0_char0-108" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:They,
-            leolaniWorld:for_stop,
-            leolaniWorld:for_that_to_stop,
-            leolaniWorld:for_to_stop,
-            leolaniWorld:it,
-            leolaniWorld:stop,
-            leolaniWorld:stranglehold,
-            leolaniWorld:stranglehold_on_American_culture,
-            leolaniWorld:stranglehold_on_culture,
-            leolaniWorld:them,
-            leolaniWorld:time,
-            leolaniWorld:to_stop ;
-        gaf:denotes leolaniWorld:I_talk-with_them,
-            leolaniWorld:They_have_stranglehold,
-            leolaniWorld:They_have_stranglehold_on_American_culture,
-            leolaniWorld:They_have_stranglehold_on_culture,
-            leolaniWorld:it_has_time,
-            leolaniWorld:it_s-time_for_stop,
-            leolaniWorld:it_s-time_for_that_to_stop,
-            leolaniWorld:it_s-time_for_to_stop,
-            leolaniWorld:it_s-time_stop,
-            leolaniWorld:it_s-time_to_stop ;
-        grasp:hasAttribution leolaniTalk:I_talk-with_them_00028,
-            leolaniTalk:They_have_stranglehold_00028,
-            leolaniTalk:They_have_stranglehold_on_American_culture_00028,
-            leolaniTalk:They_have_stranglehold_on_culture_00028,
-            leolaniTalk:it_has_time_00028,
-            leolaniTalk:it_s-time_for_stop_00028,
-            leolaniTalk:it_s-time_for_that_to_stop_00028,
-            leolaniTalk:it_s-time_for_to_stop_00028,
-            leolaniTalk:it_s-time_stop_00028,
-            leolaniTalk:it_s-time_to_stop_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:33.468510"^^xml1:string,
-            "2024-06-05T23:08:33.468571"^^xml1:string,
-            "2024-06-05T23:08:33.468594"^^xml1:string,
-            "2024-06-05T23:08:33.468617"^^xml1:string,
-            "2024-06-05T23:08:33.468640"^^xml1:string,
-            "2024-06-05T23:08:33.468662"^^xml1:string,
-            "2024-06-05T23:08:33.468684"^^xml1:string,
-            "2024-06-05T23:08:33.468706"^^xml1:string,
-            "2024-06-05T23:08:33.468729"^^xml1:string,
-            "2024-06-05T23:08:33.468756"^^xml1:string ;
-        rdf:value "I'm not going to talk with them. They have a stranglehold on American culture and it's time for that to stop"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2419_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:it_s-time_to_stop {
-    leolaniWorld:it ns11:s_time leolaniWorld:to_stop .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context149 a eps:Context ;
-        rdfs:label "context149" ;
-        hs:id "149"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2419 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "142"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2419 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2419" ;
-        hs:id "2419"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2419_utterance0,
-            leolaniTalk:chat2419_utterance2 .
-
-    leolaniTalk:chat2419_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2419_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2419_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2419_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:They_have_stranglehold_on_culture {
-    leolaniWorld:They ns1:have leolaniWorld:stranglehold_on_culture .
-}
-
 leolaniWorld:I_talk-with_them {
     leolaniWorld:I ns1:talk_with leolaniWorld:them .
 }
 
-leolaniWorld:it_s-time_for_to_stop {
-    leolaniWorld:it ns11:s_time leolaniWorld:for_to_stop .
+leolaniWorld:Jews_are_drain {
+    leolaniWorld:Jews ns1:are leolaniWorld:drain .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance2_char0-28 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:drain a gaf:Instance ;
+        rdfs:label "drain" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance2_char0-28 .
+
+    leolaniWorld:for_stop a gaf:Instance ;
+        rdfs:label "for-stop" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:for_that_to_stop a gaf:Instance ;
+        rdfs:label "for-that-to-stop" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:for_to_stop a gaf:Instance ;
+        rdfs:label "for-to-stop" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance2_char0-28 .
+
+    leolaniWorld:stop a gaf:Instance ;
+        rdfs:label "stop" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:stranglehold a gaf:Instance ;
+        rdfs:label "stranglehold" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:stranglehold_on_American_culture a gaf:Instance ;
+        rdfs:label "stranglehold-on-american-culture" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:stranglehold_on_culture a gaf:Instance ;
+        rdfs:label "stranglehold-on-culture" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:time a gaf:Instance ;
+        rdfs:label "time" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
+
+    leolaniWorld:to_stop a gaf:Instance ;
+        rdfs:label "to-stop" ;
+        gaf:denotedIn leolaniTalk:chat2419_utterance0_char0-108 .
 }
 

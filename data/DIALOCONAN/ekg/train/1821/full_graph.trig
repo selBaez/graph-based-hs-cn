@@ -22,139 +22,244 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:I_judge_them {
-    leolaniWorld:I ns1:judge leolaniWorld:them .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Gay_men_are_disgusting a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_are_disgusting" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance0_char0-23 .
-
-    leolaniWorld:I_judge_because_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_judge_because_burden" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:I_judge_because_burden_to_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_judge_because_burden_to_society" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:I_judge_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_judge_burden" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:I_judge_burden_to_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_judge_burden_to_society" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:I_judge_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_judge_them" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are-burden-to_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-burden-to_society" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:they_are_because_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_because_burden" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:they_are_because_burden_to_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_because_burden_to_society" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:they_are_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_burden" ;
-        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:I_judge_burden_to_society {
-    leolaniWorld:I ns1:judge leolaniWorld:burden_to_society .
-}
-
 leolaniWorld:they_are_burden {
     leolaniWorld:they ns1:are leolaniWorld:burden .
+}
+
+leolaniWorld:I_judge_because_burden_to_society {
+    leolaniWorld:I ns1:judge leolaniWorld:because_burden_to_society .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context248 a eps:Context ;
+        rdfs:label "context248" ;
+        hs:id "248"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1821 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "210"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1821 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1821" ;
+        hs:id "1821"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1821_utterance0,
+            leolaniTalk:chat1821_utterance2 .
+
+    leolaniTalk:chat1821_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1821_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1821_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1821_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:they_are-burden-to_society {
+    leolaniWorld:they ns1:are_burden_to leolaniWorld:society .
 }
 
 leolaniWorld:I_judge_because_burden {
     leolaniWorld:I ns1:judge leolaniWorld:because_burden .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Gay_men a gaf:Instance ;
-        rdfs:label "gay-men" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance0_char0-23 .
+leolaniWorld:I_judge_them {
+    leolaniWorld:I ns1:judge leolaniWorld:them .
+}
 
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:because_burden a gaf:Instance ;
-        rdfs:label "because-burden" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+leolaniWorld:I_judge_burden_to_society {
+    leolaniWorld:I ns1:judge leolaniWorld:burden_to_society .
+}
 
-    leolaniWorld:because_burden_to_society a gaf:Instance ;
-        rdfs:label "because-burden-to-society" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:burden a gaf:Instance ;
-        rdfs:label "burden" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:burden_to_society a gaf:Instance ;
-        rdfs:label "burden-to-society" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:disgusting a gaf:Instance ;
-        rdfs:label "disgusting" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance0_char0-23 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+leolaniWorld:they_are_because_burden {
+    leolaniWorld:they ns1:are leolaniWorld:because_burden .
 }
 
 leolaniWorld:they_are_because_burden_to_society {
     leolaniWorld:they ns1:are leolaniWorld:because_burden_to_society .
 }
 
-leolaniWorld:Gay_men_are_disgusting {
-    leolaniWorld:Gay_men ns1:are leolaniWorld:disgusting .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Gay_men_are_disgusting_00020 a grasp:Attribution ;
+        rdfs:label "Gay_men_are_disgusting_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance0_char0-23 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:they_are-burden-to_society {
-    leolaniWorld:they ns1:are_burden_to leolaniWorld:society .
+    leolaniTalk:I_judge_because_burden_00028 a grasp:Attribution ;
+        rdfs:label "I_judge_because_burden_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_judge_because_burden_to_society_00028 a grasp:Attribution ;
+        rdfs:label "I_judge_because_burden_to_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_judge_burden_00028 a grasp:Attribution ;
+        rdfs:label "I_judge_burden_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_judge_burden_to_society_00028 a grasp:Attribution ;
+        rdfs:label "I_judge_burden_to_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_judge_them_00028 a grasp:Attribution ;
+        rdfs:label "I_judge_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1821_utterance0_char0-23 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1821_utterance0_char0-23" ;
+        gaf:containsDenotation leolaniWorld:Gay_men,
+            leolaniWorld:disgusting ;
+        gaf:denotes leolaniWorld:Gay_men_are_disgusting ;
+        grasp:hasAttribution leolaniTalk:Gay_men_are_disgusting_00020 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:38:25.892073"^^xml1:string ;
+        rdf:value "Gay men are disgusting."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1821_utterance0 .
+
+    leolaniTalk:they_are-burden-to_society_00028 a grasp:Attribution ;
+        rdfs:label "they_are-burden-to_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_because_burden_00028 a grasp:Attribution ;
+        rdfs:label "they_are_because_burden_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_because_burden_to_society_00028 a grasp:Attribution ;
+        rdfs:label "they_are_because_burden_to_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_burden_00028 a grasp:Attribution ;
+        rdfs:label "they_are_burden_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:DISGUST a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISGUST" .
+
+    leolaniTalk:chat1821_utterance2_char0-50 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1821_utterance2_char0-50" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:because_burden,
+            leolaniWorld:because_burden_to_society,
+            leolaniWorld:burden,
+            leolaniWorld:burden_to_society,
+            leolaniWorld:society,
+            leolaniWorld:them,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:I_judge_because_burden,
+            leolaniWorld:I_judge_because_burden_to_society,
+            leolaniWorld:I_judge_burden,
+            leolaniWorld:I_judge_burden_to_society,
+            leolaniWorld:I_judge_them,
+            leolaniWorld:they_are-burden-to_society,
+            leolaniWorld:they_are_because_burden,
+            leolaniWorld:they_are_because_burden_to_society,
+            leolaniWorld:they_are_burden ;
+        grasp:hasAttribution leolaniTalk:I_judge_because_burden_00028,
+            leolaniTalk:I_judge_because_burden_to_society_00028,
+            leolaniTalk:I_judge_burden_00028,
+            leolaniTalk:I_judge_burden_to_society_00028,
+            leolaniTalk:I_judge_them_00028,
+            leolaniTalk:they_are-burden-to_society_00028,
+            leolaniTalk:they_are_because_burden_00028,
+            leolaniTalk:they_are_because_burden_to_society_00028,
+            leolaniTalk:they_are_burden_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:38:26.146522"^^xml1:string,
+            "2024-06-05T23:38:26.146582"^^xml1:string,
+            "2024-06-05T23:38:26.146606"^^xml1:string,
+            "2024-06-05T23:38:26.146627"^^xml1:string,
+            "2024-06-05T23:38:26.146649"^^xml1:string,
+            "2024-06-05T23:38:26.146670"^^xml1:string,
+            "2024-06-05T23:38:26.146692"^^xml1:string,
+            "2024-06-05T23:38:26.146718"^^xml1:string,
+            "2024-06-05T23:38:26.146743"^^xml1:string ;
+        rdf:value "I judge them because they are a burden to society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1821_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -492,223 +597,118 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Gay_men_are_disgusting {
+    leolaniWorld:Gay_men ns1:are leolaniWorld:disgusting .
 }
 
-leolaniWorld:I_judge_because_burden_to_society {
-    leolaniWorld:I ns1:judge leolaniWorld:because_burden_to_society .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Gay_men_are_disgusting_00020 a grasp:Attribution ;
-        rdfs:label "Gay_men_are_disgusting_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance0_char0-23 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_judge_because_burden_00028 a grasp:Attribution ;
-        rdfs:label "I_judge_because_burden_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_judge_because_burden_to_society_00028 a grasp:Attribution ;
-        rdfs:label "I_judge_because_burden_to_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_judge_burden_00028 a grasp:Attribution ;
-        rdfs:label "I_judge_burden_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_judge_burden_to_society_00028 a grasp:Attribution ;
-        rdfs:label "I_judge_burden_to_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_judge_them_00028 a grasp:Attribution ;
-        rdfs:label "I_judge_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1821_utterance0_char0-23 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1821_utterance0_char0-23" ;
-        gaf:containsDenotation leolaniWorld:Gay_men,
-            leolaniWorld:disgusting ;
-        gaf:denotes leolaniWorld:Gay_men_are_disgusting ;
-        grasp:hasAttribution leolaniTalk:Gay_men_are_disgusting_00020 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:38:25.892073"^^xml1:string ;
-        rdf:value "Gay men are disgusting."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1821_utterance0 .
-
-    leolaniTalk:they_are-burden-to_society_00028 a grasp:Attribution ;
-        rdfs:label "they_are-burden-to_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_because_burden_00028 a grasp:Attribution ;
-        rdfs:label "they_are_because_burden_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_because_burden_to_society_00028 a grasp:Attribution ;
-        rdfs:label "they_are_because_burden_to_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_burden_00028 a grasp:Attribution ;
-        rdfs:label "they_are_burden_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1821_utterance2_char0-50 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:DISGUST a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISGUST" .
-
-    leolaniTalk:chat1821_utterance2_char0-50 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1821_utterance2_char0-50" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:because_burden,
-            leolaniWorld:because_burden_to_society,
-            leolaniWorld:burden,
-            leolaniWorld:burden_to_society,
-            leolaniWorld:society,
-            leolaniWorld:them,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:I_judge_because_burden,
-            leolaniWorld:I_judge_because_burden_to_society,
-            leolaniWorld:I_judge_burden,
-            leolaniWorld:I_judge_burden_to_society,
-            leolaniWorld:I_judge_them,
-            leolaniWorld:they_are-burden-to_society,
-            leolaniWorld:they_are_because_burden,
-            leolaniWorld:they_are_because_burden_to_society,
-            leolaniWorld:they_are_burden ;
-        grasp:hasAttribution leolaniTalk:I_judge_because_burden_00028,
-            leolaniTalk:I_judge_because_burden_to_society_00028,
-            leolaniTalk:I_judge_burden_00028,
-            leolaniTalk:I_judge_burden_to_society_00028,
-            leolaniTalk:I_judge_them_00028,
-            leolaniTalk:they_are-burden-to_society_00028,
-            leolaniTalk:they_are_because_burden_00028,
-            leolaniTalk:they_are_because_burden_to_society_00028,
-            leolaniTalk:they_are_burden_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:38:26.146522"^^xml1:string,
-            "2024-06-05T23:38:26.146582"^^xml1:string,
-            "2024-06-05T23:38:26.146606"^^xml1:string,
-            "2024-06-05T23:38:26.146627"^^xml1:string,
-            "2024-06-05T23:38:26.146649"^^xml1:string,
-            "2024-06-05T23:38:26.146670"^^xml1:string,
-            "2024-06-05T23:38:26.146692"^^xml1:string,
-            "2024-06-05T23:38:26.146718"^^xml1:string,
-            "2024-06-05T23:38:26.146743"^^xml1:string ;
-        rdf:value "I judge them because they are a burden to society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1821_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context248 a eps:Context ;
-        rdfs:label "context248" ;
-        hs:id "248"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1821 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "210"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1821 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Gay_men_are_disgusting a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1821" ;
-        hs:id "1821"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1821_utterance0,
-            leolaniTalk:chat1821_utterance2 .
+        rdfs:label "Gay_men_are_disgusting" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance0_char0-23 .
 
-    leolaniTalk:chat1821_utterance0 a grasp:Utterance,
+    leolaniWorld:I_judge_because_burden a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1821_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "I_judge_because_burden" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
 
-    leolaniTalk:chat1821_utterance2 a grasp:Utterance,
+    leolaniWorld:I_judge_because_burden_to_society a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1821_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "I_judge_because_burden_to_society" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:I_judge_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_judge_burden" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:I_judge_burden_to_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_judge_burden_to_society" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:I_judge_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_judge_them" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are-burden-to_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-burden-to_society" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:they_are_because_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_because_burden" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:they_are_because_burden_to_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_because_burden_to_society" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:they_are_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:I_judge_burden {
     leolaniWorld:I ns1:judge leolaniWorld:burden .
 }
 
-leolaniWorld:they_are_because_burden {
-    leolaniWorld:they ns1:are leolaniWorld:because_burden .
+leolaniWorld:Instances {
+    leolaniWorld:Gay_men a gaf:Instance ;
+        rdfs:label "gay-men" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance0_char0-23 .
+
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:because_burden a gaf:Instance ;
+        rdfs:label "because-burden" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:because_burden_to_society a gaf:Instance ;
+        rdfs:label "because-burden-to-society" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:burden a gaf:Instance ;
+        rdfs:label "burden" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:burden_to_society a gaf:Instance ;
+        rdfs:label "burden-to-society" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:disgusting a gaf:Instance ;
+        rdfs:label "disgusting" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance0_char0-23 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1821_utterance2_char0-50 .
 }
 

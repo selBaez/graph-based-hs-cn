@@ -22,53 +22,94 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:This_will-have_consequences a gaf:Assertion,
+leolaniWorld:men_soft_our_traditional_roles {
+    leolaniWorld:men ns1:soft leolaniWorld:our_traditional_roles .
+}
+
+leolaniWorld:do_you_mean_are_consequences {
+    leolaniWorld:do_you_mean ns1:are leolaniWorld:consequences .
+}
+
+leolaniWorld:This_will-have_consequences {
+    leolaniWorld:This ns1:will_have leolaniWorld:consequences .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context158 a eps:Context ;
+        rdfs:label "context158" ;
+        hs:id "158"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat81 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "48"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat81 a grasp:Chat,
             sem:Event ;
-        rdfs:label "This_will-have_consequences" ;
-        gaf:denotedBy leolaniTalk:chat81_utterance0_char0-102 .
+        rdfs:label "chat81" ;
+        hs:id "81"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat81_utterance0,
+            leolaniTalk:chat81_utterance1,
+            leolaniTalk:chat81_utterance2 .
 
-    leolaniWorld:do_you_mean_are_consequences a gaf:Assertion,
+    leolaniTalk:chat81_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "do_you_mean_are_consequences" ;
-        gaf:denotedBy leolaniTalk:chat81_utterance1_char0-65 .
+        rdfs:label "chat81_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:it_has_okay a gaf:Assertion,
+    leolaniTalk:chat81_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_has_okay" ;
-        gaf:denotedBy leolaniTalk:chat81_utterance2_char0-168 .
+        rdfs:label "chat81_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:it_telling_men a gaf:Assertion,
+    leolaniTalk:chat81_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "it_telling_men" ;
-        gaf:denotedBy leolaniTalk:chat81_utterance2_char0-168 .
+        rdfs:label "chat81_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:men_soft_our_roles a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_soft_our_roles" ;
-        gaf:denotedBy leolaniTalk:chat81_utterance2_char0-168 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:men_soft_our_traditional_roles a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_soft_our_traditional_roles" ;
-        gaf:denotedBy leolaniTalk:chat81_utterance2_char0-168 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:you_do-mean-by_feminisation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-mean-by_feminisation" ;
-        gaf:denotedBy leolaniTalk:chat81_utterance1_char0-65 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
@@ -79,78 +120,129 @@ leolaniWorld:you_do-mean-by_feminisation {
     leolaniWorld:you ns1:do_mean_by leolaniWorld:feminisation .
 }
 
-leolaniWorld:men_soft_our_roles {
-    leolaniWorld:men ns1:soft leolaniWorld:our_roles .
-}
-
 leolaniWorld:it_telling_men {
     leolaniWorld:it ns1:telling leolaniWorld:men .
 }
 
-leolaniWorld:do_you_mean_are_consequences {
-    leolaniWorld:do_you_mean ns1:are leolaniWorld:consequences .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:This_will-have_consequences_00028 a grasp:Attribution ;
+        rdfs:label "This_will-have_consequences_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat81_utterance0_char0-102 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:This a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance0_char0-102 .
+    leolaniTalk:chat81_utterance0_char0-102 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat81_utterance0_char0-102" ;
+        gaf:containsDenotation leolaniWorld:This,
+            leolaniWorld:consequences ;
+        gaf:denotes leolaniWorld:This_will-have_consequences ;
+        grasp:hasAttribution leolaniTalk:This_will-have_consequences_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:29.966716"^^xml1:string ;
+        rdf:value "Tolerating fag pride means we let the feminisation of our society happen. This will have consequences."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat81_utterance0 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:do_you_mean_are_consequences_00026 a grasp:Attribution ;
+        rdfs:label "do_you_mean_are_consequences_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat81_utterance1_char0-65 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:consequences a gaf:Instance ;
-        rdfs:label "consequences" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance0_char0-102,
-            leolaniTalk:chat81_utterance1_char0-65 .
+    leolaniTalk:it_has_okay_00028 a grasp:Attribution ;
+        rdfs:label "it_has_okay_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat81_utterance2_char0-168 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:do_you_mean a gaf:Instance ;
-        rdfs:label "do-you-mean" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance1_char0-65 .
+    leolaniTalk:it_telling_men_00028 a grasp:Attribution ;
+        rdfs:label "it_telling_men_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat81_utterance2_char0-168 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:feminisation a gaf:Instance ;
-        rdfs:label "feminisation" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance1_char0-65 .
+    leolaniTalk:men_soft_our_roles_00028 a grasp:Attribution ;
+        rdfs:label "men_soft_our_roles_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat81_utterance2_char0-168 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:men_soft_our_traditional_roles_00028 a grasp:Attribution ;
+        rdfs:label "men_soft_our_traditional_roles_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat81_utterance2_char0-168 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+    leolaniTalk:you_do-mean-by_feminisation_00026 a grasp:Attribution ;
+        rdfs:label "you_do-mean-by_feminisation_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat81_utterance1_char0-65 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat81_utterance1_char0-65 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat81_utterance1_char0-65" ;
+        gaf:containsDenotation leolaniWorld:consequences,
+            leolaniWorld:do_you_mean,
+            leolaniWorld:feminisation,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:do_you_mean_are_consequences,
+            leolaniWorld:you_do-mean-by_feminisation ;
+        grasp:hasAttribution leolaniTalk:do_you_mean_are_consequences_00026,
+            leolaniTalk:you_do-mean-by_feminisation_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:30.053231"^^xml1:string,
+            "2024-06-05T23:06:30.053284"^^xml1:string ;
+        rdf:value "What do you mean by 'feminisation' and what are the consequences?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat81_utterance1 .
 
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
 
-    leolaniWorld:okay a gaf:Instance ;
-        rdfs:label "okay" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+    leolaniTalk:chat81_utterance2_char0-168 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat81_utterance2_char0-168" ;
+        gaf:containsDenotation leolaniWorld:it,
+            leolaniWorld:men,
+            leolaniWorld:okay,
+            leolaniWorld:our_roles,
+            leolaniWorld:our_traditional_roles ;
+        gaf:denotes leolaniWorld:it_has_okay,
+            leolaniWorld:it_telling_men,
+            leolaniWorld:men_soft_our_roles,
+            leolaniWorld:men_soft_our_traditional_roles ;
+        grasp:hasAttribution leolaniTalk:it_has_okay_00028,
+            leolaniTalk:it_telling_men_00028,
+            leolaniTalk:men_soft_our_roles_00028,
+            leolaniTalk:men_soft_our_traditional_roles_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:30.256444"^^xml1:string,
+            "2024-06-05T23:06:30.256497"^^xml1:string,
+            "2024-06-05T23:06:30.256520"^^xml1:string,
+            "2024-06-05T23:06:30.256541"^^xml1:string ;
+        rdf:value "Men aren't real men anymore, telling men it's okay to be gay or to dress in womens clothing is making men soft and eroding our traditional roles and the nuclear family."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat81_utterance2 .
 
-    leolaniWorld:our_roles a gaf:Instance ;
-        rdfs:label "our-roles" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:our_traditional_roles a gaf:Instance ;
-        rdfs:label "our-traditional-roles" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat81_utterance1_char0-65 .
-}
-
-leolaniWorld:men_soft_our_traditional_roles {
-    leolaniWorld:men ns1:soft leolaniWorld:our_traditional_roles .
-}
-
-leolaniWorld:This_will-have_consequences {
-    leolaniWorld:This ns1:will_have leolaniWorld:consequences .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -488,206 +580,114 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
 leolaniWorld:it_has_okay {
     leolaniWorld:it ns1:has leolaniWorld:okay .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:This_will-have_consequences_00028 a grasp:Attribution ;
-        rdfs:label "This_will-have_consequences_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat81_utterance0_char0-102 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:This_will-have_consequences a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "This_will-have_consequences" ;
+        gaf:denotedBy leolaniTalk:chat81_utterance0_char0-102 .
 
-    leolaniTalk:chat81_utterance0_char0-102 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat81_utterance0_char0-102" ;
-        gaf:containsDenotation leolaniWorld:This,
-            leolaniWorld:consequences ;
-        gaf:denotes leolaniWorld:This_will-have_consequences ;
-        grasp:hasAttribution leolaniTalk:This_will-have_consequences_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:29.966716"^^xml1:string ;
-        rdf:value "Tolerating fag pride means we let the feminisation of our society happen. This will have consequences."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat81_utterance0 .
+    leolaniWorld:do_you_mean_are_consequences a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "do_you_mean_are_consequences" ;
+        gaf:denotedBy leolaniTalk:chat81_utterance1_char0-65 .
 
-    leolaniTalk:do_you_mean_are_consequences_00026 a grasp:Attribution ;
-        rdfs:label "do_you_mean_are_consequences_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat81_utterance1_char0-65 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:it_has_okay a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_okay" ;
+        gaf:denotedBy leolaniTalk:chat81_utterance2_char0-168 .
 
-    leolaniTalk:it_has_okay_00028 a grasp:Attribution ;
-        rdfs:label "it_has_okay_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat81_utterance2_char0-168 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:it_telling_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_telling_men" ;
+        gaf:denotedBy leolaniTalk:chat81_utterance2_char0-168 .
 
-    leolaniTalk:it_telling_men_00028 a grasp:Attribution ;
-        rdfs:label "it_telling_men_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat81_utterance2_char0-168 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:men_soft_our_roles_00028 a grasp:Attribution ;
-        rdfs:label "men_soft_our_roles_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat81_utterance2_char0-168 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:men_soft_our_traditional_roles_00028 a grasp:Attribution ;
-        rdfs:label "men_soft_our_traditional_roles_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat81_utterance2_char0-168 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:men_soft_our_roles a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_soft_our_roles" ;
+        gaf:denotedBy leolaniTalk:chat81_utterance2_char0-168 .
 
-    leolaniTalk:you_do-mean-by_feminisation_00026 a grasp:Attribution ;
-        rdfs:label "you_do-mean-by_feminisation_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat81_utterance1_char0-65 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:men_soft_our_traditional_roles a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_soft_our_traditional_roles" ;
+        gaf:denotedBy leolaniTalk:chat81_utterance2_char0-168 .
 
-    leolaniTalk:chat81_utterance1_char0-65 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat81_utterance1_char0-65" ;
-        gaf:containsDenotation leolaniWorld:consequences,
-            leolaniWorld:do_you_mean,
-            leolaniWorld:feminisation,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:do_you_mean_are_consequences,
-            leolaniWorld:you_do-mean-by_feminisation ;
-        grasp:hasAttribution leolaniTalk:do_you_mean_are_consequences_00026,
-            leolaniTalk:you_do-mean-by_feminisation_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:30.053231"^^xml1:string,
-            "2024-06-05T23:06:30.053284"^^xml1:string ;
-        rdf:value "What do you mean by 'feminisation' and what are the consequences?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat81_utterance1 .
+    leolaniWorld:you_do-mean-by_feminisation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-mean-by_feminisation" ;
+        gaf:denotedBy leolaniTalk:chat81_utterance1_char0-65 .
 
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    leolaniTalk:chat81_utterance2_char0-168 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat81_utterance2_char0-168" ;
-        gaf:containsDenotation leolaniWorld:it,
-            leolaniWorld:men,
-            leolaniWorld:okay,
-            leolaniWorld:our_roles,
-            leolaniWorld:our_traditional_roles ;
-        gaf:denotes leolaniWorld:it_has_okay,
-            leolaniWorld:it_telling_men,
-            leolaniWorld:men_soft_our_roles,
-            leolaniWorld:men_soft_our_traditional_roles ;
-        grasp:hasAttribution leolaniTalk:it_has_okay_00028,
-            leolaniTalk:it_telling_men_00028,
-            leolaniTalk:men_soft_our_roles_00028,
-            leolaniTalk:men_soft_our_traditional_roles_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:30.256444"^^xml1:string,
-            "2024-06-05T23:06:30.256497"^^xml1:string,
-            "2024-06-05T23:06:30.256520"^^xml1:string,
-            "2024-06-05T23:06:30.256541"^^xml1:string ;
-        rdf:value "Men aren't real men anymore, telling men it's okay to be gay or to dress in womens clothing is making men soft and eroding our traditional roles and the nuclear family."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat81_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context158 a eps:Context ;
-        rdfs:label "context158" ;
-        hs:id "158"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:men_soft_our_roles {
+    leolaniWorld:men ns1:soft leolaniWorld:our_roles .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat81 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "48"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat81 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat81" ;
-        hs:id "81"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat81_utterance0,
-            leolaniTalk:chat81_utterance1,
-            leolaniTalk:chat81_utterance2 .
-
-    leolaniTalk:chat81_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat81_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat81_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat81_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat81_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat81_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:This a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance0_char0-102 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:consequences a gaf:Instance ;
+        rdfs:label "consequences" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance0_char0-102,
+            leolaniTalk:chat81_utterance1_char0-65 .
+
+    leolaniWorld:do_you_mean a gaf:Instance ;
+        rdfs:label "do-you-mean" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance1_char0-65 .
+
+    leolaniWorld:feminisation a gaf:Instance ;
+        rdfs:label "feminisation" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance1_char0-65 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+
+    leolaniWorld:okay a gaf:Instance ;
+        rdfs:label "okay" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+
+    leolaniWorld:our_roles a gaf:Instance ;
+        rdfs:label "our-roles" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+
+    leolaniWorld:our_traditional_roles a gaf:Instance ;
+        rdfs:label "our-traditional-roles" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance2_char0-168 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat81_utterance1_char0-65 .
 }
 

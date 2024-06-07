@@ -22,104 +22,189 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:people_caught-in_emergency {
-    leolaniWorld:people ns1:caught_in leolaniWorld:emergency .
+leolaniWorld:proud_country_preventing_invasion {
+    leolaniWorld:proud_country ns1:preventing leolaniWorld:invasion .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:country_preventing_invasion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "country_preventing_invasion" ;
-        gaf:denotedBy leolaniTalk:chat1504_utterance2_char0-39 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_caught-by_beating a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_caught-by_beating" ;
-        gaf:denotedBy leolaniTalk:chat1504_utterance3_char0-70 .
-
-    leolaniWorld:people_caught-by_beating_back a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_caught-by_beating_back" ;
-        gaf:denotedBy leolaniTalk:chat1504_utterance3_char0-70 .
-
-    leolaniWorld:people_caught-in_emergency a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_caught-in_emergency" ;
-        gaf:denotedBy leolaniTalk:chat1504_utterance3_char0-70 .
-
-    leolaniWorld:proud_country_preventing_invasion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "proud_country_preventing_invasion" ;
-        gaf:denotedBy leolaniTalk:chat1504_utterance2_char0-39 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:people_caught-by_beating_back {
+    leolaniWorld:people ns1:caught_by leolaniWorld:beating_back .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context185 a eps:Context ;
+        rdfs:label "context185" ;
+        hs:id "185"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:people_caught-by_beating {
-    leolaniWorld:people ns1:caught_by leolaniWorld:beating .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1504 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "79"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1504 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1504" ;
+        hs:id "1504"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1504_utterance2,
+            leolaniTalk:chat1504_utterance3 .
+
+    leolaniTalk:chat1504_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1504_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1504_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1504_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:country_preventing_invasion {
     leolaniWorld:country ns1:preventing leolaniWorld:invasion .
 }
 
-leolaniWorld:proud_country_preventing_invasion {
-    leolaniWorld:proud_country ns1:preventing leolaniWorld:invasion .
+leolaniWorld:people_caught-by_beating {
+    leolaniWorld:people ns1:caught_by leolaniWorld:beating .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:beating a gaf:Instance ;
-        rdfs:label "beating" ;
-        gaf:denotedIn leolaniTalk:chat1504_utterance3_char0-70 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:beating_back a gaf:Instance ;
-        rdfs:label "beating-back" ;
-        gaf:denotedIn leolaniTalk:chat1504_utterance3_char0-70 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+leolaniWorld:people_caught-in_emergency {
+    leolaniWorld:people ns1:caught_in leolaniWorld:emergency .
+}
 
-    leolaniWorld:country a gaf:Instance ;
-        rdfs:label "country" ;
-        gaf:denotedIn leolaniTalk:chat1504_utterance2_char0-39 .
+leolaniTalk:Perspectives {
+    leolaniTalk:country_preventing_invasion_0009 a grasp:Attribution ;
+        rdfs:label "country_preventing_invasion_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat1504_utterance2_char0-39 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:emergency a gaf:Instance ;
-        rdfs:label "emergency" ;
-        gaf:denotedIn leolaniTalk:chat1504_utterance3_char0-70 .
+    leolaniTalk:people_caught-by_beating_00028 a grasp:Attribution ;
+        rdfs:label "people_caught-by_beating_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1504_utterance3_char0-70 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:people_caught-by_beating_back_00028 a grasp:Attribution ;
+        rdfs:label "people_caught-by_beating_back_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1504_utterance3_char0-70 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:invasion a gaf:Instance ;
-        rdfs:label "invasion" ;
-        gaf:denotedIn leolaniTalk:chat1504_utterance2_char0-39 .
+    leolaniTalk:people_caught-in_emergency_00028 a grasp:Attribution ;
+        rdfs:label "people_caught-in_emergency_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1504_utterance3_char0-70 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:proud_country_preventing_invasion_0009 a grasp:Attribution ;
+        rdfs:label "proud_country_preventing_invasion_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat1504_utterance2_char0-39 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1504_utterance3_char0-70 .
+    leolaniTalk:chat1504_utterance2_char0-39 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1504_utterance2_char0-39" ;
+        gaf:containsDenotation leolaniWorld:country,
+            leolaniWorld:invasion,
+            leolaniWorld:proud_country ;
+        gaf:denotes leolaniWorld:country_preventing_invasion,
+            leolaniWorld:proud_country_preventing_invasion ;
+        grasp:hasAttribution leolaniTalk:country_preventing_invasion_0009,
+            leolaniTalk:proud_country_preventing_invasion_0009 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:17.507849"^^xml1:string,
+            "2024-06-05T23:08:17.507913"^^xml1:string ;
+        rdf:value "A proud country preventing an invasion."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1504_utterance2 .
 
-    leolaniWorld:proud_country a gaf:Instance ;
-        rdfs:label "proud-country" ;
-        gaf:denotedIn leolaniTalk:chat1504_utterance2_char0-39 .
+    graspe:ADMIRATION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ADMIRATION" .
+
+    leolaniTalk:chat1504_utterance3_char0-70 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1504_utterance3_char0-70" ;
+        gaf:containsDenotation leolaniWorld:beating,
+            leolaniWorld:beating_back,
+            leolaniWorld:emergency,
+            leolaniWorld:people ;
+        gaf:denotes leolaniWorld:people_caught-by_beating,
+            leolaniWorld:people_caught-by_beating_back,
+            leolaniWorld:people_caught-in_emergency ;
+        grasp:hasAttribution leolaniTalk:people_caught-by_beating_00028,
+            leolaniTalk:people_caught-by_beating_back_00028,
+            leolaniTalk:people_caught-in_emergency_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:17.593247"^^xml1:string,
+            "2024-06-05T23:08:17.593304"^^xml1:string,
+            "2024-06-05T23:08:17.593327"^^xml1:string ;
+        rdf:value "By beating back people caught in an emergency that they didn't create?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1504_utterance3 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -457,168 +542,83 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:country_preventing_invasion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "country_preventing_invasion" ;
+        gaf:denotedBy leolaniTalk:chat1504_utterance2_char0-39 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_caught-by_beating a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_caught-by_beating" ;
+        gaf:denotedBy leolaniTalk:chat1504_utterance3_char0-70 .
+
+    leolaniWorld:people_caught-by_beating_back a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_caught-by_beating_back" ;
+        gaf:denotedBy leolaniTalk:chat1504_utterance3_char0-70 .
+
+    leolaniWorld:people_caught-in_emergency a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_caught-in_emergency" ;
+        gaf:denotedBy leolaniTalk:chat1504_utterance3_char0-70 .
+
+    leolaniWorld:proud_country_preventing_invasion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "proud_country_preventing_invasion" ;
+        gaf:denotedBy leolaniTalk:chat1504_utterance2_char0-39 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:country_preventing_invasion_0009 a grasp:Attribution ;
-        rdfs:label "country_preventing_invasion_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat1504_utterance2_char0-39 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:beating a gaf:Instance ;
+        rdfs:label "beating" ;
+        gaf:denotedIn leolaniTalk:chat1504_utterance3_char0-70 .
 
-    leolaniTalk:people_caught-by_beating_00028 a grasp:Attribution ;
-        rdfs:label "people_caught-by_beating_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1504_utterance3_char0-70 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_caught-by_beating_back_00028 a grasp:Attribution ;
-        rdfs:label "people_caught-by_beating_back_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1504_utterance3_char0-70 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_caught-in_emergency_00028 a grasp:Attribution ;
-        rdfs:label "people_caught-in_emergency_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1504_utterance3_char0-70 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:proud_country_preventing_invasion_0009 a grasp:Attribution ;
-        rdfs:label "proud_country_preventing_invasion_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat1504_utterance2_char0-39 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1504_utterance2_char0-39 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1504_utterance2_char0-39" ;
-        gaf:containsDenotation leolaniWorld:country,
-            leolaniWorld:invasion,
-            leolaniWorld:proud_country ;
-        gaf:denotes leolaniWorld:country_preventing_invasion,
-            leolaniWorld:proud_country_preventing_invasion ;
-        grasp:hasAttribution leolaniTalk:country_preventing_invasion_0009,
-            leolaniTalk:proud_country_preventing_invasion_0009 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:17.507849"^^xml1:string,
-            "2024-06-05T23:08:17.507913"^^xml1:string ;
-        rdf:value "A proud country preventing an invasion."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1504_utterance2 .
-
-    graspe:ADMIRATION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ADMIRATION" .
-
-    leolaniTalk:chat1504_utterance3_char0-70 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1504_utterance3_char0-70" ;
-        gaf:containsDenotation leolaniWorld:beating,
-            leolaniWorld:beating_back,
-            leolaniWorld:emergency,
-            leolaniWorld:people ;
-        gaf:denotes leolaniWorld:people_caught-by_beating,
-            leolaniWorld:people_caught-by_beating_back,
-            leolaniWorld:people_caught-in_emergency ;
-        grasp:hasAttribution leolaniTalk:people_caught-by_beating_00028,
-            leolaniTalk:people_caught-by_beating_back_00028,
-            leolaniTalk:people_caught-in_emergency_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:17.593247"^^xml1:string,
-            "2024-06-05T23:08:17.593304"^^xml1:string,
-            "2024-06-05T23:08:17.593327"^^xml1:string ;
-        rdf:value "By beating back people caught in an emergency that they didn't create?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1504_utterance3 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context185 a eps:Context ;
-        rdfs:label "context185" ;
-        hs:id "185"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1504 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "79"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1504 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1504" ;
-        hs:id "1504"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1504_utterance2,
-            leolaniTalk:chat1504_utterance3 .
-
-    leolaniTalk:chat1504_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1504_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1504_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1504_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:beating_back a gaf:Instance ;
+        rdfs:label "beating-back" ;
+        gaf:denotedIn leolaniTalk:chat1504_utterance3_char0-70 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:country a gaf:Instance ;
+        rdfs:label "country" ;
+        gaf:denotedIn leolaniTalk:chat1504_utterance2_char0-39 .
 
-leolaniWorld:people_caught-by_beating_back {
-    leolaniWorld:people ns1:caught_by leolaniWorld:beating_back .
+    leolaniWorld:emergency a gaf:Instance ;
+        rdfs:label "emergency" ;
+        gaf:denotedIn leolaniTalk:chat1504_utterance3_char0-70 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:invasion a gaf:Instance ;
+        rdfs:label "invasion" ;
+        gaf:denotedIn leolaniTalk:chat1504_utterance2_char0-39 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1504_utterance3_char0-70 .
+
+    leolaniWorld:proud_country a gaf:Instance ;
+        rdfs:label "proud-country" ;
+        gaf:denotedIn leolaniTalk:chat1504_utterance2_char0-39 .
 }
 

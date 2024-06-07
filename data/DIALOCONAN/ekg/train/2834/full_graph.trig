@@ -22,131 +22,234 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Islam_is-religion-of_peace a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is-religion-of_peace" ;
-        gaf:denotedBy leolaniTalk:chat2834_utterance1_char0-62 .
-
-    leolaniWorld:Islam_is_ideology a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_ideology" ;
-        gaf:denotedBy leolaniTalk:chat2834_utterance0_char0-55 .
-
-    leolaniWorld:Islam_is_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_religion" ;
-        gaf:denotedBy leolaniTalk:chat2834_utterance1_char0-62 .
-
-    leolaniWorld:Islam_is_toxic a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_toxic" ;
-        gaf:denotedBy leolaniTalk:chat2834_utterance0_char0-55 .
-
-    leolaniWorld:Islam_is_toxic_ideology a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_toxic_ideology" ;
-        gaf:denotedBy leolaniTalk:chat2834_utterance0_char0-55 .
-
-    leolaniWorld:Multiculturalism_is-bad-for_us a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Multiculturalism_is-bad-for_us" ;
-        gaf:denotedBy leolaniTalk:chat2834_utterance4_char0-106 .
-
-    leolaniWorld:Multiculturalism_is_bad a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Multiculturalism_is_bad" ;
-        gaf:denotedBy leolaniTalk:chat2834_utterance4_char0-106 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Multiculturalism_is-bad-for_us {
-    leolaniWorld:Multiculturalism ns1:is_bad_for leolaniWorld:us .
+leolaniWorld:Islam_is_religion {
+    leolaniWorld:Islam ns1:is leolaniWorld:religion .
 }
 
 leolaniWorld:Islam_is_toxic {
     leolaniWorld:Islam ns1:is leolaniWorld:toxic .
 }
 
-leolaniWorld:Islam_is_religion {
-    leolaniWorld:Islam ns1:is leolaniWorld:religion .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context52 a eps:Context ;
+        rdfs:label "context52" ;
+        hs:id "52"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Islam_is-religion-of_peace {
-    leolaniWorld:Islam ns1:is_religion_of leolaniWorld:peace .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2834 .
 
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat2834_utterance0_char0-55,
-            leolaniTalk:chat2834_utterance1_char0-62 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:Multiculturalism a gaf:Instance ;
-        rdfs:label "multiculturalism" ;
-        gaf:denotedIn leolaniTalk:chat2834_utterance4_char0-106 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "136"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:bad a gaf:Instance ;
-        rdfs:label "bad" ;
-        gaf:denotedIn leolaniTalk:chat2834_utterance4_char0-106 .
+    leolaniTalk:chat2834 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2834" ;
+        hs:id "2834"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2834_utterance0,
+            leolaniTalk:chat2834_utterance1,
+            leolaniTalk:chat2834_utterance4 .
+
+    leolaniTalk:chat2834_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2834_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2834_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2834_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2834_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2834_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:ideology a gaf:Instance ;
-        rdfs:label "ideology" ;
-        gaf:denotedIn leolaniTalk:chat2834_utterance0_char0-55 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:peace a gaf:Instance ;
-        rdfs:label "peace" ;
-        gaf:denotedIn leolaniTalk:chat2834_utterance1_char0-62 .
-
-    leolaniWorld:religion a gaf:Instance ;
-        rdfs:label "religion" ;
-        gaf:denotedIn leolaniTalk:chat2834_utterance1_char0-62 .
-
-    leolaniWorld:toxic a gaf:Instance ;
-        rdfs:label "toxic" ;
-        gaf:denotedIn leolaniTalk:chat2834_utterance0_char0-55 .
-
-    leolaniWorld:toxic_ideology a gaf:Instance ;
-        rdfs:label "toxic-ideology" ;
-        gaf:denotedIn leolaniTalk:chat2834_utterance0_char0-55 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat2834_utterance4_char0-106 .
 }
 
 leolaniWorld:Islam_is_ideology {
     leolaniWorld:Islam ns1:is leolaniWorld:ideology .
 }
 
+leolaniWorld:Multiculturalism_is_bad {
+    leolaniWorld:Multiculturalism ns1:is leolaniWorld:bad .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniWorld:Islam_is_toxic_ideology {
     leolaniWorld:Islam ns1:is leolaniWorld:toxic_ideology .
+}
+
+leolaniWorld:Multiculturalism_is-bad-for_us {
+    leolaniWorld:Multiculturalism ns1:is_bad_for leolaniWorld:us .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Islam_is-religion-of_peace_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is-religion-of_peace_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2834_utterance1_char0-62 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_ideology_00022 a grasp:Attribution ;
+        rdfs:label "Islam_is_ideology_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2834_utterance0_char0-55 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_religion_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_religion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2834_utterance1_char0-62 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_toxic_00022 a grasp:Attribution ;
+        rdfs:label "Islam_is_toxic_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2834_utterance0_char0-55 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_toxic_ideology_00022 a grasp:Attribution ;
+        rdfs:label "Islam_is_toxic_ideology_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2834_utterance0_char0-55 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Multiculturalism_is-bad-for_us_00017 a grasp:Attribution ;
+        rdfs:label "Multiculturalism_is-bad-for_us_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat2834_utterance4_char0-106 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Multiculturalism_is_bad_00017 a grasp:Attribution ;
+        rdfs:label "Multiculturalism_is_bad_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat2834_utterance4_char0-106 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2834_utterance1_char0-62 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2834_utterance1_char0-62" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:peace,
+            leolaniWorld:religion ;
+        gaf:denotes leolaniWorld:Islam_is-religion-of_peace,
+            leolaniWorld:Islam_is_religion ;
+        grasp:hasAttribution leolaniTalk:Islam_is-religion-of_peace_00028,
+            leolaniTalk:Islam_is_religion_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:31:15.262975"^^xml1:string,
+            "2024-06-05T23:31:15.263031"^^xml1:string ;
+        rdf:value "There's nothing to suggest that, Islam is a religion of peace."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2834_utterance1 .
+
+    leolaniTalk:chat2834_utterance4_char0-106 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2834_utterance4_char0-106" ;
+        gaf:containsDenotation leolaniWorld:Multiculturalism,
+            leolaniWorld:bad,
+            leolaniWorld:us ;
+        gaf:denotes leolaniWorld:Multiculturalism_is-bad-for_us,
+            leolaniWorld:Multiculturalism_is_bad ;
+        grasp:hasAttribution leolaniTalk:Multiculturalism_is-bad-for_us_00017,
+            leolaniTalk:Multiculturalism_is_bad_00017 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:31:15.528665"^^xml1:string,
+            "2024-06-05T23:31:15.528722"^^xml1:string ;
+        rdf:value "Multiculturalism is bad for us! We shouldn't accept people from other places, especially Muslim countries."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2834_utterance4 .
+
+    graspe:DISAPPOINTMENT a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPOINTMENT" .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat2834_utterance0_char0-55 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2834_utterance0_char0-55" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:ideology,
+            leolaniWorld:toxic,
+            leolaniWorld:toxic_ideology ;
+        gaf:denotes leolaniWorld:Islam_is_ideology,
+            leolaniWorld:Islam_is_toxic,
+            leolaniWorld:Islam_is_toxic_ideology ;
+        grasp:hasAttribution leolaniTalk:Islam_is_ideology_00022,
+            leolaniTalk:Islam_is_toxic_00022,
+            leolaniTalk:Islam_is_toxic_ideology_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:31:15.178107"^^xml1:string,
+            "2024-06-05T23:31:15.178179"^^xml1:string,
+            "2024-06-05T23:31:15.178204"^^xml1:string ;
+        rdf:value "Islam is a toxic ideology that is contaminating Europe."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2834_utterance0 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -484,209 +587,106 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Islam_is-religion-of_peace a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-religion-of_peace" ;
+        gaf:denotedBy leolaniTalk:chat2834_utterance1_char0-62 .
+
+    leolaniWorld:Islam_is_ideology a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_ideology" ;
+        gaf:denotedBy leolaniTalk:chat2834_utterance0_char0-55 .
+
+    leolaniWorld:Islam_is_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_religion" ;
+        gaf:denotedBy leolaniTalk:chat2834_utterance1_char0-62 .
+
+    leolaniWorld:Islam_is_toxic a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_toxic" ;
+        gaf:denotedBy leolaniTalk:chat2834_utterance0_char0-55 .
+
+    leolaniWorld:Islam_is_toxic_ideology a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_toxic_ideology" ;
+        gaf:denotedBy leolaniTalk:chat2834_utterance0_char0-55 .
+
+    leolaniWorld:Multiculturalism_is-bad-for_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Multiculturalism_is-bad-for_us" ;
+        gaf:denotedBy leolaniTalk:chat2834_utterance4_char0-106 .
+
+    leolaniWorld:Multiculturalism_is_bad a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Multiculturalism_is_bad" ;
+        gaf:denotedBy leolaniTalk:chat2834_utterance4_char0-106 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Islam_is-religion-of_peace_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is-religion-of_peace_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2834_utterance1_char0-62 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_ideology_00022 a grasp:Attribution ;
-        rdfs:label "Islam_is_ideology_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2834_utterance0_char0-55 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_religion_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_religion_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2834_utterance1_char0-62 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_toxic_00022 a grasp:Attribution ;
-        rdfs:label "Islam_is_toxic_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2834_utterance0_char0-55 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_toxic_ideology_00022 a grasp:Attribution ;
-        rdfs:label "Islam_is_toxic_ideology_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2834_utterance0_char0-55 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Multiculturalism_is-bad-for_us_00017 a grasp:Attribution ;
-        rdfs:label "Multiculturalism_is-bad-for_us_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat2834_utterance4_char0-106 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Multiculturalism_is_bad_00017 a grasp:Attribution ;
-        rdfs:label "Multiculturalism_is_bad_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat2834_utterance4_char0-106 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2834_utterance1_char0-62 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2834_utterance1_char0-62" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:peace,
-            leolaniWorld:religion ;
-        gaf:denotes leolaniWorld:Islam_is-religion-of_peace,
-            leolaniWorld:Islam_is_religion ;
-        grasp:hasAttribution leolaniTalk:Islam_is-religion-of_peace_00028,
-            leolaniTalk:Islam_is_religion_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:31:15.262975"^^xml1:string,
-            "2024-06-05T23:31:15.263031"^^xml1:string ;
-        rdf:value "There's nothing to suggest that, Islam is a religion of peace."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2834_utterance1 .
-
-    leolaniTalk:chat2834_utterance4_char0-106 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2834_utterance4_char0-106" ;
-        gaf:containsDenotation leolaniWorld:Multiculturalism,
-            leolaniWorld:bad,
-            leolaniWorld:us ;
-        gaf:denotes leolaniWorld:Multiculturalism_is-bad-for_us,
-            leolaniWorld:Multiculturalism_is_bad ;
-        grasp:hasAttribution leolaniTalk:Multiculturalism_is-bad-for_us_00017,
-            leolaniTalk:Multiculturalism_is_bad_00017 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:31:15.528665"^^xml1:string,
-            "2024-06-05T23:31:15.528722"^^xml1:string ;
-        rdf:value "Multiculturalism is bad for us! We shouldn't accept people from other places, especially Muslim countries."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2834_utterance4 .
-
-    graspe:DISAPPOINTMENT a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPOINTMENT" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat2834_utterance0_char0-55 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2834_utterance0_char0-55" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:ideology,
-            leolaniWorld:toxic,
-            leolaniWorld:toxic_ideology ;
-        gaf:denotes leolaniWorld:Islam_is_ideology,
-            leolaniWorld:Islam_is_toxic,
-            leolaniWorld:Islam_is_toxic_ideology ;
-        grasp:hasAttribution leolaniTalk:Islam_is_ideology_00022,
-            leolaniTalk:Islam_is_toxic_00022,
-            leolaniTalk:Islam_is_toxic_ideology_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:31:15.178107"^^xml1:string,
-            "2024-06-05T23:31:15.178179"^^xml1:string,
-            "2024-06-05T23:31:15.178204"^^xml1:string ;
-        rdf:value "Islam is a toxic ideology that is contaminating Europe."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2834_utterance0 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Islam_is-religion-of_peace {
+    leolaniWorld:Islam ns1:is_religion_of leolaniWorld:peace .
 }
 
-leolaniWorld:Multiculturalism_is_bad {
-    leolaniWorld:Multiculturalism ns1:is leolaniWorld:bad .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat2834_utterance0_char0-55,
+            leolaniTalk:chat2834_utterance1_char0-62 .
 
-leolaniTalk:Interactions {
-    leolaniContext:context52 a eps:Context ;
-        rdfs:label "context52" ;
-        hs:id "52"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+    leolaniWorld:Multiculturalism a gaf:Instance ;
+        rdfs:label "multiculturalism" ;
+        gaf:denotedIn leolaniTalk:chat2834_utterance4_char0-106 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2834 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "136"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2834 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2834" ;
-        hs:id "2834"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2834_utterance0,
-            leolaniTalk:chat2834_utterance1,
-            leolaniTalk:chat2834_utterance4 .
-
-    leolaniTalk:chat2834_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2834_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2834_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2834_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2834_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2834_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:bad a gaf:Instance ;
+        rdfs:label "bad" ;
+        gaf:denotedIn leolaniTalk:chat2834_utterance4_char0-106 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:ideology a gaf:Instance ;
+        rdfs:label "ideology" ;
+        gaf:denotedIn leolaniTalk:chat2834_utterance0_char0-55 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:peace a gaf:Instance ;
+        rdfs:label "peace" ;
+        gaf:denotedIn leolaniTalk:chat2834_utterance1_char0-62 .
+
+    leolaniWorld:religion a gaf:Instance ;
+        rdfs:label "religion" ;
+        gaf:denotedIn leolaniTalk:chat2834_utterance1_char0-62 .
+
+    leolaniWorld:toxic a gaf:Instance ;
+        rdfs:label "toxic" ;
+        gaf:denotedIn leolaniTalk:chat2834_utterance0_char0-55 .
+
+    leolaniWorld:toxic_ideology a gaf:Instance ;
+        rdfs:label "toxic-ideology" ;
+        gaf:denotedIn leolaniTalk:chat2834_utterance0_char0-55 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat2834_utterance4_char0-106 .
 }
 

@@ -22,76 +22,82 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:female_politicians_do_job {
+    leolaniWorld:female_politicians ns1:do leolaniWorld:job .
 }
 
-leolaniWorld:female_politicians_do_great_job {
-    leolaniWorld:female_politicians ns1:do leolaniWorld:great_job .
+leolaniTalk:Interactions {
+    leolaniContext:context249 a eps:Context ;
+        rdfs:label "context249" ;
+        hs:id "249"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1634 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "35"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1634 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1634" ;
+        hs:id "1634"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1634_utterance1 .
+
+    leolaniTalk:chat1634_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1634_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:female_politicians_so-do_great_job {
+    leolaniWorld:female_politicians ns1:so_do leolaniWorld:great_job .
+}
+
+leolaniWorld:female_politicians_so-do_job {
+    leolaniWorld:female_politicians ns1:so_do leolaniWorld:job .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:many_female_politicians_do_job {
     leolaniWorld:many_female_politicians ns1:do leolaniWorld:job .
 }
 
-leolaniWorld:many_female_politicians_so-do_great_job {
-    leolaniWorld:many_female_politicians ns1:so_do leolaniWorld:great_job .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:female_politicians_do_great_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "female_politicians_do_great_job" ;
-        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:female_politicians_do_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "female_politicians_do_job" ;
-        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:female_politicians_so-do_great_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "female_politicians_so-do_great_job" ;
-        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:female_politicians_so-do_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "female_politicians_so-do_job" ;
-        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:many_female_politicians_do_great_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_female_politicians_do_great_job" ;
-        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:many_female_politicians_do_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_female_politicians_do_job" ;
-        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:many_female_politicians_so-do_great_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_female_politicians_so-do_great_job" ;
-        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:many_female_politicians_so-do_job a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_female_politicians_so-do_job" ;
-        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
 leolaniWorld:many_female_politicians_do_great_job {
     leolaniWorld:many_female_politicians ns1:do leolaniWorld:great_job .
-}
-
-leolaniWorld:female_politicians_so-do_great_job {
-    leolaniWorld:female_politicians ns1:so_do leolaniWorld:great_job .
 }
 
 leolaniTalk:Perspectives {
@@ -198,39 +204,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:female_politicians a gaf:Instance ;
-        rdfs:label "female-politicians" ;
-        gaf:denotedIn leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:great_job a gaf:Instance ;
-        rdfs:label "great-job" ;
-        gaf:denotedIn leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:job a gaf:Instance ;
-        rdfs:label "job" ;
-        gaf:denotedIn leolaniTalk:chat1634_utterance1_char0-139 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_female_politicians a gaf:Instance ;
-        rdfs:label "many-female-politicians" ;
-        gaf:denotedIn leolaniTalk:chat1634_utterance1_char0-139 .
-}
-
-leolaniWorld:female_politicians_so-do_job {
-    leolaniWorld:female_politicians ns1:so_do leolaniWorld:job .
-}
-
-leolaniWorld:many_female_politicians_so-do_job {
-    leolaniWorld:many_female_politicians ns1:so_do leolaniWorld:job .
 }
 
 leolaniWorld:Ontology {
@@ -568,61 +541,88 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:female_politicians_do_job {
-    leolaniWorld:female_politicians ns1:do leolaniWorld:job .
+leolaniWorld:many_female_politicians_so-do_job {
+    leolaniWorld:many_female_politicians ns1:so_do leolaniWorld:job .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context249 a eps:Context ;
-        rdfs:label "context249" ;
-        hs:id "249"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1634 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "35"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1634 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:female_politicians_do_great_job a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1634" ;
-        hs:id "1634"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1634_utterance1 .
+        rdfs:label "female_politicians_do_great_job" ;
+        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
 
-    leolaniTalk:chat1634_utterance1 a grasp:Utterance,
+    leolaniWorld:female_politicians_do_job a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1634_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "female_politicians_do_job" ;
+        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:female_politicians_so-do_great_job a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "female_politicians_so-do_great_job" ;
+        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:female_politicians_so-do_job a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "female_politicians_so-do_job" ;
+        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
 
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:many_female_politicians_do_great_job a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_female_politicians_do_great_job" ;
+        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
+
+    leolaniWorld:many_female_politicians_do_job a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_female_politicians_do_job" ;
+        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
+
+    leolaniWorld:many_female_politicians_so-do_great_job a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_female_politicians_so-do_great_job" ;
+        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
+
+    leolaniWorld:many_female_politicians_so-do_job a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_female_politicians_so-do_job" ;
+        gaf:denotedBy leolaniTalk:chat1634_utterance1_char0-139 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:many_female_politicians_so-do_great_job {
+    leolaniWorld:many_female_politicians ns1:so_do leolaniWorld:great_job .
+}
+
+leolaniWorld:female_politicians_do_great_job {
+    leolaniWorld:female_politicians ns1:do leolaniWorld:great_job .
+}
+
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:female_politicians a gaf:Instance ;
+        rdfs:label "female-politicians" ;
+        gaf:denotedIn leolaniTalk:chat1634_utterance1_char0-139 .
+
+    leolaniWorld:great_job a gaf:Instance ;
+        rdfs:label "great-job" ;
+        gaf:denotedIn leolaniTalk:chat1634_utterance1_char0-139 .
+
+    leolaniWorld:job a gaf:Instance ;
+        rdfs:label "job" ;
+        gaf:denotedIn leolaniTalk:chat1634_utterance1_char0-139 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_female_politicians a gaf:Instance ;
+        rdfs:label "many-female-politicians" ;
+        gaf:denotedIn leolaniTalk:chat1634_utterance1_char0-139 .
 }
 

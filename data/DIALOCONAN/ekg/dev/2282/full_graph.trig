@@ -22,54 +22,115 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:we_want_society {
-    leolaniWorld:we ns1:want leolaniWorld:society .
+leolaniWorld:Instances {
+    leolaniWorld:If_we_want a gaf:Instance ;
+        rdfs:label "if-we-want" ;
+        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:beings a gaf:Instance ;
+        rdfs:label "beings" ;
+        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:diverse_society a gaf:Instance ;
+        rdfs:label "diverse-society" ;
+        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:human_beings a gaf:Instance ;
+        rdfs:label "human-beings" ;
+        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:we_want a gaf:Instance ;
+        rdfs:label "we-want" ;
+        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context45 a eps:Context ;
+        rdfs:label "context45" ;
+        hs:id "45"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2282 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "126"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2282 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2282" ;
+        hs:id "2282"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2282_utterance1 .
+
+    leolaniTalk:chat2282_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2282_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
+leolaniWorld:we_have_If_we_want {
+    leolaniWorld:we ns1:have leolaniWorld:If_we_want .
+}
+
 leolaniWorld:Women_are_beings {
     leolaniWorld:Women ns1:are leolaniWorld:beings .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Women_are_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_beings" ;
-        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:Women_are_human_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_human_beings" ;
-        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:we_have_If_we_want a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_have_If_we_want" ;
-        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:we_have_we_want a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_have_we_want" ;
-        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:we_want_diverse_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_want_diverse_society" ;
-        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:we_want_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_want_society" ;
-        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:we_want_diverse_society {
+    leolaniWorld:we ns1:want leolaniWorld:diverse_society .
 }
 
 leolaniTalk:Perspectives {
@@ -160,113 +221,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:If_we_want a gaf:Instance ;
-        rdfs:label "if-we-want" ;
-        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:beings a gaf:Instance ;
-        rdfs:label "beings" ;
-        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:diverse_society a gaf:Instance ;
-        rdfs:label "diverse-society" ;
-        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:human_beings a gaf:Instance ;
-        rdfs:label "human-beings" ;
-        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
-
-    leolaniWorld:we_want a gaf:Instance ;
-        rdfs:label "we-want" ;
-        gaf:denotedIn leolaniTalk:chat2282_utterance1_char0-145 .
-}
-
-leolaniWorld:we_have_If_we_want {
-    leolaniWorld:we ns1:have leolaniWorld:If_we_want .
-}
-
-leolaniWorld:we_want_diverse_society {
-    leolaniWorld:we ns1:want leolaniWorld:diverse_society .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context45 a eps:Context ;
-        rdfs:label "context45" ;
-        hs:id "45"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2282 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "126"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2282 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2282" ;
-        hs:id "2282"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2282_utterance1 .
-
-    leolaniTalk:chat2282_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2282_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-}
-
-leolaniWorld:we_have_we_want {
-    leolaniWorld:we ns1:have leolaniWorld:we_want .
 }
 
 leolaniWorld:Ontology {
@@ -602,6 +556,52 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
                 owl:someValuesFrom gaf:Instance ] .
 
     [] a owl:Ontology .
+}
+
+leolaniWorld:we_have_we_want {
+    leolaniWorld:we ns1:have leolaniWorld:we_want .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Women_are_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are_beings" ;
+        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:Women_are_human_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are_human_beings" ;
+        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:we_have_If_we_want a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have_If_we_want" ;
+        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:we_have_we_want a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have_we_want" ;
+        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:we_want_diverse_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_want_diverse_society" ;
+        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:we_want_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_want_society" ;
+        gaf:denotedBy leolaniTalk:chat2282_utterance1_char0-145 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:we_want_society {
+    leolaniWorld:we ns1:want leolaniWorld:society .
 }
 
 leolaniWorld:Women_are_human_beings {

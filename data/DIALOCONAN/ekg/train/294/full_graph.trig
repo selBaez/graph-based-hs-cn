@@ -22,99 +22,167 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Muslims_are-different-in_many_ways a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context101 a eps:Context ;
+        rdfs:label "context101" ;
+        hs:id "101"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat294 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "32"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat294 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Muslims_are-different-in_many_ways" ;
-        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
+        rdfs:label "chat294" ;
+        hs:id "294"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat294_utterance0 .
 
-    leolaniWorld:Muslims_are-different-in_so_many_ways a gaf:Assertion,
+    leolaniTalk:chat294_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Muslims_are-different-in_so_many_ways" ;
-        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
+        rdfs:label "chat294_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Muslims_are-different-in_ways a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are-different-in_ways" ;
-        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:Muslims_are_different_from_us_in_many_ways a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are_different_from_us_in_many_ways" ;
-        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:Muslims_are_different_from_us_in_so_many_ways a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are_different_from_us_in_so_many_ways" ;
-        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
-
-    leolaniWorld:Muslims_are_different_from_us_in_ways a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are_different_from_us_in_ways" ;
-        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Muslims_are-different-in_ways {
-    leolaniWorld:Muslims ns1:are_different_in leolaniWorld:ways .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:Muslims_are_different_from_us_in_so_many_ways {
     leolaniWorld:Muslims ns1:are leolaniWorld:different_from_us_in_so_many_ways .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
+leolaniWorld:Muslims_are-different-in_ways {
+    leolaniWorld:Muslims ns1:are_different_in leolaniWorld:ways .
+}
 
-    leolaniWorld:different_from_us_in_many_ways a gaf:Instance ;
-        rdfs:label "different-from-us-in-many-ways" ;
-        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:different_from_us_in_so_many_ways a gaf:Instance ;
-        rdfs:label "different-from-us-in-so-many-ways" ;
-        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
-
-    leolaniWorld:different_from_us_in_ways a gaf:Instance ;
-        rdfs:label "different-from-us-in-ways" ;
-        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_ways a gaf:Instance ;
-        rdfs:label "many-ways" ;
-        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
-
-    leolaniWorld:so_many_ways a gaf:Instance ;
-        rdfs:label "so-many-ways" ;
-        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
-
-    leolaniWorld:ways a gaf:Instance ;
-        rdfs:label "ways" ;
-        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
+leolaniWorld:Muslims_are-different-in_many_ways {
+    leolaniWorld:Muslims ns1:are_different_in leolaniWorld:many_ways .
 }
 
 leolaniWorld:Muslims_are_different_from_us_in_many_ways {
     leolaniWorld:Muslims ns1:are leolaniWorld:different_from_us_in_many_ways .
 }
 
-leolaniWorld:Muslims_are-different-in_so_many_ways {
-    leolaniWorld:Muslims ns1:are_different_in leolaniWorld:so_many_ways .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Muslims_are-different-in_many_ways_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_are-different-in_many_ways_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Muslims_are_different_from_us_in_ways {
-    leolaniWorld:Muslims ns1:are leolaniWorld:different_from_us_in_ways .
+    leolaniTalk:Muslims_are-different-in_so_many_ways_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_are-different-in_so_many_ways_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_are-different-in_ways_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_are-different-in_ways_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_are_different_from_us_in_many_ways_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_are_different_from_us_in_many_ways_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_are_different_from_us_in_so_many_ways_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_are_different_from_us_in_so_many_ways_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_are_different_from_us_in_ways_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_are_different_from_us_in_ways_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat294_utterance0_char0-85 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat294_utterance0_char0-85" ;
+        gaf:containsDenotation leolaniWorld:Muslims,
+            leolaniWorld:different_from_us_in_many_ways,
+            leolaniWorld:different_from_us_in_so_many_ways,
+            leolaniWorld:different_from_us_in_ways,
+            leolaniWorld:many_ways,
+            leolaniWorld:so_many_ways,
+            leolaniWorld:ways ;
+        gaf:denotes leolaniWorld:Muslims_are-different-in_many_ways,
+            leolaniWorld:Muslims_are-different-in_so_many_ways,
+            leolaniWorld:Muslims_are-different-in_ways,
+            leolaniWorld:Muslims_are_different_from_us_in_many_ways,
+            leolaniWorld:Muslims_are_different_from_us_in_so_many_ways,
+            leolaniWorld:Muslims_are_different_from_us_in_ways ;
+        grasp:hasAttribution leolaniTalk:Muslims_are-different-in_many_ways_00028,
+            leolaniTalk:Muslims_are-different-in_so_many_ways_00028,
+            leolaniTalk:Muslims_are-different-in_ways_00028,
+            leolaniTalk:Muslims_are_different_from_us_in_many_ways_00028,
+            leolaniTalk:Muslims_are_different_from_us_in_so_many_ways_00028,
+            leolaniTalk:Muslims_are_different_from_us_in_ways_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:50.890012"^^xml1:string,
+            "2024-06-05T23:06:50.890078"^^xml1:string,
+            "2024-06-05T23:06:50.890102"^^xml1:string,
+            "2024-06-05T23:06:50.890123"^^xml1:string,
+            "2024-06-05T23:06:50.890144"^^xml1:string,
+            "2024-06-05T23:06:50.890166"^^xml1:string ;
+        rdf:value "Muslims are different from us in so many ways, and they have no place in our country."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat294_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -452,154 +520,86 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Muslims_are_different_from_us_in_ways {
+    leolaniWorld:Muslims ns1:are leolaniWorld:different_from_us_in_ways .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Muslims_are-different-in_many_ways_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_are-different-in_many_ways_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Muslims_are-different-in_so_many_ways_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_are-different-in_so_many_ways_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Muslims_are-different-in_ways_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_are-different-in_ways_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Muslims_are_different_from_us_in_many_ways_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_are_different_from_us_in_many_ways_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Muslims_are_different_from_us_in_so_many_ways_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_are_different_from_us_in_so_many_ways_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Muslims_are_different_from_us_in_ways_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_are_different_from_us_in_ways_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat294_utterance0_char0-85 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat294_utterance0_char0-85 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat294_utterance0_char0-85" ;
-        gaf:containsDenotation leolaniWorld:Muslims,
-            leolaniWorld:different_from_us_in_many_ways,
-            leolaniWorld:different_from_us_in_so_many_ways,
-            leolaniWorld:different_from_us_in_ways,
-            leolaniWorld:many_ways,
-            leolaniWorld:so_many_ways,
-            leolaniWorld:ways ;
-        gaf:denotes leolaniWorld:Muslims_are-different-in_many_ways,
-            leolaniWorld:Muslims_are-different-in_so_many_ways,
-            leolaniWorld:Muslims_are-different-in_ways,
-            leolaniWorld:Muslims_are_different_from_us_in_many_ways,
-            leolaniWorld:Muslims_are_different_from_us_in_so_many_ways,
-            leolaniWorld:Muslims_are_different_from_us_in_ways ;
-        grasp:hasAttribution leolaniTalk:Muslims_are-different-in_many_ways_00028,
-            leolaniTalk:Muslims_are-different-in_so_many_ways_00028,
-            leolaniTalk:Muslims_are-different-in_ways_00028,
-            leolaniTalk:Muslims_are_different_from_us_in_many_ways_00028,
-            leolaniTalk:Muslims_are_different_from_us_in_so_many_ways_00028,
-            leolaniTalk:Muslims_are_different_from_us_in_ways_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:50.890012"^^xml1:string,
-            "2024-06-05T23:06:50.890078"^^xml1:string,
-            "2024-06-05T23:06:50.890102"^^xml1:string,
-            "2024-06-05T23:06:50.890123"^^xml1:string,
-            "2024-06-05T23:06:50.890144"^^xml1:string,
-            "2024-06-05T23:06:50.890166"^^xml1:string ;
-        rdf:value "Muslims are different from us in so many ways, and they have no place in our country."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat294_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Muslims_are-different-in_so_many_ways {
+    leolaniWorld:Muslims ns1:are_different_in leolaniWorld:so_many_ways .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context101 a eps:Context ;
-        rdfs:label "context101" ;
-        hs:id "101"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat294 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "32"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat294 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Muslims_are-different-in_many_ways a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat294" ;
-        hs:id "294"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat294_utterance0 .
+        rdfs:label "Muslims_are-different-in_many_ways" ;
+        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
 
-    leolaniTalk:chat294_utterance0 a grasp:Utterance,
+    leolaniWorld:Muslims_are-different-in_so_many_ways a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat294_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Muslims_are-different-in_so_many_ways" ;
+        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Muslims_are-different-in_ways a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are-different-in_ways" ;
+        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Muslims_are_different_from_us_in_many_ways a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are_different_from_us_in_many_ways" ;
+        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
+
+    leolaniWorld:Muslims_are_different_from_us_in_so_many_ways a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are_different_from_us_in_so_many_ways" ;
+        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
+
+    leolaniWorld:Muslims_are_different_from_us_in_ways a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are_different_from_us_in_ways" ;
+        gaf:denotedBy leolaniTalk:chat294_utterance0_char0-85 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
+
+    leolaniWorld:different_from_us_in_many_ways a gaf:Instance ;
+        rdfs:label "different-from-us-in-many-ways" ;
+        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
+
+    leolaniWorld:different_from_us_in_so_many_ways a gaf:Instance ;
+        rdfs:label "different-from-us-in-so-many-ways" ;
+        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
+
+    leolaniWorld:different_from_us_in_ways a gaf:Instance ;
+        rdfs:label "different-from-us-in-ways" ;
+        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:Muslims_are-different-in_many_ways {
-    leolaniWorld:Muslims ns1:are_different_in leolaniWorld:many_ways .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_ways a gaf:Instance ;
+        rdfs:label "many-ways" ;
+        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
+
+    leolaniWorld:so_many_ways a gaf:Instance ;
+        rdfs:label "so-many-ways" ;
+        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
+
+    leolaniWorld:ways a gaf:Instance ;
+        rdfs:label "ways" ;
+        gaf:denotedIn leolaniTalk:chat294_utterance0_char0-85 .
 }
 

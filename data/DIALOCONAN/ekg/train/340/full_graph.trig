@@ -22,59 +22,108 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+leolaniTalk:Interactions {
+    leolaniContext:context15 a eps:Context ;
+        rdfs:label "context15" ;
+        hs:id "15"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:people_is-with_different_traditions_from_all_over_world a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_is-with_different_traditions_from_all_over_world" ;
-        gaf:denotedBy leolaniTalk:chat340_utterance1_char0-116 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat340 .
 
-    leolaniWorld:they_are-collection-of_people_with_different_traditions_from_all_over_world a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-collection-of_people_with_different_traditions_from_all_over_world" ;
-        gaf:denotedBy leolaniTalk:chat340_utterance1_char0-116 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "74"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat340 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat340" ;
+        hs:id "340"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat340_utterance1 .
+
+    leolaniTalk:chat340_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat340_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:they_are-collection-of_people_with_different_traditions_from_all_over_world {
-    leolaniWorld:they ns1:are_collection_of leolaniWorld:people_with_different_traditions_from_all_over_world .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:people_is-with_different_traditions_from_all_over_world_00028 a grasp:Attribution ;
+        rdfs:label "people_is-with_different_traditions_from_all_over_world_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat340_utterance1_char0-116 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:they_are-collection-of_people_with_different_traditions_from_all_over_world_00028 a grasp:Attribution ;
+        rdfs:label "they_are-collection-of_people_with_different_traditions_from_all_over_world_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat340_utterance1_char0-116 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:different_traditions_from_all_over_world a gaf:Instance ;
-        rdfs:label "different-traditions-from-all-over-world" ;
-        gaf:denotedIn leolaniTalk:chat340_utterance1_char0-116 .
+    leolaniTalk:chat340_utterance1_char0-116 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat340_utterance1_char0-116" ;
+        gaf:containsDenotation leolaniWorld:different_traditions_from_all_over_world,
+            leolaniWorld:people,
+            leolaniWorld:people_with_different_traditions_from_all_over_world,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:people_is-with_different_traditions_from_all_over_world,
+            leolaniWorld:they_are-collection-of_people_with_different_traditions_from_all_over_world ;
+        grasp:hasAttribution leolaniTalk:people_is-with_different_traditions_from_all_over_world_00028,
+            leolaniTalk:they_are-collection-of_people_with_different_traditions_from_all_over_world_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:06:51.465219"^^xml1:string,
+            "2024-06-05T23:06:51.465278"^^xml1:string ;
+        rdf:value "Jews are not a 'detestable race'; they are a collection of people with different traditions from all over the world."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat340_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat340_utterance1_char0-116 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:people_with_different_traditions_from_all_over_world a gaf:Instance ;
-        rdfs:label "people-with-different-traditions-from-all-over-world" ;
-        gaf:denotedIn leolaniTalk:chat340_utterance1_char0-116 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat340_utterance1_char0-116 .
-}
-
-leolaniWorld:people_is-with_different_traditions_from_all_over_world {
-    leolaniWorld:people ns1:is_with leolaniWorld:different_traditions_from_all_over_world .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -412,103 +461,54 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:people_is-with_different_traditions_from_all_over_world_00028 a grasp:Attribution ;
-        rdfs:label "people_is-with_different_traditions_from_all_over_world_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat340_utterance1_char0-116 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:they_are-collection-of_people_with_different_traditions_from_all_over_world_00028 a grasp:Attribution ;
-        rdfs:label "they_are-collection-of_people_with_different_traditions_from_all_over_world_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat340_utterance1_char0-116 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:people_is-with_different_traditions_from_all_over_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_is-with_different_traditions_from_all_over_world" ;
+        gaf:denotedBy leolaniTalk:chat340_utterance1_char0-116 .
 
-    leolaniTalk:chat340_utterance1_char0-116 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat340_utterance1_char0-116" ;
-        gaf:containsDenotation leolaniWorld:different_traditions_from_all_over_world,
-            leolaniWorld:people,
-            leolaniWorld:people_with_different_traditions_from_all_over_world,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:people_is-with_different_traditions_from_all_over_world,
-            leolaniWorld:they_are-collection-of_people_with_different_traditions_from_all_over_world ;
-        grasp:hasAttribution leolaniTalk:people_is-with_different_traditions_from_all_over_world_00028,
-            leolaniTalk:they_are-collection-of_people_with_different_traditions_from_all_over_world_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:06:51.465219"^^xml1:string,
-            "2024-06-05T23:06:51.465278"^^xml1:string ;
-        rdf:value "Jews are not a 'detestable race'; they are a collection of people with different traditions from all over the world."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat340_utterance1 .
+    leolaniWorld:they_are-collection-of_people_with_different_traditions_from_all_over_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-collection-of_people_with_different_traditions_from_all_over_world" ;
+        gaf:denotedBy leolaniTalk:chat340_utterance1_char0-116 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context15 a eps:Context ;
-        rdfs:label "context15" ;
-        hs:id "15"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:they_are-collection-of_people_with_different_traditions_from_all_over_world {
+    leolaniWorld:they ns1:are_collection_of leolaniWorld:people_with_different_traditions_from_all_over_world .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat340 .
+leolaniWorld:people_is-with_different_traditions_from_all_over_world {
+    leolaniWorld:people ns1:is_with leolaniWorld:different_traditions_from_all_over_world .
+}
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "74"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat340 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat340" ;
-        hs:id "340"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat340_utterance1 .
-
-    leolaniTalk:chat340_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat340_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:different_traditions_from_all_over_world a gaf:Instance ;
+        rdfs:label "different-traditions-from-all-over-world" ;
+        gaf:denotedIn leolaniTalk:chat340_utterance1_char0-116 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat340_utterance1_char0-116 .
+
+    leolaniWorld:people_with_different_traditions_from_all_over_world a gaf:Instance ;
+        rdfs:label "people-with-different-traditions-from-all-over-world" ;
+        gaf:denotedIn leolaniTalk:chat340_utterance1_char0-116 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat340_utterance1_char0-116 .
 }
 

@@ -22,93 +22,181 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Jews_are_human_beings {
-    leolaniWorld:Jews ns1:are leolaniWorld:human_beings .
+leolaniWorld:Jews_are_race {
+    leolaniWorld:Jews ns1:are leolaniWorld:race .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context231 a eps:Context ;
+        rdfs:label "context231" ;
+        hs:id "231"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1413 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "125"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1413 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1413" ;
+        hs:id "1413"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1413_utterance0,
+            leolaniTalk:chat1413_utterance1 .
+
+    leolaniTalk:chat1413_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1413_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1413_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1413_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_are_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_beings" ;
-        gaf:denotedBy leolaniTalk:chat1413_utterance1_char0-67 .
-
-    leolaniWorld:Jews_are_despisable a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_despisable" ;
-        gaf:denotedBy leolaniTalk:chat1413_utterance0_char0-27 .
-
-    leolaniWorld:Jews_are_despisable_race a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_despisable_race" ;
-        gaf:denotedBy leolaniTalk:chat1413_utterance0_char0-27 .
-
-    leolaniWorld:Jews_are_human_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_human_beings" ;
-        gaf:denotedBy leolaniTalk:chat1413_utterance1_char0-67 .
-
-    leolaniWorld:Jews_are_race a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_race" ;
-        gaf:denotedBy leolaniTalk:chat1413_utterance0_char0-27 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:Jews_are_beings {
     leolaniWorld:Jews ns1:are leolaniWorld:beings .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1413_utterance0_char0-27,
-            leolaniTalk:chat1413_utterance1_char0-67 .
+leolaniWorld:Jews_are_despisable_race {
+    leolaniWorld:Jews ns1:are leolaniWorld:despisable_race .
+}
 
-    leolaniWorld:beings a gaf:Instance ;
-        rdfs:label "beings" ;
-        gaf:denotedIn leolaniTalk:chat1413_utterance1_char0-67 .
+leolaniWorld:Jews_are_despisable {
+    leolaniWorld:Jews ns1:are leolaniWorld:despisable .
+}
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_are_beings_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_beings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1413_utterance1_char0-67 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:despisable a gaf:Instance ;
-        rdfs:label "despisable" ;
-        gaf:denotedIn leolaniTalk:chat1413_utterance0_char0-27 .
+    leolaniTalk:Jews_are_despisable_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_despisable_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1413_utterance0_char0-27 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:despisable_race a gaf:Instance ;
-        rdfs:label "despisable-race" ;
-        gaf:denotedIn leolaniTalk:chat1413_utterance0_char0-27 .
+    leolaniTalk:Jews_are_despisable_race_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_despisable_race_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1413_utterance0_char0-27 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:Jews_are_human_beings_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_human_beings_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1413_utterance1_char0-67 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:human_beings a gaf:Instance ;
-        rdfs:label "human-beings" ;
-        gaf:denotedIn leolaniTalk:chat1413_utterance1_char0-67 .
+    leolaniTalk:Jews_are_race_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_race_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1413_utterance0_char0-27 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat1413_utterance1_char0-67 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1413_utterance1_char0-67" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:beings,
+            leolaniWorld:human_beings ;
+        gaf:denotes leolaniWorld:Jews_are_beings,
+            leolaniWorld:Jews_are_human_beings ;
+        grasp:hasAttribution leolaniTalk:Jews_are_beings_00028,
+            leolaniTalk:Jews_are_human_beings_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:33.778103"^^xml1:string,
+            "2024-06-05T23:08:33.778154"^^xml1:string ;
+        rdf:value "Jews are human beings. To be despised does not make one despicable."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1413_utterance1 .
 
-    leolaniWorld:race a gaf:Instance ;
-        rdfs:label "race" ;
-        gaf:denotedIn leolaniTalk:chat1413_utterance0_char0-27 .
+    leolaniTalk:chat1413_utterance0_char0-27 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1413_utterance0_char0-27" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:despisable,
+            leolaniWorld:despisable_race,
+            leolaniWorld:race ;
+        gaf:denotes leolaniWorld:Jews_are_despisable,
+            leolaniWorld:Jews_are_despisable_race,
+            leolaniWorld:Jews_are_race ;
+        grasp:hasAttribution leolaniTalk:Jews_are_despisable_00028,
+            leolaniTalk:Jews_are_despisable_race_00028,
+            leolaniTalk:Jews_are_race_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:33.697638"^^xml1:string,
+            "2024-06-05T23:08:33.697691"^^xml1:string,
+            "2024-06-05T23:08:33.697716"^^xml1:string ;
+        rdf:value "Jews are a despisable race."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1413_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -446,172 +534,84 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Jews_are_despisable_race {
-    leolaniWorld:Jews ns1:are leolaniWorld:despisable_race .
-}
-
-leolaniWorld:Jews_are_race {
-    leolaniWorld:Jews ns1:are leolaniWorld:race .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_are_beings_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_beings_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1413_utterance1_char0-67 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_are_despisable_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_despisable_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1413_utterance0_char0-27 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_are_despisable_race_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_despisable_race_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1413_utterance0_char0-27 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_are_human_beings_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_human_beings_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1413_utterance1_char0-67 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_are_race_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_race_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1413_utterance0_char0-27 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1413_utterance1_char0-67 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1413_utterance1_char0-67" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:beings,
-            leolaniWorld:human_beings ;
-        gaf:denotes leolaniWorld:Jews_are_beings,
-            leolaniWorld:Jews_are_human_beings ;
-        grasp:hasAttribution leolaniTalk:Jews_are_beings_00028,
-            leolaniTalk:Jews_are_human_beings_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:33.778103"^^xml1:string,
-            "2024-06-05T23:08:33.778154"^^xml1:string ;
-        rdf:value "Jews are human beings. To be despised does not make one despicable."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1413_utterance1 .
-
-    leolaniTalk:chat1413_utterance0_char0-27 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1413_utterance0_char0-27" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:despisable,
-            leolaniWorld:despisable_race,
-            leolaniWorld:race ;
-        gaf:denotes leolaniWorld:Jews_are_despisable,
-            leolaniWorld:Jews_are_despisable_race,
-            leolaniWorld:Jews_are_race ;
-        grasp:hasAttribution leolaniTalk:Jews_are_despisable_00028,
-            leolaniTalk:Jews_are_despisable_race_00028,
-            leolaniTalk:Jews_are_race_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:33.697638"^^xml1:string,
-            "2024-06-05T23:08:33.697691"^^xml1:string,
-            "2024-06-05T23:08:33.697716"^^xml1:string ;
-        rdf:value "Jews are a despisable race."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1413_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context231 a eps:Context ;
-        rdfs:label "context231" ;
-        hs:id "231"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1413 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "125"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1413 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Jews_are_beings a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1413" ;
-        hs:id "1413"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1413_utterance0,
-            leolaniTalk:chat1413_utterance1 .
+        rdfs:label "Jews_are_beings" ;
+        gaf:denotedBy leolaniTalk:chat1413_utterance1_char0-67 .
 
-    leolaniTalk:chat1413_utterance0 a grasp:Utterance,
+    leolaniWorld:Jews_are_despisable a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1413_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Jews_are_despisable" ;
+        gaf:denotedBy leolaniTalk:chat1413_utterance0_char0-27 .
 
-    leolaniTalk:chat1413_utterance1 a grasp:Utterance,
+    leolaniWorld:Jews_are_despisable_race a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1413_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Jews_are_despisable_race" ;
+        gaf:denotedBy leolaniTalk:chat1413_utterance0_char0-27 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Jews_are_human_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_human_beings" ;
+        gaf:denotedBy leolaniTalk:chat1413_utterance1_char0-67 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Jews_are_race a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_race" ;
+        gaf:denotedBy leolaniTalk:chat1413_utterance0_char0-27 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Jews_are_human_beings {
+    leolaniWorld:Jews ns1:are leolaniWorld:human_beings .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1413_utterance0_char0-27,
+            leolaniTalk:chat1413_utterance1_char0-67 .
+
+    leolaniWorld:beings a gaf:Instance ;
+        rdfs:label "beings" ;
+        gaf:denotedIn leolaniTalk:chat1413_utterance1_char0-67 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:despisable a gaf:Instance ;
+        rdfs:label "despisable" ;
+        gaf:denotedIn leolaniTalk:chat1413_utterance0_char0-27 .
 
-leolaniWorld:Jews_are_despisable {
-    leolaniWorld:Jews ns1:are leolaniWorld:despisable .
+    leolaniWorld:despisable_race a gaf:Instance ;
+        rdfs:label "despisable-race" ;
+        gaf:denotedIn leolaniTalk:chat1413_utterance0_char0-27 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:human_beings a gaf:Instance ;
+        rdfs:label "human-beings" ;
+        gaf:denotedIn leolaniTalk:chat1413_utterance1_char0-67 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:race a gaf:Instance ;
+        rdfs:label "race" ;
+        gaf:denotedIn leolaniTalk:chat1413_utterance0_char0-27 .
 }
 

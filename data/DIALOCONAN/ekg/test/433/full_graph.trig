@@ -22,8 +22,91 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Feminism_is_full {
-    leolaniWorld:Feminism ns1:is leolaniWorld:full .
+leolaniWorld:They_are-ruining_civilization {
+    leolaniWorld:They ns1:are_ruining leolaniWorld:civilization .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context124 a eps:Context ;
+        rdfs:label "context124" ;
+        hs:id "124"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat433 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "240"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat433 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat433" ;
+        hs:id "433"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat433_utterance0,
+            leolaniTalk:chat433_utterance1 .
+
+    leolaniTalk:chat433_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat433_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat433_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat433_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Feminists_have-ruined_country {
+    leolaniWorld:Feminists ns1:have_ruined leolaniWorld:country .
+}
+
+leolaniWorld:They_are-ruining_Western_civilization {
+    leolaniWorld:They ns1:are_ruining leolaniWorld:Western_civilization .
 }
 
 leolaniTalk:Perspectives {
@@ -126,59 +209,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Feminism a gaf:Instance ;
-        rdfs:label "feminism" ;
-        gaf:denotedIn leolaniTalk:chat433_utterance1_char0-114 .
-
-    leolaniWorld:Feminists a gaf:Instance ;
-        rdfs:label "feminists" ;
-        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
-
-    leolaniWorld:Western_civilization a gaf:Instance ;
-        rdfs:label "western-civilization" ;
-        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
-
-    leolaniWorld:civilization a gaf:Instance ;
-        rdfs:label "civilization" ;
-        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:country a gaf:Instance ;
-        rdfs:label "country" ;
-        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
-
-    leolaniWorld:examples a gaf:Instance ;
-        rdfs:label "examples" ;
-        gaf:denotedIn leolaniTalk:chat433_utterance1_char0-114 .
-
-    leolaniWorld:examples_of a gaf:Instance ;
-        rdfs:label "examples-of" ;
-        gaf:denotedIn leolaniTalk:chat433_utterance1_char0-114 .
-
-    leolaniWorld:full a gaf:Instance ;
-        rdfs:label "full" ;
-        gaf:denotedIn leolaniTalk:chat433_utterance1_char0-114 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-}
-
-leolaniWorld:Feminists_have-ruined_country {
-    leolaniWorld:Feminists ns1:have_ruined leolaniWorld:country .
 }
 
 leolaniWorld:Ontology {
@@ -516,81 +546,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Feminism_is-full-of_examples_of {
-    leolaniWorld:Feminism ns1:is_full_of leolaniWorld:examples_of .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context124 a eps:Context ;
-        rdfs:label "context124" ;
-        hs:id "124"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat433 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "240"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat433 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat433" ;
-        hs:id "433"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat433_utterance0,
-            leolaniTalk:chat433_utterance1 .
-
-    leolaniTalk:chat433_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat433_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat433_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat433_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:Feminism_is-full-of_examples a gaf:Assertion,
             sem:Event ;
@@ -635,19 +590,64 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:They_are-ruining_civilization {
-    leolaniWorld:They ns1:are_ruining leolaniWorld:civilization .
+leolaniWorld:Feminism_is_full {
+    leolaniWorld:Feminism ns1:is leolaniWorld:full .
 }
 
-leolaniWorld:They_are-ruining_Western_civilization {
-    leolaniWorld:They ns1:are_ruining leolaniWorld:Western_civilization .
+leolaniWorld:Feminism_is-full-of_examples_of {
+    leolaniWorld:Feminism ns1:is_full_of leolaniWorld:examples_of .
 }
 
 leolaniWorld:Feminism_is-full-of_examples {
     leolaniWorld:Feminism ns1:is_full_of leolaniWorld:examples .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Instances {
+    leolaniWorld:Feminism a gaf:Instance ;
+        rdfs:label "feminism" ;
+        gaf:denotedIn leolaniTalk:chat433_utterance1_char0-114 .
+
+    leolaniWorld:Feminists a gaf:Instance ;
+        rdfs:label "feminists" ;
+        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
+
+    leolaniWorld:Western_civilization a gaf:Instance ;
+        rdfs:label "western-civilization" ;
+        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
+
+    leolaniWorld:civilization a gaf:Instance ;
+        rdfs:label "civilization" ;
+        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:country a gaf:Instance ;
+        rdfs:label "country" ;
+        gaf:denotedIn leolaniTalk:chat433_utterance0_char0-89 .
+
+    leolaniWorld:examples a gaf:Instance ;
+        rdfs:label "examples" ;
+        gaf:denotedIn leolaniTalk:chat433_utterance1_char0-114 .
+
+    leolaniWorld:examples_of a gaf:Instance ;
+        rdfs:label "examples-of" ;
+        gaf:denotedIn leolaniTalk:chat433_utterance1_char0-114 .
+
+    leolaniWorld:full a gaf:Instance ;
+        rdfs:label "full" ;
+        gaf:denotedIn leolaniTalk:chat433_utterance1_char0-114 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 }
 

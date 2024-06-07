@@ -22,32 +22,8 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:More_migrants_crossing-channel_today a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "More_migrants_crossing-channel_today" ;
-        gaf:denotedBy leolaniTalk:chat1501_utterance0_char0-125 .
-
-    leolaniWorld:Our_homeless_are_forgotten a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Our_homeless_are_forgotten" ;
-        gaf:denotedBy leolaniTalk:chat1501_utterance0_char0-125 .
-
-    leolaniWorld:Our_own_homeless_are_forgotten a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Our_own_homeless_are_forgotten" ;
-        gaf:denotedBy leolaniTalk:chat1501_utterance0_char0-125 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:migrants_crossing-channel_today a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_crossing-channel_today" ;
-        gaf:denotedBy leolaniTalk:chat1501_utterance0_char0-125 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Our_own_homeless_are_forgotten {
+    leolaniWorld:Our_own_homeless ns1:are leolaniWorld:forgotten .
 }
 
 leolaniWorld:migrants_crossing-channel_today {
@@ -58,45 +34,134 @@ leolaniWorld:More_migrants_crossing-channel_today {
     leolaniWorld:More_migrants ns1:crossing_channel leolaniWorld:today .
 }
 
-leolaniWorld:Our_own_homeless_are_forgotten {
-    leolaniWorld:Our_own_homeless ns1:are leolaniWorld:forgotten .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context156 a eps:Context ;
+        rdfs:label "context156" ;
+        hs:id "156"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:More_migrants a gaf:Instance ;
-        rdfs:label "more-migrants" ;
-        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1501 .
 
-    leolaniWorld:Our_homeless a gaf:Instance ;
-        rdfs:label "our-homeless" ;
-        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:Our_own_homeless a gaf:Instance ;
-        rdfs:label "our-own-homeless" ;
-        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "232"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:forgotten a gaf:Instance ;
-        rdfs:label "forgotten" ;
-        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
+    leolaniTalk:chat1501 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1501" ;
+        hs:id "1501"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1501_utterance0 .
+
+    leolaniTalk:chat1501_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1501_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
-
-    leolaniWorld:today a gaf:Instance ;
-        rdfs:label "today" ;
-        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
 }
 
 leolaniWorld:Our_homeless_are_forgotten {
     leolaniWorld:Our_homeless ns1:are leolaniWorld:forgotten .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:More_migrants_crossing-channel_today_00028 a grasp:Attribution ;
+        rdfs:label "More_migrants_crossing-channel_today_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1501_utterance0_char0-125 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_homeless_are_forgotten_00028 a grasp:Attribution ;
+        rdfs:label "Our_homeless_are_forgotten_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1501_utterance0_char0-125 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Our_own_homeless_are_forgotten_00028 a grasp:Attribution ;
+        rdfs:label "Our_own_homeless_are_forgotten_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1501_utterance0_char0-125 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:migrants_crossing-channel_today_00028 a grasp:Attribution ;
+        rdfs:label "migrants_crossing-channel_today_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1501_utterance0_char0-125 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1501_utterance0_char0-125 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1501_utterance0_char0-125" ;
+        gaf:containsDenotation leolaniWorld:More_migrants,
+            leolaniWorld:Our_homeless,
+            leolaniWorld:Our_own_homeless,
+            leolaniWorld:forgotten,
+            leolaniWorld:migrants,
+            leolaniWorld:today ;
+        gaf:denotes leolaniWorld:More_migrants_crossing-channel_today,
+            leolaniWorld:Our_homeless_are_forgotten,
+            leolaniWorld:Our_own_homeless_are_forgotten,
+            leolaniWorld:migrants_crossing-channel_today ;
+        grasp:hasAttribution leolaniTalk:More_migrants_crossing-channel_today_00028,
+            leolaniTalk:Our_homeless_are_forgotten_00028,
+            leolaniTalk:Our_own_homeless_are_forgotten_00028,
+            leolaniTalk:migrants_crossing-channel_today_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:20.014513"^^xml1:string,
+            "2024-06-05T23:23:20.014593"^^xml1:string,
+            "2024-06-05T23:23:20.014619"^^xml1:string,
+            "2024-06-05T23:23:20.014642"^^xml1:string ;
+        rdf:value "More migrants crossing the channel today. We don’t have enough accommodation. Our own homeless are forgotten. Send them back."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1501_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -434,129 +499,64 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:More_migrants_crossing-channel_today a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "More_migrants_crossing-channel_today" ;
+        gaf:denotedBy leolaniTalk:chat1501_utterance0_char0-125 .
+
+    leolaniWorld:Our_homeless_are_forgotten a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_homeless_are_forgotten" ;
+        gaf:denotedBy leolaniTalk:chat1501_utterance0_char0-125 .
+
+    leolaniWorld:Our_own_homeless_are_forgotten a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Our_own_homeless_are_forgotten" ;
+        gaf:denotedBy leolaniTalk:chat1501_utterance0_char0-125 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:migrants_crossing-channel_today a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_crossing-channel_today" ;
+        gaf:denotedBy leolaniTalk:chat1501_utterance0_char0-125 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:More_migrants_crossing-channel_today_00028 a grasp:Attribution ;
-        rdfs:label "More_migrants_crossing-channel_today_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1501_utterance0_char0-125 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:More_migrants a gaf:Instance ;
+        rdfs:label "more-migrants" ;
+        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
 
-    leolaniTalk:Our_homeless_are_forgotten_00028 a grasp:Attribution ;
-        rdfs:label "Our_homeless_are_forgotten_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1501_utterance0_char0-125 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Our_homeless a gaf:Instance ;
+        rdfs:label "our-homeless" ;
+        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
 
-    leolaniTalk:Our_own_homeless_are_forgotten_00028 a grasp:Attribution ;
-        rdfs:label "Our_own_homeless_are_forgotten_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1501_utterance0_char0-125 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Our_own_homeless a gaf:Instance ;
+        rdfs:label "our-own-homeless" ;
+        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
 
-    leolaniTalk:migrants_crossing-channel_today_00028 a grasp:Attribution ;
-        rdfs:label "migrants_crossing-channel_today_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1501_utterance0_char0-125 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1501_utterance0_char0-125 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1501_utterance0_char0-125" ;
-        gaf:containsDenotation leolaniWorld:More_migrants,
-            leolaniWorld:Our_homeless,
-            leolaniWorld:Our_own_homeless,
-            leolaniWorld:forgotten,
-            leolaniWorld:migrants,
-            leolaniWorld:today ;
-        gaf:denotes leolaniWorld:More_migrants_crossing-channel_today,
-            leolaniWorld:Our_homeless_are_forgotten,
-            leolaniWorld:Our_own_homeless_are_forgotten,
-            leolaniWorld:migrants_crossing-channel_today ;
-        grasp:hasAttribution leolaniTalk:More_migrants_crossing-channel_today_00028,
-            leolaniTalk:Our_homeless_are_forgotten_00028,
-            leolaniTalk:Our_own_homeless_are_forgotten_00028,
-            leolaniTalk:migrants_crossing-channel_today_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:20.014513"^^xml1:string,
-            "2024-06-05T23:23:20.014593"^^xml1:string,
-            "2024-06-05T23:23:20.014619"^^xml1:string,
-            "2024-06-05T23:23:20.014642"^^xml1:string ;
-        rdf:value "More migrants crossing the channel today. We don’t have enough accommodation. Our own homeless are forgotten. Send them back."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1501_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context156 a eps:Context ;
-        rdfs:label "context156" ;
-        hs:id "156"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1501 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "232"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1501 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1501" ;
-        hs:id "1501"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1501_utterance0 .
-
-    leolaniTalk:chat1501_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1501_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:forgotten a gaf:Instance ;
+        rdfs:label "forgotten" ;
+        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
+
+    leolaniWorld:today a gaf:Instance ;
+        rdfs:label "today" ;
+        gaf:denotedIn leolaniTalk:chat1501_utterance0_char0-125 .
 }
 

@@ -24,79 +24,158 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ns12:ll_left_with_nothing {
-    leolaniWorld:we ns21:ll <http://cltl.nl/leolani/world/'ll_left_with_nothing> .
+leolaniWorld:Instances {
+    <http://cltl.nl/leolani/world/'ll_left> a gaf:Instance ;
+        rdfs:label "ll-left" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
+
+    <http://cltl.nl/leolani/world/'ll_left_with_nothing> a gaf:Instance ;
+        rdfs:label "ll-left-with-nothing" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
+
+    leolaniWorld:everything a gaf:Instance ;
+        rdfs:label "everything" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:left a gaf:Instance ;
+        rdfs:label "left" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:liberal_left a gaf:Instance ;
+        rdfs:label "liberal-left" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:overcrowd a gaf:Instance ;
+        rdfs:label "overcrowd" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:should_taken a gaf:Instance ;
+        rdfs:label "should-taken" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:should_taken_back a gaf:Instance ;
+        rdfs:label "should-taken-back" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
+
+    leolaniWorld:your_country a gaf:Instance ;
+        rdfs:label "your-country" ;
+        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+leolaniWorld:overcrowd_is-also-caused-by_liberal_left {
+    leolaniWorld:overcrowd ns1:is_also_caused_by leolaniWorld:liberal_left .
+}
 
-    leolaniWorld:overcrowd_is-also-caused-by_left a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "overcrowd_is-also-caused-by_left" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+leolaniWorld:overcrowd_is-caused-by_liberal_left {
+    leolaniWorld:overcrowd ns1:is_caused_by leolaniWorld:liberal_left .
+}
 
-    leolaniWorld:overcrowd_is-also-caused-by_liberal_left a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "overcrowd_is-also-caused-by_liberal_left" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+leolaniTalk:Interactions {
+    leolaniContext:context214 a eps:Context ;
+        rdfs:label "context214" ;
+        hs:id "214"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:overcrowd_is-caused-by_left a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "overcrowd_is-caused-by_left" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat210 .
 
-    leolaniWorld:overcrowd_is-caused-by_liberal_left a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "overcrowd_is-caused-by_liberal_left" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:right_be-in_your_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "right_be-in_your_country" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "20"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:they_should_should_taken a gaf:Assertion,
+    leolaniTalk:chat210 a grasp:Chat,
             sem:Event ;
-        rdfs:label "they_should_should_taken" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+        rdfs:label "chat210" ;
+        hs:id "210"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat210_utterance0,
+            leolaniTalk:chat210_utterance2 .
 
-    leolaniWorld:they_should_should_taken_back a gaf:Assertion,
+    leolaniTalk:chat210_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "they_should_should_taken_back" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+        rdfs:label "chat210_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:we_give_everything a gaf:Assertion,
+    leolaniTalk:chat210_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "we_give_everything" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance2_char0-149 .
+        rdfs:label "chat210_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:we_give_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_give_them" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance2_char0-149 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    ns12:ll_left a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_ll_'ll_left" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance2_char0-149 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    ns12:ll_left_with_nothing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_ll_'ll_left_with_nothing" ;
-        gaf:denotedBy leolaniTalk:chat210_utterance2_char0-149 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:we_give_everything {
     leolaniWorld:we ns1:give leolaniWorld:everything .
 }
 
+leolaniWorld:they_should_should_taken {
+    leolaniWorld:they ns1:should leolaniWorld:should_taken .
+}
+
+leolaniWorld:right_be-in_your_country {
+    leolaniWorld:right ns1:be_in leolaniWorld:your_country .
+}
+
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+ns12:ll_left_with_nothing {
+    leolaniWorld:we ns21:ll <http://cltl.nl/leolani/world/'ll_left_with_nothing> .
+}
+
+leolaniWorld:they_should_should_taken_back {
+    leolaniWorld:they ns1:should leolaniWorld:should_taken_back .
 }
 
 leolaniTalk:Perspectives {
@@ -255,77 +334,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    <http://cltl.nl/leolani/world/'ll_left> a gaf:Instance ;
-        rdfs:label "ll-left" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
-
-    <http://cltl.nl/leolani/world/'ll_left_with_nothing> a gaf:Instance ;
-        rdfs:label "ll-left-with-nothing" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
-
-    leolaniWorld:everything a gaf:Instance ;
-        rdfs:label "everything" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:left a gaf:Instance ;
-        rdfs:label "left" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:liberal_left a gaf:Instance ;
-        rdfs:label "liberal-left" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
-
-    leolaniWorld:overcrowd a gaf:Instance ;
-        rdfs:label "overcrowd" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
-
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
-
-    leolaniWorld:should_taken a gaf:Instance ;
-        rdfs:label "should-taken" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
-
-    leolaniWorld:should_taken_back a gaf:Instance ;
-        rdfs:label "should-taken-back" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance2_char0-149 .
-
-    leolaniWorld:your_country a gaf:Instance ;
-        rdfs:label "your-country" ;
-        gaf:denotedIn leolaniTalk:chat210_utterance0_char0-177 .
-}
-
-leolaniWorld:overcrowd_is-caused-by_liberal_left {
-    leolaniWorld:overcrowd ns1:is_caused_by leolaniWorld:liberal_left .
-}
-
-leolaniWorld:overcrowd_is-also-caused-by_liberal_left {
-    leolaniWorld:overcrowd ns1:is_also_caused_by leolaniWorld:liberal_left .
-}
-
-leolaniWorld:they_should_should_taken_back {
-    leolaniWorld:they ns1:should leolaniWorld:should_taken_back .
+ns12:ll_left {
+    leolaniWorld:we ns21:ll <http://cltl.nl/leolani/world/'ll_left> .
 }
 
 leolaniWorld:Ontology {
@@ -663,88 +673,78 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:we_give_them {
-    leolaniWorld:we ns1:give leolaniWorld:them .
-}
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-leolaniWorld:they_should_should_taken {
-    leolaniWorld:they ns1:should leolaniWorld:should_taken .
-}
+    leolaniWorld:overcrowd_is-also-caused-by_left a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "overcrowd_is-also-caused-by_left" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
 
-leolaniWorld:overcrowd_is-caused-by_left {
-    leolaniWorld:overcrowd ns1:is_caused_by leolaniWorld:left .
-}
+    leolaniWorld:overcrowd_is-also-caused-by_liberal_left a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "overcrowd_is-also-caused-by_liberal_left" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
 
-leolaniWorld:right_be-in_your_country {
-    leolaniWorld:right ns1:be_in leolaniWorld:your_country .
+    leolaniWorld:overcrowd_is-caused-by_left a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "overcrowd_is-caused-by_left" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:overcrowd_is-caused-by_liberal_left a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "overcrowd_is-caused-by_liberal_left" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:right_be-in_your_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "right_be-in_your_country" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:they_should_should_taken a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_should_should_taken" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:they_should_should_taken_back a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_should_should_taken_back" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance0_char0-177 .
+
+    leolaniWorld:we_give_everything a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_give_everything" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance2_char0-149 .
+
+    leolaniWorld:we_give_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_give_them" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance2_char0-149 .
+
+    ns12:ll_left a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_ll_'ll_left" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance2_char0-149 .
+
+    ns12:ll_left_with_nothing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_ll_'ll_left_with_nothing" ;
+        gaf:denotedBy leolaniTalk:chat210_utterance2_char0-149 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:overcrowd_is-also-caused-by_left {
     leolaniWorld:overcrowd ns1:is_also_caused_by leolaniWorld:left .
 }
 
-ns12:ll_left {
-    leolaniWorld:we ns21:ll <http://cltl.nl/leolani/world/'ll_left> .
+leolaniWorld:overcrowd_is-caused-by_left {
+    leolaniWorld:overcrowd ns1:is_caused_by leolaniWorld:left .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context214 a eps:Context ;
-        rdfs:label "context214" ;
-        hs:id "214"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat210 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "20"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat210 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat210" ;
-        hs:id "210"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat210_utterance0,
-            leolaniTalk:chat210_utterance2 .
-
-    leolaniTalk:chat210_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat210_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat210_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat210_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:we_give_them {
+    leolaniWorld:we ns1:give leolaniWorld:them .
 }
 

@@ -22,100 +22,180 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context183 a eps:Context ;
+        rdfs:label "context183" ;
+        hs:id "183"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2175 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "4"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2175 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2175" ;
+        hs:id "2175"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2175_utterance1,
+            leolaniTalk:chat2175_utterance2 .
+
+    leolaniTalk:chat2175_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2175_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2175_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2175_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Democracy_gives_everyone a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Democracy_gives_everyone" ;
-        gaf:denotedBy leolaniTalk:chat2175_utterance1_char0-79 .
-
-    leolaniWorld:Democracy_gives_voice a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Democracy_gives_voice" ;
-        gaf:denotedBy leolaniTalk:chat2175_utterance1_char0-79 .
-
-    leolaniWorld:Democracy_represents-everyone-regardless_gender a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Democracy_represents-everyone-regardless_gender" ;
-        gaf:denotedBy leolaniTalk:chat2175_utterance1_char0-79 .
-
-    leolaniWorld:Democracy_represents_everyone a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Democracy_represents_everyone" ;
-        gaf:denotedBy leolaniTalk:chat2175_utterance1_char0-79 .
-
-    leolaniWorld:This_is_dominated a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "This_is_dominated" ;
-        gaf:denotedBy leolaniTalk:chat2175_utterance2_char0-76 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Democracy_represents_everyone {
+    leolaniWorld:Democracy ns11:represents leolaniWorld:everyone .
 }
 
 leolaniWorld:Democracy_represents-everyone-regardless_gender {
     leolaniWorld:Democracy ns11:represents_everyone_regardless leolaniWorld:gender .
 }
 
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Democracy_gives_everyone {
+    leolaniWorld:Democracy ns11:gives leolaniWorld:everyone .
 }
 
 leolaniWorld:This_is_dominated {
     leolaniWorld:This ns11:is leolaniWorld:dominated .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Democracy a gaf:Instance ;
-        rdfs:label "democracy" ;
-        gaf:denotedIn leolaniTalk:chat2175_utterance1_char0-79 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Democracy_gives_everyone_00028 a grasp:Attribution ;
+        rdfs:label "Democracy_gives_everyone_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2175_utterance1_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:This a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat2175_utterance2_char0-76 .
+    leolaniTalk:Democracy_gives_voice_00028 a grasp:Attribution ;
+        rdfs:label "Democracy_gives_voice_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2175_utterance1_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:Democracy_represents-everyone-regardless_gender_00028 a grasp:Attribution ;
+        rdfs:label "Democracy_represents-everyone-regardless_gender_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2175_utterance1_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:dominated a gaf:Instance ;
-        rdfs:label "dominated" ;
-        gaf:denotedIn leolaniTalk:chat2175_utterance2_char0-76 .
+    leolaniTalk:Democracy_represents_everyone_00028 a grasp:Attribution ;
+        rdfs:label "Democracy_represents_everyone_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2175_utterance1_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:everyone a gaf:Instance ;
-        rdfs:label "everyone" ;
-        gaf:denotedIn leolaniTalk:chat2175_utterance1_char0-79 .
+    leolaniTalk:This_is_dominated_00028 a grasp:Attribution ;
+        rdfs:label "This_is_dominated_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2175_utterance2_char0-76 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:gender a gaf:Instance ;
-        rdfs:label "gender" ;
-        gaf:denotedIn leolaniTalk:chat2175_utterance1_char0-79 .
+    leolaniTalk:chat2175_utterance2_char0-76 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2175_utterance2_char0-76" ;
+        gaf:containsDenotation leolaniWorld:This,
+            leolaniWorld:dominated ;
+        gaf:denotes leolaniWorld:This_is_dominated ;
+        grasp:hasAttribution leolaniTalk:This_is_dominated_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:14.728966"^^xml1:string ;
+        rdf:value "This is a male-dominated country and they can't have a say in our democracy."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2175_utterance2 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat2175_utterance1_char0-79 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2175_utterance1_char0-79" ;
+        gaf:containsDenotation leolaniWorld:Democracy,
+            leolaniWorld:everyone,
+            leolaniWorld:gender,
+            leolaniWorld:voice ;
+        gaf:denotes leolaniWorld:Democracy_gives_everyone,
+            leolaniWorld:Democracy_gives_voice,
+            leolaniWorld:Democracy_represents-everyone-regardless_gender,
+            leolaniWorld:Democracy_represents_everyone ;
+        grasp:hasAttribution leolaniTalk:Democracy_gives_everyone_00028,
+            leolaniTalk:Democracy_gives_voice_00028,
+            leolaniTalk:Democracy_represents-everyone-regardless_gender_00028,
+            leolaniTalk:Democracy_represents_everyone_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:14.641993"^^xml1:string,
+            "2024-06-05T23:24:14.642059"^^xml1:string,
+            "2024-06-05T23:24:14.642091"^^xml1:string,
+            "2024-06-05T23:24:14.642116"^^xml1:string ;
+        rdf:value "Democracy represents everyone and gives everyone a voice, regardless of gender."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2175_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:voice a gaf:Instance ;
-        rdfs:label "voice" ;
-        gaf:denotedIn leolaniTalk:chat2175_utterance1_char0-79 .
-}
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-leolaniWorld:Democracy_represents_everyone {
-    leolaniWorld:Democracy ns11:represents leolaniWorld:everyone .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -453,163 +533,83 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:Democracy_gives_everyone a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Democracy_gives_everyone" ;
+        gaf:denotedBy leolaniTalk:chat2175_utterance1_char0-79 .
+
+    leolaniWorld:Democracy_gives_voice a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Democracy_gives_voice" ;
+        gaf:denotedBy leolaniTalk:chat2175_utterance1_char0-79 .
+
+    leolaniWorld:Democracy_represents-everyone-regardless_gender a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Democracy_represents-everyone-regardless_gender" ;
+        gaf:denotedBy leolaniTalk:chat2175_utterance1_char0-79 .
+
+    leolaniWorld:Democracy_represents_everyone a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Democracy_represents_everyone" ;
+        gaf:denotedBy leolaniTalk:chat2175_utterance1_char0-79 .
+
+    leolaniWorld:This_is_dominated a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "This_is_dominated" ;
+        gaf:denotedBy leolaniTalk:chat2175_utterance2_char0-76 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
 leolaniWorld:Democracy_gives_voice {
     leolaniWorld:Democracy ns11:gives leolaniWorld:voice .
 }
 
-leolaniWorld:Democracy_gives_everyone {
-    leolaniWorld:Democracy ns11:gives leolaniWorld:everyone .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Democracy a gaf:Instance ;
+        rdfs:label "democracy" ;
+        gaf:denotedIn leolaniTalk:chat2175_utterance1_char0-79 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Democracy_gives_everyone_00028 a grasp:Attribution ;
-        rdfs:label "Democracy_gives_everyone_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2175_utterance1_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Democracy_gives_voice_00028 a grasp:Attribution ;
-        rdfs:label "Democracy_gives_voice_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2175_utterance1_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Democracy_represents-everyone-regardless_gender_00028 a grasp:Attribution ;
-        rdfs:label "Democracy_represents-everyone-regardless_gender_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2175_utterance1_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Democracy_represents_everyone_00028 a grasp:Attribution ;
-        rdfs:label "Democracy_represents_everyone_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2175_utterance1_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:This_is_dominated_00028 a grasp:Attribution ;
-        rdfs:label "This_is_dominated_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2175_utterance2_char0-76 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2175_utterance2_char0-76 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2175_utterance2_char0-76" ;
-        gaf:containsDenotation leolaniWorld:This,
-            leolaniWorld:dominated ;
-        gaf:denotes leolaniWorld:This_is_dominated ;
-        grasp:hasAttribution leolaniTalk:This_is_dominated_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:14.728966"^^xml1:string ;
-        rdf:value "This is a male-dominated country and they can't have a say in our democracy."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2175_utterance2 .
-
-    leolaniTalk:chat2175_utterance1_char0-79 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2175_utterance1_char0-79" ;
-        gaf:containsDenotation leolaniWorld:Democracy,
-            leolaniWorld:everyone,
-            leolaniWorld:gender,
-            leolaniWorld:voice ;
-        gaf:denotes leolaniWorld:Democracy_gives_everyone,
-            leolaniWorld:Democracy_gives_voice,
-            leolaniWorld:Democracy_represents-everyone-regardless_gender,
-            leolaniWorld:Democracy_represents_everyone ;
-        grasp:hasAttribution leolaniTalk:Democracy_gives_everyone_00028,
-            leolaniTalk:Democracy_gives_voice_00028,
-            leolaniTalk:Democracy_represents-everyone-regardless_gender_00028,
-            leolaniTalk:Democracy_represents_everyone_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:14.641993"^^xml1:string,
-            "2024-06-05T23:24:14.642059"^^xml1:string,
-            "2024-06-05T23:24:14.642091"^^xml1:string,
-            "2024-06-05T23:24:14.642116"^^xml1:string ;
-        rdf:value "Democracy represents everyone and gives everyone a voice, regardless of gender."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2175_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context183 a eps:Context ;
-        rdfs:label "context183" ;
-        hs:id "183"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2175 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "4"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2175 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2175" ;
-        hs:id "2175"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2175_utterance1,
-            leolaniTalk:chat2175_utterance2 .
-
-    leolaniTalk:chat2175_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2175_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2175_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2175_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:This a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat2175_utterance2_char0-76 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:dominated a gaf:Instance ;
+        rdfs:label "dominated" ;
+        gaf:denotedIn leolaniTalk:chat2175_utterance2_char0-76 .
+
+    leolaniWorld:everyone a gaf:Instance ;
+        rdfs:label "everyone" ;
+        gaf:denotedIn leolaniTalk:chat2175_utterance1_char0-79 .
+
+    leolaniWorld:gender a gaf:Instance ;
+        rdfs:label "gender" ;
+        gaf:denotedIn leolaniTalk:chat2175_utterance1_char0-79 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:voice a gaf:Instance ;
+        rdfs:label "voice" ;
+        gaf:denotedIn leolaniTalk:chat2175_utterance1_char0-79 .
 }
 

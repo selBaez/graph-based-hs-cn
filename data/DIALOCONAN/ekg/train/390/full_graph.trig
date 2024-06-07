@@ -22,38 +22,100 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:foreigners_do-come-to_Britain a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context70 a eps:Context ;
+        rdfs:label "context70" ;
+        hs:id "70"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat390 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "177"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat390 a grasp:Chat,
             sem:Event ;
-        rdfs:label "foreigners_do-come-to_Britain" ;
-        gaf:denotedBy leolaniTalk:chat390_utterance0_char0-62 .
+        rdfs:label "chat390" ;
+        hs:id "390"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat390_utterance0 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat390_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat390_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-leolaniWorld:Instances {
-    leolaniWorld:Britain a gaf:Instance ;
-        rdfs:label "britain" ;
-        gaf:denotedIn leolaniTalk:chat390_utterance0_char0-62 .
-
-    leolaniWorld:foreigners a gaf:Instance ;
-        rdfs:label "foreigners" ;
-        gaf:denotedIn leolaniTalk:chat390_utterance0_char0-62 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
 }
 
 leolaniWorld:foreigners_do-come-to_Britain {
     leolaniWorld:foreigners ns11:do_come_to leolaniWorld:Britain .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat390_utterance0_char0-62 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat390_utterance0_char0-62" ;
+        gaf:containsDenotation leolaniWorld:Britain,
+            leolaniWorld:foreigners ;
+        gaf:denotes leolaniWorld:foreigners_do-come-to_Britain ;
+        grasp:hasAttribution leolaniTalk:foreigners_do-come-to_Britain_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:52.938554"^^xml1:string ;
+        rdf:value "Why do foreigners come to Britain? We should not welcome them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat390_utterance0 .
+
+    leolaniTalk:foreigners_do-come-to_Britain_00026 a grasp:Attribution ;
+        rdfs:label "foreigners_do-come-to_Britain_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat390_utterance0_char0-62 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -391,95 +453,33 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:foreigners_do-come-to_Britain a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "foreigners_do-come-to_Britain" ;
+        gaf:denotedBy leolaniTalk:chat390_utterance0_char0-62 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat390_utterance0_char0-62 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat390_utterance0_char0-62" ;
-        gaf:containsDenotation leolaniWorld:Britain,
-            leolaniWorld:foreigners ;
-        gaf:denotes leolaniWorld:foreigners_do-come-to_Britain ;
-        grasp:hasAttribution leolaniTalk:foreigners_do-come-to_Britain_00026 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:52.938554"^^xml1:string ;
-        rdf:value "Why do foreigners come to Britain? We should not welcome them."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat390_utterance0 .
+leolaniWorld:Instances {
+    leolaniWorld:Britain a gaf:Instance ;
+        rdfs:label "britain" ;
+        gaf:denotedIn leolaniTalk:chat390_utterance0_char0-62 .
 
-    leolaniTalk:foreigners_do-come-to_Britain_00026 a grasp:Attribution ;
-        rdfs:label "foreigners_do-come-to_Britain_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat390_utterance0_char0-62 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context70 a eps:Context ;
-        rdfs:label "context70" ;
-        hs:id "70"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat390 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "177"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat390 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat390" ;
-        hs:id "390"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat390_utterance0 .
-
-    leolaniTalk:chat390_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat390_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:foreigners a gaf:Instance ;
+        rdfs:label "foreigners" ;
+        gaf:denotedIn leolaniTalk:chat390_utterance0_char0-62 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 }
 

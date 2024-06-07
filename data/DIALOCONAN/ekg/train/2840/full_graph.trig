@@ -22,110 +22,191 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Women_are-people-with_their_rights {
-    leolaniWorld:Women ns1:are_people_with leolaniWorld:their_rights .
-}
-
-leolaniWorld:people_is-with_their_own_rights {
-    leolaniWorld:people ns1:is_with leolaniWorld:their_own_rights .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Women_are-people-with_their_own_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are-people-with_their_own_rights" ;
-        gaf:denotedBy leolaniTalk:chat2840_utterance1_char0-78 .
-
-    leolaniWorld:Women_are-people-with_their_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are-people-with_their_rights" ;
-        gaf:denotedBy leolaniTalk:chat2840_utterance1_char0-78 .
-
-    leolaniWorld:Women_are_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_people" ;
-        gaf:denotedBy leolaniTalk:chat2840_utterance1_char0-78 .
-
-    leolaniWorld:Women_should_should_subsumed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_should_should_subsumed" ;
-        gaf:denotedBy leolaniTalk:chat2840_utterance0_char0-32 .
-
-    leolaniWorld:Women_should_should_subsumed_to_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_should_should_subsumed_to_men" ;
-        gaf:denotedBy leolaniTalk:chat2840_utterance0_char0-32 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_is-with_their_own_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_is-with_their_own_rights" ;
-        gaf:denotedBy leolaniTalk:chat2840_utterance1_char0-78 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Women_are-people-with_their_own_rights {
-    leolaniWorld:Women ns1:are_people_with leolaniWorld:their_own_rights .
+leolaniWorld:Women_should_should_subsumed_to_men {
+    leolaniWorld:Women ns1:should leolaniWorld:should_subsumed_to_men .
 }
 
 leolaniWorld:Women_should_should_subsumed {
     leolaniWorld:Women ns1:should leolaniWorld:should_subsumed .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat2840_utterance0_char0-32,
-            leolaniTalk:chat2840_utterance1_char0-78 .
+leolaniWorld:Women_are-people-with_their_rights {
+    leolaniWorld:Women ns1:are_people_with leolaniWorld:their_rights .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context88 a eps:Context ;
+        rdfs:label "context88" ;
+        hs:id "88"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2840 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "154"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2840 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2840" ;
+        hs:id "2840"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2840_utterance0,
+            leolaniTalk:chat2840_utterance1 .
+
+    leolaniTalk:chat2840_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2840_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2840_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2840_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2840_utterance1_char0-78 .
-
-    leolaniWorld:should_subsumed a gaf:Instance ;
-        rdfs:label "should-subsumed" ;
-        gaf:denotedIn leolaniTalk:chat2840_utterance0_char0-32 .
-
-    leolaniWorld:should_subsumed_to_men a gaf:Instance ;
-        rdfs:label "should-subsumed-to-men" ;
-        gaf:denotedIn leolaniTalk:chat2840_utterance0_char0-32 .
-
-    leolaniWorld:their_own_rights a gaf:Instance ;
-        rdfs:label "their-own-rights" ;
-        gaf:denotedIn leolaniTalk:chat2840_utterance1_char0-78 .
-
-    leolaniWorld:their_rights a gaf:Instance ;
-        rdfs:label "their-rights" ;
-        gaf:denotedIn leolaniTalk:chat2840_utterance1_char0-78 .
 }
 
 leolaniWorld:Women_are_people {
     leolaniWorld:Women ns1:are leolaniWorld:people .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Women_are-people-with_their_own_rights_00028 a grasp:Attribution ;
+        rdfs:label "Women_are-people-with_their_own_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2840_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Women_are-people-with_their_rights_00028 a grasp:Attribution ;
+        rdfs:label "Women_are-people-with_their_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2840_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Women_are_people_00028 a grasp:Attribution ;
+        rdfs:label "Women_are_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2840_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Women_should_should_subsumed_00028 a grasp:Attribution ;
+        rdfs:label "Women_should_should_subsumed_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2840_utterance0_char0-32 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Women_should_should_subsumed_to_men_00028 a grasp:Attribution ;
+        rdfs:label "Women_should_should_subsumed_to_men_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2840_utterance0_char0-32 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_is-with_their_own_rights_00028 a grasp:Attribution ;
+        rdfs:label "people_is-with_their_own_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2840_utterance1_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2840_utterance0_char0-32 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2840_utterance0_char0-32" ;
+        gaf:containsDenotation leolaniWorld:Women,
+            leolaniWorld:should_subsumed,
+            leolaniWorld:should_subsumed_to_men ;
+        gaf:denotes leolaniWorld:Women_should_should_subsumed,
+            leolaniWorld:Women_should_should_subsumed_to_men ;
+        grasp:hasAttribution leolaniTalk:Women_should_should_subsumed_00028,
+            leolaniTalk:Women_should_should_subsumed_to_men_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:26.525643"^^xml1:string,
+            "2024-06-05T23:10:26.525703"^^xml1:string ;
+        rdf:value "Women should be subsumed to men."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2840_utterance0 .
+
+    leolaniTalk:chat2840_utterance1_char0-78 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2840_utterance1_char0-78" ;
+        gaf:containsDenotation leolaniWorld:Women,
+            leolaniWorld:people,
+            leolaniWorld:their_own_rights,
+            leolaniWorld:their_rights ;
+        gaf:denotes leolaniWorld:Women_are-people-with_their_own_rights,
+            leolaniWorld:Women_are-people-with_their_rights,
+            leolaniWorld:Women_are_people,
+            leolaniWorld:people_is-with_their_own_rights ;
+        grasp:hasAttribution leolaniTalk:Women_are-people-with_their_own_rights_00028,
+            leolaniTalk:Women_are-people-with_their_rights_00028,
+            leolaniTalk:Women_are_people_00028,
+            leolaniTalk:people_is-with_their_own_rights_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:26.609961"^^xml1:string,
+            "2024-06-05T23:10:26.610013"^^xml1:string,
+            "2024-06-05T23:10:26.610037"^^xml1:string,
+            "2024-06-05T23:10:26.610058"^^xml1:string ;
+        rdf:value "No they should not, why would they be? Women are people with their own rights."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2840_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -463,174 +544,93 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Women_are-people-with_their_own_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are-people-with_their_own_rights" ;
+        gaf:denotedBy leolaniTalk:chat2840_utterance1_char0-78 .
+
+    leolaniWorld:Women_are-people-with_their_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are-people-with_their_rights" ;
+        gaf:denotedBy leolaniTalk:chat2840_utterance1_char0-78 .
+
+    leolaniWorld:Women_are_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are_people" ;
+        gaf:denotedBy leolaniTalk:chat2840_utterance1_char0-78 .
+
+    leolaniWorld:Women_should_should_subsumed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_should_should_subsumed" ;
+        gaf:denotedBy leolaniTalk:chat2840_utterance0_char0-32 .
+
+    leolaniWorld:Women_should_should_subsumed_to_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_should_should_subsumed_to_men" ;
+        gaf:denotedBy leolaniTalk:chat2840_utterance0_char0-32 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_is-with_their_own_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_is-with_their_own_rights" ;
+        gaf:denotedBy leolaniTalk:chat2840_utterance1_char0-78 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Women_should_should_subsumed_to_men {
-    leolaniWorld:Women ns1:should leolaniWorld:should_subsumed_to_men .
+leolaniWorld:Women_are-people-with_their_own_rights {
+    leolaniWorld:Women ns1:are_people_with leolaniWorld:their_own_rights .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Women_are-people-with_their_own_rights_00028 a grasp:Attribution ;
-        rdfs:label "Women_are-people-with_their_own_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2840_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_are-people-with_their_rights_00028 a grasp:Attribution ;
-        rdfs:label "Women_are-people-with_their_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2840_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_are_people_00028 a grasp:Attribution ;
-        rdfs:label "Women_are_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2840_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_should_should_subsumed_00028 a grasp:Attribution ;
-        rdfs:label "Women_should_should_subsumed_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2840_utterance0_char0-32 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_should_should_subsumed_to_men_00028 a grasp:Attribution ;
-        rdfs:label "Women_should_should_subsumed_to_men_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2840_utterance0_char0-32 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_is-with_their_own_rights_00028 a grasp:Attribution ;
-        rdfs:label "people_is-with_their_own_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2840_utterance1_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2840_utterance0_char0-32 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2840_utterance0_char0-32" ;
-        gaf:containsDenotation leolaniWorld:Women,
-            leolaniWorld:should_subsumed,
-            leolaniWorld:should_subsumed_to_men ;
-        gaf:denotes leolaniWorld:Women_should_should_subsumed,
-            leolaniWorld:Women_should_should_subsumed_to_men ;
-        grasp:hasAttribution leolaniTalk:Women_should_should_subsumed_00028,
-            leolaniTalk:Women_should_should_subsumed_to_men_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:26.525643"^^xml1:string,
-            "2024-06-05T23:10:26.525703"^^xml1:string ;
-        rdf:value "Women should be subsumed to men."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2840_utterance0 .
-
-    leolaniTalk:chat2840_utterance1_char0-78 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2840_utterance1_char0-78" ;
-        gaf:containsDenotation leolaniWorld:Women,
-            leolaniWorld:people,
-            leolaniWorld:their_own_rights,
-            leolaniWorld:their_rights ;
-        gaf:denotes leolaniWorld:Women_are-people-with_their_own_rights,
-            leolaniWorld:Women_are-people-with_their_rights,
-            leolaniWorld:Women_are_people,
-            leolaniWorld:people_is-with_their_own_rights ;
-        grasp:hasAttribution leolaniTalk:Women_are-people-with_their_own_rights_00028,
-            leolaniTalk:Women_are-people-with_their_rights_00028,
-            leolaniTalk:Women_are_people_00028,
-            leolaniTalk:people_is-with_their_own_rights_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:26.609961"^^xml1:string,
-            "2024-06-05T23:10:26.610013"^^xml1:string,
-            "2024-06-05T23:10:26.610037"^^xml1:string,
-            "2024-06-05T23:10:26.610058"^^xml1:string ;
-        rdf:value "No they should not, why would they be? Women are people with their own rights."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2840_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:people_is-with_their_own_rights {
+    leolaniWorld:people ns1:is_with leolaniWorld:their_own_rights .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context88 a eps:Context ;
-        rdfs:label "context88" ;
-        hs:id "88"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2840 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "154"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2840 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2840" ;
-        hs:id "2840"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2840_utterance0,
-            leolaniTalk:chat2840_utterance1 .
-
-    leolaniTalk:chat2840_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2840_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2840_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2840_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat2840_utterance0_char0-32,
+            leolaniTalk:chat2840_utterance1_char0-78 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2840_utterance1_char0-78 .
+
+    leolaniWorld:should_subsumed a gaf:Instance ;
+        rdfs:label "should-subsumed" ;
+        gaf:denotedIn leolaniTalk:chat2840_utterance0_char0-32 .
+
+    leolaniWorld:should_subsumed_to_men a gaf:Instance ;
+        rdfs:label "should-subsumed-to-men" ;
+        gaf:denotedIn leolaniTalk:chat2840_utterance0_char0-32 .
+
+    leolaniWorld:their_own_rights a gaf:Instance ;
+        rdfs:label "their-own-rights" ;
+        gaf:denotedIn leolaniTalk:chat2840_utterance1_char0-78 .
+
+    leolaniWorld:their_rights a gaf:Instance ;
+        rdfs:label "their-rights" ;
+        gaf:denotedIn leolaniTalk:chat2840_utterance1_char0-78 .
 }
 

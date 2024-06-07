@@ -22,109 +22,207 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jewish_are-taking-over_our_country a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context96 a eps:Context ;
+        rdfs:label "context96" ;
+        hs:id "96"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1239 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "178"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1239 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Jewish_are-taking-over_our_country" ;
-        gaf:denotedBy leolaniTalk:chat1239_utterance0_char0-56 .
+        rdfs:label "chat1239" ;
+        hs:id "1239"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1239_utterance0,
+            leolaniTalk:chat1239_utterance1,
+            leolaniTalk:chat1239_utterance2 .
 
-    leolaniWorld:Jewish_be_banned a gaf:Assertion,
+    leolaniTalk:chat1239_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Jewish_be_banned" ;
-        gaf:denotedBy leolaniTalk:chat1239_utterance0_char0-56 .
+        rdfs:label "chat1239_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Jews_are-problem-in_European_countries a gaf:Assertion,
+    leolaniTalk:chat1239_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Jews_are-problem-in_European_countries" ;
-        gaf:denotedBy leolaniTalk:chat1239_utterance2_char0-109 .
+        rdfs:label "chat1239_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:Jews_are-problem-in_many_European_countries a gaf:Assertion,
+    leolaniTalk:chat1239_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Jews_are-problem-in_many_European_countries" ;
-        gaf:denotedBy leolaniTalk:chat1239_utterance2_char0-109 .
+        rdfs:label "chat1239_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_is-in_US a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_is-in_US" ;
-        gaf:denotedBy leolaniTalk:chat1239_utterance1_char0-116 .
-
-    leolaniWorld:problem_is-in_many_European_countries a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "problem_is-in_many_European_countries" ;
-        gaf:denotedBy leolaniTalk:chat1239_utterance2_char0-109 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:European_countries a gaf:Instance ;
-        rdfs:label "european-countries" ;
-        gaf:denotedIn leolaniTalk:chat1239_utterance2_char0-109 .
-
-    leolaniWorld:Jewish a gaf:Instance ;
-        rdfs:label "jewish" ;
-        gaf:denotedIn leolaniTalk:chat1239_utterance0_char0-56 .
-
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1239_utterance2_char0-109 .
-
-    leolaniWorld:US a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat1239_utterance1_char0-116 .
-
-    leolaniWorld:banned a gaf:Instance ;
-        rdfs:label "banned" ;
-        gaf:denotedIn leolaniTalk:chat1239_utterance0_char0-56 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_European_countries a gaf:Instance ;
-        rdfs:label "many-european-countries" ;
-        gaf:denotedIn leolaniTalk:chat1239_utterance2_char0-109 .
-
-    leolaniWorld:our_country a gaf:Instance ;
-        rdfs:label "our-country" ;
-        gaf:denotedIn leolaniTalk:chat1239_utterance0_char0-56 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1239_utterance1_char0-116 .
-
-    leolaniWorld:problem a gaf:Instance ;
-        rdfs:label "problem" ;
-        gaf:denotedIn leolaniTalk:chat1239_utterance2_char0-109 .
 }
 
 leolaniWorld:Jewish_be_banned {
     leolaniWorld:Jewish ns1:be leolaniWorld:banned .
 }
 
-leolaniWorld:problem_is-in_many_European_countries {
-    leolaniWorld:problem ns1:is_in leolaniWorld:many_European_countries .
+leolaniWorld:Jewish_are-taking-over_our_country {
+    leolaniWorld:Jewish ns1:are_taking_over leolaniWorld:our_country .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:people_is-in_US {
+    leolaniWorld:people ns1:is_in leolaniWorld:US .
+}
+
+leolaniWorld:Jews_are-problem-in_European_countries {
+    leolaniWorld:Jews ns1:are_problem_in leolaniWorld:European_countries .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Jewish_are-taking-over_our_country_00028 a grasp:Attribution ;
+        rdfs:label "Jewish_are-taking-over_our_country_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1239_utterance0_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jewish_be_banned_00028 a grasp:Attribution ;
+        rdfs:label "Jewish_be_banned_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1239_utterance0_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_are-problem-in_European_countries_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are-problem-in_European_countries_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1239_utterance2_char0-109 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_are-problem-in_many_European_countries_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are-problem-in_many_European_countries_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1239_utterance2_char0-109 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1239_utterance1_char0-116 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1239_utterance1_char0-116" ;
+        gaf:containsDenotation leolaniWorld:US,
+            leolaniWorld:people ;
+        gaf:denotes leolaniWorld:people_is-in_US ;
+        grasp:hasAttribution leolaniTalk:people_is-in_US_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:59.622305"^^xml1:string ;
+        rdf:value "What percentage of people in the US are Jewish and in a position of power? If you knew, you wouldn't be saying that."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1239_utterance1 .
+
+    leolaniTalk:people_is-in_US_00028 a grasp:Attribution ;
+        rdfs:label "people_is-in_US_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1239_utterance1_char0-116 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:problem_is-in_many_European_countries_00028 a grasp:Attribution ;
+        rdfs:label "problem_is-in_many_European_countries_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1239_utterance2_char0-109 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1239_utterance0_char0-56 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1239_utterance0_char0-56" ;
+        gaf:containsDenotation leolaniWorld:Jewish,
+            leolaniWorld:banned,
+            leolaniWorld:our_country ;
+        gaf:denotes leolaniWorld:Jewish_are-taking-over_our_country,
+            leolaniWorld:Jewish_be_banned ;
+        grasp:hasAttribution leolaniTalk:Jewish_are-taking-over_our_country_00028,
+            leolaniTalk:Jewish_be_banned_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:59.529166"^^xml1:string,
+            "2024-06-05T23:24:59.529234"^^xml1:string ;
+        rdf:value "Jewish are taking over our country and should be banned."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1239_utterance0 .
+
+    leolaniTalk:chat1239_utterance2_char0-109 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1239_utterance2_char0-109" ;
+        gaf:containsDenotation leolaniWorld:European_countries,
+            leolaniWorld:Jews,
+            leolaniWorld:many_European_countries,
+            leolaniWorld:problem ;
+        gaf:denotes leolaniWorld:Jews_are-problem-in_European_countries,
+            leolaniWorld:Jews_are-problem-in_many_European_countries,
+            leolaniWorld:problem_is-in_many_European_countries ;
+        grasp:hasAttribution leolaniTalk:Jews_are-problem-in_European_countries_00028,
+            leolaniTalk:Jews_are-problem-in_many_European_countries_00028,
+            leolaniTalk:problem_is-in_many_European_countries_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:25:06.264148"^^xml1:string,
+            "2024-06-05T23:25:06.264207"^^xml1:string,
+            "2024-06-05T23:25:06.264230"^^xml1:string ;
+        rdf:value "Jews are a problem in many European countries regardless of their number, because of their race and religion."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1239_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -462,202 +560,104 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:people_is-in_US {
-    leolaniWorld:people ns1:is_in leolaniWorld:US .
+leolaniWorld:Jews_are-problem-in_many_European_countries {
+    leolaniWorld:Jews ns1:are_problem_in leolaniWorld:many_European_countries .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:problem_is-in_many_European_countries {
+    leolaniWorld:problem ns1:is_in leolaniWorld:many_European_countries .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jewish_are-taking-over_our_country_00028 a grasp:Attribution ;
-        rdfs:label "Jewish_are-taking-over_our_country_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1239_utterance0_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Jewish_are-taking-over_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jewish_are-taking-over_our_country" ;
+        gaf:denotedBy leolaniTalk:chat1239_utterance0_char0-56 .
 
-    leolaniTalk:Jewish_be_banned_00028 a grasp:Attribution ;
-        rdfs:label "Jewish_be_banned_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1239_utterance0_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jewish_be_banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jewish_be_banned" ;
+        gaf:denotedBy leolaniTalk:chat1239_utterance0_char0-56 .
 
-    leolaniTalk:Jews_are-problem-in_European_countries_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are-problem-in_European_countries_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1239_utterance2_char0-109 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_are-problem-in_European_countries a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are-problem-in_European_countries" ;
+        gaf:denotedBy leolaniTalk:chat1239_utterance2_char0-109 .
 
-    leolaniTalk:Jews_are-problem-in_many_European_countries_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are-problem-in_many_European_countries_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1239_utterance2_char0-109 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_are-problem-in_many_European_countries a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are-problem-in_many_European_countries" ;
+        gaf:denotedBy leolaniTalk:chat1239_utterance2_char0-109 .
 
-    leolaniTalk:chat1239_utterance1_char0-116 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1239_utterance1_char0-116" ;
-        gaf:containsDenotation leolaniWorld:US,
-            leolaniWorld:people ;
-        gaf:denotes leolaniWorld:people_is-in_US ;
-        grasp:hasAttribution leolaniTalk:people_is-in_US_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:59.622305"^^xml1:string ;
-        rdf:value "What percentage of people in the US are Jewish and in a position of power? If you knew, you wouldn't be saying that."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1239_utterance1 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:people_is-in_US_00028 a grasp:Attribution ;
-        rdfs:label "people_is-in_US_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1239_utterance1_char0-116 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:problem_is-in_many_European_countries_00028 a grasp:Attribution ;
-        rdfs:label "problem_is-in_many_European_countries_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1239_utterance2_char0-109 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:people_is-in_US a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_is-in_US" ;
+        gaf:denotedBy leolaniTalk:chat1239_utterance1_char0-116 .
 
-    leolaniTalk:chat1239_utterance0_char0-56 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1239_utterance0_char0-56" ;
-        gaf:containsDenotation leolaniWorld:Jewish,
-            leolaniWorld:banned,
-            leolaniWorld:our_country ;
-        gaf:denotes leolaniWorld:Jewish_are-taking-over_our_country,
-            leolaniWorld:Jewish_be_banned ;
-        grasp:hasAttribution leolaniTalk:Jewish_are-taking-over_our_country_00028,
-            leolaniTalk:Jewish_be_banned_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:59.529166"^^xml1:string,
-            "2024-06-05T23:24:59.529234"^^xml1:string ;
-        rdf:value "Jewish are taking over our country and should be banned."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1239_utterance0 .
+    leolaniWorld:problem_is-in_many_European_countries a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "problem_is-in_many_European_countries" ;
+        gaf:denotedBy leolaniTalk:chat1239_utterance2_char0-109 .
 
-    leolaniTalk:chat1239_utterance2_char0-109 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1239_utterance2_char0-109" ;
-        gaf:containsDenotation leolaniWorld:European_countries,
-            leolaniWorld:Jews,
-            leolaniWorld:many_European_countries,
-            leolaniWorld:problem ;
-        gaf:denotes leolaniWorld:Jews_are-problem-in_European_countries,
-            leolaniWorld:Jews_are-problem-in_many_European_countries,
-            leolaniWorld:problem_is-in_many_European_countries ;
-        grasp:hasAttribution leolaniTalk:Jews_are-problem-in_European_countries_00028,
-            leolaniTalk:Jews_are-problem-in_many_European_countries_00028,
-            leolaniTalk:problem_is-in_many_European_countries_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:25:06.264148"^^xml1:string,
-            "2024-06-05T23:25:06.264207"^^xml1:string,
-            "2024-06-05T23:25:06.264230"^^xml1:string ;
-        rdf:value "Jews are a problem in many European countries regardless of their number, because of their race and religion."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1239_utterance2 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Jews_are-problem-in_European_countries {
-    leolaniWorld:Jews ns1:are_problem_in leolaniWorld:European_countries .
-}
+leolaniWorld:Instances {
+    leolaniWorld:European_countries a gaf:Instance ;
+        rdfs:label "european-countries" ;
+        gaf:denotedIn leolaniTalk:chat1239_utterance2_char0-109 .
 
-leolaniTalk:Interactions {
-    leolaniContext:context96 a eps:Context ;
-        rdfs:label "context96" ;
-        hs:id "96"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+    leolaniWorld:Jewish a gaf:Instance ;
+        rdfs:label "jewish" ;
+        gaf:denotedIn leolaniTalk:chat1239_utterance0_char0-56 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1239 .
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1239_utterance2_char0-109 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:US a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat1239_utterance1_char0-116 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "178"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1239 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1239" ;
-        hs:id "1239"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1239_utterance0,
-            leolaniTalk:chat1239_utterance1,
-            leolaniTalk:chat1239_utterance2 .
-
-    leolaniTalk:chat1239_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1239_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1239_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1239_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1239_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1239_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:banned a gaf:Instance ;
+        rdfs:label "banned" ;
+        gaf:denotedIn leolaniTalk:chat1239_utterance0_char0-56 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:Jewish_are-taking-over_our_country {
-    leolaniWorld:Jewish ns1:are_taking_over leolaniWorld:our_country .
-}
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 
-leolaniWorld:Jews_are-problem-in_many_European_countries {
-    leolaniWorld:Jews ns1:are_problem_in leolaniWorld:many_European_countries .
+    leolaniWorld:many_European_countries a gaf:Instance ;
+        rdfs:label "many-european-countries" ;
+        gaf:denotedIn leolaniTalk:chat1239_utterance2_char0-109 .
+
+    leolaniWorld:our_country a gaf:Instance ;
+        rdfs:label "our-country" ;
+        gaf:denotedIn leolaniTalk:chat1239_utterance0_char0-56 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1239_utterance1_char0-116 .
+
+    leolaniWorld:problem a gaf:Instance ;
+        rdfs:label "problem" ;
+        gaf:denotedIn leolaniTalk:chat1239_utterance2_char0-109 .
 }
 

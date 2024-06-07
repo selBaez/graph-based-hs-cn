@@ -22,8 +22,111 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:They_are_just_type {
-    leolaniWorld:They ns1:are leolaniWorld:just_type .
+leolaniWorld:They_are_type {
+    leolaniWorld:They ns1:are leolaniWorld:type .
+}
+
+leolaniWorld:People_are-british-regardless_their_skin_color {
+    leolaniWorld:People ns1:are_british_regardless leolaniWorld:their_skin_color .
+}
+
+leolaniWorld:They_are_inferior_type {
+    leolaniWorld:They ns1:are leolaniWorld:inferior_type .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context61 a eps:Context ;
+        rdfs:label "context61" ;
+        hs:id "61"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2771 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "64"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2771 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2771" ;
+        hs:id "2771"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2771_utterance0,
+            leolaniTalk:chat2771_utterance1 .
+
+    leolaniTalk:chat2771_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2771_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2771_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2771_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:They_are-inferior_citizens {
+    leolaniWorld:They ns1:are_inferior leolaniWorld:citizens .
+}
+
+leolaniWorld:People_are_British {
+    leolaniWorld:People ns1:are leolaniWorld:British .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:They_are-just-type-of_citizens {
+    leolaniWorld:They ns1:are_just_type_of leolaniWorld:citizens .
+}
+
+leolaniWorld:They_are-inferior-type-of_citizens {
+    leolaniWorld:They ns1:are_inferior_type_of leolaniWorld:citizens .
+}
+
+leolaniWorld:They_are-type-of_citizens {
+    leolaniWorld:They ns1:are_type_of leolaniWorld:citizens .
 }
 
 leolaniTalk:Perspectives {
@@ -172,59 +275,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:British a gaf:Instance ;
-        rdfs:label "british" ;
-        gaf:denotedIn leolaniTalk:chat2771_utterance1_char0-105 .
-
-    leolaniWorld:People a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2771_utterance1_char0-105 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
-
-    leolaniWorld:citizens a gaf:Instance ;
-        rdfs:label "citizens" ;
-        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:inferior_type a gaf:Instance ;
-        rdfs:label "inferior-type" ;
-        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
-
-    leolaniWorld:just_inferior_type a gaf:Instance ;
-        rdfs:label "just-inferior-type" ;
-        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
-
-    leolaniWorld:just_type a gaf:Instance ;
-        rdfs:label "just-type" ;
-        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:their_skin_color a gaf:Instance ;
-        rdfs:label "their-skin-color" ;
-        gaf:denotedIn leolaniTalk:chat2771_utterance1_char0-105 .
-
-    leolaniWorld:type a gaf:Instance ;
-        rdfs:label "type" ;
-        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
-}
-
-leolaniWorld:They_are-just-type-of_citizens {
-    leolaniWorld:They ns1:are_just_type_of leolaniWorld:citizens .
 }
 
 leolaniWorld:Ontology {
@@ -562,87 +612,8 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:They_are-inferior-type-of_citizens {
-    leolaniWorld:They ns1:are_inferior_type_of leolaniWorld:citizens .
-}
-
-leolaniWorld:They_are-inferior_citizens {
-    leolaniWorld:They ns1:are_inferior leolaniWorld:citizens .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:They_are-type-of_citizens {
-    leolaniWorld:They ns1:are_type_of leolaniWorld:citizens .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context61 a eps:Context ;
-        rdfs:label "context61" ;
-        hs:id "61"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2771 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "64"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2771 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2771" ;
-        hs:id "2771"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2771_utterance0,
-            leolaniTalk:chat2771_utterance1 .
-
-    leolaniTalk:chat2771_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2771_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2771_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2771_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:They_are-just-inferior-type-of_citizens {
+    leolaniWorld:They ns1:are_just_inferior_type_of leolaniWorld:citizens .
 }
 
 leolaniWorld:Claims {
@@ -714,31 +685,60 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:They_are_type {
-    leolaniWorld:They ns1:are leolaniWorld:type .
+leolaniWorld:They_are_just_type {
+    leolaniWorld:They ns1:are leolaniWorld:just_type .
 }
 
 leolaniWorld:They_are_just_inferior_type {
     leolaniWorld:They ns1:are leolaniWorld:just_inferior_type .
 }
 
-leolaniWorld:They_are_inferior_type {
-    leolaniWorld:They ns1:are leolaniWorld:inferior_type .
-}
+leolaniWorld:Instances {
+    leolaniWorld:British a gaf:Instance ;
+        rdfs:label "british" ;
+        gaf:denotedIn leolaniTalk:chat2771_utterance1_char0-105 .
 
-leolaniWorld:People_are-british-regardless_their_skin_color {
-    leolaniWorld:People ns1:are_british_regardless leolaniWorld:their_skin_color .
-}
+    leolaniWorld:People a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2771_utterance1_char0-105 .
 
-leolaniWorld:They_are-just-inferior-type-of_citizens {
-    leolaniWorld:They ns1:are_just_inferior_type_of leolaniWorld:citizens .
-}
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
 
-leolaniWorld:People_are_British {
-    leolaniWorld:People ns1:are leolaniWorld:British .
-}
+    leolaniWorld:citizens a gaf:Instance ;
+        rdfs:label "citizens" ;
+        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:inferior_type a gaf:Instance ;
+        rdfs:label "inferior-type" ;
+        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
+
+    leolaniWorld:just_inferior_type a gaf:Instance ;
+        rdfs:label "just-inferior-type" ;
+        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
+
+    leolaniWorld:just_type a gaf:Instance ;
+        rdfs:label "just-type" ;
+        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:their_skin_color a gaf:Instance ;
+        rdfs:label "their-skin-color" ;
+        gaf:denotedIn leolaniTalk:chat2771_utterance1_char0-105 .
+
+    leolaniWorld:type a gaf:Instance ;
+        rdfs:label "type" ;
+        gaf:denotedIn leolaniTalk:chat2771_utterance0_char0-80 .
 }
 

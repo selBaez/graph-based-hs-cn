@@ -23,40 +23,111 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:if_true a gaf:Instance ;
+        rdfs:label "if-true" ;
+        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:media a gaf:Instance ;
+        rdfs:label "media" ;
+        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
+
+    leolaniWorld:sure a gaf:Instance ;
+        rdfs:label "sure" ;
+        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
+
+    leolaniWorld:there_would_positive_portrayals a gaf:Instance ;
+        rdfs:label "there-would-positive-portrayals" ;
+        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
+
+    leolaniWorld:true a gaf:Instance ;
+        rdfs:label "true" ;
+        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
 }
 
 leolaniWorld:it_were_if_true {
     leolaniWorld:it ns1:were leolaniWorld:if_true .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:I_m_sure a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_m_sure" ;
-        gaf:denotedBy leolaniTalk:chat1734_utterance1_char0-89 .
+leolaniTalk:Interactions {
+    leolaniContext:context246 a eps:Context ;
+        rdfs:label "context246" ;
+        hs:id "246"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:it_were_if_true a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_were_if_true" ;
-        gaf:denotedBy leolaniTalk:chat1734_utterance1_char0-89 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1734 .
 
-    leolaniWorld:it_were_true a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_were_true" ;
-        gaf:denotedBy leolaniTalk:chat1734_utterance1_char0-89 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "158"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:there_would_positive_portrayals_is-in_media a gaf:Assertion,
+    leolaniTalk:chat1734 a grasp:Chat,
             sem:Event ;
-        rdfs:label "there_would_positive_portrayals_is-in_media" ;
-        gaf:denotedBy leolaniTalk:chat1734_utterance1_char0-89 .
+        rdfs:label "chat1734" ;
+        hs:id "1734"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1734_utterance1 .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniTalk:chat1734_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1734_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:there_would_positive_portrayals_is-in_media {
+    leolaniWorld:there_would_positive_portrayals ns1:is_in leolaniWorld:media .
+}
+
+leolaniWorld:I_m_sure {
+    leolaniWorld:I ns12:m leolaniWorld:sure .
 }
 
 leolaniTalk:Perspectives {
@@ -126,55 +197,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:if_true a gaf:Instance ;
-        rdfs:label "if-true" ;
-        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:media a gaf:Instance ;
-        rdfs:label "media" ;
-        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
-
-    leolaniWorld:sure a gaf:Instance ;
-        rdfs:label "sure" ;
-        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
-
-    leolaniWorld:there_would_positive_portrayals a gaf:Instance ;
-        rdfs:label "there-would-positive-portrayals" ;
-        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
-
-    leolaniWorld:true a gaf:Instance ;
-        rdfs:label "true" ;
-        gaf:denotedIn leolaniTalk:chat1734_utterance1_char0-89 .
-}
-
-leolaniWorld:it_were_true {
-    leolaniWorld:it ns1:were leolaniWorld:true .
-}
-
-leolaniWorld:I_m_sure {
-    leolaniWorld:I ns12:m leolaniWorld:sure .
-}
-
-leolaniWorld:there_would_positive_portrayals_is-in_media {
-    leolaniWorld:there_would_positive_portrayals ns1:is_in leolaniWorld:media .
 }
 
 leolaniWorld:Ontology {
@@ -512,57 +534,35 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context246 a eps:Context ;
-        rdfs:label "context246" ;
-        hs:id "246"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1734 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "158"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1734 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:I_m_sure a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1734" ;
-        hs:id "1734"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1734_utterance1 .
+        rdfs:label "I_m_sure" ;
+        gaf:denotedBy leolaniTalk:chat1734_utterance1_char0-89 .
 
-    leolaniTalk:chat1734_utterance1 a grasp:Utterance,
+    leolaniWorld:it_were_if_true a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1734_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "it_were_if_true" ;
+        gaf:denotedBy leolaniTalk:chat1734_utterance1_char0-89 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:it_were_true a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_were_true" ;
+        gaf:denotedBy leolaniTalk:chat1734_utterance1_char0-89 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:there_would_positive_portrayals_is-in_media a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "there_would_positive_portrayals_is-in_media" ;
+        gaf:denotedBy leolaniTalk:chat1734_utterance1_char0-89 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:it_were_true {
+    leolaniWorld:it ns1:were leolaniWorld:true .
 }
 

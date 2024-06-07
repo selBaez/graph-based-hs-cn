@@ -22,95 +22,166 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Blacks_do_crimes_than_whites {
-    leolaniWorld:Blacks ns1:do leolaniWorld:crimes_than_whites .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Blacks_do_crimes_than_whites a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Blacks_do_crimes_than_whites" ;
-        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
-
-    leolaniWorld:Blacks_do_more_crimes_than_whites a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Blacks_do_more_crimes_than_whites" ;
-        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_deserve_less_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_deserve_less_rights" ;
-        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
-
-    leolaniWorld:they_deserve_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_deserve_rights" ;
-        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
-
-    leolaniWorld:they_therefore-deserve_less_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_therefore-deserve_less_rights" ;
-        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
-
-    leolaniWorld:they_therefore-deserve_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_therefore-deserve_rights" ;
-        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:they_therefore-deserve_rights {
-    leolaniWorld:they ns1:therefore_deserve leolaniWorld:rights .
-}
-
-leolaniWorld:they_deserve_less_rights {
-    leolaniWorld:they ns1:deserve leolaniWorld:less_rights .
-}
-
 leolaniWorld:Blacks_do_more_crimes_than_whites {
     leolaniWorld:Blacks ns1:do leolaniWorld:more_crimes_than_whites .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Blacks a gaf:Instance ;
-        rdfs:label "blacks" ;
-        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
+leolaniTalk:Interactions {
+    leolaniContext:context19 a eps:Context ;
+        rdfs:label "context19" ;
+        hs:id "19"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:crimes_than_whites a gaf:Instance ;
-        rdfs:label "crimes-than-whites" ;
-        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat349 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "50"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat349 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat349" ;
+        hs:id "349"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat349_utterance2 .
+
+    leolaniTalk:chat349_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat349_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:Blacks_do_crimes_than_whites {
+    leolaniWorld:Blacks ns1:do leolaniWorld:crimes_than_whites .
+}
 
-    leolaniWorld:less_rights a gaf:Instance ;
-        rdfs:label "less-rights" ;
-        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
-
-    leolaniWorld:more_crimes_than_whites a gaf:Instance ;
-        rdfs:label "more-crimes-than-whites" ;
-        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
-
-    leolaniWorld:rights a gaf:Instance ;
-        rdfs:label "rights" ;
-        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:they_deserve_rights {
     leolaniWorld:they ns1:deserve leolaniWorld:rights .
+}
+
+leolaniWorld:they_therefore-deserve_less_rights {
+    leolaniWorld:they ns1:therefore_deserve leolaniWorld:less_rights .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Blacks_do_crimes_than_whites_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_do_crimes_than_whites_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Blacks_do_more_crimes_than_whites_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_do_more_crimes_than_whites_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_deserve_less_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_deserve_less_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_deserve_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_deserve_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_therefore-deserve_less_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_therefore-deserve_less_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_therefore-deserve_rights_00028 a grasp:Attribution ;
+        rdfs:label "they_therefore-deserve_rights_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat349_utterance2_char0-73 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat349_utterance2_char0-73" ;
+        gaf:containsDenotation leolaniWorld:Blacks,
+            leolaniWorld:crimes_than_whites,
+            leolaniWorld:less_rights,
+            leolaniWorld:more_crimes_than_whites,
+            leolaniWorld:rights,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:Blacks_do_crimes_than_whites,
+            leolaniWorld:Blacks_do_more_crimes_than_whites,
+            leolaniWorld:they_deserve_less_rights,
+            leolaniWorld:they_deserve_rights,
+            leolaniWorld:they_therefore-deserve_less_rights,
+            leolaniWorld:they_therefore-deserve_rights ;
+        grasp:hasAttribution leolaniTalk:Blacks_do_crimes_than_whites_00028,
+            leolaniTalk:Blacks_do_more_crimes_than_whites_00028,
+            leolaniTalk:they_deserve_less_rights_00028,
+            leolaniTalk:they_deserve_rights_00028,
+            leolaniTalk:they_therefore-deserve_less_rights_00028,
+            leolaniTalk:they_therefore-deserve_rights_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:07.560492"^^xml1:string,
+            "2024-06-05T23:35:07.560551"^^xml1:string,
+            "2024-06-05T23:35:07.560574"^^xml1:string,
+            "2024-06-05T23:35:07.560596"^^xml1:string,
+            "2024-06-05T23:35:07.560617"^^xml1:string,
+            "2024-06-05T23:35:07.560639"^^xml1:string ;
+        rdf:value "Blacks do more crimes than whites and therefore they deserve less rights."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat349_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -448,153 +519,82 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_deserve_less_rights {
+    leolaniWorld:they ns1:deserve leolaniWorld:less_rights .
 }
 
-leolaniWorld:they_therefore-deserve_less_rights {
-    leolaniWorld:they ns1:therefore_deserve leolaniWorld:less_rights .
+leolaniWorld:they_therefore-deserve_rights {
+    leolaniWorld:they ns1:therefore_deserve leolaniWorld:rights .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Blacks_do_crimes_than_whites_00028 a grasp:Attribution ;
-        rdfs:label "Blacks_do_crimes_than_whites_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Blacks_do_more_crimes_than_whites_00028 a grasp:Attribution ;
-        rdfs:label "Blacks_do_more_crimes_than_whites_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_deserve_less_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_deserve_less_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_deserve_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_deserve_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_therefore-deserve_less_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_therefore-deserve_less_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_therefore-deserve_rights_00028 a grasp:Attribution ;
-        rdfs:label "they_therefore-deserve_rights_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat349_utterance2_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat349_utterance2_char0-73 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat349_utterance2_char0-73" ;
-        gaf:containsDenotation leolaniWorld:Blacks,
-            leolaniWorld:crimes_than_whites,
-            leolaniWorld:less_rights,
-            leolaniWorld:more_crimes_than_whites,
-            leolaniWorld:rights,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:Blacks_do_crimes_than_whites,
-            leolaniWorld:Blacks_do_more_crimes_than_whites,
-            leolaniWorld:they_deserve_less_rights,
-            leolaniWorld:they_deserve_rights,
-            leolaniWorld:they_therefore-deserve_less_rights,
-            leolaniWorld:they_therefore-deserve_rights ;
-        grasp:hasAttribution leolaniTalk:Blacks_do_crimes_than_whites_00028,
-            leolaniTalk:Blacks_do_more_crimes_than_whites_00028,
-            leolaniTalk:they_deserve_less_rights_00028,
-            leolaniTalk:they_deserve_rights_00028,
-            leolaniTalk:they_therefore-deserve_less_rights_00028,
-            leolaniTalk:they_therefore-deserve_rights_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:07.560492"^^xml1:string,
-            "2024-06-05T23:35:07.560551"^^xml1:string,
-            "2024-06-05T23:35:07.560574"^^xml1:string,
-            "2024-06-05T23:35:07.560596"^^xml1:string,
-            "2024-06-05T23:35:07.560617"^^xml1:string,
-            "2024-06-05T23:35:07.560639"^^xml1:string ;
-        rdf:value "Blacks do more crimes than whites and therefore they deserve less rights."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat349_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context19 a eps:Context ;
-        rdfs:label "context19" ;
-        hs:id "19"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat349 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "50"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat349 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Blacks_do_crimes_than_whites a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat349" ;
-        hs:id "349"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat349_utterance2 .
+        rdfs:label "Blacks_do_crimes_than_whites" ;
+        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
 
-    leolaniTalk:chat349_utterance2 a grasp:Utterance,
+    leolaniWorld:Blacks_do_more_crimes_than_whites a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat349_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Blacks_do_more_crimes_than_whites" ;
+        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:they_deserve_less_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_deserve_less_rights" ;
+        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
+
+    leolaniWorld:they_deserve_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_deserve_rights" ;
+        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
+
+    leolaniWorld:they_therefore-deserve_less_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_therefore-deserve_less_rights" ;
+        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
+
+    leolaniWorld:they_therefore-deserve_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_therefore-deserve_rights" ;
+        gaf:denotedBy leolaniTalk:chat349_utterance2_char0-73 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Blacks a gaf:Instance ;
+        rdfs:label "blacks" ;
+        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
+
+    leolaniWorld:crimes_than_whites a gaf:Instance ;
+        rdfs:label "crimes-than-whites" ;
+        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:less_rights a gaf:Instance ;
+        rdfs:label "less-rights" ;
+        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
+
+    leolaniWorld:more_crimes_than_whites a gaf:Instance ;
+        rdfs:label "more-crimes-than-whites" ;
+        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
+
+    leolaniWorld:rights a gaf:Instance ;
+        rdfs:label "rights" ;
+        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat349_utterance2_char0-73 .
 }
 

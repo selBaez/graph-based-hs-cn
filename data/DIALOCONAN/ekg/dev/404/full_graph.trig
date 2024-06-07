@@ -22,44 +22,77 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:They_are_burden {
-    leolaniWorld:They ns1:are leolaniWorld:burden .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context80 a eps:Context ;
+        rdfs:label "context80" ;
+        hs:id "80"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Muslims_are_subhuman {
-    leolaniWorld:Muslims ns1:are leolaniWorld:subhuman .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat404 .
 
-leolaniWorld:Claims {
-    leolaniWorld:Muslims_are_subhuman a gaf:Assertion,
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "127"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat404 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Muslims_are_subhuman" ;
-        gaf:denotedBy leolaniTalk:chat404_utterance2_char0-99 .
+        rdfs:label "chat404" ;
+        hs:id "404"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat404_utterance0,
+            leolaniTalk:chat404_utterance2 .
 
-    leolaniWorld:Muslims_have_nothing a gaf:Assertion,
+    leolaniTalk:chat404_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Muslims_have_nothing" ;
-        gaf:denotedBy leolaniTalk:chat404_utterance0_char0-74 .
+        rdfs:label "chat404_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:They_are_burden a gaf:Assertion,
+    leolaniTalk:chat404_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_are_burden" ;
-        gaf:denotedBy leolaniTalk:chat404_utterance0_char0-74 .
+        rdfs:label "chat404_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:They_are_just_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_just_burden" ;
-        gaf:denotedBy leolaniTalk:chat404_utterance0_char0-74 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:They_are_just_burden {
+    leolaniWorld:They ns1:are leolaniWorld:just_burden .
+}
+
+leolaniWorld:Muslims_are_subhuman {
+    leolaniWorld:Muslims ns1:are leolaniWorld:subhuman .
 }
 
 leolaniTalk:Perspectives {
@@ -136,48 +169,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74,
-            leolaniTalk:chat404_utterance2_char0-99 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74 .
-
-    leolaniWorld:burden a gaf:Instance ;
-        rdfs:label "burden" ;
-        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:just_burden a gaf:Instance ;
-        rdfs:label "just-burden" ;
-        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74 .
-
-    leolaniWorld:subhuman a gaf:Instance ;
-        rdfs:label "subhuman" ;
-        gaf:denotedIn leolaniTalk:chat404_utterance2_char0-99 .
-}
-
-leolaniWorld:Muslims_have_nothing {
-    leolaniWorld:Muslims ns1:have leolaniWorld:nothing .
-}
-
-leolaniWorld:They_are_just_burden {
-    leolaniWorld:They ns1:are leolaniWorld:just_burden .
 }
 
 leolaniWorld:Ontology {
@@ -515,64 +506,73 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context80 a eps:Context ;
-        rdfs:label "context80" ;
-        hs:id "80"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:They_are_burden {
+    leolaniWorld:They ns1:are leolaniWorld:burden .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat404 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "127"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat404 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Muslims_are_subhuman a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat404" ;
-        hs:id "404"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat404_utterance0,
-            leolaniTalk:chat404_utterance2 .
+        rdfs:label "Muslims_are_subhuman" ;
+        gaf:denotedBy leolaniTalk:chat404_utterance2_char0-99 .
 
-    leolaniTalk:chat404_utterance0 a grasp:Utterance,
+    leolaniWorld:Muslims_have_nothing a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat404_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Muslims_have_nothing" ;
+        gaf:denotedBy leolaniTalk:chat404_utterance0_char0-74 .
 
-    leolaniTalk:chat404_utterance2 a grasp:Utterance,
+    leolaniWorld:They_are_burden a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat404_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat404_utterance0_char0-74 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:They_are_just_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_just_burden" ;
+        gaf:denotedBy leolaniTalk:chat404_utterance0_char0-74 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Muslims_have_nothing {
+    leolaniWorld:Muslims ns1:have leolaniWorld:nothing .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74,
+            leolaniTalk:chat404_utterance2_char0-99 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74 .
+
+    leolaniWorld:burden a gaf:Instance ;
+        rdfs:label "burden" ;
+        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:just_burden a gaf:Instance ;
+        rdfs:label "just-burden" ;
+        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat404_utterance0_char0-74 .
+
+    leolaniWorld:subhuman a gaf:Instance ;
+        rdfs:label "subhuman" ;
+        gaf:denotedIn leolaniTalk:chat404_utterance2_char0-99 .
 }
 

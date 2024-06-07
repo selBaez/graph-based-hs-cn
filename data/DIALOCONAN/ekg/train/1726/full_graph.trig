@@ -23,109 +23,197 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:ones_bringing_violence {
-    leolaniWorld:ones ns1:bringing leolaniWorld:violence .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:migrants_are_ones a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_are_ones" ;
-        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
-
-    leolaniWorld:migrants_are_ones_bringing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_are_ones_bringing" ;
-        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
-
-    leolaniWorld:migrants_are_violent a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_are_violent" ;
-        gaf:denotedBy leolaniTalk:chat1726_utterance2_char0-56 .
-
-    leolaniWorld:migrants_bringing_violence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_bringing_violence" ;
-        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
-
-    leolaniWorld:most_migrants_are_violent a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "most_migrants_are_violent" ;
-        gaf:denotedBy leolaniTalk:chat1726_utterance2_char0-56 .
-
-    leolaniWorld:ones_bringing_violence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "ones_bringing_violence" ;
-        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
-
-    leolaniWorld:they_re_violent_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_re_violent_people" ;
-        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:migrants_are_ones {
-    leolaniWorld:migrants ns1:are leolaniWorld:ones .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72,
-            leolaniTalk:chat1726_utterance2_char0-56 .
-
-    leolaniWorld:most_migrants a gaf:Instance ;
-        rdfs:label "most-migrants" ;
-        gaf:denotedIn leolaniTalk:chat1726_utterance2_char0-56 .
-
-    leolaniWorld:ones a gaf:Instance ;
-        rdfs:label "ones" ;
-        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
-
-    leolaniWorld:ones_bringing a gaf:Instance ;
-        rdfs:label "ones-bringing" ;
-        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
-
-    leolaniWorld:violence a gaf:Instance ;
-        rdfs:label "violence" ;
-        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
-
-    leolaniWorld:violent a gaf:Instance ;
-        rdfs:label "violent" ;
-        gaf:denotedIn leolaniTalk:chat1726_utterance2_char0-56 .
-
-    leolaniWorld:violent_people a gaf:Instance ;
-        rdfs:label "violent-people" ;
-        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
+leolaniWorld:migrants_are_violent {
+    leolaniWorld:migrants ns1:are leolaniWorld:violent .
 }
 
 leolaniWorld:migrants_are_ones_bringing {
     leolaniWorld:migrants ns1:are leolaniWorld:ones_bringing .
 }
 
-leolaniWorld:migrants_bringing_violence {
-    leolaniWorld:migrants ns1:bringing leolaniWorld:violence .
+leolaniTalk:Interactions {
+    leolaniContext:context79 a eps:Context ;
+        rdfs:label "context79" ;
+        hs:id "79"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1726 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "86"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1726 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1726" ;
+        hs:id "1726"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1726_utterance0,
+            leolaniTalk:chat1726_utterance2 .
+
+    leolaniTalk:chat1726_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1726_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1726_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1726_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:they_re_violent_people {
-    leolaniWorld:they ns12:re leolaniWorld:violent_people .
+leolaniWorld:migrants_are_ones {
+    leolaniWorld:migrants ns1:are leolaniWorld:ones .
+}
+
+leolaniWorld:most_migrants_are_violent {
+    leolaniWorld:most_migrants ns1:are leolaniWorld:violent .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:ones_bringing_violence {
+    leolaniWorld:ones ns1:bringing leolaniWorld:violence .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:migrants_are_ones_00028 a grasp:Attribution ;
+        rdfs:label "migrants_are_ones_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:migrants_are_ones_bringing_00028 a grasp:Attribution ;
+        rdfs:label "migrants_are_ones_bringing_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:migrants_are_violent_00028 a grasp:Attribution ;
+        rdfs:label "migrants_are_violent_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1726_utterance2_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:migrants_bringing_violence_00028 a grasp:Attribution ;
+        rdfs:label "migrants_bringing_violence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:most_migrants_are_violent_00028 a grasp:Attribution ;
+        rdfs:label "most_migrants_are_violent_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1726_utterance2_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:ones_bringing_violence_00028 a grasp:Attribution ;
+        rdfs:label "ones_bringing_violence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_re_violent_people_00028 a grasp:Attribution ;
+        rdfs:label "they_re_violent_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1726_utterance2_char0-56 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1726_utterance2_char0-56" ;
+        gaf:containsDenotation leolaniWorld:migrants,
+            leolaniWorld:most_migrants,
+            leolaniWorld:violent ;
+        gaf:denotes leolaniWorld:migrants_are_violent,
+            leolaniWorld:most_migrants_are_violent ;
+        grasp:hasAttribution leolaniTalk:migrants_are_violent_00028,
+            leolaniTalk:most_migrants_are_violent_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:56:46.043694"^^xml1:string,
+            "2024-06-05T22:56:46.043748"^^xml1:string ;
+        rdf:value "And most migrants are violent. They're not welcome here."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1726_utterance2 .
+
+    leolaniTalk:chat1726_utterance0_char0-72 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1726_utterance0_char0-72" ;
+        gaf:containsDenotation leolaniWorld:migrants,
+            leolaniWorld:ones,
+            leolaniWorld:ones_bringing,
+            leolaniWorld:they,
+            leolaniWorld:violence,
+            leolaniWorld:violent_people ;
+        gaf:denotes leolaniWorld:migrants_are_ones,
+            leolaniWorld:migrants_are_ones_bringing,
+            leolaniWorld:migrants_bringing_violence,
+            leolaniWorld:ones_bringing_violence,
+            leolaniWorld:they_re_violent_people ;
+        grasp:hasAttribution leolaniTalk:migrants_are_ones_00028,
+            leolaniTalk:migrants_are_ones_bringing_00028,
+            leolaniTalk:migrants_bringing_violence_00028,
+            leolaniTalk:ones_bringing_violence_00028,
+            leolaniTalk:they_re_violent_people_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:56:45.883573"^^xml1:string,
+            "2024-06-05T22:56:45.883630"^^xml1:string,
+            "2024-06-05T22:56:45.883653"^^xml1:string,
+            "2024-06-05T22:56:45.883675"^^xml1:string,
+            "2024-06-05T22:56:45.883697"^^xml1:string ;
+        rdf:value "But migrants are the ones bringing violence, they're all violent people."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1726_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -463,184 +551,96 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_re_violent_people {
+    leolaniWorld:they ns12:re leolaniWorld:violent_people .
 }
 
-leolaniWorld:migrants_are_violent {
-    leolaniWorld:migrants ns1:are leolaniWorld:violent .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:migrants_are_ones a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_are_ones" ;
+        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
+
+    leolaniWorld:migrants_are_ones_bringing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_are_ones_bringing" ;
+        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
+
+    leolaniWorld:migrants_are_violent a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_are_violent" ;
+        gaf:denotedBy leolaniTalk:chat1726_utterance2_char0-56 .
+
+    leolaniWorld:migrants_bringing_violence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_bringing_violence" ;
+        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
+
+    leolaniWorld:most_migrants_are_violent a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "most_migrants_are_violent" ;
+        gaf:denotedBy leolaniTalk:chat1726_utterance2_char0-56 .
+
+    leolaniWorld:ones_bringing_violence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "ones_bringing_violence" ;
+        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
+
+    leolaniWorld:they_re_violent_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_re_violent_people" ;
+        gaf:denotedBy leolaniTalk:chat1726_utterance0_char0-72 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:migrants_are_ones_00028 a grasp:Attribution ;
-        rdfs:label "migrants_are_ones_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:migrants_are_ones_bringing_00028 a grasp:Attribution ;
-        rdfs:label "migrants_are_ones_bringing_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:migrants_are_violent_00028 a grasp:Attribution ;
-        rdfs:label "migrants_are_violent_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1726_utterance2_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:migrants_bringing_violence_00028 a grasp:Attribution ;
-        rdfs:label "migrants_bringing_violence_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:most_migrants_are_violent_00028 a grasp:Attribution ;
-        rdfs:label "most_migrants_are_violent_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1726_utterance2_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:ones_bringing_violence_00028 a grasp:Attribution ;
-        rdfs:label "ones_bringing_violence_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_re_violent_people_00028 a grasp:Attribution ;
-        rdfs:label "they_re_violent_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1726_utterance0_char0-72 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1726_utterance2_char0-56 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1726_utterance2_char0-56" ;
-        gaf:containsDenotation leolaniWorld:migrants,
-            leolaniWorld:most_migrants,
-            leolaniWorld:violent ;
-        gaf:denotes leolaniWorld:migrants_are_violent,
-            leolaniWorld:most_migrants_are_violent ;
-        grasp:hasAttribution leolaniTalk:migrants_are_violent_00028,
-            leolaniTalk:most_migrants_are_violent_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:56:46.043694"^^xml1:string,
-            "2024-06-05T22:56:46.043748"^^xml1:string ;
-        rdf:value "And most migrants are violent. They're not welcome here."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1726_utterance2 .
-
-    leolaniTalk:chat1726_utterance0_char0-72 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1726_utterance0_char0-72" ;
-        gaf:containsDenotation leolaniWorld:migrants,
-            leolaniWorld:ones,
-            leolaniWorld:ones_bringing,
-            leolaniWorld:they,
-            leolaniWorld:violence,
-            leolaniWorld:violent_people ;
-        gaf:denotes leolaniWorld:migrants_are_ones,
-            leolaniWorld:migrants_are_ones_bringing,
-            leolaniWorld:migrants_bringing_violence,
-            leolaniWorld:ones_bringing_violence,
-            leolaniWorld:they_re_violent_people ;
-        grasp:hasAttribution leolaniTalk:migrants_are_ones_00028,
-            leolaniTalk:migrants_are_ones_bringing_00028,
-            leolaniTalk:migrants_bringing_violence_00028,
-            leolaniTalk:ones_bringing_violence_00028,
-            leolaniTalk:they_re_violent_people_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:56:45.883573"^^xml1:string,
-            "2024-06-05T22:56:45.883630"^^xml1:string,
-            "2024-06-05T22:56:45.883653"^^xml1:string,
-            "2024-06-05T22:56:45.883675"^^xml1:string,
-            "2024-06-05T22:56:45.883697"^^xml1:string ;
-        rdf:value "But migrants are the ones bringing violence, they're all violent people."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1726_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:migrants_bringing_violence {
+    leolaniWorld:migrants ns1:bringing leolaniWorld:violence .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context79 a eps:Context ;
-        rdfs:label "context79" ;
-        hs:id "79"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1726 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "86"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1726 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1726" ;
-        hs:id "1726"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1726_utterance0,
-            leolaniTalk:chat1726_utterance2 .
-
-    leolaniTalk:chat1726_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1726_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1726_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1726_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:most_migrants_are_violent {
-    leolaniWorld:most_migrants ns1:are leolaniWorld:violent .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72,
+            leolaniTalk:chat1726_utterance2_char0-56 .
+
+    leolaniWorld:most_migrants a gaf:Instance ;
+        rdfs:label "most-migrants" ;
+        gaf:denotedIn leolaniTalk:chat1726_utterance2_char0-56 .
+
+    leolaniWorld:ones a gaf:Instance ;
+        rdfs:label "ones" ;
+        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
+
+    leolaniWorld:ones_bringing a gaf:Instance ;
+        rdfs:label "ones-bringing" ;
+        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
+
+    leolaniWorld:violence a gaf:Instance ;
+        rdfs:label "violence" ;
+        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
+
+    leolaniWorld:violent a gaf:Instance ;
+        rdfs:label "violent" ;
+        gaf:denotedIn leolaniTalk:chat1726_utterance2_char0-56 .
+
+    leolaniWorld:violent_people a gaf:Instance ;
+        rdfs:label "violent-people" ;
+        gaf:denotedIn leolaniTalk:chat1726_utterance0_char0-72 .
 }
 

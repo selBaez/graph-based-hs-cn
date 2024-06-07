@@ -26,108 +26,210 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    ns15:t_economic_support a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Part_are-also-ours_if_n't_economic_support" ;
-        gaf:denotedBy leolaniTalk:chat896_utterance4_char0-71 .
-
-    ns13:t_economic_support a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Part_are-also-ours_n't_economic_support" ;
-        gaf:denotedBy leolaniTalk:chat896_utterance4_char0-71 .
-
-    ns12:t_economic_support a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Part_are-ours_if_n't_economic_support" ;
-        gaf:denotedBy leolaniTalk:chat896_utterance4_char0-71 .
-
-    ns1:t_economic_support a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Part_are-ours_n't_economic_support" ;
-        gaf:denotedBy leolaniTalk:chat896_utterance4_char0-71 .
-
-    leolaniWorld:We_are_forced a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_are_forced" ;
-        gaf:denotedBy leolaniTalk:chat896_utterance0_char0-74 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_leech-off_our_money a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_leech-off_our_money" ;
-        gaf:denotedBy leolaniTalk:chat896_utterance2_char0-42 .
-
-    leolaniWorld:they_leech-until_then a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_leech-until_then" ;
-        gaf:denotedBy leolaniTalk:chat896_utterance2_char0-42 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-ns15:t_economic_support {
-    leolaniWorld:Part ns2:are_also_ours <http://cltl.nl/leolani/world/if_n't_economic_support> .
-}
-
-ns13:t_economic_support {
-    leolaniWorld:Part ns2:are_also_ours <http://cltl.nl/leolani/world/n't_economic_support> .
-}
-
-ns12:t_economic_support {
-    leolaniWorld:Part ns2:are_ours <http://cltl.nl/leolani/world/if_n't_economic_support> .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat896_utterance4_char0-71 .
-
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat896_utterance0_char0-74 .
-
-    leolaniWorld:forced a gaf:Instance ;
-        rdfs:label "forced" ;
-        gaf:denotedIn leolaniTalk:chat896_utterance0_char0-74 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    <http://cltl.nl/leolani/world/if_n't_economic_support> a gaf:Instance ;
-        rdfs:label "if-n-t-economic-support" ;
-        gaf:denotedIn leolaniTalk:chat896_utterance4_char0-71 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    <http://cltl.nl/leolani/world/n't_economic_support> a gaf:Instance ;
-        rdfs:label "n-t-economic-support" ;
-        gaf:denotedIn leolaniTalk:chat896_utterance4_char0-71 .
-
-    leolaniWorld:our_money a gaf:Instance ;
-        rdfs:label "our-money" ;
-        gaf:denotedIn leolaniTalk:chat896_utterance2_char0-42 .
-
-    leolaniWorld:then a gaf:Instance ;
-        rdfs:label "then" ;
-        gaf:denotedIn leolaniTalk:chat896_utterance2_char0-42 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat896_utterance2_char0-42 .
+leolaniWorld:We_are_forced {
+    leolaniWorld:We ns2:are leolaniWorld:forced .
 }
 
 ns1:t_economic_support {
     leolaniWorld:Part ns2:are_ours <http://cltl.nl/leolani/world/n't_economic_support> .
 }
 
-leolaniWorld:they_leech-until_then {
-    leolaniWorld:they ns2:leech_until leolaniWorld:then .
+leolaniTalk:Interactions {
+    leolaniContext:context22 a eps:Context ;
+        rdfs:label "context22" ;
+        hs:id "22"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat896 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "202"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat896 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat896" ;
+        hs:id "896"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat896_utterance0,
+            leolaniTalk:chat896_utterance2,
+            leolaniTalk:chat896_utterance4 .
+
+    leolaniTalk:chat896_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat896_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat896_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat896_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat896_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat896_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+ns13:t_economic_support {
+    leolaniWorld:Part ns2:are_also_ours <http://cltl.nl/leolani/world/n't_economic_support> .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+ns12:t_economic_support {
+    leolaniWorld:Part ns2:are_ours <http://cltl.nl/leolani/world/if_n't_economic_support> .
+}
+
+leolaniWorld:they_leech-off_our_money {
+    leolaniWorld:they ns2:leech_off leolaniWorld:our_money .
+}
+
+leolaniTalk:Perspectives {
+    <http://cltl.nl/leolani/talk/Part_are-also-ours_if_n't_economic_support_00028> a grasp:Attribution ;
+        rdfs:label "Part_are-also-ours_if_n't_economic_support_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat896_utterance4_char0-71 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/Part_are-also-ours_n't_economic_support_00028> a grasp:Attribution ;
+        rdfs:label "Part_are-also-ours_n't_economic_support_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat896_utterance4_char0-71 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/Part_are-ours_if_n't_economic_support_00028> a grasp:Attribution ;
+        rdfs:label "Part_are-ours_if_n't_economic_support_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat896_utterance4_char0-71 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/Part_are-ours_n't_economic_support_00028> a grasp:Attribution ;
+        rdfs:label "Part_are-ours_n't_economic_support_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat896_utterance4_char0-71 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_are_forced_00028 a grasp:Attribution ;
+        rdfs:label "We_are_forced_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat896_utterance0_char0-74 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat896_utterance0_char0-74 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat896_utterance0_char0-74" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:forced ;
+        gaf:denotes leolaniWorld:We_are_forced ;
+        grasp:hasAttribution leolaniTalk:We_are_forced_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:05.211850"^^xml1:string ;
+        rdf:value "We are forced to economically support all of the so called 'asylum seeker'"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat896_utterance0 .
+
+    leolaniTalk:they_leech-off_our_money_00028 a grasp:Attribution ;
+        rdfs:label "they_leech-off_our_money_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat896_utterance2_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_leech-until_then_00028 a grasp:Attribution ;
+        rdfs:label "they_leech-until_then_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat896_utterance2_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat896_utterance2_char0-42 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat896_utterance2_char0-42" ;
+        gaf:containsDenotation leolaniWorld:our_money,
+            leolaniWorld:then,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_leech-off_our_money,
+            leolaniWorld:they_leech-until_then ;
+        grasp:hasAttribution leolaniTalk:they_leech-off_our_money_00028,
+            leolaniTalk:they_leech-until_then_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:05.373213"^^xml1:string,
+            "2024-06-05T23:35:05.373273"^^xml1:string ;
+        rdf:value "And until then they leech off our money..."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat896_utterance2 .
+
+    leolaniTalk:chat896_utterance4_char0-71 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat896_utterance4_char0-71" ;
+        gaf:containsDenotation leolaniWorld:Part,
+            <http://cltl.nl/leolani/world/if_n't_economic_support>,
+            <http://cltl.nl/leolani/world/n't_economic_support> ;
+        gaf:denotes ns15:t_economic_support,
+            ns13:t_economic_support,
+            ns12:t_economic_support,
+            ns1:t_economic_support ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/Part_are-also-ours_if_n't_economic_support_00028>,
+            <http://cltl.nl/leolani/talk/Part_are-also-ours_n't_economic_support_00028>,
+            <http://cltl.nl/leolani/talk/Part_are-ours_if_n't_economic_support_00028>,
+            <http://cltl.nl/leolani/talk/Part_are-ours_n't_economic_support_00028> ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:05.531788"^^xml1:string,
+            "2024-06-05T23:35:05.531849"^^xml1:string,
+            "2024-06-05T23:35:05.531872"^^xml1:string,
+            "2024-06-05T23:35:05.531894"^^xml1:string ;
+        rdf:value "Part of the funds are also ours then, if that isn't economic support..."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat896_utterance4 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -465,197 +567,95 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    ns15:t_economic_support a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Part_are-also-ours_if_n't_economic_support" ;
+        gaf:denotedBy leolaniTalk:chat896_utterance4_char0-71 .
+
+    ns13:t_economic_support a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Part_are-also-ours_n't_economic_support" ;
+        gaf:denotedBy leolaniTalk:chat896_utterance4_char0-71 .
+
+    ns12:t_economic_support a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Part_are-ours_if_n't_economic_support" ;
+        gaf:denotedBy leolaniTalk:chat896_utterance4_char0-71 .
+
+    ns1:t_economic_support a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Part_are-ours_n't_economic_support" ;
+        gaf:denotedBy leolaniTalk:chat896_utterance4_char0-71 .
+
+    leolaniWorld:We_are_forced a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_are_forced" ;
+        gaf:denotedBy leolaniTalk:chat896_utterance0_char0-74 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_leech-off_our_money a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_leech-off_our_money" ;
+        gaf:denotedBy leolaniTalk:chat896_utterance2_char0-42 .
+
+    leolaniWorld:they_leech-until_then a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_leech-until_then" ;
+        gaf:denotedBy leolaniTalk:chat896_utterance2_char0-42 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:they_leech-off_our_money {
-    leolaniWorld:they ns2:leech_off leolaniWorld:our_money .
+ns15:t_economic_support {
+    leolaniWorld:Part ns2:are_also_ours <http://cltl.nl/leolani/world/if_n't_economic_support> .
 }
 
-leolaniTalk:Perspectives {
-    <http://cltl.nl/leolani/talk/Part_are-also-ours_if_n't_economic_support_00028> a grasp:Attribution ;
-        rdfs:label "Part_are-also-ours_if_n't_economic_support_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat896_utterance4_char0-71 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/Part_are-also-ours_n't_economic_support_00028> a grasp:Attribution ;
-        rdfs:label "Part_are-also-ours_n't_economic_support_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat896_utterance4_char0-71 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/Part_are-ours_if_n't_economic_support_00028> a grasp:Attribution ;
-        rdfs:label "Part_are-ours_if_n't_economic_support_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat896_utterance4_char0-71 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/Part_are-ours_n't_economic_support_00028> a grasp:Attribution ;
-        rdfs:label "Part_are-ours_n't_economic_support_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat896_utterance4_char0-71 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_are_forced_00028 a grasp:Attribution ;
-        rdfs:label "We_are_forced_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat896_utterance0_char0-74 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat896_utterance0_char0-74 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat896_utterance0_char0-74" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:forced ;
-        gaf:denotes leolaniWorld:We_are_forced ;
-        grasp:hasAttribution leolaniTalk:We_are_forced_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:05.211850"^^xml1:string ;
-        rdf:value "We are forced to economically support all of the so called 'asylum seeker'"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat896_utterance0 .
-
-    leolaniTalk:they_leech-off_our_money_00028 a grasp:Attribution ;
-        rdfs:label "they_leech-off_our_money_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat896_utterance2_char0-42 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_leech-until_then_00028 a grasp:Attribution ;
-        rdfs:label "they_leech-until_then_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat896_utterance2_char0-42 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat896_utterance2_char0-42 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat896_utterance2_char0-42" ;
-        gaf:containsDenotation leolaniWorld:our_money,
-            leolaniWorld:then,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_leech-off_our_money,
-            leolaniWorld:they_leech-until_then ;
-        grasp:hasAttribution leolaniTalk:they_leech-off_our_money_00028,
-            leolaniTalk:they_leech-until_then_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:05.373213"^^xml1:string,
-            "2024-06-05T23:35:05.373273"^^xml1:string ;
-        rdf:value "And until then they leech off our money..."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat896_utterance2 .
-
-    leolaniTalk:chat896_utterance4_char0-71 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat896_utterance4_char0-71" ;
-        gaf:containsDenotation leolaniWorld:Part,
-            <http://cltl.nl/leolani/world/if_n't_economic_support>,
-            <http://cltl.nl/leolani/world/n't_economic_support> ;
-        gaf:denotes ns15:t_economic_support,
-            ns13:t_economic_support,
-            ns12:t_economic_support,
-            ns1:t_economic_support ;
-        grasp:hasAttribution <http://cltl.nl/leolani/talk/Part_are-also-ours_if_n't_economic_support_00028>,
-            <http://cltl.nl/leolani/talk/Part_are-also-ours_n't_economic_support_00028>,
-            <http://cltl.nl/leolani/talk/Part_are-ours_if_n't_economic_support_00028>,
-            <http://cltl.nl/leolani/talk/Part_are-ours_n't_economic_support_00028> ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:05.531788"^^xml1:string,
-            "2024-06-05T23:35:05.531849"^^xml1:string,
-            "2024-06-05T23:35:05.531872"^^xml1:string,
-            "2024-06-05T23:35:05.531894"^^xml1:string ;
-        rdf:value "Part of the funds are also ours then, if that isn't economic support..."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat896_utterance4 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:they_leech-until_then {
+    leolaniWorld:they ns2:leech_until leolaniWorld:then .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context22 a eps:Context ;
-        rdfs:label "context22" ;
-        hs:id "22"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat896_utterance4_char0-71 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat896 .
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat896_utterance0_char0-74 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "202"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat896 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat896" ;
-        hs:id "896"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat896_utterance0,
-            leolaniTalk:chat896_utterance2,
-            leolaniTalk:chat896_utterance4 .
-
-    leolaniTalk:chat896_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat896_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat896_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat896_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat896_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat896_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:forced a gaf:Instance ;
+        rdfs:label "forced" ;
+        gaf:denotedIn leolaniTalk:chat896_utterance0_char0-74 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:We_are_forced {
-    leolaniWorld:We ns2:are leolaniWorld:forced .
+    <http://cltl.nl/leolani/world/if_n't_economic_support> a gaf:Instance ;
+        rdfs:label "if-n-t-economic-support" ;
+        gaf:denotedIn leolaniTalk:chat896_utterance4_char0-71 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    <http://cltl.nl/leolani/world/n't_economic_support> a gaf:Instance ;
+        rdfs:label "n-t-economic-support" ;
+        gaf:denotedIn leolaniTalk:chat896_utterance4_char0-71 .
+
+    leolaniWorld:our_money a gaf:Instance ;
+        rdfs:label "our-money" ;
+        gaf:denotedIn leolaniTalk:chat896_utterance2_char0-42 .
+
+    leolaniWorld:then a gaf:Instance ;
+        rdfs:label "then" ;
+        gaf:denotedIn leolaniTalk:chat896_utterance2_char0-42 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat896_utterance2_char0-42 .
 }
 

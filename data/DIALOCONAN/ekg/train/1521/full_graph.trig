@@ -22,125 +22,86 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Sex_is_our_anatomy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Sex_is_our_anatomy" ;
-        gaf:denotedBy leolaniTalk:chat1521_utterance1_char0-251 .
-
-    leolaniWorld:That_has_basic_biology a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "That_has_basic_biology" ;
-        gaf:denotedBy leolaniTalk:chat1521_utterance0_char0-187 .
-
-    leolaniWorld:do_you_mean_is_binary a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "do_you_mean_is_binary" ;
-        gaf:denotedBy leolaniTalk:chat1521_utterance2_char0-84 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:man_can-put-on_dress a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "man_can-put-on_dress" ;
-        gaf:denotedBy leolaniTalk:chat1521_utterance0_char0-187 .
-
-    leolaniWorld:our_anatomy_hormones a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "our_anatomy_hormones" ;
-        gaf:denotedBy leolaniTalk:chat1521_utterance1_char0-251 .
-
-    leolaniWorld:you_do-mean_sex a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-mean_sex" ;
-        gaf:denotedBy leolaniTalk:chat1521_utterance2_char0-84 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:our_anatomy_hormones {
+    leolaniWorld:our ns11:anatomy leolaniWorld:hormones .
 }
 
 leolaniWorld:That_has_basic_biology {
     leolaniWorld:That ns11:has leolaniWorld:basic_biology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context247 a eps:Context ;
+        rdfs:label "context247" ;
+        hs:id "247"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:do_you_mean_is_binary {
-    leolaniWorld:do_you_mean ns11:is leolaniWorld:binary .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1521 .
 
-leolaniWorld:you_do-mean_sex {
-    leolaniWorld:you ns11:do_mean leolaniWorld:sex .
-}
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-leolaniWorld:Instances {
-    leolaniWorld:Sex a gaf:Instance ;
-        rdfs:label "sex" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance1_char0-251 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "181"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:That a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance0_char0-187 .
+    leolaniTalk:chat1521 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1521" ;
+        hs:id "1521"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1521_utterance0,
+            leolaniTalk:chat1521_utterance1,
+            leolaniTalk:chat1521_utterance2 .
 
-    leolaniWorld:basic_biology a gaf:Instance ;
-        rdfs:label "basic-biology" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance0_char0-187 .
+    leolaniTalk:chat1521_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1521_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:binary a gaf:Instance ;
-        rdfs:label "binary" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance2_char0-84 .
+    leolaniTalk:chat1521_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1521_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1521_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1521_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:do_you_mean a gaf:Instance ;
-        rdfs:label "do-you-mean" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance2_char0-84 .
-
-    leolaniWorld:dress a gaf:Instance ;
-        rdfs:label "dress" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance0_char0-187 .
-
-    leolaniWorld:hormones a gaf:Instance ;
-        rdfs:label "hormones" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance1_char0-251 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:man a gaf:Instance ;
-        rdfs:label "man" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance0_char0-187 .
-
-    leolaniWorld:our a gaf:Instance ;
-        rdfs:label "our" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance1_char0-251 .
-
-    leolaniWorld:our_anatomy a gaf:Instance ;
-        rdfs:label "our-anatomy" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance1_char0-251 .
-
-    leolaniWorld:sex a gaf:Instance ;
-        rdfs:label "sex" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance2_char0-84 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1521_utterance2_char0-84 .
 }
 
 leolaniWorld:man_can-put-on_dress {
@@ -149,6 +110,126 @@ leolaniWorld:man_can-put-on_dress {
 
 leolaniWorld:Sex_is_our_anatomy {
     leolaniWorld:Sex ns11:is leolaniWorld:our_anatomy .
+}
+
+leolaniWorld:you_do-mean_sex {
+    leolaniWorld:you ns11:do_mean leolaniWorld:sex .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Sex_is_our_anatomy_00028 a grasp:Attribution ;
+        rdfs:label "Sex_is_our_anatomy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1521_utterance1_char0-251 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:That_has_basic_biology_00028 a grasp:Attribution ;
+        rdfs:label "That_has_basic_biology_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1521_utterance0_char0-187 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:do_you_mean_is_binary_00028 a grasp:Attribution ;
+        rdfs:label "do_you_mean_is_binary_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1521_utterance2_char0-84 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:man_can-put-on_dress_00028 a grasp:Attribution ;
+        rdfs:label "man_can-put-on_dress_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1521_utterance0_char0-187 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:our_anatomy_hormones_00028 a grasp:Attribution ;
+        rdfs:label "our_anatomy_hormones_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1521_utterance1_char0-251 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-mean_sex_00028 a grasp:Attribution ;
+        rdfs:label "you_do-mean_sex_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1521_utterance2_char0-84 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1521_utterance0_char0-187 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1521_utterance0_char0-187" ;
+        gaf:containsDenotation leolaniWorld:That,
+            leolaniWorld:basic_biology,
+            leolaniWorld:dress,
+            leolaniWorld:man ;
+        gaf:denotes leolaniWorld:That_has_basic_biology,
+            leolaniWorld:man_can-put-on_dress ;
+        grasp:hasAttribution leolaniTalk:That_has_basic_biology_00028,
+            leolaniTalk:man_can-put-on_dress_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:04.608078"^^xml1:string,
+            "2024-06-05T23:09:04.608146"^^xml1:string ;
+        rdf:value "As much as the media tries, you can't convince me to take transgenders seriously. A man can put on a dress and make up but at the end of the day they're still a man. That's basic biology."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1521_utterance0 .
+
+    leolaniTalk:chat1521_utterance1_char0-251 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1521_utterance1_char0-251" ;
+        gaf:containsDenotation leolaniWorld:Sex,
+            leolaniWorld:hormones,
+            leolaniWorld:our,
+            leolaniWorld:our_anatomy ;
+        gaf:denotes leolaniWorld:Sex_is_our_anatomy,
+            leolaniWorld:our_anatomy_hormones ;
+        grasp:hasAttribution leolaniTalk:Sex_is_our_anatomy_00028,
+            leolaniTalk:our_anatomy_hormones_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:04.749776"^^xml1:string,
+            "2024-06-05T23:09:04.749832"^^xml1:string ;
+        rdf:value "That's not 'biology', your sex is not the same as your gender. Gender is unrelated to our biology or body, but instead related to our identity and how we feel. Sex is our anatomy, hormones etc but even this isn't as binary as many people make it seem."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1521_utterance1 .
+
+    leolaniTalk:chat1521_utterance2_char0-84 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1521_utterance2_char0-84" ;
+        gaf:containsDenotation leolaniWorld:binary,
+            leolaniWorld:do_you_mean,
+            leolaniWorld:sex,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:do_you_mean_is_binary,
+            leolaniWorld:you_do-mean_sex ;
+        grasp:hasAttribution leolaniTalk:do_you_mean_is_binary_00028,
+            leolaniTalk:you_do-mean_sex_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:04.833533"^^xml1:string,
+            "2024-06-05T23:09:04.833598"^^xml1:string ;
+        rdf:value "What do you mean sex isn't binary? There's men and there's women, nothing inbetween."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1521_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -486,193 +567,112 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Sex_is_our_anatomy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Sex_is_our_anatomy" ;
+        gaf:denotedBy leolaniTalk:chat1521_utterance1_char0-251 .
+
+    leolaniWorld:That_has_basic_biology a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "That_has_basic_biology" ;
+        gaf:denotedBy leolaniTalk:chat1521_utterance0_char0-187 .
+
+    leolaniWorld:do_you_mean_is_binary a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "do_you_mean_is_binary" ;
+        gaf:denotedBy leolaniTalk:chat1521_utterance2_char0-84 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:man_can-put-on_dress a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "man_can-put-on_dress" ;
+        gaf:denotedBy leolaniTalk:chat1521_utterance0_char0-187 .
+
+    leolaniWorld:our_anatomy_hormones a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "our_anatomy_hormones" ;
+        gaf:denotedBy leolaniTalk:chat1521_utterance1_char0-251 .
+
+    leolaniWorld:you_do-mean_sex a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-mean_sex" ;
+        gaf:denotedBy leolaniTalk:chat1521_utterance2_char0-84 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Sex_is_our_anatomy_00028 a grasp:Attribution ;
-        rdfs:label "Sex_is_our_anatomy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1521_utterance1_char0-251 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:That_has_basic_biology_00028 a grasp:Attribution ;
-        rdfs:label "That_has_basic_biology_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1521_utterance0_char0-187 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:do_you_mean_is_binary_00028 a grasp:Attribution ;
-        rdfs:label "do_you_mean_is_binary_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1521_utterance2_char0-84 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:man_can-put-on_dress_00028 a grasp:Attribution ;
-        rdfs:label "man_can-put-on_dress_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1521_utterance0_char0-187 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:our_anatomy_hormones_00028 a grasp:Attribution ;
-        rdfs:label "our_anatomy_hormones_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1521_utterance1_char0-251 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_do-mean_sex_00028 a grasp:Attribution ;
-        rdfs:label "you_do-mean_sex_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1521_utterance2_char0-84 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1521_utterance0_char0-187 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1521_utterance0_char0-187" ;
-        gaf:containsDenotation leolaniWorld:That,
-            leolaniWorld:basic_biology,
-            leolaniWorld:dress,
-            leolaniWorld:man ;
-        gaf:denotes leolaniWorld:That_has_basic_biology,
-            leolaniWorld:man_can-put-on_dress ;
-        grasp:hasAttribution leolaniTalk:That_has_basic_biology_00028,
-            leolaniTalk:man_can-put-on_dress_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:04.608078"^^xml1:string,
-            "2024-06-05T23:09:04.608146"^^xml1:string ;
-        rdf:value "As much as the media tries, you can't convince me to take transgenders seriously. A man can put on a dress and make up but at the end of the day they're still a man. That's basic biology."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1521_utterance0 .
-
-    leolaniTalk:chat1521_utterance1_char0-251 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1521_utterance1_char0-251" ;
-        gaf:containsDenotation leolaniWorld:Sex,
-            leolaniWorld:hormones,
-            leolaniWorld:our,
-            leolaniWorld:our_anatomy ;
-        gaf:denotes leolaniWorld:Sex_is_our_anatomy,
-            leolaniWorld:our_anatomy_hormones ;
-        grasp:hasAttribution leolaniTalk:Sex_is_our_anatomy_00028,
-            leolaniTalk:our_anatomy_hormones_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:04.749776"^^xml1:string,
-            "2024-06-05T23:09:04.749832"^^xml1:string ;
-        rdf:value "That's not 'biology', your sex is not the same as your gender. Gender is unrelated to our biology or body, but instead related to our identity and how we feel. Sex is our anatomy, hormones etc but even this isn't as binary as many people make it seem."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1521_utterance1 .
-
-    leolaniTalk:chat1521_utterance2_char0-84 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1521_utterance2_char0-84" ;
-        gaf:containsDenotation leolaniWorld:binary,
-            leolaniWorld:do_you_mean,
-            leolaniWorld:sex,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:do_you_mean_is_binary,
-            leolaniWorld:you_do-mean_sex ;
-        grasp:hasAttribution leolaniTalk:do_you_mean_is_binary_00028,
-            leolaniTalk:you_do-mean_sex_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:04.833533"^^xml1:string,
-            "2024-06-05T23:09:04.833598"^^xml1:string ;
-        rdf:value "What do you mean sex isn't binary? There's men and there's women, nothing inbetween."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1521_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:do_you_mean_is_binary {
+    leolaniWorld:do_you_mean ns11:is leolaniWorld:binary .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context247 a eps:Context ;
-        rdfs:label "context247" ;
-        hs:id "247"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Sex a gaf:Instance ;
+        rdfs:label "sex" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance1_char0-251 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1521 .
+    leolaniWorld:That a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance0_char0-187 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:basic_biology a gaf:Instance ;
+        rdfs:label "basic-biology" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance0_char0-187 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "181"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1521 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1521" ;
-        hs:id "1521"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1521_utterance0,
-            leolaniTalk:chat1521_utterance1,
-            leolaniTalk:chat1521_utterance2 .
-
-    leolaniTalk:chat1521_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1521_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1521_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1521_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1521_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1521_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:binary a gaf:Instance ;
+        rdfs:label "binary" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance2_char0-84 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:do_you_mean a gaf:Instance ;
+        rdfs:label "do-you-mean" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance2_char0-84 .
 
-leolaniWorld:our_anatomy_hormones {
-    leolaniWorld:our ns11:anatomy leolaniWorld:hormones .
+    leolaniWorld:dress a gaf:Instance ;
+        rdfs:label "dress" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance0_char0-187 .
+
+    leolaniWorld:hormones a gaf:Instance ;
+        rdfs:label "hormones" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance1_char0-251 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:man a gaf:Instance ;
+        rdfs:label "man" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance0_char0-187 .
+
+    leolaniWorld:our a gaf:Instance ;
+        rdfs:label "our" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance1_char0-251 .
+
+    leolaniWorld:our_anatomy a gaf:Instance ;
+        rdfs:label "our-anatomy" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance1_char0-251 .
+
+    leolaniWorld:sex a gaf:Instance ;
+        rdfs:label "sex" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance2_char0-84 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1521_utterance2_char0-84 .
 }
 

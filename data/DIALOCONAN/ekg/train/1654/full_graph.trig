@@ -22,140 +22,227 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:evidence_backing-up_it {
-    leolaniWorld:evidence ns1:backing_up leolaniWorld:it .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context137 a eps:Context ;
+        rdfs:label "context137" ;
+        hs:id "137"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1654 .
 
-leolaniWorld:Claims {
-    leolaniWorld:I_believe-ever_Auschwitz a gaf:Assertion,
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "92"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1654 a grasp:Chat,
             sem:Event ;
-        rdfs:label "I_believe-ever_Auschwitz" ;
-        gaf:denotedBy leolaniTalk:chat1654_utterance2_char0-81 .
+        rdfs:label "chat1654" ;
+        hs:id "1654"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1654_utterance1,
+            leolaniTalk:chat1654_utterance2 .
 
-    leolaniWorld:I_believe_Auschwitz a gaf:Assertion,
+    leolaniTalk:chat1654_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "I_believe_Auschwitz" ;
-        gaf:denotedBy leolaniTalk:chat1654_utterance2_char0-81 .
+        rdfs:label "chat1654_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:evidence_backing-up_it a gaf:Assertion,
+    leolaniTalk:chat1654_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "evidence_backing-up_it" ;
-        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
+        rdfs:label "chat1654_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:much_evidence_backing-up_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "much_evidence_backing-up_it" ;
-        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:you_deny_something a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_deny_something" ;
-        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:you_do-really-want_deny a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-really-want_deny" ;
-        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:you_do-really-want_to_deny a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-really-want_to_deny" ;
-        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:you_do-want_deny a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-want_deny" ;
-        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:you_do-want_to_deny a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-want_to_deny" ;
-        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:you_do-really-want_to_deny {
-    leolaniWorld:you ns1:do_really_want leolaniWorld:to_deny .
-}
-
-leolaniWorld:you_do-want_deny {
-    leolaniWorld:you ns1:do_want leolaniWorld:deny .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Auschwitz a gaf:Instance ;
-        rdfs:label "auschwitz" ;
-        gaf:denotedIn leolaniTalk:chat1654_utterance2_char0-81 .
-
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1654_utterance2_char0-81 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:deny a gaf:Instance ;
-        rdfs:label "deny" ;
-        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:evidence a gaf:Instance ;
-        rdfs:label "evidence" ;
-        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:much_evidence a gaf:Instance ;
-        rdfs:label "much-evidence" ;
-        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:something a gaf:Instance ;
-        rdfs:label "something" ;
-        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:to_deny a gaf:Instance ;
-        rdfs:label "to-deny" ;
-        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
 }
 
 leolaniWorld:you_do-really-want_deny {
     leolaniWorld:you ns1:do_really_want leolaniWorld:deny .
 }
 
-leolaniWorld:I_believe-ever_Auschwitz {
-    leolaniWorld:I ns1:believe_ever leolaniWorld:Auschwitz .
-}
-
 leolaniWorld:I_believe_Auschwitz {
     leolaniWorld:I ns1:believe leolaniWorld:Auschwitz .
+}
+
+leolaniWorld:you_do-want_deny {
+    leolaniWorld:you ns1:do_want leolaniWorld:deny .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:much_evidence_backing-up_it {
+    leolaniWorld:much_evidence ns1:backing_up leolaniWorld:it .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_believe-ever_Auschwitz_0006 a grasp:Attribution ;
+        rdfs:label "I_believe-ever_Auschwitz_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat1654_utterance2_char0-81 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_believe_Auschwitz_0006 a grasp:Attribution ;
+        rdfs:label "I_believe_Auschwitz_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat1654_utterance2_char0-81 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:evidence_backing-up_it_00028 a grasp:Attribution ;
+        rdfs:label "evidence_backing-up_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:much_evidence_backing-up_it_00028 a grasp:Attribution ;
+        rdfs:label "much_evidence_backing-up_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_deny_something_00028 a grasp:Attribution ;
+        rdfs:label "you_deny_something_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-really-want_deny_00028 a grasp:Attribution ;
+        rdfs:label "you_do-really-want_deny_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-really-want_to_deny_00028 a grasp:Attribution ;
+        rdfs:label "you_do-really-want_to_deny_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-want_deny_00028 a grasp:Attribution ;
+        rdfs:label "you_do-want_deny_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_do-want_to_deny_00028 a grasp:Attribution ;
+        rdfs:label "you_do-want_to_deny_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1654_utterance2_char0-81 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1654_utterance2_char0-81" ;
+        gaf:containsDenotation leolaniWorld:Auschwitz,
+            leolaniWorld:I ;
+        gaf:denotes leolaniWorld:I_believe-ever_Auschwitz,
+            leolaniWorld:I_believe_Auschwitz ;
+        grasp:hasAttribution leolaniTalk:I_believe-ever_Auschwitz_0006,
+            leolaniTalk:I_believe_Auschwitz_0006 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:30.238388"^^xml1:string,
+            "2024-06-05T23:34:30.238477"^^xml1:string ;
+        rdf:value "It could all be set up. I don't know if I believe Auschwitz ever really happened."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1654_utterance2 .
+
+    graspe:OPTIMISM a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "OPTIMISM" .
+
+    leolaniTalk:chat1654_utterance1_char0-210 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1654_utterance1_char0-210" ;
+        gaf:containsDenotation leolaniWorld:deny,
+            leolaniWorld:evidence,
+            leolaniWorld:it,
+            leolaniWorld:much_evidence,
+            leolaniWorld:something,
+            leolaniWorld:to_deny,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:evidence_backing-up_it,
+            leolaniWorld:much_evidence_backing-up_it,
+            leolaniWorld:you_deny_something,
+            leolaniWorld:you_do-really-want_deny,
+            leolaniWorld:you_do-really-want_to_deny,
+            leolaniWorld:you_do-want_deny,
+            leolaniWorld:you_do-want_to_deny ;
+        grasp:hasAttribution leolaniTalk:evidence_backing-up_it_00028,
+            leolaniTalk:much_evidence_backing-up_it_00028,
+            leolaniTalk:you_deny_something_00028,
+            leolaniTalk:you_do-really-want_deny_00028,
+            leolaniTalk:you_do-really-want_to_deny_00028,
+            leolaniTalk:you_do-want_deny_00028,
+            leolaniTalk:you_do-want_to_deny_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:30.146665"^^xml1:string,
+            "2024-06-05T23:34:30.146726"^^xml1:string,
+            "2024-06-05T23:34:30.146750"^^xml1:string,
+            "2024-06-05T23:34:30.146772"^^xml1:string,
+            "2024-06-05T23:34:30.146796"^^xml1:string,
+            "2024-06-05T23:34:30.146819"^^xml1:string,
+            "2024-06-05T23:34:30.146840"^^xml1:string ;
+        rdf:value "Yes, there is ample evidence. There are concentration camps that you can visit, 6 million dead people and the families they left behind. Do you really want to deny something with so much evidence backing it up?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1654_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -497,214 +584,127 @@ leolaniWorld:you_deny_something {
     leolaniWorld:you ns1:deny leolaniWorld:something .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:I_believe-ever_Auschwitz {
+    leolaniWorld:I ns1:believe_ever leolaniWorld:Auschwitz .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_believe-ever_Auschwitz_0006 a grasp:Attribution ;
-        rdfs:label "I_believe-ever_Auschwitz_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat1654_utterance2_char0-81 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:I_believe-ever_Auschwitz a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_believe-ever_Auschwitz" ;
+        gaf:denotedBy leolaniTalk:chat1654_utterance2_char0-81 .
 
-    leolaniTalk:I_believe_Auschwitz_0006 a grasp:Attribution ;
-        rdfs:label "I_believe_Auschwitz_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat1654_utterance2_char0-81 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:I_believe_Auschwitz a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_believe_Auschwitz" ;
+        gaf:denotedBy leolaniTalk:chat1654_utterance2_char0-81 .
 
-    leolaniTalk:evidence_backing-up_it_00028 a grasp:Attribution ;
-        rdfs:label "evidence_backing-up_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:evidence_backing-up_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "evidence_backing-up_it" ;
+        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
 
-    leolaniTalk:much_evidence_backing-up_it_00028 a grasp:Attribution ;
-        rdfs:label "much_evidence_backing-up_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:you_deny_something_00028 a grasp:Attribution ;
-        rdfs:label "you_deny_something_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:you_do-really-want_deny_00028 a grasp:Attribution ;
-        rdfs:label "you_do-really-want_deny_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:much_evidence_backing-up_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "much_evidence_backing-up_it" ;
+        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
 
-    leolaniTalk:you_do-really-want_to_deny_00028 a grasp:Attribution ;
-        rdfs:label "you_do-really-want_to_deny_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_deny_something a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_deny_something" ;
+        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
 
-    leolaniTalk:you_do-want_deny_00028 a grasp:Attribution ;
-        rdfs:label "you_do-want_deny_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_do-really-want_deny a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-really-want_deny" ;
+        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
 
-    leolaniTalk:you_do-want_to_deny_00028 a grasp:Attribution ;
-        rdfs:label "you_do-want_to_deny_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1654_utterance1_char0-210 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_do-really-want_to_deny a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-really-want_to_deny" ;
+        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
 
-    leolaniTalk:chat1654_utterance2_char0-81 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1654_utterance2_char0-81" ;
-        gaf:containsDenotation leolaniWorld:Auschwitz,
-            leolaniWorld:I ;
-        gaf:denotes leolaniWorld:I_believe-ever_Auschwitz,
-            leolaniWorld:I_believe_Auschwitz ;
-        grasp:hasAttribution leolaniTalk:I_believe-ever_Auschwitz_0006,
-            leolaniTalk:I_believe_Auschwitz_0006 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:30.238388"^^xml1:string,
-            "2024-06-05T23:34:30.238477"^^xml1:string ;
-        rdf:value "It could all be set up. I don't know if I believe Auschwitz ever really happened."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1654_utterance2 .
+    leolaniWorld:you_do-want_deny a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-want_deny" ;
+        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
 
-    graspe:OPTIMISM a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "OPTIMISM" .
+    leolaniWorld:you_do-want_to_deny a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-want_to_deny" ;
+        gaf:denotedBy leolaniTalk:chat1654_utterance1_char0-210 .
 
-    leolaniTalk:chat1654_utterance1_char0-210 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1654_utterance1_char0-210" ;
-        gaf:containsDenotation leolaniWorld:deny,
-            leolaniWorld:evidence,
-            leolaniWorld:it,
-            leolaniWorld:much_evidence,
-            leolaniWorld:something,
-            leolaniWorld:to_deny,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:evidence_backing-up_it,
-            leolaniWorld:much_evidence_backing-up_it,
-            leolaniWorld:you_deny_something,
-            leolaniWorld:you_do-really-want_deny,
-            leolaniWorld:you_do-really-want_to_deny,
-            leolaniWorld:you_do-want_deny,
-            leolaniWorld:you_do-want_to_deny ;
-        grasp:hasAttribution leolaniTalk:evidence_backing-up_it_00028,
-            leolaniTalk:much_evidence_backing-up_it_00028,
-            leolaniTalk:you_deny_something_00028,
-            leolaniTalk:you_do-really-want_deny_00028,
-            leolaniTalk:you_do-really-want_to_deny_00028,
-            leolaniTalk:you_do-want_deny_00028,
-            leolaniTalk:you_do-want_to_deny_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:30.146665"^^xml1:string,
-            "2024-06-05T23:34:30.146726"^^xml1:string,
-            "2024-06-05T23:34:30.146750"^^xml1:string,
-            "2024-06-05T23:34:30.146772"^^xml1:string,
-            "2024-06-05T23:34:30.146796"^^xml1:string,
-            "2024-06-05T23:34:30.146819"^^xml1:string,
-            "2024-06-05T23:34:30.146840"^^xml1:string ;
-        rdf:value "Yes, there is ample evidence. There are concentration camps that you can visit, 6 million dead people and the families they left behind. Do you really want to deny something with so much evidence backing it up?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1654_utterance1 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:you_do-want_to_deny {
     leolaniWorld:you ns1:do_want leolaniWorld:to_deny .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context137 a eps:Context ;
-        rdfs:label "context137" ;
-        hs:id "137"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1654 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "92"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1654 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1654" ;
-        hs:id "1654"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1654_utterance1,
-            leolaniTalk:chat1654_utterance2 .
-
-    leolaniTalk:chat1654_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1654_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1654_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1654_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:you_do-really-want_to_deny {
+    leolaniWorld:you ns1:do_really_want leolaniWorld:to_deny .
 }
 
-leolaniWorld:much_evidence_backing-up_it {
-    leolaniWorld:much_evidence ns1:backing_up leolaniWorld:it .
+leolaniWorld:evidence_backing-up_it {
+    leolaniWorld:evidence ns1:backing_up leolaniWorld:it .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Auschwitz a gaf:Instance ;
+        rdfs:label "auschwitz" ;
+        gaf:denotedIn leolaniTalk:chat1654_utterance2_char0-81 .
+
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1654_utterance2_char0-81 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:deny a gaf:Instance ;
+        rdfs:label "deny" ;
+        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
+
+    leolaniWorld:evidence a gaf:Instance ;
+        rdfs:label "evidence" ;
+        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:much_evidence a gaf:Instance ;
+        rdfs:label "much-evidence" ;
+        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
+
+    leolaniWorld:something a gaf:Instance ;
+        rdfs:label "something" ;
+        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
+
+    leolaniWorld:to_deny a gaf:Instance ;
+        rdfs:label "to-deny" ;
+        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1654_utterance1_char0-210 .
 }
 

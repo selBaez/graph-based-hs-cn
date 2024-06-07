@@ -22,31 +22,66 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:we_stopped_migrants {
-    leolaniWorld:we ns11:stopped leolaniWorld:migrants .
+leolaniTalk:Interactions {
+    leolaniContext:context188 a eps:Context ;
+        rdfs:label "context188" ;
+        hs:id "188"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1877 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "205"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1877 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1877" ;
+        hs:id "1877"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1877_utterance0 .
+
+    leolaniTalk:chat1877_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1877_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:our_financial_situation_could_could_have_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "our_financial_situation_could_could_have_better" ;
-        gaf:denotedBy leolaniTalk:chat1877_utterance0_char0-71 .
-
-    leolaniWorld:our_situation_could_could_have_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "our_situation_could_could_have_better" ;
-        gaf:denotedBy leolaniTalk:chat1877_utterance0_char0-71 .
-
-    leolaniWorld:we_stopped_migrants a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_stopped_migrants" ;
-        gaf:denotedBy leolaniTalk:chat1877_utterance0_char0-71 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:we_stopped_migrants {
+    leolaniWorld:we ns11:stopped leolaniWorld:migrants .
 }
 
 leolaniTalk:Perspectives {
@@ -104,47 +139,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:could_have_better a gaf:Instance ;
-        rdfs:label "could-have-better" ;
-        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
-
-    leolaniWorld:our_financial_situation a gaf:Instance ;
-        rdfs:label "our-financial-situation" ;
-        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
-
-    leolaniWorld:our_situation a gaf:Instance ;
-        rdfs:label "our-situation" ;
-        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
-}
-
-leolaniWorld:our_situation_could_could_have_better {
-    leolaniWorld:our_situation ns11:could leolaniWorld:could_have_better .
-}
-
-leolaniWorld:our_financial_situation_could_could_have_better {
-    leolaniWorld:our_financial_situation ns11:could leolaniWorld:could_have_better .
 }
 
 leolaniWorld:Ontology {
@@ -482,57 +476,63 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context188 a eps:Context ;
-        rdfs:label "context188" ;
-        hs:id "188"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1877 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "205"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1877 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1877" ;
-        hs:id "1877"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1877_utterance0 .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat1877_utterance0 a grasp:Utterance,
+    leolaniWorld:our_financial_situation_could_could_have_better a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1877_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "our_financial_situation_could_could_have_better" ;
+        gaf:denotedBy leolaniTalk:chat1877_utterance0_char0-71 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:our_situation_could_could_have_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "our_situation_could_could_have_better" ;
+        gaf:denotedBy leolaniTalk:chat1877_utterance0_char0-71 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:we_stopped_migrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_stopped_migrants" ;
+        gaf:denotedBy leolaniTalk:chat1877_utterance0_char0-71 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:our_financial_situation_could_could_have_better {
+    leolaniWorld:our_financial_situation ns11:could leolaniWorld:could_have_better .
+}
+
+leolaniWorld:our_situation_could_could_have_better {
+    leolaniWorld:our_situation ns11:could leolaniWorld:could_have_better .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:could_have_better a gaf:Instance ;
+        rdfs:label "could-have-better" ;
+        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
+
+    leolaniWorld:our_financial_situation a gaf:Instance ;
+        rdfs:label "our-financial-situation" ;
+        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
+
+    leolaniWorld:our_situation a gaf:Instance ;
+        rdfs:label "our-situation" ;
+        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1877_utterance0_char0-71 .
 }
 

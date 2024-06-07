@@ -22,8 +22,83 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Women_are-bad-for_economy {
-    leolaniWorld:Women ns1:are_bad_for leolaniWorld:economy .
+leolaniWorld:world_is_why_filled {
+    leolaniWorld:world ns1:is leolaniWorld:why_filled .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context119 a eps:Context ;
+        rdfs:label "context119" ;
+        hs:id "119"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1201 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "122"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1201 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1201" ;
+        hs:id "1201"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1201_utterance0,
+            leolaniTalk:chat1201_utterance1 .
+
+    leolaniTalk:chat1201_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1201_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1201_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1201_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:world_is-filled-with_problems {
+    leolaniWorld:world ns1:is_filled_with leolaniWorld:problems .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:world_is_why_filled_with_problems {
@@ -34,65 +109,8 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:world_is-filled-with_problems {
-    leolaniWorld:world ns1:is_filled_with leolaniWorld:problems .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Women_are-bad-for_economy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are-bad-for_economy" ;
-        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:Women_are_bad a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_bad" ;
-        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:women_are-disadvantaged-in_many_areas_of_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_are-disadvantaged-in_many_areas_of_life" ;
-        gaf:denotedBy leolaniTalk:chat1201_utterance1_char0-100 .
-
-    leolaniWorld:world_is-filled-with_problems a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "world_is-filled-with_problems" ;
-        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:world_is_filled a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "world_is_filled" ;
-        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:world_is_why_filled a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "world_is_why_filled" ;
-        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:world_is_why_filled_with_problems a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "world_is_why_filled_with_problems" ;
-        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Women_are_bad {
-    leolaniWorld:Women ns1:are leolaniWorld:bad .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:women_are-disadvantaged-in_many_areas_of_life {
+    leolaniWorld:women ns1:are_disadvantaged_in leolaniWorld:many_areas_of_life .
 }
 
 leolaniTalk:Perspectives {
@@ -206,63 +224,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:bad a gaf:Instance ;
-        rdfs:label "bad" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:economy a gaf:Instance ;
-        rdfs:label "economy" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:filled a gaf:Instance ;
-        rdfs:label "filled" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_areas_of_life a gaf:Instance ;
-        rdfs:label "many-areas-of-life" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance1_char0-100 .
-
-    leolaniWorld:problems a gaf:Instance ;
-        rdfs:label "problems" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:why_filled a gaf:Instance ;
-        rdfs:label "why-filled" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:why_filled_with_problems a gaf:Instance ;
-        rdfs:label "why-filled-with-problems" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance1_char0-100 .
-
-    leolaniWorld:world a gaf:Instance ;
-        rdfs:label "world" ;
-        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
-}
-
-leolaniWorld:world_is_why_filled {
-    leolaniWorld:world ns1:is leolaniWorld:why_filled .
 }
 
 leolaniWorld:Ontology {
@@ -600,78 +561,117 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:women_are-disadvantaged-in_many_areas_of_life {
-    leolaniWorld:women ns1:are_disadvantaged_in leolaniWorld:many_areas_of_life .
+leolaniWorld:Women_are_bad {
+    leolaniWorld:Women ns1:are leolaniWorld:bad .
+}
+
+leolaniWorld:Women_are-bad-for_economy {
+    leolaniWorld:Women ns1:are_bad_for leolaniWorld:economy .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Women_are-bad-for_economy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are-bad-for_economy" ;
+        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:Women_are_bad a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are_bad" ;
+        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:women_are-disadvantaged-in_many_areas_of_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_are-disadvantaged-in_many_areas_of_life" ;
+        gaf:denotedBy leolaniTalk:chat1201_utterance1_char0-100 .
+
+    leolaniWorld:world_is-filled-with_problems a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_is-filled-with_problems" ;
+        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:world_is_filled a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_is_filled" ;
+        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:world_is_why_filled a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_is_why_filled" ;
+        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:world_is_why_filled_with_problems a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_is_why_filled_with_problems" ;
+        gaf:denotedBy leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:world_is_filled {
     leolaniWorld:world ns1:is leolaniWorld:filled .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context119 a eps:Context ;
-        rdfs:label "context119" ;
-        hs:id "119"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1201 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "122"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1201 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1201" ;
-        hs:id "1201"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1201_utterance0,
-            leolaniTalk:chat1201_utterance1 .
-
-    leolaniTalk:chat1201_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1201_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1201_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1201_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:bad a gaf:Instance ;
+        rdfs:label "bad" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:economy a gaf:Instance ;
+        rdfs:label "economy" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:filled a gaf:Instance ;
+        rdfs:label "filled" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_areas_of_life a gaf:Instance ;
+        rdfs:label "many-areas-of-life" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance1_char0-100 .
+
+    leolaniWorld:problems a gaf:Instance ;
+        rdfs:label "problems" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:why_filled a gaf:Instance ;
+        rdfs:label "why-filled" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:why_filled_with_problems a gaf:Instance ;
+        rdfs:label "why-filled-with-problems" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance1_char0-100 .
+
+    leolaniWorld:world a gaf:Instance ;
+        rdfs:label "world" ;
+        gaf:denotedIn leolaniTalk:chat1201_utterance0_char0-77 .
 }
 

@@ -22,64 +22,126 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:people_can-chose_their_own {
-    leolaniWorld:people ns1:can_chose leolaniWorld:their_own .
+leolaniWorld:Islam_is_religion {
+    leolaniWorld:Islam ns1:is leolaniWorld:religion .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context230 a eps:Context ;
+        rdfs:label "context230" ;
+        hs:id "230"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat799 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "172"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat799 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat799" ;
+        hs:id "799"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat799_utterance1 .
+
+    leolaniTalk:chat799_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat799_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Islam_is_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_religion" ;
-        gaf:denotedBy leolaniTalk:chat799_utterance1_char0-96 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:people_can-chose_their_own a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_can-chose_their_own" ;
-        gaf:denotedBy leolaniTalk:chat799_utterance1_char0-96 .
-
-    leolaniWorld:religion_can-chose_their_own a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "religion_can-chose_their_own" ;
-        gaf:denotedBy leolaniTalk:chat799_utterance1_char0-96 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:people_can-chose_their_own {
+    leolaniWorld:people ns1:can_chose leolaniWorld:their_own .
 }
 
-leolaniWorld:Islam_is_religion {
-    leolaniWorld:Islam ns1:is leolaniWorld:religion .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Islam_is_religion_00026 a grasp:Attribution ;
+        rdfs:label "Islam_is_religion_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat799_utterance1_char0-96 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat799_utterance1_char0-96 .
+    leolaniTalk:people_can-chose_their_own_00026 a grasp:Attribution ;
+        rdfs:label "people_can-chose_their_own_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat799_utterance1_char0-96 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:religion_can-chose_their_own_00026 a grasp:Attribution ;
+        rdfs:label "religion_can-chose_their_own_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat799_utterance1_char0-96 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat799_utterance1_char0-96 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat799_utterance1_char0-96" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:people,
+            leolaniWorld:religion,
+            leolaniWorld:their_own ;
+        gaf:denotes leolaniWorld:Islam_is_religion,
+            leolaniWorld:people_can-chose_their_own,
+            leolaniWorld:religion_can-chose_their_own ;
+        grasp:hasAttribution leolaniTalk:Islam_is_religion_00026,
+            leolaniTalk:people_can-chose_their_own_00026,
+            leolaniTalk:religion_can-chose_their_own_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:11:05.635003"^^xml1:string,
+            "2024-06-05T23:11:05.635063"^^xml1:string,
+            "2024-06-05T23:11:05.636181"^^xml1:string ;
+        rdf:value "How come I have never heard of such a thing? Islam is a religion and people can chose their own."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat799_utterance1 .
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat799_utterance1_char0-96 .
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
 
-    leolaniWorld:religion a gaf:Instance ;
-        rdfs:label "religion" ;
-        gaf:denotedIn leolaniTalk:chat799_utterance1_char0-96 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:their_own a gaf:Instance ;
-        rdfs:label "their-own" ;
-        gaf:denotedIn leolaniTalk:chat799_utterance1_char0-96 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -417,117 +479,55 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Islam_is_religion_00026 a grasp:Attribution ;
-        rdfs:label "Islam_is_religion_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat799_utterance1_char0-96 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_can-chose_their_own_00026 a grasp:Attribution ;
-        rdfs:label "people_can-chose_their_own_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat799_utterance1_char0-96 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:religion_can-chose_their_own_00026 a grasp:Attribution ;
-        rdfs:label "religion_can-chose_their_own_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat799_utterance1_char0-96 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat799_utterance1_char0-96 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat799_utterance1_char0-96" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:people,
-            leolaniWorld:religion,
-            leolaniWorld:their_own ;
-        gaf:denotes leolaniWorld:Islam_is_religion,
-            leolaniWorld:people_can-chose_their_own,
-            leolaniWorld:religion_can-chose_their_own ;
-        grasp:hasAttribution leolaniTalk:Islam_is_religion_00026,
-            leolaniTalk:people_can-chose_their_own_00026,
-            leolaniTalk:religion_can-chose_their_own_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:11:05.635003"^^xml1:string,
-            "2024-06-05T23:11:05.635063"^^xml1:string,
-            "2024-06-05T23:11:05.636181"^^xml1:string ;
-        rdf:value "How come I have never heard of such a thing? Islam is a religion and people can chose their own."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat799_utterance1 .
-
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
 leolaniWorld:religion_can-chose_their_own {
     leolaniWorld:religion ns1:can_chose leolaniWorld:their_own .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context230 a eps:Context ;
-        rdfs:label "context230" ;
-        hs:id "230"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat799 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "172"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat799 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Islam_is_religion a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat799" ;
-        hs:id "799"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat799_utterance1 .
+        rdfs:label "Islam_is_religion" ;
+        gaf:denotedBy leolaniTalk:chat799_utterance1_char0-96 .
 
-    leolaniTalk:chat799_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat799_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:people_can-chose_their_own a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_can-chose_their_own" ;
+        gaf:denotedBy leolaniTalk:chat799_utterance1_char0-96 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:religion_can-chose_their_own a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "religion_can-chose_their_own" ;
+        gaf:denotedBy leolaniTalk:chat799_utterance1_char0-96 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat799_utterance1_char0-96 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat799_utterance1_char0-96 .
+
+    leolaniWorld:religion a gaf:Instance ;
+        rdfs:label "religion" ;
+        gaf:denotedIn leolaniTalk:chat799_utterance1_char0-96 .
+
+    leolaniWorld:their_own a gaf:Instance ;
+        rdfs:label "their-own" ;
+        gaf:denotedIn leolaniTalk:chat799_utterance1_char0-96 .
 }
 

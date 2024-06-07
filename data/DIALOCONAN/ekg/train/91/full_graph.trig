@@ -22,82 +22,159 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:They_are_ill a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_ill" ;
-        gaf:denotedBy leolaniTalk:chat91_utterance0_char0-78 .
-
-    leolaniWorld:They_are_mentally_ill a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_mentally_ill" ;
-        gaf:denotedBy leolaniTalk:chat91_utterance0_char0-78 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_make-up_their_minds a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_make-up_their_minds" ;
-        gaf:denotedBy leolaniTalk:chat91_utterance1_char0-105 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:they_make-up_their_minds {
+    leolaniWorld:they ns1:make_up leolaniWorld:their_minds .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context68 a eps:Context ;
+        rdfs:label "context68" ;
+        hs:id "68"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:They_are_mentally_ill {
-    leolaniWorld:They ns1:are leolaniWorld:mentally_ill .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat91 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "201"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat91 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat91" ;
+        hs:id "91"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat91_utterance0,
+            leolaniTalk:chat91_utterance1 .
+
+    leolaniTalk:chat91_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat91_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat91_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat91_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:They_are_ill {
     leolaniWorld:They ns1:are leolaniWorld:ill .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat91_utterance0_char0-78 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:ill a gaf:Instance ;
-        rdfs:label "ill" ;
-        gaf:denotedIn leolaniTalk:chat91_utterance0_char0-78 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:mentally_ill a gaf:Instance ;
-        rdfs:label "mentally-ill" ;
-        gaf:denotedIn leolaniTalk:chat91_utterance0_char0-78 .
-
-    leolaniWorld:their_minds a gaf:Instance ;
-        rdfs:label "their-minds" ;
-        gaf:denotedIn leolaniTalk:chat91_utterance1_char0-105 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat91_utterance1_char0-105 .
+leolaniWorld:They_are_mentally_ill {
+    leolaniWorld:They ns1:are leolaniWorld:mentally_ill .
 }
 
-leolaniWorld:they_make-up_their_minds {
-    leolaniWorld:they ns1:make_up leolaniWorld:their_minds .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:They_are_ill_00027 a grasp:Attribution ;
+        rdfs:label "They_are_ill_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat91_utterance0_char0-78 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_mentally_ill_00027 a grasp:Attribution ;
+        rdfs:label "They_are_mentally_ill_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat91_utterance0_char0-78 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat91_utterance1_char0-105 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat91_utterance1_char0-105" ;
+        gaf:containsDenotation leolaniWorld:their_minds,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_make-up_their_minds ;
+        grasp:hasAttribution leolaniTalk:they_make-up_their_minds_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:10.258903"^^xml1:string ;
+        rdf:value "Why do they need to 'make up their minds'? Can't they just be attracted to whoever they are attracted to?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat91_utterance1 .
+
+    leolaniTalk:they_make-up_their_minds_00028 a grasp:Attribution ;
+        rdfs:label "they_make-up_their_minds_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat91_utterance1_char0-105 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat91_utterance0_char0-78 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat91_utterance0_char0-78" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:ill,
+            leolaniWorld:mentally_ill ;
+        gaf:denotes leolaniWorld:They_are_ill,
+            leolaniWorld:They_are_mentally_ill ;
+        grasp:hasAttribution leolaniTalk:They_are_ill_00027,
+            leolaniTalk:They_are_mentally_ill_00027 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:10.162937"^^xml1:string,
+            "2024-06-05T23:09:10.163021"^^xml1:string ;
+        rdf:value "Bisexuals are confused, they can't make up their minds. They are mentally ill."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat91_utterance0 .
+
+    graspe:CONFUSION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CONFUSION" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -435,142 +512,65 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:They_are_ill a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_ill" ;
+        gaf:denotedBy leolaniTalk:chat91_utterance0_char0-78 .
+
+    leolaniWorld:They_are_mentally_ill a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_mentally_ill" ;
+        gaf:denotedBy leolaniTalk:chat91_utterance0_char0-78 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_make-up_their_minds a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_make-up_their_minds" ;
+        gaf:denotedBy leolaniTalk:chat91_utterance1_char0-105 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_are_ill_00027 a grasp:Attribution ;
-        rdfs:label "They_are_ill_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat91_utterance0_char0-78 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_mentally_ill_00027 a grasp:Attribution ;
-        rdfs:label "They_are_mentally_ill_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat91_utterance0_char0-78 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat91_utterance1_char0-105 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat91_utterance1_char0-105" ;
-        gaf:containsDenotation leolaniWorld:their_minds,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_make-up_their_minds ;
-        grasp:hasAttribution leolaniTalk:they_make-up_their_minds_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:10.258903"^^xml1:string ;
-        rdf:value "Why do they need to 'make up their minds'? Can't they just be attracted to whoever they are attracted to?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat91_utterance1 .
-
-    leolaniTalk:they_make-up_their_minds_00028 a grasp:Attribution ;
-        rdfs:label "they_make-up_their_minds_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat91_utterance1_char0-105 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat91_utterance0_char0-78 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat91_utterance0_char0-78" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:ill,
-            leolaniWorld:mentally_ill ;
-        gaf:denotes leolaniWorld:They_are_ill,
-            leolaniWorld:They_are_mentally_ill ;
-        grasp:hasAttribution leolaniTalk:They_are_ill_00027,
-            leolaniTalk:They_are_mentally_ill_00027 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:10.162937"^^xml1:string,
-            "2024-06-05T23:09:10.163021"^^xml1:string ;
-        rdf:value "Bisexuals are confused, they can't make up their minds. They are mentally ill."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat91_utterance0 .
-
-    graspe:CONFUSION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CONFUSION" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context68 a eps:Context ;
-        rdfs:label "context68" ;
-        hs:id "68"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat91 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "201"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat91 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat91" ;
-        hs:id "91"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat91_utterance0,
-            leolaniTalk:chat91_utterance1 .
-
-    leolaniTalk:chat91_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat91_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat91_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat91_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat91_utterance0_char0-78 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:ill a gaf:Instance ;
+        rdfs:label "ill" ;
+        gaf:denotedIn leolaniTalk:chat91_utterance0_char0-78 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:mentally_ill a gaf:Instance ;
+        rdfs:label "mentally-ill" ;
+        gaf:denotedIn leolaniTalk:chat91_utterance0_char0-78 .
+
+    leolaniWorld:their_minds a gaf:Instance ;
+        rdfs:label "their-minds" ;
+        gaf:denotedIn leolaniTalk:chat91_utterance1_char0-105 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat91_utterance1_char0-105 .
 }
 

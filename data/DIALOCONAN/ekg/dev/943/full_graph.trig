@@ -22,74 +22,110 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:women_employment_is-at_record_high {
+    leolaniWorld:women_employment ns1:is_at leolaniWorld:record_high .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context195 a eps:Context ;
+        rdfs:label "context195" ;
+        hs:id "195"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat943 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "122"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat943 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat943" ;
+        hs:id "943"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat943_utterance0,
+            leolaniTalk:chat943_utterance1,
+            leolaniTalk:chat943_utterance2 .
+
+    leolaniTalk:chat943_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat943_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat943_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat943_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat943_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat943_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:Women_need_to_have {
     leolaniWorld:Women ns1:need leolaniWorld:to_have .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Women_are_incompetent a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_are_incompetent" ;
-        gaf:denotedBy leolaniTalk:chat943_utterance0_char0-41 .
-
-    leolaniWorld:Women_have_children a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_have_children" ;
-        gaf:denotedBy leolaniTalk:chat943_utterance2_char0-99 .
-
-    leolaniWorld:Women_need_have a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_need_have" ;
-        gaf:denotedBy leolaniTalk:chat943_utterance2_char0-99 .
-
-    leolaniWorld:Women_need_to_have a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_need_to_have" ;
-        gaf:denotedBy leolaniTalk:chat943_utterance2_char0-99 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:women_employment_is-at_currently_record_high a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_employment_is-at_currently_record_high" ;
-        gaf:denotedBy leolaniTalk:chat943_utterance1_char0-107 .
-
-    leolaniWorld:women_employment_is-at_currently_record_high_of_72.4__ a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_employment_is-at_currently_record_high_of_72.4__" ;
-        gaf:denotedBy leolaniTalk:chat943_utterance1_char0-107 .
-
-    leolaniWorld:women_employment_is-at_record_high a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_employment_is-at_record_high" ;
-        gaf:denotedBy leolaniTalk:chat943_utterance1_char0-107 .
-
-    leolaniWorld:women_employment_is-at_record_high_of_72.4__ a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_employment_is-at_record_high_of_72.4__" ;
-        gaf:denotedBy leolaniTalk:chat943_utterance1_char0-107 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:women_employment_is-at_currently_record_high_of_72.4__ {
-    leolaniWorld:women_employment ns1:is_at leolaniWorld:currently_record_high_of_72.4__ .
-}
-
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:Women_need_have {
+    leolaniWorld:Women ns1:need leolaniWorld:have .
+}
+
+leolaniWorld:women_employment_is-at_currently_record_high {
+    leolaniWorld:women_employment ns1:is_at leolaniWorld:currently_record_high .
+}
+
+leolaniWorld:Women_have_children {
+    leolaniWorld:Women ns1:have leolaniWorld:children .
+}
+
+leolaniWorld:women_employment_is-at_record_high_of_72.4__ {
+    leolaniWorld:women_employment ns1:is_at leolaniWorld:record_high_of_72.4__ .
 }
 
 leolaniTalk:Perspectives {
@@ -223,82 +259,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Women_are_incompetent {
-    leolaniWorld:Women ns1:are leolaniWorld:incompetent .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance0_char0-41,
-            leolaniTalk:chat943_utterance2_char0-99 .
-
-    leolaniWorld:children a gaf:Instance ;
-        rdfs:label "children" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance2_char0-99 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:currently_record_high a gaf:Instance ;
-        rdfs:label "currently-record-high" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
-
-    leolaniWorld:currently_record_high_of_72.4__ a gaf:Instance ;
-        rdfs:label "currently-record-high-of-72-4" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
-
-    leolaniWorld:have a gaf:Instance ;
-        rdfs:label "have" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance2_char0-99 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:incompetent a gaf:Instance ;
-        rdfs:label "incompetent" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance0_char0-41 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:record_high a gaf:Instance ;
-        rdfs:label "record-high" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
-
-    leolaniWorld:record_high_of_72.4__ a gaf:Instance ;
-        rdfs:label "record-high-of-72-4" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
-
-    leolaniWorld:to_have a gaf:Instance ;
-        rdfs:label "to-have" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance2_char0-99 .
-
-    leolaniWorld:women_employment a gaf:Instance ;
-        rdfs:label "women-employment" ;
-        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
-}
-
-leolaniWorld:women_employment_is-at_record_high_of_72.4__ {
-    leolaniWorld:women_employment ns1:is_at leolaniWorld:record_high_of_72.4__ .
-}
-
-leolaniWorld:Women_need_have {
-    leolaniWorld:Women ns1:need leolaniWorld:have .
-}
-
-leolaniWorld:Women_have_children {
-    leolaniWorld:Women ns1:have leolaniWorld:children .
-}
-
-leolaniWorld:women_employment_is-at_record_high {
-    leolaniWorld:women_employment ns1:is_at leolaniWorld:record_high .
-}
-
-leolaniWorld:women_employment_is-at_currently_record_high {
-    leolaniWorld:women_employment ns1:is_at leolaniWorld:currently_record_high .
+leolaniWorld:women_employment_is-at_currently_record_high_of_72.4__ {
+    leolaniWorld:women_employment ns1:is_at leolaniWorld:currently_record_high_of_72.4__ .
 }
 
 leolaniWorld:Ontology {
@@ -636,77 +598,115 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context195 a eps:Context ;
-        rdfs:label "context195" ;
-        hs:id "195"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat943 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "122"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat943 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Women_are_incompetent a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat943" ;
-        hs:id "943"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat943_utterance0,
-            leolaniTalk:chat943_utterance1,
-            leolaniTalk:chat943_utterance2 .
+        rdfs:label "Women_are_incompetent" ;
+        gaf:denotedBy leolaniTalk:chat943_utterance0_char0-41 .
 
-    leolaniTalk:chat943_utterance0 a grasp:Utterance,
+    leolaniWorld:Women_have_children a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat943_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Women_have_children" ;
+        gaf:denotedBy leolaniTalk:chat943_utterance2_char0-99 .
 
-    leolaniTalk:chat943_utterance1 a grasp:Utterance,
+    leolaniWorld:Women_need_have a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat943_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Women_need_have" ;
+        gaf:denotedBy leolaniTalk:chat943_utterance2_char0-99 .
 
-    leolaniTalk:chat943_utterance2 a grasp:Utterance,
+    leolaniWorld:Women_need_to_have a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat943_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Women_need_to_have" ;
+        gaf:denotedBy leolaniTalk:chat943_utterance2_char0-99 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:women_employment_is-at_currently_record_high a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_employment_is-at_currently_record_high" ;
+        gaf:denotedBy leolaniTalk:chat943_utterance1_char0-107 .
+
+    leolaniWorld:women_employment_is-at_currently_record_high_of_72.4__ a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_employment_is-at_currently_record_high_of_72.4__" ;
+        gaf:denotedBy leolaniTalk:chat943_utterance1_char0-107 .
+
+    leolaniWorld:women_employment_is-at_record_high a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_employment_is-at_record_high" ;
+        gaf:denotedBy leolaniTalk:chat943_utterance1_char0-107 .
+
+    leolaniWorld:women_employment_is-at_record_high_of_72.4__ a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_employment_is-at_record_high_of_72.4__" ;
+        gaf:denotedBy leolaniTalk:chat943_utterance1_char0-107 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Women_are_incompetent {
+    leolaniWorld:Women ns1:are leolaniWorld:incompetent .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance0_char0-41,
+            leolaniTalk:chat943_utterance2_char0-99 .
+
+    leolaniWorld:children a gaf:Instance ;
+        rdfs:label "children" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance2_char0-99 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:currently_record_high a gaf:Instance ;
+        rdfs:label "currently-record-high" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
+
+    leolaniWorld:currently_record_high_of_72.4__ a gaf:Instance ;
+        rdfs:label "currently-record-high-of-72-4" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
+
+    leolaniWorld:have a gaf:Instance ;
+        rdfs:label "have" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance2_char0-99 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:incompetent a gaf:Instance ;
+        rdfs:label "incompetent" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance0_char0-41 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:record_high a gaf:Instance ;
+        rdfs:label "record-high" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
+
+    leolaniWorld:record_high_of_72.4__ a gaf:Instance ;
+        rdfs:label "record-high-of-72-4" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
+
+    leolaniWorld:to_have a gaf:Instance ;
+        rdfs:label "to-have" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance2_char0-99 .
+
+    leolaniWorld:women_employment a gaf:Instance ;
+        rdfs:label "women-employment" ;
+        gaf:denotedIn leolaniTalk:chat943_utterance1_char0-107 .
 }
 

@@ -24,90 +24,152 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    ns12:d_ashamed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_d_'d_ashamed" ;
-        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
+ns12:d_ashamed {
+    leolaniWorld:I ns21:d <http://cltl.nl/leolani/world/'d_ashamed> .
+}
 
-    ns12:d_ashamed_of_backwardness a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_d_'d_ashamed_of_backwardness" ;
-        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
+leolaniTalk:Interactions {
+    leolaniContext:context158 a eps:Context ;
+        rdfs:label "context158" ;
+        hs:id "158"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    ns12:d_ashamed_of_backwardness_of_my_culture a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_d_'d_ashamed_of_backwardness_of_my_culture" ;
-        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1435 .
 
-    leolaniWorld:I_were_If_Muslim a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_were_If_Muslim" ;
-        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:I_were_Muslim a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_were_Muslim" ;
-        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "83"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat1435 a grasp:Chat,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat1435" ;
+        hs:id "1435"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1435_utterance0 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat1435_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1435_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 ns12:d_ashamed_of_backwardness_of_my_culture {
     leolaniWorld:I ns21:d <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness_of_my_culture> .
 }
 
-ns12:d_ashamed {
-    leolaniWorld:I ns21:d <http://cltl.nl/leolani/world/'d_ashamed> .
-}
-
-leolaniWorld:Instances {
-    <http://cltl.nl/leolani/world/'d_ashamed> a gaf:Instance ;
-        rdfs:label "d-ashamed" ;
-        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
-
-    <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness> a gaf:Instance ;
-        rdfs:label "d-ashamed-of-backwardness" ;
-        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
-
-    <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness_of_my_culture> a gaf:Instance ;
-        rdfs:label "d-ashamed-of-backwardness-of-my-culture" ;
-        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
-
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
-
-    leolaniWorld:If_Muslim a gaf:Instance ;
-        rdfs:label "if-muslim" ;
-        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
-
-    leolaniWorld:Muslim a gaf:Instance ;
-        rdfs:label "muslim" ;
-        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-}
-
-ns12:d_ashamed_of_backwardness {
-    leolaniWorld:I ns21:d <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness> .
-}
-
 leolaniWorld:I_were_Muslim {
     leolaniWorld:I ns11:were leolaniWorld:Muslim .
 }
 
-leolaniWorld:I_were_If_Muslim {
-    leolaniWorld:I ns11:were leolaniWorld:If_Muslim .
+leolaniTalk:Perspectives {
+    <http://cltl.nl/leolani/talk/I_d_'d_ashamed_00016> a grasp:Attribution ;
+        rdfs:label "I_d_'d_ashamed_00016" ;
+        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
+        rdf:value graspe:EMBARRASSMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/I_d_'d_ashamed_of_backwardness_00016> a grasp:Attribution ;
+        rdfs:label "I_d_'d_ashamed_of_backwardness_00016" ;
+        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
+        rdf:value graspe:EMBARRASSMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/I_d_'d_ashamed_of_backwardness_of_my_culture_00016> a grasp:Attribution ;
+        rdfs:label "I_d_'d_ashamed_of_backwardness_of_my_culture_00016" ;
+        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
+        rdf:value graspe:EMBARRASSMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_were_If_Muslim_00016 a grasp:Attribution ;
+        rdfs:label "I_were_If_Muslim_00016" ;
+        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
+        rdf:value graspe:EMBARRASSMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_were_Muslim_00016 a grasp:Attribution ;
+        rdfs:label "I_were_Muslim_00016" ;
+        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
+        rdf:value graspe:EMBARRASSMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1435_utterance0_char0-122 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1435_utterance0_char0-122" ;
+        gaf:containsDenotation <http://cltl.nl/leolani/world/'d_ashamed>,
+            <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness>,
+            <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness_of_my_culture>,
+            leolaniWorld:I,
+            leolaniWorld:If_Muslim,
+            leolaniWorld:Muslim ;
+        gaf:denotes ns12:d_ashamed,
+            ns12:d_ashamed_of_backwardness,
+            ns12:d_ashamed_of_backwardness_of_my_culture,
+            leolaniWorld:I_were_If_Muslim,
+            leolaniWorld:I_were_Muslim ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/I_d_'d_ashamed_00016>,
+            <http://cltl.nl/leolani/talk/I_d_'d_ashamed_of_backwardness_00016>,
+            <http://cltl.nl/leolani/talk/I_d_'d_ashamed_of_backwardness_of_my_culture_00016>,
+            leolaniTalk:I_were_If_Muslim_00016,
+            leolaniTalk:I_were_Muslim_00016 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:52.133335"^^xml1:string,
+            "2024-06-05T23:02:52.133390"^^xml1:string,
+            "2024-06-05T23:02:52.133414"^^xml1:string,
+            "2024-06-05T23:02:52.133434"^^xml1:string,
+            "2024-06-05T23:02:52.133455"^^xml1:string ;
+        rdf:value "If I were a Muslim I'd be ashamed of the backwardness of my culture. They should understand they don't deserve our rights."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1435_utterance0 .
+
+    graspe:EMBARRASSMENT a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "EMBARRASSMENT" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -445,139 +507,77 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+ns12:d_ashamed_of_backwardness {
+    leolaniWorld:I ns21:d <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness> .
 }
 
-leolaniTalk:Perspectives {
-    <http://cltl.nl/leolani/talk/I_d_'d_ashamed_00016> a grasp:Attribution ;
-        rdfs:label "I_d_'d_ashamed_00016" ;
-        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
-        rdf:value graspe:EMBARRASSMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    ns12:d_ashamed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_d_'d_ashamed" ;
+        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
 
-    <http://cltl.nl/leolani/talk/I_d_'d_ashamed_of_backwardness_00016> a grasp:Attribution ;
-        rdfs:label "I_d_'d_ashamed_of_backwardness_00016" ;
-        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
-        rdf:value graspe:EMBARRASSMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    ns12:d_ashamed_of_backwardness a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_d_'d_ashamed_of_backwardness" ;
+        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
 
-    <http://cltl.nl/leolani/talk/I_d_'d_ashamed_of_backwardness_of_my_culture_00016> a grasp:Attribution ;
-        rdfs:label "I_d_'d_ashamed_of_backwardness_of_my_culture_00016" ;
-        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
-        rdf:value graspe:EMBARRASSMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    ns12:d_ashamed_of_backwardness_of_my_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_d_'d_ashamed_of_backwardness_of_my_culture" ;
+        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
 
-    leolaniTalk:I_were_If_Muslim_00016 a grasp:Attribution ;
-        rdfs:label "I_were_If_Muslim_00016" ;
-        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
-        rdf:value graspe:EMBARRASSMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:I_were_If_Muslim a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_were_If_Muslim" ;
+        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
 
-    leolaniTalk:I_were_Muslim_00016 a grasp:Attribution ;
-        rdfs:label "I_were_Muslim_00016" ;
-        grasp:isAttributionFor leolaniTalk:chat1435_utterance0_char0-122 ;
-        rdf:value graspe:EMBARRASSMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:I_were_Muslim a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_were_Muslim" ;
+        gaf:denotedBy leolaniTalk:chat1435_utterance0_char0-122 .
 
-    leolaniTalk:chat1435_utterance0_char0-122 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1435_utterance0_char0-122" ;
-        gaf:containsDenotation <http://cltl.nl/leolani/world/'d_ashamed>,
-            <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness>,
-            <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness_of_my_culture>,
-            leolaniWorld:I,
-            leolaniWorld:If_Muslim,
-            leolaniWorld:Muslim ;
-        gaf:denotes ns12:d_ashamed,
-            ns12:d_ashamed_of_backwardness,
-            ns12:d_ashamed_of_backwardness_of_my_culture,
-            leolaniWorld:I_were_If_Muslim,
-            leolaniWorld:I_were_Muslim ;
-        grasp:hasAttribution <http://cltl.nl/leolani/talk/I_d_'d_ashamed_00016>,
-            <http://cltl.nl/leolani/talk/I_d_'d_ashamed_of_backwardness_00016>,
-            <http://cltl.nl/leolani/talk/I_d_'d_ashamed_of_backwardness_of_my_culture_00016>,
-            leolaniTalk:I_were_If_Muslim_00016,
-            leolaniTalk:I_were_Muslim_00016 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:52.133335"^^xml1:string,
-            "2024-06-05T23:02:52.133390"^^xml1:string,
-            "2024-06-05T23:02:52.133414"^^xml1:string,
-            "2024-06-05T23:02:52.133434"^^xml1:string,
-            "2024-06-05T23:02:52.133455"^^xml1:string ;
-        rdf:value "If I were a Muslim I'd be ashamed of the backwardness of my culture. They should understand they don't deserve our rights."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1435_utterance0 .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    graspe:EMBARRASSMENT a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "EMBARRASSMENT" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context158 a eps:Context ;
-        rdfs:label "context158" ;
-        hs:id "158"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:I_were_If_Muslim {
+    leolaniWorld:I ns11:were leolaniWorld:If_Muslim .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1435 .
+leolaniWorld:Instances {
+    <http://cltl.nl/leolani/world/'d_ashamed> a gaf:Instance ;
+        rdfs:label "d-ashamed" ;
+        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness> a gaf:Instance ;
+        rdfs:label "d-ashamed-of-backwardness" ;
+        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "83"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    <http://cltl.nl/leolani/world/'d_ashamed_of_backwardness_of_my_culture> a gaf:Instance ;
+        rdfs:label "d-ashamed-of-backwardness-of-my-culture" ;
+        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
 
-    leolaniTalk:chat1435 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1435" ;
-        hs:id "1435"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1435_utterance0 .
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
 
-    leolaniTalk:chat1435_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1435_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+    leolaniWorld:If_Muslim a gaf:Instance ;
+        rdfs:label "if-muslim" ;
+        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Muslim a gaf:Instance ;
+        rdfs:label "muslim" ;
+        gaf:denotedIn leolaniTalk:chat1435_utterance0_char0-122 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 }
 

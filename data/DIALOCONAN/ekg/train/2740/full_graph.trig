@@ -22,121 +22,202 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Feminism_is-about_domination {
-    leolaniWorld:Feminism ns1:is_about leolaniWorld:domination .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context1 a eps:Context ;
+        rdfs:label "context1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:Feminism_is-about_domination a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2740 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "108"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2740 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Feminism_is-about_domination" ;
-        gaf:denotedBy leolaniTalk:chat2740_utterance0_char0-42 .
+        rdfs:label "chat2740" ;
+        hs:id "2740"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2740_utterance0,
+            leolaniTalk:chat2740_utterance1,
+            leolaniTalk:chat2740_utterance2 .
 
-    leolaniWorld:Feminism_is-about_domination_of_women a gaf:Assertion,
+    leolaniTalk:chat2740_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Feminism_is-about_domination_of_women" ;
-        gaf:denotedBy leolaniTalk:chat2740_utterance0_char0-42 .
+        rdfs:label "chat2740_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:It_is-about_equality a gaf:Assertion,
+    leolaniTalk:chat2740_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "It_is-about_equality" ;
-        gaf:denotedBy leolaniTalk:chat2740_utterance1_char0-67 .
+        rdfs:label "chat2740_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat2740_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2740_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:they_only-want_women a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_only-want_women" ;
-        gaf:denotedBy leolaniTalk:chat2740_utterance2_char0-69 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:they_want_women a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_women" ;
-        gaf:denotedBy leolaniTalk:chat2740_utterance2_char0-69 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:women_dominate_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_dominate_men" ;
-        gaf:denotedBy leolaniTalk:chat2740_utterance2_char0-69 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:they_only-want_women {
-    leolaniWorld:they ns1:only_want leolaniWorld:women .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Feminism_is-about_domination_of_women {
-    leolaniWorld:Feminism ns1:is_about leolaniWorld:domination_of_women .
-}
-
-leolaniWorld:they_want_women {
-    leolaniWorld:they ns1:want leolaniWorld:women .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:It_is-about_equality {
     leolaniWorld:It ns1:is_about leolaniWorld:equality .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Feminism a gaf:Instance ;
-        rdfs:label "feminism" ;
-        gaf:denotedIn leolaniTalk:chat2740_utterance0_char0-42 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2740_utterance1_char0-67 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:domination a gaf:Instance ;
-        rdfs:label "domination" ;
-        gaf:denotedIn leolaniTalk:chat2740_utterance0_char0-42 .
-
-    leolaniWorld:domination_of_women a gaf:Instance ;
-        rdfs:label "domination-of-women" ;
-        gaf:denotedIn leolaniTalk:chat2740_utterance0_char0-42 .
-
-    leolaniWorld:equality a gaf:Instance ;
-        rdfs:label "equality" ;
-        gaf:denotedIn leolaniTalk:chat2740_utterance1_char0-67 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat2740_utterance2_char0-69 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2740_utterance2_char0-69 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat2740_utterance2_char0-69 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:women_dominate_men {
     leolaniWorld:women ns1:dominate leolaniWorld:men .
+}
+
+leolaniWorld:they_want_women {
+    leolaniWorld:they ns1:want leolaniWorld:women .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Feminism_is-about_domination_00028 a grasp:Attribution ;
+        rdfs:label "Feminism_is-about_domination_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2740_utterance0_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Feminism_is-about_domination_of_women_00028 a grasp:Attribution ;
+        rdfs:label "Feminism_is-about_domination_of_women_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2740_utterance0_char0-42 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_is-about_equality_00028 a grasp:Attribution ;
+        rdfs:label "It_is-about_equality_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2740_utterance1_char0-67 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2740_utterance1_char0-67 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2740_utterance1_char0-67" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:equality ;
+        gaf:denotes leolaniWorld:It_is-about_equality ;
+        grasp:hasAttribution leolaniTalk:It_is-about_equality_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:24.211814"^^xml1:string ;
+        rdf:value "Feminism is not about the dominance of women. It is about equality."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2740_utterance1 .
+
+    leolaniTalk:they_only-want_women_00028 a grasp:Attribution ;
+        rdfs:label "they_only-want_women_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2740_utterance2_char0-69 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_women_00028 a grasp:Attribution ;
+        rdfs:label "they_want_women_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2740_utterance2_char0-69 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:women_dominate_men_00028 a grasp:Attribution ;
+        rdfs:label "women_dominate_men_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2740_utterance2_char0-69 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2740_utterance0_char0-42 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2740_utterance0_char0-42" ;
+        gaf:containsDenotation leolaniWorld:Feminism,
+            leolaniWorld:domination,
+            leolaniWorld:domination_of_women ;
+        gaf:denotes leolaniWorld:Feminism_is-about_domination,
+            leolaniWorld:Feminism_is-about_domination_of_women ;
+        grasp:hasAttribution leolaniTalk:Feminism_is-about_domination_00028,
+            leolaniTalk:Feminism_is-about_domination_of_women_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:24.133566"^^xml1:string,
+            "2024-06-05T23:07:24.133629"^^xml1:string ;
+        rdf:value "Feminism is about the domination of women."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2740_utterance0 .
+
+    leolaniTalk:chat2740_utterance2_char0-69 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2740_utterance2_char0-69" ;
+        gaf:containsDenotation leolaniWorld:men,
+            leolaniWorld:they,
+            leolaniWorld:women ;
+        gaf:denotes leolaniWorld:they_only-want_women,
+            leolaniWorld:they_want_women,
+            leolaniWorld:women_dominate_men ;
+        grasp:hasAttribution leolaniTalk:they_only-want_women_00028,
+            leolaniTalk:they_want_women_00028,
+            leolaniTalk:women_dominate_men_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:24.294281"^^xml1:string,
+            "2024-06-05T23:07:24.294339"^^xml1:string,
+            "2024-06-05T23:07:24.294362"^^xml1:string ;
+        rdf:value "They don't care about equality, they only want women to dominate men."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2740_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -474,185 +555,104 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Feminism_is-about_domination {
+    leolaniWorld:Feminism ns1:is_about leolaniWorld:domination .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Feminism_is-about_domination_00028 a grasp:Attribution ;
-        rdfs:label "Feminism_is-about_domination_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2740_utterance0_char0-42 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Feminism_is-about_domination a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminism_is-about_domination" ;
+        gaf:denotedBy leolaniTalk:chat2740_utterance0_char0-42 .
 
-    leolaniTalk:Feminism_is-about_domination_of_women_00028 a grasp:Attribution ;
-        rdfs:label "Feminism_is-about_domination_of_women_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2740_utterance0_char0-42 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Feminism_is-about_domination_of_women a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminism_is-about_domination_of_women" ;
+        gaf:denotedBy leolaniTalk:chat2740_utterance0_char0-42 .
 
-    leolaniTalk:It_is-about_equality_00028 a grasp:Attribution ;
-        rdfs:label "It_is-about_equality_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2740_utterance1_char0-67 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:It_is-about_equality a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_is-about_equality" ;
+        gaf:denotedBy leolaniTalk:chat2740_utterance1_char0-67 .
 
-    leolaniTalk:chat2740_utterance1_char0-67 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2740_utterance1_char0-67" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:equality ;
-        gaf:denotes leolaniWorld:It_is-about_equality ;
-        grasp:hasAttribution leolaniTalk:It_is-about_equality_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:24.211814"^^xml1:string ;
-        rdf:value "Feminism is not about the dominance of women. It is about equality."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2740_utterance1 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:they_only-want_women_00028 a grasp:Attribution ;
-        rdfs:label "they_only-want_women_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2740_utterance2_char0-69 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:they_want_women_00028 a grasp:Attribution ;
-        rdfs:label "they_want_women_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2740_utterance2_char0-69 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_only-want_women a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_only-want_women" ;
+        gaf:denotedBy leolaniTalk:chat2740_utterance2_char0-69 .
 
-    leolaniTalk:women_dominate_men_00028 a grasp:Attribution ;
-        rdfs:label "women_dominate_men_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2740_utterance2_char0-69 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_want_women a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_women" ;
+        gaf:denotedBy leolaniTalk:chat2740_utterance2_char0-69 .
 
-    leolaniTalk:chat2740_utterance0_char0-42 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2740_utterance0_char0-42" ;
-        gaf:containsDenotation leolaniWorld:Feminism,
-            leolaniWorld:domination,
-            leolaniWorld:domination_of_women ;
-        gaf:denotes leolaniWorld:Feminism_is-about_domination,
-            leolaniWorld:Feminism_is-about_domination_of_women ;
-        grasp:hasAttribution leolaniTalk:Feminism_is-about_domination_00028,
-            leolaniTalk:Feminism_is-about_domination_of_women_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:24.133566"^^xml1:string,
-            "2024-06-05T23:07:24.133629"^^xml1:string ;
-        rdf:value "Feminism is about the domination of women."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2740_utterance0 .
+    leolaniWorld:women_dominate_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_dominate_men" ;
+        gaf:denotedBy leolaniTalk:chat2740_utterance2_char0-69 .
 
-    leolaniTalk:chat2740_utterance2_char0-69 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2740_utterance2_char0-69" ;
-        gaf:containsDenotation leolaniWorld:men,
-            leolaniWorld:they,
-            leolaniWorld:women ;
-        gaf:denotes leolaniWorld:they_only-want_women,
-            leolaniWorld:they_want_women,
-            leolaniWorld:women_dominate_men ;
-        grasp:hasAttribution leolaniTalk:they_only-want_women_00028,
-            leolaniTalk:they_want_women_00028,
-            leolaniTalk:women_dominate_men_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:24.294281"^^xml1:string,
-            "2024-06-05T23:07:24.294339"^^xml1:string,
-            "2024-06-05T23:07:24.294362"^^xml1:string ;
-        rdf:value "They don't care about equality, they only want women to dominate men."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2740_utterance2 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context1 a eps:Context ;
-        rdfs:label "context1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Feminism_is-about_domination_of_women {
+    leolaniWorld:Feminism ns1:is_about leolaniWorld:domination_of_women .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2740 .
+leolaniWorld:they_only-want_women {
+    leolaniWorld:they ns1:only_want leolaniWorld:women .
+}
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+leolaniWorld:Instances {
+    leolaniWorld:Feminism a gaf:Instance ;
+        rdfs:label "feminism" ;
+        gaf:denotedIn leolaniTalk:chat2740_utterance0_char0-42 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "108"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2740 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2740" ;
-        hs:id "2740"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2740_utterance0,
-            leolaniTalk:chat2740_utterance1,
-            leolaniTalk:chat2740_utterance2 .
-
-    leolaniTalk:chat2740_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2740_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2740_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2740_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2740_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2740_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2740_utterance1_char0-67 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:domination a gaf:Instance ;
+        rdfs:label "domination" ;
+        gaf:denotedIn leolaniTalk:chat2740_utterance0_char0-42 .
+
+    leolaniWorld:domination_of_women a gaf:Instance ;
+        rdfs:label "domination-of-women" ;
+        gaf:denotedIn leolaniTalk:chat2740_utterance0_char0-42 .
+
+    leolaniWorld:equality a gaf:Instance ;
+        rdfs:label "equality" ;
+        gaf:denotedIn leolaniTalk:chat2740_utterance1_char0-67 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat2740_utterance2_char0-69 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2740_utterance2_char0-69 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat2740_utterance2_char0-69 .
 }
 

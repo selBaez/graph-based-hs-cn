@@ -22,42 +22,100 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context100 a eps:Context ;
+        rdfs:label "context100" ;
+        hs:id "100"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2316 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "77"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2316 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2316" ;
+        hs:id "2316"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2316_utterance3 .
+
+    leolaniTalk:chat2316_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2316_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Muslim_make_you_less_European a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslim_make_you_less_European" ;
-        gaf:denotedBy leolaniTalk:chat2316_utterance3_char0-68 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:Muslim_make_you_less_European {
     leolaniWorld:Muslim ns11:make leolaniWorld:you_less_European .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Muslim a gaf:Instance ;
-        rdfs:label "muslim" ;
-        gaf:denotedIn leolaniTalk:chat2316_utterance3_char0-68 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Muslim_make_you_less_European_00012 a grasp:Attribution ;
+        rdfs:label "Muslim_make_you_less_European_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat2316_utterance3_char0-68 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat2316_utterance3_char0-68 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2316_utterance3_char0-68" ;
+        gaf:containsDenotation leolaniWorld:Muslim,
+            leolaniWorld:you_less_European ;
+        gaf:denotes leolaniWorld:Muslim_make_you_less_European ;
+        grasp:hasAttribution leolaniTalk:Muslim_make_you_less_European_00012 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:07.703759"^^xml1:string ;
+        rdf:value "I'm sure that being a Muslim is not going to make you less European."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2316_utterance3 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
 
-    leolaniWorld:you_less_European a gaf:Instance ;
-        rdfs:label "you-less-european" ;
-        gaf:denotedIn leolaniTalk:chat2316_utterance3_char0-68 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -395,91 +453,33 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Muslim_make_you_less_European_00012 a grasp:Attribution ;
-        rdfs:label "Muslim_make_you_less_European_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat2316_utterance3_char0-68 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Muslim_make_you_less_European a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslim_make_you_less_European" ;
+        gaf:denotedBy leolaniTalk:chat2316_utterance3_char0-68 .
 
-    leolaniTalk:chat2316_utterance3_char0-68 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2316_utterance3_char0-68" ;
-        gaf:containsDenotation leolaniWorld:Muslim,
-            leolaniWorld:you_less_European ;
-        gaf:denotes leolaniWorld:Muslim_make_you_less_European ;
-        grasp:hasAttribution leolaniTalk:Muslim_make_you_less_European_00012 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:07.703759"^^xml1:string ;
-        rdf:value "I'm sure that being a Muslim is not going to make you less European."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2316_utterance3 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    graspe:APPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "APPROVAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context100 a eps:Context ;
-        rdfs:label "context100" ;
-        hs:id "100"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2316 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "77"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2316 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2316" ;
-        hs:id "2316"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2316_utterance3 .
-
-    leolaniTalk:chat2316_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2316_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Muslim a gaf:Instance ;
+        rdfs:label "muslim" ;
+        gaf:denotedIn leolaniTalk:chat2316_utterance3_char0-68 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:you_less_European a gaf:Instance ;
+        rdfs:label "you-less-european" ;
+        gaf:denotedIn leolaniTalk:chat2316_utterance3_char0-68 .
 }
 

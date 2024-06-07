@@ -56,7 +56,7 @@ def format_for_string_encoding(graph_data):
                 else:
                     temp_text += f"</s> <s> {el} "
 
-    return temp_text
+    return [temp_text]
 
 
 def format_adj_matrix(graph_data):

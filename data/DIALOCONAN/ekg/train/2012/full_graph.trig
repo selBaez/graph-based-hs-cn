@@ -22,166 +22,263 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Jews_have_own_interests {
-    leolaniWorld:Jews ns11:have leolaniWorld:own_interests .
+leolaniWorld:citizens_has_right {
+    leolaniWorld:citizens ns11:has leolaniWorld:right .
 }
 
 leolaniWorld:own_interests_is-in_US {
     leolaniWorld:own_interests ns11:is_in leolaniWorld:US .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_are_ones a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_ones" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance2_char0-73 .
-
-    leolaniWorld:Jews_are_only_ones a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are_only_ones" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance2_char0-73 .
-
-    leolaniWorld:Jews_have_interests a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_interests" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:Jews_have_interests_in_US a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_interests_in_US" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:Jews_have_own_interests a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_own_interests" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:Jews_have_own_interests_in_US a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_own_interests_in_US" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:Jews_have_will a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_will" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:citizens_has_right a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "citizens_has_right" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance1_char0-183 .
-
-    leolaniWorld:citizens_influence_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "citizens_influence_it" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance1_char0-183 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:own_interests_is-in_US a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "own_interests_is-in_US" ;
-        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Jews_are_ones {
+    leolaniWorld:Jews ns11:are leolaniWorld:ones .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context184 a eps:Context ;
+        rdfs:label "context184" ;
+        hs:id "184"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:citizens_has_right {
-    leolaniWorld:citizens ns11:has leolaniWorld:right .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2012 .
 
-leolaniWorld:Jews_have_interests_in_US {
-    leolaniWorld:Jews ns11:have leolaniWorld:interests_in_US .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "246"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2012 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2012" ;
+        hs:id "2012"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2012_utterance0,
+            leolaniTalk:chat2012_utterance1,
+            leolaniTalk:chat2012_utterance2 .
+
+    leolaniTalk:chat2012_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2012_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2012_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2012_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2012_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2012_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:citizens_influence_it {
     leolaniWorld:citizens ns11:influence leolaniWorld:it .
 }
 
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniWorld:Jews_have_own_interests_in_US {
     leolaniWorld:Jews ns11:have leolaniWorld:own_interests_in_US .
 }
 
-leolaniWorld:Jews_are_only_ones {
-    leolaniWorld:Jews ns11:are leolaniWorld:only_ones .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86,
-            leolaniTalk:chat2012_utterance2_char0-73 .
-
-    leolaniWorld:US a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:citizens a gaf:Instance ;
-        rdfs:label "citizens" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance1_char0-183 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:interests a gaf:Instance ;
-        rdfs:label "interests" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:interests_in_US a gaf:Instance ;
-        rdfs:label "interests-in-us" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance1_char0-183 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:ones a gaf:Instance ;
-        rdfs:label "ones" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance2_char0-73 .
-
-    leolaniWorld:only_ones a gaf:Instance ;
-        rdfs:label "only-ones" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance2_char0-73 .
-
-    leolaniWorld:own_interests a gaf:Instance ;
-        rdfs:label "own-interests" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:own_interests_in_US a gaf:Instance ;
-        rdfs:label "own-interests-in-us" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
-
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance1_char0-183 .
-
-    leolaniWorld:will a gaf:Instance ;
-        rdfs:label "will" ;
-        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
+leolaniWorld:Jews_have_interests_in_US {
+    leolaniWorld:Jews ns11:have leolaniWorld:interests_in_US .
 }
 
-leolaniWorld:Jews_are_ones {
-    leolaniWorld:Jews ns11:are leolaniWorld:ones .
+leolaniWorld:Jews_have_own_interests {
+    leolaniWorld:Jews ns11:have leolaniWorld:own_interests .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_are_ones_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_ones_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance2_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_are_only_ones_00028 a grasp:Attribution ;
+        rdfs:label "Jews_are_only_ones_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance2_char0-73 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_interests_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_interests_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_interests_in_US_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_interests_in_US_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_own_interests_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_own_interests_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_own_interests_in_US_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_own_interests_in_US_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_will_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_will_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:citizens_has_right_00028 a grasp:Attribution ;
+        rdfs:label "citizens_has_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance1_char0-183 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:citizens_influence_it_00028 a grasp:Attribution ;
+        rdfs:label "citizens_influence_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance1_char0-183 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:own_interests_is-in_US_00028 a grasp:Attribution ;
+        rdfs:label "own_interests_is-in_US_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2012_utterance1_char0-183 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2012_utterance1_char0-183" ;
+        gaf:containsDenotation leolaniWorld:citizens,
+            leolaniWorld:it,
+            leolaniWorld:right ;
+        gaf:denotes leolaniWorld:citizens_has_right,
+            leolaniWorld:citizens_influence_it ;
+        grasp:hasAttribution leolaniTalk:citizens_has_right_00028,
+            leolaniTalk:citizens_influence_it_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:36.790827"^^xml1:string,
+            "2024-06-05T23:07:36.790879"^^xml1:string ;
+        rdf:value "I don't understand why you say that only Jews want to influence the government in this complex, diverse and international world. Every citizens has the right and will to influence it."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2012_utterance1 .
+
+    leolaniTalk:chat2012_utterance2_char0-73 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2012_utterance2_char0-73" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:ones,
+            leolaniWorld:only_ones ;
+        gaf:denotes leolaniWorld:Jews_are_ones,
+            leolaniWorld:Jews_are_only_ones ;
+        grasp:hasAttribution leolaniTalk:Jews_are_ones_00028,
+            leolaniTalk:Jews_are_only_ones_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:36.869543"^^xml1:string,
+            "2024-06-05T23:07:36.869593"^^xml1:string ;
+        rdf:value "But Jews are the only ones that have a secret plot to take over the world"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2012_utterance2 .
+
+    leolaniTalk:chat2012_utterance0_char0-86 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2012_utterance0_char0-86" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:US,
+            leolaniWorld:interests,
+            leolaniWorld:interests_in_US,
+            leolaniWorld:own_interests,
+            leolaniWorld:own_interests_in_US,
+            leolaniWorld:will ;
+        gaf:denotes leolaniWorld:Jews_have_interests,
+            leolaniWorld:Jews_have_interests_in_US,
+            leolaniWorld:Jews_have_own_interests,
+            leolaniWorld:Jews_have_own_interests_in_US,
+            leolaniWorld:Jews_have_will,
+            leolaniWorld:own_interests_is-in_US ;
+        grasp:hasAttribution leolaniTalk:Jews_have_interests_00028,
+            leolaniTalk:Jews_have_interests_in_US_00028,
+            leolaniTalk:Jews_have_own_interests_00028,
+            leolaniTalk:Jews_have_own_interests_in_US_00028,
+            leolaniTalk:Jews_have_will_00028,
+            leolaniTalk:own_interests_is-in_US_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:36.691714"^^xml1:string,
+            "2024-06-05T23:07:36.691770"^^xml1:string,
+            "2024-06-05T23:07:36.691794"^^xml1:string,
+            "2024-06-05T23:07:36.691816"^^xml1:string,
+            "2024-06-05T23:07:36.691838"^^xml1:string,
+            "2024-06-05T23:07:36.691862"^^xml1:string ;
+        rdf:value "The Jews have \"own interests\" in the US, and have the will to influence our government"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2012_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Jews_have_will {
@@ -527,230 +624,133 @@ leolaniWorld:Jews_have_interests {
     leolaniWorld:Jews ns11:have leolaniWorld:interests .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_are_ones a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_ones" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance2_char0-73 .
+
+    leolaniWorld:Jews_are_only_ones a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are_only_ones" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance2_char0-73 .
+
+    leolaniWorld:Jews_have_interests a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_interests" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:Jews_have_interests_in_US a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_interests_in_US" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:Jews_have_own_interests a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_own_interests" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:Jews_have_own_interests_in_US a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_own_interests_in_US" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:Jews_have_will a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_will" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:citizens_has_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "citizens_has_right" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance1_char0-183 .
+
+    leolaniWorld:citizens_influence_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "citizens_influence_it" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance1_char0-183 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:own_interests_is-in_US a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "own_interests_is-in_US" ;
+        gaf:denotedBy leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_are_ones_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_ones_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance2_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_are_only_ones_00028 a grasp:Attribution ;
-        rdfs:label "Jews_are_only_ones_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance2_char0-73 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_have_interests_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_interests_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_have_interests_in_US_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_interests_in_US_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_have_own_interests_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_own_interests_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_have_own_interests_in_US_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_own_interests_in_US_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_have_will_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_will_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:citizens_has_right_00028 a grasp:Attribution ;
-        rdfs:label "citizens_has_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance1_char0-183 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:citizens_influence_it_00028 a grasp:Attribution ;
-        rdfs:label "citizens_influence_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance1_char0-183 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:own_interests_is-in_US_00028 a grasp:Attribution ;
-        rdfs:label "own_interests_is-in_US_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2012_utterance0_char0-86 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2012_utterance1_char0-183 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2012_utterance1_char0-183" ;
-        gaf:containsDenotation leolaniWorld:citizens,
-            leolaniWorld:it,
-            leolaniWorld:right ;
-        gaf:denotes leolaniWorld:citizens_has_right,
-            leolaniWorld:citizens_influence_it ;
-        grasp:hasAttribution leolaniTalk:citizens_has_right_00028,
-            leolaniTalk:citizens_influence_it_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:36.790827"^^xml1:string,
-            "2024-06-05T23:07:36.790879"^^xml1:string ;
-        rdf:value "I don't understand why you say that only Jews want to influence the government in this complex, diverse and international world. Every citizens has the right and will to influence it."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2012_utterance1 .
-
-    leolaniTalk:chat2012_utterance2_char0-73 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2012_utterance2_char0-73" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:ones,
-            leolaniWorld:only_ones ;
-        gaf:denotes leolaniWorld:Jews_are_ones,
-            leolaniWorld:Jews_are_only_ones ;
-        grasp:hasAttribution leolaniTalk:Jews_are_ones_00028,
-            leolaniTalk:Jews_are_only_ones_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:36.869543"^^xml1:string,
-            "2024-06-05T23:07:36.869593"^^xml1:string ;
-        rdf:value "But Jews are the only ones that have a secret plot to take over the world"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2012_utterance2 .
-
-    leolaniTalk:chat2012_utterance0_char0-86 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2012_utterance0_char0-86" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:US,
-            leolaniWorld:interests,
-            leolaniWorld:interests_in_US,
-            leolaniWorld:own_interests,
-            leolaniWorld:own_interests_in_US,
-            leolaniWorld:will ;
-        gaf:denotes leolaniWorld:Jews_have_interests,
-            leolaniWorld:Jews_have_interests_in_US,
-            leolaniWorld:Jews_have_own_interests,
-            leolaniWorld:Jews_have_own_interests_in_US,
-            leolaniWorld:Jews_have_will,
-            leolaniWorld:own_interests_is-in_US ;
-        grasp:hasAttribution leolaniTalk:Jews_have_interests_00028,
-            leolaniTalk:Jews_have_interests_in_US_00028,
-            leolaniTalk:Jews_have_own_interests_00028,
-            leolaniTalk:Jews_have_own_interests_in_US_00028,
-            leolaniTalk:Jews_have_will_00028,
-            leolaniTalk:own_interests_is-in_US_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:36.691714"^^xml1:string,
-            "2024-06-05T23:07:36.691770"^^xml1:string,
-            "2024-06-05T23:07:36.691794"^^xml1:string,
-            "2024-06-05T23:07:36.691816"^^xml1:string,
-            "2024-06-05T23:07:36.691838"^^xml1:string,
-            "2024-06-05T23:07:36.691862"^^xml1:string ;
-        rdf:value "The Jews have \"own interests\" in the US, and have the will to influence our government"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2012_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Jews_are_only_ones {
+    leolaniWorld:Jews ns11:are leolaniWorld:only_ones .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context184 a eps:Context ;
-        rdfs:label "context184" ;
-        hs:id "184"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86,
+            leolaniTalk:chat2012_utterance2_char0-73 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2012 .
+    leolaniWorld:US a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "246"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2012 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2012" ;
-        hs:id "2012"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2012_utterance0,
-            leolaniTalk:chat2012_utterance1,
-            leolaniTalk:chat2012_utterance2 .
-
-    leolaniTalk:chat2012_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2012_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2012_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2012_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2012_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2012_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:citizens a gaf:Instance ;
+        rdfs:label "citizens" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance1_char0-183 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:interests a gaf:Instance ;
+        rdfs:label "interests" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:interests_in_US a gaf:Instance ;
+        rdfs:label "interests-in-us" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance1_char0-183 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:ones a gaf:Instance ;
+        rdfs:label "ones" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance2_char0-73 .
+
+    leolaniWorld:only_ones a gaf:Instance ;
+        rdfs:label "only-ones" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance2_char0-73 .
+
+    leolaniWorld:own_interests a gaf:Instance ;
+        rdfs:label "own-interests" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:own_interests_in_US a gaf:Instance ;
+        rdfs:label "own-interests-in-us" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance1_char0-183 .
+
+    leolaniWorld:will a gaf:Instance ;
+        rdfs:label "will" ;
+        gaf:denotedIn leolaniTalk:chat2012_utterance0_char0-86 .
 }
 

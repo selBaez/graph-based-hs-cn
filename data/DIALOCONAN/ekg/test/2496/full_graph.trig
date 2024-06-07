@@ -22,6 +22,104 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:they_are_because_violent {
+    leolaniWorld:they ns1:are leolaniWorld:because_violent .
+}
+
+leolaniWorld:black_men_are-rapists_violent {
+    leolaniWorld:black_men ns1:are_rapists leolaniWorld:violent .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context85 a eps:Context ;
+        rdfs:label "context85" ;
+        hs:id "85"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2496 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "130"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2496 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2496" ;
+        hs:id "2496"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2496_utterance0,
+            leolaniTalk:chat2496_utterance1,
+            leolaniTalk:chat2496_utterance2 .
+
+    leolaniTalk:chat2496_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2496_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2496_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2496_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2496_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2496_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:they_are_violent {
+    leolaniWorld:they ns1:are leolaniWorld:violent .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:black_men_are-rapists_because_violent {
+    leolaniWorld:black_men ns1:are_rapists leolaniWorld:because_violent .
+}
+
 leolaniWorld:black_men_are_rapists {
     leolaniWorld:black_men ns1:are leolaniWorld:rapists .
 }
@@ -139,51 +237,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:because_violent a gaf:Instance ;
-        rdfs:label "because-violent" ;
-        gaf:denotedIn leolaniTalk:chat2496_utterance2_char0-68 .
-
-    leolaniWorld:black_men a gaf:Instance ;
-        rdfs:label "black-men" ;
-        gaf:denotedIn leolaniTalk:chat2496_utterance0_char0-26,
-            leolaniTalk:chat2496_utterance2_char0-68 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:ethnic_groups a gaf:Instance ;
-        rdfs:label "ethnic-groups" ;
-        gaf:denotedIn leolaniTalk:chat2496_utterance1_char0-81 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:rape a gaf:Instance ;
-        rdfs:label "rape" ;
-        gaf:denotedIn leolaniTalk:chat2496_utterance1_char0-81 .
-
-    leolaniWorld:rapists a gaf:Instance ;
-        rdfs:label "rapists" ;
-        gaf:denotedIn leolaniTalk:chat2496_utterance0_char0-26,
-            leolaniTalk:chat2496_utterance2_char0-68 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2496_utterance2_char0-68 .
-
-    leolaniWorld:violent a gaf:Instance ;
-        rdfs:label "violent" ;
-        gaf:denotedIn leolaniTalk:chat2496_utterance2_char0-68 .
-}
-
-leolaniWorld:black_men_are-rapists_violent {
-    leolaniWorld:black_men ns1:are_rapists leolaniWorld:violent .
+leolaniWorld:rape_happens-in_ethnic_groups {
+    leolaniWorld:rape ns1:happens_in leolaniWorld:ethnic_groups .
 }
 
 leolaniWorld:Ontology {
@@ -521,88 +576,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:black_men_are-rapists_because_violent {
-    leolaniWorld:black_men ns1:are_rapists leolaniWorld:because_violent .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context85 a eps:Context ;
-        rdfs:label "context85" ;
-        hs:id "85"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2496 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "130"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2496 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2496" ;
-        hs:id "2496"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2496_utterance0,
-            leolaniTalk:chat2496_utterance1,
-            leolaniTalk:chat2496_utterance2 .
-
-    leolaniTalk:chat2496_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2496_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2496_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2496_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2496_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2496_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:black_men_are-rapists_because_violent a gaf:Assertion,
             sem:Event ;
@@ -648,19 +621,46 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:they_are_violent {
-    leolaniWorld:they ns1:are leolaniWorld:violent .
-}
+leolaniWorld:Instances {
+    leolaniWorld:because_violent a gaf:Instance ;
+        rdfs:label "because-violent" ;
+        gaf:denotedIn leolaniTalk:chat2496_utterance2_char0-68 .
 
-leolaniWorld:rape_happens-in_ethnic_groups {
-    leolaniWorld:rape ns1:happens_in leolaniWorld:ethnic_groups .
-}
+    leolaniWorld:black_men a gaf:Instance ;
+        rdfs:label "black-men" ;
+        gaf:denotedIn leolaniTalk:chat2496_utterance0_char0-26,
+            leolaniTalk:chat2496_utterance2_char0-68 .
 
-leolaniWorld:they_are_because_violent {
-    leolaniWorld:they ns1:are leolaniWorld:because_violent .
-}
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:ethnic_groups a gaf:Instance ;
+        rdfs:label "ethnic-groups" ;
+        gaf:denotedIn leolaniTalk:chat2496_utterance1_char0-81 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:rape a gaf:Instance ;
+        rdfs:label "rape" ;
+        gaf:denotedIn leolaniTalk:chat2496_utterance1_char0-81 .
+
+    leolaniWorld:rapists a gaf:Instance ;
+        rdfs:label "rapists" ;
+        gaf:denotedIn leolaniTalk:chat2496_utterance0_char0-26,
+            leolaniTalk:chat2496_utterance2_char0-68 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2496_utterance2_char0-68 .
+
+    leolaniWorld:violent a gaf:Instance ;
+        rdfs:label "violent" ;
+        gaf:denotedIn leolaniTalk:chat2496_utterance2_char0-68 .
 }
 

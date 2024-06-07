@@ -22,72 +22,99 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:owners_profit-from_misinformation {
-    leolaniWorld:owners ns1:profit_from leolaniWorld:misinformation .
-}
-
 leolaniWorld:homosexuality_is_mental {
     leolaniWorld:homosexuality ns1:is leolaniWorld:mental .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:homosexuality_is_illness {
     leolaniWorld:homosexuality ns1:is leolaniWorld:illness .
 }
 
-leolaniWorld:homosexuality_is_mental_illness {
-    leolaniWorld:homosexuality ns1:is leolaniWorld:mental_illness .
+leolaniWorld:owners_profit-from_misinformation_about_homosexuality {
+    leolaniWorld:owners ns1:profit_from leolaniWorld:misinformation_about_homosexuality .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:homosexuality_is_illness a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context101 a eps:Context ;
+        rdfs:label "context101" ;
+        hs:id "101"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat501 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "242"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat501 a grasp:Chat,
             sem:Event ;
-        rdfs:label "homosexuality_is_illness" ;
-        gaf:denotedBy leolaniTalk:chat501_utterance0_char0-58 .
+        rdfs:label "chat501" ;
+        hs:id "501"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat501_utterance0,
+            leolaniTalk:chat501_utterance1 .
 
-    leolaniWorld:homosexuality_is_mental a gaf:Assertion,
+    leolaniTalk:chat501_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "homosexuality_is_mental" ;
-        gaf:denotedBy leolaniTalk:chat501_utterance0_char0-58 .
+        rdfs:label "chat501_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:homosexuality_is_mental_illness a gaf:Assertion,
+    leolaniTalk:chat501_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "homosexuality_is_mental_illness" ;
-        gaf:denotedBy leolaniTalk:chat501_utterance0_char0-58 .
+        rdfs:label "chat501_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:owners_are_likely a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "owners_are_likely" ;
-        gaf:denotedBy leolaniTalk:chat501_utterance1_char0-225 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:owners_profit-from_misinformation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "owners_profit-from_misinformation" ;
-        gaf:denotedBy leolaniTalk:chat501_utterance1_char0-225 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:owners_profit-from_misinformation_about_homosexuality a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "owners_profit-from_misinformation_about_homosexuality" ;
-        gaf:denotedBy leolaniTalk:chat501_utterance1_char0-225 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:owners_profit-from_misinformation {
+    leolaniWorld:owners ns1:profit_from leolaniWorld:misinformation .
 }
 
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:owners_are_likely {
+    leolaniWorld:owners ns1:are leolaniWorld:likely .
 }
 
 leolaniTalk:Perspectives {
@@ -187,57 +214,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:homosexuality a gaf:Instance ;
-        rdfs:label "homosexuality" ;
-        gaf:denotedIn leolaniTalk:chat501_utterance0_char0-58 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:illness a gaf:Instance ;
-        rdfs:label "illness" ;
-        gaf:denotedIn leolaniTalk:chat501_utterance0_char0-58 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:likely a gaf:Instance ;
-        rdfs:label "likely" ;
-        gaf:denotedIn leolaniTalk:chat501_utterance1_char0-225 .
-
-    leolaniWorld:mental a gaf:Instance ;
-        rdfs:label "mental" ;
-        gaf:denotedIn leolaniTalk:chat501_utterance0_char0-58 .
-
-    leolaniWorld:mental_illness a gaf:Instance ;
-        rdfs:label "mental-illness" ;
-        gaf:denotedIn leolaniTalk:chat501_utterance0_char0-58 .
-
-    leolaniWorld:misinformation a gaf:Instance ;
-        rdfs:label "misinformation" ;
-        gaf:denotedIn leolaniTalk:chat501_utterance1_char0-225 .
-
-    leolaniWorld:misinformation_about_homosexuality a gaf:Instance ;
-        rdfs:label "misinformation-about-homosexuality" ;
-        gaf:denotedIn leolaniTalk:chat501_utterance1_char0-225 .
-
-    leolaniWorld:owners a gaf:Instance ;
-        rdfs:label "owners" ;
-        gaf:denotedIn leolaniTalk:chat501_utterance1_char0-225 .
-}
-
-leolaniWorld:owners_profit-from_misinformation_about_homosexuality {
-    leolaniWorld:owners ns1:profit_from leolaniWorld:misinformation_about_homosexuality .
-}
-
-leolaniWorld:owners_are_likely {
-    leolaniWorld:owners ns1:are leolaniWorld:likely .
+leolaniWorld:homosexuality_is_mental_illness {
+    leolaniWorld:homosexuality ns1:is leolaniWorld:mental_illness .
 }
 
 leolaniWorld:Ontology {
@@ -575,70 +553,92 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context101 a eps:Context ;
-        rdfs:label "context101" ;
-        hs:id "101"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat501 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "242"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat501 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:homosexuality_is_illness a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat501" ;
-        hs:id "501"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat501_utterance0,
-            leolaniTalk:chat501_utterance1 .
+        rdfs:label "homosexuality_is_illness" ;
+        gaf:denotedBy leolaniTalk:chat501_utterance0_char0-58 .
 
-    leolaniTalk:chat501_utterance0 a grasp:Utterance,
+    leolaniWorld:homosexuality_is_mental a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat501_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "homosexuality_is_mental" ;
+        gaf:denotedBy leolaniTalk:chat501_utterance0_char0-58 .
 
-    leolaniTalk:chat501_utterance1 a grasp:Utterance,
+    leolaniWorld:homosexuality_is_mental_illness a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat501_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "homosexuality_is_mental_illness" ;
+        gaf:denotedBy leolaniTalk:chat501_utterance0_char0-58 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
+    leolaniWorld:owners_are_likely a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_are_likely" ;
+        gaf:denotedBy leolaniTalk:chat501_utterance1_char0-225 .
+
+    leolaniWorld:owners_profit-from_misinformation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_profit-from_misinformation" ;
+        gaf:denotedBy leolaniTalk:chat501_utterance1_char0-225 .
+
+    leolaniWorld:owners_profit-from_misinformation_about_homosexuality a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "owners_profit-from_misinformation_about_homosexuality" ;
+        gaf:denotedBy leolaniTalk:chat501_utterance1_char0-225 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:homosexuality a gaf:Instance ;
+        rdfs:label "homosexuality" ;
+        gaf:denotedIn leolaniTalk:chat501_utterance0_char0-58 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:illness a gaf:Instance ;
+        rdfs:label "illness" ;
+        gaf:denotedIn leolaniTalk:chat501_utterance0_char0-58 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:likely a gaf:Instance ;
+        rdfs:label "likely" ;
+        gaf:denotedIn leolaniTalk:chat501_utterance1_char0-225 .
+
+    leolaniWorld:mental a gaf:Instance ;
+        rdfs:label "mental" ;
+        gaf:denotedIn leolaniTalk:chat501_utterance0_char0-58 .
+
+    leolaniWorld:mental_illness a gaf:Instance ;
+        rdfs:label "mental-illness" ;
+        gaf:denotedIn leolaniTalk:chat501_utterance0_char0-58 .
+
+    leolaniWorld:misinformation a gaf:Instance ;
+        rdfs:label "misinformation" ;
+        gaf:denotedIn leolaniTalk:chat501_utterance1_char0-225 .
+
+    leolaniWorld:misinformation_about_homosexuality a gaf:Instance ;
+        rdfs:label "misinformation-about-homosexuality" ;
+        gaf:denotedIn leolaniTalk:chat501_utterance1_char0-225 .
+
+    leolaniWorld:owners a gaf:Instance ;
+        rdfs:label "owners" ;
+        gaf:denotedIn leolaniTalk:chat501_utterance1_char0-225 .
 }
 

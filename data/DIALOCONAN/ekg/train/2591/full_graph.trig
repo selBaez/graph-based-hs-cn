@@ -22,98 +22,168 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_can_can_bribed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_can_can_bribed" ;
-        gaf:denotedBy leolaniTalk:chat2591_utterance0_char0-61 .
+leolaniWorld:this_is-called_bribery {
+    leolaniWorld:this ns1:is_called leolaniWorld:bribery .
+}
 
-    leolaniWorld:Jews_can_can_bribed_with_money a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_can_can_bribed_with_money" ;
-        gaf:denotedBy leolaniTalk:chat2591_utterance0_char0-61 .
+leolaniTalk:Interactions {
+    leolaniContext:context138 a eps:Context ;
+        rdfs:label "context138" ;
+        hs:id "138"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Jews_can_can_bribed_with_public_money a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_can_can_bribed_with_public_money" ;
-        gaf:denotedBy leolaniTalk:chat2591_utterance0_char0-61 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2591 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:they_have_have_corrupted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_have_have_corrupted" ;
-        gaf:denotedBy leolaniTalk:chat2591_utterance2_char0-82 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "222"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:this_is-called_bribery a gaf:Assertion,
+    leolaniTalk:chat2591 a grasp:Chat,
             sem:Event ;
-        rdfs:label "this_is-called_bribery" ;
-        gaf:denotedBy leolaniTalk:chat2591_utterance0_char0-61 .
+        rdfs:label "chat2591" ;
+        hs:id "2591"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2591_utterance0,
+            leolaniTalk:chat2591_utterance2 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat2591_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2591_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2591_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2591_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:Jews_can_can_bribed {
     leolaniWorld:Jews ns1:can leolaniWorld:can_bribed .
 }
 
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_can_can_bribed_00028 a grasp:Attribution ;
+        rdfs:label "Jews_can_can_bribed_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2591_utterance0_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_can_can_bribed_with_money_00028 a grasp:Attribution ;
+        rdfs:label "Jews_can_can_bribed_with_money_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2591_utterance0_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_can_can_bribed_with_public_money_00028 a grasp:Attribution ;
+        rdfs:label "Jews_can_can_bribed_with_public_money_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2591_utterance0_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2591_utterance2_char0-82 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2591_utterance2_char0-82" ;
+        gaf:containsDenotation leolaniWorld:have_corrupted,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_have_have_corrupted ;
+        grasp:hasAttribution leolaniTalk:they_have_have_corrupted_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:41:12.225769"^^xml1:string ;
+        rdf:value "The fact is that the Jews are just a bunch of criminals, they have been corrupted."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2591_utterance2 .
+
+    leolaniTalk:they_have_have_corrupted_00028 a grasp:Attribution ;
+        rdfs:label "they_have_have_corrupted_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2591_utterance2_char0-82 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:this_is-called_bribery_00028 a grasp:Attribution ;
+        rdfs:label "this_is-called_bribery_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2591_utterance0_char0-61 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2591_utterance0_char0-61 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2591_utterance0_char0-61" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:bribery,
+            leolaniWorld:can_bribed,
+            leolaniWorld:can_bribed_with_money,
+            leolaniWorld:can_bribed_with_public_money,
+            leolaniWorld:this ;
+        gaf:denotes leolaniWorld:Jews_can_can_bribed,
+            leolaniWorld:Jews_can_can_bribed_with_money,
+            leolaniWorld:Jews_can_can_bribed_with_public_money,
+            leolaniWorld:this_is-called_bribery ;
+        grasp:hasAttribution leolaniTalk:Jews_can_can_bribed_00028,
+            leolaniTalk:Jews_can_can_bribed_with_money_00028,
+            leolaniTalk:Jews_can_can_bribed_with_public_money_00028,
+            leolaniTalk:this_is-called_bribery_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:41:11.965372"^^xml1:string,
+            "2024-06-05T23:41:11.965431"^^xml1:string,
+            "2024-06-05T23:41:11.965454"^^xml1:string,
+            "2024-06-05T23:41:11.965475"^^xml1:string ;
+        rdf:value "Jews can be bribed with public money, this is called bribery."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2591_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
 leolaniWorld:Jews_can_can_bribed_with_money {
     leolaniWorld:Jews ns1:can leolaniWorld:can_bribed_with_money .
-}
-
-leolaniWorld:this_is-called_bribery {
-    leolaniWorld:this ns1:is_called leolaniWorld:bribery .
-}
-
-leolaniWorld:Jews_can_can_bribed_with_public_money {
-    leolaniWorld:Jews ns1:can leolaniWorld:can_bribed_with_public_money .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
-
-    leolaniWorld:bribery a gaf:Instance ;
-        rdfs:label "bribery" ;
-        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
-
-    leolaniWorld:can_bribed a gaf:Instance ;
-        rdfs:label "can-bribed" ;
-        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
-
-    leolaniWorld:can_bribed_with_money a gaf:Instance ;
-        rdfs:label "can-bribed-with-money" ;
-        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
-
-    leolaniWorld:can_bribed_with_public_money a gaf:Instance ;
-        rdfs:label "can-bribed-with-public-money" ;
-        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
-
-    leolaniWorld:have_corrupted a gaf:Instance ;
-        rdfs:label "have-corrupted" ;
-        gaf:denotedIn leolaniTalk:chat2591_utterance2_char0-82 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2591_utterance2_char0-82 .
-
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
-}
-
-leolaniWorld:they_have_have_corrupted {
-    leolaniWorld:they ns1:have leolaniWorld:have_corrupted .
 }
 
 leolaniWorld:Ontology {
@@ -451,155 +521,85 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_have_have_corrupted {
+    leolaniWorld:they ns1:have leolaniWorld:have_corrupted .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_can_can_bribed_00028 a grasp:Attribution ;
-        rdfs:label "Jews_can_can_bribed_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2591_utterance0_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_can_can_bribed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_can_can_bribed" ;
+        gaf:denotedBy leolaniTalk:chat2591_utterance0_char0-61 .
 
-    leolaniTalk:Jews_can_can_bribed_with_money_00028 a grasp:Attribution ;
-        rdfs:label "Jews_can_can_bribed_with_money_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2591_utterance0_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_can_can_bribed_with_money a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_can_can_bribed_with_money" ;
+        gaf:denotedBy leolaniTalk:chat2591_utterance0_char0-61 .
 
-    leolaniTalk:Jews_can_can_bribed_with_public_money_00028 a grasp:Attribution ;
-        rdfs:label "Jews_can_can_bribed_with_public_money_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2591_utterance0_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_can_can_bribed_with_public_money a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_can_can_bribed_with_public_money" ;
+        gaf:denotedBy leolaniTalk:chat2591_utterance0_char0-61 .
 
-    leolaniTalk:chat2591_utterance2_char0-82 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2591_utterance2_char0-82" ;
-        gaf:containsDenotation leolaniWorld:have_corrupted,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_have_have_corrupted ;
-        grasp:hasAttribution leolaniTalk:they_have_have_corrupted_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:41:12.225769"^^xml1:string ;
-        rdf:value "The fact is that the Jews are just a bunch of criminals, they have been corrupted."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2591_utterance2 .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:they_have_have_corrupted_00028 a grasp:Attribution ;
-        rdfs:label "they_have_have_corrupted_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2591_utterance2_char0-82 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_have_have_corrupted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_have_have_corrupted" ;
+        gaf:denotedBy leolaniTalk:chat2591_utterance2_char0-82 .
 
-    leolaniTalk:this_is-called_bribery_00028 a grasp:Attribution ;
-        rdfs:label "this_is-called_bribery_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2591_utterance0_char0-61 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:this_is-called_bribery a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "this_is-called_bribery" ;
+        gaf:denotedBy leolaniTalk:chat2591_utterance0_char0-61 .
 
-    leolaniTalk:chat2591_utterance0_char0-61 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2591_utterance0_char0-61" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:bribery,
-            leolaniWorld:can_bribed,
-            leolaniWorld:can_bribed_with_money,
-            leolaniWorld:can_bribed_with_public_money,
-            leolaniWorld:this ;
-        gaf:denotes leolaniWorld:Jews_can_can_bribed,
-            leolaniWorld:Jews_can_can_bribed_with_money,
-            leolaniWorld:Jews_can_can_bribed_with_public_money,
-            leolaniWorld:this_is-called_bribery ;
-        grasp:hasAttribution leolaniTalk:Jews_can_can_bribed_00028,
-            leolaniTalk:Jews_can_can_bribed_with_money_00028,
-            leolaniTalk:Jews_can_can_bribed_with_public_money_00028,
-            leolaniTalk:this_is-called_bribery_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:41:11.965372"^^xml1:string,
-            "2024-06-05T23:41:11.965431"^^xml1:string,
-            "2024-06-05T23:41:11.965454"^^xml1:string,
-            "2024-06-05T23:41:11.965475"^^xml1:string ;
-        rdf:value "Jews can be bribed with public money, this is called bribery."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2591_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context138 a eps:Context ;
-        rdfs:label "context138" ;
-        hs:id "138"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Jews_can_can_bribed_with_public_money {
+    leolaniWorld:Jews ns1:can leolaniWorld:can_bribed_with_public_money .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2591 .
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:bribery a gaf:Instance ;
+        rdfs:label "bribery" ;
+        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "222"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    leolaniWorld:can_bribed a gaf:Instance ;
+        rdfs:label "can-bribed" ;
+        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
 
-    leolaniTalk:chat2591 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2591" ;
-        hs:id "2591"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2591_utterance0,
-            leolaniTalk:chat2591_utterance2 .
+    leolaniWorld:can_bribed_with_money a gaf:Instance ;
+        rdfs:label "can-bribed-with-money" ;
+        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
 
-    leolaniTalk:chat2591_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2591_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+    leolaniWorld:can_bribed_with_public_money a gaf:Instance ;
+        rdfs:label "can-bribed-with-public-money" ;
+        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
 
-    leolaniTalk:chat2591_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2591_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:have_corrupted a gaf:Instance ;
+        rdfs:label "have-corrupted" ;
+        gaf:denotedIn leolaniTalk:chat2591_utterance2_char0-82 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2591_utterance2_char0-82 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat2591_utterance0_char0-61 .
 }
 

@@ -22,55 +22,116 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Denying_would_would_wrong {
+    leolaniWorld:Denying ns11:would leolaniWorld:would_wrong .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context186 a eps:Context ;
+        rdfs:label "context186" ;
+        hs:id "186"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2641 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "118"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2641 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2641" ;
+        hs:id "2641"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2641_utterance1 .
+
+    leolaniTalk:chat2641_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2641_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Denying_would_would_wrong a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Denying_would_would_wrong" ;
-        gaf:denotedBy leolaniTalk:chat2641_utterance1_char0-127 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Denying_would_would_wrong_00028 a grasp:Attribution ;
+        rdfs:label "Denying_would_would_wrong_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2641_utterance1_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniTalk:person_has_right_00028 a grasp:Attribution ;
+        rdfs:label "person_has_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2641_utterance1_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:person_has_right a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "person_has_right" ;
-        gaf:denotedBy leolaniTalk:chat2641_utterance1_char0-127 .
+    leolaniTalk:chat2641_utterance1_char0-127 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2641_utterance1_char0-127" ;
+        gaf:containsDenotation leolaniWorld:Denying,
+            leolaniWorld:person,
+            leolaniWorld:right,
+            leolaniWorld:would_wrong ;
+        gaf:denotes leolaniWorld:Denying_would_would_wrong,
+            leolaniWorld:person_has_right ;
+        grasp:hasAttribution leolaniTalk:Denying_would_would_wrong_00028,
+            leolaniTalk:person_has_right_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:51:49.075133"^^xml1:string,
+            "2024-06-05T23:51:49.075207"^^xml1:string ;
+        rdf:value "The constitution guarantees that every person has the right to vote, including black people. Denying this right would be wrong."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2641_utterance1 .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Denying a gaf:Instance ;
-        rdfs:label "denying" ;
-        gaf:denotedIn leolaniTalk:chat2641_utterance1_char0-127 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:person a gaf:Instance ;
-        rdfs:label "person" ;
-        gaf:denotedIn leolaniTalk:chat2641_utterance1_char0-127 .
-
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat2641_utterance1_char0-127 .
-
-    leolaniWorld:would_wrong a gaf:Instance ;
-        rdfs:label "would-wrong" ;
-        gaf:denotedIn leolaniTalk:chat2641_utterance1_char0-127 .
-}
-
-leolaniWorld:Denying_would_would_wrong {
-    leolaniWorld:Denying ns11:would leolaniWorld:would_wrong .
+leolaniWorld:person_has_right {
+    leolaniWorld:person ns11:has leolaniWorld:right .
 }
 
 leolaniWorld:Ontology {
@@ -408,107 +469,46 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:person_has_right {
-    leolaniWorld:person ns11:has leolaniWorld:right .
+leolaniWorld:Claims {
+    leolaniWorld:Denying_would_would_wrong a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Denying_would_would_wrong" ;
+        gaf:denotedBy leolaniTalk:chat2641_utterance1_char0-127 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:person_has_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "person_has_right" ;
+        gaf:denotedBy leolaniTalk:chat2641_utterance1_char0-127 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Denying_would_would_wrong_00028 a grasp:Attribution ;
-        rdfs:label "Denying_would_would_wrong_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2641_utterance1_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:person_has_right_00028 a grasp:Attribution ;
-        rdfs:label "person_has_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2641_utterance1_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2641_utterance1_char0-127 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2641_utterance1_char0-127" ;
-        gaf:containsDenotation leolaniWorld:Denying,
-            leolaniWorld:person,
-            leolaniWorld:right,
-            leolaniWorld:would_wrong ;
-        gaf:denotes leolaniWorld:Denying_would_would_wrong,
-            leolaniWorld:person_has_right ;
-        grasp:hasAttribution leolaniTalk:Denying_would_would_wrong_00028,
-            leolaniTalk:person_has_right_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:51:49.075133"^^xml1:string,
-            "2024-06-05T23:51:49.075207"^^xml1:string ;
-        rdf:value "The constitution guarantees that every person has the right to vote, including black people. Denying this right would be wrong."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2641_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context186 a eps:Context ;
-        rdfs:label "context186" ;
-        hs:id "186"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2641 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "118"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2641 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2641" ;
-        hs:id "2641"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2641_utterance1 .
-
-    leolaniTalk:chat2641_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2641_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Denying a gaf:Instance ;
+        rdfs:label "denying" ;
+        gaf:denotedIn leolaniTalk:chat2641_utterance1_char0-127 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:person a gaf:Instance ;
+        rdfs:label "person" ;
+        gaf:denotedIn leolaniTalk:chat2641_utterance1_char0-127 .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat2641_utterance1_char0-127 .
+
+    leolaniWorld:would_wrong a gaf:Instance ;
+        rdfs:label "would-wrong" ;
+        gaf:denotedIn leolaniTalk:chat2641_utterance1_char0-127 .
 }
 

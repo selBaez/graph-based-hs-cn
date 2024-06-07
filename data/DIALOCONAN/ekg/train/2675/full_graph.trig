@@ -22,113 +22,206 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:Refugees_are_people {
+    leolaniWorld:Refugees ns1:are leolaniWorld:people .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Refugees_are_people a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context175 a eps:Context ;
+        rdfs:label "context175" ;
+        hs:id "175"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2675 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "22"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2675 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Refugees_are_people" ;
-        gaf:denotedBy leolaniTalk:chat2675_utterance1_char0-85 .
+        rdfs:label "chat2675" ;
+        hs:id "2675"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2675_utterance1,
+            leolaniTalk:chat2675_utterance3 .
 
-    leolaniWorld:They_are-part-now-of_our_society a gaf:Assertion,
+    leolaniTalk:chat2675_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_are-part-now-of_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
+        rdfs:label "chat2675_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:They_are-part-of_our_society a gaf:Assertion,
+    leolaniTalk:chat2675_utterance3 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_are-part-of_our_society" ;
-        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
+        rdfs:label "chat2675_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:They_are_our_brothers a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_our_brothers" ;
-        gaf:denotedBy leolaniTalk:chat2675_utterance1_char0-85 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:They_are_part a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_part" ;
-        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:They_are_part_now a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_part_now" ;
-        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:they_are_Christians a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_Christians" ;
-        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
-leolaniWorld:They_are-part-of_our_society {
-    leolaniWorld:They ns1:are_part_of leolaniWorld:our_society .
-}
-
-leolaniWorld:They_are_part_now {
-    leolaniWorld:They ns1:are leolaniWorld:part_now .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
 leolaniWorld:they_are_Christians {
     leolaniWorld:they ns1:are leolaniWorld:Christians .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Christians a gaf:Instance ;
-        rdfs:label "christians" ;
-        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
+leolaniWorld:They_are_part {
+    leolaniWorld:They ns1:are leolaniWorld:part .
+}
 
-    leolaniWorld:Refugees a gaf:Instance ;
-        rdfs:label "refugees" ;
-        gaf:denotedIn leolaniTalk:chat2675_utterance1_char0-85 .
+leolaniWorld:They_are_our_brothers {
+    leolaniWorld:They ns1:are leolaniWorld:our_brothers .
+}
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2675_utterance1_char0-85,
-            leolaniTalk:chat2675_utterance3_char0-130 .
+leolaniWorld:They_are-part-of_our_society {
+    leolaniWorld:They ns1:are_part_of leolaniWorld:our_society .
+}
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_brothers a gaf:Instance ;
-        rdfs:label "our-brothers" ;
-        gaf:denotedIn leolaniTalk:chat2675_utterance1_char0-85 .
-
-    leolaniWorld:our_society a gaf:Instance ;
-        rdfs:label "our-society" ;
-        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
-
-    leolaniWorld:part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
-
-    leolaniWorld:part_now a gaf:Instance ;
-        rdfs:label "part-now" ;
-        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2675_utterance1_char0-85 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:They_are-part-now-of_our_society {
     leolaniWorld:They ns1:are_part_now_of leolaniWorld:our_society .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Refugees_are_people_00028 a grasp:Attribution ;
+        rdfs:label "Refugees_are_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2675_utterance1_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are-part-now-of_our_society_00023 a grasp:Attribution ;
+        rdfs:label "They_are-part-now-of_our_society_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are-part-of_our_society_00023 a grasp:Attribution ;
+        rdfs:label "They_are-part-of_our_society_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_our_brothers_00028 a grasp:Attribution ;
+        rdfs:label "They_are_our_brothers_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2675_utterance1_char0-85 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_part_00023 a grasp:Attribution ;
+        rdfs:label "They_are_part_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_part_now_00023 a grasp:Attribution ;
+        rdfs:label "They_are_part_now_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_Christians_00023 a grasp:Attribution ;
+        rdfs:label "they_are_Christians_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2675_utterance1_char0-85 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2675_utterance1_char0-85" ;
+        gaf:containsDenotation leolaniWorld:Refugees,
+            leolaniWorld:They,
+            leolaniWorld:our_brothers,
+            leolaniWorld:people ;
+        gaf:denotes leolaniWorld:Refugees_are_people,
+            leolaniWorld:They_are_our_brothers ;
+        grasp:hasAttribution leolaniTalk:Refugees_are_people_00028,
+            leolaniTalk:They_are_our_brothers_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:42:07.085263"^^xml1:string,
+            "2024-06-05T23:42:07.085322"^^xml1:string ;
+        rdf:value "Refugees are people. They are our brothers and sisters, regardless of their religion."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2675_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat2675_utterance3_char0-130 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2675_utterance3_char0-130" ;
+        gaf:containsDenotation leolaniWorld:Christians,
+            leolaniWorld:They,
+            leolaniWorld:our_society,
+            leolaniWorld:part,
+            leolaniWorld:part_now,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:They_are-part-now-of_our_society,
+            leolaniWorld:They_are-part-of_our_society,
+            leolaniWorld:They_are_part,
+            leolaniWorld:They_are_part_now,
+            leolaniWorld:they_are_Christians ;
+        grasp:hasAttribution leolaniTalk:They_are-part-now-of_our_society_00023,
+            leolaniTalk:They_are-part-of_our_society_00023,
+            leolaniTalk:They_are_part_00023,
+            leolaniTalk:They_are_part_now_00023,
+            leolaniTalk:they_are_Christians_00023 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:42:07.313550"^^xml1:string,
+            "2024-06-05T23:42:07.313608"^^xml1:string,
+            "2024-06-05T23:42:07.313630"^^xml1:string,
+            "2024-06-05T23:42:07.313651"^^xml1:string,
+            "2024-06-05T23:42:07.313672"^^xml1:string ;
+        rdf:value "It is not true that refugees are not welcome. They are part of our society now, whether they are Christians, Muslims, Buddhists..."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2675_utterance3 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -466,189 +559,96 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Refugees_are_people {
-    leolaniWorld:Refugees ns1:are leolaniWorld:people .
+leolaniWorld:Claims {
+    leolaniWorld:Refugees_are_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Refugees_are_people" ;
+        gaf:denotedBy leolaniTalk:chat2675_utterance1_char0-85 .
+
+    leolaniWorld:They_are-part-now-of_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-part-now-of_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
+
+    leolaniWorld:They_are-part-of_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-part-of_our_society" ;
+        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
+
+    leolaniWorld:They_are_our_brothers a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_our_brothers" ;
+        gaf:denotedBy leolaniTalk:chat2675_utterance1_char0-85 .
+
+    leolaniWorld:They_are_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_part" ;
+        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
+
+    leolaniWorld:They_are_part_now a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_part_now" ;
+        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:they_are_Christians a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_Christians" ;
+        gaf:denotedBy leolaniTalk:chat2675_utterance3_char0-130 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniWorld:They_are_part {
-    leolaniWorld:They ns1:are leolaniWorld:part .
+leolaniWorld:They_are_part_now {
+    leolaniWorld:They ns1:are leolaniWorld:part_now .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Refugees_are_people_00028 a grasp:Attribution ;
-        rdfs:label "Refugees_are_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2675_utterance1_char0-85 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Christians a gaf:Instance ;
+        rdfs:label "christians" ;
+        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
 
-    leolaniTalk:They_are-part-now-of_our_society_00023 a grasp:Attribution ;
-        rdfs:label "They_are-part-now-of_our_society_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Refugees a gaf:Instance ;
+        rdfs:label "refugees" ;
+        gaf:denotedIn leolaniTalk:chat2675_utterance1_char0-85 .
 
-    leolaniTalk:They_are-part-of_our_society_00023 a grasp:Attribution ;
-        rdfs:label "They_are-part-of_our_society_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_our_brothers_00028 a grasp:Attribution ;
-        rdfs:label "They_are_our_brothers_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2675_utterance1_char0-85 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_part_00023 a grasp:Attribution ;
-        rdfs:label "They_are_part_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_part_now_00023 a grasp:Attribution ;
-        rdfs:label "They_are_part_now_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_Christians_00023 a grasp:Attribution ;
-        rdfs:label "they_are_Christians_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2675_utterance3_char0-130 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2675_utterance1_char0-85 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2675_utterance1_char0-85" ;
-        gaf:containsDenotation leolaniWorld:Refugees,
-            leolaniWorld:They,
-            leolaniWorld:our_brothers,
-            leolaniWorld:people ;
-        gaf:denotes leolaniWorld:Refugees_are_people,
-            leolaniWorld:They_are_our_brothers ;
-        grasp:hasAttribution leolaniTalk:Refugees_are_people_00028,
-            leolaniTalk:They_are_our_brothers_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:42:07.085263"^^xml1:string,
-            "2024-06-05T23:42:07.085322"^^xml1:string ;
-        rdf:value "Refugees are people. They are our brothers and sisters, regardless of their religion."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2675_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat2675_utterance3_char0-130 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2675_utterance3_char0-130" ;
-        gaf:containsDenotation leolaniWorld:Christians,
-            leolaniWorld:They,
-            leolaniWorld:our_society,
-            leolaniWorld:part,
-            leolaniWorld:part_now,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:They_are-part-now-of_our_society,
-            leolaniWorld:They_are-part-of_our_society,
-            leolaniWorld:They_are_part,
-            leolaniWorld:They_are_part_now,
-            leolaniWorld:they_are_Christians ;
-        grasp:hasAttribution leolaniTalk:They_are-part-now-of_our_society_00023,
-            leolaniTalk:They_are-part-of_our_society_00023,
-            leolaniTalk:They_are_part_00023,
-            leolaniTalk:They_are_part_now_00023,
-            leolaniTalk:they_are_Christians_00023 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:42:07.313550"^^xml1:string,
-            "2024-06-05T23:42:07.313608"^^xml1:string,
-            "2024-06-05T23:42:07.313630"^^xml1:string,
-            "2024-06-05T23:42:07.313651"^^xml1:string,
-            "2024-06-05T23:42:07.313672"^^xml1:string ;
-        rdf:value "It is not true that refugees are not welcome. They are part of our society now, whether they are Christians, Muslims, Buddhists..."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2675_utterance3 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context175 a eps:Context ;
-        rdfs:label "context175" ;
-        hs:id "175"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2675 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "22"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2675 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2675" ;
-        hs:id "2675"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2675_utterance1,
-            leolaniTalk:chat2675_utterance3 .
-
-    leolaniTalk:chat2675_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2675_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2675_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2675_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2675_utterance1_char0-85,
+            leolaniTalk:chat2675_utterance3_char0-130 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
-}
 
-leolaniWorld:They_are_our_brothers {
-    leolaniWorld:They ns1:are leolaniWorld:our_brothers .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_brothers a gaf:Instance ;
+        rdfs:label "our-brothers" ;
+        gaf:denotedIn leolaniTalk:chat2675_utterance1_char0-85 .
+
+    leolaniWorld:our_society a gaf:Instance ;
+        rdfs:label "our-society" ;
+        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
+
+    leolaniWorld:part_now a gaf:Instance ;
+        rdfs:label "part-now" ;
+        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2675_utterance1_char0-85 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2675_utterance3_char0-130 .
 }
 

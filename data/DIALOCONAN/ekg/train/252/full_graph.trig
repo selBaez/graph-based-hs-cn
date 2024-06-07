@@ -22,70 +22,155 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Migrants_rape_our_women a gaf:Assertion,
+leolaniWorld:Rape_is_crime {
+    leolaniWorld:Rape ns11:is leolaniWorld:crime .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context192 a eps:Context ;
+        rdfs:label "context192" ;
+        hs:id "192"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat252 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "42"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat252 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Migrants_rape_our_women" ;
-        gaf:denotedBy leolaniTalk:chat252_utterance0_char0-24 .
+        rdfs:label "chat252" ;
+        hs:id "252"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat252_utterance0,
+            leolaniTalk:chat252_utterance1 .
 
-    leolaniWorld:Rape_is-crime-regardless_immigration_status a gaf:Assertion,
+    leolaniTalk:chat252_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Rape_is-crime-regardless_immigration_status" ;
-        gaf:denotedBy leolaniTalk:chat252_utterance1_char0-101 .
+        rdfs:label "chat252_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Rape_is_crime a gaf:Assertion,
+    leolaniTalk:chat252_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Rape_is_crime" ;
-        gaf:denotedBy leolaniTalk:chat252_utterance1_char0-101 .
+        rdfs:label "chat252_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Rape_is-crime-regardless_immigration_status {
+    leolaniWorld:Rape ns11:is_crime_regardless leolaniWorld:immigration_status .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Migrants_rape_our_women {
+    leolaniWorld:Migrants ns11:rape leolaniWorld:our_women .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat252_utterance0_char0-24 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Migrants_rape_our_women_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_rape_our_women_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat252_utterance0_char0-24 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Rape a gaf:Instance ;
-        rdfs:label "rape" ;
-        gaf:denotedIn leolaniTalk:chat252_utterance1_char0-101 .
+    leolaniTalk:Rape_is-crime-regardless_immigration_status_00028 a grasp:Attribution ;
+        rdfs:label "Rape_is-crime-regardless_immigration_status_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat252_utterance1_char0-101 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:Rape_is_crime_00028 a grasp:Attribution ;
+        rdfs:label "Rape_is_crime_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat252_utterance1_char0-101 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:crime a gaf:Instance ;
-        rdfs:label "crime" ;
-        gaf:denotedIn leolaniTalk:chat252_utterance1_char0-101 .
+    leolaniTalk:chat252_utterance0_char0-24 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat252_utterance0_char0-24" ;
+        gaf:containsDenotation leolaniWorld:Migrants,
+            leolaniWorld:our_women ;
+        gaf:denotes leolaniWorld:Migrants_rape_our_women ;
+        grasp:hasAttribution leolaniTalk:Migrants_rape_our_women_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:16.689429"^^xml1:string ;
+        rdf:value "Migrants rape our women."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat252_utterance0 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat252_utterance1_char0-101 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat252_utterance1_char0-101" ;
+        gaf:containsDenotation leolaniWorld:Rape,
+            leolaniWorld:crime,
+            leolaniWorld:immigration_status ;
+        gaf:denotes leolaniWorld:Rape_is-crime-regardless_immigration_status,
+            leolaniWorld:Rape_is_crime ;
+        grasp:hasAttribution leolaniTalk:Rape_is-crime-regardless_immigration_status_00028,
+            leolaniTalk:Rape_is_crime_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:16.774257"^^xml1:string,
+            "2024-06-05T22:59:16.774310"^^xml1:string ;
+        rdf:value "The problem is gender-based violence, not migrants. Rape is a crime regardless of immigration status."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat252_utterance1 .
 
-    leolaniWorld:immigration_status a gaf:Instance ;
-        rdfs:label "immigration-status" ;
-        gaf:denotedIn leolaniTalk:chat252_utterance1_char0-101 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:our_women a gaf:Instance ;
-        rdfs:label "our-women" ;
-        gaf:denotedIn leolaniTalk:chat252_utterance0_char0-24 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -423,150 +508,65 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Rape_is_crime {
-    leolaniWorld:Rape ns11:is leolaniWorld:crime .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Migrants_rape_our_women {
-    leolaniWorld:Migrants ns11:rape leolaniWorld:our_women .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Migrants_rape_our_women_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_rape_our_women_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat252_utterance0_char0-24 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Rape_is-crime-regardless_immigration_status_00028 a grasp:Attribution ;
-        rdfs:label "Rape_is-crime-regardless_immigration_status_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat252_utterance1_char0-101 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Rape_is_crime_00028 a grasp:Attribution ;
-        rdfs:label "Rape_is_crime_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat252_utterance1_char0-101 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat252_utterance0_char0-24 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat252_utterance0_char0-24" ;
-        gaf:containsDenotation leolaniWorld:Migrants,
-            leolaniWorld:our_women ;
-        gaf:denotes leolaniWorld:Migrants_rape_our_women ;
-        grasp:hasAttribution leolaniTalk:Migrants_rape_our_women_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:16.689429"^^xml1:string ;
-        rdf:value "Migrants rape our women."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat252_utterance0 .
-
-    leolaniTalk:chat252_utterance1_char0-101 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat252_utterance1_char0-101" ;
-        gaf:containsDenotation leolaniWorld:Rape,
-            leolaniWorld:crime,
-            leolaniWorld:immigration_status ;
-        gaf:denotes leolaniWorld:Rape_is-crime-regardless_immigration_status,
-            leolaniWorld:Rape_is_crime ;
-        grasp:hasAttribution leolaniTalk:Rape_is-crime-regardless_immigration_status_00028,
-            leolaniTalk:Rape_is_crime_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:16.774257"^^xml1:string,
-            "2024-06-05T22:59:16.774310"^^xml1:string ;
-        rdf:value "The problem is gender-based violence, not migrants. Rape is a crime regardless of immigration status."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat252_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context192 a eps:Context ;
-        rdfs:label "context192" ;
-        hs:id "192"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat252 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "42"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat252 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Migrants_rape_our_women a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat252" ;
-        hs:id "252"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat252_utterance0,
-            leolaniTalk:chat252_utterance1 .
+        rdfs:label "Migrants_rape_our_women" ;
+        gaf:denotedBy leolaniTalk:chat252_utterance0_char0-24 .
 
-    leolaniTalk:chat252_utterance0 a grasp:Utterance,
+    leolaniWorld:Rape_is-crime-regardless_immigration_status a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat252_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Rape_is-crime-regardless_immigration_status" ;
+        gaf:denotedBy leolaniTalk:chat252_utterance1_char0-101 .
 
-    leolaniTalk:chat252_utterance1 a grasp:Utterance,
+    leolaniWorld:Rape_is_crime a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat252_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Rape_is_crime" ;
+        gaf:denotedBy leolaniTalk:chat252_utterance1_char0-101 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat252_utterance0_char0-24 .
+
+    leolaniWorld:Rape a gaf:Instance ;
+        rdfs:label "rape" ;
+        gaf:denotedIn leolaniTalk:chat252_utterance1_char0-101 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:crime a gaf:Instance ;
+        rdfs:label "crime" ;
+        gaf:denotedIn leolaniTalk:chat252_utterance1_char0-101 .
 
-leolaniWorld:Rape_is-crime-regardless_immigration_status {
-    leolaniWorld:Rape ns11:is_crime_regardless leolaniWorld:immigration_status .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:immigration_status a gaf:Instance ;
+        rdfs:label "immigration-status" ;
+        gaf:denotedIn leolaniTalk:chat252_utterance1_char0-101 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_women a gaf:Instance ;
+        rdfs:label "our-women" ;
+        gaf:denotedIn leolaniTalk:chat252_utterance0_char0-24 .
 }
 

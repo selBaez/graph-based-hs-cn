@@ -22,99 +22,190 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_have_monopoly a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_monopoly" ;
-        gaf:denotedBy leolaniTalk:chat2454_utterance2_char0-29 .
-
-    leolaniWorld:Jews_have_monopoly_on_evil a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_have_monopoly_on_evil" ;
-        gaf:denotedBy leolaniTalk:chat2454_utterance2_char0-29 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_subvert_Western_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_subvert_Western_society" ;
-        gaf:denotedBy leolaniTalk:chat2454_utterance0_char0-45 .
-
-    leolaniWorld:they_subvert_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_subvert_society" ;
-        gaf:denotedBy leolaniTalk:chat2454_utterance0_char0-45 .
-
-    leolaniWorld:they_want_subvert a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_subvert" ;
-        gaf:denotedBy leolaniTalk:chat2454_utterance0_char0-45 .
-
-    leolaniWorld:they_want_to_subvert a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_to_subvert" ;
-        gaf:denotedBy leolaniTalk:chat2454_utterance0_char0-45 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:they_want_subvert {
+    leolaniWorld:they ns11:want leolaniWorld:subvert .
 }
 
 leolaniWorld:Jews_have_monopoly {
     leolaniWorld:Jews ns11:have leolaniWorld:monopoly .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2454_utterance2_char0-29 .
+leolaniTalk:Interactions {
+    leolaniContext:context33 a eps:Context ;
+        rdfs:label "context33" ;
+        hs:id "33"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Western_society a gaf:Instance ;
-        rdfs:label "western-society" ;
-        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2454 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "206"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2454 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2454" ;
+        hs:id "2454"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2454_utterance0,
+            leolaniTalk:chat2454_utterance2 .
+
+    leolaniTalk:chat2454_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2454_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2454_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2454_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:they_subvert_Western_society {
+    leolaniWorld:they ns11:subvert leolaniWorld:Western_society .
+}
 
-    leolaniWorld:monopoly a gaf:Instance ;
-        rdfs:label "monopoly" ;
-        gaf:denotedIn leolaniTalk:chat2454_utterance2_char0-29 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:monopoly_on_evil a gaf:Instance ;
-        rdfs:label "monopoly-on-evil" ;
-        gaf:denotedIn leolaniTalk:chat2454_utterance2_char0-29 .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
-
-    leolaniWorld:subvert a gaf:Instance ;
-        rdfs:label "subvert" ;
-        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
-
-    leolaniWorld:to_subvert a gaf:Instance ;
-        rdfs:label "to-subvert" ;
-        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
+leolaniWorld:they_want_to_subvert {
+    leolaniWorld:they ns11:want leolaniWorld:to_subvert .
 }
 
 leolaniWorld:Jews_have_monopoly_on_evil {
     leolaniWorld:Jews ns11:have leolaniWorld:monopoly_on_evil .
 }
 
-leolaniWorld:they_want_subvert {
-    leolaniWorld:they ns11:want leolaniWorld:subvert .
-}
-
 leolaniWorld:they_subvert_society {
     leolaniWorld:they ns11:subvert leolaniWorld:society .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_have_monopoly_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_monopoly_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2454_utterance2_char0-29 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_have_monopoly_on_evil_00028 a grasp:Attribution ;
+        rdfs:label "Jews_have_monopoly_on_evil_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2454_utterance2_char0-29 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_subvert_Western_society_00028 a grasp:Attribution ;
+        rdfs:label "they_subvert_Western_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2454_utterance0_char0-45 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_subvert_society_00028 a grasp:Attribution ;
+        rdfs:label "they_subvert_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2454_utterance0_char0-45 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_subvert_00028 a grasp:Attribution ;
+        rdfs:label "they_want_subvert_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2454_utterance0_char0-45 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_to_subvert_00028 a grasp:Attribution ;
+        rdfs:label "they_want_to_subvert_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2454_utterance0_char0-45 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2454_utterance2_char0-29 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2454_utterance2_char0-29" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:monopoly,
+            leolaniWorld:monopoly_on_evil ;
+        gaf:denotes leolaniWorld:Jews_have_monopoly,
+            leolaniWorld:Jews_have_monopoly_on_evil ;
+        grasp:hasAttribution leolaniTalk:Jews_have_monopoly_00028,
+            leolaniTalk:Jews_have_monopoly_on_evil_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:30.548651"^^xml1:string,
+            "2024-06-05T23:33:30.548710"^^xml1:string ;
+        rdf:value "Jews have a monopoly on evil."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2454_utterance2 .
+
+    leolaniTalk:chat2454_utterance0_char0-45 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2454_utterance0_char0-45" ;
+        gaf:containsDenotation leolaniWorld:Western_society,
+            leolaniWorld:society,
+            leolaniWorld:subvert,
+            leolaniWorld:they,
+            leolaniWorld:to_subvert ;
+        gaf:denotes leolaniWorld:they_subvert_Western_society,
+            leolaniWorld:they_subvert_society,
+            leolaniWorld:they_want_subvert,
+            leolaniWorld:they_want_to_subvert ;
+        grasp:hasAttribution leolaniTalk:they_subvert_Western_society_00028,
+            leolaniTalk:they_subvert_society_00028,
+            leolaniTalk:they_want_subvert_00028,
+            leolaniTalk:they_want_to_subvert_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:30.395007"^^xml1:string,
+            "2024-06-05T23:33:30.395064"^^xml1:string,
+            "2024-06-05T23:33:30.395097"^^xml1:string,
+            "2024-06-05T23:33:30.395119"^^xml1:string ;
+        rdf:value "Because they want to subvert Western society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2454_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -452,173 +543,82 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:they_subvert_Western_society {
-    leolaniWorld:they ns11:subvert leolaniWorld:Western_society .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_have_monopoly a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_monopoly" ;
+        gaf:denotedBy leolaniTalk:chat2454_utterance2_char0-29 .
+
+    leolaniWorld:Jews_have_monopoly_on_evil a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_have_monopoly_on_evil" ;
+        gaf:denotedBy leolaniTalk:chat2454_utterance2_char0-29 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_subvert_Western_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_subvert_Western_society" ;
+        gaf:denotedBy leolaniTalk:chat2454_utterance0_char0-45 .
+
+    leolaniWorld:they_subvert_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_subvert_society" ;
+        gaf:denotedBy leolaniTalk:chat2454_utterance0_char0-45 .
+
+    leolaniWorld:they_want_subvert a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_subvert" ;
+        gaf:denotedBy leolaniTalk:chat2454_utterance0_char0-45 .
+
+    leolaniWorld:they_want_to_subvert a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_to_subvert" ;
+        gaf:denotedBy leolaniTalk:chat2454_utterance0_char0-45 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2454_utterance2_char0-29 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_have_monopoly_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_monopoly_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2454_utterance2_char0-29 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_have_monopoly_on_evil_00028 a grasp:Attribution ;
-        rdfs:label "Jews_have_monopoly_on_evil_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2454_utterance2_char0-29 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_subvert_Western_society_00028 a grasp:Attribution ;
-        rdfs:label "they_subvert_Western_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2454_utterance0_char0-45 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_subvert_society_00028 a grasp:Attribution ;
-        rdfs:label "they_subvert_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2454_utterance0_char0-45 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_want_subvert_00028 a grasp:Attribution ;
-        rdfs:label "they_want_subvert_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2454_utterance0_char0-45 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_want_to_subvert_00028 a grasp:Attribution ;
-        rdfs:label "they_want_to_subvert_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2454_utterance0_char0-45 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2454_utterance2_char0-29 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2454_utterance2_char0-29" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:monopoly,
-            leolaniWorld:monopoly_on_evil ;
-        gaf:denotes leolaniWorld:Jews_have_monopoly,
-            leolaniWorld:Jews_have_monopoly_on_evil ;
-        grasp:hasAttribution leolaniTalk:Jews_have_monopoly_00028,
-            leolaniTalk:Jews_have_monopoly_on_evil_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:30.548651"^^xml1:string,
-            "2024-06-05T23:33:30.548710"^^xml1:string ;
-        rdf:value "Jews have a monopoly on evil."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2454_utterance2 .
-
-    leolaniTalk:chat2454_utterance0_char0-45 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2454_utterance0_char0-45" ;
-        gaf:containsDenotation leolaniWorld:Western_society,
-            leolaniWorld:society,
-            leolaniWorld:subvert,
-            leolaniWorld:they,
-            leolaniWorld:to_subvert ;
-        gaf:denotes leolaniWorld:they_subvert_Western_society,
-            leolaniWorld:they_subvert_society,
-            leolaniWorld:they_want_subvert,
-            leolaniWorld:they_want_to_subvert ;
-        grasp:hasAttribution leolaniTalk:they_subvert_Western_society_00028,
-            leolaniTalk:they_subvert_society_00028,
-            leolaniTalk:they_want_subvert_00028,
-            leolaniTalk:they_want_to_subvert_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:30.395007"^^xml1:string,
-            "2024-06-05T23:33:30.395064"^^xml1:string,
-            "2024-06-05T23:33:30.395097"^^xml1:string,
-            "2024-06-05T23:33:30.395119"^^xml1:string ;
-        rdf:value "Because they want to subvert Western society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2454_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context33 a eps:Context ;
-        rdfs:label "context33" ;
-        hs:id "33"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2454 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "206"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2454 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2454" ;
-        hs:id "2454"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2454_utterance0,
-            leolaniTalk:chat2454_utterance2 .
-
-    leolaniTalk:chat2454_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2454_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2454_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2454_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Western_society a gaf:Instance ;
+        rdfs:label "western-society" ;
+        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:they_want_to_subvert {
-    leolaniWorld:they ns11:want leolaniWorld:to_subvert .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:monopoly a gaf:Instance ;
+        rdfs:label "monopoly" ;
+        gaf:denotedIn leolaniTalk:chat2454_utterance2_char0-29 .
+
+    leolaniWorld:monopoly_on_evil a gaf:Instance ;
+        rdfs:label "monopoly-on-evil" ;
+        gaf:denotedIn leolaniTalk:chat2454_utterance2_char0-29 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
+
+    leolaniWorld:subvert a gaf:Instance ;
+        rdfs:label "subvert" ;
+        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
+
+    leolaniWorld:to_subvert a gaf:Instance ;
+        rdfs:label "to-subvert" ;
+        gaf:denotedIn leolaniTalk:chat2454_utterance0_char0-45 .
 }
 

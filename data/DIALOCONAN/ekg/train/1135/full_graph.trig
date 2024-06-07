@@ -22,108 +22,186 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:we_should-ban_migrants {
+    leolaniWorld:we ns11:should_ban leolaniWorld:migrants .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Migrants_are_happy a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context205 a eps:Context ;
+        rdfs:label "context205" ;
+        hs:id "205"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1135 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "100"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1135 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Migrants_are_happy" ;
-        gaf:denotedBy leolaniTalk:chat1135_utterance1_char0-131 .
+        rdfs:label "chat1135" ;
+        hs:id "1135"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1135_utterance0,
+            leolaniTalk:chat1135_utterance1 .
 
-    leolaniWorld:Migrants_are_mostly_happy a gaf:Assertion,
+    leolaniTalk:chat1135_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Migrants_are_mostly_happy" ;
-        gaf:denotedBy leolaniTalk:chat1135_utterance1_char0-131 .
+        rdfs:label "chat1135_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Migrants_live-in_country a gaf:Assertion,
+    leolaniTalk:chat1135_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Migrants_live-in_country" ;
-        gaf:denotedBy leolaniTalk:chat1135_utterance1_char0-131 .
+        rdfs:label "chat1135_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:many_people_is-in_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_people_is-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat1135_utterance1_char0-131 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:we_should-ban_migrants a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_should-ban_migrants" ;
-        gaf:denotedBy leolaniTalk:chat1135_utterance0_char0-26 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:many_people_is-in_UK {
-    leolaniWorld:many_people ns11:is_in leolaniWorld:UK .
-}
-
-leolaniWorld:Migrants_are_happy {
-    leolaniWorld:Migrants ns11:are leolaniWorld:happy .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:Migrants_live-in_country {
     leolaniWorld:Migrants ns11:live_in leolaniWorld:country .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
-
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:country a gaf:Instance ;
-        rdfs:label "country" ;
-        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
-
-    leolaniWorld:happy a gaf:Instance ;
-        rdfs:label "happy" ;
-        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_people a gaf:Instance ;
-        rdfs:label "many-people" ;
-        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat1135_utterance0_char0-26 .
-
-    leolaniWorld:mostly_happy a gaf:Instance ;
-        rdfs:label "mostly-happy" ;
-        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1135_utterance0_char0-26 .
+leolaniWorld:Migrants_are_mostly_happy {
+    leolaniWorld:Migrants ns11:are leolaniWorld:mostly_happy .
 }
 
-leolaniWorld:we_should-ban_migrants {
-    leolaniWorld:we ns11:should_ban leolaniWorld:migrants .
+leolaniWorld:Migrants_are_happy {
+    leolaniWorld:Migrants ns11:are leolaniWorld:happy .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:many_people_is-in_UK {
+    leolaniWorld:many_people ns11:is_in leolaniWorld:UK .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Migrants_are_happy_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_are_happy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1135_utterance1_char0-131 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_are_mostly_happy_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_are_mostly_happy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1135_utterance1_char0-131 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_live-in_country_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_live-in_country_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1135_utterance1_char0-131 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1135_utterance0_char0-26 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1135_utterance0_char0-26" ;
+        gaf:containsDenotation leolaniWorld:migrants,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_should-ban_migrants ;
+        grasp:hasAttribution leolaniTalk:we_should-ban_migrants_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:20.338175"^^xml1:string ;
+        rdf:value "we should ban all migrants"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1135_utterance0 .
+
+    leolaniTalk:many_people_is-in_UK_00028 a grasp:Attribution ;
+        rdfs:label "many_people_is-in_UK_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1135_utterance1_char0-131 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_should-ban_migrants_00028 a grasp:Attribution ;
+        rdfs:label "we_should-ban_migrants_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1135_utterance0_char0-26 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1135_utterance1_char0-131 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1135_utterance1_char0-131" ;
+        gaf:containsDenotation leolaniWorld:Migrants,
+            leolaniWorld:UK,
+            leolaniWorld:country,
+            leolaniWorld:happy,
+            leolaniWorld:many_people,
+            leolaniWorld:mostly_happy ;
+        gaf:denotes leolaniWorld:Migrants_are_happy,
+            leolaniWorld:Migrants_are_mostly_happy,
+            leolaniWorld:Migrants_live-in_country,
+            leolaniWorld:many_people_is-in_UK ;
+        grasp:hasAttribution leolaniTalk:Migrants_are_happy_00028,
+            leolaniTalk:Migrants_are_mostly_happy_00028,
+            leolaniTalk:Migrants_live-in_country_00028,
+            leolaniTalk:many_people_is-in_UK_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:20.431967"^^xml1:string,
+            "2024-06-05T22:59:20.432022"^^xml1:string,
+            "2024-06-05T22:59:20.432046"^^xml1:string,
+            "2024-06-05T22:59:20.432068"^^xml1:string ;
+        rdf:value "Migrants are mostly happy to live and work in the country they arrive in. They provide jobs that many people in the UK wouldn't do."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1135_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -461,165 +539,87 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Migrants_are_mostly_happy {
-    leolaniWorld:Migrants ns11:are leolaniWorld:mostly_happy .
+leolaniWorld:Claims {
+    leolaniWorld:Migrants_are_happy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are_happy" ;
+        gaf:denotedBy leolaniTalk:chat1135_utterance1_char0-131 .
+
+    leolaniWorld:Migrants_are_mostly_happy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are_mostly_happy" ;
+        gaf:denotedBy leolaniTalk:chat1135_utterance1_char0-131 .
+
+    leolaniWorld:Migrants_live-in_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_live-in_country" ;
+        gaf:denotedBy leolaniTalk:chat1135_utterance1_char0-131 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:many_people_is-in_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_people_is-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat1135_utterance1_char0-131 .
+
+    leolaniWorld:we_should-ban_migrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_should-ban_migrants" ;
+        gaf:denotedBy leolaniTalk:chat1135_utterance0_char0-26 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Migrants_are_happy_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_are_happy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1135_utterance1_char0-131 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_are_mostly_happy_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_are_mostly_happy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1135_utterance1_char0-131 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_live-in_country_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_live-in_country_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1135_utterance1_char0-131 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1135_utterance0_char0-26 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1135_utterance0_char0-26" ;
-        gaf:containsDenotation leolaniWorld:migrants,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_should-ban_migrants ;
-        grasp:hasAttribution leolaniTalk:we_should-ban_migrants_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:20.338175"^^xml1:string ;
-        rdf:value "we should ban all migrants"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1135_utterance0 .
-
-    leolaniTalk:many_people_is-in_UK_00028 a grasp:Attribution ;
-        rdfs:label "many_people_is-in_UK_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1135_utterance1_char0-131 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_should-ban_migrants_00028 a grasp:Attribution ;
-        rdfs:label "we_should-ban_migrants_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1135_utterance0_char0-26 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1135_utterance1_char0-131 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1135_utterance1_char0-131" ;
-        gaf:containsDenotation leolaniWorld:Migrants,
-            leolaniWorld:UK,
-            leolaniWorld:country,
-            leolaniWorld:happy,
-            leolaniWorld:many_people,
-            leolaniWorld:mostly_happy ;
-        gaf:denotes leolaniWorld:Migrants_are_happy,
-            leolaniWorld:Migrants_are_mostly_happy,
-            leolaniWorld:Migrants_live-in_country,
-            leolaniWorld:many_people_is-in_UK ;
-        grasp:hasAttribution leolaniTalk:Migrants_are_happy_00028,
-            leolaniTalk:Migrants_are_mostly_happy_00028,
-            leolaniTalk:Migrants_live-in_country_00028,
-            leolaniTalk:many_people_is-in_UK_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:20.431967"^^xml1:string,
-            "2024-06-05T22:59:20.432022"^^xml1:string,
-            "2024-06-05T22:59:20.432046"^^xml1:string,
-            "2024-06-05T22:59:20.432068"^^xml1:string ;
-        rdf:value "Migrants are mostly happy to live and work in the country they arrive in. They provide jobs that many people in the UK wouldn't do."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1135_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context205 a eps:Context ;
-        rdfs:label "context205" ;
-        hs:id "205"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1135 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "100"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1135 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1135" ;
-        hs:id "1135"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1135_utterance0,
-            leolaniTalk:chat1135_utterance1 .
-
-    leolaniTalk:chat1135_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1135_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1135_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1135_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:country a gaf:Instance ;
+        rdfs:label "country" ;
+        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
+
+    leolaniWorld:happy a gaf:Instance ;
+        rdfs:label "happy" ;
+        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_people a gaf:Instance ;
+        rdfs:label "many-people" ;
+        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat1135_utterance0_char0-26 .
+
+    leolaniWorld:mostly_happy a gaf:Instance ;
+        rdfs:label "mostly-happy" ;
+        gaf:denotedIn leolaniTalk:chat1135_utterance1_char0-131 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1135_utterance0_char0-26 .
 }
 

@@ -22,49 +22,94 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:many_Jews_is-in_government {
-    leolaniWorld:many_Jews ns1:is_in leolaniWorld:government .
+leolaniTalk:Interactions {
+    leolaniContext:context14 a eps:Context ;
+        rdfs:label "context14" ;
+        hs:id "14"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2254 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "29"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2254 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2254" ;
+        hs:id "2254"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2254_utterance0,
+            leolaniTalk:chat2254_utterance1,
+            leolaniTalk:chat2254_utterance2 .
+
+    leolaniTalk:chat2254_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2254_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2254_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2254_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2254_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2254_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:you_do-have_proof {
-    leolaniWorld:you ns1:do_have leolaniWorld:proof .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Jews_control_U.S._government a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_control_U.S._government" ;
-        gaf:denotedBy leolaniTalk:chat2254_utterance0_char0-37 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:many_Jews_is-in_government a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_Jews_is-in_government" ;
-        gaf:denotedBy leolaniTalk:chat2254_utterance2_char0-71 .
-
-    leolaniWorld:you_do-have_proof a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-have_proof" ;
-        gaf:denotedBy leolaniTalk:chat2254_utterance1_char0-71 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:Jews_control_U.S._government {
     leolaniWorld:Jews ns1:control leolaniWorld:U.S._government .
+}
+
+leolaniWorld:you_do-have_proof {
+    leolaniWorld:you ns1:do_have leolaniWorld:proof .
 }
 
 leolaniTalk:Perspectives {
@@ -143,45 +188,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2254_utterance0_char0-37 .
-
-    leolaniWorld:U.S._government a gaf:Instance ;
-        rdfs:label "u-s-government" ;
-        gaf:denotedIn leolaniTalk:chat2254_utterance0_char0-37 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:government a gaf:Instance ;
-        rdfs:label "government" ;
-        gaf:denotedIn leolaniTalk:chat2254_utterance2_char0-71 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_Jews a gaf:Instance ;
-        rdfs:label "many-jews" ;
-        gaf:denotedIn leolaniTalk:chat2254_utterance2_char0-71 .
-
-    leolaniWorld:proof a gaf:Instance ;
-        rdfs:label "proof" ;
-        gaf:denotedIn leolaniTalk:chat2254_utterance1_char0-71 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat2254_utterance1_char0-71 .
+leolaniWorld:many_Jews_is-in_government {
+    leolaniWorld:many_Jews ns1:is_in leolaniWorld:government .
 }
 
 leolaniWorld:Ontology {
@@ -519,77 +527,69 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context14 a eps:Context ;
-        rdfs:label "context14" ;
-        hs:id "14"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2254 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "29"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2254 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Jews_control_U.S._government a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2254" ;
-        hs:id "2254"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2254_utterance0,
-            leolaniTalk:chat2254_utterance1,
-            leolaniTalk:chat2254_utterance2 .
+        rdfs:label "Jews_control_U.S._government" ;
+        gaf:denotedBy leolaniTalk:chat2254_utterance0_char0-37 .
 
-    leolaniTalk:chat2254_utterance0 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2254_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat2254_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2254_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat2254_utterance2 a grasp:Utterance,
+    leolaniWorld:many_Jews_is-in_government a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2254_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "many_Jews_is-in_government" ;
+        gaf:denotedBy leolaniTalk:chat2254_utterance2_char0-71 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:you_do-have_proof a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-have_proof" ;
+        gaf:denotedBy leolaniTalk:chat2254_utterance1_char0-71 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2254_utterance0_char0-37 .
+
+    leolaniWorld:U.S._government a gaf:Instance ;
+        rdfs:label "u-s-government" ;
+        gaf:denotedIn leolaniTalk:chat2254_utterance0_char0-37 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:government a gaf:Instance ;
+        rdfs:label "government" ;
+        gaf:denotedIn leolaniTalk:chat2254_utterance2_char0-71 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_Jews a gaf:Instance ;
+        rdfs:label "many-jews" ;
+        gaf:denotedIn leolaniTalk:chat2254_utterance2_char0-71 .
+
+    leolaniWorld:proof a gaf:Instance ;
+        rdfs:label "proof" ;
+        gaf:denotedIn leolaniTalk:chat2254_utterance1_char0-71 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat2254_utterance1_char0-71 .
 }
 

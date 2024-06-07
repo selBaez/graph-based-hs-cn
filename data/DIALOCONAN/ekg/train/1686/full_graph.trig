@@ -22,82 +22,157 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:kids_go-to_pride {
-    leolaniWorld:kids ns11:go_to leolaniWorld:pride .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:They_indoctrinate_kids a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_indoctrinate_kids" ;
-        gaf:denotedBy leolaniTalk:chat1686_utterance2_char0-143 .
-
-    leolaniWorld:kids_go-to_pride a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "kids_go-to_pride" ;
-        gaf:denotedBy leolaniTalk:chat1686_utterance0_char0-87 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are-trans-into_thinking a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-trans-into_thinking" ;
-        gaf:denotedBy leolaniTalk:chat1686_utterance2_char0-143 .
-
-    leolaniWorld:they_are_trans a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_trans" ;
-        gaf:denotedBy leolaniTalk:chat1686_utterance2_char0-143 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:they_are_trans {
     leolaniWorld:they ns11:are leolaniWorld:trans .
 }
 
-leolaniWorld:They_indoctrinate_kids {
-    leolaniWorld:They ns11:indoctrinate leolaniWorld:kids .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context229 a eps:Context ;
+        rdfs:label "context229" ;
+        hs:id "229"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1686_utterance2_char0-143 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1686 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "0"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1686 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1686" ;
+        hs:id "1686"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1686_utterance0,
+            leolaniTalk:chat1686_utterance2 .
+
+    leolaniTalk:chat1686_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1686_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1686_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1686_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:kids a gaf:Instance ;
-        rdfs:label "kids" ;
-        gaf:denotedIn leolaniTalk:chat1686_utterance0_char0-87,
-            leolaniTalk:chat1686_utterance2_char0-143 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:pride a gaf:Instance ;
-        rdfs:label "pride" ;
-        gaf:denotedIn leolaniTalk:chat1686_utterance0_char0-87 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1686_utterance2_char0-143 .
-
-    leolaniWorld:thinking a gaf:Instance ;
-        rdfs:label "thinking" ;
-        gaf:denotedIn leolaniTalk:chat1686_utterance2_char0-143 .
-
-    leolaniWorld:trans a gaf:Instance ;
-        rdfs:label "trans" ;
-        gaf:denotedIn leolaniTalk:chat1686_utterance2_char0-143 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:they_are-trans-into_thinking {
     leolaniWorld:they ns11:are_trans_into leolaniWorld:thinking .
+}
+
+leolaniWorld:kids_go-to_pride {
+    leolaniWorld:kids ns11:go_to leolaniWorld:pride .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:They_indoctrinate_kids_00028 a grasp:Attribution ;
+        rdfs:label "They_indoctrinate_kids_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1686_utterance2_char0-143 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1686_utterance0_char0-87 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1686_utterance0_char0-87" ;
+        gaf:containsDenotation leolaniWorld:kids,
+            leolaniWorld:pride ;
+        gaf:denotes leolaniWorld:kids_go-to_pride ;
+        grasp:hasAttribution leolaniTalk:kids_go-to_pride_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:46.516996"^^xml1:string ;
+        rdf:value "Allowing kids to go to pride is the start of them being pushed down the trans pipeline."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1686_utterance0 .
+
+    leolaniTalk:kids_go-to_pride_00028 a grasp:Attribution ;
+        rdfs:label "kids_go-to_pride_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1686_utterance0_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are-trans-into_thinking_00028 a grasp:Attribution ;
+        rdfs:label "they_are-trans-into_thinking_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1686_utterance2_char0-143 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_trans_00028 a grasp:Attribution ;
+        rdfs:label "they_are_trans_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1686_utterance2_char0-143 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1686_utterance2_char0-143 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1686_utterance2_char0-143" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:kids,
+            leolaniWorld:they,
+            leolaniWorld:thinking,
+            leolaniWorld:trans ;
+        gaf:denotes leolaniWorld:They_indoctrinate_kids,
+            leolaniWorld:they_are-trans-into_thinking,
+            leolaniWorld:they_are_trans ;
+        grasp:hasAttribution leolaniTalk:They_indoctrinate_kids_00028,
+            leolaniTalk:they_are-trans-into_thinking_00028,
+            leolaniTalk:they_are_trans_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:46.736315"^^xml1:string,
+            "2024-06-05T23:26:46.736371"^^xml1:string,
+            "2024-06-05T23:26:46.736394"^^xml1:string ;
+        rdf:value "They indoctrinate these kids into thinking they are trans by showing them drag queens and making them think men dressing up as women is normal."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1686_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -435,144 +510,69 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:They_indoctrinate_kids a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_indoctrinate_kids" ;
+        gaf:denotedBy leolaniTalk:chat1686_utterance2_char0-143 .
+
+    leolaniWorld:kids_go-to_pride a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "kids_go-to_pride" ;
+        gaf:denotedBy leolaniTalk:chat1686_utterance0_char0-87 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are-trans-into_thinking a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-trans-into_thinking" ;
+        gaf:denotedBy leolaniTalk:chat1686_utterance2_char0-143 .
+
+    leolaniWorld:they_are_trans a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_trans" ;
+        gaf:denotedBy leolaniTalk:chat1686_utterance2_char0-143 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_indoctrinate_kids_00028 a grasp:Attribution ;
-        rdfs:label "They_indoctrinate_kids_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1686_utterance2_char0-143 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1686_utterance0_char0-87 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1686_utterance0_char0-87" ;
-        gaf:containsDenotation leolaniWorld:kids,
-            leolaniWorld:pride ;
-        gaf:denotes leolaniWorld:kids_go-to_pride ;
-        grasp:hasAttribution leolaniTalk:kids_go-to_pride_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:46.516996"^^xml1:string ;
-        rdf:value "Allowing kids to go to pride is the start of them being pushed down the trans pipeline."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1686_utterance0 .
-
-    leolaniTalk:kids_go-to_pride_00028 a grasp:Attribution ;
-        rdfs:label "kids_go-to_pride_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1686_utterance0_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-trans-into_thinking_00028 a grasp:Attribution ;
-        rdfs:label "they_are-trans-into_thinking_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1686_utterance2_char0-143 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_trans_00028 a grasp:Attribution ;
-        rdfs:label "they_are_trans_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1686_utterance2_char0-143 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1686_utterance2_char0-143 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1686_utterance2_char0-143" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:kids,
-            leolaniWorld:they,
-            leolaniWorld:thinking,
-            leolaniWorld:trans ;
-        gaf:denotes leolaniWorld:They_indoctrinate_kids,
-            leolaniWorld:they_are-trans-into_thinking,
-            leolaniWorld:they_are_trans ;
-        grasp:hasAttribution leolaniTalk:They_indoctrinate_kids_00028,
-            leolaniTalk:they_are-trans-into_thinking_00028,
-            leolaniTalk:they_are_trans_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:46.736315"^^xml1:string,
-            "2024-06-05T23:26:46.736371"^^xml1:string,
-            "2024-06-05T23:26:46.736394"^^xml1:string ;
-        rdf:value "They indoctrinate these kids into thinking they are trans by showing them drag queens and making them think men dressing up as women is normal."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1686_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:They_indoctrinate_kids {
+    leolaniWorld:They ns11:indoctrinate leolaniWorld:kids .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context229 a eps:Context ;
-        rdfs:label "context229" ;
-        hs:id "229"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1686 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "0"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1686 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1686" ;
-        hs:id "1686"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1686_utterance0,
-            leolaniTalk:chat1686_utterance2 .
-
-    leolaniTalk:chat1686_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1686_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1686_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1686_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1686_utterance2_char0-143 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:kids a gaf:Instance ;
+        rdfs:label "kids" ;
+        gaf:denotedIn leolaniTalk:chat1686_utterance0_char0-87,
+            leolaniTalk:chat1686_utterance2_char0-143 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:pride a gaf:Instance ;
+        rdfs:label "pride" ;
+        gaf:denotedIn leolaniTalk:chat1686_utterance0_char0-87 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1686_utterance2_char0-143 .
+
+    leolaniWorld:thinking a gaf:Instance ;
+        rdfs:label "thinking" ;
+        gaf:denotedIn leolaniTalk:chat1686_utterance2_char0-143 .
+
+    leolaniWorld:trans a gaf:Instance ;
+        rdfs:label "trans" ;
+        gaf:denotedIn leolaniTalk:chat1686_utterance2_char0-143 .
 }
 

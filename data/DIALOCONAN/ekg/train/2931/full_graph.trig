@@ -24,135 +24,232 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:they_are_only_sick {
-    leolaniWorld:they ns11:are leolaniWorld:only_sick .
+leolaniWorld:solution_is-treat_them {
+    leolaniWorld:solution ns11:is_treat leolaniWorld:them .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context82 a eps:Context ;
+        rdfs:label "context82" ;
+        hs:id "82"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2931 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "89"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2931 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2931" ;
+        hs:id "2931"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2931_utterance1,
+            leolaniTalk:chat2931_utterance2,
+            leolaniTalk:chat2931_utterance4 .
+
+    leolaniTalk:chat2931_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2931_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2931_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2931_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2931_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2931_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:they_are-only-sick-in_UK {
+    leolaniWorld:they ns11:are_only_sick_in leolaniWorld:UK .
+}
+
+leolaniWorld:they_are-sick-in_UK {
+    leolaniWorld:they ns11:are_sick_in leolaniWorld:UK .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    ns12:ll_problem a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_ll_'ll_problem" ;
-        gaf:denotedBy leolaniTalk:chat2931_utterance4_char0-103 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:solution_is-treat_if_they_do a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "solution_is-treat_if_they_do" ;
-        gaf:denotedBy leolaniTalk:chat2931_utterance1_char0-143 .
-
-    leolaniWorld:solution_is-treat_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "solution_is-treat_them" ;
-        gaf:denotedBy leolaniTalk:chat2931_utterance1_char0-143 .
-
-    leolaniWorld:solution_is-treat_they_do a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "solution_is-treat_they_do" ;
-        gaf:denotedBy leolaniTalk:chat2931_utterance1_char0-143 .
-
-    leolaniWorld:they_are-only-sick-in_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-only-sick-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat2931_utterance2_char0-47 .
-
-    leolaniWorld:they_are-sick-in_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are-sick-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat2931_utterance2_char0-47 .
-
-    leolaniWorld:they_are_only_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_only_sick" ;
-        gaf:denotedBy leolaniTalk:chat2931_utterance2_char0-47 .
-
-    leolaniWorld:they_are_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_sick" ;
-        gaf:denotedBy leolaniTalk:chat2931_utterance2_char0-47 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:solution_is-treat_if_they_do {
-    leolaniWorld:solution ns11:is_treat leolaniWorld:if_they_do .
+ns12:ll_problem {
+    leolaniWorld:it ns21:ll <http://cltl.nl/leolani/world/'ll_problem> .
 }
 
-leolaniWorld:solution_is-treat_they_do {
-    leolaniWorld:solution ns11:is_treat leolaniWorld:they_do .
+leolaniWorld:they_are_only_sick {
+    leolaniWorld:they ns11:are leolaniWorld:only_sick .
 }
 
-leolaniWorld:Instances {
-    <http://cltl.nl/leolani/world/'ll_problem> a gaf:Instance ;
-        rdfs:label "ll-problem" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance4_char0-103 .
+leolaniTalk:Perspectives {
+    leolaniTalk:chat2931_utterance4_char0-103 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2931_utterance4_char0-103" ;
+        gaf:containsDenotation <http://cltl.nl/leolani/world/'ll_problem>,
+            leolaniWorld:it ;
+        gaf:denotes ns12:ll_problem ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/it_ll_'ll_problem_00028> ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:00.698938"^^xml1:string ;
+        rdf:value "I just know it'll be a problem: they should be put down instead, they are only there to steal our jobs."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2931_utterance4 .
 
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance2_char0-47 .
+    <http://cltl.nl/leolani/talk/it_ll_'ll_problem_00028> a grasp:Attribution ;
+        rdfs:label "it_ll_'ll_problem_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2931_utterance4_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:solution_is-treat_if_they_do_00028 a grasp:Attribution ;
+        rdfs:label "solution_is-treat_if_they_do_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2931_utterance1_char0-143 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:solution_is-treat_them_00028 a grasp:Attribution ;
+        rdfs:label "solution_is-treat_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2931_utterance1_char0-143 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:if_they_do a gaf:Instance ;
-        rdfs:label "if-they-do" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance1_char0-143 .
+    leolaniTalk:solution_is-treat_they_do_00028 a grasp:Attribution ;
+        rdfs:label "solution_is-treat_they_do_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2931_utterance1_char0-143 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance4_char0-103 .
+    leolaniTalk:they_are-only-sick-in_UK_00028 a grasp:Attribution ;
+        rdfs:label "they_are-only-sick-in_UK_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2931_utterance2_char0-47 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:they_are-sick-in_UK_00028 a grasp:Attribution ;
+        rdfs:label "they_are-sick-in_UK_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2931_utterance2_char0-47 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:only_sick a gaf:Instance ;
-        rdfs:label "only-sick" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance2_char0-47 .
+    leolaniTalk:they_are_only_sick_00028 a grasp:Attribution ;
+        rdfs:label "they_are_only_sick_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2931_utterance2_char0-47 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:sick a gaf:Instance ;
-        rdfs:label "sick" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance2_char0-47 .
+    leolaniTalk:they_are_sick_00028 a grasp:Attribution ;
+        rdfs:label "they_are_sick_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2931_utterance2_char0-47 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:solution a gaf:Instance ;
-        rdfs:label "solution" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance1_char0-143 .
+    leolaniTalk:chat2931_utterance1_char0-143 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2931_utterance1_char0-143" ;
+        gaf:containsDenotation leolaniWorld:if_they_do,
+            leolaniWorld:solution,
+            leolaniWorld:them,
+            leolaniWorld:they_do ;
+        gaf:denotes leolaniWorld:solution_is-treat_if_they_do,
+            leolaniWorld:solution_is-treat_them,
+            leolaniWorld:solution_is-treat_they_do ;
+        grasp:hasAttribution leolaniTalk:solution_is-treat_if_they_do_00028,
+            leolaniTalk:solution_is-treat_them_00028,
+            leolaniTalk:solution_is-treat_they_do_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:00.413417"^^xml1:string,
+            "2024-06-05T23:24:00.413478"^^xml1:string,
+            "2024-06-05T23:24:00.413502"^^xml1:string ;
+        rdf:value "That is not the case, tuberculosis is a global health problem. Immigrants do not bring diseases, and if they do, the solution is to treat them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2931_utterance1 .
 
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance1_char0-143 .
+    leolaniTalk:chat2931_utterance2_char0-47 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2931_utterance2_char0-47" ;
+        gaf:containsDenotation leolaniWorld:UK,
+            leolaniWorld:only_sick,
+            leolaniWorld:sick,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_are-only-sick-in_UK,
+            leolaniWorld:they_are-sick-in_UK,
+            leolaniWorld:they_are_only_sick,
+            leolaniWorld:they_are_sick ;
+        grasp:hasAttribution leolaniTalk:they_are-only-sick-in_UK_00028,
+            leolaniTalk:they_are-sick-in_UK_00028,
+            leolaniTalk:they_are_only_sick_00028,
+            leolaniTalk:they_are_sick_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:00.492177"^^xml1:string,
+            "2024-06-05T23:24:00.492234"^^xml1:string,
+            "2024-06-05T23:24:00.492257"^^xml1:string,
+            "2024-06-05T23:24:00.492279"^^xml1:string ;
+        rdf:value "So then how come they are only sick in the UK? "^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2931_utterance2 .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance2_char0-47 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:they_do a gaf:Instance ;
-        rdfs:label "they-do" ;
-        gaf:denotedIn leolaniTalk:chat2931_utterance1_char0-143 .
-}
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-leolaniWorld:they_are_sick {
-    leolaniWorld:they ns11:are leolaniWorld:sick .
-}
-
-leolaniWorld:they_are-only-sick-in_UK {
-    leolaniWorld:they ns11:are_only_sick_in leolaniWorld:UK .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -490,219 +587,122 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_are_sick {
+    leolaniWorld:they ns11:are leolaniWorld:sick .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat2931_utterance4_char0-103 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2931_utterance4_char0-103" ;
-        gaf:containsDenotation <http://cltl.nl/leolani/world/'ll_problem>,
-            leolaniWorld:it ;
-        gaf:denotes ns12:ll_problem ;
-        grasp:hasAttribution <http://cltl.nl/leolani/talk/it_ll_'ll_problem_00028> ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:00.698938"^^xml1:string ;
-        rdf:value "I just know it'll be a problem: they should be put down instead, they are only there to steal our jobs."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2931_utterance4 .
-
-    <http://cltl.nl/leolani/talk/it_ll_'ll_problem_00028> a grasp:Attribution ;
-        rdfs:label "it_ll_'ll_problem_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2931_utterance4_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:solution_is-treat_if_they_do_00028 a grasp:Attribution ;
-        rdfs:label "solution_is-treat_if_they_do_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2931_utterance1_char0-143 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:solution_is-treat_them_00028 a grasp:Attribution ;
-        rdfs:label "solution_is-treat_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2931_utterance1_char0-143 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:solution_is-treat_they_do_00028 a grasp:Attribution ;
-        rdfs:label "solution_is-treat_they_do_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2931_utterance1_char0-143 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-only-sick-in_UK_00028 a grasp:Attribution ;
-        rdfs:label "they_are-only-sick-in_UK_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2931_utterance2_char0-47 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are-sick-in_UK_00028 a grasp:Attribution ;
-        rdfs:label "they_are-sick-in_UK_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2931_utterance2_char0-47 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_only_sick_00028 a grasp:Attribution ;
-        rdfs:label "they_are_only_sick_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2931_utterance2_char0-47 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_sick_00028 a grasp:Attribution ;
-        rdfs:label "they_are_sick_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2931_utterance2_char0-47 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2931_utterance1_char0-143 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2931_utterance1_char0-143" ;
-        gaf:containsDenotation leolaniWorld:if_they_do,
-            leolaniWorld:solution,
-            leolaniWorld:them,
-            leolaniWorld:they_do ;
-        gaf:denotes leolaniWorld:solution_is-treat_if_they_do,
-            leolaniWorld:solution_is-treat_them,
-            leolaniWorld:solution_is-treat_they_do ;
-        grasp:hasAttribution leolaniTalk:solution_is-treat_if_they_do_00028,
-            leolaniTalk:solution_is-treat_them_00028,
-            leolaniTalk:solution_is-treat_they_do_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:00.413417"^^xml1:string,
-            "2024-06-05T23:24:00.413478"^^xml1:string,
-            "2024-06-05T23:24:00.413502"^^xml1:string ;
-        rdf:value "That is not the case, tuberculosis is a global health problem. Immigrants do not bring diseases, and if they do, the solution is to treat them."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2931_utterance1 .
-
-    leolaniTalk:chat2931_utterance2_char0-47 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2931_utterance2_char0-47" ;
-        gaf:containsDenotation leolaniWorld:UK,
-            leolaniWorld:only_sick,
-            leolaniWorld:sick,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_are-only-sick-in_UK,
-            leolaniWorld:they_are-sick-in_UK,
-            leolaniWorld:they_are_only_sick,
-            leolaniWorld:they_are_sick ;
-        grasp:hasAttribution leolaniTalk:they_are-only-sick-in_UK_00028,
-            leolaniTalk:they_are-sick-in_UK_00028,
-            leolaniTalk:they_are_only_sick_00028,
-            leolaniTalk:they_are_sick_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:00.492177"^^xml1:string,
-            "2024-06-05T23:24:00.492234"^^xml1:string,
-            "2024-06-05T23:24:00.492257"^^xml1:string,
-            "2024-06-05T23:24:00.492279"^^xml1:string ;
-        rdf:value "So then how come they are only sick in the UK? "^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2931_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:solution_is-treat_they_do {
+    leolaniWorld:solution ns11:is_treat leolaniWorld:they_do .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context82 a eps:Context ;
-        rdfs:label "context82" ;
-        hs:id "82"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2931 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "89"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2931 a grasp:Chat,
+leolaniWorld:Claims {
+    ns12:ll_problem a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2931" ;
-        hs:id "2931"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2931_utterance1,
-            leolaniTalk:chat2931_utterance2,
-            leolaniTalk:chat2931_utterance4 .
+        rdfs:label "it_ll_'ll_problem" ;
+        gaf:denotedBy leolaniTalk:chat2931_utterance4_char0-103 .
 
-    leolaniTalk:chat2931_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2931_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat2931_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2931_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat2931_utterance4 a grasp:Utterance,
+    leolaniWorld:solution_is-treat_if_they_do a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2931_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "solution_is-treat_if_they_do" ;
+        gaf:denotedBy leolaniTalk:chat2931_utterance1_char0-143 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:solution_is-treat_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "solution_is-treat_them" ;
+        gaf:denotedBy leolaniTalk:chat2931_utterance1_char0-143 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:solution_is-treat_they_do a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "solution_is-treat_they_do" ;
+        gaf:denotedBy leolaniTalk:chat2931_utterance1_char0-143 .
+
+    leolaniWorld:they_are-only-sick-in_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-only-sick-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat2931_utterance2_char0-47 .
+
+    leolaniWorld:they_are-sick-in_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are-sick-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat2931_utterance2_char0-47 .
+
+    leolaniWorld:they_are_only_sick a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_only_sick" ;
+        gaf:denotedBy leolaniTalk:chat2931_utterance2_char0-47 .
+
+    leolaniWorld:they_are_sick a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_sick" ;
+        gaf:denotedBy leolaniTalk:chat2931_utterance2_char0-47 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:solution_is-treat_if_they_do {
+    leolaniWorld:solution ns11:is_treat leolaniWorld:if_they_do .
+}
+
+leolaniWorld:Instances {
+    <http://cltl.nl/leolani/world/'ll_problem> a gaf:Instance ;
+        rdfs:label "ll-problem" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance4_char0-103 .
+
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance2_char0-47 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:solution_is-treat_them {
-    leolaniWorld:solution ns11:is_treat leolaniWorld:them .
-}
+    leolaniWorld:if_they_do a gaf:Instance ;
+        rdfs:label "if-they-do" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance1_char0-143 .
 
-leolaniWorld:they_are-sick-in_UK {
-    leolaniWorld:they ns11:are_sick_in leolaniWorld:UK .
-}
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance4_char0-103 .
 
-ns12:ll_problem {
-    leolaniWorld:it ns21:ll <http://cltl.nl/leolani/world/'ll_problem> .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:only_sick a gaf:Instance ;
+        rdfs:label "only-sick" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance2_char0-47 .
+
+    leolaniWorld:sick a gaf:Instance ;
+        rdfs:label "sick" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance2_char0-47 .
+
+    leolaniWorld:solution a gaf:Instance ;
+        rdfs:label "solution" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance1_char0-143 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance1_char0-143 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance2_char0-47 .
+
+    leolaniWorld:they_do a gaf:Instance ;
+        rdfs:label "they-do" ;
+        gaf:denotedIn leolaniTalk:chat2931_utterance1_char0-143 .
 }
 

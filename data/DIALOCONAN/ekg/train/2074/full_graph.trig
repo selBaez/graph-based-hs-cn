@@ -22,95 +22,185 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Black_people_are-worse-than_dogs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Black_people_are-worse-than_dogs" ;
-        gaf:denotedBy leolaniTalk:chat2074_utterance0_char0-33 .
-
-    leolaniWorld:Black_people_are_worse a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Black_people_are_worse" ;
-        gaf:denotedBy leolaniTalk:chat2074_utterance0_char0-33 .
-
-    leolaniWorld:It_has_exactly_skin_color a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_exactly_skin_color" ;
-        gaf:denotedBy leolaniTalk:chat2074_utterance2_char0-78 .
-
-    leolaniWorld:It_has_skin_color a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_skin_color" ;
-        gaf:denotedBy leolaniTalk:chat2074_utterance2_char0-78 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_are-worse-than_dogs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_are-worse-than_dogs" ;
-        gaf:denotedBy leolaniTalk:chat2074_utterance0_char0-33 .
-
-    leolaniWorld:people_are_worse a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_are_worse" ;
-        gaf:denotedBy leolaniTalk:chat2074_utterance0_char0-33 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:It_has_exactly_skin_color {
-    leolaniWorld:It ns1:has leolaniWorld:exactly_skin_color .
+leolaniWorld:It_has_skin_color {
+    leolaniWorld:It ns1:has leolaniWorld:skin_color .
 }
 
 leolaniWorld:Black_people_are-worse-than_dogs {
     leolaniWorld:Black_people ns1:are_worse_than leolaniWorld:dogs .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Black_people a gaf:Instance ;
-        rdfs:label "black-people" ;
-        gaf:denotedIn leolaniTalk:chat2074_utterance0_char0-33 .
+leolaniTalk:Interactions {
+    leolaniContext:context61 a eps:Context ;
+        rdfs:label "context61" ;
+        hs:id "61"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2074_utterance2_char0-78 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2074 .
 
-    leolaniWorld:dogs a gaf:Instance ;
-        rdfs:label "dogs" ;
-        gaf:denotedIn leolaniTalk:chat2074_utterance0_char0-33 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:exactly_skin_color a gaf:Instance ;
-        rdfs:label "exactly-skin-color" ;
-        gaf:denotedIn leolaniTalk:chat2074_utterance2_char0-78 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "72"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2074 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2074" ;
+        hs:id "2074"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2074_utterance0,
+            leolaniTalk:chat2074_utterance2 .
+
+    leolaniTalk:chat2074_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2074_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2074_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2074_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2074_utterance0_char0-33 .
-
-    leolaniWorld:skin_color a gaf:Instance ;
-        rdfs:label "skin-color" ;
-        gaf:denotedIn leolaniTalk:chat2074_utterance2_char0-78 .
-
-    leolaniWorld:worse a gaf:Instance ;
-        rdfs:label "worse" ;
-        gaf:denotedIn leolaniTalk:chat2074_utterance0_char0-33 .
 }
 
-leolaniWorld:Black_people_are_worse {
-    leolaniWorld:Black_people ns1:are leolaniWorld:worse .
+leolaniWorld:It_has_exactly_skin_color {
+    leolaniWorld:It ns1:has leolaniWorld:exactly_skin_color .
 }
 
-leolaniWorld:It_has_skin_color {
-    leolaniWorld:It ns1:has leolaniWorld:skin_color .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Black_people_are-worse-than_dogs_00020 a grasp:Attribution ;
+        rdfs:label "Black_people_are-worse-than_dogs_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2074_utterance0_char0-33 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are_worse_00020 a grasp:Attribution ;
+        rdfs:label "Black_people_are_worse_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2074_utterance0_char0-33 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_has_exactly_skin_color_00028 a grasp:Attribution ;
+        rdfs:label "It_has_exactly_skin_color_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2074_utterance2_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_has_skin_color_00028 a grasp:Attribution ;
+        rdfs:label "It_has_skin_color_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2074_utterance2_char0-78 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-worse-than_dogs_00020 a grasp:Attribution ;
+        rdfs:label "people_are-worse-than_dogs_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2074_utterance0_char0-33 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are_worse_00020 a grasp:Attribution ;
+        rdfs:label "people_are_worse_00020" ;
+        grasp:isAttributionFor leolaniTalk:chat2074_utterance0_char0-33 ;
+        rdf:value graspe:DISGUST,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2074_utterance2_char0-78 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2074_utterance2_char0-78" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:exactly_skin_color,
+            leolaniWorld:skin_color ;
+        gaf:denotes leolaniWorld:It_has_exactly_skin_color,
+            leolaniWorld:It_has_skin_color ;
+        grasp:hasAttribution leolaniTalk:It_has_exactly_skin_color_00028,
+            leolaniTalk:It_has_skin_color_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:26.101931"^^xml1:string,
+            "2024-06-05T23:26:26.101997"^^xml1:string ;
+        rdf:value "It's exactly the skin color that makes them that way: violent and insensitive."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2074_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat2074_utterance0_char0-33 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2074_utterance0_char0-33" ;
+        gaf:containsDenotation leolaniWorld:Black_people,
+            leolaniWorld:dogs,
+            leolaniWorld:people,
+            leolaniWorld:worse ;
+        gaf:denotes leolaniWorld:Black_people_are-worse-than_dogs,
+            leolaniWorld:Black_people_are_worse,
+            leolaniWorld:people_are-worse-than_dogs,
+            leolaniWorld:people_are_worse ;
+        grasp:hasAttribution leolaniTalk:Black_people_are-worse-than_dogs_00020,
+            leolaniTalk:Black_people_are_worse_00020,
+            leolaniTalk:people_are-worse-than_dogs_00020,
+            leolaniTalk:people_are_worse_00020 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:19.574676"^^xml1:string,
+            "2024-06-05T23:26:19.574751"^^xml1:string,
+            "2024-06-05T23:26:19.574776"^^xml1:string,
+            "2024-06-05T23:26:19.574799"^^xml1:string ;
+        rdf:value "Black people are worse than dogs."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2074_utterance0 .
+
+    graspe:DISGUST a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISGUST" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:people_are-worse-than_dogs {
+    leolaniWorld:people ns1:are_worse_than leolaniWorld:dogs .
 }
 
 leolaniWorld:Ontology {
@@ -448,176 +538,86 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:Black_people_are-worse-than_dogs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-worse-than_dogs" ;
+        gaf:denotedBy leolaniTalk:chat2074_utterance0_char0-33 .
+
+    leolaniWorld:Black_people_are_worse a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are_worse" ;
+        gaf:denotedBy leolaniTalk:chat2074_utterance0_char0-33 .
+
+    leolaniWorld:It_has_exactly_skin_color a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_exactly_skin_color" ;
+        gaf:denotedBy leolaniTalk:chat2074_utterance2_char0-78 .
+
+    leolaniWorld:It_has_skin_color a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_skin_color" ;
+        gaf:denotedBy leolaniTalk:chat2074_utterance2_char0-78 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_are-worse-than_dogs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-worse-than_dogs" ;
+        gaf:denotedBy leolaniTalk:chat2074_utterance0_char0-33 .
+
+    leolaniWorld:people_are_worse a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_worse" ;
+        gaf:denotedBy leolaniTalk:chat2074_utterance0_char0-33 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Black_people_are_worse {
+    leolaniWorld:Black_people ns1:are leolaniWorld:worse .
+}
+
 leolaniWorld:people_are_worse {
     leolaniWorld:people ns1:are leolaniWorld:worse .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Black_people a gaf:Instance ;
+        rdfs:label "black-people" ;
+        gaf:denotedIn leolaniTalk:chat2074_utterance0_char0-33 .
 
-leolaniWorld:people_are-worse-than_dogs {
-    leolaniWorld:people ns1:are_worse_than leolaniWorld:dogs .
-}
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2074_utterance2_char0-78 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Black_people_are-worse-than_dogs_00020 a grasp:Attribution ;
-        rdfs:label "Black_people_are-worse-than_dogs_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2074_utterance0_char0-33 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:dogs a gaf:Instance ;
+        rdfs:label "dogs" ;
+        gaf:denotedIn leolaniTalk:chat2074_utterance0_char0-33 .
 
-    leolaniTalk:Black_people_are_worse_00020 a grasp:Attribution ;
-        rdfs:label "Black_people_are_worse_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2074_utterance0_char0-33 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_has_exactly_skin_color_00028 a grasp:Attribution ;
-        rdfs:label "It_has_exactly_skin_color_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2074_utterance2_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_has_skin_color_00028 a grasp:Attribution ;
-        rdfs:label "It_has_skin_color_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2074_utterance2_char0-78 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_are-worse-than_dogs_00020 a grasp:Attribution ;
-        rdfs:label "people_are-worse-than_dogs_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2074_utterance0_char0-33 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_are_worse_00020 a grasp:Attribution ;
-        rdfs:label "people_are_worse_00020" ;
-        grasp:isAttributionFor leolaniTalk:chat2074_utterance0_char0-33 ;
-        rdf:value graspe:DISGUST,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2074_utterance2_char0-78 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2074_utterance2_char0-78" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:exactly_skin_color,
-            leolaniWorld:skin_color ;
-        gaf:denotes leolaniWorld:It_has_exactly_skin_color,
-            leolaniWorld:It_has_skin_color ;
-        grasp:hasAttribution leolaniTalk:It_has_exactly_skin_color_00028,
-            leolaniTalk:It_has_skin_color_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:26.101931"^^xml1:string,
-            "2024-06-05T23:26:26.101997"^^xml1:string ;
-        rdf:value "It's exactly the skin color that makes them that way: violent and insensitive."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2074_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat2074_utterance0_char0-33 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2074_utterance0_char0-33" ;
-        gaf:containsDenotation leolaniWorld:Black_people,
-            leolaniWorld:dogs,
-            leolaniWorld:people,
-            leolaniWorld:worse ;
-        gaf:denotes leolaniWorld:Black_people_are-worse-than_dogs,
-            leolaniWorld:Black_people_are_worse,
-            leolaniWorld:people_are-worse-than_dogs,
-            leolaniWorld:people_are_worse ;
-        grasp:hasAttribution leolaniTalk:Black_people_are-worse-than_dogs_00020,
-            leolaniTalk:Black_people_are_worse_00020,
-            leolaniTalk:people_are-worse-than_dogs_00020,
-            leolaniTalk:people_are_worse_00020 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:19.574676"^^xml1:string,
-            "2024-06-05T23:26:19.574751"^^xml1:string,
-            "2024-06-05T23:26:19.574776"^^xml1:string,
-            "2024-06-05T23:26:19.574799"^^xml1:string ;
-        rdf:value "Black people are worse than dogs."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2074_utterance0 .
-
-    graspe:DISGUST a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISGUST" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context61 a eps:Context ;
-        rdfs:label "context61" ;
-        hs:id "61"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2074 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "72"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2074 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2074" ;
-        hs:id "2074"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2074_utterance0,
-            leolaniTalk:chat2074_utterance2 .
-
-    leolaniTalk:chat2074_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2074_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2074_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2074_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:exactly_skin_color a gaf:Instance ;
+        rdfs:label "exactly-skin-color" ;
+        gaf:denotedIn leolaniTalk:chat2074_utterance2_char0-78 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2074_utterance0_char0-33 .
+
+    leolaniWorld:skin_color a gaf:Instance ;
+        rdfs:label "skin-color" ;
+        gaf:denotedIn leolaniTalk:chat2074_utterance2_char0-78 .
+
+    leolaniWorld:worse a gaf:Instance ;
+        rdfs:label "worse" ;
+        gaf:denotedIn leolaniTalk:chat2074_utterance0_char0-33 .
 }
 

@@ -22,8 +22,106 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:We_eradicate_refugees_coming_to_our_land {
-    leolaniWorld:We ns1:eradicate leolaniWorld:refugees_coming_to_our_land .
+leolaniWorld:We_eradicate_refugees_coming_to_land {
+    leolaniWorld:We ns1:eradicate leolaniWorld:refugees_coming_to_land .
+}
+
+leolaniWorld:we_have-stop_immigrants {
+    leolaniWorld:we ns1:have_stop leolaniWorld:immigrants .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context102 a eps:Context ;
+        rdfs:label "context102" ;
+        hs:id "102"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2013 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "18"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2013 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2013" ;
+        hs:id "2013"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2013_utterance0,
+            leolaniTalk:chat2013_utterance1,
+            leolaniTalk:chat2013_utterance2 .
+
+    leolaniTalk:chat2013_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2013_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2013_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2013_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2013_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2013_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:We_should-show-to_people {
+    leolaniWorld:We ns1:should_show_to leolaniWorld:people .
+}
+
+leolaniWorld:We_should-show-compassion-to_people {
+    leolaniWorld:We ns1:should_show_compassion_to leolaniWorld:people .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:We_should-show_compassion {
+    leolaniWorld:We ns1:should_show leolaniWorld:compassion .
 }
 
 leolaniTalk:Perspectives {
@@ -162,48 +260,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2013_utterance0_char0-59,
-            leolaniTalk:chat2013_utterance1_char0-83 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:compassion a gaf:Instance ;
-        rdfs:label "compassion" ;
-        gaf:denotedIn leolaniTalk:chat2013_utterance1_char0-83 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:immigrants a gaf:Instance ;
-        rdfs:label "immigrants" ;
-        gaf:denotedIn leolaniTalk:chat2013_utterance2_char0-70 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2013_utterance1_char0-83 .
-
-    leolaniWorld:refugees_coming_to_land a gaf:Instance ;
-        rdfs:label "refugees-coming-to-land" ;
-        gaf:denotedIn leolaniTalk:chat2013_utterance0_char0-59 .
-
-    leolaniWorld:refugees_coming_to_our_land a gaf:Instance ;
-        rdfs:label "refugees-coming-to-our-land" ;
-        gaf:denotedIn leolaniTalk:chat2013_utterance0_char0-59 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2013_utterance2_char0-70 .
 }
 
 leolaniWorld:Ontology {
@@ -541,88 +597,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:We_eradicate_refugees_coming_to_land {
-    leolaniWorld:We ns1:eradicate leolaniWorld:refugees_coming_to_land .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context102 a eps:Context ;
-        rdfs:label "context102" ;
-        hs:id "102"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2013 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "18"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2013 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2013" ;
-        hs:id "2013"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2013_utterance0,
-            leolaniTalk:chat2013_utterance1,
-            leolaniTalk:chat2013_utterance2 .
-
-    leolaniTalk:chat2013_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2013_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2013_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2013_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2013_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2013_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:We_should-rather-show-compassion-to_people {
     leolaniWorld:We ns1:should_rather_show_compassion_to leolaniWorld:people .
 }
@@ -686,31 +660,57 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:we_have-stop_immigrants {
-    leolaniWorld:we ns1:have_stop leolaniWorld:immigrants .
-}
-
 leolaniWorld:We_should-rather-show-to_people {
     leolaniWorld:We ns1:should_rather_show_to leolaniWorld:people .
 }
 
-leolaniWorld:We_should-show_compassion {
-    leolaniWorld:We ns1:should_show leolaniWorld:compassion .
+leolaniWorld:We_eradicate_refugees_coming_to_our_land {
+    leolaniWorld:We ns1:eradicate leolaniWorld:refugees_coming_to_our_land .
 }
 
 leolaniWorld:We_should-rather-show_compassion {
     leolaniWorld:We ns1:should_rather_show leolaniWorld:compassion .
 }
 
-leolaniWorld:We_should-show-to_people {
-    leolaniWorld:We ns1:should_show_to leolaniWorld:people .
-}
+leolaniWorld:Instances {
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2013_utterance0_char0-59,
+            leolaniTalk:chat2013_utterance1_char0-83 .
 
-leolaniWorld:We_should-show-compassion-to_people {
-    leolaniWorld:We ns1:should_show_compassion_to leolaniWorld:people .
-}
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:compassion a gaf:Instance ;
+        rdfs:label "compassion" ;
+        gaf:denotedIn leolaniTalk:chat2013_utterance1_char0-83 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:immigrants a gaf:Instance ;
+        rdfs:label "immigrants" ;
+        gaf:denotedIn leolaniTalk:chat2013_utterance2_char0-70 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2013_utterance1_char0-83 .
+
+    leolaniWorld:refugees_coming_to_land a gaf:Instance ;
+        rdfs:label "refugees-coming-to-land" ;
+        gaf:denotedIn leolaniTalk:chat2013_utterance0_char0-59 .
+
+    leolaniWorld:refugees_coming_to_our_land a gaf:Instance ;
+        rdfs:label "refugees-coming-to-our-land" ;
+        gaf:denotedIn leolaniTalk:chat2013_utterance0_char0-59 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2013_utterance2_char0-70 .
 }
 

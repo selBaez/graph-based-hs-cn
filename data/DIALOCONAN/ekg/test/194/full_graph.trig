@@ -22,6 +22,105 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:queers_have-at_have_it {
+    leolaniWorld:queers ns11:have_at leolaniWorld:have_it .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context19 a eps:Context ;
+        rdfs:label "context19" ;
+        hs:id "19"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat194 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "58"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat194 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat194" ;
+        hs:id "194"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat194_utterance1,
+            leolaniTalk:chat194_utterance2 .
+
+    leolaniTalk:chat194_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat194_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat194_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat194_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:STDs_are-contracted-by_people {
+    leolaniWorld:STDs ns11:are_contracted_by leolaniWorld:people .
+}
+
+leolaniWorld:it_okay_gay {
+    leolaniWorld:it ns11:okay leolaniWorld:gay .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:it_okay_to_gay {
+    leolaniWorld:it ns11:okay leolaniWorld:to_gay .
+}
+
+leolaniWorld:telling_makes_way {
+    leolaniWorld:telling ns11:makes leolaniWorld:way .
+}
+
+leolaniWorld:Most_STDs_are-contracted-by_people {
+    leolaniWorld:Most_STDs ns11:are_contracted_by leolaniWorld:people .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:Most_STDs_are-contracted-by_people_00022 a grasp:Attribution ;
         rdfs:label "Most_STDs_are-contracted-by_people_00022" ;
@@ -167,79 +266,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Most_STDs a gaf:Instance ;
-        rdfs:label "most-stds" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance1_char0-123 .
-
-    leolaniWorld:STDs a gaf:Instance ;
-        rdfs:label "stds" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance1_char0-123 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:gay a gaf:Instance ;
-        rdfs:label "gay" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-
-    leolaniWorld:have_always_it a gaf:Instance ;
-        rdfs:label "have-always-it" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-
-    leolaniWorld:have_it a gaf:Instance ;
-        rdfs:label "have-it" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance1_char0-123 .
-
-    leolaniWorld:promiscuity a gaf:Instance ;
-        rdfs:label "promiscuity" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-
-    leolaniWorld:queers a gaf:Instance ;
-        rdfs:label "queers" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-
-    leolaniWorld:straight_people a gaf:Instance ;
-        rdfs:label "straight-people" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance1_char0-123 .
-
-    leolaniWorld:telling a gaf:Instance ;
-        rdfs:label "telling" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-
-    leolaniWorld:to_gay a gaf:Instance ;
-        rdfs:label "to-gay" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-
-    leolaniWorld:way a gaf:Instance ;
-        rdfs:label "way" ;
-        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
-}
-
-leolaniWorld:Most_STDs_are-contracted-by_people {
-    leolaniWorld:Most_STDs ns11:are_contracted_by leolaniWorld:people .
 }
 
 leolaniWorld:Ontology {
@@ -581,89 +607,6 @@ leolaniWorld:us_normalising_promiscuity {
     leolaniWorld:us ns11:normalising leolaniWorld:promiscuity .
 }
 
-leolaniWorld:it_okay_gay {
-    leolaniWorld:it ns11:okay leolaniWorld:gay .
-}
-
-leolaniWorld:it_okay_to_gay {
-    leolaniWorld:it ns11:okay leolaniWorld:to_gay .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:queers_have-at_have_it {
-    leolaniWorld:queers ns11:have_at leolaniWorld:have_it .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context19 a eps:Context ;
-        rdfs:label "context19" ;
-        hs:id "19"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat194 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "58"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat194 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat194" ;
-        hs:id "194"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat194_utterance1,
-            leolaniTalk:chat194_utterance2 .
-
-    leolaniTalk:chat194_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat194_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat194_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat194_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:queers_have-at_have_always_it {
     leolaniWorld:queers ns11:have_at leolaniWorld:have_always_it .
 }
@@ -736,19 +679,76 @@ leolaniWorld:STDs_are-contracted-by_straight_people {
     leolaniWorld:STDs ns11:are_contracted_by leolaniWorld:straight_people .
 }
 
-leolaniWorld:telling_makes_way {
-    leolaniWorld:telling ns11:makes leolaniWorld:way .
-}
-
-leolaniWorld:STDs_are-contracted-by_people {
-    leolaniWorld:STDs ns11:are_contracted_by leolaniWorld:people .
-}
-
 leolaniWorld:Most_STDs_are-contracted-by_straight_people {
     leolaniWorld:Most_STDs ns11:are_contracted_by leolaniWorld:straight_people .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Instances {
+    leolaniWorld:Most_STDs a gaf:Instance ;
+        rdfs:label "most-stds" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance1_char0-123 .
+
+    leolaniWorld:STDs a gaf:Instance ;
+        rdfs:label "stds" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance1_char0-123 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:gay a gaf:Instance ;
+        rdfs:label "gay" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
+
+    leolaniWorld:have_always_it a gaf:Instance ;
+        rdfs:label "have-always-it" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
+
+    leolaniWorld:have_it a gaf:Instance ;
+        rdfs:label "have-it" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance1_char0-123 .
+
+    leolaniWorld:promiscuity a gaf:Instance ;
+        rdfs:label "promiscuity" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
+
+    leolaniWorld:queers a gaf:Instance ;
+        rdfs:label "queers" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
+
+    leolaniWorld:straight_people a gaf:Instance ;
+        rdfs:label "straight-people" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance1_char0-123 .
+
+    leolaniWorld:telling a gaf:Instance ;
+        rdfs:label "telling" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
+
+    leolaniWorld:to_gay a gaf:Instance ;
+        rdfs:label "to-gay" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
+
+    leolaniWorld:way a gaf:Instance ;
+        rdfs:label "way" ;
+        gaf:denotedIn leolaniTalk:chat194_utterance2_char0-161 .
 }
 

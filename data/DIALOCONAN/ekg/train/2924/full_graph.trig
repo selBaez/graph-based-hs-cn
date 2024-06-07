@@ -22,124 +22,214 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:We_are_forced a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_are_forced" ;
-        gaf:denotedBy leolaniTalk:chat2924_utterance0_char0-75 .
-
-    leolaniWorld:bureaucracy_is_long a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "bureaucracy_is_long" ;
-        gaf:denotedBy leolaniTalk:chat2924_utterance1_char0-280 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_get_benefits a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_get_benefits" ;
-        gaf:denotedBy leolaniTalk:chat2924_utterance1_char0-280 .
-
-    leolaniWorld:they_keep_staying a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_keep_staying" ;
-        gaf:denotedBy leolaniTalk:chat2924_utterance2_char0-103 .
-
-    leolaniWorld:they_keep_staying_on_benefits a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_keep_staying_on_benefits" ;
-        gaf:denotedBy leolaniTalk:chat2924_utterance2_char0-103 .
-
-    leolaniWorld:they_sometimes-get_benefits a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_sometimes-get_benefits" ;
-        gaf:denotedBy leolaniTalk:chat2924_utterance1_char0-280 .
-
-    leolaniWorld:they_staying-on_benefits a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_staying-on_benefits" ;
-        gaf:denotedBy leolaniTalk:chat2924_utterance2_char0-103 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:they_staying-on_benefits {
+    leolaniWorld:they ns1:staying_on leolaniWorld:benefits .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:We_are_forced {
+    leolaniWorld:We ns1:are leolaniWorld:forced .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context163 a eps:Context ;
+        rdfs:label "context163" ;
+        hs:id "163"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2924 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "197"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2924 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2924" ;
+        hs:id "2924"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2924_utterance0,
+            leolaniTalk:chat2924_utterance1,
+            leolaniTalk:chat2924_utterance2 .
+
+    leolaniTalk:chat2924_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2924_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2924_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2924_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2924_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2924_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:they_sometimes-get_benefits {
     leolaniWorld:they ns1:sometimes_get leolaniWorld:benefits .
 }
 
-leolaniWorld:they_staying-on_benefits {
-    leolaniWorld:they ns1:staying_on leolaniWorld:benefits .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:they_keep_staying {
-    leolaniWorld:they ns1:keep leolaniWorld:staying .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2924_utterance0_char0-75 .
+leolaniTalk:Perspectives {
+    leolaniTalk:We_are_forced_00028 a grasp:Attribution ;
+        rdfs:label "We_are_forced_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2924_utterance0_char0-75 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:benefits a gaf:Instance ;
-        rdfs:label "benefits" ;
-        gaf:denotedIn leolaniTalk:chat2924_utterance1_char0-280,
-            leolaniTalk:chat2924_utterance2_char0-103 .
+    leolaniTalk:bureaucracy_is_long_00028 a grasp:Attribution ;
+        rdfs:label "bureaucracy_is_long_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2924_utterance1_char0-280 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:bureaucracy a gaf:Instance ;
-        rdfs:label "bureaucracy" ;
-        gaf:denotedIn leolaniTalk:chat2924_utterance1_char0-280 .
+    leolaniTalk:chat2924_utterance0_char0-75 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2924_utterance0_char0-75" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:forced ;
+        gaf:denotes leolaniWorld:We_are_forced ;
+        grasp:hasAttribution leolaniTalk:We_are_forced_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:20.975442"^^xml1:string ;
+        rdf:value "We are forced to economically support all of the so called 'asylum seekers'"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2924_utterance0 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:they_get_benefits_00028 a grasp:Attribution ;
+        rdfs:label "they_get_benefits_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2924_utterance1_char0-280 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:forced a gaf:Instance ;
-        rdfs:label "forced" ;
-        gaf:denotedIn leolaniTalk:chat2924_utterance0_char0-75 .
+    leolaniTalk:they_keep_staying_00028 a grasp:Attribution ;
+        rdfs:label "they_keep_staying_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2924_utterance2_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:they_keep_staying_on_benefits_00028 a grasp:Attribution ;
+        rdfs:label "they_keep_staying_on_benefits_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2924_utterance2_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:they_sometimes-get_benefits_00028 a grasp:Attribution ;
+        rdfs:label "they_sometimes-get_benefits_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2924_utterance1_char0-280 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:long a gaf:Instance ;
-        rdfs:label "long" ;
-        gaf:denotedIn leolaniTalk:chat2924_utterance1_char0-280 .
+    leolaniTalk:they_staying-on_benefits_00028 a grasp:Attribution ;
+        rdfs:label "they_staying-on_benefits_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2924_utterance2_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:staying a gaf:Instance ;
-        rdfs:label "staying" ;
-        gaf:denotedIn leolaniTalk:chat2924_utterance2_char0-103 .
+    leolaniTalk:chat2924_utterance1_char0-280 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2924_utterance1_char0-280" ;
+        gaf:containsDenotation leolaniWorld:benefits,
+            leolaniWorld:bureaucracy,
+            leolaniWorld:long,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:bureaucracy_is_long,
+            leolaniWorld:they_get_benefits,
+            leolaniWorld:they_sometimes-get_benefits ;
+        grasp:hasAttribution leolaniTalk:bureaucracy_is_long_00028,
+            leolaniTalk:they_get_benefits_00028,
+            leolaniTalk:they_sometimes-get_benefits_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:21.104445"^^xml1:string,
+            "2024-06-05T23:35:21.104502"^^xml1:string,
+            "2024-06-05T23:35:21.104526"^^xml1:string ;
+        rdf:value "I don't think the problem with asylum seekers is the fact that they are sometimes get benefits, rather the fact that they are entitled to asylum but have no legal status that prevents them from working. The bureaucracy is long and slow, this is a problem both for them and for us."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2924_utterance1 .
 
-    leolaniWorld:staying_on_benefits a gaf:Instance ;
-        rdfs:label "staying-on-benefits" ;
-        gaf:denotedIn leolaniTalk:chat2924_utterance2_char0-103 .
+    leolaniTalk:chat2924_utterance2_char0-103 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2924_utterance2_char0-103" ;
+        gaf:containsDenotation leolaniWorld:benefits,
+            leolaniWorld:staying,
+            leolaniWorld:staying_on_benefits,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_keep_staying,
+            leolaniWorld:they_keep_staying_on_benefits,
+            leolaniWorld:they_staying-on_benefits ;
+        grasp:hasAttribution leolaniTalk:they_keep_staying_00028,
+            leolaniTalk:they_keep_staying_on_benefits_00028,
+            leolaniTalk:they_staying-on_benefits_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:21.197257"^^xml1:string,
+            "2024-06-05T23:35:21.197314"^^xml1:string,
+            "2024-06-05T23:35:21.197337"^^xml1:string ;
+        rdf:value "We have to take in millions of people who don't want to work! That's why they keep staying on benefits!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2924_utterance2 .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2924_utterance1_char0-280,
-            leolaniTalk:chat2924_utterance2_char0-103 .
-}
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-leolaniWorld:bureaucracy_is_long {
-    leolaniWorld:bureaucracy ns1:is leolaniWorld:long .
-}
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-leolaniWorld:they_get_benefits {
-    leolaniWorld:they ns1:get leolaniWorld:benefits .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -477,205 +567,115 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_get_benefits {
+    leolaniWorld:they ns1:get leolaniWorld:benefits .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:We_are_forced_00028 a grasp:Attribution ;
-        rdfs:label "We_are_forced_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2924_utterance0_char0-75 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:We_are_forced a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_are_forced" ;
+        gaf:denotedBy leolaniTalk:chat2924_utterance0_char0-75 .
 
-    leolaniTalk:bureaucracy_is_long_00028 a grasp:Attribution ;
-        rdfs:label "bureaucracy_is_long_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2924_utterance1_char0-280 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:bureaucracy_is_long a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "bureaucracy_is_long" ;
+        gaf:denotedBy leolaniTalk:chat2924_utterance1_char0-280 .
 
-    leolaniTalk:chat2924_utterance0_char0-75 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2924_utterance0_char0-75" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:forced ;
-        gaf:denotes leolaniWorld:We_are_forced ;
-        grasp:hasAttribution leolaniTalk:We_are_forced_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:20.975442"^^xml1:string ;
-        rdf:value "We are forced to economically support all of the so called 'asylum seekers'"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2924_utterance0 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:they_get_benefits_00028 a grasp:Attribution ;
-        rdfs:label "they_get_benefits_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2924_utterance1_char0-280 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:they_keep_staying_00028 a grasp:Attribution ;
-        rdfs:label "they_keep_staying_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2924_utterance2_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_get_benefits a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_get_benefits" ;
+        gaf:denotedBy leolaniTalk:chat2924_utterance1_char0-280 .
 
-    leolaniTalk:they_keep_staying_on_benefits_00028 a grasp:Attribution ;
-        rdfs:label "they_keep_staying_on_benefits_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2924_utterance2_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_keep_staying a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_keep_staying" ;
+        gaf:denotedBy leolaniTalk:chat2924_utterance2_char0-103 .
 
-    leolaniTalk:they_sometimes-get_benefits_00028 a grasp:Attribution ;
-        rdfs:label "they_sometimes-get_benefits_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2924_utterance1_char0-280 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_keep_staying_on_benefits a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_keep_staying_on_benefits" ;
+        gaf:denotedBy leolaniTalk:chat2924_utterance2_char0-103 .
 
-    leolaniTalk:they_staying-on_benefits_00028 a grasp:Attribution ;
-        rdfs:label "they_staying-on_benefits_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2924_utterance2_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_sometimes-get_benefits a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_sometimes-get_benefits" ;
+        gaf:denotedBy leolaniTalk:chat2924_utterance1_char0-280 .
 
-    leolaniTalk:chat2924_utterance1_char0-280 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2924_utterance1_char0-280" ;
-        gaf:containsDenotation leolaniWorld:benefits,
-            leolaniWorld:bureaucracy,
-            leolaniWorld:long,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:bureaucracy_is_long,
-            leolaniWorld:they_get_benefits,
-            leolaniWorld:they_sometimes-get_benefits ;
-        grasp:hasAttribution leolaniTalk:bureaucracy_is_long_00028,
-            leolaniTalk:they_get_benefits_00028,
-            leolaniTalk:they_sometimes-get_benefits_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:21.104445"^^xml1:string,
-            "2024-06-05T23:35:21.104502"^^xml1:string,
-            "2024-06-05T23:35:21.104526"^^xml1:string ;
-        rdf:value "I don't think the problem with asylum seekers is the fact that they are sometimes get benefits, rather the fact that they are entitled to asylum but have no legal status that prevents them from working. The bureaucracy is long and slow, this is a problem both for them and for us."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2924_utterance1 .
+    leolaniWorld:they_staying-on_benefits a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_staying-on_benefits" ;
+        gaf:denotedBy leolaniTalk:chat2924_utterance2_char0-103 .
 
-    leolaniTalk:chat2924_utterance2_char0-103 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2924_utterance2_char0-103" ;
-        gaf:containsDenotation leolaniWorld:benefits,
-            leolaniWorld:staying,
-            leolaniWorld:staying_on_benefits,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_keep_staying,
-            leolaniWorld:they_keep_staying_on_benefits,
-            leolaniWorld:they_staying-on_benefits ;
-        grasp:hasAttribution leolaniTalk:they_keep_staying_00028,
-            leolaniTalk:they_keep_staying_on_benefits_00028,
-            leolaniTalk:they_staying-on_benefits_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:21.197257"^^xml1:string,
-            "2024-06-05T23:35:21.197314"^^xml1:string,
-            "2024-06-05T23:35:21.197337"^^xml1:string ;
-        rdf:value "We have to take in millions of people who don't want to work! That's why they keep staying on benefits!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2924_utterance2 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context163 a eps:Context ;
-        rdfs:label "context163" ;
-        hs:id "163"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2924 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "197"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2924 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2924" ;
-        hs:id "2924"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2924_utterance0,
-            leolaniTalk:chat2924_utterance1,
-            leolaniTalk:chat2924_utterance2 .
-
-    leolaniTalk:chat2924_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2924_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2924_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2924_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2924_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2924_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:they_keep_staying {
+    leolaniWorld:they ns1:keep leolaniWorld:staying .
 }
 
-leolaniWorld:We_are_forced {
-    leolaniWorld:We ns1:are leolaniWorld:forced .
+leolaniWorld:bureaucracy_is_long {
+    leolaniWorld:bureaucracy ns1:is leolaniWorld:long .
 }
 
 leolaniWorld:they_keep_staying_on_benefits {
     leolaniWorld:they ns1:keep leolaniWorld:staying_on_benefits .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2924_utterance0_char0-75 .
+
+    leolaniWorld:benefits a gaf:Instance ;
+        rdfs:label "benefits" ;
+        gaf:denotedIn leolaniTalk:chat2924_utterance1_char0-280,
+            leolaniTalk:chat2924_utterance2_char0-103 .
+
+    leolaniWorld:bureaucracy a gaf:Instance ;
+        rdfs:label "bureaucracy" ;
+        gaf:denotedIn leolaniTalk:chat2924_utterance1_char0-280 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:forced a gaf:Instance ;
+        rdfs:label "forced" ;
+        gaf:denotedIn leolaniTalk:chat2924_utterance0_char0-75 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:long a gaf:Instance ;
+        rdfs:label "long" ;
+        gaf:denotedIn leolaniTalk:chat2924_utterance1_char0-280 .
+
+    leolaniWorld:staying a gaf:Instance ;
+        rdfs:label "staying" ;
+        gaf:denotedIn leolaniTalk:chat2924_utterance2_char0-103 .
+
+    leolaniWorld:staying_on_benefits a gaf:Instance ;
+        rdfs:label "staying-on-benefits" ;
+        gaf:denotedIn leolaniTalk:chat2924_utterance2_char0-103 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2924_utterance1_char0-280,
+            leolaniTalk:chat2924_utterance2_char0-103 .
 }
 

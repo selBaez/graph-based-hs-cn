@@ -22,79 +22,174 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Migrants_are-burden-to_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_are-burden-to_UK" ;
-        gaf:denotedBy leolaniTalk:chat2450_utterance2_char0-31 .
-
-    leolaniWorld:Migrants_are_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_are_burden" ;
-        gaf:denotedBy leolaniTalk:chat2450_utterance2_char0-31 .
-
-    leolaniWorld:influx_is-running-out_jobs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "influx_is-running-out_jobs" ;
-        gaf:denotedBy leolaniTalk:chat2450_utterance0_char0-72 .
-
-    leolaniWorld:influx_is-running-uk-out_jobs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "influx_is-running-uk-out_jobs" ;
-        gaf:denotedBy leolaniTalk:chat2450_utterance0_char0-72 .
-
-    leolaniWorld:influx_is-running_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "influx_is-running_UK" ;
-        gaf:denotedBy leolaniTalk:chat2450_utterance0_char0-72 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:Migrants_are-burden-to_UK {
     leolaniWorld:Migrants ns1:are_burden_to leolaniWorld:UK .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat2450_utterance2_char0-31 .
+leolaniWorld:influx_is-running-out_jobs {
+    leolaniWorld:influx ns1:is_running_out leolaniWorld:jobs .
+}
 
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat2450_utterance0_char0-72,
-            leolaniTalk:chat2450_utterance2_char0-31 .
+leolaniWorld:Migrants_are_burden {
+    leolaniWorld:Migrants ns1:are leolaniWorld:burden .
+}
 
-    leolaniWorld:burden a gaf:Instance ;
-        rdfs:label "burden" ;
-        gaf:denotedIn leolaniTalk:chat2450_utterance2_char0-31 .
+leolaniTalk:Interactions {
+    leolaniContext:context59 a eps:Context ;
+        rdfs:label "context59" ;
+        hs:id "59"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2450 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "28"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2450 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2450" ;
+        hs:id "2450"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2450_utterance0,
+            leolaniTalk:chat2450_utterance2 .
+
+    leolaniTalk:chat2450_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2450_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2450_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2450_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:influx a gaf:Instance ;
-        rdfs:label "influx" ;
-        gaf:denotedIn leolaniTalk:chat2450_utterance0_char0-72 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:jobs a gaf:Instance ;
-        rdfs:label "jobs" ;
-        gaf:denotedIn leolaniTalk:chat2450_utterance0_char0-72 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:influx_is-running-uk-out_jobs {
+    leolaniWorld:influx ns1:is_running_uk_out leolaniWorld:jobs .
 }
 
 leolaniWorld:influx_is-running_UK {
     leolaniWorld:influx ns1:is_running leolaniWorld:UK .
 }
 
-leolaniWorld:Migrants_are_burden {
-    leolaniWorld:Migrants ns1:are leolaniWorld:burden .
+leolaniTalk:Perspectives {
+    leolaniTalk:Migrants_are-burden-to_UK_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_are-burden-to_UK_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2450_utterance2_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_are_burden_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_are_burden_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2450_utterance2_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:influx_is-running-out_jobs_00028 a grasp:Attribution ;
+        rdfs:label "influx_is-running-out_jobs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2450_utterance0_char0-72 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:influx_is-running-uk-out_jobs_00028 a grasp:Attribution ;
+        rdfs:label "influx_is-running-uk-out_jobs_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2450_utterance0_char0-72 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:influx_is-running_UK_00028 a grasp:Attribution ;
+        rdfs:label "influx_is-running_UK_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2450_utterance0_char0-72 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2450_utterance2_char0-31 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2450_utterance2_char0-31" ;
+        gaf:containsDenotation leolaniWorld:Migrants,
+            leolaniWorld:UK,
+            leolaniWorld:burden ;
+        gaf:denotes leolaniWorld:Migrants_are-burden-to_UK,
+            leolaniWorld:Migrants_are_burden ;
+        grasp:hasAttribution leolaniTalk:Migrants_are-burden-to_UK_00028,
+            leolaniTalk:Migrants_are_burden_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:13.503200"^^xml1:string,
+            "2024-06-05T22:59:13.503257"^^xml1:string ;
+        rdf:value "Migrants are a burden to the UK"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2450_utterance2 .
+
+    leolaniTalk:chat2450_utterance0_char0-72 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2450_utterance0_char0-72" ;
+        gaf:containsDenotation leolaniWorld:UK,
+            leolaniWorld:influx,
+            leolaniWorld:jobs ;
+        gaf:denotes leolaniWorld:influx_is-running-out_jobs,
+            leolaniWorld:influx_is-running-uk-out_jobs,
+            leolaniWorld:influx_is-running_UK ;
+        grasp:hasAttribution leolaniTalk:influx_is-running-out_jobs_00028,
+            leolaniTalk:influx_is-running-uk-out_jobs_00028,
+            leolaniTalk:influx_is-running_UK_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T22:59:06.781748"^^xml1:string,
+            "2024-06-05T22:59:06.781811"^^xml1:string,
+            "2024-06-05T22:59:06.781836"^^xml1:string ;
+        rdf:value "They are. The influx of refugees and migrants is running UK out of jobs."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2450_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -432,161 +527,66 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Migrants_are-burden-to_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are-burden-to_UK" ;
+        gaf:denotedBy leolaniTalk:chat2450_utterance2_char0-31 .
+
+    leolaniWorld:Migrants_are_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat2450_utterance2_char0-31 .
+
+    leolaniWorld:influx_is-running-out_jobs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "influx_is-running-out_jobs" ;
+        gaf:denotedBy leolaniTalk:chat2450_utterance0_char0-72 .
+
+    leolaniWorld:influx_is-running-uk-out_jobs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "influx_is-running-uk-out_jobs" ;
+        gaf:denotedBy leolaniTalk:chat2450_utterance0_char0-72 .
+
+    leolaniWorld:influx_is-running_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "influx_is-running_UK" ;
+        gaf:denotedBy leolaniTalk:chat2450_utterance0_char0-72 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:influx_is-running-out_jobs {
-    leolaniWorld:influx ns1:is_running_out leolaniWorld:jobs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat2450_utterance2_char0-31 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Migrants_are-burden-to_UK_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_are-burden-to_UK_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2450_utterance2_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat2450_utterance0_char0-72,
+            leolaniTalk:chat2450_utterance2_char0-31 .
 
-    leolaniTalk:Migrants_are_burden_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_are_burden_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2450_utterance2_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:influx_is-running-out_jobs_00028 a grasp:Attribution ;
-        rdfs:label "influx_is-running-out_jobs_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2450_utterance0_char0-72 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:influx_is-running-uk-out_jobs_00028 a grasp:Attribution ;
-        rdfs:label "influx_is-running-uk-out_jobs_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2450_utterance0_char0-72 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:influx_is-running_UK_00028 a grasp:Attribution ;
-        rdfs:label "influx_is-running_UK_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2450_utterance0_char0-72 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2450_utterance2_char0-31 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2450_utterance2_char0-31" ;
-        gaf:containsDenotation leolaniWorld:Migrants,
-            leolaniWorld:UK,
-            leolaniWorld:burden ;
-        gaf:denotes leolaniWorld:Migrants_are-burden-to_UK,
-            leolaniWorld:Migrants_are_burden ;
-        grasp:hasAttribution leolaniTalk:Migrants_are-burden-to_UK_00028,
-            leolaniTalk:Migrants_are_burden_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:13.503200"^^xml1:string,
-            "2024-06-05T22:59:13.503257"^^xml1:string ;
-        rdf:value "Migrants are a burden to the UK"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2450_utterance2 .
-
-    leolaniTalk:chat2450_utterance0_char0-72 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2450_utterance0_char0-72" ;
-        gaf:containsDenotation leolaniWorld:UK,
-            leolaniWorld:influx,
-            leolaniWorld:jobs ;
-        gaf:denotes leolaniWorld:influx_is-running-out_jobs,
-            leolaniWorld:influx_is-running-uk-out_jobs,
-            leolaniWorld:influx_is-running_UK ;
-        grasp:hasAttribution leolaniTalk:influx_is-running-out_jobs_00028,
-            leolaniTalk:influx_is-running-uk-out_jobs_00028,
-            leolaniTalk:influx_is-running_UK_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T22:59:06.781748"^^xml1:string,
-            "2024-06-05T22:59:06.781811"^^xml1:string,
-            "2024-06-05T22:59:06.781836"^^xml1:string ;
-        rdf:value "They are. The influx of refugees and migrants is running UK out of jobs."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2450_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context59 a eps:Context ;
-        rdfs:label "context59" ;
-        hs:id "59"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2450 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "28"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2450 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2450" ;
-        hs:id "2450"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2450_utterance0,
-            leolaniTalk:chat2450_utterance2 .
-
-    leolaniTalk:chat2450_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2450_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2450_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2450_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:burden a gaf:Instance ;
+        rdfs:label "burden" ;
+        gaf:denotedIn leolaniTalk:chat2450_utterance2_char0-31 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:influx_is-running-uk-out_jobs {
-    leolaniWorld:influx ns1:is_running_uk_out leolaniWorld:jobs .
+    leolaniWorld:influx a gaf:Instance ;
+        rdfs:label "influx" ;
+        gaf:denotedIn leolaniTalk:chat2450_utterance0_char0-72 .
+
+    leolaniWorld:jobs a gaf:Instance ;
+        rdfs:label "jobs" ;
+        gaf:denotedIn leolaniTalk:chat2450_utterance0_char0-72 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 }
 

@@ -23,107 +23,179 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:They_are-taking_control {
-    leolaniWorld:They ns1:are_taking leolaniWorld:control .
+leolaniTalk:Interactions {
+    leolaniContext:context115 a eps:Context ;
+        rdfs:label "context115" ;
+        hs:id "115"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1553 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "208"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1553 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1553" ;
+        hs:id "1553"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1553_utterance0,
+            leolaniTalk:chat1553_utterance2 .
+
+    leolaniTalk:chat1553_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1553_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1553_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1553_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Here_has_article a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Here_has_article" ;
-        gaf:denotedBy leolaniTalk:chat1553_utterance2_char0-27 .
-
-    leolaniWorld:Here_s-article-about_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Here_s-article-about_it" ;
-        gaf:denotedBy leolaniTalk:chat1553_utterance2_char0-27 .
-
-    leolaniWorld:Muslims_ban_meat a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_ban_meat" ;
-        gaf:denotedBy leolaniTalk:chat1553_utterance0_char0-76 .
-
-    leolaniWorld:Muslims_ban_non-halal_meat a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_ban_non-halal_meat" ;
-        gaf:denotedBy leolaniTalk:chat1553_utterance0_char0-76 .
-
-    leolaniWorld:They_are-taking_control a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are-taking_control" ;
-        gaf:denotedBy leolaniTalk:chat1553_utterance0_char0-76 .
-
-    leolaniWorld:They_are-taking_control_of_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are-taking_control_of_our_country" ;
-        gaf:denotedBy leolaniTalk:chat1553_utterance0_char0-76 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:Here_has_article {
     leolaniWorld:Here ns1:has leolaniWorld:article .
 }
 
-leolaniWorld:Here_s-article-about_it {
-    leolaniWorld:Here ns12:s_article_about leolaniWorld:it .
-}
-
-leolaniWorld:Muslims_ban_non-halal_meat {
-    leolaniWorld:Muslims ns1:ban leolaniWorld:non-halal_meat .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Here a gaf:Instance ;
-        rdfs:label "here" ;
-        gaf:denotedIn leolaniTalk:chat1553_utterance2_char0-27 .
-
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
-
-    leolaniWorld:article a gaf:Instance ;
-        rdfs:label "article" ;
-        gaf:denotedIn leolaniTalk:chat1553_utterance2_char0-27 .
-
-    leolaniWorld:control a gaf:Instance ;
-        rdfs:label "control" ;
-        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
-
-    leolaniWorld:control_of_our_country a gaf:Instance ;
-        rdfs:label "control-of-our-country" ;
-        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1553_utterance2_char0-27 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:meat a gaf:Instance ;
-        rdfs:label "meat" ;
-        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
-
-    leolaniWorld:non-halal_meat a gaf:Instance ;
-        rdfs:label "non-halal-meat" ;
-        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
-}
-
 leolaniWorld:Muslims_ban_meat {
     leolaniWorld:Muslims ns1:ban leolaniWorld:meat .
+}
+
+leolaniWorld:They_are-taking_control {
+    leolaniWorld:They ns1:are_taking leolaniWorld:control .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Here_has_article_00028 a grasp:Attribution ;
+        rdfs:label "Here_has_article_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1553_utterance2_char0-27 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Here_s-article-about_it_00028 a grasp:Attribution ;
+        rdfs:label "Here_s-article-about_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1553_utterance2_char0-27 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_ban_meat_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_ban_meat_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1553_utterance0_char0-76 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_ban_non-halal_meat_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_ban_non-halal_meat_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1553_utterance0_char0-76 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are-taking_control_00028 a grasp:Attribution ;
+        rdfs:label "They_are-taking_control_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1553_utterance0_char0-76 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are-taking_control_of_our_country_00028 a grasp:Attribution ;
+        rdfs:label "They_are-taking_control_of_our_country_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1553_utterance0_char0-76 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1553_utterance2_char0-27 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1553_utterance2_char0-27" ;
+        gaf:containsDenotation leolaniWorld:Here,
+            leolaniWorld:article,
+            leolaniWorld:it ;
+        gaf:denotes leolaniWorld:Here_has_article,
+            leolaniWorld:Here_s-article-about_it ;
+        grasp:hasAttribution leolaniTalk:Here_has_article_00028,
+            leolaniTalk:Here_s-article-about_it_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:09.446425"^^xml1:string,
+            "2024-06-05T23:35:09.446484"^^xml1:string ;
+        rdf:value "Here's an article about it."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1553_utterance2 .
+
+    leolaniTalk:chat1553_utterance0_char0-76 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1553_utterance0_char0-76" ;
+        gaf:containsDenotation leolaniWorld:Muslims,
+            leolaniWorld:They,
+            leolaniWorld:control,
+            leolaniWorld:control_of_our_country,
+            leolaniWorld:meat,
+            leolaniWorld:non-halal_meat ;
+        gaf:denotes leolaniWorld:Muslims_ban_meat,
+            leolaniWorld:Muslims_ban_non-halal_meat,
+            leolaniWorld:They_are-taking_control,
+            leolaniWorld:They_are-taking_control_of_our_country ;
+        grasp:hasAttribution leolaniTalk:Muslims_ban_meat_00028,
+            leolaniTalk:Muslims_ban_non-halal_meat_00028,
+            leolaniTalk:They_are-taking_control_00028,
+            leolaniTalk:They_are-taking_control_of_our_country_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:09.296376"^^xml1:string,
+            "2024-06-05T23:35:09.296437"^^xml1:string,
+            "2024-06-05T23:35:09.296461"^^xml1:string,
+            "2024-06-05T23:35:09.296482"^^xml1:string ;
+        rdf:value "Muslims want to ban non-halal meat!! They are taking control of our country."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1553_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -461,170 +533,98 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Here_has_article_00028 a grasp:Attribution ;
-        rdfs:label "Here_has_article_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1553_utterance2_char0-27 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Here_s-article-about_it_00028 a grasp:Attribution ;
-        rdfs:label "Here_s-article-about_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1553_utterance2_char0-27 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Muslims_ban_meat_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_ban_meat_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1553_utterance0_char0-76 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Muslims_ban_non-halal_meat_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_ban_non-halal_meat_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1553_utterance0_char0-76 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are-taking_control_00028 a grasp:Attribution ;
-        rdfs:label "They_are-taking_control_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1553_utterance0_char0-76 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are-taking_control_of_our_country_00028 a grasp:Attribution ;
-        rdfs:label "They_are-taking_control_of_our_country_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1553_utterance0_char0-76 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1553_utterance2_char0-27 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1553_utterance2_char0-27" ;
-        gaf:containsDenotation leolaniWorld:Here,
-            leolaniWorld:article,
-            leolaniWorld:it ;
-        gaf:denotes leolaniWorld:Here_has_article,
-            leolaniWorld:Here_s-article-about_it ;
-        grasp:hasAttribution leolaniTalk:Here_has_article_00028,
-            leolaniTalk:Here_s-article-about_it_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:09.446425"^^xml1:string,
-            "2024-06-05T23:35:09.446484"^^xml1:string ;
-        rdf:value "Here's an article about it."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1553_utterance2 .
-
-    leolaniTalk:chat1553_utterance0_char0-76 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1553_utterance0_char0-76" ;
-        gaf:containsDenotation leolaniWorld:Muslims,
-            leolaniWorld:They,
-            leolaniWorld:control,
-            leolaniWorld:control_of_our_country,
-            leolaniWorld:meat,
-            leolaniWorld:non-halal_meat ;
-        gaf:denotes leolaniWorld:Muslims_ban_meat,
-            leolaniWorld:Muslims_ban_non-halal_meat,
-            leolaniWorld:They_are-taking_control,
-            leolaniWorld:They_are-taking_control_of_our_country ;
-        grasp:hasAttribution leolaniTalk:Muslims_ban_meat_00028,
-            leolaniTalk:Muslims_ban_non-halal_meat_00028,
-            leolaniTalk:They_are-taking_control_00028,
-            leolaniTalk:They_are-taking_control_of_our_country_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:09.296376"^^xml1:string,
-            "2024-06-05T23:35:09.296437"^^xml1:string,
-            "2024-06-05T23:35:09.296461"^^xml1:string,
-            "2024-06-05T23:35:09.296482"^^xml1:string ;
-        rdf:value "Muslims want to ban non-halal meat!! They are taking control of our country."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1553_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context115 a eps:Context ;
-        rdfs:label "context115" ;
-        hs:id "115"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1553 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "208"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1553 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Here_has_article a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1553" ;
-        hs:id "1553"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1553_utterance0,
-            leolaniTalk:chat1553_utterance2 .
+        rdfs:label "Here_has_article" ;
+        gaf:denotedBy leolaniTalk:chat1553_utterance2_char0-27 .
 
-    leolaniTalk:chat1553_utterance0 a grasp:Utterance,
+    leolaniWorld:Here_s-article-about_it a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1553_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Here_s-article-about_it" ;
+        gaf:denotedBy leolaniTalk:chat1553_utterance2_char0-27 .
 
-    leolaniTalk:chat1553_utterance2 a grasp:Utterance,
+    leolaniWorld:Muslims_ban_meat a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1553_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Muslims_ban_meat" ;
+        gaf:denotedBy leolaniTalk:chat1553_utterance0_char0-76 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Muslims_ban_non-halal_meat a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_ban_non-halal_meat" ;
+        gaf:denotedBy leolaniTalk:chat1553_utterance0_char0-76 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They_are-taking_control a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-taking_control" ;
+        gaf:denotedBy leolaniTalk:chat1553_utterance0_char0-76 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:They_are-taking_control_of_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-taking_control_of_our_country" ;
+        gaf:denotedBy leolaniTalk:chat1553_utterance0_char0-76 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:They_are-taking_control_of_our_country {
     leolaniWorld:They ns1:are_taking leolaniWorld:control_of_our_country .
+}
+
+leolaniWorld:Muslims_ban_non-halal_meat {
+    leolaniWorld:Muslims ns1:ban leolaniWorld:non-halal_meat .
+}
+
+leolaniWorld:Here_s-article-about_it {
+    leolaniWorld:Here ns12:s_article_about leolaniWorld:it .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Here a gaf:Instance ;
+        rdfs:label "here" ;
+        gaf:denotedIn leolaniTalk:chat1553_utterance2_char0-27 .
+
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
+
+    leolaniWorld:article a gaf:Instance ;
+        rdfs:label "article" ;
+        gaf:denotedIn leolaniTalk:chat1553_utterance2_char0-27 .
+
+    leolaniWorld:control a gaf:Instance ;
+        rdfs:label "control" ;
+        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
+
+    leolaniWorld:control_of_our_country a gaf:Instance ;
+        rdfs:label "control-of-our-country" ;
+        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1553_utterance2_char0-27 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:meat a gaf:Instance ;
+        rdfs:label "meat" ;
+        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
+
+    leolaniWorld:non-halal_meat a gaf:Instance ;
+        rdfs:label "non-halal-meat" ;
+        gaf:denotedIn leolaniTalk:chat1553_utterance0_char0-76 .
 }
 

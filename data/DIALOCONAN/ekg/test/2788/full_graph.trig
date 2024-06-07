@@ -23,8 +23,82 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:their_outfits_are_cute {
-    leolaniWorld:their_outfits ns1:are leolaniWorld:cute .
+leolaniWorld:they_do_it {
+    leolaniWorld:they ns1:do leolaniWorld:it .
+}
+
+leolaniWorld:It_s-just-playing-dress-up-for_them {
+    leolaniWorld:It ns11:s_just_playing_dress_up_for leolaniWorld:them .
+}
+
+leolaniWorld:nothing_wrong_is-with_them {
+    leolaniWorld:nothing_wrong ns1:is_with leolaniWorld:them .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context56 a eps:Context ;
+        rdfs:label "context56" ;
+        hs:id "56"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2788 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "190"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2788 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2788" ;
+        hs:id "2788"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2788_utterance1 .
+
+    leolaniTalk:chat2788_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2788_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:their_little_outfits_are_so_cute {
+    leolaniWorld:their_little_outfits ns1:are leolaniWorld:so_cute .
+}
+
+leolaniWorld:It_s-just-playing-up_dress {
+    leolaniWorld:It ns11:s_just_playing_up leolaniWorld:dress .
 }
 
 leolaniWorld:It_s-playing-dress-up-for_them {
@@ -171,63 +245,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:cute a gaf:Instance ;
-        rdfs:label "cute" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-
-    leolaniWorld:dress a gaf:Instance ;
-        rdfs:label "dress" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nothing_wrong a gaf:Instance ;
-        rdfs:label "nothing-wrong" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-
-    leolaniWorld:so_cute a gaf:Instance ;
-        rdfs:label "so-cute" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-
-    leolaniWorld:their_little_outfits a gaf:Instance ;
-        rdfs:label "their-little-outfits" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-
-    leolaniWorld:their_outfits a gaf:Instance ;
-        rdfs:label "their-outfits" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
-}
-
-leolaniWorld:It_s-just-playing-dress-up-for_them {
-    leolaniWorld:It ns11:s_just_playing_dress_up_for leolaniWorld:them .
-}
-
-leolaniWorld:their_little_outfits_are_so_cute {
-    leolaniWorld:their_little_outfits ns1:are leolaniWorld:so_cute .
 }
 
 leolaniWorld:Ontology {
@@ -565,70 +582,12 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:their_little_outfits_are_cute {
+    leolaniWorld:their_little_outfits ns1:are leolaniWorld:cute .
 }
 
-leolaniWorld:their_outfits_are_so_cute {
-    leolaniWorld:their_outfits ns1:are leolaniWorld:so_cute .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context56 a eps:Context ;
-        rdfs:label "context56" ;
-        hs:id "56"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2788 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "190"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2788 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2788" ;
-        hs:id "2788"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2788_utterance1 .
-
-    leolaniTalk:chat2788_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2788_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-}
-
-leolaniWorld:It_s-just-playing-up_dress {
-    leolaniWorld:It ns11:s_just_playing_up leolaniWorld:dress .
+leolaniWorld:they_do-though_it {
+    leolaniWorld:they ns1:do_though leolaniWorld:it .
 }
 
 leolaniWorld:Claims {
@@ -694,23 +653,64 @@ leolaniWorld:Claims {
     leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
+leolaniWorld:their_outfits_are_cute {
+    leolaniWorld:their_outfits ns1:are leolaniWorld:cute .
+}
+
 leolaniWorld:It_s-playing-up_dress {
     leolaniWorld:It ns11:s_playing_up leolaniWorld:dress .
 }
 
-leolaniWorld:they_do_it {
-    leolaniWorld:they ns1:do leolaniWorld:it .
+leolaniWorld:their_outfits_are_so_cute {
+    leolaniWorld:their_outfits ns1:are leolaniWorld:so_cute .
 }
 
-leolaniWorld:they_do-though_it {
-    leolaniWorld:they ns1:do_though leolaniWorld:it .
-}
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
 
-leolaniWorld:nothing_wrong_is-with_them {
-    leolaniWorld:nothing_wrong ns1:is_with leolaniWorld:them .
-}
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
 
-leolaniWorld:their_little_outfits_are_cute {
-    leolaniWorld:their_little_outfits ns1:are leolaniWorld:cute .
+    leolaniWorld:cute a gaf:Instance ;
+        rdfs:label "cute" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
+
+    leolaniWorld:dress a gaf:Instance ;
+        rdfs:label "dress" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nothing_wrong a gaf:Instance ;
+        rdfs:label "nothing-wrong" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
+
+    leolaniWorld:so_cute a gaf:Instance ;
+        rdfs:label "so-cute" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
+
+    leolaniWorld:their_little_outfits a gaf:Instance ;
+        rdfs:label "their-little-outfits" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
+
+    leolaniWorld:their_outfits a gaf:Instance ;
+        rdfs:label "their-outfits" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2788_utterance1_char0-177 .
 }
 

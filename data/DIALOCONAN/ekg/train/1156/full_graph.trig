@@ -26,33 +26,82 @@ leolaniWorld:People_have_right {
     leolaniWorld:People ns11:have leolaniWorld:right .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:People_have_right a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context81 a eps:Context ;
+        rdfs:label "context81" ;
+        hs:id "81"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1156 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "24"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1156 a grasp:Chat,
             sem:Event ;
-        rdfs:label "People_have_right" ;
-        gaf:denotedBy leolaniTalk:chat1156_utterance1_char0-130 .
+        rdfs:label "chat1156" ;
+        hs:id "1156"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1156_utterance0,
+            leolaniTalk:chat1156_utterance1,
+            leolaniTalk:chat1156_utterance2 .
 
-    leolaniWorld:Those_should_should_expelled a gaf:Assertion,
+    leolaniTalk:chat1156_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Those_should_should_expelled" ;
-        gaf:denotedBy leolaniTalk:chat1156_utterance0_char0-77 .
+        rdfs:label "chat1156_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat1156_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat1156_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat1156_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat1156_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:they_take_social_housing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_take_social_housing" ;
-        gaf:denotedBy leolaniTalk:chat1156_utterance2_char0-58 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
@@ -63,41 +112,76 @@ leolaniWorld:Those_should_should_expelled {
     leolaniWorld:Those ns11:should leolaniWorld:should_expelled .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:People a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1156_utterance1_char0-130 .
+leolaniTalk:Perspectives {
+    leolaniTalk:People_have_right_00028 a grasp:Attribution ;
+        rdfs:label "People_have_right_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1156_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Those a gaf:Instance ;
-        rdfs:label "those" ;
-        gaf:denotedIn leolaniTalk:chat1156_utterance0_char0-77 .
+    leolaniTalk:Those_should_should_expelled_00028 a grasp:Attribution ;
+        rdfs:label "Those_should_should_expelled_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1156_utterance0_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat1156_utterance0_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1156_utterance0_char0-77" ;
+        gaf:containsDenotation leolaniWorld:Those,
+            leolaniWorld:should_expelled ;
+        gaf:denotes leolaniWorld:Those_should_should_expelled ;
+        grasp:hasAttribution leolaniTalk:Those_should_should_expelled_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:19:30.482320"^^xml1:string ;
+        rdf:value "Those who come in the UK from other countries should be expelled or excluded."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1156_utterance0 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat1156_utterance1_char0-130 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1156_utterance1_char0-130" ;
+        gaf:containsDenotation leolaniWorld:People,
+            leolaniWorld:right ;
+        gaf:denotes leolaniWorld:People_have_right ;
+        grasp:hasAttribution leolaniTalk:People_have_right_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:19:30.582125"^^xml1:string ;
+        rdf:value "People migrating in the UK have the right to live and work there. They should not be expelled or excluded because of their origin."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1156_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat1156_utterance2_char0-58 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1156_utterance2_char0-58" ;
+        gaf:containsDenotation leolaniWorld:social_housing,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_take_social_housing ;
+        grasp:hasAttribution leolaniTalk:they_take_social_housing_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:19:30.660930"^^xml1:string ;
+        rdf:value "But they take all the social housing from British people. "^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1156_utterance2 .
 
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat1156_utterance1_char0-130 .
+    leolaniTalk:they_take_social_housing_00028 a grasp:Attribution ;
+        rdfs:label "they_take_social_housing_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1156_utterance2_char0-58 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:should_expelled a gaf:Instance ;
-        rdfs:label "should-expelled" ;
-        gaf:denotedIn leolaniTalk:chat1156_utterance0_char0-77 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:social_housing a gaf:Instance ;
-        rdfs:label "social-housing" ;
-        gaf:denotedIn leolaniTalk:chat1156_utterance2_char0-58 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1156_utterance2_char0-58 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -435,157 +519,73 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:People_have_right_00028 a grasp:Attribution ;
-        rdfs:label "People_have_right_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1156_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Those_should_should_expelled_00028 a grasp:Attribution ;
-        rdfs:label "Those_should_should_expelled_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1156_utterance0_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1156_utterance0_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1156_utterance0_char0-77" ;
-        gaf:containsDenotation leolaniWorld:Those,
-            leolaniWorld:should_expelled ;
-        gaf:denotes leolaniWorld:Those_should_should_expelled ;
-        grasp:hasAttribution leolaniTalk:Those_should_should_expelled_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:19:30.482320"^^xml1:string ;
-        rdf:value "Those who come in the UK from other countries should be expelled or excluded."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1156_utterance0 .
-
-    leolaniTalk:chat1156_utterance1_char0-130 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1156_utterance1_char0-130" ;
-        gaf:containsDenotation leolaniWorld:People,
-            leolaniWorld:right ;
-        gaf:denotes leolaniWorld:People_have_right ;
-        grasp:hasAttribution leolaniTalk:People_have_right_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:19:30.582125"^^xml1:string ;
-        rdf:value "People migrating in the UK have the right to live and work there. They should not be expelled or excluded because of their origin."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1156_utterance1 .
-
-    leolaniTalk:chat1156_utterance2_char0-58 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1156_utterance2_char0-58" ;
-        gaf:containsDenotation leolaniWorld:social_housing,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_take_social_housing ;
-        grasp:hasAttribution leolaniTalk:they_take_social_housing_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:19:30.660930"^^xml1:string ;
-        rdf:value "But they take all the social housing from British people. "^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1156_utterance2 .
-
-    leolaniTalk:they_take_social_housing_00028 a grasp:Attribution ;
-        rdfs:label "they_take_social_housing_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1156_utterance2_char0-58 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context81 a eps:Context ;
-        rdfs:label "context81" ;
-        hs:id "81"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1156 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "24"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1156 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:People_have_right a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1156" ;
-        hs:id "1156"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1156_utterance0,
-            leolaniTalk:chat1156_utterance1,
-            leolaniTalk:chat1156_utterance2 .
+        rdfs:label "People_have_right" ;
+        gaf:denotedBy leolaniTalk:chat1156_utterance1_char0-130 .
 
-    leolaniTalk:chat1156_utterance0 a grasp:Utterance,
+    leolaniWorld:Those_should_should_expelled a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1156_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Those_should_should_expelled" ;
+        gaf:denotedBy leolaniTalk:chat1156_utterance0_char0-77 .
 
-    leolaniTalk:chat1156_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1156_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat1156_utterance2 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1156_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:they_take_social_housing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_take_social_housing" ;
+        gaf:denotedBy leolaniTalk:chat1156_utterance2_char0-58 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:they_take_social_housing {
     leolaniWorld:they ns11:take leolaniWorld:social_housing .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:People a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1156_utterance1_char0-130 .
+
+    leolaniWorld:Those a gaf:Instance ;
+        rdfs:label "those" ;
+        gaf:denotedIn leolaniTalk:chat1156_utterance0_char0-77 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat1156_utterance1_char0-130 .
+
+    leolaniWorld:should_expelled a gaf:Instance ;
+        rdfs:label "should-expelled" ;
+        gaf:denotedIn leolaniTalk:chat1156_utterance0_char0-77 .
+
+    leolaniWorld:social_housing a gaf:Instance ;
+        rdfs:label "social-housing" ;
+        gaf:denotedIn leolaniTalk:chat1156_utterance2_char0-58 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1156_utterance2_char0-58 .
 }
 

@@ -22,38 +22,96 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context52 a eps:Context ;
+        rdfs:label "context52" ;
+        hs:id "52"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1170 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "233"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1170 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1170" ;
+        hs:id "1170"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1170_utterance1 .
+
+    leolaniTalk:chat1170_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1170_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:They_are_our_brothers a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_our_brothers" ;
-        gaf:denotedBy leolaniTalk:chat1170_utterance1_char0-63 .
+leolaniTalk:Perspectives {
+    leolaniTalk:They_are_our_brothers_00028 a grasp:Attribution ;
+        rdfs:label "They_are_our_brothers_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1170_utterance1_char0-63 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniTalk:chat1170_utterance1_char0-63 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1170_utterance1_char0-63" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:our_brothers ;
+        gaf:denotes leolaniWorld:They_are_our_brothers ;
+        grasp:hasAttribution leolaniTalk:They_are_our_brothers_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:19.602216"^^xml1:string ;
+        rdf:value "They have always lived here. They are our brothers and sisters."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1170_utterance1 .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1170_utterance1_char0-63 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_brothers a gaf:Instance ;
-        rdfs:label "our-brothers" ;
-        gaf:denotedIn leolaniTalk:chat1170_utterance1_char0-63 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -391,95 +449,37 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_are_our_brothers_00028 a grasp:Attribution ;
-        rdfs:label "They_are_our_brothers_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1170_utterance1_char0-63 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1170_utterance1_char0-63 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1170_utterance1_char0-63" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:our_brothers ;
-        gaf:denotes leolaniWorld:They_are_our_brothers ;
-        grasp:hasAttribution leolaniTalk:They_are_our_brothers_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:19.602216"^^xml1:string ;
-        rdf:value "They have always lived here. They are our brothers and sisters."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1170_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context52 a eps:Context ;
-        rdfs:label "context52" ;
-        hs:id "52"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1170 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "233"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1170 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:They_are_our_brothers a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1170" ;
-        hs:id "1170"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1170_utterance1 .
+        rdfs:label "They_are_our_brothers" ;
+        gaf:denotedBy leolaniTalk:chat1170_utterance1_char0-63 .
 
-    leolaniTalk:chat1170_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1170_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
 leolaniWorld:They_are_our_brothers {
     leolaniWorld:They ns1:are leolaniWorld:our_brothers .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1170_utterance1_char0-63 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_brothers a gaf:Instance ;
+        rdfs:label "our-brothers" ;
+        gaf:denotedIn leolaniTalk:chat1170_utterance1_char0-63 .
 }
 

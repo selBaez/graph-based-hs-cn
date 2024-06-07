@@ -22,91 +22,158 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Immigrants_break-at-time_time a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context95 a eps:Context ;
+        rdfs:label "context95" ;
+        hs:id "95"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat623 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "41"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat623 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Immigrants_break-at-time_time" ;
-        gaf:denotedBy leolaniTalk:chat623_utterance2_char0-67 .
+        rdfs:label "chat623" ;
+        hs:id "623"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat623_utterance1,
+            leolaniTalk:chat623_utterance2 .
 
-    leolaniWorld:Immigrants_break-law-at-time_time a gaf:Assertion,
+    leolaniTalk:chat623_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Immigrants_break-law-at-time_time" ;
-        gaf:denotedBy leolaniTalk:chat623_utterance2_char0-67 .
+        rdfs:label "chat623_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:They_are_welcome a gaf:Assertion,
+    leolaniTalk:chat623_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_are_welcome" ;
-        gaf:denotedBy leolaniTalk:chat623_utterance1_char0-54 .
+        rdfs:label "chat623_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:they_should_should_deported a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_should_should_deported" ;
-        gaf:denotedBy leolaniTalk:chat623_utterance2_char0-67 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Immigrants_break-at-time_time {
-    leolaniWorld:Immigrants ns1:break_at_time leolaniWorld:time .
-}
-
-leolaniWorld:they_should_should_deported {
-    leolaniWorld:they ns1:should leolaniWorld:should_deported .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Immigrants a gaf:Instance ;
-        rdfs:label "immigrants" ;
-        gaf:denotedIn leolaniTalk:chat623_utterance2_char0-67 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat623_utterance1_char0-54 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:should_deported a gaf:Instance ;
-        rdfs:label "should-deported" ;
-        gaf:denotedIn leolaniTalk:chat623_utterance2_char0-67 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat623_utterance2_char0-67 .
-
-    leolaniWorld:time a gaf:Instance ;
-        rdfs:label "time" ;
-        gaf:denotedIn leolaniTalk:chat623_utterance2_char0-67 .
-
-    leolaniWorld:welcome a gaf:Instance ;
-        rdfs:label "welcome" ;
-        gaf:denotedIn leolaniTalk:chat623_utterance1_char0-54 .
-}
-
 leolaniWorld:Immigrants_break-law-at-time_time {
     leolaniWorld:Immigrants ns1:break_law_at_time leolaniWorld:time .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Immigrants_break-at-time_time_00028 a grasp:Attribution ;
+        rdfs:label "Immigrants_break-at-time_time_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat623_utterance2_char0-67 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Immigrants_break-law-at-time_time_00028 a grasp:Attribution ;
+        rdfs:label "Immigrants_break-law-at-time_time_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat623_utterance2_char0-67 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_welcome_00028 a grasp:Attribution ;
+        rdfs:label "They_are_welcome_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat623_utterance1_char0-54 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat623_utterance1_char0-54 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat623_utterance1_char0-54" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:welcome ;
+        gaf:denotes leolaniWorld:They_are_welcome ;
+        grasp:hasAttribution leolaniTalk:They_are_welcome_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:57.364887"^^xml1:string ;
+        rdf:value "They are welcome to stay if they do not break the law."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat623_utterance1 .
+
+    leolaniTalk:they_should_should_deported_00028 a grasp:Attribution ;
+        rdfs:label "they_should_should_deported_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat623_utterance2_char0-67 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat623_utterance2_char0-67 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat623_utterance2_char0-67" ;
+        gaf:containsDenotation leolaniWorld:Immigrants,
+            leolaniWorld:should_deported,
+            leolaniWorld:they,
+            leolaniWorld:time ;
+        gaf:denotes leolaniWorld:Immigrants_break-at-time_time,
+            leolaniWorld:Immigrants_break-law-at-time_time,
+            leolaniWorld:they_should_should_deported ;
+        grasp:hasAttribution leolaniTalk:Immigrants_break-at-time_time_00028,
+            leolaniTalk:Immigrants_break-law-at-time_time_00028,
+            leolaniTalk:they_should_should_deported_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:57.447604"^^xml1:string,
+            "2024-06-05T23:23:57.447663"^^xml1:string,
+            "2024-06-05T23:23:57.447688"^^xml1:string ;
+        rdf:value "Immigrants break the law all the time, they should all be deported."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat623_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -444,153 +511,86 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Immigrants_break-at-time_time_00028 a grasp:Attribution ;
-        rdfs:label "Immigrants_break-at-time_time_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat623_utterance2_char0-67 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Immigrants_break-law-at-time_time_00028 a grasp:Attribution ;
-        rdfs:label "Immigrants_break-law-at-time_time_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat623_utterance2_char0-67 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_welcome_00028 a grasp:Attribution ;
-        rdfs:label "They_are_welcome_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat623_utterance1_char0-54 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat623_utterance1_char0-54 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat623_utterance1_char0-54" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:welcome ;
-        gaf:denotes leolaniWorld:They_are_welcome ;
-        grasp:hasAttribution leolaniTalk:They_are_welcome_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:57.364887"^^xml1:string ;
-        rdf:value "They are welcome to stay if they do not break the law."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat623_utterance1 .
-
-    leolaniTalk:they_should_should_deported_00028 a grasp:Attribution ;
-        rdfs:label "they_should_should_deported_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat623_utterance2_char0-67 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat623_utterance2_char0-67 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat623_utterance2_char0-67" ;
-        gaf:containsDenotation leolaniWorld:Immigrants,
-            leolaniWorld:should_deported,
-            leolaniWorld:they,
-            leolaniWorld:time ;
-        gaf:denotes leolaniWorld:Immigrants_break-at-time_time,
-            leolaniWorld:Immigrants_break-law-at-time_time,
-            leolaniWorld:they_should_should_deported ;
-        grasp:hasAttribution leolaniTalk:Immigrants_break-at-time_time_00028,
-            leolaniTalk:Immigrants_break-law-at-time_time_00028,
-            leolaniTalk:they_should_should_deported_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:57.447604"^^xml1:string,
-            "2024-06-05T23:23:57.447663"^^xml1:string,
-            "2024-06-05T23:23:57.447688"^^xml1:string ;
-        rdf:value "Immigrants break the law all the time, they should all be deported."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat623_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context95 a eps:Context ;
-        rdfs:label "context95" ;
-        hs:id "95"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat623 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "41"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat623 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat623" ;
-        hs:id "623"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat623_utterance1,
-            leolaniTalk:chat623_utterance2 .
-
-    leolaniTalk:chat623_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat623_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat623_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat623_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:Immigrants_break-at-time_time {
+    leolaniWorld:Immigrants ns1:break_at_time leolaniWorld:time .
 }
 
 leolaniWorld:They_are_welcome {
     leolaniWorld:They ns1:are leolaniWorld:welcome .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Immigrants_break-at-time_time a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigrants_break-at-time_time" ;
+        gaf:denotedBy leolaniTalk:chat623_utterance2_char0-67 .
+
+    leolaniWorld:Immigrants_break-law-at-time_time a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigrants_break-law-at-time_time" ;
+        gaf:denotedBy leolaniTalk:chat623_utterance2_char0-67 .
+
+    leolaniWorld:They_are_welcome a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_welcome" ;
+        gaf:denotedBy leolaniTalk:chat623_utterance1_char0-54 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_should_should_deported a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_should_should_deported" ;
+        gaf:denotedBy leolaniTalk:chat623_utterance2_char0-67 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:they_should_should_deported {
+    leolaniWorld:they ns1:should leolaniWorld:should_deported .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Immigrants a gaf:Instance ;
+        rdfs:label "immigrants" ;
+        gaf:denotedIn leolaniTalk:chat623_utterance2_char0-67 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat623_utterance1_char0-54 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:should_deported a gaf:Instance ;
+        rdfs:label "should-deported" ;
+        gaf:denotedIn leolaniTalk:chat623_utterance2_char0-67 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat623_utterance2_char0-67 .
+
+    leolaniWorld:time a gaf:Instance ;
+        rdfs:label "time" ;
+        gaf:denotedIn leolaniTalk:chat623_utterance2_char0-67 .
+
+    leolaniWorld:welcome a gaf:Instance ;
+        rdfs:label "welcome" ;
+        gaf:denotedIn leolaniTalk:chat623_utterance1_char0-54 .
 }
 

@@ -22,77 +22,137 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Jews_run-in_our_country {
-    leolaniWorld:Jews ns1:run_in leolaniWorld:our_country .
+leolaniWorld:anyone_vote-for_Jew {
+    leolaniWorld:anyone ns1:vote_for leolaniWorld:Jew .
 }
 
-leolaniWorld:anyone_vote-in_situation {
-    leolaniWorld:anyone ns1:vote_in leolaniWorld:situation .
+leolaniTalk:Interactions {
+    leolaniContext:context106 a eps:Context ;
+        rdfs:label "context106" ;
+        hs:id "106"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1403 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "170"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1403 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1403" ;
+        hs:id "1403"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1403_utterance0 .
+
+    leolaniTalk:chat1403_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1403_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_run-amok-in_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_run-amok-in_our_country" ;
-        gaf:denotedBy leolaniTalk:chat1403_utterance0_char0-138 .
-
-    leolaniWorld:Jews_run-in_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_run-in_our_country" ;
-        gaf:denotedBy leolaniTalk:chat1403_utterance0_char0-138 .
-
-    leolaniWorld:anyone_vote-for_Jew a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "anyone_vote-for_Jew" ;
-        gaf:denotedBy leolaniTalk:chat1403_utterance0_char0-138 .
-
-    leolaniWorld:anyone_vote-in_situation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "anyone_vote-in_situation" ;
-        gaf:denotedBy leolaniTalk:chat1403_utterance0_char0-138 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:Jews_run-amok-in_our_country {
     leolaniWorld:Jews ns1:run_amok_in leolaniWorld:our_country .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jew a gaf:Instance ;
-        rdfs:label "jew" ;
-        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_run-amok-in_our_country_00028 a grasp:Attribution ;
+        rdfs:label "Jews_run-amok-in_our_country_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1403_utterance0_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
+    leolaniTalk:Jews_run-in_our_country_00028 a grasp:Attribution ;
+        rdfs:label "Jews_run-in_our_country_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1403_utterance0_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:anyone a gaf:Instance ;
-        rdfs:label "anyone" ;
-        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
+    leolaniTalk:anyone_vote-for_Jew_00028 a grasp:Attribution ;
+        rdfs:label "anyone_vote-for_Jew_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1403_utterance0_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:anyone_vote-in_situation_00028 a grasp:Attribution ;
+        rdfs:label "anyone_vote-in_situation_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1403_utterance0_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat1403_utterance0_char0-138 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1403_utterance0_char0-138" ;
+        gaf:containsDenotation leolaniWorld:Jew,
+            leolaniWorld:Jews,
+            leolaniWorld:anyone,
+            leolaniWorld:our_country,
+            leolaniWorld:situation ;
+        gaf:denotes leolaniWorld:Jews_run-amok-in_our_country,
+            leolaniWorld:Jews_run-in_our_country,
+            leolaniWorld:anyone_vote-for_Jew,
+            leolaniWorld:anyone_vote-in_situation ;
+        grasp:hasAttribution leolaniTalk:Jews_run-amok-in_our_country_00028,
+            leolaniTalk:Jews_run-in_our_country_00028,
+            leolaniTalk:anyone_vote-for_Jew_00028,
+            leolaniTalk:anyone_vote-in_situation_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:18:17.237203"^^xml1:string,
+            "2024-06-05T23:18:17.237266"^^xml1:string,
+            "2024-06-05T23:18:17.237289"^^xml1:string,
+            "2024-06-05T23:18:17.237310"^^xml1:string ;
+        rdf:value "I never understood how anyone could vote for a Jew in that situation. We can't just stand by and watch these Jews run amok in our country."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1403_utterance0 .
 
-    leolaniWorld:our_country a gaf:Instance ;
-        rdfs:label "our-country" ;
-        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:situation a gaf:Instance ;
-        rdfs:label "situation" ;
-        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
-}
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-leolaniWorld:anyone_vote-for_Jew {
-    leolaniWorld:anyone ns1:vote_for leolaniWorld:Jew .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -430,128 +490,68 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Jews_run-in_our_country {
+    leolaniWorld:Jews ns1:run_in leolaniWorld:our_country .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_run-amok-in_our_country_00028 a grasp:Attribution ;
-        rdfs:label "Jews_run-amok-in_our_country_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1403_utterance0_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_run-amok-in_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_run-amok-in_our_country" ;
+        gaf:denotedBy leolaniTalk:chat1403_utterance0_char0-138 .
 
-    leolaniTalk:Jews_run-in_our_country_00028 a grasp:Attribution ;
-        rdfs:label "Jews_run-in_our_country_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1403_utterance0_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews_run-in_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_run-in_our_country" ;
+        gaf:denotedBy leolaniTalk:chat1403_utterance0_char0-138 .
 
-    leolaniTalk:anyone_vote-for_Jew_00028 a grasp:Attribution ;
-        rdfs:label "anyone_vote-for_Jew_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1403_utterance0_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:anyone_vote-for_Jew a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "anyone_vote-for_Jew" ;
+        gaf:denotedBy leolaniTalk:chat1403_utterance0_char0-138 .
 
-    leolaniTalk:anyone_vote-in_situation_00028 a grasp:Attribution ;
-        rdfs:label "anyone_vote-in_situation_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1403_utterance0_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:anyone_vote-in_situation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "anyone_vote-in_situation" ;
+        gaf:denotedBy leolaniTalk:chat1403_utterance0_char0-138 .
 
-    leolaniTalk:chat1403_utterance0_char0-138 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1403_utterance0_char0-138" ;
-        gaf:containsDenotation leolaniWorld:Jew,
-            leolaniWorld:Jews,
-            leolaniWorld:anyone,
-            leolaniWorld:our_country,
-            leolaniWorld:situation ;
-        gaf:denotes leolaniWorld:Jews_run-amok-in_our_country,
-            leolaniWorld:Jews_run-in_our_country,
-            leolaniWorld:anyone_vote-for_Jew,
-            leolaniWorld:anyone_vote-in_situation ;
-        grasp:hasAttribution leolaniTalk:Jews_run-amok-in_our_country_00028,
-            leolaniTalk:Jews_run-in_our_country_00028,
-            leolaniTalk:anyone_vote-for_Jew_00028,
-            leolaniTalk:anyone_vote-in_situation_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:18:17.237203"^^xml1:string,
-            "2024-06-05T23:18:17.237266"^^xml1:string,
-            "2024-06-05T23:18:17.237289"^^xml1:string,
-            "2024-06-05T23:18:17.237310"^^xml1:string ;
-        rdf:value "I never understood how anyone could vote for a Jew in that situation. We can't just stand by and watch these Jews run amok in our country."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1403_utterance0 .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context106 a eps:Context ;
-        rdfs:label "context106" ;
-        hs:id "106"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:anyone_vote-in_situation {
+    leolaniWorld:anyone ns1:vote_in leolaniWorld:situation .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1403 .
+leolaniWorld:Instances {
+    leolaniWorld:Jew a gaf:Instance ;
+        rdfs:label "jew" ;
+        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "170"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1403 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1403" ;
-        hs:id "1403"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1403_utterance0 .
-
-    leolaniTalk:chat1403_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1403_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:anyone a gaf:Instance ;
+        rdfs:label "anyone" ;
+        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_country a gaf:Instance ;
+        rdfs:label "our-country" ;
+        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
+
+    leolaniWorld:situation a gaf:Instance ;
+        rdfs:label "situation" ;
+        gaf:denotedIn leolaniTalk:chat1403_utterance0_char0-138 .
 }
 

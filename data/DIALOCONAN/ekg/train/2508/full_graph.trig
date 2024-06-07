@@ -23,52 +23,87 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:effort_make_them_visible {
+    leolaniWorld:effort ns1:make leolaniWorld:them_visible .
+}
+
+leolaniWorld:it_has_much {
+    leolaniWorld:it ns1:has leolaniWorld:much .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context67 a eps:Context ;
+        rdfs:label "context67" ;
+        hs:id "67"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2508 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "172"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2508 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2508" ;
+        hs:id "2508"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2508_utterance1,
+            leolaniTalk:chat2508_utterance2 .
+
+    leolaniTalk:chat2508_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2508_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2508_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2508_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:effort_make_them_visible a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "effort_make_them_visible" ;
-        gaf:denotedBy leolaniTalk:chat2508_utterance1_char0-151 .
-
-    leolaniWorld:effort_therefore-make_them_visible a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "effort_therefore-make_them_visible" ;
-        gaf:denotedBy leolaniTalk:chat2508_utterance1_char0-151 .
-
-    leolaniWorld:it_has_much a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_much" ;
-        gaf:denotedBy leolaniTalk:chat2508_utterance2_char0-114 .
-
-    leolaniWorld:it_has_too_much a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_too_much" ;
-        gaf:denotedBy leolaniTalk:chat2508_utterance2_char0-114 .
-
-    leolaniWorld:it_s-in_always_minority a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-in_always_minority" ;
-        gaf:denotedBy leolaniTalk:chat2508_utterance1_char0-151 .
-
-    leolaniWorld:it_s-in_minority a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-in_minority" ;
-        gaf:denotedBy leolaniTalk:chat2508_utterance1_char0-151 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:it_has_too_much {
@@ -79,62 +114,105 @@ leolaniWorld:it_s-in_always_minority {
     leolaniWorld:it ns12:s_in leolaniWorld:always_minority .
 }
 
-leolaniWorld:it_has_much {
-    leolaniWorld:it ns1:has leolaniWorld:much .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:effort_make_them_visible_0006 a grasp:Attribution ;
+        rdfs:label "effort_make_them_visible_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat2508_utterance1_char0-151 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:effort_therefore-make_them_visible {
-    leolaniWorld:effort ns1:therefore_make leolaniWorld:them_visible .
-}
+    leolaniTalk:effort_therefore-make_them_visible_0006 a grasp:Attribution ;
+        rdfs:label "effort_therefore-make_them_visible_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat2508_utterance1_char0-151 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:always_minority a gaf:Instance ;
-        rdfs:label "always-minority" ;
-        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151 .
+    leolaniTalk:it_has_much_00028 a grasp:Attribution ;
+        rdfs:label "it_has_much_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2508_utterance2_char0-114 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:it_has_too_much_00028 a grasp:Attribution ;
+        rdfs:label "it_has_too_much_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2508_utterance2_char0-114 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:effort a gaf:Instance ;
-        rdfs:label "effort" ;
-        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151 .
+    leolaniTalk:it_s-in_always_minority_0006 a grasp:Attribution ;
+        rdfs:label "it_s-in_always_minority_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat2508_utterance1_char0-151 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:it_s-in_minority_0006 a grasp:Attribution ;
+        rdfs:label "it_s-in_minority_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat2508_utterance1_char0-151 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151,
-            leolaniTalk:chat2508_utterance2_char0-114 .
+    leolaniTalk:chat2508_utterance2_char0-114 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2508_utterance2_char0-114" ;
+        gaf:containsDenotation leolaniWorld:it,
+            leolaniWorld:much,
+            leolaniWorld:too_much ;
+        gaf:denotes leolaniWorld:it_has_much,
+            leolaniWorld:it_has_too_much ;
+        grasp:hasAttribution leolaniTalk:it_has_much_00028,
+            leolaniTalk:it_has_too_much_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:55.555063"^^xml1:string,
+            "2024-06-05T23:02:55.555143"^^xml1:string ;
+        rdf:value "There are plenty of gay and lesbian in mainstream media, too much I say! They should be taken down, it's too much."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2508_utterance2 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:minority a gaf:Instance ;
-        rdfs:label "minority" ;
-        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151 .
+    leolaniTalk:chat2508_utterance1_char0-151 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2508_utterance1_char0-151" ;
+        gaf:containsDenotation leolaniWorld:always_minority,
+            leolaniWorld:effort,
+            leolaniWorld:it,
+            leolaniWorld:minority,
+            leolaniWorld:them_visible ;
+        gaf:denotes leolaniWorld:effort_make_them_visible,
+            leolaniWorld:effort_therefore-make_them_visible,
+            leolaniWorld:it_s-in_always_minority,
+            leolaniWorld:it_s-in_minority ;
+        grasp:hasAttribution leolaniTalk:effort_make_them_visible_0006,
+            leolaniTalk:effort_therefore-make_them_visible_0006,
+            leolaniTalk:it_s-in_always_minority_0006,
+            leolaniTalk:it_s-in_minority_0006 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:55.221924"^^xml1:string,
+            "2024-06-05T23:02:55.221983"^^xml1:string,
+            "2024-06-05T23:02:55.222006"^^xml1:string,
+            "2024-06-05T23:02:55.222027"^^xml1:string ;
+        rdf:value "The gay community isn't being represented in mainstream media, it's always in the minority and therefore this effort to make them visible is admirable."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2508_utterance1 .
 
-    leolaniWorld:much a gaf:Instance ;
-        rdfs:label "much" ;
-        gaf:denotedIn leolaniTalk:chat2508_utterance2_char0-114 .
+    graspe:OPTIMISM a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "OPTIMISM" .
 
-    leolaniWorld:them_visible a gaf:Instance ;
-        rdfs:label "them-visible" ;
-        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:too_much a gaf:Instance ;
-        rdfs:label "too-much" ;
-        gaf:denotedIn leolaniTalk:chat2508_utterance2_char0-114 .
-}
-
-leolaniWorld:it_s-in_minority {
-    leolaniWorld:it ns12:s_in leolaniWorld:minority .
-}
-
-leolaniWorld:effort_make_them_visible {
-    leolaniWorld:effort ns1:make leolaniWorld:them_visible .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -472,175 +550,97 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:effort_make_them_visible a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "effort_make_them_visible" ;
+        gaf:denotedBy leolaniTalk:chat2508_utterance1_char0-151 .
+
+    leolaniWorld:effort_therefore-make_them_visible a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "effort_therefore-make_them_visible" ;
+        gaf:denotedBy leolaniTalk:chat2508_utterance1_char0-151 .
+
+    leolaniWorld:it_has_much a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_much" ;
+        gaf:denotedBy leolaniTalk:chat2508_utterance2_char0-114 .
+
+    leolaniWorld:it_has_too_much a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_too_much" ;
+        gaf:denotedBy leolaniTalk:chat2508_utterance2_char0-114 .
+
+    leolaniWorld:it_s-in_always_minority a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-in_always_minority" ;
+        gaf:denotedBy leolaniTalk:chat2508_utterance1_char0-151 .
+
+    leolaniWorld:it_s-in_minority a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-in_minority" ;
+        gaf:denotedBy leolaniTalk:chat2508_utterance1_char0-151 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:effort_make_them_visible_0006 a grasp:Attribution ;
-        rdfs:label "effort_make_them_visible_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat2508_utterance1_char0-151 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:effort_therefore-make_them_visible_0006 a grasp:Attribution ;
-        rdfs:label "effort_therefore-make_them_visible_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat2508_utterance1_char0-151 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_has_much_00028 a grasp:Attribution ;
-        rdfs:label "it_has_much_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2508_utterance2_char0-114 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_has_too_much_00028 a grasp:Attribution ;
-        rdfs:label "it_has_too_much_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2508_utterance2_char0-114 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-in_always_minority_0006 a grasp:Attribution ;
-        rdfs:label "it_s-in_always_minority_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat2508_utterance1_char0-151 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_s-in_minority_0006 a grasp:Attribution ;
-        rdfs:label "it_s-in_minority_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat2508_utterance1_char0-151 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2508_utterance2_char0-114 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2508_utterance2_char0-114" ;
-        gaf:containsDenotation leolaniWorld:it,
-            leolaniWorld:much,
-            leolaniWorld:too_much ;
-        gaf:denotes leolaniWorld:it_has_much,
-            leolaniWorld:it_has_too_much ;
-        grasp:hasAttribution leolaniTalk:it_has_much_00028,
-            leolaniTalk:it_has_too_much_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:55.555063"^^xml1:string,
-            "2024-06-05T23:02:55.555143"^^xml1:string ;
-        rdf:value "There are plenty of gay and lesbian in mainstream media, too much I say! They should be taken down, it's too much."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2508_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat2508_utterance1_char0-151 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2508_utterance1_char0-151" ;
-        gaf:containsDenotation leolaniWorld:always_minority,
-            leolaniWorld:effort,
-            leolaniWorld:it,
-            leolaniWorld:minority,
-            leolaniWorld:them_visible ;
-        gaf:denotes leolaniWorld:effort_make_them_visible,
-            leolaniWorld:effort_therefore-make_them_visible,
-            leolaniWorld:it_s-in_always_minority,
-            leolaniWorld:it_s-in_minority ;
-        grasp:hasAttribution leolaniTalk:effort_make_them_visible_0006,
-            leolaniTalk:effort_therefore-make_them_visible_0006,
-            leolaniTalk:it_s-in_always_minority_0006,
-            leolaniTalk:it_s-in_minority_0006 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:55.221924"^^xml1:string,
-            "2024-06-05T23:02:55.221983"^^xml1:string,
-            "2024-06-05T23:02:55.222006"^^xml1:string,
-            "2024-06-05T23:02:55.222027"^^xml1:string ;
-        rdf:value "The gay community isn't being represented in mainstream media, it's always in the minority and therefore this effort to make them visible is admirable."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2508_utterance1 .
-
-    graspe:OPTIMISM a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "OPTIMISM" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:it_s-in_minority {
+    leolaniWorld:it ns12:s_in leolaniWorld:minority .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context67 a eps:Context ;
-        rdfs:label "context67" ;
-        hs:id "67"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:effort_therefore-make_them_visible {
+    leolaniWorld:effort ns1:therefore_make leolaniWorld:them_visible .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2508 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "172"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2508 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2508" ;
-        hs:id "2508"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2508_utterance1,
-            leolaniTalk:chat2508_utterance2 .
-
-    leolaniTalk:chat2508_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2508_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2508_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2508_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:always_minority a gaf:Instance ;
+        rdfs:label "always-minority" ;
+        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:effort a gaf:Instance ;
+        rdfs:label "effort" ;
+        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151,
+            leolaniTalk:chat2508_utterance2_char0-114 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:minority a gaf:Instance ;
+        rdfs:label "minority" ;
+        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151 .
+
+    leolaniWorld:much a gaf:Instance ;
+        rdfs:label "much" ;
+        gaf:denotedIn leolaniTalk:chat2508_utterance2_char0-114 .
+
+    leolaniWorld:them_visible a gaf:Instance ;
+        rdfs:label "them-visible" ;
+        gaf:denotedIn leolaniTalk:chat2508_utterance1_char0-151 .
+
+    leolaniWorld:too_much a gaf:Instance ;
+        rdfs:label "too-much" ;
+        gaf:denotedIn leolaniTalk:chat2508_utterance2_char0-114 .
 }
 

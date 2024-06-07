@@ -22,63 +22,89 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:terrorists_come-as_refugees {
-    leolaniWorld:terrorists ns1:come_as leolaniWorld:refugees .
+leolaniWorld:This_has-got_to_stop {
+    leolaniWorld:This ns1:has_got leolaniWorld:to_stop .
 }
 
-leolaniWorld:migrants_commit-crimes-at-time_time {
-    leolaniWorld:migrants ns1:commit_crimes_at_time leolaniWorld:time .
+leolaniTalk:Interactions {
+    leolaniContext:context123 a eps:Context ;
+        rdfs:label "context123" ;
+        hs:id "123"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat41 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "106"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat41 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat41" ;
+        hs:id "41"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat41_utterance0,
+            leolaniTalk:chat41_utterance2 .
+
+    leolaniTalk:chat41_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat41_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat41_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat41_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Muslim_migrants_commit-crimes-at-time_time a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslim_migrants_commit-crimes-at-time_time" ;
-        gaf:denotedBy leolaniTalk:chat41_utterance2_char0-111 .
-
-    leolaniWorld:Muslim_terrorists_come-as_refugees a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslim_terrorists_come-as_refugees" ;
-        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:Muslim_terrorists_come-to_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslim_terrorists_come-to_our_country" ;
-        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:This_has-got_to_stop a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "This_has-got_to_stop" ;
-        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:migrants_commit-crimes-at-time_time a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_commit-crimes-at-time_time" ;
-        gaf:denotedBy leolaniTalk:chat41_utterance2_char0-111 .
-
-    leolaniWorld:terrorists_come-as_refugees a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "terrorists_come-as_refugees" ;
-        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:terrorists_come-to_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "terrorists_come-to_our_country" ;
-        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Muslim_terrorists_come-to_our_country {
+    leolaniWorld:Muslim_terrorists ns1:come_to leolaniWorld:our_country .
 }
 
-leolaniWorld:terrorists_come-to_our_country {
-    leolaniWorld:terrorists ns1:come_to leolaniWorld:our_country .
+leolaniWorld:Muslim_migrants_commit-crimes-at-time_time {
+    leolaniWorld:Muslim_migrants ns1:commit_crimes_at_time leolaniWorld:time .
 }
 
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Muslim_terrorists_come-as_refugees {
+    leolaniWorld:Muslim_terrorists ns1:come_as leolaniWorld:refugees .
+}
+
+leolaniWorld:migrants_commit-crimes-at-time_time {
+    leolaniWorld:migrants ns1:commit_crimes_at_time leolaniWorld:time .
 }
 
 leolaniTalk:Perspectives {
@@ -191,67 +217,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Muslim_migrants a gaf:Instance ;
-        rdfs:label "muslim-migrants" ;
-        gaf:denotedIn leolaniTalk:chat41_utterance2_char0-111 .
-
-    leolaniWorld:Muslim_terrorists a gaf:Instance ;
-        rdfs:label "muslim-terrorists" ;
-        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:This a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat41_utterance2_char0-111 .
-
-    leolaniWorld:our_country a gaf:Instance ;
-        rdfs:label "our-country" ;
-        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:refugees a gaf:Instance ;
-        rdfs:label "refugees" ;
-        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:terrorists a gaf:Instance ;
-        rdfs:label "terrorists" ;
-        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
-
-    leolaniWorld:time a gaf:Instance ;
-        rdfs:label "time" ;
-        gaf:denotedIn leolaniTalk:chat41_utterance2_char0-111 .
-
-    leolaniWorld:to_stop a gaf:Instance ;
-        rdfs:label "to-stop" ;
-        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
-}
-
-leolaniWorld:Muslim_terrorists_come-as_refugees {
-    leolaniWorld:Muslim_terrorists ns1:come_as leolaniWorld:refugees .
-}
-
-leolaniWorld:Muslim_migrants_commit-crimes-at-time_time {
-    leolaniWorld:Muslim_migrants ns1:commit_crimes_at_time leolaniWorld:time .
-}
-
-leolaniWorld:This_has-got_to_stop {
-    leolaniWorld:This ns1:has_got leolaniWorld:to_stop .
-}
-
-leolaniWorld:Muslim_terrorists_come-to_our_country {
-    leolaniWorld:Muslim_terrorists ns1:come_to leolaniWorld:our_country .
 }
 
 leolaniWorld:Ontology {
@@ -589,64 +554,99 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context123 a eps:Context ;
-        rdfs:label "context123" ;
-        hs:id "123"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:terrorists_come-to_our_country {
+    leolaniWorld:terrorists ns1:come_to leolaniWorld:our_country .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat41 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "106"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat41 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Muslim_migrants_commit-crimes-at-time_time a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat41" ;
-        hs:id "41"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat41_utterance0,
-            leolaniTalk:chat41_utterance2 .
+        rdfs:label "Muslim_migrants_commit-crimes-at-time_time" ;
+        gaf:denotedBy leolaniTalk:chat41_utterance2_char0-111 .
 
-    leolaniTalk:chat41_utterance0 a grasp:Utterance,
+    leolaniWorld:Muslim_terrorists_come-as_refugees a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat41_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Muslim_terrorists_come-as_refugees" ;
+        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
 
-    leolaniTalk:chat41_utterance2 a grasp:Utterance,
+    leolaniWorld:Muslim_terrorists_come-to_our_country a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat41_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Muslim_terrorists_come-to_our_country" ;
+        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:This_has-got_to_stop a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "This_has-got_to_stop" ;
+        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:migrants_commit-crimes-at-time_time a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_commit-crimes-at-time_time" ;
+        gaf:denotedBy leolaniTalk:chat41_utterance2_char0-111 .
+
+    leolaniWorld:terrorists_come-as_refugees a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "terrorists_come-as_refugees" ;
+        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
+
+    leolaniWorld:terrorists_come-to_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "terrorists_come-to_our_country" ;
+        gaf:denotedBy leolaniTalk:chat41_utterance0_char0-89 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:terrorists_come-as_refugees {
+    leolaniWorld:terrorists ns1:come_as leolaniWorld:refugees .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Muslim_migrants a gaf:Instance ;
+        rdfs:label "muslim-migrants" ;
+        gaf:denotedIn leolaniTalk:chat41_utterance2_char0-111 .
+
+    leolaniWorld:Muslim_terrorists a gaf:Instance ;
+        rdfs:label "muslim-terrorists" ;
+        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
+
+    leolaniWorld:This a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat41_utterance2_char0-111 .
+
+    leolaniWorld:our_country a gaf:Instance ;
+        rdfs:label "our-country" ;
+        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
+
+    leolaniWorld:refugees a gaf:Instance ;
+        rdfs:label "refugees" ;
+        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
+
+    leolaniWorld:terrorists a gaf:Instance ;
+        rdfs:label "terrorists" ;
+        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
+
+    leolaniWorld:time a gaf:Instance ;
+        rdfs:label "time" ;
+        gaf:denotedIn leolaniTalk:chat41_utterance2_char0-111 .
+
+    leolaniWorld:to_stop a gaf:Instance ;
+        rdfs:label "to-stop" ;
+        gaf:denotedIn leolaniTalk:chat41_utterance0_char0-89 .
 }
 

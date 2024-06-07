@@ -22,47 +22,116 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:We_deport_illegal_immigrants_currently_in_US a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_deport_illegal_immigrants_currently_in_US" ;
-        gaf:denotedBy leolaniTalk:chat2251_utterance0_char0-111 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are_criminals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2251_utterance0_char0-111 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:they_are_criminals {
+    leolaniWorld:they ns11:are leolaniWorld:criminals .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2251_utterance0_char0-111 .
+leolaniTalk:Interactions {
+    leolaniContext:context214 a eps:Context ;
+        rdfs:label "context214" ;
+        hs:id "214"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:criminals a gaf:Instance ;
-        rdfs:label "criminals" ;
-        gaf:denotedIn leolaniTalk:chat2251_utterance0_char0-111 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2251 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "58"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2251 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2251" ;
+        hs:id "2251"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2251_utterance0 .
+
+    leolaniTalk:chat2251_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2251_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:illegal_immigrants_currently_in_US a gaf:Instance ;
-        rdfs:label "illegal-immigrants-currently-in-us" ;
-        gaf:denotedIn leolaniTalk:chat2251_utterance0_char0-111 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:We_deport_illegal_immigrants_currently_in_US {
+    leolaniWorld:We ns11:deport leolaniWorld:illegal_immigrants_currently_in_US .
+}
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2251_utterance0_char0-111 .
+leolaniTalk:Perspectives {
+    leolaniTalk:We_deport_illegal_immigrants_currently_in_US_00022 a grasp:Attribution ;
+        rdfs:label "We_deport_illegal_immigrants_currently_in_US_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2251_utterance0_char0-111 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_criminals_00022 a grasp:Attribution ;
+        rdfs:label "they_are_criminals_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2251_utterance0_char0-111 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2251_utterance0_char0-111 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2251_utterance0_char0-111" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:criminals,
+            leolaniWorld:illegal_immigrants_currently_in_US,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:We_deport_illegal_immigrants_currently_in_US,
+            leolaniWorld:they_are_criminals ;
+        grasp:hasAttribution leolaniTalk:We_deport_illegal_immigrants_currently_in_US_00022,
+            leolaniTalk:they_are_criminals_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:00.751327"^^xml1:string,
+            "2024-06-05T23:35:00.751390"^^xml1:string ;
+        rdf:value "We should stop this invasion and deport all the illegal immigrants currently in the US, they are all criminals."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2251_utterance0 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -400,115 +469,46 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:We_deport_illegal_immigrants_currently_in_US {
-    leolaniWorld:We ns11:deport leolaniWorld:illegal_immigrants_currently_in_US .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:We_deport_illegal_immigrants_currently_in_US_00022 a grasp:Attribution ;
-        rdfs:label "We_deport_illegal_immigrants_currently_in_US_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2251_utterance0_char0-111 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_criminals_00022 a grasp:Attribution ;
-        rdfs:label "they_are_criminals_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2251_utterance0_char0-111 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2251_utterance0_char0-111 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2251_utterance0_char0-111" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:criminals,
-            leolaniWorld:illegal_immigrants_currently_in_US,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:We_deport_illegal_immigrants_currently_in_US,
-            leolaniWorld:they_are_criminals ;
-        grasp:hasAttribution leolaniTalk:We_deport_illegal_immigrants_currently_in_US_00022,
-            leolaniTalk:they_are_criminals_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:00.751327"^^xml1:string,
-            "2024-06-05T23:35:00.751390"^^xml1:string ;
-        rdf:value "We should stop this invasion and deport all the illegal immigrants currently in the US, they are all criminals."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2251_utterance0 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context214 a eps:Context ;
-        rdfs:label "context214" ;
-        hs:id "214"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2251 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "58"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2251 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:We_deport_illegal_immigrants_currently_in_US a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2251" ;
-        hs:id "2251"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2251_utterance0 .
+        rdfs:label "We_deport_illegal_immigrants_currently_in_US" ;
+        gaf:denotedBy leolaniTalk:chat2251_utterance0_char0-111 .
 
-    leolaniTalk:chat2251_utterance0 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2251_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:they_are_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2251_utterance0_char0-111 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2251_utterance0_char0-111 .
+
+    leolaniWorld:criminals a gaf:Instance ;
+        rdfs:label "criminals" ;
+        gaf:denotedIn leolaniTalk:chat2251_utterance0_char0-111 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:they_are_criminals {
-    leolaniWorld:they ns11:are leolaniWorld:criminals .
+    leolaniWorld:illegal_immigrants_currently_in_US a gaf:Instance ;
+        rdfs:label "illegal-immigrants-currently-in-us" ;
+        gaf:denotedIn leolaniTalk:chat2251_utterance0_char0-111 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2251_utterance0_char0-111 .
 }
 

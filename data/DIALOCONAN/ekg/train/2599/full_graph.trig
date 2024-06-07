@@ -22,108 +22,197 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Migrants_are-burden-to_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_are-burden-to_UK" ;
-        gaf:denotedBy leolaniTalk:chat2599_utterance0_char0-31 .
-
-    leolaniWorld:Migrants_are_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_are_burden" ;
-        gaf:denotedBy leolaniTalk:chat2599_utterance0_char0-31 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:migrants_are-burden_Even_if_not_problem a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migrants_are-burden_Even_if_not_problem" ;
-        gaf:denotedBy leolaniTalk:chat2599_utterance2_char0-56 .
-
-    leolaniWorld:people_arrival-of-is_not_problem_for_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_arrival-of-is_not_problem_for_UK" ;
-        gaf:denotedBy leolaniTalk:chat2599_utterance1_char0-115 .
-
-    leolaniWorld:they_are_asset a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_asset" ;
-        gaf:denotedBy leolaniTalk:chat2599_utterance1_char0-115 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
 leolaniWorld:Migrants_are-burden-to_UK {
     leolaniWorld:Migrants ns11:are_burden_to leolaniWorld:UK .
 }
 
-leolaniWorld:people_arrival-of-is_not_problem_for_UK {
-    leolaniWorld:people ns11:arrival_of_is leolaniWorld:not_problem_for_UK .
+leolaniWorld:Migrants_are_burden {
+    leolaniWorld:Migrants ns11:are leolaniWorld:burden .
 }
 
 leolaniWorld:migrants_are-burden_Even_if_not_problem {
     leolaniWorld:migrants ns11:are_burden leolaniWorld:Even_if_not_problem .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Even_if_not_problem a gaf:Instance ;
-        rdfs:label "even-if-not-problem" ;
-        gaf:denotedIn leolaniTalk:chat2599_utterance2_char0-56 .
+leolaniTalk:Interactions {
+    leolaniContext:context207 a eps:Context ;
+        rdfs:label "context207" ;
+        hs:id "207"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat2599_utterance0_char0-31 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2599 .
 
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat2599_utterance0_char0-31 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:asset a gaf:Instance ;
-        rdfs:label "asset" ;
-        gaf:denotedIn leolaniTalk:chat2599_utterance1_char0-115 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "152"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:burden a gaf:Instance ;
-        rdfs:label "burden" ;
-        gaf:denotedIn leolaniTalk:chat2599_utterance0_char0-31 .
+    leolaniTalk:chat2599 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2599" ;
+        hs:id "2599"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2599_utterance0,
+            leolaniTalk:chat2599_utterance1,
+            leolaniTalk:chat2599_utterance2 .
+
+    leolaniTalk:chat2599_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2599_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2599_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2599_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2599_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2599_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat2599_utterance2_char0-56 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:not_problem_for_UK a gaf:Instance ;
-        rdfs:label "not-problem-for-uk" ;
-        gaf:denotedIn leolaniTalk:chat2599_utterance1_char0-115 .
+leolaniWorld:people_arrival-of-is_not_problem_for_UK {
+    leolaniWorld:people ns11:arrival_of_is leolaniWorld:not_problem_for_UK .
+}
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2599_utterance1_char0-115 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Migrants_are-burden-to_UK_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_are-burden-to_UK_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2599_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2599_utterance1_char0-115 .
+    leolaniTalk:Migrants_are_burden_00028 a grasp:Attribution ;
+        rdfs:label "Migrants_are_burden_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2599_utterance0_char0-31 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2599_utterance2_char0-56 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2599_utterance2_char0-56" ;
+        gaf:containsDenotation leolaniWorld:Even_if_not_problem,
+            leolaniWorld:migrants ;
+        gaf:denotes leolaniWorld:migrants_are-burden_Even_if_not_problem ;
+        grasp:hasAttribution leolaniTalk:migrants_are-burden_Even_if_not_problem_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:01.980991"^^xml1:string ;
+        rdf:value "Even if it's not a problem, migrants are a burden to us."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2599_utterance2 .
+
+    leolaniTalk:migrants_are-burden_Even_if_not_problem_00028 a grasp:Attribution ;
+        rdfs:label "migrants_are-burden_Even_if_not_problem_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2599_utterance2_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_arrival-of-is_not_problem_for_UK_00028 a grasp:Attribution ;
+        rdfs:label "people_arrival-of-is_not_problem_for_UK_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2599_utterance1_char0-115 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_asset_00028 a grasp:Attribution ;
+        rdfs:label "they_are_asset_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2599_utterance1_char0-115 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2599_utterance0_char0-31 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2599_utterance0_char0-31" ;
+        gaf:containsDenotation leolaniWorld:Migrants,
+            leolaniWorld:UK,
+            leolaniWorld:burden ;
+        gaf:denotes leolaniWorld:Migrants_are-burden-to_UK,
+            leolaniWorld:Migrants_are_burden ;
+        grasp:hasAttribution leolaniTalk:Migrants_are-burden-to_UK_00028,
+            leolaniTalk:Migrants_are_burden_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:01.761165"^^xml1:string,
+            "2024-06-05T23:32:01.761233"^^xml1:string ;
+        rdf:value "Migrants are a burden to the UK"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2599_utterance0 .
+
+    leolaniTalk:chat2599_utterance1_char0-115 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2599_utterance1_char0-115" ;
+        gaf:containsDenotation leolaniWorld:asset,
+            leolaniWorld:not_problem_for_UK,
+            leolaniWorld:people,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:people_arrival-of-is_not_problem_for_UK,
+            leolaniWorld:they_are_asset ;
+        grasp:hasAttribution leolaniTalk:people_arrival-of-is_not_problem_for_UK_00028,
+            leolaniTalk:they_are_asset_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:01.888476"^^xml1:string,
+            "2024-06-05T23:32:01.888538"^^xml1:string ;
+        rdf:value "The arrival of these people is not a problem for the UK, they are an asset that helps our economy and country grow."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2599_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -461,184 +550,95 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:Migrants_are-burden-to_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are-burden-to_UK" ;
+        gaf:denotedBy leolaniTalk:chat2599_utterance0_char0-31 .
+
+    leolaniWorld:Migrants_are_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat2599_utterance0_char0-31 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:migrants_are-burden_Even_if_not_problem a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migrants_are-burden_Even_if_not_problem" ;
+        gaf:denotedBy leolaniTalk:chat2599_utterance2_char0-56 .
+
+    leolaniWorld:people_arrival-of-is_not_problem_for_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_arrival-of-is_not_problem_for_UK" ;
+        gaf:denotedBy leolaniTalk:chat2599_utterance1_char0-115 .
+
+    leolaniWorld:they_are_asset a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_asset" ;
+        gaf:denotedBy leolaniTalk:chat2599_utterance1_char0-115 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
 leolaniWorld:they_are_asset {
     leolaniWorld:they ns11:are leolaniWorld:asset .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Even_if_not_problem a gaf:Instance ;
+        rdfs:label "even-if-not-problem" ;
+        gaf:denotedIn leolaniTalk:chat2599_utterance2_char0-56 .
 
-leolaniWorld:Migrants_are_burden {
-    leolaniWorld:Migrants ns11:are leolaniWorld:burden .
-}
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat2599_utterance0_char0-31 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Migrants_are-burden-to_UK_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_are-burden-to_UK_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2599_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat2599_utterance0_char0-31 .
 
-    leolaniTalk:Migrants_are_burden_00028 a grasp:Attribution ;
-        rdfs:label "Migrants_are_burden_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2599_utterance0_char0-31 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:asset a gaf:Instance ;
+        rdfs:label "asset" ;
+        gaf:denotedIn leolaniTalk:chat2599_utterance1_char0-115 .
 
-    leolaniTalk:chat2599_utterance2_char0-56 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2599_utterance2_char0-56" ;
-        gaf:containsDenotation leolaniWorld:Even_if_not_problem,
-            leolaniWorld:migrants ;
-        gaf:denotes leolaniWorld:migrants_are-burden_Even_if_not_problem ;
-        grasp:hasAttribution leolaniTalk:migrants_are-burden_Even_if_not_problem_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:01.980991"^^xml1:string ;
-        rdf:value "Even if it's not a problem, migrants are a burden to us."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2599_utterance2 .
-
-    leolaniTalk:migrants_are-burden_Even_if_not_problem_00028 a grasp:Attribution ;
-        rdfs:label "migrants_are-burden_Even_if_not_problem_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2599_utterance2_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_arrival-of-is_not_problem_for_UK_00028 a grasp:Attribution ;
-        rdfs:label "people_arrival-of-is_not_problem_for_UK_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2599_utterance1_char0-115 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_asset_00028 a grasp:Attribution ;
-        rdfs:label "they_are_asset_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2599_utterance1_char0-115 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2599_utterance0_char0-31 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2599_utterance0_char0-31" ;
-        gaf:containsDenotation leolaniWorld:Migrants,
-            leolaniWorld:UK,
-            leolaniWorld:burden ;
-        gaf:denotes leolaniWorld:Migrants_are-burden-to_UK,
-            leolaniWorld:Migrants_are_burden ;
-        grasp:hasAttribution leolaniTalk:Migrants_are-burden-to_UK_00028,
-            leolaniTalk:Migrants_are_burden_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:01.761165"^^xml1:string,
-            "2024-06-05T23:32:01.761233"^^xml1:string ;
-        rdf:value "Migrants are a burden to the UK"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2599_utterance0 .
-
-    leolaniTalk:chat2599_utterance1_char0-115 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2599_utterance1_char0-115" ;
-        gaf:containsDenotation leolaniWorld:asset,
-            leolaniWorld:not_problem_for_UK,
-            leolaniWorld:people,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:people_arrival-of-is_not_problem_for_UK,
-            leolaniWorld:they_are_asset ;
-        grasp:hasAttribution leolaniTalk:people_arrival-of-is_not_problem_for_UK_00028,
-            leolaniTalk:they_are_asset_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:01.888476"^^xml1:string,
-            "2024-06-05T23:32:01.888538"^^xml1:string ;
-        rdf:value "The arrival of these people is not a problem for the UK, they are an asset that helps our economy and country grow."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2599_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context207 a eps:Context ;
-        rdfs:label "context207" ;
-        hs:id "207"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2599 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "152"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2599 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2599" ;
-        hs:id "2599"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2599_utterance0,
-            leolaniTalk:chat2599_utterance1,
-            leolaniTalk:chat2599_utterance2 .
-
-    leolaniTalk:chat2599_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2599_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2599_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2599_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2599_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2599_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:burden a gaf:Instance ;
+        rdfs:label "burden" ;
+        gaf:denotedIn leolaniTalk:chat2599_utterance0_char0-31 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat2599_utterance2_char0-56 .
+
+    leolaniWorld:not_problem_for_UK a gaf:Instance ;
+        rdfs:label "not-problem-for-uk" ;
+        gaf:denotedIn leolaniTalk:chat2599_utterance1_char0-115 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2599_utterance1_char0-115 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2599_utterance1_char0-115 .
 }
 

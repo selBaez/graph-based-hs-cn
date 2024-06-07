@@ -22,83 +22,171 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Gay_people_are-burden-to_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_people_are-burden-to_society" ;
-        gaf:denotedBy leolaniTalk:chat608_utterance0_char0-35 .
+leolaniWorld:Gay_people_are-burden-to_society {
+    leolaniWorld:Gay_people ns11:are_burden_to leolaniWorld:society .
+}
 
-    leolaniWorld:Gay_people_are_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_people_are_burden" ;
-        gaf:denotedBy leolaniTalk:chat608_utterance0_char0-35 .
+leolaniTalk:Interactions {
+    leolaniContext:context1 a eps:Context ;
+        rdfs:label "context1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:They_are-burden-because_their_inclination a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are-burden-because_their_inclination" ;
-        gaf:denotedBy leolaniTalk:chat608_utterance2_char0-81 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat608 .
 
-    leolaniWorld:They_are-burden-because_their_unnatural_inclination a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are-burden-because_their_unnatural_inclination" ;
-        gaf:denotedBy leolaniTalk:chat608_utterance2_char0-81 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:They_are_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_burden" ;
-        gaf:denotedBy leolaniTalk:chat608_utterance2_char0-81 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "133"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat608 a grasp:Chat,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat608" ;
+        hs:id "608"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat608_utterance0,
+            leolaniTalk:chat608_utterance2 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat608_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat608_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat608_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat608_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Gay_people_are_burden {
+    leolaniWorld:Gay_people ns11:are leolaniWorld:burden .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:They_are-burden-because_their_unnatural_inclination {
     leolaniWorld:They ns11:are_burden_because leolaniWorld:their_unnatural_inclination .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Gay_people a gaf:Instance ;
-        rdfs:label "gay-people" ;
-        gaf:denotedIn leolaniTalk:chat608_utterance0_char0-35 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Gay_people_are-burden-to_society_00012 a grasp:Attribution ;
+        rdfs:label "Gay_people_are-burden-to_society_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat608_utterance0_char0-35 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat608_utterance2_char0-81 .
+    leolaniTalk:Gay_people_are_burden_00012 a grasp:Attribution ;
+        rdfs:label "Gay_people_are_burden_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat608_utterance0_char0-35 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:burden a gaf:Instance ;
-        rdfs:label "burden" ;
-        gaf:denotedIn leolaniTalk:chat608_utterance0_char0-35,
-            leolaniTalk:chat608_utterance2_char0-81 .
+    leolaniTalk:They_are-burden-because_their_inclination_00028 a grasp:Attribution ;
+        rdfs:label "They_are-burden-because_their_inclination_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat608_utterance2_char0-81 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:They_are-burden-because_their_unnatural_inclination_00028 a grasp:Attribution ;
+        rdfs:label "They_are-burden-because_their_unnatural_inclination_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat608_utterance2_char0-81 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:They_are_burden_00028 a grasp:Attribution ;
+        rdfs:label "They_are_burden_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat608_utterance2_char0-81 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat608_utterance0_char0-35 .
+    leolaniTalk:chat608_utterance0_char0-35 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat608_utterance0_char0-35" ;
+        gaf:containsDenotation leolaniWorld:Gay_people,
+            leolaniWorld:burden,
+            leolaniWorld:society ;
+        gaf:denotes leolaniWorld:Gay_people_are-burden-to_society,
+            leolaniWorld:Gay_people_are_burden ;
+        grasp:hasAttribution leolaniTalk:Gay_people_are-burden-to_society_00012,
+            leolaniTalk:Gay_people_are_burden_00012 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:33.169964"^^xml1:string,
+            "2024-06-05T23:23:33.170027"^^xml1:string ;
+        rdf:value "Gay people are a burden to society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat608_utterance0 .
 
-    leolaniWorld:their_inclination a gaf:Instance ;
-        rdfs:label "their-inclination" ;
-        gaf:denotedIn leolaniTalk:chat608_utterance2_char0-81 .
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
 
-    leolaniWorld:their_unnatural_inclination a gaf:Instance ;
-        rdfs:label "their-unnatural-inclination" ;
-        gaf:denotedIn leolaniTalk:chat608_utterance2_char0-81 .
-}
+    leolaniTalk:chat608_utterance2_char0-81 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat608_utterance2_char0-81" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:burden,
+            leolaniWorld:their_inclination,
+            leolaniWorld:their_unnatural_inclination ;
+        gaf:denotes leolaniWorld:They_are-burden-because_their_inclination,
+            leolaniWorld:They_are-burden-because_their_unnatural_inclination,
+            leolaniWorld:They_are_burden ;
+        grasp:hasAttribution leolaniTalk:They_are-burden-because_their_inclination_00028,
+            leolaniTalk:They_are-burden-because_their_unnatural_inclination_00028,
+            leolaniTalk:They_are_burden_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:23:33.332047"^^xml1:string,
+            "2024-06-05T23:23:33.332106"^^xml1:string,
+            "2024-06-05T23:23:33.332129"^^xml1:string ;
+        rdf:value "They are the burden because of their unnatural inclination and romantic feelings."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat608_utterance2 .
 
-leolaniWorld:Gay_people_are-burden-to_society {
-    leolaniWorld:Gay_people ns11:are_burden_to leolaniWorld:society .
-}
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-leolaniWorld:They_are-burden-because_their_inclination {
-    leolaniWorld:They ns11:are_burden_because leolaniWorld:their_inclination .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -436,166 +524,78 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Gay_people_are-burden-to_society_00012 a grasp:Attribution ;
-        rdfs:label "Gay_people_are-burden-to_society_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat608_utterance0_char0-35 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Gay_people_are_burden_00012 a grasp:Attribution ;
-        rdfs:label "Gay_people_are_burden_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat608_utterance0_char0-35 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are-burden-because_their_inclination_00028 a grasp:Attribution ;
-        rdfs:label "They_are-burden-because_their_inclination_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat608_utterance2_char0-81 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are-burden-because_their_unnatural_inclination_00028 a grasp:Attribution ;
-        rdfs:label "They_are-burden-because_their_unnatural_inclination_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat608_utterance2_char0-81 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_burden_00028 a grasp:Attribution ;
-        rdfs:label "They_are_burden_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat608_utterance2_char0-81 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat608_utterance0_char0-35 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat608_utterance0_char0-35" ;
-        gaf:containsDenotation leolaniWorld:Gay_people,
-            leolaniWorld:burden,
-            leolaniWorld:society ;
-        gaf:denotes leolaniWorld:Gay_people_are-burden-to_society,
-            leolaniWorld:Gay_people_are_burden ;
-        grasp:hasAttribution leolaniTalk:Gay_people_are-burden-to_society_00012,
-            leolaniTalk:Gay_people_are_burden_00012 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:33.169964"^^xml1:string,
-            "2024-06-05T23:23:33.170027"^^xml1:string ;
-        rdf:value "Gay people are a burden to society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat608_utterance0 .
-
-    graspe:APPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "APPROVAL" .
-
-    leolaniTalk:chat608_utterance2_char0-81 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat608_utterance2_char0-81" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:burden,
-            leolaniWorld:their_inclination,
-            leolaniWorld:their_unnatural_inclination ;
-        gaf:denotes leolaniWorld:They_are-burden-because_their_inclination,
-            leolaniWorld:They_are-burden-because_their_unnatural_inclination,
-            leolaniWorld:They_are_burden ;
-        grasp:hasAttribution leolaniTalk:They_are-burden-because_their_inclination_00028,
-            leolaniTalk:They_are-burden-because_their_unnatural_inclination_00028,
-            leolaniTalk:They_are_burden_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:23:33.332047"^^xml1:string,
-            "2024-06-05T23:23:33.332106"^^xml1:string,
-            "2024-06-05T23:23:33.332129"^^xml1:string ;
-        rdf:value "They are the burden because of their unnatural inclination and romantic feelings."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat608_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Gay_people_are_burden {
-    leolaniWorld:Gay_people ns11:are leolaniWorld:burden .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context1 a eps:Context ;
-        rdfs:label "context1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat608 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "133"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat608 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat608" ;
-        hs:id "608"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat608_utterance0,
-            leolaniTalk:chat608_utterance2 .
-
-    leolaniTalk:chat608_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat608_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat608_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat608_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:They_are_burden {
     leolaniWorld:They ns11:are leolaniWorld:burden .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Gay_people_are-burden-to_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Gay_people_are-burden-to_society" ;
+        gaf:denotedBy leolaniTalk:chat608_utterance0_char0-35 .
+
+    leolaniWorld:Gay_people_are_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Gay_people_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat608_utterance0_char0-35 .
+
+    leolaniWorld:They_are-burden-because_their_inclination a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-burden-because_their_inclination" ;
+        gaf:denotedBy leolaniTalk:chat608_utterance2_char0-81 .
+
+    leolaniWorld:They_are-burden-because_their_unnatural_inclination a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-burden-because_their_unnatural_inclination" ;
+        gaf:denotedBy leolaniTalk:chat608_utterance2_char0-81 .
+
+    leolaniWorld:They_are_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat608_utterance2_char0-81 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:They_are-burden-because_their_inclination {
+    leolaniWorld:They ns11:are_burden_because leolaniWorld:their_inclination .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Gay_people a gaf:Instance ;
+        rdfs:label "gay-people" ;
+        gaf:denotedIn leolaniTalk:chat608_utterance0_char0-35 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat608_utterance2_char0-81 .
+
+    leolaniWorld:burden a gaf:Instance ;
+        rdfs:label "burden" ;
+        gaf:denotedIn leolaniTalk:chat608_utterance0_char0-35,
+            leolaniTalk:chat608_utterance2_char0-81 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat608_utterance0_char0-35 .
+
+    leolaniWorld:their_inclination a gaf:Instance ;
+        rdfs:label "their-inclination" ;
+        gaf:denotedIn leolaniTalk:chat608_utterance2_char0-81 .
+
+    leolaniWorld:their_unnatural_inclination a gaf:Instance ;
+        rdfs:label "their-unnatural-inclination" ;
+        gaf:denotedIn leolaniTalk:chat608_utterance2_char0-81 .
 }
 

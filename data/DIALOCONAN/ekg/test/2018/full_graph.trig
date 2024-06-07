@@ -22,6 +22,87 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:they_were_why_persecuted {
+    leolaniWorld:they ns1:were leolaniWorld:why_persecuted .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context45 a eps:Context ;
+        rdfs:label "context45" ;
+        hs:id "45"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2018 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "238"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2018 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2018" ;
+        hs:id "2018"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2018_utterance0,
+            leolaniTalk:chat2018_utterance2 .
+
+    leolaniTalk:chat2018_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2018_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2018_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2018_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Jewish_folks_are_human {
+    leolaniWorld:Jewish_folks ns1:are leolaniWorld:human .
+}
+
+leolaniWorld:they_were_persecuted {
+    leolaniWorld:they ns1:were leolaniWorld:persecuted .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Jewish_folks_are_less_human {
+    leolaniWorld:Jewish_folks ns1:are leolaniWorld:less_human .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:Jewish_folks_are_bad_00028 a grasp:Attribution ;
         rdfs:label "Jewish_folks_are_bad_00028" ;
@@ -139,57 +220,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jewish_folks a gaf:Instance ;
-        rdfs:label "jewish-folks" ;
-        gaf:denotedIn leolaniTalk:chat2018_utterance0_char0-28,
-            leolaniTalk:chat2018_utterance2_char0-54 .
-
-    leolaniWorld:bad a gaf:Instance ;
-        rdfs:label "bad" ;
-        gaf:denotedIn leolaniTalk:chat2018_utterance2_char0-54 .
-
-    leolaniWorld:folks a gaf:Instance ;
-        rdfs:label "folks" ;
-        gaf:denotedIn leolaniTalk:chat2018_utterance0_char0-28,
-            leolaniTalk:chat2018_utterance2_char0-54 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:human a gaf:Instance ;
-        rdfs:label "human" ;
-        gaf:denotedIn leolaniTalk:chat2018_utterance0_char0-28 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:less_human a gaf:Instance ;
-        rdfs:label "less-human" ;
-        gaf:denotedIn leolaniTalk:chat2018_utterance0_char0-28 .
-
-    leolaniWorld:persecuted a gaf:Instance ;
-        rdfs:label "persecuted" ;
-        gaf:denotedIn leolaniTalk:chat2018_utterance2_char0-54 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2018_utterance2_char0-54 .
-
-    leolaniWorld:why_persecuted a gaf:Instance ;
-        rdfs:label "why-persecuted" ;
-        gaf:denotedIn leolaniTalk:chat2018_utterance2_char0-54 .
-}
-
-leolaniWorld:they_were_why_persecuted {
-    leolaniWorld:they ns1:were leolaniWorld:why_persecuted .
-}
-
-leolaniWorld:Jewish_folks_are_human {
-    leolaniWorld:Jewish_folks ns1:are leolaniWorld:human .
 }
 
 leolaniWorld:Ontology {
@@ -527,77 +557,12 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Jewish_folks_are_less_human {
-    leolaniWorld:Jewish_folks ns1:are leolaniWorld:less_human .
+leolaniWorld:folks_are_human {
+    leolaniWorld:folks ns1:are leolaniWorld:human .
 }
 
-leolaniWorld:they_were_persecuted {
-    leolaniWorld:they ns1:were leolaniWorld:persecuted .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context45 a eps:Context ;
-        rdfs:label "context45" ;
-        hs:id "45"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2018 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "238"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2018 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2018" ;
-        hs:id "2018"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2018_utterance0,
-            leolaniTalk:chat2018_utterance2 .
-
-    leolaniTalk:chat2018_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2018_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2018_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2018_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:folks_are_less_human {
-    leolaniWorld:folks ns1:are leolaniWorld:less_human .
+leolaniWorld:folks_are_bad {
+    leolaniWorld:folks ns1:are leolaniWorld:bad .
 }
 
 leolaniWorld:Claims {
@@ -648,19 +613,54 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:folks_are_bad {
-    leolaniWorld:folks ns1:are leolaniWorld:bad .
-}
-
-leolaniWorld:folks_are_human {
-    leolaniWorld:folks ns1:are leolaniWorld:human .
+leolaniWorld:folks_are_less_human {
+    leolaniWorld:folks ns1:are leolaniWorld:less_human .
 }
 
 leolaniWorld:Jewish_folks_are_bad {
     leolaniWorld:Jewish_folks ns1:are leolaniWorld:bad .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Instances {
+    leolaniWorld:Jewish_folks a gaf:Instance ;
+        rdfs:label "jewish-folks" ;
+        gaf:denotedIn leolaniTalk:chat2018_utterance0_char0-28,
+            leolaniTalk:chat2018_utterance2_char0-54 .
+
+    leolaniWorld:bad a gaf:Instance ;
+        rdfs:label "bad" ;
+        gaf:denotedIn leolaniTalk:chat2018_utterance2_char0-54 .
+
+    leolaniWorld:folks a gaf:Instance ;
+        rdfs:label "folks" ;
+        gaf:denotedIn leolaniTalk:chat2018_utterance0_char0-28,
+            leolaniTalk:chat2018_utterance2_char0-54 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:human a gaf:Instance ;
+        rdfs:label "human" ;
+        gaf:denotedIn leolaniTalk:chat2018_utterance0_char0-28 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:less_human a gaf:Instance ;
+        rdfs:label "less-human" ;
+        gaf:denotedIn leolaniTalk:chat2018_utterance0_char0-28 .
+
+    leolaniWorld:persecuted a gaf:Instance ;
+        rdfs:label "persecuted" ;
+        gaf:denotedIn leolaniTalk:chat2018_utterance2_char0-54 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2018_utterance2_char0-54 .
+
+    leolaniWorld:why_persecuted a gaf:Instance ;
+        rdfs:label "why-persecuted" ;
+        gaf:denotedIn leolaniTalk:chat2018_utterance2_char0-54 .
 }
 

@@ -22,109 +22,191 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context15 a eps:Context ;
+        rdfs:label "context15" ;
+        hs:id "15"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2354 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "183"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2354 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2354" ;
+        hs:id "2354"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2354_utterance0,
+            leolaniTalk:chat2354_utterance1 .
+
+    leolaniTalk:chat2354_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2354_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2354_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2354_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:their_own_religion_practice_it {
+    leolaniWorld:their_own_religion ns11:practice leolaniWorld:it .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Everyone_has_freedom a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Everyone_has_freedom" ;
-        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
-
-    leolaniWorld:Islam_should_should_banned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_should_should_banned" ;
-        gaf:denotedBy leolaniTalk:chat2354_utterance0_char0-66 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:their_own_religion_practice-however_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "their_own_religion_practice-however_it" ;
-        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
-
-    leolaniWorld:their_own_religion_practice_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "their_own_religion_practice_it" ;
-        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
-
-    leolaniWorld:their_religion_practice-however_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "their_religion_practice-however_it" ;
-        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
-
-    leolaniWorld:their_religion_practice_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "their_religion_practice_it" ;
-        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Islam_should_should_banned {
-    leolaniWorld:Islam ns11:should leolaniWorld:should_banned .
+leolaniWorld:their_own_religion_practice-however_it {
+    leolaniWorld:their_own_religion ns11:practice_however leolaniWorld:it .
 }
 
 leolaniWorld:their_religion_practice_it {
     leolaniWorld:their_religion ns11:practice leolaniWorld:it .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Everyone a gaf:Instance ;
-        rdfs:label "everyone" ;
-        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
-
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat2354_utterance0_char0-66 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:freedom a gaf:Instance ;
-        rdfs:label "freedom" ;
-        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:should_banned a gaf:Instance ;
-        rdfs:label "should-banned" ;
-        gaf:denotedIn leolaniTalk:chat2354_utterance0_char0-66 .
-
-    leolaniWorld:their_own_religion a gaf:Instance ;
-        rdfs:label "their-own-religion" ;
-        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
-
-    leolaniWorld:their_religion a gaf:Instance ;
-        rdfs:label "their-religion" ;
-        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
+leolaniWorld:Islam_should_should_banned {
+    leolaniWorld:Islam ns11:should leolaniWorld:should_banned .
 }
 
-leolaniWorld:Everyone_has_freedom {
-    leolaniWorld:Everyone ns11:has leolaniWorld:freedom .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Everyone_has_freedom_00028 a grasp:Attribution ;
+        rdfs:label "Everyone_has_freedom_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:their_own_religion_practice_it {
-    leolaniWorld:their_own_religion ns11:practice leolaniWorld:it .
+    leolaniTalk:Islam_should_should_banned_00028 a grasp:Attribution ;
+        rdfs:label "Islam_should_should_banned_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2354_utterance0_char0-66 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2354_utterance0_char0-66 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2354_utterance0_char0-66" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:should_banned ;
+        gaf:denotes leolaniWorld:Islam_should_should_banned ;
+        grasp:hasAttribution leolaniTalk:Islam_should_should_banned_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:57.564798"^^xml1:string ;
+        rdf:value "Muslims are not welcome in our country and Islam should be banned."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2354_utterance0 .
+
+    leolaniTalk:their_own_religion_practice-however_it_00028 a grasp:Attribution ;
+        rdfs:label "their_own_religion_practice-however_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:their_own_religion_practice_it_00028 a grasp:Attribution ;
+        rdfs:label "their_own_religion_practice_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:their_religion_practice-however_it_00028 a grasp:Attribution ;
+        rdfs:label "their_religion_practice-however_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:their_religion_practice_it_00028 a grasp:Attribution ;
+        rdfs:label "their_religion_practice_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2354_utterance1_char0-87 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2354_utterance1_char0-87" ;
+        gaf:containsDenotation leolaniWorld:Everyone,
+            leolaniWorld:freedom,
+            leolaniWorld:it,
+            leolaniWorld:their_own_religion,
+            leolaniWorld:their_religion ;
+        gaf:denotes leolaniWorld:Everyone_has_freedom,
+            leolaniWorld:their_own_religion_practice-however_it,
+            leolaniWorld:their_own_religion_practice_it,
+            leolaniWorld:their_religion_practice-however_it,
+            leolaniWorld:their_religion_practice_it ;
+        grasp:hasAttribution leolaniTalk:Everyone_has_freedom_00028,
+            leolaniTalk:their_own_religion_practice-however_it_00028,
+            leolaniTalk:their_own_religion_practice_it_00028,
+            leolaniTalk:their_religion_practice-however_it_00028,
+            leolaniTalk:their_religion_practice_it_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:57.656137"^^xml1:string,
+            "2024-06-05T23:07:57.656196"^^xml1:string,
+            "2024-06-05T23:07:57.656220"^^xml1:string,
+            "2024-06-05T23:07:57.656242"^^xml1:string,
+            "2024-06-05T23:07:57.656265"^^xml1:string ;
+        rdf:value "Everyone has the freedom to choose their own religion and practice it however they want"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2354_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -462,178 +544,96 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Everyone_has_freedom {
+    leolaniWorld:Everyone ns11:has leolaniWorld:freedom .
+}
+
 leolaniWorld:their_religion_practice-however_it {
     leolaniWorld:their_religion ns11:practice_however leolaniWorld:it .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Everyone_has_freedom a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Everyone_has_freedom" ;
+        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
+
+    leolaniWorld:Islam_should_should_banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_should_should_banned" ;
+        gaf:denotedBy leolaniTalk:chat2354_utterance0_char0-66 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:their_own_religion_practice-however_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "their_own_religion_practice-however_it" ;
+        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
+
+    leolaniWorld:their_own_religion_practice_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "their_own_religion_practice_it" ;
+        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
+
+    leolaniWorld:their_religion_practice-however_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "their_religion_practice-however_it" ;
+        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
+
+    leolaniWorld:their_religion_practice_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "their_religion_practice_it" ;
+        gaf:denotedBy leolaniTalk:chat2354_utterance1_char0-87 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Everyone_has_freedom_00028 a grasp:Attribution ;
-        rdfs:label "Everyone_has_freedom_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Everyone a gaf:Instance ;
+        rdfs:label "everyone" ;
+        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
 
-    leolaniTalk:Islam_should_should_banned_00028 a grasp:Attribution ;
-        rdfs:label "Islam_should_should_banned_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2354_utterance0_char0-66 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2354_utterance0_char0-66 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2354_utterance0_char0-66" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:should_banned ;
-        gaf:denotes leolaniWorld:Islam_should_should_banned ;
-        grasp:hasAttribution leolaniTalk:Islam_should_should_banned_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:57.564798"^^xml1:string ;
-        rdf:value "Muslims are not welcome in our country and Islam should be banned."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2354_utterance0 .
-
-    leolaniTalk:their_own_religion_practice-however_it_00028 a grasp:Attribution ;
-        rdfs:label "their_own_religion_practice-however_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:their_own_religion_practice_it_00028 a grasp:Attribution ;
-        rdfs:label "their_own_religion_practice_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:their_religion_practice-however_it_00028 a grasp:Attribution ;
-        rdfs:label "their_religion_practice-however_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:their_religion_practice_it_00028 a grasp:Attribution ;
-        rdfs:label "their_religion_practice_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2354_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2354_utterance1_char0-87 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2354_utterance1_char0-87" ;
-        gaf:containsDenotation leolaniWorld:Everyone,
-            leolaniWorld:freedom,
-            leolaniWorld:it,
-            leolaniWorld:their_own_religion,
-            leolaniWorld:their_religion ;
-        gaf:denotes leolaniWorld:Everyone_has_freedom,
-            leolaniWorld:their_own_religion_practice-however_it,
-            leolaniWorld:their_own_religion_practice_it,
-            leolaniWorld:their_religion_practice-however_it,
-            leolaniWorld:their_religion_practice_it ;
-        grasp:hasAttribution leolaniTalk:Everyone_has_freedom_00028,
-            leolaniTalk:their_own_religion_practice-however_it_00028,
-            leolaniTalk:their_own_religion_practice_it_00028,
-            leolaniTalk:their_religion_practice-however_it_00028,
-            leolaniTalk:their_religion_practice_it_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:57.656137"^^xml1:string,
-            "2024-06-05T23:07:57.656196"^^xml1:string,
-            "2024-06-05T23:07:57.656220"^^xml1:string,
-            "2024-06-05T23:07:57.656242"^^xml1:string,
-            "2024-06-05T23:07:57.656265"^^xml1:string ;
-        rdf:value "Everyone has the freedom to choose their own religion and practice it however they want"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2354_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context15 a eps:Context ;
-        rdfs:label "context15" ;
-        hs:id "15"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2354 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "183"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2354 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2354" ;
-        hs:id "2354"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2354_utterance0,
-            leolaniTalk:chat2354_utterance1 .
-
-    leolaniTalk:chat2354_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2354_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2354_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2354_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat2354_utterance0_char0-66 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:freedom a gaf:Instance ;
+        rdfs:label "freedom" ;
+        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
 
-leolaniWorld:their_own_religion_practice-however_it {
-    leolaniWorld:their_own_religion ns11:practice_however leolaniWorld:it .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:should_banned a gaf:Instance ;
+        rdfs:label "should-banned" ;
+        gaf:denotedIn leolaniTalk:chat2354_utterance0_char0-66 .
+
+    leolaniWorld:their_own_religion a gaf:Instance ;
+        rdfs:label "their-own-religion" ;
+        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
+
+    leolaniWorld:their_religion a gaf:Instance ;
+        rdfs:label "their-religion" ;
+        gaf:denotedIn leolaniTalk:chat2354_utterance1_char0-87 .
 }
 

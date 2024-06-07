@@ -22,46 +22,87 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:Mental_illnesses_have_nothing {
+    leolaniWorld:Mental_illnesses ns1:have leolaniWorld:nothing .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Mental_illnesses_have_nothing a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context246 a eps:Context ;
+        rdfs:label "context246" ;
+        hs:id "246"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1540 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "251"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1540 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Mental_illnesses_have_nothing" ;
-        gaf:denotedBy leolaniTalk:chat1540_utterance1_char0-90 .
+        rdfs:label "chat1540" ;
+        hs:id "1540"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1540_utterance0,
+            leolaniTalk:chat1540_utterance1 .
 
-    leolaniWorld:homosexuals_are_ill a gaf:Assertion,
+    leolaniTalk:chat1540_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "homosexuals_are_ill" ;
-        gaf:denotedBy leolaniTalk:chat1540_utterance0_char0-102 .
+        rdfs:label "chat1540_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:homosexuals_are_mentally_ill a gaf:Assertion,
+    leolaniTalk:chat1540_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "homosexuals_are_mentally_ill" ;
-        gaf:denotedBy leolaniTalk:chat1540_utterance0_char0-102 .
+        rdfs:label "chat1540_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:one_is-in_their_right_mind a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "one_is-in_their_right_mind" ;
-        gaf:denotedBy leolaniTalk:chat1540_utterance0_char0-102 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:homosexuals_are_mentally_ill {
+    leolaniWorld:homosexuals ns1:are leolaniWorld:mentally_ill .
 }
 
 leolaniTalk:Perspectives {
@@ -138,63 +179,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Mental_illnesses a gaf:Instance ;
-        rdfs:label "mental-illnesses" ;
-        gaf:denotedIn leolaniTalk:chat1540_utterance1_char0-90 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:homosexuals a gaf:Instance ;
-        rdfs:label "homosexuals" ;
-        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:ill a gaf:Instance ;
-        rdfs:label "ill" ;
-        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:mentally_ill a gaf:Instance ;
-        rdfs:label "mentally-ill" ;
-        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat1540_utterance1_char0-90 .
-
-    leolaniWorld:one a gaf:Instance ;
-        rdfs:label "one" ;
-        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
-
-    leolaniWorld:their_right_mind a gaf:Instance ;
-        rdfs:label "their-right-mind" ;
-        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
-}
-
-leolaniWorld:homosexuals_are_ill {
-    leolaniWorld:homosexuals ns1:are leolaniWorld:ill .
-}
-
-leolaniWorld:one_is-in_their_right_mind {
-    leolaniWorld:one ns1:is_in leolaniWorld:their_right_mind .
-}
-
-leolaniWorld:Mental_illnesses_have_nothing {
-    leolaniWorld:Mental_illnesses ns1:have leolaniWorld:nothing .
-}
-
-leolaniWorld:homosexuals_are_mentally_ill {
-    leolaniWorld:homosexuals ns1:are leolaniWorld:mentally_ill .
 }
 
 leolaniWorld:Ontology {
@@ -532,70 +516,86 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context246 a eps:Context ;
-        rdfs:label "context246" ;
-        hs:id "246"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1540 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "251"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1540 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Mental_illnesses_have_nothing a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1540" ;
-        hs:id "1540"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1540_utterance0,
-            leolaniTalk:chat1540_utterance1 .
+        rdfs:label "Mental_illnesses_have_nothing" ;
+        gaf:denotedBy leolaniTalk:chat1540_utterance1_char0-90 .
 
-    leolaniTalk:chat1540_utterance0 a grasp:Utterance,
+    leolaniWorld:homosexuals_are_ill a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1540_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "homosexuals_are_ill" ;
+        gaf:denotedBy leolaniTalk:chat1540_utterance0_char0-102 .
 
-    leolaniTalk:chat1540_utterance1 a grasp:Utterance,
+    leolaniWorld:homosexuals_are_mentally_ill a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1540_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "homosexuals_are_mentally_ill" ;
+        gaf:denotedBy leolaniTalk:chat1540_utterance0_char0-102 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:one_is-in_their_right_mind a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "one_is-in_their_right_mind" ;
+        gaf:denotedBy leolaniTalk:chat1540_utterance0_char0-102 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:one_is-in_their_right_mind {
+    leolaniWorld:one ns1:is_in leolaniWorld:their_right_mind .
+}
+
+leolaniWorld:homosexuals_are_ill {
+    leolaniWorld:homosexuals ns1:are leolaniWorld:ill .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Mental_illnesses a gaf:Instance ;
+        rdfs:label "mental-illnesses" ;
+        gaf:denotedIn leolaniTalk:chat1540_utterance1_char0-90 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:homosexuals a gaf:Instance ;
+        rdfs:label "homosexuals" ;
+        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:ill a gaf:Instance ;
+        rdfs:label "ill" ;
+        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:mentally_ill a gaf:Instance ;
+        rdfs:label "mentally-ill" ;
+        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat1540_utterance1_char0-90 .
+
+    leolaniWorld:one a gaf:Instance ;
+        rdfs:label "one" ;
+        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
+
+    leolaniWorld:their_right_mind a gaf:Instance ;
+        rdfs:label "their-right-mind" ;
+        gaf:denotedIn leolaniTalk:chat1540_utterance0_char0-102 .
 }
 

@@ -23,91 +23,171 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:We_are_humans a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_are_humans" ;
-        gaf:denotedBy leolaniTalk:chat2315_utterance5_char0-113 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:solution_can_can_found a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "solution_can_can_found" ;
-        gaf:denotedBy leolaniTalk:chat2315_utterance5_char0-113 .
-
-    leolaniWorld:solution_can_can_found_through_dialogue a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "solution_can_can_found_through_dialogue" ;
-        gaf:denotedBy leolaniTalk:chat2315_utterance5_char0-113 .
-
-    leolaniWorld:they_re_wrong a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_re_wrong" ;
-        gaf:denotedBy leolaniTalk:chat2315_utterance4_char0-53 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:We_are_humans {
     leolaniWorld:We ns1:are leolaniWorld:humans .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
+leolaniTalk:Interactions {
+    leolaniContext:context209 a eps:Context ;
+        rdfs:label "context209" ;
+        hs:id "209"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:can_found a gaf:Instance ;
-        rdfs:label "can-found" ;
-        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2315 .
 
-    leolaniWorld:can_found_through_dialogue a gaf:Instance ;
-        rdfs:label "can-found-through-dialogue" ;
-        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "151"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2315 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2315" ;
+        hs:id "2315"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2315_utterance4,
+            leolaniTalk:chat2315_utterance5 .
+
+    leolaniTalk:chat2315_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2315_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2315_utterance5 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2315_utterance5" ;
+        hs:id "5"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:humans a gaf:Instance ;
-        rdfs:label "humans" ;
-        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
+leolaniWorld:solution_can_can_found_through_dialogue {
+    leolaniWorld:solution ns1:can leolaniWorld:can_found_through_dialogue .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:solution a gaf:Instance ;
-        rdfs:label "solution" ;
-        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
+leolaniWorld:solution_can_can_found {
+    leolaniWorld:solution ns1:can leolaniWorld:can_found .
+}
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2315_utterance4_char0-53 .
-
-    leolaniWorld:wrong a gaf:Instance ;
-        rdfs:label "wrong" ;
-        gaf:denotedIn leolaniTalk:chat2315_utterance4_char0-53 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:they_re_wrong {
     leolaniWorld:they ns12:re leolaniWorld:wrong .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:We_are_humans_00028 a grasp:Attribution ;
+        rdfs:label "We_are_humans_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2315_utterance5_char0-113 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2315_utterance4_char0-53 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2315_utterance4_char0-53" ;
+        gaf:containsDenotation leolaniWorld:they,
+            leolaniWorld:wrong ;
+        gaf:denotes leolaniWorld:they_re_wrong ;
+        grasp:hasAttribution leolaniTalk:they_re_wrong_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:45.201294"^^xml1:string ;
+        rdf:value "And they're wrong. Muslims are not welcome in Europe."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2315_utterance4 .
+
+    leolaniTalk:solution_can_can_found_00028 a grasp:Attribution ;
+        rdfs:label "solution_can_can_found_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2315_utterance5_char0-113 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:solution_can_can_found_through_dialogue_00028 a grasp:Attribution ;
+        rdfs:label "solution_can_can_found_through_dialogue_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2315_utterance5_char0-113 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_re_wrong_00028 a grasp:Attribution ;
+        rdfs:label "they_re_wrong_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2315_utterance4_char0-53 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2315_utterance5_char0-113 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2315_utterance5_char0-113" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:can_found,
+            leolaniWorld:can_found_through_dialogue,
+            leolaniWorld:humans,
+            leolaniWorld:solution ;
+        gaf:denotes leolaniWorld:We_are_humans,
+            leolaniWorld:solution_can_can_found,
+            leolaniWorld:solution_can_can_found_through_dialogue ;
+        grasp:hasAttribution leolaniTalk:We_are_humans_00028,
+            leolaniTalk:solution_can_can_found_00028,
+            leolaniTalk:solution_can_can_found_through_dialogue_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:04:45.303718"^^xml1:string,
+            "2024-06-05T23:04:45.303772"^^xml1:string,
+            "2024-06-05T23:04:45.303795"^^xml1:string ;
+        rdf:value "They are. If there is a problem, a solution can be found through dialogue instead of division. We are all humans."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2315_utterance5 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -445,158 +525,78 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:solution_can_can_found {
-    leolaniWorld:solution ns1:can leolaniWorld:can_found .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:We_are_humans_00028 a grasp:Attribution ;
-        rdfs:label "We_are_humans_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2315_utterance5_char0-113 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2315_utterance4_char0-53 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2315_utterance4_char0-53" ;
-        gaf:containsDenotation leolaniWorld:they,
-            leolaniWorld:wrong ;
-        gaf:denotes leolaniWorld:they_re_wrong ;
-        grasp:hasAttribution leolaniTalk:they_re_wrong_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:45.201294"^^xml1:string ;
-        rdf:value "And they're wrong. Muslims are not welcome in Europe."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2315_utterance4 .
-
-    leolaniTalk:solution_can_can_found_00028 a grasp:Attribution ;
-        rdfs:label "solution_can_can_found_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2315_utterance5_char0-113 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:solution_can_can_found_through_dialogue_00028 a grasp:Attribution ;
-        rdfs:label "solution_can_can_found_through_dialogue_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2315_utterance5_char0-113 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_re_wrong_00028 a grasp:Attribution ;
-        rdfs:label "they_re_wrong_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2315_utterance4_char0-53 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2315_utterance5_char0-113 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2315_utterance5_char0-113" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:can_found,
-            leolaniWorld:can_found_through_dialogue,
-            leolaniWorld:humans,
-            leolaniWorld:solution ;
-        gaf:denotes leolaniWorld:We_are_humans,
-            leolaniWorld:solution_can_can_found,
-            leolaniWorld:solution_can_can_found_through_dialogue ;
-        grasp:hasAttribution leolaniTalk:We_are_humans_00028,
-            leolaniTalk:solution_can_can_found_00028,
-            leolaniTalk:solution_can_can_found_through_dialogue_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:04:45.303718"^^xml1:string,
-            "2024-06-05T23:04:45.303772"^^xml1:string,
-            "2024-06-05T23:04:45.303795"^^xml1:string ;
-        rdf:value "They are. If there is a problem, a solution can be found through dialogue instead of division. We are all humans."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2315_utterance5 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:solution_can_can_found_through_dialogue {
-    leolaniWorld:solution ns1:can leolaniWorld:can_found_through_dialogue .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context209 a eps:Context ;
-        rdfs:label "context209" ;
-        hs:id "209"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2315 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "151"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2315 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:We_are_humans a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2315" ;
-        hs:id "2315"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2315_utterance4,
-            leolaniTalk:chat2315_utterance5 .
+        rdfs:label "We_are_humans" ;
+        gaf:denotedBy leolaniTalk:chat2315_utterance5_char0-113 .
 
-    leolaniTalk:chat2315_utterance4 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2315_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat2315_utterance5 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2315_utterance5" ;
-        hs:id "5"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:solution_can_can_found a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "solution_can_can_found" ;
+        gaf:denotedBy leolaniTalk:chat2315_utterance5_char0-113 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:solution_can_can_found_through_dialogue a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "solution_can_can_found_through_dialogue" ;
+        gaf:denotedBy leolaniTalk:chat2315_utterance5_char0-113 .
+
+    leolaniWorld:they_re_wrong a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_re_wrong" ;
+        gaf:denotedBy leolaniTalk:chat2315_utterance4_char0-53 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
+
+    leolaniWorld:can_found a gaf:Instance ;
+        rdfs:label "can-found" ;
+        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
+
+    leolaniWorld:can_found_through_dialogue a gaf:Instance ;
+        rdfs:label "can-found-through-dialogue" ;
+        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:humans a gaf:Instance ;
+        rdfs:label "humans" ;
+        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:solution a gaf:Instance ;
+        rdfs:label "solution" ;
+        gaf:denotedIn leolaniTalk:chat2315_utterance5_char0-113 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2315_utterance4_char0-53 .
+
+    leolaniWorld:wrong a gaf:Instance ;
+        rdfs:label "wrong" ;
+        gaf:denotedIn leolaniTalk:chat2315_utterance4_char0-53 .
 }
 

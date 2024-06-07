@@ -22,41 +22,79 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context113 a eps:Context ;
+        rdfs:label "context113" ;
+        hs:id "113"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1520 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "19"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1520 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1520" ;
+        hs:id "1520"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1520_utterance1,
+            leolaniTalk:chat1520_utterance2 .
+
+    leolaniTalk:chat1520_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1520_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1520_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1520_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:vast_majority_live_their_lives {
-    leolaniWorld:vast_majority ns11:live leolaniWorld:their_lives .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:majority_live_their_lives a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "majority_live_their_lives" ;
-        gaf:denotedBy leolaniTalk:chat1520_utterance1_char0-127 .
-
-    leolaniWorld:vast_majority_live_their_lives a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "vast_majority_live_their_lives" ;
-        gaf:denotedBy leolaniTalk:chat1520_utterance1_char0-127 .
-
-    leolaniWorld:you_do-explain_Taliban a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-explain_Taliban" ;
-        gaf:denotedBy leolaniTalk:chat1520_utterance2_char0-36 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:you_do-explain_Taliban {
@@ -67,37 +105,72 @@ leolaniWorld:majority_live_their_lives {
     leolaniWorld:majority ns11:live leolaniWorld:their_lives .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Taliban a gaf:Instance ;
-        rdfs:label "taliban" ;
-        gaf:denotedIn leolaniTalk:chat1520_utterance2_char0-36 .
+leolaniTalk:Perspectives {
+    leolaniTalk:chat1520_utterance2_char0-36 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1520_utterance2_char0-36" ;
+        gaf:containsDenotation leolaniWorld:Taliban,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:you_do-explain_Taliban ;
+        grasp:hasAttribution leolaniTalk:you_do-explain_Taliban_00026 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:43.256167"^^xml1:string ;
+        rdf:value "How do you explain the Taliban then?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1520_utterance2 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:majority_live_their_lives_00028 a grasp:Attribution ;
+        rdfs:label "majority_live_their_lives_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1520_utterance1_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:vast_majority_live_their_lives_00028 a grasp:Attribution ;
+        rdfs:label "vast_majority_live_their_lives_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1520_utterance1_char0-127 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:you_do-explain_Taliban_00026 a grasp:Attribution ;
+        rdfs:label "you_do-explain_Taliban_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1520_utterance2_char0-36 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:majority a gaf:Instance ;
-        rdfs:label "majority" ;
-        gaf:denotedIn leolaniTalk:chat1520_utterance1_char0-127 .
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
 
-    leolaniWorld:their_lives a gaf:Instance ;
-        rdfs:label "their-lives" ;
-        gaf:denotedIn leolaniTalk:chat1520_utterance1_char0-127 .
+    leolaniTalk:chat1520_utterance1_char0-127 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1520_utterance1_char0-127" ;
+        gaf:containsDenotation leolaniWorld:majority,
+            leolaniWorld:their_lives,
+            leolaniWorld:vast_majority ;
+        gaf:denotes leolaniWorld:majority_live_their_lives,
+            leolaniWorld:vast_majority_live_their_lives ;
+        grasp:hasAttribution leolaniTalk:majority_live_their_lives_00028,
+            leolaniTalk:vast_majority_live_their_lives_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:36.661030"^^xml1:string,
+            "2024-06-05T23:02:36.661098"^^xml1:string ;
+        rdf:value "The vast majority of Muslims actually just want to live their lives, and they don't care if others are following sharia or not."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1520_utterance1 .
 
-    leolaniWorld:vast_majority a gaf:Instance ;
-        rdfs:label "vast-majority" ;
-        gaf:denotedIn leolaniTalk:chat1520_utterance1_char0-127 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1520_utterance2_char0-36 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -435,142 +508,69 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:vast_majority_live_their_lives {
+    leolaniWorld:vast_majority ns11:live leolaniWorld:their_lives .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat1520_utterance2_char0-36 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1520_utterance2_char0-36" ;
-        gaf:containsDenotation leolaniWorld:Taliban,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:you_do-explain_Taliban ;
-        grasp:hasAttribution leolaniTalk:you_do-explain_Taliban_00026 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:43.256167"^^xml1:string ;
-        rdf:value "How do you explain the Taliban then?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1520_utterance2 .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:majority_live_their_lives_00028 a grasp:Attribution ;
-        rdfs:label "majority_live_their_lives_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1520_utterance1_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:vast_majority_live_their_lives_00028 a grasp:Attribution ;
-        rdfs:label "vast_majority_live_their_lives_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1520_utterance1_char0-127 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:majority_live_their_lives a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "majority_live_their_lives" ;
+        gaf:denotedBy leolaniTalk:chat1520_utterance1_char0-127 .
 
-    leolaniTalk:you_do-explain_Taliban_00026 a grasp:Attribution ;
-        rdfs:label "you_do-explain_Taliban_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1520_utterance2_char0-36 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:vast_majority_live_their_lives a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "vast_majority_live_their_lives" ;
+        gaf:denotedBy leolaniTalk:chat1520_utterance1_char0-127 .
 
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
+    leolaniWorld:you_do-explain_Taliban a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-explain_Taliban" ;
+        gaf:denotedBy leolaniTalk:chat1520_utterance2_char0-36 .
 
-    leolaniTalk:chat1520_utterance1_char0-127 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1520_utterance1_char0-127" ;
-        gaf:containsDenotation leolaniWorld:majority,
-            leolaniWorld:their_lives,
-            leolaniWorld:vast_majority ;
-        gaf:denotes leolaniWorld:majority_live_their_lives,
-            leolaniWorld:vast_majority_live_their_lives ;
-        grasp:hasAttribution leolaniTalk:majority_live_their_lives_00028,
-            leolaniTalk:vast_majority_live_their_lives_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:36.661030"^^xml1:string,
-            "2024-06-05T23:02:36.661098"^^xml1:string ;
-        rdf:value "The vast majority of Muslims actually just want to live their lives, and they don't care if others are following sharia or not."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1520_utterance1 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context113 a eps:Context ;
-        rdfs:label "context113" ;
-        hs:id "113"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1520 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "19"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1520 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1520" ;
-        hs:id "1520"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1520_utterance1,
-            leolaniTalk:chat1520_utterance2 .
-
-    leolaniTalk:chat1520_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1520_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1520_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1520_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Taliban a gaf:Instance ;
+        rdfs:label "taliban" ;
+        gaf:denotedIn leolaniTalk:chat1520_utterance2_char0-36 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:majority a gaf:Instance ;
+        rdfs:label "majority" ;
+        gaf:denotedIn leolaniTalk:chat1520_utterance1_char0-127 .
+
+    leolaniWorld:their_lives a gaf:Instance ;
+        rdfs:label "their-lives" ;
+        gaf:denotedIn leolaniTalk:chat1520_utterance1_char0-127 .
+
+    leolaniWorld:vast_majority a gaf:Instance ;
+        rdfs:label "vast-majority" ;
+        gaf:denotedIn leolaniTalk:chat1520_utterance1_char0-127 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1520_utterance2_char0-36 .
 }
 

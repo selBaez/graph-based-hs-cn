@@ -22,112 +22,234 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Islam_has-always-promoted_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_has-always-promoted_them" ;
-        gaf:denotedBy leolaniTalk:chat924_utterance2_char0-74 .
-
-    leolaniWorld:Islam_has-promoted_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_has-promoted_them" ;
-        gaf:denotedBy leolaniTalk:chat924_utterance2_char0-74 .
-
-    leolaniWorld:Islam_is_Because_ideology a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_Because_ideology" ;
-        gaf:denotedBy leolaniTalk:chat924_utterance4_char0-41 .
-
-    leolaniWorld:Islam_is_Because_totalitarian_ideology a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_Because_totalitarian_ideology" ;
-        gaf:denotedBy leolaniTalk:chat924_utterance4_char0-41 .
-
-    leolaniWorld:Islam_is_ideology a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_ideology" ;
-        gaf:denotedBy leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance4_char0-41 .
-
-    leolaniWorld:Islam_is_totalitarian a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_totalitarian" ;
-        gaf:denotedBy leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance4_char0-41 .
-
-    leolaniWorld:Islam_is_totalitarian_ideology a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_totalitarian_ideology" ;
-        gaf:denotedBy leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance4_char0-41 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Islam_is_totalitarian {
+    leolaniWorld:Islam ns1:is leolaniWorld:totalitarian .
 }
 
-leolaniWorld:Islam_has-promoted_them {
-    leolaniWorld:Islam ns1:has_promoted leolaniWorld:them .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context96 a eps:Context ;
+        rdfs:label "context96" ;
+        hs:id "96"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:Because_ideology a gaf:Instance ;
-        rdfs:label "because-ideology" ;
-        gaf:denotedIn leolaniTalk:chat924_utterance4_char0-41 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat924 .
 
-    leolaniWorld:Because_totalitarian_ideology a gaf:Instance ;
-        rdfs:label "because-totalitarian-ideology" ;
-        gaf:denotedIn leolaniTalk:chat924_utterance4_char0-41 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance2_char0-74,
-            leolaniTalk:chat924_utterance4_char0-41 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "248"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat924 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat924" ;
+        hs:id "924"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat924_utterance0,
+            leolaniTalk:chat924_utterance2,
+            leolaniTalk:chat924_utterance4 .
+
+    leolaniTalk:chat924_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat924_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat924_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat924_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat924_utterance4 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat924_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:ideology a gaf:Instance ;
-        rdfs:label "ideology" ;
-        gaf:denotedIn leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance4_char0-41 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat924_utterance2_char0-74 .
-
-    leolaniWorld:totalitarian a gaf:Instance ;
-        rdfs:label "totalitarian" ;
-        gaf:denotedIn leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance4_char0-41 .
-
-    leolaniWorld:totalitarian_ideology a gaf:Instance ;
-        rdfs:label "totalitarian-ideology" ;
-        gaf:denotedIn leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance4_char0-41 .
-}
-
-leolaniWorld:Islam_is_Because_ideology {
-    leolaniWorld:Islam ns1:is leolaniWorld:Because_ideology .
-}
-
-leolaniWorld:Islam_is_Because_totalitarian_ideology {
-    leolaniWorld:Islam ns1:is leolaniWorld:Because_totalitarian_ideology .
 }
 
 leolaniWorld:Islam_is_ideology {
     leolaniWorld:Islam ns1:is leolaniWorld:ideology .
 }
 
-leolaniWorld:Islam_has-always-promoted_them {
-    leolaniWorld:Islam ns1:has_always_promoted leolaniWorld:them .
+leolaniWorld:Islam_is_Because_ideology {
+    leolaniWorld:Islam ns1:is leolaniWorld:Because_ideology .
+}
+
+leolaniWorld:Islam_is_totalitarian_ideology {
+    leolaniWorld:Islam ns1:is leolaniWorld:totalitarian_ideology .
+}
+
+leolaniWorld:Islam_is_Because_totalitarian_ideology {
+    leolaniWorld:Islam ns1:is leolaniWorld:Because_totalitarian_ideology .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Islam_has-promoted_them {
+    leolaniWorld:Islam ns1:has_promoted leolaniWorld:them .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Islam_has-always-promoted_them_00022 a grasp:Attribution ;
+        rdfs:label "Islam_has-always-promoted_them_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat924_utterance2_char0-74 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_has-promoted_them_00022 a grasp:Attribution ;
+        rdfs:label "Islam_has-promoted_them_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat924_utterance2_char0-74 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_Because_ideology_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_Because_ideology_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat924_utterance4_char0-41 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_Because_totalitarian_ideology_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_Because_totalitarian_ideology_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat924_utterance4_char0-41 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_ideology_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_ideology_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance4_char0-41 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_totalitarian_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_totalitarian_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance4_char0-41 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_totalitarian_ideology_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_totalitarian_ideology_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance4_char0-41 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat924_utterance2_char0-74 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat924_utterance2_char0-74" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:them ;
+        gaf:denotes leolaniWorld:Islam_has-always-promoted_them,
+            leolaniWorld:Islam_has-promoted_them ;
+        grasp:hasAttribution leolaniTalk:Islam_has-always-promoted_them_00022,
+            leolaniTalk:Islam_has-promoted_them_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:19:21.191445"^^xml1:string,
+            "2024-06-05T23:19:21.191502"^^xml1:string ;
+        rdf:value "Are murder, rape, and slavery stereotypes? Islam has always promoted them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat924_utterance2 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    leolaniTalk:chat924_utterance0_char0-93 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat924_utterance0_char0-93" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:ideology,
+            leolaniWorld:totalitarian,
+            leolaniWorld:totalitarian_ideology ;
+        gaf:denotes leolaniWorld:Islam_is_ideology,
+            leolaniWorld:Islam_is_totalitarian,
+            leolaniWorld:Islam_is_totalitarian_ideology ;
+        grasp:hasAttribution leolaniTalk:Islam_is_ideology_00028,
+            leolaniTalk:Islam_is_totalitarian_00028,
+            leolaniTalk:Islam_is_totalitarian_ideology_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:19:21.024064"^^xml1:string,
+            "2024-06-05T23:19:21.024127"^^xml1:string,
+            "2024-06-05T23:19:21.024150"^^xml1:string ;
+        rdf:value "Islam is a totalitarian ideology that is run amok, encouraging violent beliefs and practices."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat924_utterance0 .
+
+    leolaniTalk:chat924_utterance4_char0-41 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat924_utterance4_char0-41" ;
+        gaf:containsDenotation leolaniWorld:Because_ideology,
+            leolaniWorld:Because_totalitarian_ideology,
+            leolaniWorld:Islam,
+            leolaniWorld:ideology,
+            leolaniWorld:totalitarian,
+            leolaniWorld:totalitarian_ideology ;
+        gaf:denotes leolaniWorld:Islam_is_Because_ideology,
+            leolaniWorld:Islam_is_Because_totalitarian_ideology,
+            leolaniWorld:Islam_is_ideology,
+            leolaniWorld:Islam_is_totalitarian,
+            leolaniWorld:Islam_is_totalitarian_ideology ;
+        grasp:hasAttribution leolaniTalk:Islam_is_Because_ideology_00028,
+            leolaniTalk:Islam_is_Because_totalitarian_ideology_00028,
+            leolaniTalk:Islam_is_ideology_00028,
+            leolaniTalk:Islam_is_totalitarian_00028,
+            leolaniTalk:Islam_is_totalitarian_ideology_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:19:21.345342"^^xml1:string,
+            "2024-06-05T23:19:21.345398"^^xml1:string,
+            "2024-06-05T23:19:21.345423"^^xml1:string,
+            "2024-06-05T23:19:21.345444"^^xml1:string,
+            "2024-06-05T23:19:21.345465"^^xml1:string ;
+        rdf:value "Because Islam is a totalitarian ideology."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat924_utterance4 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -465,217 +587,95 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Islam_is_totalitarian {
-    leolaniWorld:Islam ns1:is leolaniWorld:totalitarian .
+leolaniWorld:Claims {
+    leolaniWorld:Islam_has-always-promoted_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_has-always-promoted_them" ;
+        gaf:denotedBy leolaniTalk:chat924_utterance2_char0-74 .
+
+    leolaniWorld:Islam_has-promoted_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_has-promoted_them" ;
+        gaf:denotedBy leolaniTalk:chat924_utterance2_char0-74 .
+
+    leolaniWorld:Islam_is_Because_ideology a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_Because_ideology" ;
+        gaf:denotedBy leolaniTalk:chat924_utterance4_char0-41 .
+
+    leolaniWorld:Islam_is_Because_totalitarian_ideology a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_Because_totalitarian_ideology" ;
+        gaf:denotedBy leolaniTalk:chat924_utterance4_char0-41 .
+
+    leolaniWorld:Islam_is_ideology a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_ideology" ;
+        gaf:denotedBy leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance4_char0-41 .
+
+    leolaniWorld:Islam_is_totalitarian a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_totalitarian" ;
+        gaf:denotedBy leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance4_char0-41 .
+
+    leolaniWorld:Islam_is_totalitarian_ideology a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_totalitarian_ideology" ;
+        gaf:denotedBy leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance4_char0-41 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Islam_has-always-promoted_them {
+    leolaniWorld:Islam ns1:has_always_promoted leolaniWorld:them .
 }
 
-leolaniWorld:Islam_is_totalitarian_ideology {
-    leolaniWorld:Islam ns1:is leolaniWorld:totalitarian_ideology .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Because_ideology a gaf:Instance ;
+        rdfs:label "because-ideology" ;
+        gaf:denotedIn leolaniTalk:chat924_utterance4_char0-41 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Islam_has-always-promoted_them_00022 a grasp:Attribution ;
-        rdfs:label "Islam_has-always-promoted_them_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat924_utterance2_char0-74 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Because_totalitarian_ideology a gaf:Instance ;
+        rdfs:label "because-totalitarian-ideology" ;
+        gaf:denotedIn leolaniTalk:chat924_utterance4_char0-41 .
 
-    leolaniTalk:Islam_has-promoted_them_00022 a grasp:Attribution ;
-        rdfs:label "Islam_has-promoted_them_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat924_utterance2_char0-74 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_Because_ideology_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_Because_ideology_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat924_utterance4_char0-41 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_Because_totalitarian_ideology_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_Because_totalitarian_ideology_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat924_utterance4_char0-41 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_ideology_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_ideology_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance4_char0-41 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_totalitarian_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_totalitarian_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance4_char0-41 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_totalitarian_ideology_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_totalitarian_ideology_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat924_utterance0_char0-93,
-            leolaniTalk:chat924_utterance4_char0-41 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat924_utterance2_char0-74 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat924_utterance2_char0-74" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:them ;
-        gaf:denotes leolaniWorld:Islam_has-always-promoted_them,
-            leolaniWorld:Islam_has-promoted_them ;
-        grasp:hasAttribution leolaniTalk:Islam_has-always-promoted_them_00022,
-            leolaniTalk:Islam_has-promoted_them_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:19:21.191445"^^xml1:string,
-            "2024-06-05T23:19:21.191502"^^xml1:string ;
-        rdf:value "Are murder, rape, and slavery stereotypes? Islam has always promoted them."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat924_utterance2 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    leolaniTalk:chat924_utterance0_char0-93 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat924_utterance0_char0-93" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:ideology,
-            leolaniWorld:totalitarian,
-            leolaniWorld:totalitarian_ideology ;
-        gaf:denotes leolaniWorld:Islam_is_ideology,
-            leolaniWorld:Islam_is_totalitarian,
-            leolaniWorld:Islam_is_totalitarian_ideology ;
-        grasp:hasAttribution leolaniTalk:Islam_is_ideology_00028,
-            leolaniTalk:Islam_is_totalitarian_00028,
-            leolaniTalk:Islam_is_totalitarian_ideology_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:19:21.024064"^^xml1:string,
-            "2024-06-05T23:19:21.024127"^^xml1:string,
-            "2024-06-05T23:19:21.024150"^^xml1:string ;
-        rdf:value "Islam is a totalitarian ideology that is run amok, encouraging violent beliefs and practices."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat924_utterance0 .
-
-    leolaniTalk:chat924_utterance4_char0-41 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat924_utterance4_char0-41" ;
-        gaf:containsDenotation leolaniWorld:Because_ideology,
-            leolaniWorld:Because_totalitarian_ideology,
-            leolaniWorld:Islam,
-            leolaniWorld:ideology,
-            leolaniWorld:totalitarian,
-            leolaniWorld:totalitarian_ideology ;
-        gaf:denotes leolaniWorld:Islam_is_Because_ideology,
-            leolaniWorld:Islam_is_Because_totalitarian_ideology,
-            leolaniWorld:Islam_is_ideology,
-            leolaniWorld:Islam_is_totalitarian,
-            leolaniWorld:Islam_is_totalitarian_ideology ;
-        grasp:hasAttribution leolaniTalk:Islam_is_Because_ideology_00028,
-            leolaniTalk:Islam_is_Because_totalitarian_ideology_00028,
-            leolaniTalk:Islam_is_ideology_00028,
-            leolaniTalk:Islam_is_totalitarian_00028,
-            leolaniTalk:Islam_is_totalitarian_ideology_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:19:21.345342"^^xml1:string,
-            "2024-06-05T23:19:21.345398"^^xml1:string,
-            "2024-06-05T23:19:21.345423"^^xml1:string,
-            "2024-06-05T23:19:21.345444"^^xml1:string,
-            "2024-06-05T23:19:21.345465"^^xml1:string ;
-        rdf:value "Because Islam is a totalitarian ideology."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat924_utterance4 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context96 a eps:Context ;
-        rdfs:label "context96" ;
-        hs:id "96"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat924 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "248"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat924 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat924" ;
-        hs:id "924"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat924_utterance0,
-            leolaniTalk:chat924_utterance2,
-            leolaniTalk:chat924_utterance4 .
-
-    leolaniTalk:chat924_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat924_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat924_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat924_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat924_utterance4 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat924_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance2_char0-74,
+            leolaniTalk:chat924_utterance4_char0-41 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:ideology a gaf:Instance ;
+        rdfs:label "ideology" ;
+        gaf:denotedIn leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance4_char0-41 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat924_utterance2_char0-74 .
+
+    leolaniWorld:totalitarian a gaf:Instance ;
+        rdfs:label "totalitarian" ;
+        gaf:denotedIn leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance4_char0-41 .
+
+    leolaniWorld:totalitarian_ideology a gaf:Instance ;
+        rdfs:label "totalitarian-ideology" ;
+        gaf:denotedIn leolaniTalk:chat924_utterance0_char0-93,
+            leolaniTalk:chat924_utterance4_char0-41 .
 }
 

@@ -23,64 +23,130 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:I_d-want_meet a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_d-want_meet" ;
-        gaf:denotedBy leolaniTalk:chat2256_utterance1_char0-36 .
-
-    leolaniWorld:I_d-want_to_meet a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_d-want_to_meet" ;
-        gaf:denotedBy leolaniTalk:chat2256_utterance1_char0-36 .
-
-    leolaniWorld:I_meet_MP a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_meet_MP" ;
-        gaf:denotedBy leolaniTalk:chat2256_utterance1_char0-36 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
 leolaniWorld:I_meet_MP {
     leolaniWorld:I ns12:meet leolaniWorld:MP .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat2256_utterance1_char0-36 .
+leolaniTalk:Interactions {
+    leolaniContext:context243 a eps:Context ;
+        rdfs:label "context243" ;
+        hs:id "243"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:MP a gaf:Instance ;
-        rdfs:label "mp" ;
-        gaf:denotedIn leolaniTalk:chat2256_utterance1_char0-36 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2256 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "148"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2256 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2256" ;
+        hs:id "2256"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2256_utterance1 .
+
+    leolaniTalk:chat2256_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2256_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:meet a gaf:Instance ;
-        rdfs:label "meet" ;
-        gaf:denotedIn leolaniTalk:chat2256_utterance1_char0-36 .
-
-    leolaniWorld:to_meet a gaf:Instance ;
-        rdfs:label "to-meet" ;
-        gaf:denotedIn leolaniTalk:chat2256_utterance1_char0-36 .
+leolaniWorld:I_d-want_meet {
+    leolaniWorld:I ns11:d_want leolaniWorld:meet .
 }
 
 leolaniWorld:I_d-want_to_meet {
     leolaniWorld:I ns11:d_want leolaniWorld:to_meet .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_d-want_meet_00028 a grasp:Attribution ;
+        rdfs:label "I_d-want_meet_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2256_utterance1_char0-36 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_d-want_to_meet_00028 a grasp:Attribution ;
+        rdfs:label "I_d-want_to_meet_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2256_utterance1_char0-36 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:I_meet_MP_00028 a grasp:Attribution ;
+        rdfs:label "I_meet_MP_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2256_utterance1_char0-36 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2256_utterance1_char0-36 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2256_utterance1_char0-36" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:MP,
+            leolaniWorld:meet,
+            leolaniWorld:to_meet ;
+        gaf:denotes leolaniWorld:I_d-want_meet,
+            leolaniWorld:I_d-want_to_meet,
+            leolaniWorld:I_meet_MP ;
+        grasp:hasAttribution leolaniTalk:I_d-want_meet_00028,
+            leolaniTalk:I_d-want_to_meet_00028,
+            leolaniTalk:I_meet_MP_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:20.280599"^^xml1:string,
+            "2024-06-05T23:09:20.280663"^^xml1:string,
+            "2024-06-05T23:09:20.280686"^^xml1:string ;
+        rdf:value "I'd want to meet a MP who thinks so."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2256_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -418,117 +484,51 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:I_d-want_meet {
-    leolaniWorld:I ns11:d_want leolaniWorld:meet .
+leolaniWorld:Claims {
+    leolaniWorld:I_d-want_meet a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_d-want_meet" ;
+        gaf:denotedBy leolaniTalk:chat2256_utterance1_char0-36 .
+
+    leolaniWorld:I_d-want_to_meet a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_d-want_to_meet" ;
+        gaf:denotedBy leolaniTalk:chat2256_utterance1_char0-36 .
+
+    leolaniWorld:I_meet_MP a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_meet_MP" ;
+        gaf:denotedBy leolaniTalk:chat2256_utterance1_char0-36 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_d-want_meet_00028 a grasp:Attribution ;
-        rdfs:label "I_d-want_meet_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2256_utterance1_char0-36 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat2256_utterance1_char0-36 .
 
-    leolaniTalk:I_d-want_to_meet_00028 a grasp:Attribution ;
-        rdfs:label "I_d-want_to_meet_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2256_utterance1_char0-36 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_meet_MP_00028 a grasp:Attribution ;
-        rdfs:label "I_meet_MP_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2256_utterance1_char0-36 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2256_utterance1_char0-36 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2256_utterance1_char0-36" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:MP,
-            leolaniWorld:meet,
-            leolaniWorld:to_meet ;
-        gaf:denotes leolaniWorld:I_d-want_meet,
-            leolaniWorld:I_d-want_to_meet,
-            leolaniWorld:I_meet_MP ;
-        grasp:hasAttribution leolaniTalk:I_d-want_meet_00028,
-            leolaniTalk:I_d-want_to_meet_00028,
-            leolaniTalk:I_meet_MP_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:20.280599"^^xml1:string,
-            "2024-06-05T23:09:20.280663"^^xml1:string,
-            "2024-06-05T23:09:20.280686"^^xml1:string ;
-        rdf:value "I'd want to meet a MP who thinks so."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2256_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context243 a eps:Context ;
-        rdfs:label "context243" ;
-        hs:id "243"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2256 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "148"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2256 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2256" ;
-        hs:id "2256"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2256_utterance1 .
-
-    leolaniTalk:chat2256_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2256_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:MP a gaf:Instance ;
+        rdfs:label "mp" ;
+        gaf:denotedIn leolaniTalk:chat2256_utterance1_char0-36 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:meet a gaf:Instance ;
+        rdfs:label "meet" ;
+        gaf:denotedIn leolaniTalk:chat2256_utterance1_char0-36 .
+
+    leolaniWorld:to_meet a gaf:Instance ;
+        rdfs:label "to-meet" ;
+        gaf:denotedIn leolaniTalk:chat2256_utterance1_char0-36 .
 }
 

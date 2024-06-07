@@ -22,56 +22,99 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context193 a eps:Context ;
+        rdfs:label "context193" ;
+        hs:id "193"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2644 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "128"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2644 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2644" ;
+        hs:id "2644"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2644_utterance0,
+            leolaniTalk:chat2644_utterance1 .
+
+    leolaniTalk:chat2644_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2644_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2644_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2644_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Feminism_is_deadly_ideology {
+    leolaniWorld:Feminism ns1:is leolaniWorld:deadly_ideology .
+}
+
+leolaniWorld:women_ruining_our_planet {
+    leolaniWorld:women ns1:ruining leolaniWorld:our_planet .
 }
 
 leolaniWorld:women_suffering-from_sexual_assaults {
     leolaniWorld:women ns1:suffering_from leolaniWorld:sexual_assaults .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Feminism_is-deadly_oppressing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminism_is-deadly_oppressing" ;
-        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:Feminism_is_deadly_ideology a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminism_is_deadly_ideology" ;
-        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:Feminism_is_ideology a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminism_is_ideology" ;
-        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
+leolaniWorld:women_ruining_our_beautiful_planet {
+    leolaniWorld:women ns1:ruining leolaniWorld:our_beautiful_planet .
+}
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:women_ruining_our_beautiful_planet a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_ruining_our_beautiful_planet" ;
-        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
-
-    leolaniWorld:women_ruining_our_planet a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_ruining_our_planet" ;
-        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
-
-    leolaniWorld:women_suffering-from_sexual_assaults a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "women_suffering-from_sexual_assaults" ;
-        gaf:denotedBy leolaniTalk:chat2644_utterance1_char0-172 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Feminism_is-deadly_oppressing {
+    leolaniWorld:Feminism ns1:is_deadly leolaniWorld:oppressing .
 }
 
 leolaniTalk:Perspectives {
@@ -174,76 +217,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Feminism a gaf:Instance ;
-        rdfs:label "feminism" ;
-        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:deadly_ideology a gaf:Instance ;
-        rdfs:label "deadly-ideology" ;
-        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:ideology a gaf:Instance ;
-        rdfs:label "ideology" ;
-        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:oppressing a gaf:Instance ;
-        rdfs:label "oppressing" ;
-        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
-
-    leolaniWorld:our_beautiful_planet a gaf:Instance ;
-        rdfs:label "our-beautiful-planet" ;
-        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
-
-    leolaniWorld:our_planet a gaf:Instance ;
-        rdfs:label "our-planet" ;
-        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
-
-    leolaniWorld:sexual_assaults a gaf:Instance ;
-        rdfs:label "sexual-assaults" ;
-        gaf:denotedIn leolaniTalk:chat2644_utterance1_char0-172 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88,
-            leolaniTalk:chat2644_utterance1_char0-172 .
-}
-
-leolaniWorld:Feminism_is-deadly_oppressing {
-    leolaniWorld:Feminism ns1:is_deadly leolaniWorld:oppressing .
-}
-
-leolaniWorld:women_ruining_our_beautiful_planet {
-    leolaniWorld:women ns1:ruining leolaniWorld:our_beautiful_planet .
-}
-
-leolaniWorld:women_ruining_our_planet {
-    leolaniWorld:women ns1:ruining leolaniWorld:our_planet .
-}
-
-leolaniWorld:Feminism_is_ideology {
-    leolaniWorld:Feminism ns1:is leolaniWorld:ideology .
-}
-
-leolaniWorld:Feminism_is_deadly_ideology {
-    leolaniWorld:Feminism ns1:is leolaniWorld:deadly_ideology .
 }
 
 leolaniWorld:Ontology {
@@ -581,70 +554,97 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context193 a eps:Context ;
-        rdfs:label "context193" ;
-        hs:id "193"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2644 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "128"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2644 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Feminism_is-deadly_oppressing a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2644" ;
-        hs:id "2644"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2644_utterance0,
-            leolaniTalk:chat2644_utterance1 .
+        rdfs:label "Feminism_is-deadly_oppressing" ;
+        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
 
-    leolaniTalk:chat2644_utterance0 a grasp:Utterance,
+    leolaniWorld:Feminism_is_deadly_ideology a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2644_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Feminism_is_deadly_ideology" ;
+        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
 
-    leolaniTalk:chat2644_utterance1 a grasp:Utterance,
+    leolaniWorld:Feminism_is_ideology a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2644_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Feminism_is_ideology" ;
+        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:women_ruining_our_beautiful_planet a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_ruining_our_beautiful_planet" ;
+        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
+
+    leolaniWorld:women_ruining_our_planet a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_ruining_our_planet" ;
+        gaf:denotedBy leolaniTalk:chat2644_utterance0_char0-88 .
+
+    leolaniWorld:women_suffering-from_sexual_assaults a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "women_suffering-from_sexual_assaults" ;
+        gaf:denotedBy leolaniTalk:chat2644_utterance1_char0-172 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Feminism_is_ideology {
+    leolaniWorld:Feminism ns1:is leolaniWorld:ideology .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Feminism a gaf:Instance ;
+        rdfs:label "feminism" ;
+        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:deadly_ideology a gaf:Instance ;
+        rdfs:label "deadly-ideology" ;
+        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:ideology a gaf:Instance ;
+        rdfs:label "ideology" ;
+        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:oppressing a gaf:Instance ;
+        rdfs:label "oppressing" ;
+        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
+
+    leolaniWorld:our_beautiful_planet a gaf:Instance ;
+        rdfs:label "our-beautiful-planet" ;
+        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
+
+    leolaniWorld:our_planet a gaf:Instance ;
+        rdfs:label "our-planet" ;
+        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88 .
+
+    leolaniWorld:sexual_assaults a gaf:Instance ;
+        rdfs:label "sexual-assaults" ;
+        gaf:denotedIn leolaniTalk:chat2644_utterance1_char0-172 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat2644_utterance0_char0-88,
+            leolaniTalk:chat2644_utterance1_char0-172 .
 }
 

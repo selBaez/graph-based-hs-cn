@@ -22,108 +22,197 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Islam_is-religion-of_peace a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is-religion-of_peace" ;
-        gaf:denotedBy leolaniTalk:chat1006_utterance1_char0-29 .
-
-    leolaniWorld:Islam_is-religion-of_violence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is-religion-of_violence" ;
-        gaf:denotedBy leolaniTalk:chat1006_utterance0_char0-40 .
-
-    leolaniWorld:Islam_is_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_religion" ;
-        gaf:denotedBy leolaniTalk:chat1006_utterance0_char0-40,
-            leolaniTalk:chat1006_utterance1_char0-29 .
-
-    leolaniWorld:its_goals_are_only_violence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "its_goals_are_only_violence" ;
-        gaf:denotedBy leolaniTalk:chat1006_utterance2_char0-40 .
-
-    leolaniWorld:its_goals_are_violence a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "its_goals_are_violence" ;
-        gaf:denotedBy leolaniTalk:chat1006_utterance2_char0-40 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:its_goals_are_violence {
-    leolaniWorld:its_goals ns1:are leolaniWorld:violence .
+leolaniWorld:Islam_is-religion-of_violence {
+    leolaniWorld:Islam ns1:is_religion_of leolaniWorld:violence .
 }
 
 leolaniWorld:Islam_is_religion {
     leolaniWorld:Islam ns1:is leolaniWorld:religion .
 }
 
-leolaniWorld:Islam_is-religion-of_peace {
-    leolaniWorld:Islam ns1:is_religion_of leolaniWorld:peace .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context150 a eps:Context ;
+        rdfs:label "context150" ;
+        hs:id "150"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Islam_is-religion-of_violence {
-    leolaniWorld:Islam ns1:is_religion_of leolaniWorld:violence .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1006 .
 
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat1006_utterance0_char0-40,
-            leolaniTalk:chat1006_utterance1_char0-29 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "125"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1006 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1006" ;
+        hs:id "1006"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1006_utterance0,
+            leolaniTalk:chat1006_utterance1,
+            leolaniTalk:chat1006_utterance2 .
+
+    leolaniTalk:chat1006_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1006_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1006_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1006_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1006_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1006_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:its_goals a gaf:Instance ;
-        rdfs:label "its-goals" ;
-        gaf:denotedIn leolaniTalk:chat1006_utterance2_char0-40 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:only_violence a gaf:Instance ;
-        rdfs:label "only-violence" ;
-        gaf:denotedIn leolaniTalk:chat1006_utterance2_char0-40 .
-
-    leolaniWorld:peace a gaf:Instance ;
-        rdfs:label "peace" ;
-        gaf:denotedIn leolaniTalk:chat1006_utterance1_char0-29 .
-
-    leolaniWorld:religion a gaf:Instance ;
-        rdfs:label "religion" ;
-        gaf:denotedIn leolaniTalk:chat1006_utterance0_char0-40,
-            leolaniTalk:chat1006_utterance1_char0-29 .
-
-    leolaniWorld:violence a gaf:Instance ;
-        rdfs:label "violence" ;
-        gaf:denotedIn leolaniTalk:chat1006_utterance0_char0-40,
-            leolaniTalk:chat1006_utterance2_char0-40 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:its_goals_are_only_violence {
     leolaniWorld:its_goals ns1:are leolaniWorld:only_violence .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Islam_is-religion-of_peace_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is-religion-of_peace_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1006_utterance1_char0-29 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is-religion-of_violence_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is-religion-of_violence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1006_utterance0_char0-40 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:its_goals_are_only_violence_00028 a grasp:Attribution ;
+        rdfs:label "its_goals_are_only_violence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1006_utterance2_char0-40 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:its_goals_are_violence_00028 a grasp:Attribution ;
+        rdfs:label "its_goals_are_violence_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1006_utterance2_char0-40 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Islam_is_religion_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_religion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1006_utterance0_char0-40,
+            leolaniTalk:chat1006_utterance1_char0-29 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1006_utterance0_char0-40 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1006_utterance0_char0-40" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:religion,
+            leolaniWorld:violence ;
+        gaf:denotes leolaniWorld:Islam_is-religion-of_violence,
+            leolaniWorld:Islam_is_religion ;
+        grasp:hasAttribution leolaniTalk:Islam_is-religion-of_violence_00028,
+            leolaniTalk:Islam_is_religion_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:05:05.375018"^^xml1:string,
+            "2024-06-05T23:05:05.375085"^^xml1:string ;
+        rdf:value "Islam is a religion of violence and war."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1006_utterance0 .
+
+    leolaniTalk:chat1006_utterance1_char0-29 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1006_utterance1_char0-29" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:peace,
+            leolaniWorld:religion ;
+        gaf:denotes leolaniWorld:Islam_is-religion-of_peace,
+            leolaniWorld:Islam_is_religion ;
+        grasp:hasAttribution leolaniTalk:Islam_is-religion-of_peace_00028,
+            leolaniTalk:Islam_is_religion_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:05:05.450201"^^xml1:string,
+            "2024-06-05T23:05:05.450256"^^xml1:string ;
+        rdf:value "Islam is a religion of peace."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1006_utterance1 .
+
+    leolaniTalk:chat1006_utterance2_char0-40 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1006_utterance2_char0-40" ;
+        gaf:containsDenotation leolaniWorld:its_goals,
+            leolaniWorld:only_violence,
+            leolaniWorld:violence ;
+        gaf:denotes leolaniWorld:its_goals_are_only_violence,
+            leolaniWorld:its_goals_are_violence ;
+        grasp:hasAttribution leolaniTalk:its_goals_are_only_violence_00028,
+            leolaniTalk:its_goals_are_violence_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:05:05.523653"^^xml1:string,
+            "2024-06-05T23:05:05.523708"^^xml1:string ;
+        rdf:value "No, its goals are only violence and war."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1006_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -461,180 +550,91 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Islam_is-religion-of_peace a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-religion-of_peace" ;
+        gaf:denotedBy leolaniTalk:chat1006_utterance1_char0-29 .
+
+    leolaniWorld:Islam_is-religion-of_violence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-religion-of_violence" ;
+        gaf:denotedBy leolaniTalk:chat1006_utterance0_char0-40 .
+
+    leolaniWorld:Islam_is_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_religion" ;
+        gaf:denotedBy leolaniTalk:chat1006_utterance0_char0-40,
+            leolaniTalk:chat1006_utterance1_char0-29 .
+
+    leolaniWorld:its_goals_are_only_violence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "its_goals_are_only_violence" ;
+        gaf:denotedBy leolaniTalk:chat1006_utterance2_char0-40 .
+
+    leolaniWorld:its_goals_are_violence a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "its_goals_are_violence" ;
+        gaf:denotedBy leolaniTalk:chat1006_utterance2_char0-40 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Islam_is-religion-of_peace_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is-religion-of_peace_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1006_utterance1_char0-29 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is-religion-of_violence_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is-religion-of_violence_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1006_utterance0_char0-40 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:its_goals_are_only_violence_00028 a grasp:Attribution ;
-        rdfs:label "its_goals_are_only_violence_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1006_utterance2_char0-40 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:its_goals_are_violence_00028 a grasp:Attribution ;
-        rdfs:label "its_goals_are_violence_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1006_utterance2_char0-40 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Islam_is_religion_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_religion_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1006_utterance0_char0-40,
-            leolaniTalk:chat1006_utterance1_char0-29 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1006_utterance0_char0-40 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1006_utterance0_char0-40" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:religion,
-            leolaniWorld:violence ;
-        gaf:denotes leolaniWorld:Islam_is-religion-of_violence,
-            leolaniWorld:Islam_is_religion ;
-        grasp:hasAttribution leolaniTalk:Islam_is-religion-of_violence_00028,
-            leolaniTalk:Islam_is_religion_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:05:05.375018"^^xml1:string,
-            "2024-06-05T23:05:05.375085"^^xml1:string ;
-        rdf:value "Islam is a religion of violence and war."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1006_utterance0 .
-
-    leolaniTalk:chat1006_utterance1_char0-29 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1006_utterance1_char0-29" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:peace,
-            leolaniWorld:religion ;
-        gaf:denotes leolaniWorld:Islam_is-religion-of_peace,
-            leolaniWorld:Islam_is_religion ;
-        grasp:hasAttribution leolaniTalk:Islam_is-religion-of_peace_00028,
-            leolaniTalk:Islam_is_religion_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:05:05.450201"^^xml1:string,
-            "2024-06-05T23:05:05.450256"^^xml1:string ;
-        rdf:value "Islam is a religion of peace."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1006_utterance1 .
-
-    leolaniTalk:chat1006_utterance2_char0-40 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1006_utterance2_char0-40" ;
-        gaf:containsDenotation leolaniWorld:its_goals,
-            leolaniWorld:only_violence,
-            leolaniWorld:violence ;
-        gaf:denotes leolaniWorld:its_goals_are_only_violence,
-            leolaniWorld:its_goals_are_violence ;
-        grasp:hasAttribution leolaniTalk:its_goals_are_only_violence_00028,
-            leolaniTalk:its_goals_are_violence_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:05:05.523653"^^xml1:string,
-            "2024-06-05T23:05:05.523708"^^xml1:string ;
-        rdf:value "No, its goals are only violence and war."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1006_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:its_goals_are_violence {
+    leolaniWorld:its_goals ns1:are leolaniWorld:violence .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context150 a eps:Context ;
-        rdfs:label "context150" ;
-        hs:id "150"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Islam_is-religion-of_peace {
+    leolaniWorld:Islam ns1:is_religion_of leolaniWorld:peace .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1006 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "125"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1006 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1006" ;
-        hs:id "1006"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1006_utterance0,
-            leolaniTalk:chat1006_utterance1,
-            leolaniTalk:chat1006_utterance2 .
-
-    leolaniTalk:chat1006_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1006_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1006_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1006_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat1006_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1006_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat1006_utterance0_char0-40,
+            leolaniTalk:chat1006_utterance1_char0-29 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:its_goals a gaf:Instance ;
+        rdfs:label "its-goals" ;
+        gaf:denotedIn leolaniTalk:chat1006_utterance2_char0-40 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:only_violence a gaf:Instance ;
+        rdfs:label "only-violence" ;
+        gaf:denotedIn leolaniTalk:chat1006_utterance2_char0-40 .
+
+    leolaniWorld:peace a gaf:Instance ;
+        rdfs:label "peace" ;
+        gaf:denotedIn leolaniTalk:chat1006_utterance1_char0-29 .
+
+    leolaniWorld:religion a gaf:Instance ;
+        rdfs:label "religion" ;
+        gaf:denotedIn leolaniTalk:chat1006_utterance0_char0-40,
+            leolaniTalk:chat1006_utterance1_char0-29 .
+
+    leolaniWorld:violence a gaf:Instance ;
+        rdfs:label "violence" ;
+        gaf:denotedIn leolaniTalk:chat1006_utterance0_char0-40,
+            leolaniTalk:chat1006_utterance2_char0-40 .
 }
 

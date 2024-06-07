@@ -22,87 +22,170 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:LGBTs_brainwash_our_children a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "LGBTs_brainwash_our_children" ;
-        gaf:denotedBy leolaniTalk:chat1245_utterance0_char0-124 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:you_consider_factual a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_consider_factual" ;
-        gaf:denotedBy leolaniTalk:chat1245_utterance1_char0-156 .
-
-    leolaniWorld:you_consider_gender_identity a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_consider_gender_identity" ;
-        gaf:denotedBy leolaniTalk:chat1245_utterance1_char0-156 .
-
-    leolaniWorld:you_consider_to_factual a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_consider_to_factual" ;
-        gaf:denotedBy leolaniTalk:chat1245_utterance1_char0-156 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:LGBTs_brainwash_our_children {
     leolaniWorld:LGBTs ns1:brainwash leolaniWorld:our_children .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context148 a eps:Context ;
+        rdfs:label "context148" ;
+        hs:id "148"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1245 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "109"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1245 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1245" ;
+        hs:id "1245"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1245_utterance0,
+            leolaniTalk:chat1245_utterance1 .
+
+    leolaniTalk:chat1245_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1245_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1245_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1245_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:you_consider_gender_identity {
+    leolaniWorld:you ns1:consider leolaniWorld:gender_identity .
+}
+
+leolaniWorld:you_consider_factual {
+    leolaniWorld:you ns1:consider leolaniWorld:factual .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:you_consider_to_factual {
     leolaniWorld:you ns1:consider leolaniWorld:to_factual .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:LGBTs a gaf:Instance ;
-        rdfs:label "lgbts" ;
-        gaf:denotedIn leolaniTalk:chat1245_utterance0_char0-124 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+leolaniTalk:Perspectives {
+    leolaniTalk:LGBTs_brainwash_our_children_00028 a grasp:Attribution ;
+        rdfs:label "LGBTs_brainwash_our_children_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1245_utterance0_char0-124 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:factual a gaf:Instance ;
-        rdfs:label "factual" ;
-        gaf:denotedIn leolaniTalk:chat1245_utterance1_char0-156 .
+    leolaniTalk:chat1245_utterance0_char0-124 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1245_utterance0_char0-124" ;
+        gaf:containsDenotation leolaniWorld:LGBTs,
+            leolaniWorld:our_children ;
+        gaf:denotes leolaniWorld:LGBTs_brainwash_our_children ;
+        grasp:hasAttribution leolaniTalk:LGBTs_brainwash_our_children_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:00.458760"^^xml1:string ;
+        rdf:value "LGBTs just want to brainwash our children. They should not be taught about gender identity and sexual orientation in school."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1245_utterance0 .
 
-    leolaniWorld:gender_identity a gaf:Instance ;
-        rdfs:label "gender-identity" ;
-        gaf:denotedIn leolaniTalk:chat1245_utterance1_char0-156 .
+    leolaniTalk:you_consider_factual_00028 a grasp:Attribution ;
+        rdfs:label "you_consider_factual_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1245_utterance1_char0-156 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:you_consider_gender_identity_00028 a grasp:Attribution ;
+        rdfs:label "you_consider_gender_identity_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1245_utterance1_char0-156 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:you_consider_to_factual_00028 a grasp:Attribution ;
+        rdfs:label "you_consider_to_factual_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1245_utterance1_char0-156 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:our_children a gaf:Instance ;
-        rdfs:label "our-children" ;
-        gaf:denotedIn leolaniTalk:chat1245_utterance0_char0-124 .
+    leolaniTalk:chat1245_utterance1_char0-156 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1245_utterance1_char0-156" ;
+        gaf:containsDenotation leolaniWorld:factual,
+            leolaniWorld:gender_identity,
+            leolaniWorld:to_factual,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:you_consider_factual,
+            leolaniWorld:you_consider_gender_identity,
+            leolaniWorld:you_consider_to_factual ;
+        grasp:hasAttribution leolaniTalk:you_consider_factual_00028,
+            leolaniTalk:you_consider_gender_identity_00028,
+            leolaniTalk:you_consider_to_factual_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:00.571601"^^xml1:string,
+            "2024-06-05T23:35:00.571659"^^xml1:string,
+            "2024-06-05T23:35:00.571681"^^xml1:string ;
+        rdf:value "This depends on whether you consider gender identity and sexual orientation to be factual or not; it isn't simply an 'idea' or 'belief', but a fact of life."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1245_utterance1 .
 
-    leolaniWorld:to_factual a gaf:Instance ;
-        rdfs:label "to-factual" ;
-        gaf:denotedIn leolaniTalk:chat1245_utterance1_char0-156 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1245_utterance1_char0-156 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -440,157 +523,74 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:LGBTs_brainwash_our_children a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "LGBTs_brainwash_our_children" ;
+        gaf:denotedBy leolaniTalk:chat1245_utterance0_char0-124 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:you_consider_factual a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_consider_factual" ;
+        gaf:denotedBy leolaniTalk:chat1245_utterance1_char0-156 .
+
+    leolaniWorld:you_consider_gender_identity a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_consider_gender_identity" ;
+        gaf:denotedBy leolaniTalk:chat1245_utterance1_char0-156 .
+
+    leolaniWorld:you_consider_to_factual a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_consider_to_factual" ;
+        gaf:denotedBy leolaniTalk:chat1245_utterance1_char0-156 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:LGBTs_brainwash_our_children_00028 a grasp:Attribution ;
-        rdfs:label "LGBTs_brainwash_our_children_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1245_utterance0_char0-124 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1245_utterance0_char0-124 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1245_utterance0_char0-124" ;
-        gaf:containsDenotation leolaniWorld:LGBTs,
-            leolaniWorld:our_children ;
-        gaf:denotes leolaniWorld:LGBTs_brainwash_our_children ;
-        grasp:hasAttribution leolaniTalk:LGBTs_brainwash_our_children_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:00.458760"^^xml1:string ;
-        rdf:value "LGBTs just want to brainwash our children. They should not be taught about gender identity and sexual orientation in school."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1245_utterance0 .
-
-    leolaniTalk:you_consider_factual_00028 a grasp:Attribution ;
-        rdfs:label "you_consider_factual_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1245_utterance1_char0-156 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_consider_gender_identity_00028 a grasp:Attribution ;
-        rdfs:label "you_consider_gender_identity_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1245_utterance1_char0-156 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_consider_to_factual_00028 a grasp:Attribution ;
-        rdfs:label "you_consider_to_factual_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1245_utterance1_char0-156 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1245_utterance1_char0-156 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1245_utterance1_char0-156" ;
-        gaf:containsDenotation leolaniWorld:factual,
-            leolaniWorld:gender_identity,
-            leolaniWorld:to_factual,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:you_consider_factual,
-            leolaniWorld:you_consider_gender_identity,
-            leolaniWorld:you_consider_to_factual ;
-        grasp:hasAttribution leolaniTalk:you_consider_factual_00028,
-            leolaniTalk:you_consider_gender_identity_00028,
-            leolaniTalk:you_consider_to_factual_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:00.571601"^^xml1:string,
-            "2024-06-05T23:35:00.571659"^^xml1:string,
-            "2024-06-05T23:35:00.571681"^^xml1:string ;
-        rdf:value "This depends on whether you consider gender identity and sexual orientation to be factual or not; it isn't simply an 'idea' or 'belief', but a fact of life."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1245_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:you_consider_factual {
-    leolaniWorld:you ns1:consider leolaniWorld:factual .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context148 a eps:Context ;
-        rdfs:label "context148" ;
-        hs:id "148"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1245 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "109"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1245 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1245" ;
-        hs:id "1245"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1245_utterance0,
-            leolaniTalk:chat1245_utterance1 .
-
-    leolaniTalk:chat1245_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1245_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1245_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1245_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:LGBTs a gaf:Instance ;
+        rdfs:label "lgbts" ;
+        gaf:denotedIn leolaniTalk:chat1245_utterance0_char0-124 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:factual a gaf:Instance ;
+        rdfs:label "factual" ;
+        gaf:denotedIn leolaniTalk:chat1245_utterance1_char0-156 .
 
-leolaniWorld:you_consider_gender_identity {
-    leolaniWorld:you ns1:consider leolaniWorld:gender_identity .
+    leolaniWorld:gender_identity a gaf:Instance ;
+        rdfs:label "gender-identity" ;
+        gaf:denotedIn leolaniTalk:chat1245_utterance1_char0-156 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_children a gaf:Instance ;
+        rdfs:label "our-children" ;
+        gaf:denotedIn leolaniTalk:chat1245_utterance0_char0-124 .
+
+    leolaniWorld:to_factual a gaf:Instance ;
+        rdfs:label "to-factual" ;
+        gaf:denotedIn leolaniTalk:chat1245_utterance1_char0-156 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1245_utterance1_char0-156 .
 }
 

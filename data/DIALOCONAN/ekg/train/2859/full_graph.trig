@@ -22,135 +22,212 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:they_are_just_apes {
-    leolaniWorld:they ns1:are leolaniWorld:just_apes .
-}
-
-leolaniWorld:they_are_human {
-    leolaniWorld:they ns1:are leolaniWorld:human .
-}
-
 leolaniWorld:they_are_apes {
     leolaniWorld:they ns1:are leolaniWorld:apes .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Your_logic_seems_faulty a gaf:Assertion,
+leolaniWorld:they_are_when_clearly_human {
+    leolaniWorld:they ns1:are leolaniWorld:when_clearly_human .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context11 a eps:Context ;
+        rdfs:label "context11" ;
+        hs:id "11"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2859 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "247"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2859 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Your_logic_seems_faulty" ;
-        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
+        rdfs:label "chat2859" ;
+        hs:id "2859"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2859_utterance0,
+            leolaniTalk:chat2859_utterance1 .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat2859_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2859_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat2859_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat2859_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:they_are_apes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_apes" ;
-        gaf:denotedBy leolaniTalk:chat2859_utterance0_char0-51 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:they_are_clearly_human a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_clearly_human" ;
-        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:they_are_human a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_human" ;
-        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:they_are_just_apes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_just_apes" ;
-        gaf:denotedBy leolaniTalk:chat2859_utterance0_char0-51 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:they_are_when_clearly_human a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_when_clearly_human" ;
-        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
-
-    leolaniWorld:they_are_when_human a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_when_human" ;
-        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:they_are_when_human {
-    leolaniWorld:they ns1:are leolaniWorld:when_human .
+leolaniWorld:they_are_just_apes {
+    leolaniWorld:they ns1:are leolaniWorld:just_apes .
 }
 
-leolaniWorld:Your_logic_seems_faulty {
-    leolaniWorld:Your_logic ns1:seems leolaniWorld:faulty .
+leolaniWorld:they_are_when_human {
+    leolaniWorld:they ns1:are leolaniWorld:when_human .
 }
 
 leolaniWorld:they_are_clearly_human {
     leolaniWorld:they ns1:are leolaniWorld:clearly_human .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Your_logic a gaf:Instance ;
-        rdfs:label "your-logic" ;
-        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
-
-    leolaniWorld:apes a gaf:Instance ;
-        rdfs:label "apes" ;
-        gaf:denotedIn leolaniTalk:chat2859_utterance0_char0-51 .
-
-    leolaniWorld:clearly_human a gaf:Instance ;
-        rdfs:label "clearly-human" ;
-        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:faulty a gaf:Instance ;
-        rdfs:label "faulty" ;
-        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:human a gaf:Instance ;
-        rdfs:label "human" ;
-        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
-
-    leolaniWorld:just_apes a gaf:Instance ;
-        rdfs:label "just-apes" ;
-        gaf:denotedIn leolaniTalk:chat2859_utterance0_char0-51 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2859_utterance0_char0-51,
-            leolaniTalk:chat2859_utterance1_char0-103 .
-
-    leolaniWorld:when_clearly_human a gaf:Instance ;
-        rdfs:label "when-clearly-human" ;
-        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
-
-    leolaniWorld:when_human a gaf:Instance ;
-        rdfs:label "when-human" ;
-        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
+leolaniWorld:Your_logic_seems_faulty {
+    leolaniWorld:Your_logic ns1:seems leolaniWorld:faulty .
 }
 
-leolaniWorld:they_are_when_clearly_human {
-    leolaniWorld:they ns1:are leolaniWorld:when_clearly_human .
+leolaniTalk:Perspectives {
+    leolaniTalk:Your_logic_seems_faulty_00028 a grasp:Attribution ;
+        rdfs:label "Your_logic_seems_faulty_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_apes_00028 a grasp:Attribution ;
+        rdfs:label "they_are_apes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2859_utterance0_char0-51 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_clearly_human_00028 a grasp:Attribution ;
+        rdfs:label "they_are_clearly_human_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_human_00028 a grasp:Attribution ;
+        rdfs:label "they_are_human_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_just_apes_00028 a grasp:Attribution ;
+        rdfs:label "they_are_just_apes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2859_utterance0_char0-51 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_when_clearly_human_00028 a grasp:Attribution ;
+        rdfs:label "they_are_when_clearly_human_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_when_human_00028 a grasp:Attribution ;
+        rdfs:label "they_are_when_human_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2859_utterance0_char0-51 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2859_utterance0_char0-51" ;
+        gaf:containsDenotation leolaniWorld:apes,
+            leolaniWorld:just_apes,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_are_apes,
+            leolaniWorld:they_are_just_apes ;
+        grasp:hasAttribution leolaniTalk:they_are_apes_00028,
+            leolaniTalk:they_are_just_apes_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:16:52.189398"^^xml1:string,
+            "2024-06-05T23:16:52.189454"^^xml1:string ;
+        rdf:value "Black folks are not attractive: they are just apes."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2859_utterance0 .
+
+    leolaniTalk:chat2859_utterance1_char0-103 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2859_utterance1_char0-103" ;
+        gaf:containsDenotation leolaniWorld:Your_logic,
+            leolaniWorld:clearly_human,
+            leolaniWorld:faulty,
+            leolaniWorld:human,
+            leolaniWorld:they,
+            leolaniWorld:when_clearly_human,
+            leolaniWorld:when_human ;
+        gaf:denotes leolaniWorld:Your_logic_seems_faulty,
+            leolaniWorld:they_are_clearly_human,
+            leolaniWorld:they_are_human,
+            leolaniWorld:they_are_when_clearly_human,
+            leolaniWorld:they_are_when_human ;
+        grasp:hasAttribution leolaniTalk:Your_logic_seems_faulty_00028,
+            leolaniTalk:they_are_clearly_human_00028,
+            leolaniTalk:they_are_human_00028,
+            leolaniTalk:they_are_when_clearly_human_00028,
+            leolaniTalk:they_are_when_human_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:16:52.291942"^^xml1:string,
+            "2024-06-05T23:16:52.292020"^^xml1:string,
+            "2024-06-05T23:16:52.292056"^^xml1:string,
+            "2024-06-05T23:16:52.292103"^^xml1:string,
+            "2024-06-05T23:16:52.292126"^^xml1:string ;
+        rdf:value "So you're saying the average African is a monkey, when they are clearly human. Your logic seems faulty."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2859_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -488,183 +565,106 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Your_logic_seems_faulty a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Your_logic_seems_faulty" ;
+        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_apes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_apes" ;
+        gaf:denotedBy leolaniTalk:chat2859_utterance0_char0-51 .
+
+    leolaniWorld:they_are_clearly_human a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_clearly_human" ;
+        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
+
+    leolaniWorld:they_are_human a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_human" ;
+        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
+
+    leolaniWorld:they_are_just_apes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_just_apes" ;
+        gaf:denotedBy leolaniTalk:chat2859_utterance0_char0-51 .
+
+    leolaniWorld:they_are_when_clearly_human a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_when_clearly_human" ;
+        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
+
+    leolaniWorld:they_are_when_human a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_when_human" ;
+        gaf:denotedBy leolaniTalk:chat2859_utterance1_char0-103 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Your_logic_seems_faulty_00028 a grasp:Attribution ;
-        rdfs:label "Your_logic_seems_faulty_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_apes_00028 a grasp:Attribution ;
-        rdfs:label "they_are_apes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2859_utterance0_char0-51 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_clearly_human_00028 a grasp:Attribution ;
-        rdfs:label "they_are_clearly_human_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_human_00028 a grasp:Attribution ;
-        rdfs:label "they_are_human_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_just_apes_00028 a grasp:Attribution ;
-        rdfs:label "they_are_just_apes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2859_utterance0_char0-51 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_when_clearly_human_00028 a grasp:Attribution ;
-        rdfs:label "they_are_when_clearly_human_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_are_when_human_00028 a grasp:Attribution ;
-        rdfs:label "they_are_when_human_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2859_utterance1_char0-103 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2859_utterance0_char0-51 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2859_utterance0_char0-51" ;
-        gaf:containsDenotation leolaniWorld:apes,
-            leolaniWorld:just_apes,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_are_apes,
-            leolaniWorld:they_are_just_apes ;
-        grasp:hasAttribution leolaniTalk:they_are_apes_00028,
-            leolaniTalk:they_are_just_apes_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:16:52.189398"^^xml1:string,
-            "2024-06-05T23:16:52.189454"^^xml1:string ;
-        rdf:value "Black folks are not attractive: they are just apes."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2859_utterance0 .
-
-    leolaniTalk:chat2859_utterance1_char0-103 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2859_utterance1_char0-103" ;
-        gaf:containsDenotation leolaniWorld:Your_logic,
-            leolaniWorld:clearly_human,
-            leolaniWorld:faulty,
-            leolaniWorld:human,
-            leolaniWorld:they,
-            leolaniWorld:when_clearly_human,
-            leolaniWorld:when_human ;
-        gaf:denotes leolaniWorld:Your_logic_seems_faulty,
-            leolaniWorld:they_are_clearly_human,
-            leolaniWorld:they_are_human,
-            leolaniWorld:they_are_when_clearly_human,
-            leolaniWorld:they_are_when_human ;
-        grasp:hasAttribution leolaniTalk:Your_logic_seems_faulty_00028,
-            leolaniTalk:they_are_clearly_human_00028,
-            leolaniTalk:they_are_human_00028,
-            leolaniTalk:they_are_when_clearly_human_00028,
-            leolaniTalk:they_are_when_human_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:16:52.291942"^^xml1:string,
-            "2024-06-05T23:16:52.292020"^^xml1:string,
-            "2024-06-05T23:16:52.292056"^^xml1:string,
-            "2024-06-05T23:16:52.292103"^^xml1:string,
-            "2024-06-05T23:16:52.292126"^^xml1:string ;
-        rdf:value "So you're saying the average African is a monkey, when they are clearly human. Your logic seems faulty."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2859_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:they_are_human {
+    leolaniWorld:they ns1:are leolaniWorld:human .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context11 a eps:Context ;
-        rdfs:label "context11" ;
-        hs:id "11"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Your_logic a gaf:Instance ;
+        rdfs:label "your-logic" ;
+        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2859 .
+    leolaniWorld:apes a gaf:Instance ;
+        rdfs:label "apes" ;
+        gaf:denotedIn leolaniTalk:chat2859_utterance0_char0-51 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "247"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2859 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2859" ;
-        hs:id "2859"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2859_utterance0,
-            leolaniTalk:chat2859_utterance1 .
-
-    leolaniTalk:chat2859_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2859_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2859_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2859_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:clearly_human a gaf:Instance ;
+        rdfs:label "clearly-human" ;
+        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:faulty a gaf:Instance ;
+        rdfs:label "faulty" ;
+        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:human a gaf:Instance ;
+        rdfs:label "human" ;
+        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
+
+    leolaniWorld:just_apes a gaf:Instance ;
+        rdfs:label "just-apes" ;
+        gaf:denotedIn leolaniTalk:chat2859_utterance0_char0-51 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2859_utterance0_char0-51,
+            leolaniTalk:chat2859_utterance1_char0-103 .
+
+    leolaniWorld:when_clearly_human a gaf:Instance ;
+        rdfs:label "when-clearly-human" ;
+        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
+
+    leolaniWorld:when_human a gaf:Instance ;
+        rdfs:label "when-human" ;
+        gaf:denotedIn leolaniTalk:chat2859_utterance1_char0-103 .
 }
 

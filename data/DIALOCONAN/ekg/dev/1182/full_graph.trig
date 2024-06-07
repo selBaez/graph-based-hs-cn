@@ -23,71 +23,96 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:They_re_perverts {
-    leolaniWorld:They ns11:re leolaniWorld:perverts .
-}
-
-leolaniWorld:they_are_sex_addicts {
-    leolaniWorld:they ns1:are leolaniWorld:sex_addicts .
+leolaniWorld:Gays_are_sex_addicts {
+    leolaniWorld:Gays ns1:are leolaniWorld:sex_addicts .
 }
 
 leolaniWorld:Gays_are_promiscuous_sex_addicts {
     leolaniWorld:Gays ns1:are leolaniWorld:promiscuous_sex_addicts .
 }
 
-leolaniWorld:They_re_surely_perverts_though {
-    leolaniWorld:They ns11:re leolaniWorld:surely_perverts_though .
-}
-
 leolaniWorld:They_re_perverts_though {
     leolaniWorld:They ns11:re leolaniWorld:perverts_though .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Gays_are_promiscuous_sex_addicts a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gays_are_promiscuous_sex_addicts" ;
-        gaf:denotedBy leolaniTalk:chat1182_utterance0_char0-33 .
+leolaniTalk:Interactions {
+    leolaniContext:context196 a eps:Context ;
+        rdfs:label "context196" ;
+        hs:id "196"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Gays_are_sex_addicts a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gays_are_sex_addicts" ;
-        gaf:denotedBy leolaniTalk:chat1182_utterance0_char0-33 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1182 .
 
-    leolaniWorld:They_re_perverts a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_re_perverts" ;
-        gaf:denotedBy leolaniTalk:chat1182_utterance2_char0-31 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:They_re_perverts_though a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_re_perverts_though" ;
-        gaf:denotedBy leolaniTalk:chat1182_utterance2_char0-31 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "193"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:They_re_surely_perverts a gaf:Assertion,
+    leolaniTalk:chat1182 a grasp:Chat,
             sem:Event ;
-        rdfs:label "They_re_surely_perverts" ;
-        gaf:denotedBy leolaniTalk:chat1182_utterance2_char0-31 .
+        rdfs:label "chat1182" ;
+        hs:id "1182"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1182_utterance0,
+            leolaniTalk:chat1182_utterance2,
+            leolaniTalk:chat1182_utterance4 .
 
-    leolaniWorld:They_re_surely_perverts_though a gaf:Assertion,
+    leolaniTalk:chat1182_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "They_re_surely_perverts_though" ;
-        gaf:denotedBy leolaniTalk:chat1182_utterance2_char0-31 .
+        rdfs:label "chat1182_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat1182_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat1182_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:they_are_sex_addicts a gaf:Assertion,
+    leolaniTalk:chat1182_utterance4 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "they_are_sex_addicts" ;
-        gaf:denotedBy leolaniTalk:chat1182_utterance4_char0-45 .
+        rdfs:label "chat1182_utterance4" ;
+        hs:id "4"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:They_re_perverts {
+    leolaniWorld:They ns11:re leolaniWorld:perverts .
 }
 
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:They_re_surely_perverts_though {
+    leolaniWorld:They ns11:re leolaniWorld:surely_perverts_though .
 }
 
 leolaniTalk:Perspectives {
@@ -204,60 +229,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat1182_utterance0_char0-33 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:perverts a gaf:Instance ;
-        rdfs:label "perverts" ;
-        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
-
-    leolaniWorld:perverts_though a gaf:Instance ;
-        rdfs:label "perverts-though" ;
-        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
-
-    leolaniWorld:promiscuous_sex_addicts a gaf:Instance ;
-        rdfs:label "promiscuous-sex-addicts" ;
-        gaf:denotedIn leolaniTalk:chat1182_utterance0_char0-33 .
-
-    leolaniWorld:sex_addicts a gaf:Instance ;
-        rdfs:label "sex-addicts" ;
-        gaf:denotedIn leolaniTalk:chat1182_utterance0_char0-33,
-            leolaniTalk:chat1182_utterance4_char0-45 .
-
-    leolaniWorld:surely_perverts a gaf:Instance ;
-        rdfs:label "surely-perverts" ;
-        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
-
-    leolaniWorld:surely_perverts_though a gaf:Instance ;
-        rdfs:label "surely-perverts-though" ;
-        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1182_utterance4_char0-45 .
-}
-
-leolaniWorld:Gays_are_sex_addicts {
-    leolaniWorld:Gays ns1:are leolaniWorld:sex_addicts .
-}
-
-leolaniWorld:They_re_surely_perverts {
-    leolaniWorld:They ns11:re leolaniWorld:surely_perverts .
 }
 
 leolaniWorld:Ontology {
@@ -595,71 +566,100 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context196 a eps:Context ;
-        rdfs:label "context196" ;
-        hs:id "196"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:They_re_surely_perverts {
+    leolaniWorld:They ns11:re leolaniWorld:surely_perverts .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1182 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "193"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1182 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Gays_are_promiscuous_sex_addicts a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1182" ;
-        hs:id "1182"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1182_utterance0,
-            leolaniTalk:chat1182_utterance2,
-            leolaniTalk:chat1182_utterance4 .
+        rdfs:label "Gays_are_promiscuous_sex_addicts" ;
+        gaf:denotedBy leolaniTalk:chat1182_utterance0_char0-33 .
 
-    leolaniTalk:chat1182_utterance0 a grasp:Utterance,
+    leolaniWorld:Gays_are_sex_addicts a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1182_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Gays_are_sex_addicts" ;
+        gaf:denotedBy leolaniTalk:chat1182_utterance0_char0-33 .
 
-    leolaniTalk:chat1182_utterance2 a grasp:Utterance,
+    leolaniWorld:They_re_perverts a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1182_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_re_perverts" ;
+        gaf:denotedBy leolaniTalk:chat1182_utterance2_char0-31 .
 
-    leolaniTalk:chat1182_utterance4 a grasp:Utterance,
+    leolaniWorld:They_re_perverts_though a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1182_utterance4" ;
-        hs:id "4"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_re_perverts_though" ;
+        gaf:denotedBy leolaniTalk:chat1182_utterance2_char0-31 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:They_re_surely_perverts a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_re_surely_perverts" ;
+        gaf:denotedBy leolaniTalk:chat1182_utterance2_char0-31 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They_re_surely_perverts_though a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_re_surely_perverts_though" ;
+        gaf:denotedBy leolaniTalk:chat1182_utterance2_char0-31 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_sex_addicts a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_sex_addicts" ;
+        gaf:denotedBy leolaniTalk:chat1182_utterance4_char0-45 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:they_are_sex_addicts {
+    leolaniWorld:they ns1:are leolaniWorld:sex_addicts .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat1182_utterance0_char0-33 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:perverts a gaf:Instance ;
+        rdfs:label "perverts" ;
+        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
+
+    leolaniWorld:perverts_though a gaf:Instance ;
+        rdfs:label "perverts-though" ;
+        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
+
+    leolaniWorld:promiscuous_sex_addicts a gaf:Instance ;
+        rdfs:label "promiscuous-sex-addicts" ;
+        gaf:denotedIn leolaniTalk:chat1182_utterance0_char0-33 .
+
+    leolaniWorld:sex_addicts a gaf:Instance ;
+        rdfs:label "sex-addicts" ;
+        gaf:denotedIn leolaniTalk:chat1182_utterance0_char0-33,
+            leolaniTalk:chat1182_utterance4_char0-45 .
+
+    leolaniWorld:surely_perverts a gaf:Instance ;
+        rdfs:label "surely-perverts" ;
+        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
+
+    leolaniWorld:surely_perverts_though a gaf:Instance ;
+        rdfs:label "surely-perverts-though" ;
+        gaf:denotedIn leolaniTalk:chat1182_utterance2_char0-31 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1182_utterance4_char0-45 .
 }
 

@@ -22,67 +22,79 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Homosexuality_is-incompatible-with_manners a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is-incompatible-with_manners" ;
-        gaf:denotedBy leolaniTalk:chat2027_utterance2_char0-65 .
-
-    leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is-incompatible-with_manners_of_life" ;
-        gaf:denotedBy leolaniTalk:chat2027_utterance2_char0-65 .
-
-    leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life_of_Europe a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is-incompatible-with_manners_of_life_of_Europe" ;
-        gaf:denotedBy leolaniTalk:chat2027_utterance2_char0-65 .
-
-    leolaniWorld:Homosexuality_is_incompatible a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Homosexuality_is_incompatible" ;
-        gaf:denotedBy leolaniTalk:chat2027_utterance2_char0-65 .
-
-    leolaniWorld:Love_is-result-of_your_emotional_state a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Love_is-result-of_your_emotional_state" ;
-        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:Love_is-result-of_your_particular_emotional_state a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Love_is-result-of_your_particular_emotional_state" ;
-        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:Love_is-result-of_your_particular_state a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Love_is-result-of_your_particular_state" ;
-        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:Love_is-result-of_your_state a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Love_is-result-of_your_state" ;
-        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:Love_is_result a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Love_is_result" ;
-        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Love_is-result-of_your_particular_state {
+    leolaniWorld:Love ns1:is_result_of leolaniWorld:your_particular_state .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context45 a eps:Context ;
+        rdfs:label "context45" ;
+        hs:id "45"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2027 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "132"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2027 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2027" ;
+        hs:id "2027"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2027_utterance1,
+            leolaniTalk:chat2027_utterance2 .
+
+    leolaniTalk:chat2027_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2027_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2027_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2027_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life {
+    leolaniWorld:Homosexuality ns1:is_incompatible_with leolaniWorld:manners_of_life .
 }
 
 leolaniWorld:Love_is-result-of_your_particular_emotional_state {
@@ -93,81 +105,154 @@ leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life_of_Europe {
     leolaniWorld:Homosexuality ns1:is_incompatible_with leolaniWorld:manners_of_life_of_Europe .
 }
 
-leolaniWorld:Love_is-result-of_your_particular_state {
-    leolaniWorld:Love ns1:is_result_of leolaniWorld:your_particular_state .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Homosexuality a gaf:Instance ;
-        rdfs:label "homosexuality" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
-
-    leolaniWorld:Love a gaf:Instance ;
-        rdfs:label "love" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:incompatible a gaf:Instance ;
-        rdfs:label "incompatible" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:manners a gaf:Instance ;
-        rdfs:label "manners" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
-
-    leolaniWorld:manners_of_life a gaf:Instance ;
-        rdfs:label "manners-of-life" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
-
-    leolaniWorld:manners_of_life_of_Europe a gaf:Instance ;
-        rdfs:label "manners-of-life-of-europe" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
-
-    leolaniWorld:result a gaf:Instance ;
-        rdfs:label "result" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:your_emotional_state a gaf:Instance ;
-        rdfs:label "your-emotional-state" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:your_particular_emotional_state a gaf:Instance ;
-        rdfs:label "your-particular-emotional-state" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:your_particular_state a gaf:Instance ;
-        rdfs:label "your-particular-state" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
-
-    leolaniWorld:your_state a gaf:Instance ;
-        rdfs:label "your-state" ;
-        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Homosexuality_is_incompatible {
-    leolaniWorld:Homosexuality ns1:is leolaniWorld:incompatible .
-}
-
-leolaniWorld:Love_is_result {
-    leolaniWorld:Love ns1:is leolaniWorld:result .
+leolaniWorld:Love_is-result-of_your_state {
+    leolaniWorld:Love ns1:is_result_of leolaniWorld:your_state .
 }
 
 leolaniWorld:Homosexuality_is-incompatible-with_manners {
     leolaniWorld:Homosexuality ns1:is_incompatible_with leolaniWorld:manners .
 }
 
-leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life {
-    leolaniWorld:Homosexuality ns1:is_incompatible_with leolaniWorld:manners_of_life .
+leolaniTalk:Perspectives {
+    leolaniTalk:Homosexuality_is-incompatible-with_manners_00028 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is-incompatible-with_manners_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2027_utterance2_char0-65 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Homosexuality_is-incompatible-with_manners_of_life_00028 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is-incompatible-with_manners_of_life_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2027_utterance2_char0-65 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Homosexuality_is-incompatible-with_manners_of_life_of_Europe_00028 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is-incompatible-with_manners_of_life_of_Europe_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2027_utterance2_char0-65 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Homosexuality_is_incompatible_00028 a grasp:Attribution ;
+        rdfs:label "Homosexuality_is_incompatible_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2027_utterance2_char0-65 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Love_is-result-of_your_emotional_state_0004 a grasp:Attribution ;
+        rdfs:label "Love_is-result-of_your_emotional_state_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Love_is-result-of_your_particular_emotional_state_0004 a grasp:Attribution ;
+        rdfs:label "Love_is-result-of_your_particular_emotional_state_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Love_is-result-of_your_particular_state_0004 a grasp:Attribution ;
+        rdfs:label "Love_is-result-of_your_particular_state_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Love_is-result-of_your_state_0004 a grasp:Attribution ;
+        rdfs:label "Love_is-result-of_your_state_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Love_is_result_0004 a grasp:Attribution ;
+        rdfs:label "Love_is_result_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2027_utterance2_char0-65 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2027_utterance2_char0-65" ;
+        gaf:containsDenotation leolaniWorld:Homosexuality,
+            leolaniWorld:incompatible,
+            leolaniWorld:manners,
+            leolaniWorld:manners_of_life,
+            leolaniWorld:manners_of_life_of_Europe ;
+        gaf:denotes leolaniWorld:Homosexuality_is-incompatible-with_manners,
+            leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life,
+            leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life_of_Europe,
+            leolaniWorld:Homosexuality_is_incompatible ;
+        grasp:hasAttribution leolaniTalk:Homosexuality_is-incompatible-with_manners_00028,
+            leolaniTalk:Homosexuality_is-incompatible-with_manners_of_life_00028,
+            leolaniTalk:Homosexuality_is-incompatible-with_manners_of_life_of_Europe_00028,
+            leolaniTalk:Homosexuality_is_incompatible_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:30.246309"^^xml1:string,
+            "2024-06-05T23:07:30.246361"^^xml1:string,
+            "2024-06-05T23:07:30.246385"^^xml1:string,
+            "2024-06-05T23:07:30.246406"^^xml1:string ;
+        rdf:value "Homosexuality is incompatible with the manners of life of Europe."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2027_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat2027_utterance1_char0-264 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2027_utterance1_char0-264" ;
+        gaf:containsDenotation leolaniWorld:Love,
+            leolaniWorld:result,
+            leolaniWorld:your_emotional_state,
+            leolaniWorld:your_particular_emotional_state,
+            leolaniWorld:your_particular_state,
+            leolaniWorld:your_state ;
+        gaf:denotes leolaniWorld:Love_is-result-of_your_emotional_state,
+            leolaniWorld:Love_is-result-of_your_particular_emotional_state,
+            leolaniWorld:Love_is-result-of_your_particular_state,
+            leolaniWorld:Love_is-result-of_your_state,
+            leolaniWorld:Love_is_result ;
+        grasp:hasAttribution leolaniTalk:Love_is-result-of_your_emotional_state_0004,
+            leolaniTalk:Love_is-result-of_your_particular_emotional_state_0004,
+            leolaniTalk:Love_is-result-of_your_particular_state_0004,
+            leolaniTalk:Love_is-result-of_your_state_0004,
+            leolaniTalk:Love_is_result_0004 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:07:30.164876"^^xml1:string,
+            "2024-06-05T23:07:30.164929"^^xml1:string,
+            "2024-06-05T23:07:30.164953"^^xml1:string,
+            "2024-06-05T23:07:30.164975"^^xml1:string,
+            "2024-06-05T23:07:30.164997"^^xml1:string ;
+        rdf:value "Love is the result of your particular emotional and mental state, and the person which makes you feel this way can't be carefully selected. Heterosexual love shouldn't be treated as better, there are other ways of loving that are deserving of respect all the same."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2027_utterance1 .
+
+    graspe:LOVE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "LOVE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -505,216 +590,131 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Love_is-result-of_your_emotional_state {
+    leolaniWorld:Love ns1:is_result_of leolaniWorld:your_emotional_state .
 }
 
-leolaniWorld:Love_is-result-of_your_state {
-    leolaniWorld:Love ns1:is_result_of leolaniWorld:your_state .
+leolaniWorld:Claims {
+    leolaniWorld:Homosexuality_is-incompatible-with_manners a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is-incompatible-with_manners" ;
+        gaf:denotedBy leolaniTalk:chat2027_utterance2_char0-65 .
+
+    leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is-incompatible-with_manners_of_life" ;
+        gaf:denotedBy leolaniTalk:chat2027_utterance2_char0-65 .
+
+    leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life_of_Europe a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is-incompatible-with_manners_of_life_of_Europe" ;
+        gaf:denotedBy leolaniTalk:chat2027_utterance2_char0-65 .
+
+    leolaniWorld:Homosexuality_is_incompatible a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Homosexuality_is_incompatible" ;
+        gaf:denotedBy leolaniTalk:chat2027_utterance2_char0-65 .
+
+    leolaniWorld:Love_is-result-of_your_emotional_state a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Love_is-result-of_your_emotional_state" ;
+        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
+
+    leolaniWorld:Love_is-result-of_your_particular_emotional_state a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Love_is-result-of_your_particular_emotional_state" ;
+        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
+
+    leolaniWorld:Love_is-result-of_your_particular_state a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Love_is-result-of_your_particular_state" ;
+        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
+
+    leolaniWorld:Love_is-result-of_your_state a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Love_is-result-of_your_state" ;
+        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
+
+    leolaniWorld:Love_is_result a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Love_is_result" ;
+        gaf:denotedBy leolaniTalk:chat2027_utterance1_char0-264 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Homosexuality_is-incompatible-with_manners_00028 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is-incompatible-with_manners_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2027_utterance2_char0-65 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Homosexuality_is-incompatible-with_manners_of_life_00028 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is-incompatible-with_manners_of_life_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2027_utterance2_char0-65 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Homosexuality_is-incompatible-with_manners_of_life_of_Europe_00028 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is-incompatible-with_manners_of_life_of_Europe_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2027_utterance2_char0-65 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Homosexuality_is_incompatible_00028 a grasp:Attribution ;
-        rdfs:label "Homosexuality_is_incompatible_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2027_utterance2_char0-65 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Love_is-result-of_your_emotional_state_0004 a grasp:Attribution ;
-        rdfs:label "Love_is-result-of_your_emotional_state_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Love_is-result-of_your_particular_emotional_state_0004 a grasp:Attribution ;
-        rdfs:label "Love_is-result-of_your_particular_emotional_state_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Love_is-result-of_your_particular_state_0004 a grasp:Attribution ;
-        rdfs:label "Love_is-result-of_your_particular_state_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Love_is-result-of_your_state_0004 a grasp:Attribution ;
-        rdfs:label "Love_is-result-of_your_state_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Love_is_result_0004 a grasp:Attribution ;
-        rdfs:label "Love_is_result_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat2027_utterance1_char0-264 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2027_utterance2_char0-65 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2027_utterance2_char0-65" ;
-        gaf:containsDenotation leolaniWorld:Homosexuality,
-            leolaniWorld:incompatible,
-            leolaniWorld:manners,
-            leolaniWorld:manners_of_life,
-            leolaniWorld:manners_of_life_of_Europe ;
-        gaf:denotes leolaniWorld:Homosexuality_is-incompatible-with_manners,
-            leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life,
-            leolaniWorld:Homosexuality_is-incompatible-with_manners_of_life_of_Europe,
-            leolaniWorld:Homosexuality_is_incompatible ;
-        grasp:hasAttribution leolaniTalk:Homosexuality_is-incompatible-with_manners_00028,
-            leolaniTalk:Homosexuality_is-incompatible-with_manners_of_life_00028,
-            leolaniTalk:Homosexuality_is-incompatible-with_manners_of_life_of_Europe_00028,
-            leolaniTalk:Homosexuality_is_incompatible_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:30.246309"^^xml1:string,
-            "2024-06-05T23:07:30.246361"^^xml1:string,
-            "2024-06-05T23:07:30.246385"^^xml1:string,
-            "2024-06-05T23:07:30.246406"^^xml1:string ;
-        rdf:value "Homosexuality is incompatible with the manners of life of Europe."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2027_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat2027_utterance1_char0-264 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2027_utterance1_char0-264" ;
-        gaf:containsDenotation leolaniWorld:Love,
-            leolaniWorld:result,
-            leolaniWorld:your_emotional_state,
-            leolaniWorld:your_particular_emotional_state,
-            leolaniWorld:your_particular_state,
-            leolaniWorld:your_state ;
-        gaf:denotes leolaniWorld:Love_is-result-of_your_emotional_state,
-            leolaniWorld:Love_is-result-of_your_particular_emotional_state,
-            leolaniWorld:Love_is-result-of_your_particular_state,
-            leolaniWorld:Love_is-result-of_your_state,
-            leolaniWorld:Love_is_result ;
-        grasp:hasAttribution leolaniTalk:Love_is-result-of_your_emotional_state_0004,
-            leolaniTalk:Love_is-result-of_your_particular_emotional_state_0004,
-            leolaniTalk:Love_is-result-of_your_particular_state_0004,
-            leolaniTalk:Love_is-result-of_your_state_0004,
-            leolaniTalk:Love_is_result_0004 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:07:30.164876"^^xml1:string,
-            "2024-06-05T23:07:30.164929"^^xml1:string,
-            "2024-06-05T23:07:30.164953"^^xml1:string,
-            "2024-06-05T23:07:30.164975"^^xml1:string,
-            "2024-06-05T23:07:30.164997"^^xml1:string ;
-        rdf:value "Love is the result of your particular emotional and mental state, and the person which makes you feel this way can't be carefully selected. Heterosexual love shouldn't be treated as better, there are other ways of loving that are deserving of respect all the same."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2027_utterance1 .
-
-    graspe:LOVE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "LOVE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Love_is_result {
+    leolaniWorld:Love ns1:is leolaniWorld:result .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context45 a eps:Context ;
-        rdfs:label "context45" ;
-        hs:id "45"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Homosexuality_is_incompatible {
+    leolaniWorld:Homosexuality ns1:is leolaniWorld:incompatible .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2027 .
+leolaniWorld:Instances {
+    leolaniWorld:Homosexuality a gaf:Instance ;
+        rdfs:label "homosexuality" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "132"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2027 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2027" ;
-        hs:id "2027"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2027_utterance1,
-            leolaniTalk:chat2027_utterance2 .
-
-    leolaniTalk:chat2027_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2027_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2027_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2027_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Love a gaf:Instance ;
+        rdfs:label "love" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:Love_is-result-of_your_emotional_state {
-    leolaniWorld:Love ns1:is_result_of leolaniWorld:your_emotional_state .
+    leolaniWorld:incompatible a gaf:Instance ;
+        rdfs:label "incompatible" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:manners a gaf:Instance ;
+        rdfs:label "manners" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
+
+    leolaniWorld:manners_of_life a gaf:Instance ;
+        rdfs:label "manners-of-life" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
+
+    leolaniWorld:manners_of_life_of_Europe a gaf:Instance ;
+        rdfs:label "manners-of-life-of-europe" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance2_char0-65 .
+
+    leolaniWorld:result a gaf:Instance ;
+        rdfs:label "result" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
+
+    leolaniWorld:your_emotional_state a gaf:Instance ;
+        rdfs:label "your-emotional-state" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
+
+    leolaniWorld:your_particular_emotional_state a gaf:Instance ;
+        rdfs:label "your-particular-emotional-state" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
+
+    leolaniWorld:your_particular_state a gaf:Instance ;
+        rdfs:label "your-particular-state" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
+
+    leolaniWorld:your_state a gaf:Instance ;
+        rdfs:label "your-state" ;
+        gaf:denotedIn leolaniTalk:chat2027_utterance1_char0-264 .
 }
 

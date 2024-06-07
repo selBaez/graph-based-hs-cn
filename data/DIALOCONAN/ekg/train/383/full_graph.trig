@@ -22,69 +22,136 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context29 a eps:Context ;
+        rdfs:label "context29" ;
+        hs:id "29"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:It_is_easy a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat383 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "61"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat383 a grasp:Chat,
             sem:Event ;
-        rdfs:label "It_is_easy" ;
-        gaf:denotedBy leolaniTalk:chat383_utterance1_char0-102 .
+        rdfs:label "chat383" ;
+        hs:id "383"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat383_utterance1,
+            leolaniTalk:chat383_utterance2 .
 
-    leolaniWorld:We_must-deport_them a gaf:Assertion,
+    leolaniTalk:chat383_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "We_must-deport_them" ;
-        gaf:denotedBy leolaniTalk:chat383_utterance2_char0-187 .
+        rdfs:label "chat383_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat383_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat383_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:We_must-deport_them {
     leolaniWorld:We ns1:must_deport leolaniWorld:them .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat383_utterance1_char0-102 .
-
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat383_utterance2_char0-187 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:easy a gaf:Instance ;
-        rdfs:label "easy" ;
-        gaf:denotedIn leolaniTalk:chat383_utterance1_char0-102 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat383_utterance2_char0-187 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:It_is_easy {
-    leolaniWorld:It ns1:is leolaniWorld:easy .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:It_is_easy_00028 a grasp:Attribution ;
+        rdfs:label "It_is_easy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat383_utterance1_char0-102 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_must-deport_them_00028 a grasp:Attribution ;
+        rdfs:label "We_must-deport_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat383_utterance2_char0-187 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat383_utterance1_char0-102 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat383_utterance1_char0-102" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:easy ;
+        gaf:denotes leolaniWorld:It_is_easy ;
+        grasp:hasAttribution leolaniTalk:It_is_easy_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:16:08.021781"^^xml1:string ;
+        rdf:value "It is easy to blame the migrants and not the problem of integration and acceptance in the first place."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat383_utterance1 .
+
+    leolaniTalk:chat383_utterance2_char0-187 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat383_utterance2_char0-187" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:them ;
+        gaf:denotes leolaniWorld:We_must-deport_them ;
+        grasp:hasAttribution leolaniTalk:We_must-deport_them_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:16:08.127762"^^xml1:string ;
+        rdf:value "The problem is that there is an invasion: we cannot coexist with millions of strangers that do not want to integrate but to bring us back into a pretechnological era. We must deport them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat383_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -422,127 +489,60 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:It_is_easy {
+    leolaniWorld:It ns1:is leolaniWorld:easy .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:It_is_easy_00028 a grasp:Attribution ;
-        rdfs:label "It_is_easy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat383_utterance1_char0-102 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:It_is_easy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_is_easy" ;
+        gaf:denotedBy leolaniTalk:chat383_utterance1_char0-102 .
 
-    leolaniTalk:We_must-deport_them_00028 a grasp:Attribution ;
-        rdfs:label "We_must-deport_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat383_utterance2_char0-187 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:We_must-deport_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_must-deport_them" ;
+        gaf:denotedBy leolaniTalk:chat383_utterance2_char0-187 .
 
-    leolaniTalk:chat383_utterance1_char0-102 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat383_utterance1_char0-102" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:easy ;
-        gaf:denotes leolaniWorld:It_is_easy ;
-        grasp:hasAttribution leolaniTalk:It_is_easy_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:16:08.021781"^^xml1:string ;
-        rdf:value "It is easy to blame the migrants and not the problem of integration and acceptance in the first place."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat383_utterance1 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat383_utterance2_char0-187 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat383_utterance2_char0-187" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:them ;
-        gaf:denotes leolaniWorld:We_must-deport_them ;
-        grasp:hasAttribution leolaniTalk:We_must-deport_them_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:16:08.127762"^^xml1:string ;
-        rdf:value "The problem is that there is an invasion: we cannot coexist with millions of strangers that do not want to integrate but to bring us back into a pretechnological era. We must deport them."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat383_utterance2 .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context29 a eps:Context ;
-        rdfs:label "context29" ;
-        hs:id "29"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat383_utterance1_char0-102 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat383 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "61"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat383 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat383" ;
-        hs:id "383"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat383_utterance1,
-            leolaniTalk:chat383_utterance2 .
-
-    leolaniTalk:chat383_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat383_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat383_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat383_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat383_utterance2_char0-187 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:easy a gaf:Instance ;
+        rdfs:label "easy" ;
+        gaf:denotedIn leolaniTalk:chat383_utterance1_char0-102 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat383_utterance2_char0-187 .
 }
 

@@ -22,116 +22,197 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:people_are-born_way {
-    leolaniWorld:people ns11:are_born leolaniWorld:way .
-}
-
 leolaniWorld:blacks_are-criminals-after_all {
     leolaniWorld:blacks ns11:are_criminals_after leolaniWorld:all .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Black_people_are-born_way a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Black_people_are-born_way" ;
-        gaf:denotedBy leolaniTalk:chat2878_utterance0_char0-56 .
-
-    leolaniWorld:Black_people_are_born a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Black_people_are_born" ;
-        gaf:denotedBy leolaniTalk:chat2878_utterance0_char0-56 .
-
-    leolaniWorld:blacks_are-criminals-after_all a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "blacks_are-criminals-after_all" ;
-        gaf:denotedBy leolaniTalk:chat2878_utterance2_char0-122 .
-
-    leolaniWorld:blacks_are_criminals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "blacks_are_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2878_utterance2_char0-122 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:many_black_people_is-in_UK a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_black_people_is-in_UK" ;
-        gaf:denotedBy leolaniTalk:chat2878_utterance2_char0-122 .
-
-    leolaniWorld:people_are-born_way a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_are-born_way" ;
-        gaf:denotedBy leolaniTalk:chat2878_utterance0_char0-56 .
-
-    leolaniWorld:people_are_born a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_are_born" ;
-        gaf:denotedBy leolaniTalk:chat2878_utterance0_char0-56 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:people_are_born {
-    leolaniWorld:people ns11:are leolaniWorld:born .
 }
 
 leolaniWorld:Black_people_are-born_way {
     leolaniWorld:Black_people ns11:are_born leolaniWorld:way .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Black_people a gaf:Instance ;
-        rdfs:label "black-people" ;
-        gaf:denotedIn leolaniTalk:chat2878_utterance0_char0-56 .
+leolaniTalk:Interactions {
+    leolaniContext:context110 a eps:Context ;
+        rdfs:label "context110" ;
+        hs:id "110"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:UK a gaf:Instance ;
-        rdfs:label "uk" ;
-        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2878 .
 
-    leolaniWorld:all a gaf:Instance ;
-        rdfs:label "all" ;
-        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:blacks a gaf:Instance ;
-        rdfs:label "blacks" ;
-        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "213"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:born a gaf:Instance ;
-        rdfs:label "born" ;
-        gaf:denotedIn leolaniTalk:chat2878_utterance0_char0-56 .
+    leolaniTalk:chat2878 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2878" ;
+        hs:id "2878"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2878_utterance0,
+            leolaniTalk:chat2878_utterance2 .
 
-    leolaniWorld:criminals a gaf:Instance ;
-        rdfs:label "criminals" ;
-        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
+    leolaniTalk:chat2878_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2878_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2878_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2878_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:people_are-born_way {
+    leolaniWorld:people ns11:are_born leolaniWorld:way .
+}
 
-    leolaniWorld:many_black_people a gaf:Instance ;
-        rdfs:label "many-black-people" ;
-        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2878_utterance0_char0-56 .
-
-    leolaniWorld:way a gaf:Instance ;
-        rdfs:label "way" ;
-        gaf:denotedIn leolaniTalk:chat2878_utterance0_char0-56 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:blacks_are_criminals {
     leolaniWorld:blacks ns11:are leolaniWorld:criminals .
 }
 
-leolaniWorld:Black_people_are_born {
-    leolaniWorld:Black_people ns11:are leolaniWorld:born .
+leolaniTalk:Perspectives {
+    leolaniTalk:Black_people_are-born_way_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are-born_way_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2878_utterance0_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_are_born_00028 a grasp:Attribution ;
+        rdfs:label "Black_people_are_born_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2878_utterance0_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:blacks_are-criminals-after_all_0007 a grasp:Attribution ;
+        rdfs:label "blacks_are-criminals-after_all_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat2878_utterance2_char0-122 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:blacks_are_criminals_0007 a grasp:Attribution ;
+        rdfs:label "blacks_are_criminals_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat2878_utterance2_char0-122 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:many_black_people_is-in_UK_0007 a grasp:Attribution ;
+        rdfs:label "many_black_people_is-in_UK_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat2878_utterance2_char0-122 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are-born_way_00028 a grasp:Attribution ;
+        rdfs:label "people_are-born_way_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2878_utterance0_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_are_born_00028 a grasp:Attribution ;
+        rdfs:label "people_are_born_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2878_utterance0_char0-56 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2878_utterance2_char0-122 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2878_utterance2_char0-122" ;
+        gaf:containsDenotation leolaniWorld:UK,
+            leolaniWorld:all,
+            leolaniWorld:blacks,
+            leolaniWorld:criminals,
+            leolaniWorld:many_black_people ;
+        gaf:denotes leolaniWorld:blacks_are-criminals-after_all,
+            leolaniWorld:blacks_are_criminals,
+            leolaniWorld:many_black_people_is-in_UK ;
+        grasp:hasAttribution leolaniTalk:blacks_are-criminals-after_all_0007,
+            leolaniTalk:blacks_are_criminals_0007,
+            leolaniTalk:many_black_people_is-in_UK_0007 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:22:06.655669"^^xml1:string,
+            "2024-06-05T23:22:06.655802"^^xml1:string,
+            "2024-06-05T23:22:06.655825"^^xml1:string ;
+        rdf:value "But there are so many black people in the UK, we have to be careful not to be victims! All blacks are criminals after all."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2878_utterance2 .
+
+    graspe:CARING a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CARING" .
+
+    leolaniTalk:chat2878_utterance0_char0-56 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2878_utterance0_char0-56" ;
+        gaf:containsDenotation leolaniWorld:Black_people,
+            leolaniWorld:born,
+            leolaniWorld:people,
+            leolaniWorld:way ;
+        gaf:denotes leolaniWorld:Black_people_are-born_way,
+            leolaniWorld:Black_people_are_born,
+            leolaniWorld:people_are-born_way,
+            leolaniWorld:people_are_born ;
+        grasp:hasAttribution leolaniTalk:Black_people_are-born_way_00028,
+            leolaniTalk:Black_people_are_born_00028,
+            leolaniTalk:people_are-born_way_00028,
+            leolaniTalk:people_are_born_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:21:56.801948"^^xml1:string,
+            "2024-06-05T23:21:56.802013"^^xml1:string,
+            "2024-06-05T23:21:56.802036"^^xml1:string,
+            "2024-06-05T23:21:56.802058"^^xml1:string ;
+        rdf:value "Black people are born that way: violent and insensitive."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2878_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -469,184 +550,103 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Black_people_are-born_way_00028 a grasp:Attribution ;
-        rdfs:label "Black_people_are-born_way_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2878_utterance0_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Black_people_are_born_00028 a grasp:Attribution ;
-        rdfs:label "Black_people_are_born_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2878_utterance0_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:blacks_are-criminals-after_all_0007 a grasp:Attribution ;
-        rdfs:label "blacks_are-criminals-after_all_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat2878_utterance2_char0-122 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:blacks_are_criminals_0007 a grasp:Attribution ;
-        rdfs:label "blacks_are_criminals_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat2878_utterance2_char0-122 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:many_black_people_is-in_UK_0007 a grasp:Attribution ;
-        rdfs:label "many_black_people_is-in_UK_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat2878_utterance2_char0-122 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_are-born_way_00028 a grasp:Attribution ;
-        rdfs:label "people_are-born_way_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2878_utterance0_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_are_born_00028 a grasp:Attribution ;
-        rdfs:label "people_are_born_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2878_utterance0_char0-56 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2878_utterance2_char0-122 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2878_utterance2_char0-122" ;
-        gaf:containsDenotation leolaniWorld:UK,
-            leolaniWorld:all,
-            leolaniWorld:blacks,
-            leolaniWorld:criminals,
-            leolaniWorld:many_black_people ;
-        gaf:denotes leolaniWorld:blacks_are-criminals-after_all,
-            leolaniWorld:blacks_are_criminals,
-            leolaniWorld:many_black_people_is-in_UK ;
-        grasp:hasAttribution leolaniTalk:blacks_are-criminals-after_all_0007,
-            leolaniTalk:blacks_are_criminals_0007,
-            leolaniTalk:many_black_people_is-in_UK_0007 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:22:06.655669"^^xml1:string,
-            "2024-06-05T23:22:06.655802"^^xml1:string,
-            "2024-06-05T23:22:06.655825"^^xml1:string ;
-        rdf:value "But there are so many black people in the UK, we have to be careful not to be victims! All blacks are criminals after all."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2878_utterance2 .
-
-    graspe:CARING a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CARING" .
-
-    leolaniTalk:chat2878_utterance0_char0-56 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2878_utterance0_char0-56" ;
-        gaf:containsDenotation leolaniWorld:Black_people,
-            leolaniWorld:born,
-            leolaniWorld:people,
-            leolaniWorld:way ;
-        gaf:denotes leolaniWorld:Black_people_are-born_way,
-            leolaniWorld:Black_people_are_born,
-            leolaniWorld:people_are-born_way,
-            leolaniWorld:people_are_born ;
-        grasp:hasAttribution leolaniTalk:Black_people_are-born_way_00028,
-            leolaniTalk:Black_people_are_born_00028,
-            leolaniTalk:people_are-born_way_00028,
-            leolaniTalk:people_are_born_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:21:56.801948"^^xml1:string,
-            "2024-06-05T23:21:56.802013"^^xml1:string,
-            "2024-06-05T23:21:56.802036"^^xml1:string,
-            "2024-06-05T23:21:56.802058"^^xml1:string ;
-        rdf:value "Black people are born that way: violent and insensitive."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2878_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context110 a eps:Context ;
-        rdfs:label "context110" ;
-        hs:id "110"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2878 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "213"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2878 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2878" ;
-        hs:id "2878"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2878_utterance0,
-            leolaniTalk:chat2878_utterance2 .
-
-    leolaniTalk:chat2878_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2878_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2878_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2878_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:Black_people_are_born {
+    leolaniWorld:Black_people ns11:are leolaniWorld:born .
 }
 
 leolaniWorld:many_black_people_is-in_UK {
     leolaniWorld:many_black_people ns11:is_in leolaniWorld:UK .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Black_people_are-born_way a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are-born_way" ;
+        gaf:denotedBy leolaniTalk:chat2878_utterance0_char0-56 .
+
+    leolaniWorld:Black_people_are_born a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_are_born" ;
+        gaf:denotedBy leolaniTalk:chat2878_utterance0_char0-56 .
+
+    leolaniWorld:blacks_are-criminals-after_all a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "blacks_are-criminals-after_all" ;
+        gaf:denotedBy leolaniTalk:chat2878_utterance2_char0-122 .
+
+    leolaniWorld:blacks_are_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "blacks_are_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2878_utterance2_char0-122 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:many_black_people_is-in_UK a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_black_people_is-in_UK" ;
+        gaf:denotedBy leolaniTalk:chat2878_utterance2_char0-122 .
+
+    leolaniWorld:people_are-born_way a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are-born_way" ;
+        gaf:denotedBy leolaniTalk:chat2878_utterance0_char0-56 .
+
+    leolaniWorld:people_are_born a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_born" ;
+        gaf:denotedBy leolaniTalk:chat2878_utterance0_char0-56 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:people_are_born {
+    leolaniWorld:people ns11:are leolaniWorld:born .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Black_people a gaf:Instance ;
+        rdfs:label "black-people" ;
+        gaf:denotedIn leolaniTalk:chat2878_utterance0_char0-56 .
+
+    leolaniWorld:UK a gaf:Instance ;
+        rdfs:label "uk" ;
+        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
+
+    leolaniWorld:all a gaf:Instance ;
+        rdfs:label "all" ;
+        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
+
+    leolaniWorld:blacks a gaf:Instance ;
+        rdfs:label "blacks" ;
+        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
+
+    leolaniWorld:born a gaf:Instance ;
+        rdfs:label "born" ;
+        gaf:denotedIn leolaniTalk:chat2878_utterance0_char0-56 .
+
+    leolaniWorld:criminals a gaf:Instance ;
+        rdfs:label "criminals" ;
+        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_black_people a gaf:Instance ;
+        rdfs:label "many-black-people" ;
+        gaf:denotedIn leolaniTalk:chat2878_utterance2_char0-122 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2878_utterance0_char0-56 .
+
+    leolaniWorld:way a gaf:Instance ;
+        rdfs:label "way" ;
+        gaf:denotedIn leolaniTalk:chat2878_utterance0_char0-56 .
 }
 

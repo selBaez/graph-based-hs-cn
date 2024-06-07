@@ -22,80 +22,152 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:they_are_greedy {
-    leolaniWorld:they ns1:are leolaniWorld:greedy .
+leolaniWorld:Bisexuals_are_attracted {
+    leolaniWorld:Bisexuals ns1:are leolaniWorld:attracted .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Bisexuals_are_attracted a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context146 a eps:Context ;
+        rdfs:label "context146" ;
+        hs:id "146"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2564 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "41"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2564 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Bisexuals_are_attracted" ;
-        gaf:denotedBy leolaniTalk:chat2564_utterance1_char0-106 .
+        rdfs:label "chat2564" ;
+        hs:id "2564"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2564_utterance0,
+            leolaniTalk:chat2564_utterance1 .
 
-    leolaniWorld:Bisexuals_are_greedy a gaf:Assertion,
+    leolaniTalk:chat2564_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Bisexuals_are_greedy" ;
-        gaf:denotedBy leolaniTalk:chat2564_utterance0_char0-21 .
+        rdfs:label "chat2564_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat2564_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat2564_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:they_are_greedy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_greedy" ;
-        gaf:denotedBy leolaniTalk:chat2564_utterance1_char0-106 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Bisexuals_are_greedy {
+    leolaniWorld:Bisexuals ns1:are leolaniWorld:greedy .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Bisexuals_are_attracted {
-    leolaniWorld:Bisexuals ns1:are leolaniWorld:attracted .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Bisexuals_are_attracted_00028 a grasp:Attribution ;
+        rdfs:label "Bisexuals_are_attracted_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2564_utterance1_char0-106 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:Bisexuals a gaf:Instance ;
-        rdfs:label "bisexuals" ;
-        gaf:denotedIn leolaniTalk:chat2564_utterance0_char0-21,
-            leolaniTalk:chat2564_utterance1_char0-106 .
+    leolaniTalk:Bisexuals_are_greedy_00028 a grasp:Attribution ;
+        rdfs:label "Bisexuals_are_greedy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2564_utterance0_char0-21 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:attracted a gaf:Instance ;
-        rdfs:label "attracted" ;
-        gaf:denotedIn leolaniTalk:chat2564_utterance1_char0-106 .
+    leolaniTalk:chat2564_utterance0_char0-21 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2564_utterance0_char0-21" ;
+        gaf:containsDenotation leolaniWorld:Bisexuals,
+            leolaniWorld:greedy ;
+        gaf:denotes leolaniWorld:Bisexuals_are_greedy ;
+        grasp:hasAttribution leolaniTalk:Bisexuals_are_greedy_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:23.157198"^^xml1:string ;
+        rdf:value "Bisexuals are greedy."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2564_utterance0 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:they_are_greedy_00028 a grasp:Attribution ;
+        rdfs:label "they_are_greedy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2564_utterance1_char0-106 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:greedy a gaf:Instance ;
-        rdfs:label "greedy" ;
-        gaf:denotedIn leolaniTalk:chat2564_utterance0_char0-21,
-            leolaniTalk:chat2564_utterance1_char0-106 .
+    leolaniTalk:chat2564_utterance1_char0-106 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2564_utterance1_char0-106" ;
+        gaf:containsDenotation leolaniWorld:Bisexuals,
+            leolaniWorld:attracted,
+            leolaniWorld:greedy,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:Bisexuals_are_attracted,
+            leolaniWorld:they_are_greedy ;
+        grasp:hasAttribution leolaniTalk:Bisexuals_are_attracted_00028,
+            leolaniTalk:they_are_greedy_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:23.245311"^^xml1:string,
+            "2024-06-05T23:10:23.245368"^^xml1:string ;
+        rdf:value "Bisexuals are attracted to more than one gender, but this doesn't mean they are greedy. Why do you say so?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2564_utterance1 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2564_utterance1_char0-106 .
-}
-
-leolaniWorld:Bisexuals_are_greedy {
-    leolaniWorld:Bisexuals ns1:are leolaniWorld:greedy .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -433,139 +505,67 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Bisexuals_are_attracted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Bisexuals_are_attracted" ;
+        gaf:denotedBy leolaniTalk:chat2564_utterance1_char0-106 .
+
+    leolaniWorld:Bisexuals_are_greedy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Bisexuals_are_greedy" ;
+        gaf:denotedBy leolaniTalk:chat2564_utterance0_char0-21 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_greedy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_greedy" ;
+        gaf:denotedBy leolaniTalk:chat2564_utterance1_char0-106 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Bisexuals_are_attracted_00028 a grasp:Attribution ;
-        rdfs:label "Bisexuals_are_attracted_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2564_utterance1_char0-106 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Bisexuals_are_greedy_00028 a grasp:Attribution ;
-        rdfs:label "Bisexuals_are_greedy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2564_utterance0_char0-21 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2564_utterance0_char0-21 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2564_utterance0_char0-21" ;
-        gaf:containsDenotation leolaniWorld:Bisexuals,
-            leolaniWorld:greedy ;
-        gaf:denotes leolaniWorld:Bisexuals_are_greedy ;
-        grasp:hasAttribution leolaniTalk:Bisexuals_are_greedy_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:23.157198"^^xml1:string ;
-        rdf:value "Bisexuals are greedy."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2564_utterance0 .
-
-    leolaniTalk:they_are_greedy_00028 a grasp:Attribution ;
-        rdfs:label "they_are_greedy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2564_utterance1_char0-106 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2564_utterance1_char0-106 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2564_utterance1_char0-106" ;
-        gaf:containsDenotation leolaniWorld:Bisexuals,
-            leolaniWorld:attracted,
-            leolaniWorld:greedy,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:Bisexuals_are_attracted,
-            leolaniWorld:they_are_greedy ;
-        grasp:hasAttribution leolaniTalk:Bisexuals_are_attracted_00028,
-            leolaniTalk:they_are_greedy_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:23.245311"^^xml1:string,
-            "2024-06-05T23:10:23.245368"^^xml1:string ;
-        rdf:value "Bisexuals are attracted to more than one gender, but this doesn't mean they are greedy. Why do you say so?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2564_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:they_are_greedy {
+    leolaniWorld:they ns1:are leolaniWorld:greedy .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context146 a eps:Context ;
-        rdfs:label "context146" ;
-        hs:id "146"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Bisexuals a gaf:Instance ;
+        rdfs:label "bisexuals" ;
+        gaf:denotedIn leolaniTalk:chat2564_utterance0_char0-21,
+            leolaniTalk:chat2564_utterance1_char0-106 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2564 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "41"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2564 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2564" ;
-        hs:id "2564"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2564_utterance0,
-            leolaniTalk:chat2564_utterance1 .
-
-    leolaniTalk:chat2564_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2564_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2564_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2564_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:attracted a gaf:Instance ;
+        rdfs:label "attracted" ;
+        gaf:denotedIn leolaniTalk:chat2564_utterance1_char0-106 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:greedy a gaf:Instance ;
+        rdfs:label "greedy" ;
+        gaf:denotedIn leolaniTalk:chat2564_utterance0_char0-21,
+            leolaniTalk:chat2564_utterance1_char0-106 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2564_utterance1_char0-106 .
 }
 

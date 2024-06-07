@@ -22,61 +22,8 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:us_submit-to_their_agenda {
-    leolaniWorld:us ns1:submit_to leolaniWorld:their_agenda .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Jews_want_submit a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_want_submit" ;
-        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:Jews_want_submit_to_their_agenda a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_want_submit_to_their_agenda" ;
-        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:Jews_want_to_submit a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_want_to_submit" ;
-        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:Jews_want_to_submit_to_their_agenda a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_want_to_submit_to_their_agenda" ;
-        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:Jews_want_us a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_want_us" ;
-        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:They_are_intent a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_intent" ;
-        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:us_submit-to_their_agenda a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "us_submit-to_their_agenda" ;
-        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:we_have_mass_migration a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_have_mass_migration" ;
-        gaf:denotedBy leolaniTalk:chat101_utterance2_char0-133 .
-
-    leolaniWorld:we_have_migration a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_have_migration" ;
-        gaf:denotedBy leolaniTalk:chat101_utterance2_char0-133 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Jews_want_us {
+    leolaniWorld:Jews ns1:want leolaniWorld:us .
 }
 
 leolaniWorld:we_have_migration {
@@ -87,81 +34,220 @@ leolaniWorld:Jews_want_to_submit {
     leolaniWorld:Jews ns1:want leolaniWorld:to_submit .
 }
 
-leolaniWorld:we_have_mass_migration {
-    leolaniWorld:we ns1:have leolaniWorld:mass_migration .
+leolaniWorld:Jews_want_submit {
+    leolaniWorld:Jews ns1:want leolaniWorld:submit .
 }
 
-leolaniWorld:They_are_intent {
-    leolaniWorld:They ns1:are leolaniWorld:intent .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context218 a eps:Context ;
+        rdfs:label "context218" ;
+        hs:id "218"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat101 .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "197"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat101 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat101" ;
+        hs:id "101"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat101_utterance0,
+            leolaniTalk:chat101_utterance2 .
+
+    leolaniTalk:chat101_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat101_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat101_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat101_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:intent a gaf:Instance ;
-        rdfs:label "intent" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+leolaniWorld:us_submit-to_their_agenda {
+    leolaniWorld:us ns1:submit_to leolaniWorld:their_agenda .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:mass_migration a gaf:Instance ;
-        rdfs:label "mass-migration" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance2_char0-133 .
-
-    leolaniWorld:migration a gaf:Instance ;
-        rdfs:label "migration" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance2_char0-133 .
-
-    leolaniWorld:submit a gaf:Instance ;
-        rdfs:label "submit" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:submit_to_their_agenda a gaf:Instance ;
-        rdfs:label "submit-to-their-agenda" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:their_agenda a gaf:Instance ;
-        rdfs:label "their-agenda" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:to_submit a gaf:Instance ;
-        rdfs:label "to-submit" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:to_submit_to_their_agenda a gaf:Instance ;
-        rdfs:label "to-submit-to-their-agenda" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat101_utterance2_char0-133 .
+leolaniWorld:we_have_mass_migration {
+    leolaniWorld:we ns1:have leolaniWorld:mass_migration .
 }
 
 leolaniWorld:Jews_want_to_submit_to_their_agenda {
     leolaniWorld:Jews ns1:want leolaniWorld:to_submit_to_their_agenda .
 }
 
-leolaniWorld:Jews_want_submit_to_their_agenda {
-    leolaniWorld:Jews ns1:want leolaniWorld:submit_to_their_agenda .
+leolaniWorld:They_are_intent {
+    leolaniWorld:They ns1:are leolaniWorld:intent .
 }
 
-leolaniWorld:Jews_want_submit {
-    leolaniWorld:Jews ns1:want leolaniWorld:submit .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_want_submit_00028 a grasp:Attribution ;
+        rdfs:label "Jews_want_submit_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_want_submit_to_their_agenda_00028 a grasp:Attribution ;
+        rdfs:label "Jews_want_submit_to_their_agenda_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_want_to_submit_00028 a grasp:Attribution ;
+        rdfs:label "Jews_want_to_submit_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_want_to_submit_to_their_agenda_00028 a grasp:Attribution ;
+        rdfs:label "Jews_want_to_submit_to_their_agenda_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Jews_want_us_00028 a grasp:Attribution ;
+        rdfs:label "Jews_want_us_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_are_intent_00028 a grasp:Attribution ;
+        rdfs:label "They_are_intent_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:us_submit-to_their_agenda_00028 a grasp:Attribution ;
+        rdfs:label "us_submit-to_their_agenda_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_have_mass_migration_00028 a grasp:Attribution ;
+        rdfs:label "we_have_mass_migration_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat101_utterance2_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_have_migration_00028 a grasp:Attribution ;
+        rdfs:label "we_have_migration_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat101_utterance2_char0-133 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat101_utterance2_char0-133 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat101_utterance2_char0-133" ;
+        gaf:containsDenotation leolaniWorld:mass_migration,
+            leolaniWorld:migration,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_have_mass_migration,
+            leolaniWorld:we_have_migration ;
+        grasp:hasAttribution leolaniTalk:we_have_mass_migration_00028,
+            leolaniTalk:we_have_migration_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:53.287848"^^xml1:string,
+            "2024-06-05T23:02:53.287901"^^xml1:string ;
+        rdf:value "They are the reason we have mass migration, feminism, the lgbt agenda, it's all part of destroying white Europeans and their culture."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat101_utterance2 .
+
+    leolaniTalk:chat101_utterance0_char0-120 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat101_utterance0_char0-120" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:They,
+            leolaniWorld:intent,
+            leolaniWorld:submit,
+            leolaniWorld:submit_to_their_agenda,
+            leolaniWorld:their_agenda,
+            leolaniWorld:to_submit,
+            leolaniWorld:to_submit_to_their_agenda,
+            leolaniWorld:us ;
+        gaf:denotes leolaniWorld:Jews_want_submit,
+            leolaniWorld:Jews_want_submit_to_their_agenda,
+            leolaniWorld:Jews_want_to_submit,
+            leolaniWorld:Jews_want_to_submit_to_their_agenda,
+            leolaniWorld:Jews_want_us,
+            leolaniWorld:They_are_intent,
+            leolaniWorld:us_submit-to_their_agenda ;
+        grasp:hasAttribution leolaniTalk:Jews_want_submit_00028,
+            leolaniTalk:Jews_want_submit_to_their_agenda_00028,
+            leolaniTalk:Jews_want_to_submit_00028,
+            leolaniTalk:Jews_want_to_submit_to_their_agenda_00028,
+            leolaniTalk:Jews_want_us_00028,
+            leolaniTalk:They_are_intent_00028,
+            leolaniTalk:us_submit-to_their_agenda_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:53.131090"^^xml1:string,
+            "2024-06-05T23:02:53.131143"^^xml1:string,
+            "2024-06-05T23:02:53.131166"^^xml1:string,
+            "2024-06-05T23:02:53.131188"^^xml1:string,
+            "2024-06-05T23:02:53.131210"^^xml1:string,
+            "2024-06-05T23:02:53.131230"^^xml1:string,
+            "2024-06-05T23:02:53.131251"^^xml1:string ;
+        rdf:value "Jews want us to submit to their agenda. They are intent on decimating the white race and corrupting Europe and the West."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat101_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -499,203 +585,117 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_want_submit a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_want_submit" ;
+        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:Jews_want_submit_to_their_agenda a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_want_submit_to_their_agenda" ;
+        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:Jews_want_to_submit a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_want_to_submit" ;
+        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:Jews_want_to_submit_to_their_agenda a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_want_to_submit_to_their_agenda" ;
+        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:Jews_want_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_want_us" ;
+        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:They_are_intent a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_intent" ;
+        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:us_submit-to_their_agenda a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "us_submit-to_their_agenda" ;
+        gaf:denotedBy leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:we_have_mass_migration a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have_mass_migration" ;
+        gaf:denotedBy leolaniTalk:chat101_utterance2_char0-133 .
+
+    leolaniWorld:we_have_migration a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have_migration" ;
+        gaf:denotedBy leolaniTalk:chat101_utterance2_char0-133 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_want_submit_00028 a grasp:Attribution ;
-        rdfs:label "Jews_want_submit_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_want_submit_to_their_agenda_00028 a grasp:Attribution ;
-        rdfs:label "Jews_want_submit_to_their_agenda_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_want_to_submit_00028 a grasp:Attribution ;
-        rdfs:label "Jews_want_to_submit_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_want_to_submit_to_their_agenda_00028 a grasp:Attribution ;
-        rdfs:label "Jews_want_to_submit_to_their_agenda_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Jews_want_us_00028 a grasp:Attribution ;
-        rdfs:label "Jews_want_us_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_intent_00028 a grasp:Attribution ;
-        rdfs:label "They_are_intent_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:us_submit-to_their_agenda_00028 a grasp:Attribution ;
-        rdfs:label "us_submit-to_their_agenda_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat101_utterance0_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_have_mass_migration_00028 a grasp:Attribution ;
-        rdfs:label "we_have_mass_migration_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat101_utterance2_char0-133 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_have_migration_00028 a grasp:Attribution ;
-        rdfs:label "we_have_migration_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat101_utterance2_char0-133 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat101_utterance2_char0-133 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat101_utterance2_char0-133" ;
-        gaf:containsDenotation leolaniWorld:mass_migration,
-            leolaniWorld:migration,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_have_mass_migration,
-            leolaniWorld:we_have_migration ;
-        grasp:hasAttribution leolaniTalk:we_have_mass_migration_00028,
-            leolaniTalk:we_have_migration_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:53.287848"^^xml1:string,
-            "2024-06-05T23:02:53.287901"^^xml1:string ;
-        rdf:value "They are the reason we have mass migration, feminism, the lgbt agenda, it's all part of destroying white Europeans and their culture."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat101_utterance2 .
-
-    leolaniTalk:chat101_utterance0_char0-120 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat101_utterance0_char0-120" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:They,
-            leolaniWorld:intent,
-            leolaniWorld:submit,
-            leolaniWorld:submit_to_their_agenda,
-            leolaniWorld:their_agenda,
-            leolaniWorld:to_submit,
-            leolaniWorld:to_submit_to_their_agenda,
-            leolaniWorld:us ;
-        gaf:denotes leolaniWorld:Jews_want_submit,
-            leolaniWorld:Jews_want_submit_to_their_agenda,
-            leolaniWorld:Jews_want_to_submit,
-            leolaniWorld:Jews_want_to_submit_to_their_agenda,
-            leolaniWorld:Jews_want_us,
-            leolaniWorld:They_are_intent,
-            leolaniWorld:us_submit-to_their_agenda ;
-        grasp:hasAttribution leolaniTalk:Jews_want_submit_00028,
-            leolaniTalk:Jews_want_submit_to_their_agenda_00028,
-            leolaniTalk:Jews_want_to_submit_00028,
-            leolaniTalk:Jews_want_to_submit_to_their_agenda_00028,
-            leolaniTalk:Jews_want_us_00028,
-            leolaniTalk:They_are_intent_00028,
-            leolaniTalk:us_submit-to_their_agenda_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:53.131090"^^xml1:string,
-            "2024-06-05T23:02:53.131143"^^xml1:string,
-            "2024-06-05T23:02:53.131166"^^xml1:string,
-            "2024-06-05T23:02:53.131188"^^xml1:string,
-            "2024-06-05T23:02:53.131210"^^xml1:string,
-            "2024-06-05T23:02:53.131230"^^xml1:string,
-            "2024-06-05T23:02:53.131251"^^xml1:string ;
-        rdf:value "Jews want us to submit to their agenda. They are intent on decimating the white race and corrupting Europe and the West."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat101_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Jews_want_submit_to_their_agenda {
+    leolaniWorld:Jews ns1:want leolaniWorld:submit_to_their_agenda .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context218 a eps:Context ;
-        rdfs:label "context218" ;
-        hs:id "218"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat101 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "197"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat101 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat101" ;
-        hs:id "101"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat101_utterance0,
-            leolaniTalk:chat101_utterance2 .
-
-    leolaniTalk:chat101_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat101_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat101_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat101_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:Jews_want_us {
-    leolaniWorld:Jews ns1:want leolaniWorld:us .
+    leolaniWorld:intent a gaf:Instance ;
+        rdfs:label "intent" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:mass_migration a gaf:Instance ;
+        rdfs:label "mass-migration" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance2_char0-133 .
+
+    leolaniWorld:migration a gaf:Instance ;
+        rdfs:label "migration" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance2_char0-133 .
+
+    leolaniWorld:submit a gaf:Instance ;
+        rdfs:label "submit" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:submit_to_their_agenda a gaf:Instance ;
+        rdfs:label "submit-to-their-agenda" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:their_agenda a gaf:Instance ;
+        rdfs:label "their-agenda" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:to_submit a gaf:Instance ;
+        rdfs:label "to-submit" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:to_submit_to_their_agenda a gaf:Instance ;
+        rdfs:label "to-submit-to-their-agenda" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance0_char0-120 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat101_utterance2_char0-133 .
 }
 

@@ -22,47 +22,111 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:they_nothing-but_trouble {
+    leolaniWorld:they ns11:nothing_but leolaniWorld:trouble .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context14 a eps:Context ;
+        rdfs:label "context14" ;
+        hs:id "14"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2571 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "0"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2571 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2571" ;
+        hs:id "2571"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2571_utterance0 .
+
+    leolaniTalk:chat2571_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2571_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+leolaniTalk:Perspectives {
+    leolaniTalk:they_cause_nothing_but_trouble_00028 a grasp:Attribution ;
+        rdfs:label "they_cause_nothing_but_trouble_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2571_utterance0_char0-114 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:they_cause_nothing_but_trouble a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_cause_nothing_but_trouble" ;
-        gaf:denotedBy leolaniTalk:chat2571_utterance0_char0-114 .
+    leolaniTalk:they_nothing-but_trouble_00028 a grasp:Attribution ;
+        rdfs:label "they_nothing-but_trouble_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2571_utterance0_char0-114 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:they_nothing-but_trouble a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_nothing-but_trouble" ;
-        gaf:denotedBy leolaniTalk:chat2571_utterance0_char0-114 .
+    leolaniTalk:chat2571_utterance0_char0-114 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2571_utterance0_char0-114" ;
+        gaf:containsDenotation leolaniWorld:nothing_but_trouble,
+            leolaniWorld:they,
+            leolaniWorld:trouble ;
+        gaf:denotes leolaniWorld:they_cause_nothing_but_trouble,
+            leolaniWorld:they_nothing-but_trouble ;
+        grasp:hasAttribution leolaniTalk:they_cause_nothing_but_trouble_00028,
+            leolaniTalk:they_nothing-but_trouble_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:32:07.367854"^^xml1:string,
+            "2024-06-05T23:32:07.367958"^^xml1:string ;
+        rdf:value "Time to nuke the third world, these people haven't evolved and when they come here they cause nothing but trouble."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2571_utterance0 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-leolaniWorld:Instances {
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nothing_but_trouble a gaf:Instance ;
-        rdfs:label "nothing-but-trouble" ;
-        gaf:denotedIn leolaniTalk:chat2571_utterance0_char0-114 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2571_utterance0_char0-114 .
-
-    leolaniWorld:trouble a gaf:Instance ;
-        rdfs:label "trouble" ;
-        gaf:denotedIn leolaniTalk:chat2571_utterance0_char0-114 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -400,110 +464,46 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_cause_nothing_but_trouble a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_cause_nothing_but_trouble" ;
+        gaf:denotedBy leolaniTalk:chat2571_utterance0_char0-114 .
+
+    leolaniWorld:they_nothing-but_trouble a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_nothing-but_trouble" ;
+        gaf:denotedBy leolaniTalk:chat2571_utterance0_char0-114 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
 leolaniWorld:they_cause_nothing_but_trouble {
     leolaniWorld:they ns11:cause leolaniWorld:nothing_but_trouble .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:they_cause_nothing_but_trouble_00028 a grasp:Attribution ;
-        rdfs:label "they_cause_nothing_but_trouble_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2571_utterance0_char0-114 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_nothing-but_trouble_00028 a grasp:Attribution ;
-        rdfs:label "they_nothing-but_trouble_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2571_utterance0_char0-114 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2571_utterance0_char0-114 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2571_utterance0_char0-114" ;
-        gaf:containsDenotation leolaniWorld:nothing_but_trouble,
-            leolaniWorld:they,
-            leolaniWorld:trouble ;
-        gaf:denotes leolaniWorld:they_cause_nothing_but_trouble,
-            leolaniWorld:they_nothing-but_trouble ;
-        grasp:hasAttribution leolaniTalk:they_cause_nothing_but_trouble_00028,
-            leolaniTalk:they_nothing-but_trouble_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:32:07.367854"^^xml1:string,
-            "2024-06-05T23:32:07.367958"^^xml1:string ;
-        rdf:value "Time to nuke the third world, these people haven't evolved and when they come here they cause nothing but trouble."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2571_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context14 a eps:Context ;
-        rdfs:label "context14" ;
-        hs:id "14"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2571 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "0"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2571 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2571" ;
-        hs:id "2571"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2571_utterance0 .
-
-    leolaniTalk:chat2571_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2571_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:they_nothing-but_trouble {
-    leolaniWorld:they ns11:nothing_but leolaniWorld:trouble .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nothing_but_trouble a gaf:Instance ;
+        rdfs:label "nothing-but-trouble" ;
+        gaf:denotedIn leolaniTalk:chat2571_utterance0_char0-114 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2571_utterance0_char0-114 .
+
+    leolaniWorld:trouble a gaf:Instance ;
+        rdfs:label "trouble" ;
+        gaf:denotedIn leolaniTalk:chat2571_utterance0_char0-114 .
 }
 

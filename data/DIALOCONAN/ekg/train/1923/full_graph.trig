@@ -22,117 +22,201 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Islam_is-incompatible-with_Western_culture a gaf:Assertion,
+leolaniWorld:Quran_is_fiction_entertainment {
+    leolaniWorld:Quran ns1:is leolaniWorld:fiction_entertainment .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context165 a eps:Context ;
+        rdfs:label "context165" ;
+        hs:id "165"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1923 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "26"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1923 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Islam_is-incompatible-with_Western_culture" ;
-        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+        rdfs:label "chat1923" ;
+        hs:id "1923"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1923_utterance0,
+            leolaniTalk:chat1923_utterance1 .
 
-    leolaniWorld:Islam_is-incompatible-with_culture a gaf:Assertion,
+    leolaniTalk:chat1923_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Islam_is-incompatible-with_culture" ;
-        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+        rdfs:label "chat1923_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Islam_is_incompatible a gaf:Assertion,
+    leolaniTalk:chat1923_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Islam_is_incompatible" ;
-        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+        rdfs:label "chat1923_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:Quran_clashes_is-with_western_culture a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Quran_clashes_is-with_western_culture" ;
-        gaf:denotedBy leolaniTalk:chat1923_utterance1_char0-58 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:Quran_is_fiction_entertainment a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Quran_is_fiction_entertainment" ;
-        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:Quran_is_pure_fiction_entertainment a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Quran_is_pure_fiction_entertainment" ;
-        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+leolaniWorld:Islam_is_incompatible {
+    leolaniWorld:Islam ns1:is leolaniWorld:incompatible .
+}
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:Quran_is_pure_fiction_entertainment {
+    leolaniWorld:Quran ns1:is leolaniWorld:pure_fiction_entertainment .
+}
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:Islam_is-incompatible-with_Western_culture {
+    leolaniWorld:Islam ns1:is_incompatible_with leolaniWorld:Western_culture .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Quran_clashes_is-with_western_culture {
-    leolaniWorld:Quran_clashes ns1:is_with leolaniWorld:western_culture .
-}
-
 leolaniWorld:Islam_is-incompatible-with_culture {
     leolaniWorld:Islam ns1:is_incompatible_with leolaniWorld:culture .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Islam_is-incompatible-with_Western_culture_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is-incompatible-with_Western_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Quran a gaf:Instance ;
-        rdfs:label "quran" ;
-        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
+    leolaniTalk:Islam_is-incompatible-with_culture_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is-incompatible-with_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Quran_clashes a gaf:Instance ;
-        rdfs:label "quran-clashes" ;
-        gaf:denotedIn leolaniTalk:chat1923_utterance1_char0-58 .
+    leolaniTalk:Islam_is_incompatible_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_incompatible_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Western_culture a gaf:Instance ;
-        rdfs:label "western-culture" ;
-        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
+    leolaniTalk:Quran_clashes_is-with_western_culture_00028 a grasp:Attribution ;
+        rdfs:label "Quran_clashes_is-with_western_culture_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1923_utterance1_char0-58 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:Quran_is_fiction_entertainment_00028 a grasp:Attribution ;
+        rdfs:label "Quran_is_fiction_entertainment_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:culture a gaf:Instance ;
-        rdfs:label "culture" ;
-        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
+    leolaniTalk:Quran_is_pure_fiction_entertainment_00028 a grasp:Attribution ;
+        rdfs:label "Quran_is_pure_fiction_entertainment_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:fiction_entertainment a gaf:Instance ;
-        rdfs:label "fiction-entertainment" ;
-        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
+    leolaniTalk:chat1923_utterance1_char0-58 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1923_utterance1_char0-58" ;
+        gaf:containsDenotation leolaniWorld:Quran_clashes,
+            leolaniWorld:western_culture ;
+        gaf:denotes leolaniWorld:Quran_clashes_is-with_western_culture ;
+        grasp:hasAttribution leolaniTalk:Quran_clashes_is-with_western_culture_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:28.563429"^^xml1:string ;
+        rdf:value "Nothing that is in the Quran clashes with western culture."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1923_utterance1 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat1923_utterance0_char0-87 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1923_utterance0_char0-87" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:Quran,
+            leolaniWorld:Western_culture,
+            leolaniWorld:culture,
+            leolaniWorld:fiction_entertainment,
+            leolaniWorld:incompatible,
+            leolaniWorld:pure_fiction_entertainment ;
+        gaf:denotes leolaniWorld:Islam_is-incompatible-with_Western_culture,
+            leolaniWorld:Islam_is-incompatible-with_culture,
+            leolaniWorld:Islam_is_incompatible,
+            leolaniWorld:Quran_is_fiction_entertainment,
+            leolaniWorld:Quran_is_pure_fiction_entertainment ;
+        grasp:hasAttribution leolaniTalk:Islam_is-incompatible-with_Western_culture_00028,
+            leolaniTalk:Islam_is-incompatible-with_culture_00028,
+            leolaniTalk:Islam_is_incompatible_00028,
+            leolaniTalk:Quran_is_fiction_entertainment_00028,
+            leolaniTalk:Quran_is_pure_fiction_entertainment_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:28.492216"^^xml1:string,
+            "2024-06-05T23:33:28.492277"^^xml1:string,
+            "2024-06-05T23:33:28.492301"^^xml1:string,
+            "2024-06-05T23:33:28.492323"^^xml1:string,
+            "2024-06-05T23:33:28.492343"^^xml1:string ;
+        rdf:value "Islam is incompatible with Western culture and the Quran is pure fiction entertainment."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1923_utterance0 .
 
-    leolaniWorld:incompatible a gaf:Instance ;
-        rdfs:label "incompatible" ;
-        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:pure_fiction_entertainment a gaf:Instance ;
-        rdfs:label "pure-fiction-entertainment" ;
-        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
-
-    leolaniWorld:western_culture a gaf:Instance ;
-        rdfs:label "western-culture" ;
-        gaf:denotedIn leolaniTalk:chat1923_utterance1_char0-58 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Quran_is_fiction_entertainment {
-    leolaniWorld:Quran ns1:is leolaniWorld:fiction_entertainment .
-}
-
-leolaniWorld:Quran_is_pure_fiction_entertainment {
-    leolaniWorld:Quran ns1:is leolaniWorld:pure_fiction_entertainment .
+leolaniWorld:Quran_clashes_is-with_western_culture {
+    leolaniWorld:Quran_clashes ns1:is_with leolaniWorld:western_culture .
 }
 
 leolaniWorld:Ontology {
@@ -470,180 +554,96 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:Islam_is_incompatible {
-    leolaniWorld:Islam ns1:is leolaniWorld:incompatible .
+leolaniWorld:Claims {
+    leolaniWorld:Islam_is-incompatible-with_Western_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-incompatible-with_Western_culture" ;
+        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+
+    leolaniWorld:Islam_is-incompatible-with_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-incompatible-with_culture" ;
+        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+
+    leolaniWorld:Islam_is_incompatible a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_incompatible" ;
+        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+
+    leolaniWorld:Quran_clashes_is-with_western_culture a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Quran_clashes_is-with_western_culture" ;
+        gaf:denotedBy leolaniTalk:chat1923_utterance1_char0-58 .
+
+    leolaniWorld:Quran_is_fiction_entertainment a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Quran_is_fiction_entertainment" ;
+        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+
+    leolaniWorld:Quran_is_pure_fiction_entertainment a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Quran_is_pure_fiction_entertainment" ;
+        gaf:denotedBy leolaniTalk:chat1923_utterance0_char0-87 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Islam_is-incompatible-with_Western_culture_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is-incompatible-with_Western_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Quran a gaf:Instance ;
+        rdfs:label "quran" ;
+        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
 
-    leolaniTalk:Islam_is-incompatible-with_culture_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is-incompatible-with_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Quran_clashes a gaf:Instance ;
+        rdfs:label "quran-clashes" ;
+        gaf:denotedIn leolaniTalk:chat1923_utterance1_char0-58 .
 
-    leolaniTalk:Islam_is_incompatible_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_incompatible_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Quran_clashes_is-with_western_culture_00028 a grasp:Attribution ;
-        rdfs:label "Quran_clashes_is-with_western_culture_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1923_utterance1_char0-58 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Quran_is_fiction_entertainment_00028 a grasp:Attribution ;
-        rdfs:label "Quran_is_fiction_entertainment_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Quran_is_pure_fiction_entertainment_00028 a grasp:Attribution ;
-        rdfs:label "Quran_is_pure_fiction_entertainment_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1923_utterance0_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1923_utterance1_char0-58 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1923_utterance1_char0-58" ;
-        gaf:containsDenotation leolaniWorld:Quran_clashes,
-            leolaniWorld:western_culture ;
-        gaf:denotes leolaniWorld:Quran_clashes_is-with_western_culture ;
-        grasp:hasAttribution leolaniTalk:Quran_clashes_is-with_western_culture_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:28.563429"^^xml1:string ;
-        rdf:value "Nothing that is in the Quran clashes with western culture."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1923_utterance1 .
-
-    leolaniTalk:chat1923_utterance0_char0-87 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1923_utterance0_char0-87" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:Quran,
-            leolaniWorld:Western_culture,
-            leolaniWorld:culture,
-            leolaniWorld:fiction_entertainment,
-            leolaniWorld:incompatible,
-            leolaniWorld:pure_fiction_entertainment ;
-        gaf:denotes leolaniWorld:Islam_is-incompatible-with_Western_culture,
-            leolaniWorld:Islam_is-incompatible-with_culture,
-            leolaniWorld:Islam_is_incompatible,
-            leolaniWorld:Quran_is_fiction_entertainment,
-            leolaniWorld:Quran_is_pure_fiction_entertainment ;
-        grasp:hasAttribution leolaniTalk:Islam_is-incompatible-with_Western_culture_00028,
-            leolaniTalk:Islam_is-incompatible-with_culture_00028,
-            leolaniTalk:Islam_is_incompatible_00028,
-            leolaniTalk:Quran_is_fiction_entertainment_00028,
-            leolaniTalk:Quran_is_pure_fiction_entertainment_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:28.492216"^^xml1:string,
-            "2024-06-05T23:33:28.492277"^^xml1:string,
-            "2024-06-05T23:33:28.492301"^^xml1:string,
-            "2024-06-05T23:33:28.492323"^^xml1:string,
-            "2024-06-05T23:33:28.492343"^^xml1:string ;
-        rdf:value "Islam is incompatible with Western culture and the Quran is pure fiction entertainment."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1923_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context165 a eps:Context ;
-        rdfs:label "context165" ;
-        hs:id "165"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1923 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "26"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1923 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1923" ;
-        hs:id "1923"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1923_utterance0,
-            leolaniTalk:chat1923_utterance1 .
-
-    leolaniTalk:chat1923_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1923_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1923_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1923_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Western_culture a gaf:Instance ;
+        rdfs:label "western-culture" ;
+        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:culture a gaf:Instance ;
+        rdfs:label "culture" ;
+        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
 
-leolaniWorld:Islam_is-incompatible-with_Western_culture {
-    leolaniWorld:Islam ns1:is_incompatible_with leolaniWorld:Western_culture .
+    leolaniWorld:fiction_entertainment a gaf:Instance ;
+        rdfs:label "fiction-entertainment" ;
+        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:incompatible a gaf:Instance ;
+        rdfs:label "incompatible" ;
+        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:pure_fiction_entertainment a gaf:Instance ;
+        rdfs:label "pure-fiction-entertainment" ;
+        gaf:denotedIn leolaniTalk:chat1923_utterance0_char0-87 .
+
+    leolaniWorld:western_culture a gaf:Instance ;
+        rdfs:label "western-culture" ;
+        gaf:denotedIn leolaniTalk:chat1923_utterance1_char0-58 .
 }
 

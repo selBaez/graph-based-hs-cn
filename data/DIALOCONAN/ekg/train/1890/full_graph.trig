@@ -22,113 +22,196 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:They_are_guilty {
+    leolaniWorld:They ns1:are leolaniWorld:guilty .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context125 a eps:Context ;
+        rdfs:label "context125" ;
+        hs:id "125"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1890 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "83"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1890 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1890" ;
+        hs:id "1890"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1890_utterance0,
+            leolaniTalk:chat1890_utterance1 .
+
+    leolaniTalk:chat1890_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1890_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1890_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1890_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:They_are-guilty-until_proven_innocent {
+    leolaniWorld:They ns1:are_guilty_until leolaniWorld:proven_innocent .
+}
+
 leolaniWorld:people_believe_conspiracy_theories {
     leolaniWorld:people ns1:believe leolaniWorld:conspiracy_theories .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Jews_planned_11 a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_planned_11" ;
-        gaf:denotedBy leolaniTalk:chat1890_utterance0_char0-128 .
-
-    leolaniWorld:They_are-guilty-until_innocent a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are-guilty-until_innocent" ;
-        gaf:denotedBy leolaniTalk:chat1890_utterance0_char0-128 .
-
-    leolaniWorld:They_are-guilty-until_proven_innocent a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are-guilty-until_proven_innocent" ;
-        gaf:denotedBy leolaniTalk:chat1890_utterance0_char0-128 .
-
-    leolaniWorld:They_are_guilty a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_guilty" ;
-        gaf:denotedBy leolaniTalk:chat1890_utterance0_char0-128 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_believe-more_conspiracy_theories a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_believe-more_conspiracy_theories" ;
-        gaf:denotedBy leolaniTalk:chat1890_utterance1_char0-158 .
-
-    leolaniWorld:people_believe_conspiracy_theories a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_believe_conspiracy_theories" ;
-        gaf:denotedBy leolaniTalk:chat1890_utterance1_char0-158 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:people_believe-more_conspiracy_theories {
     leolaniWorld:people ns1:believe_more leolaniWorld:conspiracy_theories .
 }
 
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
 leolaniWorld:Jews_planned_11 {
     leolaniWorld:Jews ns1:planned <http://cltl.nl/leolani/world/9/11> .
 }
 
-leolaniWorld:Instances {
-    <http://cltl.nl/leolani/world/9/11> a gaf:Instance ;
-        rdfs:label "9-11" ;
-        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_planned_11_00028 a grasp:Attribution ;
+        rdfs:label "Jews_planned_11_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1890_utterance0_char0-128 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
+    leolaniTalk:They_are-guilty-until_innocent_00028 a grasp:Attribution ;
+        rdfs:label "They_are-guilty-until_innocent_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1890_utterance0_char0-128 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
+    leolaniTalk:They_are-guilty-until_proven_innocent_00028 a grasp:Attribution ;
+        rdfs:label "They_are-guilty-until_proven_innocent_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1890_utterance0_char0-128 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:They_are_guilty_00028 a grasp:Attribution ;
+        rdfs:label "They_are_guilty_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1890_utterance0_char0-128 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:conspiracy_theories a gaf:Instance ;
-        rdfs:label "conspiracy-theories" ;
-        gaf:denotedIn leolaniTalk:chat1890_utterance1_char0-158 .
+    leolaniTalk:people_believe-more_conspiracy_theories_00028 a grasp:Attribution ;
+        rdfs:label "people_believe-more_conspiracy_theories_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1890_utterance1_char0-158 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:guilty a gaf:Instance ;
-        rdfs:label "guilty" ;
-        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
+    leolaniTalk:people_believe_conspiracy_theories_00028 a grasp:Attribution ;
+        rdfs:label "people_believe_conspiracy_theories_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1890_utterance1_char0-158 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat1890_utterance1_char0-158 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1890_utterance1_char0-158" ;
+        gaf:containsDenotation leolaniWorld:conspiracy_theories,
+            leolaniWorld:people ;
+        gaf:denotes leolaniWorld:people_believe-more_conspiracy_theories,
+            leolaniWorld:people_believe_conspiracy_theories ;
+        grasp:hasAttribution leolaniTalk:people_believe-more_conspiracy_theories_00028,
+            leolaniTalk:people_believe_conspiracy_theories_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:43.656541"^^xml1:string,
+            "2024-06-05T23:08:43.656604"^^xml1:string ;
+        rdf:value "Some people tend to believe conspiracy theories more, but even they would benefit from a shared perspective on this, especially one based on factual evidence."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1890_utterance1 .
 
-    leolaniWorld:innocent a gaf:Instance ;
-        rdfs:label "innocent" ;
-        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
+    leolaniTalk:chat1890_utterance0_char0-128 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1890_utterance0_char0-128" ;
+        gaf:containsDenotation <http://cltl.nl/leolani/world/9/11>,
+            leolaniWorld:Jews,
+            leolaniWorld:They,
+            leolaniWorld:guilty,
+            leolaniWorld:innocent,
+            leolaniWorld:proven_innocent ;
+        gaf:denotes leolaniWorld:Jews_planned_11,
+            leolaniWorld:They_are-guilty-until_innocent,
+            leolaniWorld:They_are-guilty-until_proven_innocent,
+            leolaniWorld:They_are_guilty ;
+        grasp:hasAttribution leolaniTalk:Jews_planned_11_00028,
+            leolaniTalk:They_are-guilty-until_innocent_00028,
+            leolaniTalk:They_are-guilty-until_proven_innocent_00028,
+            leolaniTalk:They_are_guilty_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:43.548075"^^xml1:string,
+            "2024-06-05T23:08:43.548133"^^xml1:string,
+            "2024-06-05T23:08:43.548158"^^xml1:string,
+            "2024-06-05T23:08:43.548180"^^xml1:string ;
+        rdf:value "Because the Jews planned 9/11, of course! This is all about Race and 'Enlightenment'. They are all guilty until proven innocent."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1890_utterance0 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1890_utterance1_char0-158 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:proven_innocent a gaf:Instance ;
-        rdfs:label "proven-innocent" ;
-        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
-}
-
-leolaniWorld:They_are_guilty {
-    leolaniWorld:They ns1:are leolaniWorld:guilty .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -466,179 +549,96 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_planned_11 a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_planned_11" ;
+        gaf:denotedBy leolaniTalk:chat1890_utterance0_char0-128 .
+
+    leolaniWorld:They_are-guilty-until_innocent a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-guilty-until_innocent" ;
+        gaf:denotedBy leolaniTalk:chat1890_utterance0_char0-128 .
+
+    leolaniWorld:They_are-guilty-until_proven_innocent a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are-guilty-until_proven_innocent" ;
+        gaf:denotedBy leolaniTalk:chat1890_utterance0_char0-128 .
+
+    leolaniWorld:They_are_guilty a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_guilty" ;
+        gaf:denotedBy leolaniTalk:chat1890_utterance0_char0-128 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_believe-more_conspiracy_theories a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_believe-more_conspiracy_theories" ;
+        gaf:denotedBy leolaniTalk:chat1890_utterance1_char0-158 .
+
+    leolaniWorld:people_believe_conspiracy_theories a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_believe_conspiracy_theories" ;
+        gaf:denotedBy leolaniTalk:chat1890_utterance1_char0-158 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:They_are-guilty-until_innocent {
     leolaniWorld:They ns1:are_guilty_until leolaniWorld:innocent .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_planned_11_00028 a grasp:Attribution ;
-        rdfs:label "Jews_planned_11_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1890_utterance0_char0-128 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    <http://cltl.nl/leolani/world/9/11> a gaf:Instance ;
+        rdfs:label "9-11" ;
+        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
 
-    leolaniTalk:They_are-guilty-until_innocent_00028 a grasp:Attribution ;
-        rdfs:label "They_are-guilty-until_innocent_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1890_utterance0_char0-128 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
 
-    leolaniTalk:They_are-guilty-until_proven_innocent_00028 a grasp:Attribution ;
-        rdfs:label "They_are-guilty-until_proven_innocent_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1890_utterance0_char0-128 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_are_guilty_00028 a grasp:Attribution ;
-        rdfs:label "They_are_guilty_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1890_utterance0_char0-128 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_believe-more_conspiracy_theories_00028 a grasp:Attribution ;
-        rdfs:label "people_believe-more_conspiracy_theories_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1890_utterance1_char0-158 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_believe_conspiracy_theories_00028 a grasp:Attribution ;
-        rdfs:label "people_believe_conspiracy_theories_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1890_utterance1_char0-158 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1890_utterance1_char0-158 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1890_utterance1_char0-158" ;
-        gaf:containsDenotation leolaniWorld:conspiracy_theories,
-            leolaniWorld:people ;
-        gaf:denotes leolaniWorld:people_believe-more_conspiracy_theories,
-            leolaniWorld:people_believe_conspiracy_theories ;
-        grasp:hasAttribution leolaniTalk:people_believe-more_conspiracy_theories_00028,
-            leolaniTalk:people_believe_conspiracy_theories_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:43.656541"^^xml1:string,
-            "2024-06-05T23:08:43.656604"^^xml1:string ;
-        rdf:value "Some people tend to believe conspiracy theories more, but even they would benefit from a shared perspective on this, especially one based on factual evidence."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1890_utterance1 .
-
-    leolaniTalk:chat1890_utterance0_char0-128 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1890_utterance0_char0-128" ;
-        gaf:containsDenotation <http://cltl.nl/leolani/world/9/11>,
-            leolaniWorld:Jews,
-            leolaniWorld:They,
-            leolaniWorld:guilty,
-            leolaniWorld:innocent,
-            leolaniWorld:proven_innocent ;
-        gaf:denotes leolaniWorld:Jews_planned_11,
-            leolaniWorld:They_are-guilty-until_innocent,
-            leolaniWorld:They_are-guilty-until_proven_innocent,
-            leolaniWorld:They_are_guilty ;
-        grasp:hasAttribution leolaniTalk:Jews_planned_11_00028,
-            leolaniTalk:They_are-guilty-until_innocent_00028,
-            leolaniTalk:They_are-guilty-until_proven_innocent_00028,
-            leolaniTalk:They_are_guilty_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:43.548075"^^xml1:string,
-            "2024-06-05T23:08:43.548133"^^xml1:string,
-            "2024-06-05T23:08:43.548158"^^xml1:string,
-            "2024-06-05T23:08:43.548180"^^xml1:string ;
-        rdf:value "Because the Jews planned 9/11, of course! This is all about Race and 'Enlightenment'. They are all guilty until proven innocent."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1890_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:They_are-guilty-until_proven_innocent {
-    leolaniWorld:They ns1:are_guilty_until leolaniWorld:proven_innocent .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context125 a eps:Context ;
-        rdfs:label "context125" ;
-        hs:id "125"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1890 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "83"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1890 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1890" ;
-        hs:id "1890"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1890_utterance0,
-            leolaniTalk:chat1890_utterance1 .
-
-    leolaniTalk:chat1890_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1890_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1890_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1890_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:conspiracy_theories a gaf:Instance ;
+        rdfs:label "conspiracy-theories" ;
+        gaf:denotedIn leolaniTalk:chat1890_utterance1_char0-158 .
+
+    leolaniWorld:guilty a gaf:Instance ;
+        rdfs:label "guilty" ;
+        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:innocent a gaf:Instance ;
+        rdfs:label "innocent" ;
+        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1890_utterance1_char0-158 .
+
+    leolaniWorld:proven_innocent a gaf:Instance ;
+        rdfs:label "proven-innocent" ;
+        gaf:denotedIn leolaniTalk:chat1890_utterance0_char0-128 .
 }
 

@@ -22,52 +22,87 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:Migrants_come_to_have {
+    leolaniWorld:Migrants ns1:come leolaniWorld:to_have .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context252 a eps:Context ;
+        rdfs:label "context252" ;
+        hs:id "252"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2118 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "138"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2118 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2118" ;
+        hs:id "2118"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2118_utterance1,
+            leolaniTalk:chat2118_utterance2 .
+
+    leolaniTalk:chat2118_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2118_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2118_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2118_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Migrants_come_have {
+    leolaniWorld:Migrants ns1:come leolaniWorld:have .
+}
+
 leolaniWorld:they_rape_our_women {
     leolaniWorld:they ns1:rape leolaniWorld:our_women .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Migrants_come-here_have a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_come-here_have" ;
-        gaf:denotedBy leolaniTalk:chat2118_utterance1_char0-61 .
-
-    leolaniWorld:Migrants_come-here_to_have a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_come-here_to_have" ;
-        gaf:denotedBy leolaniTalk:chat2118_utterance1_char0-61 .
-
-    leolaniWorld:Migrants_come_have a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_come_have" ;
-        gaf:denotedBy leolaniTalk:chat2118_utterance1_char0-61 .
-
-    leolaniWorld:Migrants_come_to_have a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Migrants_come_to_have" ;
-        gaf:denotedBy leolaniTalk:chat2118_utterance1_char0-61 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_disturb_us a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_disturb_us" ;
-        gaf:denotedBy leolaniTalk:chat2118_utterance2_char0-47 .
-
-    leolaniWorld:they_rape_our_women a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_rape_our_women" ;
-        gaf:denotedBy leolaniTalk:chat2118_utterance2_char0-47 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
@@ -78,49 +113,107 @@ leolaniWorld:they_disturb_us {
     leolaniWorld:they ns1:disturb leolaniWorld:us .
 }
 
-leolaniWorld:Migrants_come_have {
-    leolaniWorld:Migrants ns1:come leolaniWorld:have .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat2118_utterance1_char0-61 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:have a gaf:Instance ;
-        rdfs:label "have" ;
-        gaf:denotedIn leolaniTalk:chat2118_utterance1_char0-61 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_women a gaf:Instance ;
-        rdfs:label "our-women" ;
-        gaf:denotedIn leolaniTalk:chat2118_utterance2_char0-47 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2118_utterance2_char0-47 .
-
-    leolaniWorld:to_have a gaf:Instance ;
-        rdfs:label "to-have" ;
-        gaf:denotedIn leolaniTalk:chat2118_utterance1_char0-61 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat2118_utterance2_char0-47 .
-}
-
 leolaniWorld:Migrants_come-here_have {
     leolaniWorld:Migrants ns1:come_here leolaniWorld:have .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Migrants_come-here_have_00022 a grasp:Attribution ;
+        rdfs:label "Migrants_come-here_have_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2118_utterance1_char0-61 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_come-here_to_have_00022 a grasp:Attribution ;
+        rdfs:label "Migrants_come-here_to_have_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2118_utterance1_char0-61 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_come_have_00022 a grasp:Attribution ;
+        rdfs:label "Migrants_come_have_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2118_utterance1_char0-61 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Migrants_come_to_have_00022 a grasp:Attribution ;
+        rdfs:label "Migrants_come_to_have_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2118_utterance1_char0-61 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_disturb_us_00028 a grasp:Attribution ;
+        rdfs:label "they_disturb_us_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2118_utterance2_char0-47 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_rape_our_women_00028 a grasp:Attribution ;
+        rdfs:label "they_rape_our_women_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2118_utterance2_char0-47 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2118_utterance2_char0-47 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2118_utterance2_char0-47" ;
+        gaf:containsDenotation leolaniWorld:our_women,
+            leolaniWorld:they,
+            leolaniWorld:us ;
+        gaf:denotes leolaniWorld:they_disturb_us,
+            leolaniWorld:they_rape_our_women ;
+        grasp:hasAttribution leolaniTalk:they_disturb_us_00028,
+            leolaniTalk:they_rape_our_women_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:38:47.122926"^^xml1:string,
+            "2024-06-05T23:38:47.122982"^^xml1:string ;
+        rdf:value "Of course they disturb us, they rape our women."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2118_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat2118_utterance1_char0-61 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2118_utterance1_char0-61" ;
+        gaf:containsDenotation leolaniWorld:Migrants,
+            leolaniWorld:have,
+            leolaniWorld:to_have ;
+        gaf:denotes leolaniWorld:Migrants_come-here_have,
+            leolaniWorld:Migrants_come-here_to_have,
+            leolaniWorld:Migrants_come_have,
+            leolaniWorld:Migrants_come_to_have ;
+        grasp:hasAttribution leolaniTalk:Migrants_come-here_have_00022,
+            leolaniTalk:Migrants_come-here_to_have_00022,
+            leolaniTalk:Migrants_come_have_00022,
+            leolaniTalk:Migrants_come_to_have_00022 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:38:47.049401"^^xml1:string,
+            "2024-06-05T23:38:47.049468"^^xml1:string,
+            "2024-06-05T23:38:47.049493"^^xml1:string,
+            "2024-06-05T23:38:47.049515"^^xml1:string ;
+        rdf:value "Migrants come here to have a better life, not to be annoying."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2118_utterance1 .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -458,181 +551,88 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Migrants_come-here_have a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_come-here_have" ;
+        gaf:denotedBy leolaniTalk:chat2118_utterance1_char0-61 .
+
+    leolaniWorld:Migrants_come-here_to_have a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_come-here_to_have" ;
+        gaf:denotedBy leolaniTalk:chat2118_utterance1_char0-61 .
+
+    leolaniWorld:Migrants_come_have a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_come_have" ;
+        gaf:denotedBy leolaniTalk:chat2118_utterance1_char0-61 .
+
+    leolaniWorld:Migrants_come_to_have a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Migrants_come_to_have" ;
+        gaf:denotedBy leolaniTalk:chat2118_utterance1_char0-61 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_disturb_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_disturb_us" ;
+        gaf:denotedBy leolaniTalk:chat2118_utterance2_char0-47 .
+
+    leolaniWorld:they_rape_our_women a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_rape_our_women" ;
+        gaf:denotedBy leolaniTalk:chat2118_utterance2_char0-47 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:Migrants_come-here_to_have {
     leolaniWorld:Migrants ns1:come_here leolaniWorld:to_have .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Migrants_come-here_have_00022 a grasp:Attribution ;
-        rdfs:label "Migrants_come-here_have_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2118_utterance1_char0-61 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_come-here_to_have_00022 a grasp:Attribution ;
-        rdfs:label "Migrants_come-here_to_have_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2118_utterance1_char0-61 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_come_have_00022 a grasp:Attribution ;
-        rdfs:label "Migrants_come_have_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2118_utterance1_char0-61 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Migrants_come_to_have_00022 a grasp:Attribution ;
-        rdfs:label "Migrants_come_to_have_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2118_utterance1_char0-61 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_disturb_us_00028 a grasp:Attribution ;
-        rdfs:label "they_disturb_us_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2118_utterance2_char0-47 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_rape_our_women_00028 a grasp:Attribution ;
-        rdfs:label "they_rape_our_women_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2118_utterance2_char0-47 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2118_utterance2_char0-47 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2118_utterance2_char0-47" ;
-        gaf:containsDenotation leolaniWorld:our_women,
-            leolaniWorld:they,
-            leolaniWorld:us ;
-        gaf:denotes leolaniWorld:they_disturb_us,
-            leolaniWorld:they_rape_our_women ;
-        grasp:hasAttribution leolaniTalk:they_disturb_us_00028,
-            leolaniTalk:they_rape_our_women_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:38:47.122926"^^xml1:string,
-            "2024-06-05T23:38:47.122982"^^xml1:string ;
-        rdf:value "Of course they disturb us, they rape our women."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2118_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat2118_utterance1_char0-61 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2118_utterance1_char0-61" ;
-        gaf:containsDenotation leolaniWorld:Migrants,
-            leolaniWorld:have,
-            leolaniWorld:to_have ;
-        gaf:denotes leolaniWorld:Migrants_come-here_have,
-            leolaniWorld:Migrants_come-here_to_have,
-            leolaniWorld:Migrants_come_have,
-            leolaniWorld:Migrants_come_to_have ;
-        grasp:hasAttribution leolaniTalk:Migrants_come-here_have_00022,
-            leolaniTalk:Migrants_come-here_to_have_00022,
-            leolaniTalk:Migrants_come_have_00022,
-            leolaniTalk:Migrants_come_to_have_00022 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:38:47.049401"^^xml1:string,
-            "2024-06-05T23:38:47.049468"^^xml1:string,
-            "2024-06-05T23:38:47.049493"^^xml1:string,
-            "2024-06-05T23:38:47.049515"^^xml1:string ;
-        rdf:value "Migrants come here to have a better life, not to be annoying."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2118_utterance1 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context252 a eps:Context ;
-        rdfs:label "context252" ;
-        hs:id "252"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2118 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "138"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2118 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2118" ;
-        hs:id "2118"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2118_utterance1,
-            leolaniTalk:chat2118_utterance2 .
-
-    leolaniTalk:chat2118_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2118_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2118_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2118_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat2118_utterance1_char0-61 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:have a gaf:Instance ;
+        rdfs:label "have" ;
+        gaf:denotedIn leolaniTalk:chat2118_utterance1_char0-61 .
 
-leolaniWorld:Migrants_come_to_have {
-    leolaniWorld:Migrants ns1:come leolaniWorld:to_have .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_women a gaf:Instance ;
+        rdfs:label "our-women" ;
+        gaf:denotedIn leolaniTalk:chat2118_utterance2_char0-47 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2118_utterance2_char0-47 .
+
+    leolaniWorld:to_have a gaf:Instance ;
+        rdfs:label "to-have" ;
+        gaf:denotedIn leolaniTalk:chat2118_utterance1_char0-61 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat2118_utterance2_char0-47 .
 }
 

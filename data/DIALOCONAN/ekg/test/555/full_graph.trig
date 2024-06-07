@@ -24,6 +24,124 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+ns12:s_be_honest {
+    ns12:s ns21:be leolaniWorld:honest .
+}
+
+leolaniWorld:Women_are-capable-of_thinking_for_themselves {
+    leolaniWorld:Women ns21:are_capable_of leolaniWorld:thinking_for_themselves .
+}
+
+leolaniWorld:that_s-for_sure {
+    leolaniWorld:that ns1:s_for leolaniWorld:sure .
+}
+
+leolaniWorld:Women_are-capable-of_thinking {
+    leolaniWorld:Women ns21:are_capable_of leolaniWorld:thinking .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context201 a eps:Context ;
+        rdfs:label "context201" ;
+        hs:id "201"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat555 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "86"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat555 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat555" ;
+        hs:id "555"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat555_utterance0,
+            leolaniTalk:chat555_utterance1,
+            leolaniTalk:chat555_utterance2 .
+
+    leolaniTalk:chat555_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat555_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat555_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat555_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat555_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat555_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Women_are_capable {
+    leolaniWorld:Women ns21:are leolaniWorld:capable .
+}
+
+leolaniWorld:Women_are-just-capable-of_thinking {
+    leolaniWorld:Women ns21:are_just_capable_of leolaniWorld:thinking .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:women_do_everything {
+    leolaniWorld:women ns21:do leolaniWorld:everything .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:Women_are-just-capable-of_thinking_for_themselves {
+    leolaniWorld:Women ns21:are_just_capable_of leolaniWorld:thinking_for_themselves .
+}
+
+leolaniWorld:Women_are_just_capable {
+    leolaniWorld:Women ns21:are leolaniWorld:just_capable .
+}
+
 leolaniTalk:Perspectives {
     <http://cltl.nl/leolani/talk/'s_be_honest_00028> a grasp:Attribution ;
         rdfs:label "'s_be_honest_00028" ;
@@ -175,72 +293,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    ns12:s a gaf:Instance ;
-        rdfs:label "s" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance2_char0-72 .
-
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance0_char0-27,
-            leolaniTalk:chat555_utterance1_char0-70 .
-
-    leolaniWorld:capable a gaf:Instance ;
-        rdfs:label "capable" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:everything a gaf:Instance ;
-        rdfs:label "everything" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance2_char0-72 .
-
-    leolaniWorld:honest a gaf:Instance ;
-        rdfs:label "honest" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance2_char0-72 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:just_capable a gaf:Instance ;
-        rdfs:label "just-capable" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:should_patronized a gaf:Instance ;
-        rdfs:label "should-patronized" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance0_char0-27 .
-
-    leolaniWorld:sure a gaf:Instance ;
-        rdfs:label "sure" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
-
-    leolaniWorld:that a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
-
-    leolaniWorld:thinking a gaf:Instance ;
-        rdfs:label "thinking" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
-
-    leolaniWorld:thinking_for_themselves a gaf:Instance ;
-        rdfs:label "thinking-for-themselves" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat555_utterance2_char0-72 .
-}
-
-leolaniWorld:Women_are-just-capable-of_thinking_for_themselves {
-    leolaniWorld:Women ns21:are_just_capable_of leolaniWorld:thinking_for_themselves .
 }
 
 leolaniWorld:Ontology {
@@ -578,100 +630,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:women_do_everything {
-    leolaniWorld:women ns21:do leolaniWorld:everything .
-}
-
-leolaniWorld:that_s-for_sure {
-    leolaniWorld:that ns1:s_for leolaniWorld:sure .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Women_are_capable {
-    leolaniWorld:Women ns21:are leolaniWorld:capable .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context201 a eps:Context ;
-        rdfs:label "context201" ;
-        hs:id "201"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat555 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "86"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat555 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat555" ;
-        hs:id "555"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat555_utterance0,
-            leolaniTalk:chat555_utterance1,
-            leolaniTalk:chat555_utterance2 .
-
-    leolaniTalk:chat555_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat555_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat555_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat555_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat555_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat555_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:Women_should_should_patronized {
-    leolaniWorld:Women ns21:should leolaniWorld:should_patronized .
-}
-
 leolaniWorld:Claims {
     ns12:s_be_honest a gaf:Assertion,
             sem:Event ;
@@ -736,27 +694,69 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-ns12:s_be_honest {
-    ns12:s ns21:be leolaniWorld:honest .
+leolaniWorld:Women_should_should_patronized {
+    leolaniWorld:Women ns21:should leolaniWorld:should_patronized .
 }
 
-leolaniWorld:Women_are-capable-of_thinking {
-    leolaniWorld:Women ns21:are_capable_of leolaniWorld:thinking .
-}
+leolaniWorld:Instances {
+    ns12:s a gaf:Instance ;
+        rdfs:label "s" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance2_char0-72 .
 
-leolaniWorld:Women_are-just-capable-of_thinking {
-    leolaniWorld:Women ns21:are_just_capable_of leolaniWorld:thinking .
-}
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance0_char0-27,
+            leolaniTalk:chat555_utterance1_char0-70 .
 
-leolaniWorld:Women_are_just_capable {
-    leolaniWorld:Women ns21:are leolaniWorld:just_capable .
-}
+    leolaniWorld:capable a gaf:Instance ;
+        rdfs:label "capable" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
 
-leolaniWorld:Women_are-capable-of_thinking_for_themselves {
-    leolaniWorld:Women ns21:are_capable_of leolaniWorld:thinking_for_themselves .
-}
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:everything a gaf:Instance ;
+        rdfs:label "everything" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance2_char0-72 .
+
+    leolaniWorld:honest a gaf:Instance ;
+        rdfs:label "honest" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance2_char0-72 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:just_capable a gaf:Instance ;
+        rdfs:label "just-capable" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:should_patronized a gaf:Instance ;
+        rdfs:label "should-patronized" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance0_char0-27 .
+
+    leolaniWorld:sure a gaf:Instance ;
+        rdfs:label "sure" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
+
+    leolaniWorld:that a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
+
+    leolaniWorld:thinking a gaf:Instance ;
+        rdfs:label "thinking" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
+
+    leolaniWorld:thinking_for_themselves a gaf:Instance ;
+        rdfs:label "thinking-for-themselves" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance1_char0-70 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat555_utterance2_char0-72 .
 }
 

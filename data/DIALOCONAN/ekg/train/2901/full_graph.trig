@@ -23,112 +23,182 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Islam_is-religion_acceptable_as_other_religions a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is-religion_acceptable_as_other_religions" ;
-        gaf:denotedBy leolaniTalk:chat2901_utterance1_char0-91 .
-
-    leolaniWorld:Islam_is-religion_just_acceptable_as_other_religions a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is-religion_just_acceptable_as_other_religions" ;
-        gaf:denotedBy leolaniTalk:chat2901_utterance1_char0-91 .
-
-    leolaniWorld:Islam_is_religion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Islam_is_religion" ;
-        gaf:denotedBy leolaniTalk:chat2901_utterance1_char0-91 .
-
-    leolaniWorld:Muslims_are-problem-for_other_religions a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are-problem-for_other_religions" ;
-        gaf:denotedBy leolaniTalk:chat2901_utterance0_char0-46 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    ns1:t a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_n't" ;
-        gaf:denotedBy leolaniTalk:chat2901_utterance1_char0-91 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Islam_is-religion_acceptable_as_other_religions {
-    leolaniWorld:Islam ns11:is_religion leolaniWorld:acceptable_as_other_religions .
+ns1:t {
+    leolaniWorld:they ns11:are <http://cltl.nl/leolani/world/n't> .
 }
 
 leolaniWorld:Islam_is_religion {
     leolaniWorld:Islam ns11:is leolaniWorld:religion .
 }
 
+leolaniTalk:Interactions {
+    leolaniContext:context162 a eps:Context ;
+        rdfs:label "context162" ;
+        hs:id "162"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2901 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "26"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2901 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2901" ;
+        hs:id "2901"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2901_utterance0,
+            leolaniTalk:chat2901_utterance1 .
+
+    leolaniTalk:chat2901_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2901_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2901_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2901_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniWorld:Muslims_are-problem-for_other_religions {
     leolaniWorld:Muslims ns11:are_problem_for leolaniWorld:other_religions .
 }
 
-leolaniWorld:Islam_is-religion_just_acceptable_as_other_religions {
-    leolaniWorld:Islam ns11:is_religion leolaniWorld:just_acceptable_as_other_religions .
+leolaniWorld:Islam_is-religion_acceptable_as_other_religions {
+    leolaniWorld:Islam ns11:is_religion leolaniWorld:acceptable_as_other_religions .
 }
 
-ns1:t {
-    leolaniWorld:they ns11:are <http://cltl.nl/leolani/world/n't> .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Islam_is-religion_acceptable_as_other_religions_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is-religion_acceptable_as_other_religions_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2901_utterance1_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
+    leolaniTalk:Islam_is-religion_just_acceptable_as_other_religions_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is-religion_just_acceptable_as_other_religions_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2901_utterance1_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat2901_utterance0_char0-46 .
+    leolaniTalk:Islam_is_religion_00028 a grasp:Attribution ;
+        rdfs:label "Islam_is_religion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2901_utterance1_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:acceptable_as_other_religions a gaf:Instance ;
-        rdfs:label "acceptable-as-other-religions" ;
-        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
+    leolaniTalk:Muslims_are-problem-for_other_religions_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_are-problem-for_other_religions_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2901_utterance0_char0-46 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat2901_utterance0_char0-46 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2901_utterance0_char0-46" ;
+        gaf:containsDenotation leolaniWorld:Muslims,
+            leolaniWorld:other_religions ;
+        gaf:denotes leolaniWorld:Muslims_are-problem-for_other_religions ;
+        grasp:hasAttribution leolaniTalk:Muslims_are-problem-for_other_religions_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:01.281080"^^xml1:string ;
+        rdf:value "Muslims are a problem for all other religions."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2901_utterance0 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    <http://cltl.nl/leolani/talk/they_are_n't_00028> a grasp:Attribution ;
+        rdfs:label "they_are_n't_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2901_utterance1_char0-91 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:just_acceptable_as_other_religions a gaf:Instance ;
-        rdfs:label "just-acceptable-as-other-religions" ;
-        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
+    leolaniTalk:chat2901_utterance1_char0-91 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2901_utterance1_char0-91" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:acceptable_as_other_religions,
+            leolaniWorld:just_acceptable_as_other_religions,
+            <http://cltl.nl/leolani/world/n't>,
+            leolaniWorld:religion,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:Islam_is-religion_acceptable_as_other_religions,
+            leolaniWorld:Islam_is-religion_just_acceptable_as_other_religions,
+            leolaniWorld:Islam_is_religion,
+            ns1:t ;
+        grasp:hasAttribution leolaniTalk:Islam_is-religion_acceptable_as_other_religions_00028,
+            leolaniTalk:Islam_is-religion_just_acceptable_as_other_religions_00028,
+            leolaniTalk:Islam_is_religion_00028,
+            <http://cltl.nl/leolani/talk/they_are_n't_00028> ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:35:01.367219"^^xml1:string,
+            "2024-06-05T23:35:01.367275"^^xml1:string,
+            "2024-06-05T23:35:01.367299"^^xml1:string,
+            "2024-06-05T23:35:01.367325"^^xml1:string ;
+        rdf:value "No, they aren't. Islam is a religion that is just as acceptable as all the other religions."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2901_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    <http://cltl.nl/leolani/world/n't> a gaf:Instance ;
-        rdfs:label "n-t" ;
-        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:other_religions a gaf:Instance ;
-        rdfs:label "other-religions" ;
-        gaf:denotedIn leolaniTalk:chat2901_utterance0_char0-46 .
-
-    leolaniWorld:religion a gaf:Instance ;
-        rdfs:label "religion" ;
-        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -466,161 +536,91 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Islam_is-religion_just_acceptable_as_other_religions {
+    leolaniWorld:Islam ns11:is_religion leolaniWorld:just_acceptable_as_other_religions .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Islam_is-religion_acceptable_as_other_religions_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is-religion_acceptable_as_other_religions_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2901_utterance1_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Islam_is-religion_acceptable_as_other_religions a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-religion_acceptable_as_other_religions" ;
+        gaf:denotedBy leolaniTalk:chat2901_utterance1_char0-91 .
 
-    leolaniTalk:Islam_is-religion_just_acceptable_as_other_religions_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is-religion_just_acceptable_as_other_religions_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2901_utterance1_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Islam_is-religion_just_acceptable_as_other_religions a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is-religion_just_acceptable_as_other_religions" ;
+        gaf:denotedBy leolaniTalk:chat2901_utterance1_char0-91 .
 
-    leolaniTalk:Islam_is_religion_00028 a grasp:Attribution ;
-        rdfs:label "Islam_is_religion_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2901_utterance1_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Islam_is_religion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Islam_is_religion" ;
+        gaf:denotedBy leolaniTalk:chat2901_utterance1_char0-91 .
 
-    leolaniTalk:Muslims_are-problem-for_other_religions_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_are-problem-for_other_religions_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2901_utterance0_char0-46 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Muslims_are-problem-for_other_religions a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are-problem-for_other_religions" ;
+        gaf:denotedBy leolaniTalk:chat2901_utterance0_char0-46 .
 
-    leolaniTalk:chat2901_utterance0_char0-46 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2901_utterance0_char0-46" ;
-        gaf:containsDenotation leolaniWorld:Muslims,
-            leolaniWorld:other_religions ;
-        gaf:denotes leolaniWorld:Muslims_are-problem-for_other_religions ;
-        grasp:hasAttribution leolaniTalk:Muslims_are-problem-for_other_religions_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:01.281080"^^xml1:string ;
-        rdf:value "Muslims are a problem for all other religions."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2901_utterance0 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    <http://cltl.nl/leolani/talk/they_are_n't_00028> a grasp:Attribution ;
-        rdfs:label "they_are_n't_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2901_utterance1_char0-91 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat2901_utterance1_char0-91 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2901_utterance1_char0-91" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:acceptable_as_other_religions,
-            leolaniWorld:just_acceptable_as_other_religions,
-            <http://cltl.nl/leolani/world/n't>,
-            leolaniWorld:religion,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:Islam_is-religion_acceptable_as_other_religions,
-            leolaniWorld:Islam_is-religion_just_acceptable_as_other_religions,
-            leolaniWorld:Islam_is_religion,
-            ns1:t ;
-        grasp:hasAttribution leolaniTalk:Islam_is-religion_acceptable_as_other_religions_00028,
-            leolaniTalk:Islam_is-religion_just_acceptable_as_other_religions_00028,
-            leolaniTalk:Islam_is_religion_00028,
-            <http://cltl.nl/leolani/talk/they_are_n't_00028> ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:35:01.367219"^^xml1:string,
-            "2024-06-05T23:35:01.367275"^^xml1:string,
-            "2024-06-05T23:35:01.367299"^^xml1:string,
-            "2024-06-05T23:35:01.367325"^^xml1:string ;
-        rdf:value "No, they aren't. Islam is a religion that is just as acceptable as all the other religions."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2901_utterance1 .
+    ns1:t a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_n't" ;
+        gaf:denotedBy leolaniTalk:chat2901_utterance1_char0-91 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context162 a eps:Context ;
-        rdfs:label "context162" ;
-        hs:id "162"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2901 .
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat2901_utterance0_char0-46 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "26"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2901 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2901" ;
-        hs:id "2901"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2901_utterance0,
-            leolaniTalk:chat2901_utterance1 .
-
-    leolaniTalk:chat2901_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2901_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2901_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2901_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:acceptable_as_other_religions a gaf:Instance ;
+        rdfs:label "acceptable-as-other-religions" ;
+        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:just_acceptable_as_other_religions a gaf:Instance ;
+        rdfs:label "just-acceptable-as-other-religions" ;
+        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    <http://cltl.nl/leolani/world/n't> a gaf:Instance ;
+        rdfs:label "n-t" ;
+        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
+
+    leolaniWorld:other_religions a gaf:Instance ;
+        rdfs:label "other-religions" ;
+        gaf:denotedIn leolaniTalk:chat2901_utterance0_char0-46 .
+
+    leolaniWorld:religion a gaf:Instance ;
+        rdfs:label "religion" ;
+        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2901_utterance1_char0-91 .
 }
 

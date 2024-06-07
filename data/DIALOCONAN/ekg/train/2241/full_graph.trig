@@ -22,146 +22,229 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Gay_men_are-burden-to_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_are-burden-to_society" ;
-        gaf:denotedBy leolaniTalk:chat2241_utterance2_char0-69 .
-
-    leolaniWorld:Gay_men_are_burden a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_are_burden" ;
-        gaf:denotedBy leolaniTalk:chat2241_utterance2_char0-69 .
-
-    leolaniWorld:It_would_would_unfair a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_would_would_unfair" ;
-        gaf:denotedBy leolaniTalk:chat2241_utterance1_char0-114 .
-
-    leolaniWorld:That_is_simply_unthinkable a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "That_is_simply_unthinkable" ;
-        gaf:denotedBy leolaniTalk:chat2241_utterance1_char0-114 .
-
-    leolaniWorld:They_should_should_isolated a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_should_should_isolated" ;
-        gaf:denotedBy leolaniTalk:chat2241_utterance2_char0-69 .
-
-    leolaniWorld:We_should-ban_homosexuals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_should-ban_homosexuals" ;
-        gaf:denotedBy leolaniTalk:chat2241_utterance0_char0-30 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:you_crminalise_love a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_crminalise_love" ;
-        gaf:denotedBy leolaniTalk:chat2241_utterance1_char0-114 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
 leolaniWorld:you_crminalise_love {
     leolaniWorld:you ns1:crminalise leolaniWorld:love .
 }
 
-leolaniWorld:Gay_men_are-burden-to_society {
-    leolaniWorld:Gay_men ns1:are_burden_to leolaniWorld:society .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context205 a eps:Context ;
+        rdfs:label "context205" ;
+        hs:id "205"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:Gay_men a gaf:Instance ;
-        rdfs:label "gay-men" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2241 .
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:That a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "172"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
+    leolaniTalk:chat2241 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2241" ;
+        hs:id "2241"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2241_utterance0,
+            leolaniTalk:chat2241_utterance1,
+            leolaniTalk:chat2241_utterance2 .
 
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance0_char0-30 .
+    leolaniTalk:chat2241_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2241_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:burden a gaf:Instance ;
-        rdfs:label "burden" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
+    leolaniTalk:chat2241_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2241_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2241_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2241_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:homosexuals a gaf:Instance ;
-        rdfs:label "homosexuals" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance0_char0-30 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:love a gaf:Instance ;
-        rdfs:label "love" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
-
-    leolaniWorld:should_isolated a gaf:Instance ;
-        rdfs:label "should-isolated" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
-
-    leolaniWorld:simply_unthinkable a gaf:Instance ;
-        rdfs:label "simply-unthinkable" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
-
-    leolaniWorld:would_unfair a gaf:Instance ;
-        rdfs:label "would-unfair" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
-}
-
-leolaniWorld:That_is_simply_unthinkable {
-    leolaniWorld:That ns1:is leolaniWorld:simply_unthinkable .
 }
 
 leolaniWorld:It_would_would_unfair {
     leolaniWorld:It ns1:would leolaniWorld:would_unfair .
 }
 
+leolaniWorld:That_is_simply_unthinkable {
+    leolaniWorld:That ns1:is leolaniWorld:simply_unthinkable .
+}
+
 leolaniWorld:They_should_should_isolated {
     leolaniWorld:They ns1:should leolaniWorld:should_isolated .
 }
 
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
 leolaniWorld:Gay_men_are_burden {
     leolaniWorld:Gay_men ns1:are leolaniWorld:burden .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Gay_men_are-burden-to_society_00028 a grasp:Attribution ;
+        rdfs:label "Gay_men_are-burden-to_society_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2241_utterance2_char0-69 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Gay_men_are_burden_00028 a grasp:Attribution ;
+        rdfs:label "Gay_men_are_burden_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2241_utterance2_char0-69 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:It_would_would_unfair_0004 a grasp:Attribution ;
+        rdfs:label "It_would_would_unfair_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2241_utterance1_char0-114 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:That_is_simply_unthinkable_0004 a grasp:Attribution ;
+        rdfs:label "That_is_simply_unthinkable_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2241_utterance1_char0-114 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_should_should_isolated_00028 a grasp:Attribution ;
+        rdfs:label "They_should_should_isolated_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2241_utterance2_char0-69 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_should-ban_homosexuals_00028 a grasp:Attribution ;
+        rdfs:label "We_should-ban_homosexuals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2241_utterance0_char0-30 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2241_utterance0_char0-30 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2241_utterance0_char0-30" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:homosexuals ;
+        gaf:denotes leolaniWorld:We_should-ban_homosexuals ;
+        grasp:hasAttribution leolaniTalk:We_should-ban_homosexuals_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:58.722456"^^xml1:string ;
+        rdf:value "We should ban all homosexuals."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2241_utterance0 .
+
+    leolaniTalk:you_crminalise_love_0004 a grasp:Attribution ;
+        rdfs:label "you_crminalise_love_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat2241_utterance1_char0-114 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2241_utterance1_char0-114 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2241_utterance1_char0-114" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:That,
+            leolaniWorld:love,
+            leolaniWorld:simply_unthinkable,
+            leolaniWorld:would_unfair,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:It_would_would_unfair,
+            leolaniWorld:That_is_simply_unthinkable,
+            leolaniWorld:you_crminalise_love ;
+        grasp:hasAttribution leolaniTalk:It_would_would_unfair_0004,
+            leolaniTalk:That_is_simply_unthinkable_0004,
+            leolaniTalk:you_crminalise_love_0004 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:58.820389"^^xml1:string,
+            "2024-06-05T23:08:58.820441"^^xml1:string,
+            "2024-06-05T23:08:58.820465"^^xml1:string ;
+        rdf:value "That is simply unthinkable. Why should we? It would be unfair, and it just means that you want to crminalise love."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2241_utterance1 .
+
+    leolaniTalk:chat2241_utterance2_char0-69 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2241_utterance2_char0-69" ;
+        gaf:containsDenotation leolaniWorld:Gay_men,
+            leolaniWorld:They,
+            leolaniWorld:burden,
+            leolaniWorld:should_isolated,
+            leolaniWorld:society ;
+        gaf:denotes leolaniWorld:Gay_men_are-burden-to_society,
+            leolaniWorld:Gay_men_are_burden,
+            leolaniWorld:They_should_should_isolated ;
+        grasp:hasAttribution leolaniTalk:Gay_men_are-burden-to_society_00028,
+            leolaniTalk:Gay_men_are_burden_00028,
+            leolaniTalk:They_should_should_isolated_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:58.907464"^^xml1:string,
+            "2024-06-05T23:08:58.907516"^^xml1:string,
+            "2024-06-05T23:08:58.907539"^^xml1:string ;
+        rdf:value "Gay men are a burden to society, that's why. They should be isolated."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2241_utterance2 .
+
+    graspe:LOVE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "LOVE" .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -499,208 +582,125 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Gay_men_are-burden-to_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Gay_men_are-burden-to_society" ;
+        gaf:denotedBy leolaniTalk:chat2241_utterance2_char0-69 .
+
+    leolaniWorld:Gay_men_are_burden a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Gay_men_are_burden" ;
+        gaf:denotedBy leolaniTalk:chat2241_utterance2_char0-69 .
+
+    leolaniWorld:It_would_would_unfair a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_would_would_unfair" ;
+        gaf:denotedBy leolaniTalk:chat2241_utterance1_char0-114 .
+
+    leolaniWorld:That_is_simply_unthinkable a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "That_is_simply_unthinkable" ;
+        gaf:denotedBy leolaniTalk:chat2241_utterance1_char0-114 .
+
+    leolaniWorld:They_should_should_isolated a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_should_should_isolated" ;
+        gaf:denotedBy leolaniTalk:chat2241_utterance2_char0-69 .
+
+    leolaniWorld:We_should-ban_homosexuals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_should-ban_homosexuals" ;
+        gaf:denotedBy leolaniTalk:chat2241_utterance0_char0-30 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:you_crminalise_love a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_crminalise_love" ;
+        gaf:denotedBy leolaniTalk:chat2241_utterance1_char0-114 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:We_should-ban_homosexuals {
     leolaniWorld:We ns1:should_ban leolaniWorld:homosexuals .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Gay_men_are-burden-to_society_00028 a grasp:Attribution ;
-        rdfs:label "Gay_men_are-burden-to_society_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2241_utterance2_char0-69 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Gay_men_are_burden_00028 a grasp:Attribution ;
-        rdfs:label "Gay_men_are_burden_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2241_utterance2_char0-69 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_would_would_unfair_0004 a grasp:Attribution ;
-        rdfs:label "It_would_would_unfair_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat2241_utterance1_char0-114 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:That_is_simply_unthinkable_0004 a grasp:Attribution ;
-        rdfs:label "That_is_simply_unthinkable_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat2241_utterance1_char0-114 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_should_should_isolated_00028 a grasp:Attribution ;
-        rdfs:label "They_should_should_isolated_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2241_utterance2_char0-69 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:We_should-ban_homosexuals_00028 a grasp:Attribution ;
-        rdfs:label "We_should-ban_homosexuals_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2241_utterance0_char0-30 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2241_utterance0_char0-30 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2241_utterance0_char0-30" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:homosexuals ;
-        gaf:denotes leolaniWorld:We_should-ban_homosexuals ;
-        grasp:hasAttribution leolaniTalk:We_should-ban_homosexuals_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:58.722456"^^xml1:string ;
-        rdf:value "We should ban all homosexuals."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2241_utterance0 .
-
-    leolaniTalk:you_crminalise_love_0004 a grasp:Attribution ;
-        rdfs:label "you_crminalise_love_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat2241_utterance1_char0-114 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2241_utterance1_char0-114 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2241_utterance1_char0-114" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:That,
-            leolaniWorld:love,
-            leolaniWorld:simply_unthinkable,
-            leolaniWorld:would_unfair,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:It_would_would_unfair,
-            leolaniWorld:That_is_simply_unthinkable,
-            leolaniWorld:you_crminalise_love ;
-        grasp:hasAttribution leolaniTalk:It_would_would_unfair_0004,
-            leolaniTalk:That_is_simply_unthinkable_0004,
-            leolaniTalk:you_crminalise_love_0004 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:58.820389"^^xml1:string,
-            "2024-06-05T23:08:58.820441"^^xml1:string,
-            "2024-06-05T23:08:58.820465"^^xml1:string ;
-        rdf:value "That is simply unthinkable. Why should we? It would be unfair, and it just means that you want to crminalise love."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2241_utterance1 .
-
-    leolaniTalk:chat2241_utterance2_char0-69 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2241_utterance2_char0-69" ;
-        gaf:containsDenotation leolaniWorld:Gay_men,
-            leolaniWorld:They,
-            leolaniWorld:burden,
-            leolaniWorld:should_isolated,
-            leolaniWorld:society ;
-        gaf:denotes leolaniWorld:Gay_men_are-burden-to_society,
-            leolaniWorld:Gay_men_are_burden,
-            leolaniWorld:They_should_should_isolated ;
-        grasp:hasAttribution leolaniTalk:Gay_men_are-burden-to_society_00028,
-            leolaniTalk:Gay_men_are_burden_00028,
-            leolaniTalk:They_should_should_isolated_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:58.907464"^^xml1:string,
-            "2024-06-05T23:08:58.907516"^^xml1:string,
-            "2024-06-05T23:08:58.907539"^^xml1:string ;
-        rdf:value "Gay men are a burden to society, that's why. They should be isolated."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2241_utterance2 .
-
-    graspe:LOVE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "LOVE" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Gay_men_are-burden-to_society {
+    leolaniWorld:Gay_men ns1:are_burden_to leolaniWorld:society .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context205 a eps:Context ;
-        rdfs:label "context205" ;
-        hs:id "205"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Gay_men a gaf:Instance ;
+        rdfs:label "gay-men" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2241 .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:That a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "172"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
 
-    leolaniTalk:chat2241 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2241" ;
-        hs:id "2241"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2241_utterance0,
-            leolaniTalk:chat2241_utterance1,
-            leolaniTalk:chat2241_utterance2 .
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance0_char0-30 .
 
-    leolaniTalk:chat2241_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2241_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2241_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2241_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2241_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2241_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:burden a gaf:Instance ;
+        rdfs:label "burden" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:homosexuals a gaf:Instance ;
+        rdfs:label "homosexuals" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance0_char0-30 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:love a gaf:Instance ;
+        rdfs:label "love" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
+
+    leolaniWorld:should_isolated a gaf:Instance ;
+        rdfs:label "should-isolated" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
+
+    leolaniWorld:simply_unthinkable a gaf:Instance ;
+        rdfs:label "simply-unthinkable" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance2_char0-69 .
+
+    leolaniWorld:would_unfair a gaf:Instance ;
+        rdfs:label "would-unfair" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat2241_utterance1_char0-114 .
 }
 

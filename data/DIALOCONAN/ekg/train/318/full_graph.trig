@@ -22,6 +22,101 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:you_do-really-want_to_kill {
+    leolaniWorld:you ns11:do_really_want leolaniWorld:to_kill .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context42 a eps:Context ;
+        rdfs:label "context42" ;
+        hs:id "42"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat318 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "152"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat318 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat318" ;
+        hs:id "318"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat318_utterance0,
+            leolaniTalk:chat318_utterance1 .
+
+    leolaniTalk:chat318_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat318_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat318_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat318_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:you_kill_other_human_beings {
+    leolaniWorld:you ns11:kill leolaniWorld:other_human_beings .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:We_should-eliminate_gays {
+    leolaniWorld:We ns11:should_eliminate leolaniWorld:gays .
+}
+
+leolaniWorld:you_do-want_to_kill {
+    leolaniWorld:you ns11:do_want leolaniWorld:to_kill .
+}
+
+leolaniWorld:you_do-want_kill {
+    leolaniWorld:you ns11:do_want leolaniWorld:kill .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:We_should-eliminate_gays_00028 a grasp:Attribution ;
         rdfs:label "We_should-eliminate_gays_00028" ;
@@ -152,138 +247,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:We_should-eliminate_gays a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_should-eliminate_gays" ;
-        gaf:denotedBy leolaniTalk:chat318_utterance0_char0-25 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:you_do-really-want_kill a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-really-want_kill" ;
-        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:you_do-really-want_to_kill a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-really-want_to_kill" ;
-        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:you_do-want_kill a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-want_kill" ;
-        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:you_do-want_to_kill a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_do-want_to_kill" ;
-        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:you_kill_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_kill_beings" ;
-        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:you_kill_human_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_kill_human_beings" ;
-        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:you_kill_other_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_kill_other_beings" ;
-        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:you_kill_other_human_beings a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_kill_other_human_beings" ;
-        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:you_do-want_to_kill {
-    leolaniWorld:you ns11:do_want leolaniWorld:to_kill .
-}
-
-leolaniWorld:you_do-really-want_to_kill {
-    leolaniWorld:you ns11:do_really_want leolaniWorld:to_kill .
-}
-
-leolaniWorld:you_do-really-want_kill {
-    leolaniWorld:you ns11:do_really_want leolaniWorld:kill .
-}
-
-leolaniWorld:you_kill_human_beings {
-    leolaniWorld:you ns11:kill leolaniWorld:human_beings .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat318_utterance0_char0-25 .
-
-    leolaniWorld:beings a gaf:Instance ;
-        rdfs:label "beings" ;
-        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat318_utterance0_char0-25 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:human_beings a gaf:Instance ;
-        rdfs:label "human-beings" ;
-        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:kill a gaf:Instance ;
-        rdfs:label "kill" ;
-        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:other_beings a gaf:Instance ;
-        rdfs:label "other-beings" ;
-        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:other_human_beings a gaf:Instance ;
-        rdfs:label "other-human-beings" ;
-        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:to_kill a gaf:Instance ;
-        rdfs:label "to-kill" ;
-        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
-}
-
-leolaniWorld:you_kill_other_human_beings {
-    leolaniWorld:you ns11:kill leolaniWorld:other_human_beings .
 }
 
 leolaniWorld:Ontology {
@@ -621,90 +584,127 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:you_do-want_kill {
-    leolaniWorld:you ns11:do_want leolaniWorld:kill .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
 leolaniWorld:you_kill_beings {
     leolaniWorld:you ns11:kill leolaniWorld:beings .
+}
+
+leolaniWorld:you_kill_human_beings {
+    leolaniWorld:you ns11:kill leolaniWorld:human_beings .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:We_should-eliminate_gays a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_should-eliminate_gays" ;
+        gaf:denotedBy leolaniTalk:chat318_utterance0_char0-25 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:you_do-really-want_kill a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-really-want_kill" ;
+        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:you_do-really-want_to_kill a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-really-want_to_kill" ;
+        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:you_do-want_kill a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-want_kill" ;
+        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:you_do-want_to_kill a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_do-want_to_kill" ;
+        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:you_kill_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_kill_beings" ;
+        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:you_kill_human_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_kill_human_beings" ;
+        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:you_kill_other_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_kill_other_beings" ;
+        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:you_kill_other_human_beings a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_kill_other_human_beings" ;
+        gaf:denotedBy leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:you_kill_other_beings {
     leolaniWorld:you ns11:kill leolaniWorld:other_beings .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context42 a eps:Context ;
-        rdfs:label "context42" ;
-        hs:id "42"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat318 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "152"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat318 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat318" ;
-        hs:id "318"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat318_utterance0,
-            leolaniTalk:chat318_utterance1 .
-
-    leolaniTalk:chat318_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat318_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat318_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat318_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+leolaniWorld:you_do-really-want_kill {
+    leolaniWorld:you ns11:do_really_want leolaniWorld:kill .
 }
 
-leolaniWorld:We_should-eliminate_gays {
-    leolaniWorld:We ns11:should_eliminate leolaniWorld:gays .
+leolaniWorld:Instances {
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat318_utterance0_char0-25 .
+
+    leolaniWorld:beings a gaf:Instance ;
+        rdfs:label "beings" ;
+        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat318_utterance0_char0-25 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:human_beings a gaf:Instance ;
+        rdfs:label "human-beings" ;
+        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:kill a gaf:Instance ;
+        rdfs:label "kill" ;
+        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:other_beings a gaf:Instance ;
+        rdfs:label "other-beings" ;
+        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:other_human_beings a gaf:Instance ;
+        rdfs:label "other-human-beings" ;
+        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:to_kill a gaf:Instance ;
+        rdfs:label "to-kill" ;
+        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat318_utterance1_char0-100 .
 }
 

@@ -22,100 +22,181 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:it_is_better {
-    leolaniWorld:it ns11:is leolaniWorld:better .
+leolaniTalk:Interactions {
+    leolaniContext:context185 a eps:Context ;
+        rdfs:label "context185" ;
+        hs:id "185"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat310 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "171"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat310 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat310" ;
+        hs:id "310"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat310_utterance1,
+            leolaniTalk:chat310_utterance2 .
+
+    leolaniTalk:chat310_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat310_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat310_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat310_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:it_is_Maybe_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is_Maybe_better" ;
-        gaf:denotedBy leolaniTalk:chat310_utterance1_char0-108 .
-
-    leolaniWorld:it_is_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is_better" ;
-        gaf:denotedBy leolaniTalk:chat310_utterance1_char0-108 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_regardless_sexual_orientation a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_regardless_sexual_orientation" ;
-        gaf:denotedBy leolaniTalk:chat310_utterance1_char0-108 .
-
-    leolaniWorld:we_should-definetely-delete_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_should-definetely-delete_them" ;
-        gaf:denotedBy leolaniTalk:chat310_utterance2_char0-37 .
-
-    leolaniWorld:we_should-delete_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_should-delete_them" ;
-        gaf:denotedBy leolaniTalk:chat310_utterance2_char0-37 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:we_should-delete_them {
-    leolaniWorld:we ns11:should_delete leolaniWorld:them .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Maybe_better a gaf:Instance ;
-        rdfs:label "maybe-better" ;
-        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
-
-    leolaniWorld:better a gaf:Instance ;
-        rdfs:label "better" ;
-        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
-
-    leolaniWorld:sexual_orientation a gaf:Instance ;
-        rdfs:label "sexual-orientation" ;
-        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat310_utterance2_char0-37 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat310_utterance2_char0-37 .
-}
-
 leolaniWorld:people_regardless_sexual_orientation {
     leolaniWorld:people ns11:regardless leolaniWorld:sexual_orientation .
+}
+
+leolaniWorld:it_is_Maybe_better {
+    leolaniWorld:it ns11:is leolaniWorld:Maybe_better .
+}
+
+leolaniWorld:it_is_better {
+    leolaniWorld:it ns11:is leolaniWorld:better .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:it_is_Maybe_better_00012 a grasp:Attribution ;
+        rdfs:label "it_is_Maybe_better_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat310_utterance1_char0-108 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_is_better_00012 a grasp:Attribution ;
+        rdfs:label "it_is_better_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat310_utterance1_char0-108 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_regardless_sexual_orientation_00012 a grasp:Attribution ;
+        rdfs:label "people_regardless_sexual_orientation_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat310_utterance1_char0-108 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_should-definetely-delete_them_00023 a grasp:Attribution ;
+        rdfs:label "we_should-definetely-delete_them_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat310_utterance2_char0-37 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_should-delete_them_00023 a grasp:Attribution ;
+        rdfs:label "we_should-delete_them_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat310_utterance2_char0-37 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat310_utterance2_char0-37 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat310_utterance2_char0-37" ;
+        gaf:containsDenotation leolaniWorld:them,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_should-definetely-delete_them,
+            leolaniWorld:we_should-delete_them ;
+        grasp:hasAttribution leolaniTalk:we_should-definetely-delete_them_00023,
+            leolaniTalk:we_should-delete_them_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:00:29.097440"^^xml1:string,
+            "2024-06-05T23:00:29.097492"^^xml1:string ;
+        rdf:value "No, we should definetely delete them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat310_utterance2 .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat310_utterance1_char0-108 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat310_utterance1_char0-108" ;
+        gaf:containsDenotation leolaniWorld:Maybe_better,
+            leolaniWorld:better,
+            leolaniWorld:it,
+            leolaniWorld:people,
+            leolaniWorld:sexual_orientation ;
+        gaf:denotes leolaniWorld:it_is_Maybe_better,
+            leolaniWorld:it_is_better,
+            leolaniWorld:people_regardless_sexual_orientation ;
+        grasp:hasAttribution leolaniTalk:it_is_Maybe_better_00012,
+            leolaniTalk:it_is_better_00012,
+            leolaniTalk:people_regardless_sexual_orientation_00012 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:00:29.019660"^^xml1:string,
+            "2024-06-05T23:00:29.019716"^^xml1:string,
+            "2024-06-05T23:00:29.019739"^^xml1:string ;
+        rdf:value "Maybe it is better to learn how to treat each other with respect, regardless of people's sexual orientation."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat310_utterance1 .
+
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -457,168 +538,87 @@ leolaniWorld:we_should-definetely-delete_them {
     leolaniWorld:we ns11:should_definetely_delete leolaniWorld:them .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:it_is_Maybe_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is_Maybe_better" ;
+        gaf:denotedBy leolaniTalk:chat310_utterance1_char0-108 .
+
+    leolaniWorld:it_is_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is_better" ;
+        gaf:denotedBy leolaniTalk:chat310_utterance1_char0-108 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_regardless_sexual_orientation a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_regardless_sexual_orientation" ;
+        gaf:denotedBy leolaniTalk:chat310_utterance1_char0-108 .
+
+    leolaniWorld:we_should-definetely-delete_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_should-definetely-delete_them" ;
+        gaf:denotedBy leolaniTalk:chat310_utterance2_char0-37 .
+
+    leolaniWorld:we_should-delete_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_should-delete_them" ;
+        gaf:denotedBy leolaniTalk:chat310_utterance2_char0-37 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:it_is_Maybe_better_00012 a grasp:Attribution ;
-        rdfs:label "it_is_Maybe_better_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat310_utterance1_char0-108 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:it_is_better_00012 a grasp:Attribution ;
-        rdfs:label "it_is_better_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat310_utterance1_char0-108 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_regardless_sexual_orientation_00012 a grasp:Attribution ;
-        rdfs:label "people_regardless_sexual_orientation_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat310_utterance1_char0-108 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_should-definetely-delete_them_00023 a grasp:Attribution ;
-        rdfs:label "we_should-definetely-delete_them_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat310_utterance2_char0-37 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_should-delete_them_00023 a grasp:Attribution ;
-        rdfs:label "we_should-delete_them_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat310_utterance2_char0-37 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat310_utterance2_char0-37 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat310_utterance2_char0-37" ;
-        gaf:containsDenotation leolaniWorld:them,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_should-definetely-delete_them,
-            leolaniWorld:we_should-delete_them ;
-        grasp:hasAttribution leolaniTalk:we_should-definetely-delete_them_00023,
-            leolaniTalk:we_should-delete_them_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:00:29.097440"^^xml1:string,
-            "2024-06-05T23:00:29.097492"^^xml1:string ;
-        rdf:value "No, we should definetely delete them."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat310_utterance2 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat310_utterance1_char0-108 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat310_utterance1_char0-108" ;
-        gaf:containsDenotation leolaniWorld:Maybe_better,
-            leolaniWorld:better,
-            leolaniWorld:it,
-            leolaniWorld:people,
-            leolaniWorld:sexual_orientation ;
-        gaf:denotes leolaniWorld:it_is_Maybe_better,
-            leolaniWorld:it_is_better,
-            leolaniWorld:people_regardless_sexual_orientation ;
-        grasp:hasAttribution leolaniTalk:it_is_Maybe_better_00012,
-            leolaniTalk:it_is_better_00012,
-            leolaniTalk:people_regardless_sexual_orientation_00012 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:00:29.019660"^^xml1:string,
-            "2024-06-05T23:00:29.019716"^^xml1:string,
-            "2024-06-05T23:00:29.019739"^^xml1:string ;
-        rdf:value "Maybe it is better to learn how to treat each other with respect, regardless of people's sexual orientation."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat310_utterance1 .
-
-    graspe:APPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "APPROVAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:we_should-delete_them {
+    leolaniWorld:we ns11:should_delete leolaniWorld:them .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context185 a eps:Context ;
-        rdfs:label "context185" ;
-        hs:id "185"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Maybe_better a gaf:Instance ;
+        rdfs:label "maybe-better" ;
+        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat310 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "171"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat310 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat310" ;
-        hs:id "310"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat310_utterance1,
-            leolaniTalk:chat310_utterance2 .
-
-    leolaniTalk:chat310_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat310_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat310_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat310_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:better a gaf:Instance ;
+        rdfs:label "better" ;
+        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:it_is_Maybe_better {
-    leolaniWorld:it ns11:is leolaniWorld:Maybe_better .
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
+
+    leolaniWorld:sexual_orientation a gaf:Instance ;
+        rdfs:label "sexual-orientation" ;
+        gaf:denotedIn leolaniTalk:chat310_utterance1_char0-108 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat310_utterance2_char0-37 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat310_utterance2_char0-37 .
 }
 

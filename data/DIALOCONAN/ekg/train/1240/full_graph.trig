@@ -22,68 +22,122 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Muslims_are-part-of_European_community a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are-part-of_European_community" ;
-        gaf:denotedBy leolaniTalk:chat1240_utterance1_char0-71 .
-
-    leolaniWorld:Muslims_are-part-of_community a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are-part-of_community" ;
-        gaf:denotedBy leolaniTalk:chat1240_utterance1_char0-71 .
-
-    leolaniWorld:Muslims_are_part a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are_part" ;
-        gaf:denotedBy leolaniTalk:chat1240_utterance1_char0-71 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
 leolaniWorld:Muslims_are-part-of_community {
     leolaniWorld:Muslims ns1:are_part_of leolaniWorld:community .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:European_community a gaf:Instance ;
-        rdfs:label "european-community" ;
-        gaf:denotedIn leolaniTalk:chat1240_utterance1_char0-71 .
+leolaniTalk:Interactions {
+    leolaniContext:context170 a eps:Context ;
+        rdfs:label "context170" ;
+        hs:id "170"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat1240_utterance1_char0-71 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1240 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "50"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1240 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1240" ;
+        hs:id "1240"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1240_utterance1 .
+
+    leolaniTalk:chat1240_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1240_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
-
-    leolaniWorld:community a gaf:Instance ;
-        rdfs:label "community" ;
-        gaf:denotedIn leolaniTalk:chat1240_utterance1_char0-71 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat1240_utterance1_char0-71 .
 }
 
-leolaniWorld:Muslims_are-part-of_European_community {
-    leolaniWorld:Muslims ns1:are_part_of leolaniWorld:European_community .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Muslims_are_part {
-    leolaniWorld:Muslims ns1:are leolaniWorld:part .
+leolaniTalk:Perspectives {
+    leolaniTalk:Muslims_are-part-of_European_community_00026 a grasp:Attribution ;
+        rdfs:label "Muslims_are-part-of_European_community_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1240_utterance1_char0-71 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_are-part-of_community_00026 a grasp:Attribution ;
+        rdfs:label "Muslims_are-part-of_community_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1240_utterance1_char0-71 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_are_part_00026 a grasp:Attribution ;
+        rdfs:label "Muslims_are_part_00026" ;
+        grasp:isAttributionFor leolaniTalk:chat1240_utterance1_char0-71 ;
+        rdf:value graspe:CURIOSITY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1240_utterance1_char0-71 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1240_utterance1_char0-71" ;
+        gaf:containsDenotation leolaniWorld:European_community,
+            leolaniWorld:Muslims,
+            leolaniWorld:community,
+            leolaniWorld:part ;
+        gaf:denotes leolaniWorld:Muslims_are-part-of_European_community,
+            leolaniWorld:Muslims_are-part-of_community,
+            leolaniWorld:Muslims_are_part ;
+        grasp:hasAttribution leolaniTalk:Muslims_are-part-of_European_community_00026,
+            leolaniTalk:Muslims_are-part-of_community_00026,
+            leolaniTalk:Muslims_are_part_00026 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:33:30.713795"^^xml1:string,
+            "2024-06-05T23:33:30.713851"^^xml1:string,
+            "2024-06-05T23:33:30.713873"^^xml1:string ;
+        rdf:value "Muslims are part of the European community, why do you say differently?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1240_utterance1 .
+
+    graspe:CURIOSITY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CURIOSITY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -421,113 +475,59 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Muslims_are-part-of_European_community_00026 a grasp:Attribution ;
-        rdfs:label "Muslims_are-part-of_European_community_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1240_utterance1_char0-71 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Muslims_are-part-of_European_community a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are-part-of_European_community" ;
+        gaf:denotedBy leolaniTalk:chat1240_utterance1_char0-71 .
 
-    leolaniTalk:Muslims_are-part-of_community_00026 a grasp:Attribution ;
-        rdfs:label "Muslims_are-part-of_community_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1240_utterance1_char0-71 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Muslims_are-part-of_community a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are-part-of_community" ;
+        gaf:denotedBy leolaniTalk:chat1240_utterance1_char0-71 .
 
-    leolaniTalk:Muslims_are_part_00026 a grasp:Attribution ;
-        rdfs:label "Muslims_are_part_00026" ;
-        grasp:isAttributionFor leolaniTalk:chat1240_utterance1_char0-71 ;
-        rdf:value graspe:CURIOSITY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Muslims_are_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are_part" ;
+        gaf:denotedBy leolaniTalk:chat1240_utterance1_char0-71 .
 
-    leolaniTalk:chat1240_utterance1_char0-71 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1240_utterance1_char0-71" ;
-        gaf:containsDenotation leolaniWorld:European_community,
-            leolaniWorld:Muslims,
-            leolaniWorld:community,
-            leolaniWorld:part ;
-        gaf:denotes leolaniWorld:Muslims_are-part-of_European_community,
-            leolaniWorld:Muslims_are-part-of_community,
-            leolaniWorld:Muslims_are_part ;
-        grasp:hasAttribution leolaniTalk:Muslims_are-part-of_European_community_00026,
-            leolaniTalk:Muslims_are-part-of_community_00026,
-            leolaniTalk:Muslims_are_part_00026 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:33:30.713795"^^xml1:string,
-            "2024-06-05T23:33:30.713851"^^xml1:string,
-            "2024-06-05T23:33:30.713873"^^xml1:string ;
-        rdf:value "Muslims are part of the European community, why do you say differently?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1240_utterance1 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    graspe:CURIOSITY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CURIOSITY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context170 a eps:Context ;
-        rdfs:label "context170" ;
-        hs:id "170"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Muslims_are-part-of_European_community {
+    leolaniWorld:Muslims ns1:are_part_of leolaniWorld:European_community .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1240 .
+leolaniWorld:Muslims_are_part {
+    leolaniWorld:Muslims ns1:are leolaniWorld:part .
+}
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+leolaniWorld:Instances {
+    leolaniWorld:European_community a gaf:Instance ;
+        rdfs:label "european-community" ;
+        gaf:denotedIn leolaniTalk:chat1240_utterance1_char0-71 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "50"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1240 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1240" ;
-        hs:id "1240"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1240_utterance1 .
-
-    leolaniTalk:chat1240_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1240_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat1240_utterance1_char0-71 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:community a gaf:Instance ;
+        rdfs:label "community" ;
+        gaf:denotedIn leolaniTalk:chat1240_utterance1_char0-71 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat1240_utterance1_char0-71 .
 }
 

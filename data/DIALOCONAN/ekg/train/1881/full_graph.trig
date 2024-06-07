@@ -22,147 +22,223 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Immigrants_are-actually-good-for_our_society a gaf:Assertion,
+leolaniWorld:Immigrants_are-actually-good-for_our_society {
+    leolaniWorld:Immigrants ns1:are_actually_good_for leolaniWorld:our_society .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context233 a eps:Context ;
+        rdfs:label "context233" ;
+        hs:id "233"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1881 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "73"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1881 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Immigrants_are-actually-good-for_our_society" ;
-        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
+        rdfs:label "chat1881" ;
+        hs:id "1881"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1881_utterance0,
+            leolaniTalk:chat1881_utterance1 .
 
-    leolaniWorld:Immigrants_are-good-for_our_society a gaf:Assertion,
+    leolaniTalk:chat1881_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Immigrants_are-good-for_our_society" ;
-        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
+        rdfs:label "chat1881_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Immigrants_are_actually_good a gaf:Assertion,
+    leolaniTalk:chat1881_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Immigrants_are_actually_good" ;
-        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
+        rdfs:label "chat1881_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:Immigrants_are_good a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Immigrants_are_good" ;
-        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:our_financial_situation_could_could_have_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "our_financial_situation_could_could_have_better" ;
-        gaf:denotedBy leolaniTalk:chat1881_utterance0_char0-71 .
-
-    leolaniWorld:our_situation_could_could_have_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "our_situation_could_could_have_better" ;
-        gaf:denotedBy leolaniTalk:chat1881_utterance0_char0-71 .
-
-    leolaniWorld:they_create_wealth a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_create_wealth" ;
-        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
-
-    leolaniWorld:we_stopped_migrants a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_stopped_migrants" ;
-        gaf:denotedBy leolaniTalk:chat1881_utterance0_char0-71 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniWorld:we_stopped_migrants {
     leolaniWorld:we ns1:stopped leolaniWorld:migrants .
 }
 
-leolaniWorld:our_financial_situation_could_could_have_better {
-    leolaniWorld:our_financial_situation ns1:could leolaniWorld:could_have_better .
+leolaniWorld:they_create_wealth {
+    leolaniWorld:they ns1:create leolaniWorld:wealth .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Immigrants a gaf:Instance ;
-        rdfs:label "immigrants" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Immigrants_are-actually-good-for_our_society_0009 a grasp:Attribution ;
+        rdfs:label "Immigrants_are-actually-good-for_our_society_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:actually_good a gaf:Instance ;
-        rdfs:label "actually-good" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
+    leolaniTalk:Immigrants_are-good-for_our_society_0009 a grasp:Attribution ;
+        rdfs:label "Immigrants_are-good-for_our_society_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:Immigrants_are_actually_good_0009 a grasp:Attribution ;
+        rdfs:label "Immigrants_are_actually_good_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:could_have_better a gaf:Instance ;
-        rdfs:label "could-have-better" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+    leolaniTalk:Immigrants_are_good_0009 a grasp:Attribution ;
+        rdfs:label "Immigrants_are_good_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:good a gaf:Instance ;
-        rdfs:label "good" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
+    leolaniTalk:our_financial_situation_could_could_have_better_0006 a grasp:Attribution ;
+        rdfs:label "our_financial_situation_could_could_have_better_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat1881_utterance0_char0-71 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:our_situation_could_could_have_better_0006 a grasp:Attribution ;
+        rdfs:label "our_situation_could_could_have_better_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat1881_utterance0_char0-71 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:they_create_wealth_0009 a grasp:Attribution ;
+        rdfs:label "they_create_wealth_0009" ;
+        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
+        rdf:value graspe:ADMIRATION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:migrants a gaf:Instance ;
-        rdfs:label "migrants" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+    leolaniTalk:we_stopped_migrants_0006 a grasp:Attribution ;
+        rdfs:label "we_stopped_migrants_0006" ;
+        grasp:isAttributionFor leolaniTalk:chat1881_utterance0_char0-71 ;
+        rdf:value graspe:OPTIMISM,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:our_financial_situation a gaf:Instance ;
-        rdfs:label "our-financial-situation" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+    leolaniTalk:chat1881_utterance0_char0-71 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1881_utterance0_char0-71" ;
+        gaf:containsDenotation leolaniWorld:could_have_better,
+            leolaniWorld:migrants,
+            leolaniWorld:our_financial_situation,
+            leolaniWorld:our_situation,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:our_financial_situation_could_could_have_better,
+            leolaniWorld:our_situation_could_could_have_better,
+            leolaniWorld:we_stopped_migrants ;
+        grasp:hasAttribution leolaniTalk:our_financial_situation_could_could_have_better_0006,
+            leolaniTalk:our_situation_could_could_have_better_0006,
+            leolaniTalk:we_stopped_migrants_0006 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:03:38.882366"^^xml1:string,
+            "2024-06-05T23:03:38.882420"^^xml1:string,
+            "2024-06-05T23:03:38.882443"^^xml1:string ;
+        rdf:value "If we stopped migrants, our financial situation could have been better."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1881_utterance0 .
 
-    leolaniWorld:our_situation a gaf:Instance ;
-        rdfs:label "our-situation" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+    graspe:OPTIMISM a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "OPTIMISM" .
 
-    leolaniWorld:our_society a gaf:Instance ;
-        rdfs:label "our-society" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
+    leolaniTalk:chat1881_utterance1_char0-65 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1881_utterance1_char0-65" ;
+        gaf:containsDenotation leolaniWorld:Immigrants,
+            leolaniWorld:actually_good,
+            leolaniWorld:good,
+            leolaniWorld:our_society,
+            leolaniWorld:they,
+            leolaniWorld:wealth ;
+        gaf:denotes leolaniWorld:Immigrants_are-actually-good-for_our_society,
+            leolaniWorld:Immigrants_are-good-for_our_society,
+            leolaniWorld:Immigrants_are_actually_good,
+            leolaniWorld:Immigrants_are_good,
+            leolaniWorld:they_create_wealth ;
+        grasp:hasAttribution leolaniTalk:Immigrants_are-actually-good-for_our_society_0009,
+            leolaniTalk:Immigrants_are-good-for_our_society_0009,
+            leolaniTalk:Immigrants_are_actually_good_0009,
+            leolaniTalk:Immigrants_are_good_0009,
+            leolaniTalk:they_create_wealth_0009 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:03:38.965199"^^xml1:string,
+            "2024-06-05T23:03:38.965253"^^xml1:string,
+            "2024-06-05T23:03:38.965276"^^xml1:string,
+            "2024-06-05T23:03:38.965297"^^xml1:string,
+            "2024-06-05T23:03:38.965317"^^xml1:string ;
+        rdf:value "Immigrants are actually good for our society, they create wealth."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1881_utterance1 .
 
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
+    graspe:ADMIRATION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ADMIRATION" .
 
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:wealth a gaf:Instance ;
-        rdfs:label "wealth" ;
-        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
-}
-
-leolaniWorld:Immigrants_are-good-for_our_society {
-    leolaniWorld:Immigrants ns1:are_good_for leolaniWorld:our_society .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Immigrants_are_actually_good {
     leolaniWorld:Immigrants ns1:are leolaniWorld:actually_good .
 }
 
-leolaniWorld:our_situation_could_could_have_better {
-    leolaniWorld:our_situation ns1:could leolaniWorld:could_have_better .
-}
-
-leolaniWorld:Immigrants_are-actually-good-for_our_society {
-    leolaniWorld:Immigrants ns1:are_actually_good_for leolaniWorld:our_society .
-}
-
-leolaniWorld:they_create_wealth {
-    leolaniWorld:they ns1:create leolaniWorld:wealth .
+leolaniWorld:Immigrants_are_good {
+    leolaniWorld:Immigrants ns1:are leolaniWorld:good .
 }
 
 leolaniWorld:Ontology {
@@ -500,202 +576,126 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Immigrants_are-actually-good-for_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigrants_are-actually-good-for_our_society" ;
+        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
+
+    leolaniWorld:Immigrants_are-good-for_our_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigrants_are-good-for_our_society" ;
+        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
+
+    leolaniWorld:Immigrants_are_actually_good a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigrants_are_actually_good" ;
+        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
+
+    leolaniWorld:Immigrants_are_good a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Immigrants_are_good" ;
+        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:our_financial_situation_could_could_have_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "our_financial_situation_could_could_have_better" ;
+        gaf:denotedBy leolaniTalk:chat1881_utterance0_char0-71 .
+
+    leolaniWorld:our_situation_could_could_have_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "our_situation_could_could_have_better" ;
+        gaf:denotedBy leolaniTalk:chat1881_utterance0_char0-71 .
+
+    leolaniWorld:they_create_wealth a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_create_wealth" ;
+        gaf:denotedBy leolaniTalk:chat1881_utterance1_char0-65 .
+
+    leolaniWorld:we_stopped_migrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_stopped_migrants" ;
+        gaf:denotedBy leolaniTalk:chat1881_utterance0_char0-71 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Immigrants_are-actually-good-for_our_society_0009 a grasp:Attribution ;
-        rdfs:label "Immigrants_are-actually-good-for_our_society_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Immigrants_are-good-for_our_society_0009 a grasp:Attribution ;
-        rdfs:label "Immigrants_are-good-for_our_society_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Immigrants_are_actually_good_0009 a grasp:Attribution ;
-        rdfs:label "Immigrants_are_actually_good_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Immigrants_are_good_0009 a grasp:Attribution ;
-        rdfs:label "Immigrants_are_good_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:our_financial_situation_could_could_have_better_0006 a grasp:Attribution ;
-        rdfs:label "our_financial_situation_could_could_have_better_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat1881_utterance0_char0-71 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:our_situation_could_could_have_better_0006 a grasp:Attribution ;
-        rdfs:label "our_situation_could_could_have_better_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat1881_utterance0_char0-71 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_create_wealth_0009 a grasp:Attribution ;
-        rdfs:label "they_create_wealth_0009" ;
-        grasp:isAttributionFor leolaniTalk:chat1881_utterance1_char0-65 ;
-        rdf:value graspe:ADMIRATION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_stopped_migrants_0006 a grasp:Attribution ;
-        rdfs:label "we_stopped_migrants_0006" ;
-        grasp:isAttributionFor leolaniTalk:chat1881_utterance0_char0-71 ;
-        rdf:value graspe:OPTIMISM,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1881_utterance0_char0-71 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1881_utterance0_char0-71" ;
-        gaf:containsDenotation leolaniWorld:could_have_better,
-            leolaniWorld:migrants,
-            leolaniWorld:our_financial_situation,
-            leolaniWorld:our_situation,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:our_financial_situation_could_could_have_better,
-            leolaniWorld:our_situation_could_could_have_better,
-            leolaniWorld:we_stopped_migrants ;
-        grasp:hasAttribution leolaniTalk:our_financial_situation_could_could_have_better_0006,
-            leolaniTalk:our_situation_could_could_have_better_0006,
-            leolaniTalk:we_stopped_migrants_0006 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:03:38.882366"^^xml1:string,
-            "2024-06-05T23:03:38.882420"^^xml1:string,
-            "2024-06-05T23:03:38.882443"^^xml1:string ;
-        rdf:value "If we stopped migrants, our financial situation could have been better."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1881_utterance0 .
-
-    graspe:OPTIMISM a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "OPTIMISM" .
-
-    leolaniTalk:chat1881_utterance1_char0-65 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1881_utterance1_char0-65" ;
-        gaf:containsDenotation leolaniWorld:Immigrants,
-            leolaniWorld:actually_good,
-            leolaniWorld:good,
-            leolaniWorld:our_society,
-            leolaniWorld:they,
-            leolaniWorld:wealth ;
-        gaf:denotes leolaniWorld:Immigrants_are-actually-good-for_our_society,
-            leolaniWorld:Immigrants_are-good-for_our_society,
-            leolaniWorld:Immigrants_are_actually_good,
-            leolaniWorld:Immigrants_are_good,
-            leolaniWorld:they_create_wealth ;
-        grasp:hasAttribution leolaniTalk:Immigrants_are-actually-good-for_our_society_0009,
-            leolaniTalk:Immigrants_are-good-for_our_society_0009,
-            leolaniTalk:Immigrants_are_actually_good_0009,
-            leolaniTalk:Immigrants_are_good_0009,
-            leolaniTalk:they_create_wealth_0009 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:03:38.965199"^^xml1:string,
-            "2024-06-05T23:03:38.965253"^^xml1:string,
-            "2024-06-05T23:03:38.965276"^^xml1:string,
-            "2024-06-05T23:03:38.965297"^^xml1:string,
-            "2024-06-05T23:03:38.965317"^^xml1:string ;
-        rdf:value "Immigrants are actually good for our society, they create wealth."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1881_utterance1 .
-
-    graspe:ADMIRATION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ADMIRATION" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:our_financial_situation_could_could_have_better {
+    leolaniWorld:our_financial_situation ns1:could leolaniWorld:could_have_better .
 }
 
-leolaniWorld:Immigrants_are_good {
-    leolaniWorld:Immigrants ns1:are leolaniWorld:good .
+leolaniWorld:Immigrants_are-good-for_our_society {
+    leolaniWorld:Immigrants ns1:are_good_for leolaniWorld:our_society .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context233 a eps:Context ;
-        rdfs:label "context233" ;
-        hs:id "233"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:our_situation_could_could_have_better {
+    leolaniWorld:our_situation ns1:could leolaniWorld:could_have_better .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1881 .
+leolaniWorld:Instances {
+    leolaniWorld:Immigrants a gaf:Instance ;
+        rdfs:label "immigrants" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "73"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1881 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1881" ;
-        hs:id "1881"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1881_utterance0,
-            leolaniTalk:chat1881_utterance1 .
-
-    leolaniTalk:chat1881_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1881_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1881_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1881_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:actually_good a gaf:Instance ;
+        rdfs:label "actually-good" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:could_have_better a gaf:Instance ;
+        rdfs:label "could-have-better" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+
+    leolaniWorld:good a gaf:Instance ;
+        rdfs:label "good" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:migrants a gaf:Instance ;
+        rdfs:label "migrants" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+
+    leolaniWorld:our_financial_situation a gaf:Instance ;
+        rdfs:label "our-financial-situation" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+
+    leolaniWorld:our_situation a gaf:Instance ;
+        rdfs:label "our-situation" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+
+    leolaniWorld:our_society a gaf:Instance ;
+        rdfs:label "our-society" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance0_char0-71 .
+
+    leolaniWorld:wealth a gaf:Instance ;
+        rdfs:label "wealth" ;
+        gaf:denotedIn leolaniTalk:chat1881_utterance1_char0-65 .
 }
 

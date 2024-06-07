@@ -22,40 +22,73 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Muslims_are-causing_attacks {
-    leolaniWorld:Muslims ns11:are_causing leolaniWorld:attacks .
+leolaniWorld:Muslims_are-causing_terrorist_attacks {
+    leolaniWorld:Muslims ns11:are_causing leolaniWorld:terrorist_attacks .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Muslims_are-causing_attacks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are-causing_attacks" ;
-        gaf:denotedBy leolaniTalk:chat1445_utterance2_char0-51 .
+leolaniTalk:Interactions {
+    leolaniContext:context48 a eps:Context ;
+        rdfs:label "context48" ;
+        hs:id "48"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Muslims_are-causing_terrorist_attacks a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are-causing_terrorist_attacks" ;
-        gaf:denotedBy leolaniTalk:chat1445_utterance2_char0-51 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1445 .
 
-    leolaniWorld:Muslims_have_potential a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_have_potential" ;
-        gaf:denotedBy leolaniTalk:chat1445_utterance0_char0-82 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "186"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:they_are_willing a gaf:Assertion,
+    leolaniTalk:chat1445 a grasp:Chat,
             sem:Event ;
-        rdfs:label "they_are_willing" ;
-        gaf:denotedBy leolaniTalk:chat1445_utterance0_char0-82 .
+        rdfs:label "chat1445" ;
+        hs:id "1445"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1445_utterance0,
+            leolaniTalk:chat1445_utterance2 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat1445_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1445_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1445_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1445_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:they_are_willing {
-    leolaniWorld:they ns11:are leolaniWorld:willing .
+leolaniWorld:Muslims_have_potential {
+    leolaniWorld:Muslims ns11:have leolaniWorld:potential .
 }
 
 leolaniWorld:leolani_know_hs {
@@ -140,48 +173,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat1445_utterance0_char0-82,
-            leolaniTalk:chat1445_utterance2_char0-51 .
-
-    leolaniWorld:attacks a gaf:Instance ;
-        rdfs:label "attacks" ;
-        gaf:denotedIn leolaniTalk:chat1445_utterance2_char0-51 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:potential a gaf:Instance ;
-        rdfs:label "potential" ;
-        gaf:denotedIn leolaniTalk:chat1445_utterance0_char0-82 .
-
-    leolaniWorld:terrorist_attacks a gaf:Instance ;
-        rdfs:label "terrorist-attacks" ;
-        gaf:denotedIn leolaniTalk:chat1445_utterance2_char0-51 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1445_utterance0_char0-82 .
-
-    leolaniWorld:willing a gaf:Instance ;
-        rdfs:label "willing" ;
-        gaf:denotedIn leolaniTalk:chat1445_utterance0_char0-82 .
-}
-
-leolaniWorld:Muslims_are-causing_terrorist_attacks {
-    leolaniWorld:Muslims ns11:are_causing leolaniWorld:terrorist_attacks .
-}
-
-leolaniWorld:Muslims_have_potential {
-    leolaniWorld:Muslims ns11:have leolaniWorld:potential .
 }
 
 leolaniWorld:Ontology {
@@ -519,64 +510,73 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context48 a eps:Context ;
-        rdfs:label "context48" ;
-        hs:id "48"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Muslims_are-causing_attacks {
+    leolaniWorld:Muslims ns11:are_causing leolaniWorld:attacks .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1445 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "186"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1445 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Muslims_are-causing_attacks a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1445" ;
-        hs:id "1445"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1445_utterance0,
-            leolaniTalk:chat1445_utterance2 .
+        rdfs:label "Muslims_are-causing_attacks" ;
+        gaf:denotedBy leolaniTalk:chat1445_utterance2_char0-51 .
 
-    leolaniTalk:chat1445_utterance0 a grasp:Utterance,
+    leolaniWorld:Muslims_are-causing_terrorist_attacks a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1445_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Muslims_are-causing_terrorist_attacks" ;
+        gaf:denotedBy leolaniTalk:chat1445_utterance2_char0-51 .
 
-    leolaniTalk:chat1445_utterance2 a grasp:Utterance,
+    leolaniWorld:Muslims_have_potential a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1445_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Muslims_have_potential" ;
+        gaf:denotedBy leolaniTalk:chat1445_utterance0_char0-82 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:they_are_willing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_willing" ;
+        gaf:denotedBy leolaniTalk:chat1445_utterance0_char0-82 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:they_are_willing {
+    leolaniWorld:they ns11:are leolaniWorld:willing .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat1445_utterance0_char0-82,
+            leolaniTalk:chat1445_utterance2_char0-51 .
+
+    leolaniWorld:attacks a gaf:Instance ;
+        rdfs:label "attacks" ;
+        gaf:denotedIn leolaniTalk:chat1445_utterance2_char0-51 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:potential a gaf:Instance ;
+        rdfs:label "potential" ;
+        gaf:denotedIn leolaniTalk:chat1445_utterance0_char0-82 .
+
+    leolaniWorld:terrorist_attacks a gaf:Instance ;
+        rdfs:label "terrorist-attacks" ;
+        gaf:denotedIn leolaniTalk:chat1445_utterance2_char0-51 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1445_utterance0_char0-82 .
+
+    leolaniWorld:willing a gaf:Instance ;
+        rdfs:label "willing" ;
+        gaf:denotedIn leolaniTalk:chat1445_utterance0_char0-82 .
 }
 

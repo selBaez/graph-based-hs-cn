@@ -22,145 +22,102 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Those_should_should_expelled a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Those_should_should_expelled" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance2_char0-77 .
-
-    leolaniWorld:councils_actually-use_connection_rule a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "councils_actually-use_connection_rule" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:councils_actually-use_local_connection_rule a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "councils_actually-use_local_connection_rule" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:councils_use_connection_rule a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "councils_use_connection_rule" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:councils_use_local_connection_rule a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "councils_use_local_connection_rule" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:many_councils_actually-use_connection_rule a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_councils_actually-use_connection_rule" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:many_councils_actually-use_local_connection_rule a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_councils_actually-use_local_connection_rule" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:many_councils_use_connection_rule a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_councils_use_connection_rule" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:many_councils_use_local_connection_rule a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_councils_use_local_connection_rule" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:they_take_social_housing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_take_social_housing" ;
-        gaf:denotedBy leolaniTalk:chat2263_utterance0_char0-57 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:many_councils_actually-use_local_connection_rule {
+    leolaniWorld:many_councils ns1:actually_use leolaniWorld:local_connection_rule .
 }
 
 leolaniWorld:councils_actually-use_local_connection_rule {
     leolaniWorld:councils ns1:actually_use leolaniWorld:local_connection_rule .
 }
 
-leolaniWorld:many_councils_actually-use_local_connection_rule {
-    leolaniWorld:many_councils ns1:actually_use leolaniWorld:local_connection_rule .
+leolaniTalk:Interactions {
+    leolaniContext:context219 a eps:Context ;
+        rdfs:label "context219" ;
+        hs:id "219"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2263 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "204"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2263 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2263" ;
+        hs:id "2263"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2263_utterance0,
+            leolaniTalk:chat2263_utterance1,
+            leolaniTalk:chat2263_utterance2 .
+
+    leolaniTalk:chat2263_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2263_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2263_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2263_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2263_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2263_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:councils_use_connection_rule {
     leolaniWorld:councils ns1:use leolaniWorld:connection_rule .
 }
 
-leolaniWorld:councils_actually-use_connection_rule {
-    leolaniWorld:councils ns1:actually_use leolaniWorld:connection_rule .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Those_should_should_expelled {
-    leolaniWorld:Those ns1:should leolaniWorld:should_expelled .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:many_councils_use_connection_rule {
     leolaniWorld:many_councils ns1:use leolaniWorld:connection_rule .
-}
-
-leolaniWorld:many_councils_actually-use_connection_rule {
-    leolaniWorld:many_councils ns1:actually_use leolaniWorld:connection_rule .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Those a gaf:Instance ;
-        rdfs:label "those" ;
-        gaf:denotedIn leolaniTalk:chat2263_utterance2_char0-77 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:connection_rule a gaf:Instance ;
-        rdfs:label "connection-rule" ;
-        gaf:denotedIn leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:councils a gaf:Instance ;
-        rdfs:label "councils" ;
-        gaf:denotedIn leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:local_connection_rule a gaf:Instance ;
-        rdfs:label "local-connection-rule" ;
-        gaf:denotedIn leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:many_councils a gaf:Instance ;
-        rdfs:label "many-councils" ;
-        gaf:denotedIn leolaniTalk:chat2263_utterance1_char0-130 .
-
-    leolaniWorld:should_expelled a gaf:Instance ;
-        rdfs:label "should-expelled" ;
-        gaf:denotedIn leolaniTalk:chat2263_utterance2_char0-77 .
-
-    leolaniWorld:social_housing a gaf:Instance ;
-        rdfs:label "social-housing" ;
-        gaf:denotedIn leolaniTalk:chat2263_utterance0_char0-57 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2263_utterance0_char0-57 .
 }
 
 leolaniWorld:councils_use_local_connection_rule {
@@ -169,6 +126,154 @@ leolaniWorld:councils_use_local_connection_rule {
 
 leolaniWorld:many_councils_use_local_connection_rule {
     leolaniWorld:many_councils ns1:use leolaniWorld:local_connection_rule .
+}
+
+leolaniWorld:many_councils_actually-use_connection_rule {
+    leolaniWorld:many_councils ns1:actually_use leolaniWorld:connection_rule .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Those_should_should_expelled_00028 a grasp:Attribution ;
+        rdfs:label "Those_should_should_expelled_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance2_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2263_utterance0_char0-57 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2263_utterance0_char0-57" ;
+        gaf:containsDenotation leolaniWorld:social_housing,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_take_social_housing ;
+        grasp:hasAttribution leolaniTalk:they_take_social_housing_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:31.943647"^^xml1:string ;
+        rdf:value "But they take all the social housing from British people."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2263_utterance0 .
+
+    leolaniTalk:chat2263_utterance2_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2263_utterance2_char0-77" ;
+        gaf:containsDenotation leolaniWorld:Those,
+            leolaniWorld:should_expelled ;
+        gaf:denotes leolaniWorld:Those_should_should_expelled ;
+        grasp:hasAttribution leolaniTalk:Those_should_should_expelled_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:32.119636"^^xml1:string ;
+        rdf:value "Those who come in the UK from other countries should be expelled or excluded."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2263_utterance2 .
+
+    leolaniTalk:councils_actually-use_connection_rule_00028 a grasp:Attribution ;
+        rdfs:label "councils_actually-use_connection_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:councils_actually-use_local_connection_rule_00028 a grasp:Attribution ;
+        rdfs:label "councils_actually-use_local_connection_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:councils_use_connection_rule_00028 a grasp:Attribution ;
+        rdfs:label "councils_use_connection_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:councils_use_local_connection_rule_00028 a grasp:Attribution ;
+        rdfs:label "councils_use_local_connection_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:many_councils_actually-use_connection_rule_00028 a grasp:Attribution ;
+        rdfs:label "many_councils_actually-use_connection_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:many_councils_actually-use_local_connection_rule_00028 a grasp:Attribution ;
+        rdfs:label "many_councils_actually-use_local_connection_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:many_councils_use_connection_rule_00028 a grasp:Attribution ;
+        rdfs:label "many_councils_use_connection_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:many_councils_use_local_connection_rule_00028 a grasp:Attribution ;
+        rdfs:label "many_councils_use_local_connection_rule_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_take_social_housing_00028 a grasp:Attribution ;
+        rdfs:label "they_take_social_housing_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2263_utterance0_char0-57 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2263_utterance1_char0-130 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2263_utterance1_char0-130" ;
+        gaf:containsDenotation leolaniWorld:connection_rule,
+            leolaniWorld:councils,
+            leolaniWorld:local_connection_rule,
+            leolaniWorld:many_councils ;
+        gaf:denotes leolaniWorld:councils_actually-use_connection_rule,
+            leolaniWorld:councils_actually-use_local_connection_rule,
+            leolaniWorld:councils_use_connection_rule,
+            leolaniWorld:councils_use_local_connection_rule,
+            leolaniWorld:many_councils_actually-use_connection_rule,
+            leolaniWorld:many_councils_actually-use_local_connection_rule,
+            leolaniWorld:many_councils_use_connection_rule,
+            leolaniWorld:many_councils_use_local_connection_rule ;
+        grasp:hasAttribution leolaniTalk:councils_actually-use_connection_rule_00028,
+            leolaniTalk:councils_actually-use_local_connection_rule_00028,
+            leolaniTalk:councils_use_connection_rule_00028,
+            leolaniTalk:councils_use_local_connection_rule_00028,
+            leolaniTalk:many_councils_actually-use_connection_rule_00028,
+            leolaniTalk:many_councils_actually-use_local_connection_rule_00028,
+            leolaniTalk:many_councils_use_connection_rule_00028,
+            leolaniTalk:many_councils_use_local_connection_rule_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:32.038128"^^xml1:string,
+            "2024-06-05T23:24:32.038190"^^xml1:string,
+            "2024-06-05T23:24:32.038214"^^xml1:string,
+            "2024-06-05T23:24:32.038238"^^xml1:string,
+            "2024-06-05T23:24:32.038261"^^xml1:string,
+            "2024-06-05T23:24:32.038283"^^xml1:string,
+            "2024-06-05T23:24:32.038307"^^xml1:string,
+            "2024-06-05T23:24:32.038331"^^xml1:string ;
+        rdf:value "Actually, many councils use the \"local connection\" rule which favors long-standing residents instead of newcomers like immigrants."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2263_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -506,229 +611,124 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Those_should_should_expelled {
+    leolaniWorld:Those ns1:should leolaniWorld:should_expelled .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Those_should_should_expelled_00028 a grasp:Attribution ;
-        rdfs:label "Those_should_should_expelled_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance2_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2263_utterance0_char0-57 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2263_utterance0_char0-57" ;
-        gaf:containsDenotation leolaniWorld:social_housing,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_take_social_housing ;
-        grasp:hasAttribution leolaniTalk:they_take_social_housing_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:31.943647"^^xml1:string ;
-        rdf:value "But they take all the social housing from British people."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2263_utterance0 .
-
-    leolaniTalk:chat2263_utterance2_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2263_utterance2_char0-77" ;
-        gaf:containsDenotation leolaniWorld:Those,
-            leolaniWorld:should_expelled ;
-        gaf:denotes leolaniWorld:Those_should_should_expelled ;
-        grasp:hasAttribution leolaniTalk:Those_should_should_expelled_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:32.119636"^^xml1:string ;
-        rdf:value "Those who come in the UK from other countries should be expelled or excluded."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2263_utterance2 .
-
-    leolaniTalk:councils_actually-use_connection_rule_00028 a grasp:Attribution ;
-        rdfs:label "councils_actually-use_connection_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:councils_actually-use_local_connection_rule_00028 a grasp:Attribution ;
-        rdfs:label "councils_actually-use_local_connection_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:councils_use_connection_rule_00028 a grasp:Attribution ;
-        rdfs:label "councils_use_connection_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:councils_use_local_connection_rule_00028 a grasp:Attribution ;
-        rdfs:label "councils_use_local_connection_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:many_councils_actually-use_connection_rule_00028 a grasp:Attribution ;
-        rdfs:label "many_councils_actually-use_connection_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:many_councils_actually-use_local_connection_rule_00028 a grasp:Attribution ;
-        rdfs:label "many_councils_actually-use_local_connection_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:many_councils_use_connection_rule_00028 a grasp:Attribution ;
-        rdfs:label "many_councils_use_connection_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:many_councils_use_local_connection_rule_00028 a grasp:Attribution ;
-        rdfs:label "many_councils_use_local_connection_rule_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_take_social_housing_00028 a grasp:Attribution ;
-        rdfs:label "they_take_social_housing_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2263_utterance0_char0-57 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2263_utterance1_char0-130 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2263_utterance1_char0-130" ;
-        gaf:containsDenotation leolaniWorld:connection_rule,
-            leolaniWorld:councils,
-            leolaniWorld:local_connection_rule,
-            leolaniWorld:many_councils ;
-        gaf:denotes leolaniWorld:councils_actually-use_connection_rule,
-            leolaniWorld:councils_actually-use_local_connection_rule,
-            leolaniWorld:councils_use_connection_rule,
-            leolaniWorld:councils_use_local_connection_rule,
-            leolaniWorld:many_councils_actually-use_connection_rule,
-            leolaniWorld:many_councils_actually-use_local_connection_rule,
-            leolaniWorld:many_councils_use_connection_rule,
-            leolaniWorld:many_councils_use_local_connection_rule ;
-        grasp:hasAttribution leolaniTalk:councils_actually-use_connection_rule_00028,
-            leolaniTalk:councils_actually-use_local_connection_rule_00028,
-            leolaniTalk:councils_use_connection_rule_00028,
-            leolaniTalk:councils_use_local_connection_rule_00028,
-            leolaniTalk:many_councils_actually-use_connection_rule_00028,
-            leolaniTalk:many_councils_actually-use_local_connection_rule_00028,
-            leolaniTalk:many_councils_use_connection_rule_00028,
-            leolaniTalk:many_councils_use_local_connection_rule_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:32.038128"^^xml1:string,
-            "2024-06-05T23:24:32.038190"^^xml1:string,
-            "2024-06-05T23:24:32.038214"^^xml1:string,
-            "2024-06-05T23:24:32.038238"^^xml1:string,
-            "2024-06-05T23:24:32.038261"^^xml1:string,
-            "2024-06-05T23:24:32.038283"^^xml1:string,
-            "2024-06-05T23:24:32.038307"^^xml1:string,
-            "2024-06-05T23:24:32.038331"^^xml1:string ;
-        rdf:value "Actually, many councils use the \"local connection\" rule which favors long-standing residents instead of newcomers like immigrants."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2263_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context219 a eps:Context ;
-        rdfs:label "context219" ;
-        hs:id "219"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2263 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "204"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2263 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Those_should_should_expelled a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2263" ;
-        hs:id "2263"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2263_utterance0,
-            leolaniTalk:chat2263_utterance1,
-            leolaniTalk:chat2263_utterance2 .
+        rdfs:label "Those_should_should_expelled" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance2_char0-77 .
 
-    leolaniTalk:chat2263_utterance0 a grasp:Utterance,
+    leolaniWorld:councils_actually-use_connection_rule a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2263_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "councils_actually-use_connection_rule" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
 
-    leolaniTalk:chat2263_utterance1 a grasp:Utterance,
+    leolaniWorld:councils_actually-use_local_connection_rule a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2263_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "councils_actually-use_local_connection_rule" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
 
-    leolaniTalk:chat2263_utterance2 a grasp:Utterance,
+    leolaniWorld:councils_use_connection_rule a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2263_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "councils_use_connection_rule" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:councils_use_local_connection_rule a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "councils_use_local_connection_rule" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:many_councils_actually-use_connection_rule a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_councils_actually-use_connection_rule" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
+
+    leolaniWorld:many_councils_actually-use_local_connection_rule a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_councils_actually-use_local_connection_rule" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
+
+    leolaniWorld:many_councils_use_connection_rule a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_councils_use_connection_rule" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
+
+    leolaniWorld:many_councils_use_local_connection_rule a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_councils_use_local_connection_rule" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance1_char0-130 .
+
+    leolaniWorld:they_take_social_housing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_take_social_housing" ;
+        gaf:denotedBy leolaniTalk:chat2263_utterance0_char0-57 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:they_take_social_housing {
     leolaniWorld:they ns1:take leolaniWorld:social_housing .
+}
+
+leolaniWorld:councils_actually-use_connection_rule {
+    leolaniWorld:councils ns1:actually_use leolaniWorld:connection_rule .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Those a gaf:Instance ;
+        rdfs:label "those" ;
+        gaf:denotedIn leolaniTalk:chat2263_utterance2_char0-77 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:connection_rule a gaf:Instance ;
+        rdfs:label "connection-rule" ;
+        gaf:denotedIn leolaniTalk:chat2263_utterance1_char0-130 .
+
+    leolaniWorld:councils a gaf:Instance ;
+        rdfs:label "councils" ;
+        gaf:denotedIn leolaniTalk:chat2263_utterance1_char0-130 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:local_connection_rule a gaf:Instance ;
+        rdfs:label "local-connection-rule" ;
+        gaf:denotedIn leolaniTalk:chat2263_utterance1_char0-130 .
+
+    leolaniWorld:many_councils a gaf:Instance ;
+        rdfs:label "many-councils" ;
+        gaf:denotedIn leolaniTalk:chat2263_utterance1_char0-130 .
+
+    leolaniWorld:should_expelled a gaf:Instance ;
+        rdfs:label "should-expelled" ;
+        gaf:denotedIn leolaniTalk:chat2263_utterance2_char0-77 .
+
+    leolaniWorld:social_housing a gaf:Instance ;
+        rdfs:label "social-housing" ;
+        gaf:denotedIn leolaniTalk:chat2263_utterance0_char0-57 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2263_utterance0_char0-57 .
 }
 

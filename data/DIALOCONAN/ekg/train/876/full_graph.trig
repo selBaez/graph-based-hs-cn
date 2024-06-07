@@ -22,151 +22,246 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:You_have_concept a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_have_concept" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance1_char0-53 .
-
-    leolaniWorld:You_have_limited_concept a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_have_limited_concept" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance1_char0-53 .
-
-    leolaniWorld:You_have_very_limited_concept a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_have_very_limited_concept" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance1_char0-53 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:many_people_would_where_would_excluded a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_people_would_where_would_excluded" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:many_people_would_would_excluded a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_people_would_would_excluded" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:people_would_where_would_excluded a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_would_where_would_excluded" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:people_would_would_excluded a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_would_would_excluded" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:you_are-going_manage a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_are-going_manage" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:you_are-going_to_manage a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_are-going_to_manage" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:you_manage_society a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_manage_society" ;
-        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
-leolaniWorld:You_have_limited_concept {
-    leolaniWorld:You ns1:have leolaniWorld:limited_concept .
-}
-
 leolaniWorld:you_are-going_manage {
     leolaniWorld:you ns1:are_going leolaniWorld:manage .
 }
 
-leolaniWorld:people_would_where_would_excluded {
-    leolaniWorld:people ns1:would leolaniWorld:where_would_excluded .
+leolaniWorld:many_people_would_would_excluded {
+    leolaniWorld:many_people ns1:would leolaniWorld:would_excluded .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context32 a eps:Context ;
+        rdfs:label "context32" ;
+        hs:id "32"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat876 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "2"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat876 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat876" ;
+        hs:id "876"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat876_utterance1,
+            leolaniTalk:chat876_utterance3 .
+
+    leolaniTalk:chat876_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat876_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat876_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat876_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
 leolaniWorld:You_have_very_limited_concept {
     leolaniWorld:You ns1:have leolaniWorld:very_limited_concept .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:You a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance1_char0-53 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:concept a gaf:Instance ;
-        rdfs:label "concept" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance1_char0-53 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:limited_concept a gaf:Instance ;
-        rdfs:label "limited-concept" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance1_char0-53 .
-
-    leolaniWorld:manage a gaf:Instance ;
-        rdfs:label "manage" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:many_people a gaf:Instance ;
-        rdfs:label "many-people" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:society a gaf:Instance ;
-        rdfs:label "society" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:to_manage a gaf:Instance ;
-        rdfs:label "to-manage" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:very_limited_concept a gaf:Instance ;
-        rdfs:label "very-limited-concept" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance1_char0-53 .
-
-    leolaniWorld:where_would_excluded a gaf:Instance ;
-        rdfs:label "where-would-excluded" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:would_excluded a gaf:Instance ;
-        rdfs:label "would-excluded" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
+leolaniWorld:you_manage_society {
+    leolaniWorld:you ns1:manage leolaniWorld:society .
 }
 
 leolaniWorld:people_would_would_excluded {
     leolaniWorld:people ns1:would leolaniWorld:would_excluded .
 }
 
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:You_have_limited_concept {
+    leolaniWorld:You ns1:have leolaniWorld:limited_concept .
+}
+
 leolaniWorld:many_people_would_where_would_excluded {
     leolaniWorld:many_people ns1:would leolaniWorld:where_would_excluded .
 }
 
-leolaniWorld:you_are-going_to_manage {
-    leolaniWorld:you ns1:are_going leolaniWorld:to_manage .
+leolaniWorld:people_would_where_would_excluded {
+    leolaniWorld:people ns1:would leolaniWorld:where_would_excluded .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:You_have_concept_00028 a grasp:Attribution ;
+        rdfs:label "You_have_concept_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance1_char0-53 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_have_limited_concept_00028 a grasp:Attribution ;
+        rdfs:label "You_have_limited_concept_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance1_char0-53 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_have_very_limited_concept_00028 a grasp:Attribution ;
+        rdfs:label "You_have_very_limited_concept_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance1_char0-53 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:many_people_would_where_would_excluded_00027 a grasp:Attribution ;
+        rdfs:label "many_people_would_where_would_excluded_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:many_people_would_would_excluded_00027 a grasp:Attribution ;
+        rdfs:label "many_people_would_would_excluded_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_would_where_would_excluded_00027 a grasp:Attribution ;
+        rdfs:label "people_would_where_would_excluded_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_would_would_excluded_00027 a grasp:Attribution ;
+        rdfs:label "people_would_would_excluded_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_are-going_manage_00027 a grasp:Attribution ;
+        rdfs:label "you_are-going_manage_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_are-going_to_manage_00027 a grasp:Attribution ;
+        rdfs:label "you_are-going_to_manage_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_manage_society_00027 a grasp:Attribution ;
+        rdfs:label "you_manage_society_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat876_utterance1_char0-53 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat876_utterance1_char0-53" ;
+        gaf:containsDenotation leolaniWorld:You,
+            leolaniWorld:concept,
+            leolaniWorld:limited_concept,
+            leolaniWorld:very_limited_concept ;
+        gaf:denotes leolaniWorld:You_have_concept,
+            leolaniWorld:You_have_limited_concept,
+            leolaniWorld:You_have_very_limited_concept ;
+        grasp:hasAttribution leolaniTalk:You_have_concept_00028,
+            leolaniTalk:You_have_limited_concept_00028,
+            leolaniTalk:You_have_very_limited_concept_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:39.911133"^^xml1:string,
+            "2024-06-05T23:24:39.911209"^^xml1:string,
+            "2024-06-05T23:24:39.911240"^^xml1:string ;
+        rdf:value "You have a very limited concept of what 'free' means!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat876_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    leolaniTalk:chat876_utterance3_char0-180 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat876_utterance3_char0-180" ;
+        gaf:containsDenotation leolaniWorld:manage,
+            leolaniWorld:many_people,
+            leolaniWorld:people,
+            leolaniWorld:society,
+            leolaniWorld:to_manage,
+            leolaniWorld:where_would_excluded,
+            leolaniWorld:would_excluded,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:many_people_would_where_would_excluded,
+            leolaniWorld:many_people_would_would_excluded,
+            leolaniWorld:people_would_where_would_excluded,
+            leolaniWorld:people_would_would_excluded,
+            leolaniWorld:you_are-going_manage,
+            leolaniWorld:you_are-going_to_manage,
+            leolaniWorld:you_manage_society ;
+        grasp:hasAttribution leolaniTalk:many_people_would_where_would_excluded_00027,
+            leolaniTalk:many_people_would_would_excluded_00027,
+            leolaniTalk:people_would_where_would_excluded_00027,
+            leolaniTalk:people_would_would_excluded_00027,
+            leolaniTalk:you_are-going_manage_00027,
+            leolaniTalk:you_are-going_to_manage_00027,
+            leolaniTalk:you_manage_society_00027 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:40.126122"^^xml1:string,
+            "2024-06-05T23:24:40.126212"^^xml1:string,
+            "2024-06-05T23:24:40.126240"^^xml1:string,
+            "2024-06-05T23:24:40.126264"^^xml1:string,
+            "2024-06-05T23:24:40.126289"^^xml1:string,
+            "2024-06-05T23:24:40.126311"^^xml1:string,
+            "2024-06-05T23:24:40.126334"^^xml1:string ;
+        rdf:value "You seem to be confused about the definition of a 'civilised society'. How are you going to manage a society where so many people would be excluded just because of their sexuality?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat876_utterance3 .
+
+    graspe:CONFUSION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CONFUSION" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -504,221 +599,126 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:You_have_concept_00028 a grasp:Attribution ;
-        rdfs:label "You_have_concept_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance1_char0-53 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:You_have_concept a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_have_concept" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance1_char0-53 .
 
-    leolaniTalk:You_have_limited_concept_00028 a grasp:Attribution ;
-        rdfs:label "You_have_limited_concept_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance1_char0-53 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_have_limited_concept a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_have_limited_concept" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance1_char0-53 .
 
-    leolaniTalk:You_have_very_limited_concept_00028 a grasp:Attribution ;
-        rdfs:label "You_have_very_limited_concept_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance1_char0-53 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_have_very_limited_concept a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_have_very_limited_concept" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance1_char0-53 .
 
-    leolaniTalk:many_people_would_where_would_excluded_00027 a grasp:Attribution ;
-        rdfs:label "many_people_would_where_would_excluded_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:many_people_would_would_excluded_00027 a grasp:Attribution ;
-        rdfs:label "many_people_would_would_excluded_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:many_people_would_where_would_excluded a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_people_would_where_would_excluded" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
 
-    leolaniTalk:people_would_where_would_excluded_00027 a grasp:Attribution ;
-        rdfs:label "people_would_where_would_excluded_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:many_people_would_would_excluded a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "many_people_would_would_excluded" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
 
-    leolaniTalk:people_would_would_excluded_00027 a grasp:Attribution ;
-        rdfs:label "people_would_would_excluded_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:people_would_where_would_excluded a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_would_where_would_excluded" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
 
-    leolaniTalk:you_are-going_manage_00027 a grasp:Attribution ;
-        rdfs:label "you_are-going_manage_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:people_would_would_excluded a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_would_would_excluded" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
 
-    leolaniTalk:you_are-going_to_manage_00027 a grasp:Attribution ;
-        rdfs:label "you_are-going_to_manage_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_are-going_manage a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_are-going_manage" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
 
-    leolaniTalk:you_manage_society_00027 a grasp:Attribution ;
-        rdfs:label "you_manage_society_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat876_utterance3_char0-180 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_are-going_to_manage a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_are-going_to_manage" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
 
-    leolaniTalk:chat876_utterance1_char0-53 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat876_utterance1_char0-53" ;
-        gaf:containsDenotation leolaniWorld:You,
-            leolaniWorld:concept,
-            leolaniWorld:limited_concept,
-            leolaniWorld:very_limited_concept ;
-        gaf:denotes leolaniWorld:You_have_concept,
-            leolaniWorld:You_have_limited_concept,
-            leolaniWorld:You_have_very_limited_concept ;
-        grasp:hasAttribution leolaniTalk:You_have_concept_00028,
-            leolaniTalk:You_have_limited_concept_00028,
-            leolaniTalk:You_have_very_limited_concept_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:39.911133"^^xml1:string,
-            "2024-06-05T23:24:39.911209"^^xml1:string,
-            "2024-06-05T23:24:39.911240"^^xml1:string ;
-        rdf:value "You have a very limited concept of what 'free' means!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat876_utterance1 .
+    leolaniWorld:you_manage_society a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_manage_society" ;
+        gaf:denotedBy leolaniTalk:chat876_utterance3_char0-180 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    leolaniTalk:chat876_utterance3_char0-180 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat876_utterance3_char0-180" ;
-        gaf:containsDenotation leolaniWorld:manage,
-            leolaniWorld:many_people,
-            leolaniWorld:people,
-            leolaniWorld:society,
-            leolaniWorld:to_manage,
-            leolaniWorld:where_would_excluded,
-            leolaniWorld:would_excluded,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:many_people_would_where_would_excluded,
-            leolaniWorld:many_people_would_would_excluded,
-            leolaniWorld:people_would_where_would_excluded,
-            leolaniWorld:people_would_would_excluded,
-            leolaniWorld:you_are-going_manage,
-            leolaniWorld:you_are-going_to_manage,
-            leolaniWorld:you_manage_society ;
-        grasp:hasAttribution leolaniTalk:many_people_would_where_would_excluded_00027,
-            leolaniTalk:many_people_would_would_excluded_00027,
-            leolaniTalk:people_would_where_would_excluded_00027,
-            leolaniTalk:people_would_would_excluded_00027,
-            leolaniTalk:you_are-going_manage_00027,
-            leolaniTalk:you_are-going_to_manage_00027,
-            leolaniTalk:you_manage_society_00027 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:40.126122"^^xml1:string,
-            "2024-06-05T23:24:40.126212"^^xml1:string,
-            "2024-06-05T23:24:40.126240"^^xml1:string,
-            "2024-06-05T23:24:40.126264"^^xml1:string,
-            "2024-06-05T23:24:40.126289"^^xml1:string,
-            "2024-06-05T23:24:40.126311"^^xml1:string,
-            "2024-06-05T23:24:40.126334"^^xml1:string ;
-        rdf:value "You seem to be confused about the definition of a 'civilised society'. How are you going to manage a society where so many people would be excluded just because of their sexuality?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat876_utterance3 .
-
-    graspe:CONFUSION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CONFUSION" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context32 a eps:Context ;
-        rdfs:label "context32" ;
-        hs:id "32"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat876 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "2"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat876 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat876" ;
-        hs:id "876"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat876_utterance1,
-            leolaniTalk:chat876_utterance3 .
-
-    leolaniTalk:chat876_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat876_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat876_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat876_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-}
-
-leolaniWorld:many_people_would_would_excluded {
-    leolaniWorld:many_people ns1:would leolaniWorld:would_excluded .
+leolaniWorld:you_are-going_to_manage {
+    leolaniWorld:you ns1:are_going leolaniWorld:to_manage .
 }
 
 leolaniWorld:You_have_concept {
     leolaniWorld:You ns1:have leolaniWorld:concept .
 }
 
-leolaniWorld:you_manage_society {
-    leolaniWorld:you ns1:manage leolaniWorld:society .
+leolaniWorld:Instances {
+    leolaniWorld:You a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance1_char0-53 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:concept a gaf:Instance ;
+        rdfs:label "concept" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance1_char0-53 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:limited_concept a gaf:Instance ;
+        rdfs:label "limited-concept" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance1_char0-53 .
+
+    leolaniWorld:manage a gaf:Instance ;
+        rdfs:label "manage" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
+
+    leolaniWorld:many_people a gaf:Instance ;
+        rdfs:label "many-people" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
+
+    leolaniWorld:society a gaf:Instance ;
+        rdfs:label "society" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
+
+    leolaniWorld:to_manage a gaf:Instance ;
+        rdfs:label "to-manage" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
+
+    leolaniWorld:very_limited_concept a gaf:Instance ;
+        rdfs:label "very-limited-concept" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance1_char0-53 .
+
+    leolaniWorld:where_would_excluded a gaf:Instance ;
+        rdfs:label "where-would-excluded" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
+
+    leolaniWorld:would_excluded a gaf:Instance ;
+        rdfs:label "would-excluded" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat876_utterance3_char0-180 .
 }
 

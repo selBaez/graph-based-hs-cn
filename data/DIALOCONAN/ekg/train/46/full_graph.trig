@@ -22,125 +22,215 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:advert_has-mixed_race_families a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "advert_has-mixed_race_families" ;
-        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_are_are_erased a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_are_are_erased" ;
-        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:us_think_is_normal a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "us_think_is_normal" ;
-        gaf:denotedBy leolaniTalk:chat46_utterance2_char0-129 .
-
-    leolaniWorld:white_people_are_are_erased a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "white_people_are_are_erased" ;
-        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:you_everywhere-look-now-on_tv a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_everywhere-look-now-on_tv" ;
-        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:you_everywhere-look-on_tv a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_everywhere-look-on_tv" ;
-        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:you_look-now-on_tv a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_look-now-on_tv" ;
-        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:you_look-on_tv a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_look-on_tv" ;
-        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:you_everywhere-look-on_tv {
     leolaniWorld:you ns1:everywhere_look_on leolaniWorld:tv .
-}
-
-leolaniWorld:advert_has-mixed_race_families {
-    leolaniWorld:advert ns1:has_mixed leolaniWorld:race_families .
 }
 
 leolaniWorld:you_look-on_tv {
     leolaniWorld:you ns1:look_on leolaniWorld:tv .
 }
 
+leolaniTalk:Interactions {
+    leolaniContext:context248 a eps:Context ;
+        rdfs:label "context248" ;
+        hs:id "248"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat46 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "166"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat46 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat46" ;
+        hs:id "46"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat46_utterance0,
+            leolaniTalk:chat46_utterance2 .
+
+    leolaniTalk:chat46_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat46_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat46_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat46_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:white_people_are_are_erased {
     leolaniWorld:white_people ns1:are leolaniWorld:are_erased .
 }
 
-leolaniWorld:you_everywhere-look-now-on_tv {
-    leolaniWorld:you ns1:everywhere_look_now_on leolaniWorld:tv .
+leolaniWorld:you_look-now-on_tv {
+    leolaniWorld:you ns1:look_now_on leolaniWorld:tv .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:advert a gaf:Instance ;
-        rdfs:label "advert" ;
-        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:are_erased a gaf:Instance ;
-        rdfs:label "are-erased" ;
-        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:normal a gaf:Instance ;
-        rdfs:label "normal" ;
-        gaf:denotedIn leolaniTalk:chat46_utterance2_char0-129 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:race_families a gaf:Instance ;
-        rdfs:label "race-families" ;
-        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:tv a gaf:Instance ;
-        rdfs:label "tv" ;
-        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:us_think a gaf:Instance ;
-        rdfs:label "us-think" ;
-        gaf:denotedIn leolaniTalk:chat46_utterance2_char0-129 .
-
-    leolaniWorld:white_people a gaf:Instance ;
-        rdfs:label "white-people" ;
-        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
+leolaniWorld:us_think_is_normal {
+    leolaniWorld:us_think ns1:is leolaniWorld:normal .
 }
 
 leolaniWorld:people_are_are_erased {
     leolaniWorld:people ns1:are leolaniWorld:are_erased .
 }
 
-leolaniWorld:us_think_is_normal {
-    leolaniWorld:us_think ns1:is leolaniWorld:normal .
+leolaniTalk:Perspectives {
+    leolaniTalk:advert_has-mixed_race_families_00028 a grasp:Attribution ;
+        rdfs:label "advert_has-mixed_race_families_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat46_utterance2_char0-129 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat46_utterance2_char0-129" ;
+        gaf:containsDenotation leolaniWorld:normal,
+            leolaniWorld:us_think ;
+        gaf:denotes leolaniWorld:us_think_is_normal ;
+        grasp:hasAttribution leolaniTalk:us_think_is_normal_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:48.998593"^^xml1:string ;
+        rdf:value "There’s so many more black and Asian people on tv now, it’s ridiculous, this is what they’re trying to make us think is ‘normal’."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat46_utterance2 .
+
+    leolaniTalk:people_are_are_erased_00028 a grasp:Attribution ;
+        rdfs:label "people_are_are_erased_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:us_think_is_normal_00022 a grasp:Attribution ;
+        rdfs:label "us_think_is_normal_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat46_utterance2_char0-129 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:white_people_are_are_erased_00028 a grasp:Attribution ;
+        rdfs:label "white_people_are_are_erased_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_everywhere-look-now-on_tv_00028 a grasp:Attribution ;
+        rdfs:label "you_everywhere-look-now-on_tv_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_everywhere-look-on_tv_00028 a grasp:Attribution ;
+        rdfs:label "you_everywhere-look-on_tv_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_look-now-on_tv_00028 a grasp:Attribution ;
+        rdfs:label "you_look-now-on_tv_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_look-on_tv_00028 a grasp:Attribution ;
+        rdfs:label "you_look-on_tv_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
+
+    leolaniTalk:chat46_utterance0_char0-213 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat46_utterance0_char0-213" ;
+        gaf:containsDenotation leolaniWorld:advert,
+            leolaniWorld:are_erased,
+            leolaniWorld:people,
+            leolaniWorld:race_families,
+            leolaniWorld:tv,
+            leolaniWorld:white_people,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:advert_has-mixed_race_families,
+            leolaniWorld:people_are_are_erased,
+            leolaniWorld:white_people_are_are_erased,
+            leolaniWorld:you_everywhere-look-now-on_tv,
+            leolaniWorld:you_everywhere-look-on_tv,
+            leolaniWorld:you_look-now-on_tv,
+            leolaniWorld:you_look-on_tv ;
+        grasp:hasAttribution leolaniTalk:advert_has-mixed_race_families_00028,
+            leolaniTalk:people_are_are_erased_00028,
+            leolaniTalk:white_people_are_are_erased_00028,
+            leolaniTalk:you_everywhere-look-now-on_tv_00028,
+            leolaniTalk:you_everywhere-look-on_tv_00028,
+            leolaniTalk:you_look-now-on_tv_00028,
+            leolaniTalk:you_look-on_tv_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:48.810820"^^xml1:string,
+            "2024-06-05T23:10:48.810887"^^xml1:string,
+            "2024-06-05T23:10:48.810911"^^xml1:string,
+            "2024-06-05T23:10:48.810933"^^xml1:string,
+            "2024-06-05T23:10:48.810955"^^xml1:string,
+            "2024-06-05T23:10:48.810977"^^xml1:string,
+            "2024-06-05T23:10:48.810999"^^xml1:string ;
+        rdf:value "Everywhere you look on tv now, white people are being erased. Every advert has mixed race families, openly promoting miscegenation, no white men anywhere. This is all part of their plan to decimate the white race."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat46_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -478,194 +568,104 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:you_look-now-on_tv {
-    leolaniWorld:you ns1:look_now_on leolaniWorld:tv .
+leolaniWorld:Claims {
+    leolaniWorld:advert_has-mixed_race_families a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "advert_has-mixed_race_families" ;
+        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:people_are_are_erased a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_are_are_erased" ;
+        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:us_think_is_normal a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "us_think_is_normal" ;
+        gaf:denotedBy leolaniTalk:chat46_utterance2_char0-129 .
+
+    leolaniWorld:white_people_are_are_erased a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "white_people_are_are_erased" ;
+        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:you_everywhere-look-now-on_tv a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_everywhere-look-now-on_tv" ;
+        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:you_everywhere-look-on_tv a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_everywhere-look-on_tv" ;
+        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:you_look-now-on_tv a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_look-now-on_tv" ;
+        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:you_look-on_tv a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_look-on_tv" ;
+        gaf:denotedBy leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:advert_has-mixed_race_families {
+    leolaniWorld:advert ns1:has_mixed leolaniWorld:race_families .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:advert_has-mixed_race_families_00028 a grasp:Attribution ;
-        rdfs:label "advert_has-mixed_race_families_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat46_utterance2_char0-129 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat46_utterance2_char0-129" ;
-        gaf:containsDenotation leolaniWorld:normal,
-            leolaniWorld:us_think ;
-        gaf:denotes leolaniWorld:us_think_is_normal ;
-        grasp:hasAttribution leolaniTalk:us_think_is_normal_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:48.998593"^^xml1:string ;
-        rdf:value "There’s so many more black and Asian people on tv now, it’s ridiculous, this is what they’re trying to make us think is ‘normal’."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat46_utterance2 .
-
-    leolaniTalk:people_are_are_erased_00028 a grasp:Attribution ;
-        rdfs:label "people_are_are_erased_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:us_think_is_normal_00022 a grasp:Attribution ;
-        rdfs:label "us_think_is_normal_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat46_utterance2_char0-129 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:white_people_are_are_erased_00028 a grasp:Attribution ;
-        rdfs:label "white_people_are_are_erased_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_everywhere-look-now-on_tv_00028 a grasp:Attribution ;
-        rdfs:label "you_everywhere-look-now-on_tv_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_everywhere-look-on_tv_00028 a grasp:Attribution ;
-        rdfs:label "you_everywhere-look-on_tv_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_look-now-on_tv_00028 a grasp:Attribution ;
-        rdfs:label "you_look-now-on_tv_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_look-on_tv_00028 a grasp:Attribution ;
-        rdfs:label "you_look-on_tv_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat46_utterance0_char0-213 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    leolaniTalk:chat46_utterance0_char0-213 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat46_utterance0_char0-213" ;
-        gaf:containsDenotation leolaniWorld:advert,
-            leolaniWorld:are_erased,
-            leolaniWorld:people,
-            leolaniWorld:race_families,
-            leolaniWorld:tv,
-            leolaniWorld:white_people,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:advert_has-mixed_race_families,
-            leolaniWorld:people_are_are_erased,
-            leolaniWorld:white_people_are_are_erased,
-            leolaniWorld:you_everywhere-look-now-on_tv,
-            leolaniWorld:you_everywhere-look-on_tv,
-            leolaniWorld:you_look-now-on_tv,
-            leolaniWorld:you_look-on_tv ;
-        grasp:hasAttribution leolaniTalk:advert_has-mixed_race_families_00028,
-            leolaniTalk:people_are_are_erased_00028,
-            leolaniTalk:white_people_are_are_erased_00028,
-            leolaniTalk:you_everywhere-look-now-on_tv_00028,
-            leolaniTalk:you_everywhere-look-on_tv_00028,
-            leolaniTalk:you_look-now-on_tv_00028,
-            leolaniTalk:you_look-on_tv_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:48.810820"^^xml1:string,
-            "2024-06-05T23:10:48.810887"^^xml1:string,
-            "2024-06-05T23:10:48.810911"^^xml1:string,
-            "2024-06-05T23:10:48.810933"^^xml1:string,
-            "2024-06-05T23:10:48.810955"^^xml1:string,
-            "2024-06-05T23:10:48.810977"^^xml1:string,
-            "2024-06-05T23:10:48.810999"^^xml1:string ;
-        rdf:value "Everywhere you look on tv now, white people are being erased. Every advert has mixed race families, openly promoting miscegenation, no white men anywhere. This is all part of their plan to decimate the white race."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat46_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:you_everywhere-look-now-on_tv {
+    leolaniWorld:you ns1:everywhere_look_now_on leolaniWorld:tv .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context248 a eps:Context ;
-        rdfs:label "context248" ;
-        hs:id "248"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:advert a gaf:Instance ;
+        rdfs:label "advert" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat46 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "166"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat46 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat46" ;
-        hs:id "46"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat46_utterance0,
-            leolaniTalk:chat46_utterance2 .
-
-    leolaniTalk:chat46_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat46_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat46_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat46_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:are_erased a gaf:Instance ;
+        rdfs:label "are-erased" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:normal a gaf:Instance ;
+        rdfs:label "normal" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance2_char0-129 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:race_families a gaf:Instance ;
+        rdfs:label "race-families" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:tv a gaf:Instance ;
+        rdfs:label "tv" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:us_think a gaf:Instance ;
+        rdfs:label "us-think" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance2_char0-129 .
+
+    leolaniWorld:white_people a gaf:Instance ;
+        rdfs:label "white-people" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat46_utterance0_char0-213 .
 }
 

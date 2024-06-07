@@ -22,96 +22,73 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Africans_are-living-in_third_world_shitholes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Africans_are-living-in_third_world_shitholes" ;
-        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
-
-    leolaniWorld:Africans_are-living-in_world_shitholes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Africans_are-living-in_world_shitholes" ;
-        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
-
-    leolaniWorld:Africans_are-still-living-in_third_world_shitholes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Africans_are-still-living-in_third_world_shitholes" ;
-        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
-
-    leolaniWorld:Africans_are-still-living-in_world_shitholes a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Africans_are-still-living-in_world_shitholes" ;
-        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
-
-    leolaniWorld:Whites_took-to_space a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Whites_took-to_space" ;
-        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
-
-    leolaniWorld:Whites_took_us a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Whites_took_us" ;
-        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
-
-    leolaniWorld:it_is_true a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is_true" ;
-        gaf:denotedBy leolaniTalk:chat1523_utterance2_char0-37 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:Whites_took_us {
     leolaniWorld:Whites ns1:took leolaniWorld:us .
 }
 
-leolaniWorld:Africans_are-living-in_third_world_shitholes {
-    leolaniWorld:Africans ns1:are_living_in leolaniWorld:third_world_shitholes .
+leolaniWorld:Africans_are-still-living-in_world_shitholes {
+    leolaniWorld:Africans ns1:are_still_living_in leolaniWorld:world_shitholes .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Africans a gaf:Instance ;
-        rdfs:label "africans" ;
-        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
+leolaniTalk:Interactions {
+    leolaniContext:context129 a eps:Context ;
+        rdfs:label "context129" ;
+        hs:id "129"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Whites a gaf:Instance ;
-        rdfs:label "whites" ;
-        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1523 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "193"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1523 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1523" ;
+        hs:id "1523"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1523_utterance0,
+            leolaniTalk:chat1523_utterance2 .
+
+    leolaniTalk:chat1523_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1523_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1523_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1523_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1523_utterance2_char0-37 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:space a gaf:Instance ;
-        rdfs:label "space" ;
-        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
-
-    leolaniWorld:third_world_shitholes a gaf:Instance ;
-        rdfs:label "third-world-shitholes" ;
-        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
-
-    leolaniWorld:true a gaf:Instance ;
-        rdfs:label "true" ;
-        gaf:denotedIn leolaniTalk:chat1523_utterance2_char0-37 .
-
-    leolaniWorld:us a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
-
-    leolaniWorld:world_shitholes a gaf:Instance ;
-        rdfs:label "world-shitholes" ;
-        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
 }
 
 leolaniWorld:Africans_are-living-in_world_shitholes {
@@ -122,8 +99,127 @@ leolaniWorld:it_is_true {
     leolaniWorld:it ns1:is leolaniWorld:true .
 }
 
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniWorld:Africans_are-still-living-in_third_world_shitholes {
     leolaniWorld:Africans ns1:are_still_living_in leolaniWorld:third_world_shitholes .
+}
+
+leolaniWorld:Whites_took-to_space {
+    leolaniWorld:Whites ns1:took_to leolaniWorld:space .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Africans_are-living-in_third_world_shitholes_00028 a grasp:Attribution ;
+        rdfs:label "Africans_are-living-in_third_world_shitholes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Africans_are-living-in_world_shitholes_00028 a grasp:Attribution ;
+        rdfs:label "Africans_are-living-in_world_shitholes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Africans_are-still-living-in_third_world_shitholes_00028 a grasp:Attribution ;
+        rdfs:label "Africans_are-still-living-in_third_world_shitholes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Africans_are-still-living-in_world_shitholes_00028 a grasp:Attribution ;
+        rdfs:label "Africans_are-still-living-in_world_shitholes_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Whites_took-to_space_00028 a grasp:Attribution ;
+        rdfs:label "Whites_took-to_space_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Whites_took_us_00028 a grasp:Attribution ;
+        rdfs:label "Whites_took_us_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1523_utterance2_char0-37 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1523_utterance2_char0-37" ;
+        gaf:containsDenotation leolaniWorld:it,
+            leolaniWorld:true ;
+        gaf:denotes leolaniWorld:it_is_true ;
+        grasp:hasAttribution leolaniTalk:it_is_true_00027 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:40.239821"^^xml1:string ;
+        rdf:value "No I didn't, sounds fake, is it true?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1523_utterance2 .
+
+    leolaniTalk:it_is_true_00027 a grasp:Attribution ;
+        rdfs:label "it_is_true_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat1523_utterance2_char0-37 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:CONFUSION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CONFUSION" .
+
+    leolaniTalk:chat1523_utterance0_char0-218 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1523_utterance0_char0-218" ;
+        gaf:containsDenotation leolaniWorld:Africans,
+            leolaniWorld:Whites,
+            leolaniWorld:space,
+            leolaniWorld:third_world_shitholes,
+            leolaniWorld:us,
+            leolaniWorld:world_shitholes ;
+        gaf:denotes leolaniWorld:Africans_are-living-in_third_world_shitholes,
+            leolaniWorld:Africans_are-living-in_world_shitholes,
+            leolaniWorld:Africans_are-still-living-in_third_world_shitholes,
+            leolaniWorld:Africans_are-still-living-in_world_shitholes,
+            leolaniWorld:Whites_took-to_space,
+            leolaniWorld:Whites_took_us ;
+        grasp:hasAttribution leolaniTalk:Africans_are-living-in_third_world_shitholes_00028,
+            leolaniTalk:Africans_are-living-in_world_shitholes_00028,
+            leolaniTalk:Africans_are-still-living-in_third_world_shitholes_00028,
+            leolaniTalk:Africans_are-still-living-in_world_shitholes_00028,
+            leolaniTalk:Whites_took-to_space_00028,
+            leolaniTalk:Whites_took_us_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:26:33.527908"^^xml1:string,
+            "2024-06-05T23:26:33.527965"^^xml1:string,
+            "2024-06-05T23:26:33.527988"^^xml1:string,
+            "2024-06-05T23:26:33.528009"^^xml1:string,
+            "2024-06-05T23:26:33.528030"^^xml1:string,
+            "2024-06-05T23:26:33.528051"^^xml1:string ;
+        rdf:value "If you need any more proof that whites and blacks are not equal, look at the technological advancement achieved by each. Whites took us to space, Africans are still living in third world shitholes. We are not the same."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1523_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -461,187 +557,91 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Whites_took-to_space {
-    leolaniWorld:Whites ns1:took_to leolaniWorld:space .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Africans_are-living-in_third_world_shitholes_00028 a grasp:Attribution ;
-        rdfs:label "Africans_are-living-in_third_world_shitholes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Africans_are-living-in_world_shitholes_00028 a grasp:Attribution ;
-        rdfs:label "Africans_are-living-in_world_shitholes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Africans_are-still-living-in_third_world_shitholes_00028 a grasp:Attribution ;
-        rdfs:label "Africans_are-still-living-in_third_world_shitholes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Africans_are-still-living-in_world_shitholes_00028 a grasp:Attribution ;
-        rdfs:label "Africans_are-still-living-in_world_shitholes_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Whites_took-to_space_00028 a grasp:Attribution ;
-        rdfs:label "Whites_took-to_space_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Whites_took_us_00028 a grasp:Attribution ;
-        rdfs:label "Whites_took_us_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1523_utterance0_char0-218 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1523_utterance2_char0-37 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1523_utterance2_char0-37" ;
-        gaf:containsDenotation leolaniWorld:it,
-            leolaniWorld:true ;
-        gaf:denotes leolaniWorld:it_is_true ;
-        grasp:hasAttribution leolaniTalk:it_is_true_00027 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:40.239821"^^xml1:string ;
-        rdf:value "No I didn't, sounds fake, is it true?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1523_utterance2 .
-
-    leolaniTalk:it_is_true_00027 a grasp:Attribution ;
-        rdfs:label "it_is_true_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat1523_utterance2_char0-37 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:CONFUSION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CONFUSION" .
-
-    leolaniTalk:chat1523_utterance0_char0-218 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1523_utterance0_char0-218" ;
-        gaf:containsDenotation leolaniWorld:Africans,
-            leolaniWorld:Whites,
-            leolaniWorld:space,
-            leolaniWorld:third_world_shitholes,
-            leolaniWorld:us,
-            leolaniWorld:world_shitholes ;
-        gaf:denotes leolaniWorld:Africans_are-living-in_third_world_shitholes,
-            leolaniWorld:Africans_are-living-in_world_shitholes,
-            leolaniWorld:Africans_are-still-living-in_third_world_shitholes,
-            leolaniWorld:Africans_are-still-living-in_world_shitholes,
-            leolaniWorld:Whites_took-to_space,
-            leolaniWorld:Whites_took_us ;
-        grasp:hasAttribution leolaniTalk:Africans_are-living-in_third_world_shitholes_00028,
-            leolaniTalk:Africans_are-living-in_world_shitholes_00028,
-            leolaniTalk:Africans_are-still-living-in_third_world_shitholes_00028,
-            leolaniTalk:Africans_are-still-living-in_world_shitholes_00028,
-            leolaniTalk:Whites_took-to_space_00028,
-            leolaniTalk:Whites_took_us_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:26:33.527908"^^xml1:string,
-            "2024-06-05T23:26:33.527965"^^xml1:string,
-            "2024-06-05T23:26:33.527988"^^xml1:string,
-            "2024-06-05T23:26:33.528009"^^xml1:string,
-            "2024-06-05T23:26:33.528030"^^xml1:string,
-            "2024-06-05T23:26:33.528051"^^xml1:string ;
-        rdf:value "If you need any more proof that whites and blacks are not equal, look at the technological advancement achieved by each. Whites took us to space, Africans are still living in third world shitholes. We are not the same."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1523_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Africans_are-still-living-in_world_shitholes {
-    leolaniWorld:Africans ns1:are_still_living_in leolaniWorld:world_shitholes .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context129 a eps:Context ;
-        rdfs:label "context129" ;
-        hs:id "129"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1523 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "193"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1523 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Africans_are-living-in_third_world_shitholes a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1523" ;
-        hs:id "1523"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1523_utterance0,
-            leolaniTalk:chat1523_utterance2 .
+        rdfs:label "Africans_are-living-in_third_world_shitholes" ;
+        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
 
-    leolaniTalk:chat1523_utterance0 a grasp:Utterance,
+    leolaniWorld:Africans_are-living-in_world_shitholes a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1523_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Africans_are-living-in_world_shitholes" ;
+        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
 
-    leolaniTalk:chat1523_utterance2 a grasp:Utterance,
+    leolaniWorld:Africans_are-still-living-in_third_world_shitholes a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1523_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Africans_are-still-living-in_third_world_shitholes" ;
+        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Africans_are-still-living-in_world_shitholes a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Africans_are-still-living-in_world_shitholes" ;
+        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Whites_took-to_space a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Whites_took-to_space" ;
+        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
+
+    leolaniWorld:Whites_took_us a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Whites_took_us" ;
+        gaf:denotedBy leolaniTalk:chat1523_utterance0_char0-218 .
+
+    leolaniWorld:it_is_true a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is_true" ;
+        gaf:denotedBy leolaniTalk:chat1523_utterance2_char0-37 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Africans_are-living-in_third_world_shitholes {
+    leolaniWorld:Africans ns1:are_living_in leolaniWorld:third_world_shitholes .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Africans a gaf:Instance ;
+        rdfs:label "africans" ;
+        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
+
+    leolaniWorld:Whites a gaf:Instance ;
+        rdfs:label "whites" ;
+        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1523_utterance2_char0-37 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:space a gaf:Instance ;
+        rdfs:label "space" ;
+        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
+
+    leolaniWorld:third_world_shitholes a gaf:Instance ;
+        rdfs:label "third-world-shitholes" ;
+        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
+
+    leolaniWorld:true a gaf:Instance ;
+        rdfs:label "true" ;
+        gaf:denotedIn leolaniTalk:chat1523_utterance2_char0-37 .
+
+    leolaniWorld:us a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
+
+    leolaniWorld:world_shitholes a gaf:Instance ;
+        rdfs:label "world-shitholes" ;
+        gaf:denotedIn leolaniTalk:chat1523_utterance0_char0-218 .
 }
 

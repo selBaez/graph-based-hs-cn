@@ -22,60 +22,126 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_take_our_land a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_take_our_land" ;
-        gaf:denotedBy leolaniTalk:chat2158_utterance2_char0-104 .
-
-    leolaniWorld:they_want_take a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_take" ;
-        gaf:denotedBy leolaniTalk:chat2158_utterance2_char0-104 .
-
-    leolaniWorld:they_want_to_take a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_want_to_take" ;
-        gaf:denotedBy leolaniTalk:chat2158_utterance2_char0-104 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_land a gaf:Instance ;
-        rdfs:label "our-land" ;
-        gaf:denotedIn leolaniTalk:chat2158_utterance2_char0-104 .
-
-    leolaniWorld:take a gaf:Instance ;
-        rdfs:label "take" ;
-        gaf:denotedIn leolaniTalk:chat2158_utterance2_char0-104 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2158_utterance2_char0-104 .
-
-    leolaniWorld:to_take a gaf:Instance ;
-        rdfs:label "to-take" ;
-        gaf:denotedIn leolaniTalk:chat2158_utterance2_char0-104 .
-}
-
 leolaniWorld:they_want_to_take {
     leolaniWorld:they ns1:want leolaniWorld:to_take .
 }
 
-leolaniWorld:they_want_take {
-    leolaniWorld:they ns1:want leolaniWorld:take .
+leolaniTalk:Interactions {
+    leolaniContext:context246 a eps:Context ;
+        rdfs:label "context246" ;
+        hs:id "246"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2158 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "222"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2158 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2158" ;
+        hs:id "2158"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2158_utterance2 .
+
+    leolaniTalk:chat2158_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2158_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:they_take_our_land {
+    leolaniWorld:they ns1:take leolaniWorld:our_land .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:they_take_our_land_00028 a grasp:Attribution ;
+        rdfs:label "they_take_our_land_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2158_utterance2_char0-104 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_take_00028 a grasp:Attribution ;
+        rdfs:label "they_want_take_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2158_utterance2_char0-104 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_want_to_take_00028 a grasp:Attribution ;
+        rdfs:label "they_want_to_take_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2158_utterance2_char0-104 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2158_utterance2_char0-104 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2158_utterance2_char0-104" ;
+        gaf:containsDenotation leolaniWorld:our_land,
+            leolaniWorld:take,
+            leolaniWorld:they,
+            leolaniWorld:to_take ;
+        gaf:denotes leolaniWorld:they_take_our_land,
+            leolaniWorld:they_want_take,
+            leolaniWorld:they_want_to_take ;
+        grasp:hasAttribution leolaniTalk:they_take_our_land_00028,
+            leolaniTalk:they_want_take_00028,
+            leolaniTalk:they_want_to_take_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:12.596591"^^xml1:string,
+            "2024-06-05T23:09:12.596653"^^xml1:string,
+            "2024-06-05T23:09:12.596676"^^xml1:string ;
+        rdf:value "Immigrants are not my brothers. They should not be allowed to live in Italy, they want to take our land."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2158_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -413,121 +479,55 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_want_take {
+    leolaniWorld:they ns1:want leolaniWorld:take .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:they_take_our_land_00028 a grasp:Attribution ;
-        rdfs:label "they_take_our_land_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2158_utterance2_char0-104 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:they_want_take_00028 a grasp:Attribution ;
-        rdfs:label "they_want_take_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2158_utterance2_char0-104 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_take_our_land a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_take_our_land" ;
+        gaf:denotedBy leolaniTalk:chat2158_utterance2_char0-104 .
 
-    leolaniTalk:they_want_to_take_00028 a grasp:Attribution ;
-        rdfs:label "they_want_to_take_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2158_utterance2_char0-104 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_want_take a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_take" ;
+        gaf:denotedBy leolaniTalk:chat2158_utterance2_char0-104 .
 
-    leolaniTalk:chat2158_utterance2_char0-104 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2158_utterance2_char0-104" ;
-        gaf:containsDenotation leolaniWorld:our_land,
-            leolaniWorld:take,
-            leolaniWorld:they,
-            leolaniWorld:to_take ;
-        gaf:denotes leolaniWorld:they_take_our_land,
-            leolaniWorld:they_want_take,
-            leolaniWorld:they_want_to_take ;
-        grasp:hasAttribution leolaniTalk:they_take_our_land_00028,
-            leolaniTalk:they_want_take_00028,
-            leolaniTalk:they_want_to_take_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:12.596591"^^xml1:string,
-            "2024-06-05T23:09:12.596653"^^xml1:string,
-            "2024-06-05T23:09:12.596676"^^xml1:string ;
-        rdf:value "Immigrants are not my brothers. They should not be allowed to live in Italy, they want to take our land."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2158_utterance2 .
+    leolaniWorld:they_want_to_take a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_want_to_take" ;
+        gaf:denotedBy leolaniTalk:chat2158_utterance2_char0-104 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context246 a eps:Context ;
-        rdfs:label "context246" ;
-        hs:id "246"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2158 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "222"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2158 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2158" ;
-        hs:id "2158"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2158_utterance2 .
-
-    leolaniTalk:chat2158_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2158_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:they_take_our_land {
-    leolaniWorld:they ns1:take leolaniWorld:our_land .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_land a gaf:Instance ;
+        rdfs:label "our-land" ;
+        gaf:denotedIn leolaniTalk:chat2158_utterance2_char0-104 .
+
+    leolaniWorld:take a gaf:Instance ;
+        rdfs:label "take" ;
+        gaf:denotedIn leolaniTalk:chat2158_utterance2_char0-104 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2158_utterance2_char0-104 .
+
+    leolaniWorld:to_take a gaf:Instance ;
+        rdfs:label "to-take" ;
+        gaf:denotedIn leolaniTalk:chat2158_utterance2_char0-104 .
 }
 

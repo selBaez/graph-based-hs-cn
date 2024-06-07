@@ -22,73 +22,141 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Muslims_are-problem-in_my_opinion a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are-problem-in_my_opinion" ;
-        gaf:denotedBy leolaniTalk:chat290_utterance0_char0-92 .
+leolaniTalk:Interactions {
+    leolaniContext:context241 a eps:Context ;
+        rdfs:label "context241" ;
+        hs:id "241"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Muslims_are_problem a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_are_problem" ;
-        gaf:denotedBy leolaniTalk:chat290_utterance0_char0-92 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat290 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:nobody_wants_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "nobody_wants_them" ;
-        gaf:denotedBy leolaniTalk:chat290_utterance0_char0-92 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "139"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:problem_is-in_my_opinion a gaf:Assertion,
+    leolaniTalk:chat290 a grasp:Chat,
             sem:Event ;
-        rdfs:label "problem_is-in_my_opinion" ;
-        gaf:denotedBy leolaniTalk:chat290_utterance0_char0-92 .
+        rdfs:label "chat290" ;
+        hs:id "290"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat290_utterance0 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat290_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat290_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:nobody_wants_them {
+    leolaniWorld:nobody ns1:wants leolaniWorld:them .
 }
 
 leolaniWorld:problem_is-in_my_opinion {
     leolaniWorld:problem ns1:is_in leolaniWorld:my_opinion .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:my_opinion a gaf:Instance ;
-        rdfs:label "my-opinion" ;
-        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
-
-    leolaniWorld:nobody a gaf:Instance ;
-        rdfs:label "nobody" ;
-        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
-
-    leolaniWorld:problem a gaf:Instance ;
-        rdfs:label "problem" ;
-        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:Muslims_are-problem-in_my_opinion {
     leolaniWorld:Muslims ns1:are_problem_in leolaniWorld:my_opinion .
 }
 
-leolaniWorld:nobody_wants_them {
-    leolaniWorld:nobody ns1:wants leolaniWorld:them .
+leolaniTalk:Perspectives {
+    leolaniTalk:Muslims_are-problem-in_my_opinion_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_are-problem-in_my_opinion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat290_utterance0_char0-92 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Muslims_are_problem_00028 a grasp:Attribution ;
+        rdfs:label "Muslims_are_problem_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat290_utterance0_char0-92 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:nobody_wants_them_00028 a grasp:Attribution ;
+        rdfs:label "nobody_wants_them_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat290_utterance0_char0-92 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:problem_is-in_my_opinion_00028 a grasp:Attribution ;
+        rdfs:label "problem_is-in_my_opinion_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat290_utterance0_char0-92 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat290_utterance0_char0-92 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat290_utterance0_char0-92" ;
+        gaf:containsDenotation leolaniWorld:Muslims,
+            leolaniWorld:my_opinion,
+            leolaniWorld:nobody,
+            leolaniWorld:problem,
+            leolaniWorld:them ;
+        gaf:denotes leolaniWorld:Muslims_are-problem-in_my_opinion,
+            leolaniWorld:Muslims_are_problem,
+            leolaniWorld:nobody_wants_them,
+            leolaniWorld:problem_is-in_my_opinion ;
+        grasp:hasAttribution leolaniTalk:Muslims_are-problem-in_my_opinion_00028,
+            leolaniTalk:Muslims_are_problem_00028,
+            leolaniTalk:nobody_wants_them_00028,
+            leolaniTalk:problem_is-in_my_opinion_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:10:13.593830"^^xml1:string,
+            "2024-06-05T23:10:13.593893"^^xml1:string,
+            "2024-06-05T23:10:13.593915"^^xml1:string,
+            "2024-06-05T23:10:13.593936"^^xml1:string ;
+        rdf:value "Muslims are a problem in my opinion. They are not welcome in our country: nobody wants them."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat290_utterance0 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -426,132 +494,64 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
 leolaniWorld:Muslims_are_problem {
     leolaniWorld:Muslims ns1:are leolaniWorld:problem .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Muslims_are-problem-in_my_opinion_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_are-problem-in_my_opinion_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat290_utterance0_char0-92 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:Muslims_are-problem-in_my_opinion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are-problem-in_my_opinion" ;
+        gaf:denotedBy leolaniTalk:chat290_utterance0_char0-92 .
 
-    leolaniTalk:Muslims_are_problem_00028 a grasp:Attribution ;
-        rdfs:label "Muslims_are_problem_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat290_utterance0_char0-92 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Muslims_are_problem a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Muslims_are_problem" ;
+        gaf:denotedBy leolaniTalk:chat290_utterance0_char0-92 .
 
-    leolaniTalk:nobody_wants_them_00028 a grasp:Attribution ;
-        rdfs:label "nobody_wants_them_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat290_utterance0_char0-92 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:problem_is-in_my_opinion_00028 a grasp:Attribution ;
-        rdfs:label "problem_is-in_my_opinion_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat290_utterance0_char0-92 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:nobody_wants_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "nobody_wants_them" ;
+        gaf:denotedBy leolaniTalk:chat290_utterance0_char0-92 .
 
-    leolaniTalk:chat290_utterance0_char0-92 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat290_utterance0_char0-92" ;
-        gaf:containsDenotation leolaniWorld:Muslims,
-            leolaniWorld:my_opinion,
-            leolaniWorld:nobody,
-            leolaniWorld:problem,
-            leolaniWorld:them ;
-        gaf:denotes leolaniWorld:Muslims_are-problem-in_my_opinion,
-            leolaniWorld:Muslims_are_problem,
-            leolaniWorld:nobody_wants_them,
-            leolaniWorld:problem_is-in_my_opinion ;
-        grasp:hasAttribution leolaniTalk:Muslims_are-problem-in_my_opinion_00028,
-            leolaniTalk:Muslims_are_problem_00028,
-            leolaniTalk:nobody_wants_them_00028,
-            leolaniTalk:problem_is-in_my_opinion_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:10:13.593830"^^xml1:string,
-            "2024-06-05T23:10:13.593893"^^xml1:string,
-            "2024-06-05T23:10:13.593915"^^xml1:string,
-            "2024-06-05T23:10:13.593936"^^xml1:string ;
-        rdf:value "Muslims are a problem in my opinion. They are not welcome in our country: nobody wants them."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat290_utterance0 .
+    leolaniWorld:problem_is-in_my_opinion a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "problem_is-in_my_opinion" ;
+        gaf:denotedBy leolaniTalk:chat290_utterance0_char0-92 .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context241 a eps:Context ;
-        rdfs:label "context241" ;
-        hs:id "241"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat290 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "139"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat290 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat290" ;
-        hs:id "290"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat290_utterance0 .
-
-    leolaniTalk:chat290_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat290_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:my_opinion a gaf:Instance ;
+        rdfs:label "my-opinion" ;
+        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
+
+    leolaniWorld:nobody a gaf:Instance ;
+        rdfs:label "nobody" ;
+        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
+
+    leolaniWorld:problem a gaf:Instance ;
+        rdfs:label "problem" ;
+        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat290_utterance0_char0-92 .
 }
 

@@ -23,78 +23,161 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Jews_are-nothing-but_criminals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jews_are-nothing-but_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2438_utterance0_char0-30 .
+leolaniTalk:Interactions {
+    leolaniContext:context146 a eps:Context ;
+        rdfs:label "context146" ;
+        hs:id "146"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:They_do-make-up_most a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_do-make-up_most" ;
-        gaf:denotedBy leolaniTalk:chat2438_utterance2_char0-46 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2438 .
 
-    ns12:s_criminals a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_do-make-up_most_of_world_'s_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2438_utterance2_char0-46 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "49"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:world_of_criminals a gaf:Assertion,
+    leolaniTalk:chat2438 a grasp:Chat,
             sem:Event ;
-        rdfs:label "world_of_criminals" ;
-        gaf:denotedBy leolaniTalk:chat2438_utterance2_char0-46 .
+        rdfs:label "chat2438" ;
+        hs:id "2438"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2438_utterance0,
+            leolaniTalk:chat2438_utterance2 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniTalk:chat2438_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2438_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2438_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2438_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+ns12:s_criminals {
+    leolaniWorld:They ns21:do_make_up <http://cltl.nl/leolani/world/most_of_world_'s_criminals> .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:They_do-make-up_most {
     leolaniWorld:They ns21:do_make_up leolaniWorld:most .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Jews a gaf:Instance ;
-        rdfs:label "jews" ;
-        gaf:denotedIn leolaniTalk:chat2438_utterance0_char0-30 .
-
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2438_utterance2_char0-46 .
-
-    leolaniWorld:criminals a gaf:Instance ;
-        rdfs:label "criminals" ;
-        gaf:denotedIn leolaniTalk:chat2438_utterance0_char0-30,
-            leolaniTalk:chat2438_utterance2_char0-46 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:most a gaf:Instance ;
-        rdfs:label "most" ;
-        gaf:denotedIn leolaniTalk:chat2438_utterance2_char0-46 .
-
-    <http://cltl.nl/leolani/world/most_of_world_'s_criminals> a gaf:Instance ;
-        rdfs:label "most-of-world-s-criminals" ;
-        gaf:denotedIn leolaniTalk:chat2438_utterance2_char0-46 .
-
-    leolaniWorld:world a gaf:Instance ;
-        rdfs:label "world" ;
-        gaf:denotedIn leolaniTalk:chat2438_utterance2_char0-46 .
-}
-
 leolaniWorld:Jews_are-nothing-but_criminals {
     leolaniWorld:Jews ns21:are_nothing_but leolaniWorld:criminals .
 }
 
-leolaniWorld:world_of_criminals {
-    leolaniWorld:world ns21:of leolaniWorld:criminals .
+leolaniTalk:Perspectives {
+    leolaniTalk:Jews_are-nothing-but_criminals_00023 a grasp:Attribution ;
+        rdfs:label "Jews_are-nothing-but_criminals_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat2438_utterance0_char0-30 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_do-make-up_most_00028 a grasp:Attribution ;
+        rdfs:label "They_do-make-up_most_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2438_utterance2_char0-46 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    <http://cltl.nl/leolani/talk/They_do-make-up_most_of_world_'s_criminals_00028> a grasp:Attribution ;
+        rdfs:label "They_do-make-up_most_of_world_'s_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2438_utterance2_char0-46 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2438_utterance0_char0-30 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2438_utterance0_char0-30" ;
+        gaf:containsDenotation leolaniWorld:Jews,
+            leolaniWorld:criminals ;
+        gaf:denotes leolaniWorld:Jews_are-nothing-but_criminals ;
+        grasp:hasAttribution leolaniTalk:Jews_are-nothing-but_criminals_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:31.014215"^^xml1:string ;
+        rdf:value "Jews are nothing but criminals"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2438_utterance0 .
+
+    leolaniTalk:world_of_criminals_00028 a grasp:Attribution ;
+        rdfs:label "world_of_criminals_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2438_utterance2_char0-46 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat2438_utterance2_char0-46 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2438_utterance2_char0-46" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:criminals,
+            leolaniWorld:most,
+            <http://cltl.nl/leolani/world/most_of_world_'s_criminals>,
+            leolaniWorld:world ;
+        gaf:denotes leolaniWorld:They_do-make-up_most,
+            ns12:s_criminals,
+            leolaniWorld:world_of_criminals ;
+        grasp:hasAttribution leolaniTalk:They_do-make-up_most_00028,
+            <http://cltl.nl/leolani/talk/They_do-make-up_most_of_world_'s_criminals_00028>,
+            leolaniTalk:world_of_criminals_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:31.179344"^^xml1:string,
+            "2024-06-05T23:34:31.179405"^^xml1:string,
+            "2024-06-05T23:34:31.179431"^^xml1:string ;
+        rdf:value "They do make up most of the world's criminals!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2438_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -432,152 +515,69 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Jews_are-nothing-but_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Jews_are-nothing-but_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2438_utterance0_char0-30 .
+
+    leolaniWorld:They_do-make-up_most a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_do-make-up_most" ;
+        gaf:denotedBy leolaniTalk:chat2438_utterance2_char0-46 .
+
+    ns12:s_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_do-make-up_most_of_world_'s_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2438_utterance2_char0-46 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:world_of_criminals a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "world_of_criminals" ;
+        gaf:denotedBy leolaniTalk:chat2438_utterance2_char0-46 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Jews_are-nothing-but_criminals_00023 a grasp:Attribution ;
-        rdfs:label "Jews_are-nothing-but_criminals_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat2438_utterance0_char0-30 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_do-make-up_most_00028 a grasp:Attribution ;
-        rdfs:label "They_do-make-up_most_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2438_utterance2_char0-46 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    <http://cltl.nl/leolani/talk/They_do-make-up_most_of_world_'s_criminals_00028> a grasp:Attribution ;
-        rdfs:label "They_do-make-up_most_of_world_'s_criminals_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2438_utterance2_char0-46 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2438_utterance0_char0-30 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2438_utterance0_char0-30" ;
-        gaf:containsDenotation leolaniWorld:Jews,
-            leolaniWorld:criminals ;
-        gaf:denotes leolaniWorld:Jews_are-nothing-but_criminals ;
-        grasp:hasAttribution leolaniTalk:Jews_are-nothing-but_criminals_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:31.014215"^^xml1:string ;
-        rdf:value "Jews are nothing but criminals"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2438_utterance0 .
-
-    leolaniTalk:world_of_criminals_00028 a grasp:Attribution ;
-        rdfs:label "world_of_criminals_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2438_utterance2_char0-46 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat2438_utterance2_char0-46 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2438_utterance2_char0-46" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:criminals,
-            leolaniWorld:most,
-            <http://cltl.nl/leolani/world/most_of_world_'s_criminals>,
-            leolaniWorld:world ;
-        gaf:denotes leolaniWorld:They_do-make-up_most,
-            ns12:s_criminals,
-            leolaniWorld:world_of_criminals ;
-        grasp:hasAttribution leolaniTalk:They_do-make-up_most_00028,
-            <http://cltl.nl/leolani/talk/They_do-make-up_most_of_world_'s_criminals_00028>,
-            leolaniTalk:world_of_criminals_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:31.179344"^^xml1:string,
-            "2024-06-05T23:34:31.179405"^^xml1:string,
-            "2024-06-05T23:34:31.179431"^^xml1:string ;
-        rdf:value "They do make up most of the world's criminals!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2438_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:world_of_criminals {
+    leolaniWorld:world ns21:of leolaniWorld:criminals .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context146 a eps:Context ;
-        rdfs:label "context146" ;
-        hs:id "146"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Jews a gaf:Instance ;
+        rdfs:label "jews" ;
+        gaf:denotedIn leolaniTalk:chat2438_utterance0_char0-30 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2438 .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2438_utterance2_char0-46 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "49"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2438 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2438" ;
-        hs:id "2438"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2438_utterance0,
-            leolaniTalk:chat2438_utterance2 .
-
-    leolaniTalk:chat2438_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2438_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2438_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2438_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:criminals a gaf:Instance ;
+        rdfs:label "criminals" ;
+        gaf:denotedIn leolaniTalk:chat2438_utterance0_char0-30,
+            leolaniTalk:chat2438_utterance2_char0-46 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-ns12:s_criminals {
-    leolaniWorld:They ns21:do_make_up <http://cltl.nl/leolani/world/most_of_world_'s_criminals> .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:most a gaf:Instance ;
+        rdfs:label "most" ;
+        gaf:denotedIn leolaniTalk:chat2438_utterance2_char0-46 .
+
+    <http://cltl.nl/leolani/world/most_of_world_'s_criminals> a gaf:Instance ;
+        rdfs:label "most-of-world-s-criminals" ;
+        gaf:denotedIn leolaniTalk:chat2438_utterance2_char0-46 .
+
+    leolaniWorld:world a gaf:Instance ;
+        rdfs:label "world" ;
+        gaf:denotedIn leolaniTalk:chat2438_utterance2_char0-46 .
 }
 

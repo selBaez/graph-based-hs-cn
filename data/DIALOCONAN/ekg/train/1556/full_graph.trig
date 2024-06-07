@@ -22,131 +22,221 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:its_effects_are-still-felt-at-time_today {
+    leolaniWorld:its_effects ns11:are_still_felt_at_time leolaniWorld:today .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:It_was_horrific a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_was_horrific" ;
-        gaf:denotedBy leolaniTalk:chat1556_utterance1_char0-205 .
-
-    leolaniWorld:They_just-want_attention a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_just-want_attention" ;
-        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
-
-    leolaniWorld:They_want_attention a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_want_attention" ;
-        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
-
-    leolaniWorld:its_effects_are-felt-at-time_today a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "its_effects_are-felt-at-time_today" ;
-        gaf:denotedBy leolaniTalk:chat1556_utterance1_char0-205 .
-
-    leolaniWorld:its_effects_are-still-felt-at-time_today a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "its_effects_are-still-felt-at-time_today" ;
-        gaf:denotedBy leolaniTalk:chat1556_utterance1_char0-205 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_being_targeted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_being_targeted" ;
-        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
-
-    leolaniWorld:they_complain_about_targeted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_complain_about_targeted" ;
-        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
-
-    leolaniWorld:they_complain_targeted a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_complain_targeted" ;
-        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:they_complain_targeted {
+    leolaniWorld:they ns11:complain leolaniWorld:targeted .
 }
 
 leolaniWorld:they_complain_about_targeted {
     leolaniWorld:they ns11:complain leolaniWorld:about_targeted .
 }
 
-leolaniWorld:they_being_targeted {
-    leolaniWorld:they ns11:being leolaniWorld:targeted .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context188 a eps:Context ;
+        rdfs:label "context188" ;
+        hs:id "188"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1556_utterance1_char0-205 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1556 .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:about_targeted a gaf:Instance ;
-        rdfs:label "about-targeted" ;
-        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "185"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:attention a gaf:Instance ;
-        rdfs:label "attention" ;
-        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
+    leolaniTalk:chat1556 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1556" ;
+        hs:id "1556"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1556_utterance1,
+            leolaniTalk:chat1556_utterance2 .
+
+    leolaniTalk:chat1556_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1556_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1556_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1556_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
-    leolaniWorld:horrific a gaf:Instance ;
-        rdfs:label "horrific" ;
-        gaf:denotedIn leolaniTalk:chat1556_utterance1_char0-205 .
-
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:its_effects a gaf:Instance ;
-        rdfs:label "its-effects" ;
-        gaf:denotedIn leolaniTalk:chat1556_utterance1_char0-205 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:targeted a gaf:Instance ;
-        rdfs:label "targeted" ;
-        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
-
-    leolaniWorld:today a gaf:Instance ;
-        rdfs:label "today" ;
-        gaf:denotedIn leolaniTalk:chat1556_utterance1_char0-205 .
 }
 
-leolaniWorld:They_want_attention {
-    leolaniWorld:They ns11:want leolaniWorld:attention .
+leolaniWorld:its_effects_are-felt-at-time_today {
+    leolaniWorld:its_effects ns11:are_felt_at_time leolaniWorld:today .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:It_was_horrific {
     leolaniWorld:It ns11:was leolaniWorld:horrific .
 }
 
-leolaniWorld:they_complain_targeted {
-    leolaniWorld:they ns11:complain leolaniWorld:targeted .
+leolaniTalk:Perspectives {
+    leolaniTalk:It_was_horrific_00013 a grasp:Attribution ;
+        rdfs:label "It_was_horrific_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat1556_utterance1_char0-205 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_just-want_attention_00028 a grasp:Attribution ;
+        rdfs:label "They_just-want_attention_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_want_attention_00028 a grasp:Attribution ;
+        rdfs:label "They_want_attention_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:its_effects_are-felt-at-time_today_00013 a grasp:Attribution ;
+        rdfs:label "its_effects_are-felt-at-time_today_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat1556_utterance1_char0-205 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:its_effects_are-still-felt-at-time_today_00013 a grasp:Attribution ;
+        rdfs:label "its_effects_are-still-felt-at-time_today_00013" ;
+        grasp:isAttributionFor leolaniTalk:chat1556_utterance1_char0-205 ;
+        rdf:value graspe:FEAR,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_being_targeted_00028 a grasp:Attribution ;
+        rdfs:label "they_being_targeted_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_complain_about_targeted_00028 a grasp:Attribution ;
+        rdfs:label "they_complain_about_targeted_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_complain_targeted_00028 a grasp:Attribution ;
+        rdfs:label "they_complain_targeted_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1556_utterance1_char0-205 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1556_utterance1_char0-205" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:horrific,
+            leolaniWorld:its_effects,
+            leolaniWorld:today ;
+        gaf:denotes leolaniWorld:It_was_horrific,
+            leolaniWorld:its_effects_are-felt-at-time_today,
+            leolaniWorld:its_effects_are-still-felt-at-time_today ;
+        grasp:hasAttribution leolaniTalk:It_was_horrific_00013,
+            leolaniTalk:its_effects_are-felt-at-time_today_00013,
+            leolaniTalk:its_effects_are-still-felt-at-time_today_00013 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:18:00.128409"^^xml1:string,
+            "2024-06-05T23:18:00.128470"^^xml1:string,
+            "2024-06-05T23:18:00.128494"^^xml1:string ;
+        rdf:value "It was horrific on such a monumental scale that its effects are still felt today. It's not really 'playing the victim', more that there's a legacy of anti-semitism left from it that we still have to solve."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1556_utterance1 .
+
+    graspe:FEAR a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "FEAR" .
+
+    leolaniTalk:chat1556_utterance2_char0-157 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1556_utterance2_char0-157" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:about_targeted,
+            leolaniWorld:attention,
+            leolaniWorld:targeted,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:They_just-want_attention,
+            leolaniWorld:They_want_attention,
+            leolaniWorld:they_being_targeted,
+            leolaniWorld:they_complain_about_targeted,
+            leolaniWorld:they_complain_targeted ;
+        grasp:hasAttribution leolaniTalk:They_just-want_attention_00028,
+            leolaniTalk:They_want_attention_00028,
+            leolaniTalk:they_being_targeted_00028,
+            leolaniTalk:they_complain_about_targeted_00028,
+            leolaniTalk:they_complain_targeted_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:18:06.629868"^^xml1:string,
+            "2024-06-05T23:18:06.629935"^^xml1:string,
+            "2024-06-05T23:18:06.629964"^^xml1:string,
+            "2024-06-05T23:18:06.629990"^^xml1:string,
+            "2024-06-05T23:18:06.630017"^^xml1:string ;
+        rdf:value "That's rubbish, there isn't 'anti-semitism' today, this isn't Nazi Germany. They just want attention when they complain about being targeted and 'oppressed'."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1556_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -484,208 +574,118 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:its_effects_are-felt-at-time_today {
-    leolaniWorld:its_effects ns11:are_felt_at_time leolaniWorld:today .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:its_effects_are-still-felt-at-time_today {
-    leolaniWorld:its_effects ns11:are_still_felt_at_time leolaniWorld:today .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:It_was_horrific_00013 a grasp:Attribution ;
-        rdfs:label "It_was_horrific_00013" ;
-        grasp:isAttributionFor leolaniTalk:chat1556_utterance1_char0-205 ;
-        rdf:value graspe:FEAR,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_just-want_attention_00028 a grasp:Attribution ;
-        rdfs:label "They_just-want_attention_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_want_attention_00028 a grasp:Attribution ;
-        rdfs:label "They_want_attention_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:its_effects_are-felt-at-time_today_00013 a grasp:Attribution ;
-        rdfs:label "its_effects_are-felt-at-time_today_00013" ;
-        grasp:isAttributionFor leolaniTalk:chat1556_utterance1_char0-205 ;
-        rdf:value graspe:FEAR,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:its_effects_are-still-felt-at-time_today_00013 a grasp:Attribution ;
-        rdfs:label "its_effects_are-still-felt-at-time_today_00013" ;
-        grasp:isAttributionFor leolaniTalk:chat1556_utterance1_char0-205 ;
-        rdf:value graspe:FEAR,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_being_targeted_00028 a grasp:Attribution ;
-        rdfs:label "they_being_targeted_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_complain_about_targeted_00028 a grasp:Attribution ;
-        rdfs:label "they_complain_about_targeted_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_complain_targeted_00028 a grasp:Attribution ;
-        rdfs:label "they_complain_targeted_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1556_utterance2_char0-157 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1556_utterance1_char0-205 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1556_utterance1_char0-205" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:horrific,
-            leolaniWorld:its_effects,
-            leolaniWorld:today ;
-        gaf:denotes leolaniWorld:It_was_horrific,
-            leolaniWorld:its_effects_are-felt-at-time_today,
-            leolaniWorld:its_effects_are-still-felt-at-time_today ;
-        grasp:hasAttribution leolaniTalk:It_was_horrific_00013,
-            leolaniTalk:its_effects_are-felt-at-time_today_00013,
-            leolaniTalk:its_effects_are-still-felt-at-time_today_00013 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:18:00.128409"^^xml1:string,
-            "2024-06-05T23:18:00.128470"^^xml1:string,
-            "2024-06-05T23:18:00.128494"^^xml1:string ;
-        rdf:value "It was horrific on such a monumental scale that its effects are still felt today. It's not really 'playing the victim', more that there's a legacy of anti-semitism left from it that we still have to solve."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1556_utterance1 .
-
-    graspe:FEAR a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "FEAR" .
-
-    leolaniTalk:chat1556_utterance2_char0-157 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1556_utterance2_char0-157" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:about_targeted,
-            leolaniWorld:attention,
-            leolaniWorld:targeted,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:They_just-want_attention,
-            leolaniWorld:They_want_attention,
-            leolaniWorld:they_being_targeted,
-            leolaniWorld:they_complain_about_targeted,
-            leolaniWorld:they_complain_targeted ;
-        grasp:hasAttribution leolaniTalk:They_just-want_attention_00028,
-            leolaniTalk:They_want_attention_00028,
-            leolaniTalk:they_being_targeted_00028,
-            leolaniTalk:they_complain_about_targeted_00028,
-            leolaniTalk:they_complain_targeted_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:18:06.629868"^^xml1:string,
-            "2024-06-05T23:18:06.629935"^^xml1:string,
-            "2024-06-05T23:18:06.629964"^^xml1:string,
-            "2024-06-05T23:18:06.629990"^^xml1:string,
-            "2024-06-05T23:18:06.630017"^^xml1:string ;
-        rdf:value "That's rubbish, there isn't 'anti-semitism' today, this isn't Nazi Germany. They just want attention when they complain about being targeted and 'oppressed'."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1556_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:They_want_attention {
+    leolaniWorld:They ns11:want leolaniWorld:attention .
 }
 
 leolaniWorld:They_just-want_attention {
     leolaniWorld:They ns11:just_want leolaniWorld:attention .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context188 a eps:Context ;
-        rdfs:label "context188" ;
-        hs:id "188"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1556 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "185"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1556 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:It_was_horrific a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1556" ;
-        hs:id "1556"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1556_utterance1,
-            leolaniTalk:chat1556_utterance2 .
+        rdfs:label "It_was_horrific" ;
+        gaf:denotedBy leolaniTalk:chat1556_utterance1_char0-205 .
 
-    leolaniTalk:chat1556_utterance1 a grasp:Utterance,
+    leolaniWorld:They_just-want_attention a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1556_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "They_just-want_attention" ;
+        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
 
-    leolaniTalk:chat1556_utterance2 a grasp:Utterance,
+    leolaniWorld:They_want_attention a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1556_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "They_want_attention" ;
+        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:its_effects_are-felt-at-time_today a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "its_effects_are-felt-at-time_today" ;
+        gaf:denotedBy leolaniTalk:chat1556_utterance1_char0-205 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:its_effects_are-still-felt-at-time_today a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "its_effects_are-still-felt-at-time_today" ;
+        gaf:denotedBy leolaniTalk:chat1556_utterance1_char0-205 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_being_targeted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_being_targeted" ;
+        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
+
+    leolaniWorld:they_complain_about_targeted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_complain_about_targeted" ;
+        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
+
+    leolaniWorld:they_complain_targeted a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_complain_targeted" ;
+        gaf:denotedBy leolaniTalk:chat1556_utterance2_char0-157 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:they_being_targeted {
+    leolaniWorld:they ns11:being leolaniWorld:targeted .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1556_utterance1_char0-205 .
+
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
+
+    leolaniWorld:about_targeted a gaf:Instance ;
+        rdfs:label "about-targeted" ;
+        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
+
+    leolaniWorld:attention a gaf:Instance ;
+        rdfs:label "attention" ;
+        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:horrific a gaf:Instance ;
+        rdfs:label "horrific" ;
+        gaf:denotedIn leolaniTalk:chat1556_utterance1_char0-205 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:its_effects a gaf:Instance ;
+        rdfs:label "its-effects" ;
+        gaf:denotedIn leolaniTalk:chat1556_utterance1_char0-205 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:targeted a gaf:Instance ;
+        rdfs:label "targeted" ;
+        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1556_utterance2_char0-157 .
+
+    leolaniWorld:today a gaf:Instance ;
+        rdfs:label "today" ;
+        gaf:denotedIn leolaniTalk:chat1556_utterance1_char0-205 .
 }
 

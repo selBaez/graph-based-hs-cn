@@ -22,12 +22,107 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:her_feel_unsafe {
-    leolaniWorld:her ns1:feel leolaniWorld:unsafe .
+leolaniTalk:Interactions {
+    leolaniContext:context155 a eps:Context ;
+        rdfs:label "context155" ;
+        hs:id "155"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat66 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "62"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat66 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat66" ;
+        hs:id "66"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat66_utterance0,
+            leolaniTalk:chat66_utterance1 .
+
+    leolaniTalk:chat66_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat66_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat66_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat66_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:you_politely-talk-to_them {
-    leolaniWorld:you ns1:politely_talk_to leolaniWorld:them .
+leolaniWorld:PC_gone_mad {
+    leolaniWorld:PC ns1:gone leolaniWorld:mad .
+}
+
+leolaniWorld:you_can-approach_you_want {
+    leolaniWorld:you ns1:can_approach leolaniWorld:you_want .
+}
+
+leolaniWorld:you_can-approach_them {
+    leolaniWorld:you ns1:can_approach leolaniWorld:them .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:shouting_is_cat_calling {
+    leolaniWorld:shouting ns1:is leolaniWorld:cat_calling .
+}
+
+leolaniWorld:you_can-approach_If_you_want {
+    leolaniWorld:you ns1:can_approach leolaniWorld:If_you_want .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:her_feel-in_public {
+    leolaniWorld:her ns1:feel_in leolaniWorld:public .
+}
+
+leolaniWorld:you_complement_someone {
+    leolaniWorld:you ns1:complement leolaniWorld:someone .
 }
 
 leolaniTalk:Perspectives {
@@ -169,159 +264,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:PC_gone_mad a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "PC_gone_mad" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance0_char0-166 .
-
-    leolaniWorld:her_feel-in_public a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "her_feel-in_public" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:her_feel_unsafe a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "her_feel_unsafe" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:shouting_is_cat_calling a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "shouting_is_cat_calling" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:you_can-approach_If_you_want a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_can-approach_If_you_want" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:you_can-approach_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_can-approach_them" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:you_can-approach_you_want a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_can-approach_you_want" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:you_complement_someone a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_complement_someone" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:you_politely-talk-to_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_politely-talk-to_them" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:you_talk-to_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_talk-to_them" ;
-        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:you_can-approach_If_you_want {
-    leolaniWorld:you ns1:can_approach leolaniWorld:If_you_want .
-}
-
-leolaniWorld:PC_gone_mad {
-    leolaniWorld:PC ns1:gone leolaniWorld:mad .
-}
-
-leolaniWorld:you_can-approach_them {
-    leolaniWorld:you ns1:can_approach leolaniWorld:them .
-}
-
-leolaniWorld:you_complement_someone {
-    leolaniWorld:you ns1:complement leolaniWorld:someone .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:If_you_want a gaf:Instance ;
-        rdfs:label "if-you-want" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:PC a gaf:Instance ;
-        rdfs:label "pc" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance0_char0-166 .
-
-    leolaniWorld:cat_calling a gaf:Instance ;
-        rdfs:label "cat-calling" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:her a gaf:Instance ;
-        rdfs:label "her" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:mad a gaf:Instance ;
-        rdfs:label "mad" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance0_char0-166 .
-
-    leolaniWorld:public a gaf:Instance ;
-        rdfs:label "public" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:shouting a gaf:Instance ;
-        rdfs:label "shouting" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:someone a gaf:Instance ;
-        rdfs:label "someone" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:unsafe a gaf:Instance ;
-        rdfs:label "unsafe" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-
-    leolaniWorld:you_want a gaf:Instance ;
-        rdfs:label "you-want" ;
-        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
-}
-
-leolaniWorld:her_feel-in_public {
-    leolaniWorld:her ns1:feel_in leolaniWorld:public .
 }
 
 leolaniWorld:Ontology {
@@ -659,82 +601,140 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    leolaniWorld:PC_gone_mad a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "PC_gone_mad" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance0_char0-166 .
+
+    leolaniWorld:her_feel-in_public a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "her_feel-in_public" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:her_feel_unsafe a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "her_feel_unsafe" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:shouting_is_cat_calling a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "shouting_is_cat_calling" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:you_can-approach_If_you_want a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_can-approach_If_you_want" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:you_can-approach_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_can-approach_them" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:you_can-approach_you_want a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_can-approach_you_want" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:you_complement_someone a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_complement_someone" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:you_politely-talk-to_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_politely-talk-to_them" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:you_talk-to_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_talk-to_them" ;
+        gaf:denotedBy leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
 leolaniWorld:you_talk-to_them {
     leolaniWorld:you ns1:talk_to leolaniWorld:them .
 }
 
-leolaniWorld:you_can-approach_you_want {
-    leolaniWorld:you ns1:can_approach leolaniWorld:you_want .
+leolaniWorld:her_feel_unsafe {
+    leolaniWorld:her ns1:feel leolaniWorld:unsafe .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context155 a eps:Context ;
-        rdfs:label "context155" ;
-        hs:id "155"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:you_politely-talk-to_them {
+    leolaniWorld:you ns1:politely_talk_to leolaniWorld:them .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat66 .
+leolaniWorld:Instances {
+    leolaniWorld:If_you_want a gaf:Instance ;
+        rdfs:label "if-you-want" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:PC a gaf:Instance ;
+        rdfs:label "pc" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance0_char0-166 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "62"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat66 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat66" ;
-        hs:id "66"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat66_utterance0,
-            leolaniTalk:chat66_utterance1 .
-
-    leolaniTalk:chat66_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat66_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat66_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat66_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:cat_calling a gaf:Instance ;
+        rdfs:label "cat-calling" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
+    leolaniWorld:her a gaf:Instance ;
+        rdfs:label "her" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
 
-leolaniWorld:shouting_is_cat_calling {
-    leolaniWorld:shouting ns1:is leolaniWorld:cat_calling .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:mad a gaf:Instance ;
+        rdfs:label "mad" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance0_char0-166 .
+
+    leolaniWorld:public a gaf:Instance ;
+        rdfs:label "public" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:shouting a gaf:Instance ;
+        rdfs:label "shouting" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:someone a gaf:Instance ;
+        rdfs:label "someone" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:unsafe a gaf:Instance ;
+        rdfs:label "unsafe" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
+
+    leolaniWorld:you_want a gaf:Instance ;
+        rdfs:label "you-want" ;
+        gaf:denotedIn leolaniTalk:chat66_utterance1_char0-181 .
 }
 

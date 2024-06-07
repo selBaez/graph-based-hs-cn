@@ -22,121 +22,198 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:you_can-have_diversity {
-    leolaniWorld:you ns1:can_have leolaniWorld:diversity .
+leolaniWorld:It_has_ignorant {
+    leolaniWorld:It ns1:has leolaniWorld:ignorant .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Blacks_are_incompatible a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context22 a eps:Context ;
+        rdfs:label "context22" ;
+        hs:id "22"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1524 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "233"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1524 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Blacks_are_incompatible" ;
-        gaf:denotedBy leolaniTalk:chat1524_utterance0_char0-121 .
+        rdfs:label "chat1524" ;
+        hs:id "1524"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1524_utterance0,
+            leolaniTalk:chat1524_utterance1 .
 
-    leolaniWorld:I_have-disagree-with_statement a gaf:Assertion,
+    leolaniTalk:chat1524_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "I_have-disagree-with_statement" ;
-        gaf:denotedBy leolaniTalk:chat1524_utterance1_char0-161 .
+        rdfs:label "chat1524_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:It_has_ignorant a gaf:Assertion,
+    leolaniTalk:chat1524_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "It_has_ignorant" ;
-        gaf:denotedBy leolaniTalk:chat1524_utterance1_char0-161 .
+        rdfs:label "chat1524_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:It_has_ignorant_so a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_ignorant_so" ;
-        gaf:denotedBy leolaniTalk:chat1524_utterance1_char0-161 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:civilisation_are_incompatible a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "civilisation_are_incompatible" ;
-        gaf:denotedBy leolaniTalk:chat1524_utterance0_char0-121 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:you_can-have_diversity a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_can-have_diversity" ;
-        gaf:denotedBy leolaniTalk:chat1524_utterance0_char0-121 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:Blacks_are_incompatible {
     leolaniWorld:Blacks ns1:are leolaniWorld:incompatible .
 }
 
-leolaniWorld:It_has_ignorant_so {
-    leolaniWorld:It ns1:has leolaniWorld:ignorant_so .
+leolaniWorld:civilisation_are_incompatible {
+    leolaniWorld:civilisation ns1:are leolaniWorld:incompatible .
 }
 
-leolaniWorld:It_has_ignorant {
-    leolaniWorld:It ns1:has leolaniWorld:ignorant .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Blacks a gaf:Instance ;
-        rdfs:label "blacks" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+leolaniWorld:I_have-disagree-with_statement {
+    leolaniWorld:I ns1:have_disagree_with leolaniWorld:statement .
+}
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Blacks_are_incompatible_00028 a grasp:Attribution ;
+        rdfs:label "Blacks_are_incompatible_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1524_utterance0_char0-121 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:civilisation a gaf:Instance ;
-        rdfs:label "civilisation" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
+    leolaniTalk:I_have-disagree-with_statement_00023 a grasp:Attribution ;
+        rdfs:label "I_have-disagree-with_statement_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1524_utterance1_char0-161 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:It_has_ignorant_00023 a grasp:Attribution ;
+        rdfs:label "It_has_ignorant_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1524_utterance1_char0-161 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:diversity a gaf:Instance ;
-        rdfs:label "diversity" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
+    leolaniTalk:It_has_ignorant_so_00023 a grasp:Attribution ;
+        rdfs:label "It_has_ignorant_so_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat1524_utterance1_char0-161 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:civilisation_are_incompatible_00028 a grasp:Attribution ;
+        rdfs:label "civilisation_are_incompatible_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1524_utterance0_char0-121 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:ignorant a gaf:Instance ;
-        rdfs:label "ignorant" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+    leolaniTalk:you_can-have_diversity_00028 a grasp:Attribution ;
+        rdfs:label "you_can-have_diversity_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1524_utterance0_char0-121 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:ignorant_so a gaf:Instance ;
-        rdfs:label "ignorant-so" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+    leolaniTalk:chat1524_utterance0_char0-121 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1524_utterance0_char0-121" ;
+        gaf:containsDenotation leolaniWorld:Blacks,
+            leolaniWorld:civilisation,
+            leolaniWorld:diversity,
+            leolaniWorld:incompatible,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:Blacks_are_incompatible,
+            leolaniWorld:civilisation_are_incompatible,
+            leolaniWorld:you_can-have_diversity ;
+        grasp:hasAttribution leolaniTalk:Blacks_are_incompatible_00028,
+            leolaniTalk:civilisation_are_incompatible_00028,
+            leolaniTalk:you_can-have_diversity_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:46.976626"^^xml1:string,
+            "2024-06-05T23:08:46.976690"^^xml1:string,
+            "2024-06-05T23:08:46.976713"^^xml1:string ;
+        rdf:value "Blacks and civilisation are incompatible. You can have a thriving society or you can have diversity, you can’t have both."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1524_utterance0 .
 
-    leolaniWorld:incompatible a gaf:Instance ;
-        rdfs:label "incompatible" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
+    leolaniTalk:chat1524_utterance1_char0-161 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1524_utterance1_char0-161" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:It,
+            leolaniWorld:ignorant,
+            leolaniWorld:ignorant_so,
+            leolaniWorld:statement ;
+        gaf:denotes leolaniWorld:I_have-disagree-with_statement,
+            leolaniWorld:It_has_ignorant,
+            leolaniWorld:It_has_ignorant_so ;
+        grasp:hasAttribution leolaniTalk:I_have-disagree-with_statement_00023,
+            leolaniTalk:It_has_ignorant_00023,
+            leolaniTalk:It_has_ignorant_so_00023 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:47.080040"^^xml1:string,
+            "2024-06-05T23:08:47.080102"^^xml1:string,
+            "2024-06-05T23:08:47.080126"^^xml1:string ;
+        rdf:value "It's ignorant to dismiss the influential excellence of the many black thinkers, visionaries, inventors and scientists, so I have to disagree with that statement."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1524_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
 
-    leolaniWorld:statement a gaf:Instance ;
-        rdfs:label "statement" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -474,185 +551,108 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:you_can-have_diversity {
+    leolaniWorld:you ns1:can_have leolaniWorld:diversity .
 }
 
-leolaniWorld:I_have-disagree-with_statement {
-    leolaniWorld:I ns1:have_disagree_with leolaniWorld:statement .
-}
-
-leolaniWorld:civilisation_are_incompatible {
-    leolaniWorld:civilisation ns1:are leolaniWorld:incompatible .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Blacks_are_incompatible_00028 a grasp:Attribution ;
-        rdfs:label "Blacks_are_incompatible_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1524_utterance0_char0-121 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:I_have-disagree-with_statement_00023 a grasp:Attribution ;
-        rdfs:label "I_have-disagree-with_statement_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1524_utterance1_char0-161 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_has_ignorant_00023 a grasp:Attribution ;
-        rdfs:label "It_has_ignorant_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1524_utterance1_char0-161 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:It_has_ignorant_so_00023 a grasp:Attribution ;
-        rdfs:label "It_has_ignorant_so_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat1524_utterance1_char0-161 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:civilisation_are_incompatible_00028 a grasp:Attribution ;
-        rdfs:label "civilisation_are_incompatible_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1524_utterance0_char0-121 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_can-have_diversity_00028 a grasp:Attribution ;
-        rdfs:label "you_can-have_diversity_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1524_utterance0_char0-121 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1524_utterance0_char0-121 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1524_utterance0_char0-121" ;
-        gaf:containsDenotation leolaniWorld:Blacks,
-            leolaniWorld:civilisation,
-            leolaniWorld:diversity,
-            leolaniWorld:incompatible,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:Blacks_are_incompatible,
-            leolaniWorld:civilisation_are_incompatible,
-            leolaniWorld:you_can-have_diversity ;
-        grasp:hasAttribution leolaniTalk:Blacks_are_incompatible_00028,
-            leolaniTalk:civilisation_are_incompatible_00028,
-            leolaniTalk:you_can-have_diversity_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:46.976626"^^xml1:string,
-            "2024-06-05T23:08:46.976690"^^xml1:string,
-            "2024-06-05T23:08:46.976713"^^xml1:string ;
-        rdf:value "Blacks and civilisation are incompatible. You can have a thriving society or you can have diversity, you can’t have both."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1524_utterance0 .
-
-    leolaniTalk:chat1524_utterance1_char0-161 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1524_utterance1_char0-161" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:It,
-            leolaniWorld:ignorant,
-            leolaniWorld:ignorant_so,
-            leolaniWorld:statement ;
-        gaf:denotes leolaniWorld:I_have-disagree-with_statement,
-            leolaniWorld:It_has_ignorant,
-            leolaniWorld:It_has_ignorant_so ;
-        grasp:hasAttribution leolaniTalk:I_have-disagree-with_statement_00023,
-            leolaniTalk:It_has_ignorant_00023,
-            leolaniTalk:It_has_ignorant_so_00023 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:47.080040"^^xml1:string,
-            "2024-06-05T23:08:47.080102"^^xml1:string,
-            "2024-06-05T23:08:47.080126"^^xml1:string ;
-        rdf:value "It's ignorant to dismiss the influential excellence of the many black thinkers, visionaries, inventors and scientists, so I have to disagree with that statement."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1524_utterance1 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context22 a eps:Context ;
-        rdfs:label "context22" ;
-        hs:id "22"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1524 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "233"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1524 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Blacks_are_incompatible a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1524" ;
-        hs:id "1524"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1524_utterance0,
-            leolaniTalk:chat1524_utterance1 .
+        rdfs:label "Blacks_are_incompatible" ;
+        gaf:denotedBy leolaniTalk:chat1524_utterance0_char0-121 .
 
-    leolaniTalk:chat1524_utterance0 a grasp:Utterance,
+    leolaniWorld:I_have-disagree-with_statement a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1524_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "I_have-disagree-with_statement" ;
+        gaf:denotedBy leolaniTalk:chat1524_utterance1_char0-161 .
 
-    leolaniTalk:chat1524_utterance1 a grasp:Utterance,
+    leolaniWorld:It_has_ignorant a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1524_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "It_has_ignorant" ;
+        gaf:denotedBy leolaniTalk:chat1524_utterance1_char0-161 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:It_has_ignorant_so a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_ignorant_so" ;
+        gaf:denotedBy leolaniTalk:chat1524_utterance1_char0-161 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:civilisation_are_incompatible a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "civilisation_are_incompatible" ;
+        gaf:denotedBy leolaniTalk:chat1524_utterance0_char0-121 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:you_can-have_diversity a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_can-have_diversity" ;
+        gaf:denotedBy leolaniTalk:chat1524_utterance0_char0-121 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:It_has_ignorant_so {
+    leolaniWorld:It ns1:has leolaniWorld:ignorant_so .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Blacks a gaf:Instance ;
+        rdfs:label "blacks" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
+
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+
+    leolaniWorld:civilisation a gaf:Instance ;
+        rdfs:label "civilisation" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:diversity a gaf:Instance ;
+        rdfs:label "diversity" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:ignorant a gaf:Instance ;
+        rdfs:label "ignorant" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+
+    leolaniWorld:ignorant_so a gaf:Instance ;
+        rdfs:label "ignorant-so" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+
+    leolaniWorld:incompatible a gaf:Instance ;
+        rdfs:label "incompatible" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:statement a gaf:Instance ;
+        rdfs:label "statement" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance1_char0-161 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1524_utterance0_char0-121 .
 }
 

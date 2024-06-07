@@ -22,40 +22,74 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context234 a eps:Context ;
+        rdfs:label "context234" ;
+        hs:id "234"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat577 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "222"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat577 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat577" ;
+        hs:id "577"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat577_utterance0 .
+
+    leolaniTalk:chat577_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat577_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:Jewish_folks_are_obsessed {
+    leolaniWorld:Jewish_folks ns11:are leolaniWorld:obsessed .
+}
+
 leolaniWorld:Jewish_folks_are-obsessed-with_holocaust {
     leolaniWorld:Jewish_folks ns11:are_obsessed_with leolaniWorld:holocaust .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Jewish_folks_are-obsessed-with_holocaust a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jewish_folks_are-obsessed-with_holocaust" ;
-        gaf:denotedBy leolaniTalk:chat577_utterance0_char0-45 .
-
-    leolaniWorld:Jewish_folks_are_obsessed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Jewish_folks_are_obsessed" ;
-        gaf:denotedBy leolaniTalk:chat577_utterance0_char0-45 .
-
-    leolaniWorld:folks_are-obsessed-with_holocaust a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "folks_are-obsessed-with_holocaust" ;
-        gaf:denotedBy leolaniTalk:chat577_utterance0_char0-45 .
-
-    leolaniWorld:folks_are_obsessed a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "folks_are_obsessed" ;
-        gaf:denotedBy leolaniTalk:chat577_utterance0_char0-45 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:folks_are_obsessed {
+    leolaniWorld:folks ns11:are leolaniWorld:obsessed .
 }
 
 leolaniTalk:Perspectives {
@@ -122,43 +156,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Jewish_folks a gaf:Instance ;
-        rdfs:label "jewish-folks" ;
-        gaf:denotedIn leolaniTalk:chat577_utterance0_char0-45 .
-
-    leolaniWorld:folks a gaf:Instance ;
-        rdfs:label "folks" ;
-        gaf:denotedIn leolaniTalk:chat577_utterance0_char0-45 .
-
-    leolaniWorld:holocaust a gaf:Instance ;
-        rdfs:label "holocaust" ;
-        gaf:denotedIn leolaniTalk:chat577_utterance0_char0-45 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:obsessed a gaf:Instance ;
-        rdfs:label "obsessed" ;
-        gaf:denotedIn leolaniTalk:chat577_utterance0_char0-45 .
-}
-
-leolaniWorld:Jewish_folks_are_obsessed {
-    leolaniWorld:Jewish_folks ns11:are leolaniWorld:obsessed .
-}
-
-leolaniWorld:folks_are-obsessed-with_holocaust {
-    leolaniWorld:folks ns11:are_obsessed_with leolaniWorld:holocaust .
-}
-
-leolaniWorld:folks_are_obsessed {
-    leolaniWorld:folks ns11:are leolaniWorld:obsessed .
 }
 
 leolaniWorld:Ontology {
@@ -496,57 +493,60 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context234 a eps:Context ;
-        rdfs:label "context234" ;
-        hs:id "234"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat577 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "222"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat577 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Jewish_folks_are-obsessed-with_holocaust a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat577" ;
-        hs:id "577"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat577_utterance0 .
+        rdfs:label "Jewish_folks_are-obsessed-with_holocaust" ;
+        gaf:denotedBy leolaniTalk:chat577_utterance0_char0-45 .
 
-    leolaniTalk:chat577_utterance0 a grasp:Utterance,
+    leolaniWorld:Jewish_folks_are_obsessed a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat577_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Jewish_folks_are_obsessed" ;
+        gaf:denotedBy leolaniTalk:chat577_utterance0_char0-45 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:folks_are-obsessed-with_holocaust a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "folks_are-obsessed-with_holocaust" ;
+        gaf:denotedBy leolaniTalk:chat577_utterance0_char0-45 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:folks_are_obsessed a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "folks_are_obsessed" ;
+        gaf:denotedBy leolaniTalk:chat577_utterance0_char0-45 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:folks_are-obsessed-with_holocaust {
+    leolaniWorld:folks ns11:are_obsessed_with leolaniWorld:holocaust .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Jewish_folks a gaf:Instance ;
+        rdfs:label "jewish-folks" ;
+        gaf:denotedIn leolaniTalk:chat577_utterance0_char0-45 .
+
+    leolaniWorld:folks a gaf:Instance ;
+        rdfs:label "folks" ;
+        gaf:denotedIn leolaniTalk:chat577_utterance0_char0-45 .
+
+    leolaniWorld:holocaust a gaf:Instance ;
+        rdfs:label "holocaust" ;
+        gaf:denotedIn leolaniTalk:chat577_utterance0_char0-45 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:obsessed a gaf:Instance ;
+        rdfs:label "obsessed" ;
+        gaf:denotedIn leolaniTalk:chat577_utterance0_char0-45 .
 }
 

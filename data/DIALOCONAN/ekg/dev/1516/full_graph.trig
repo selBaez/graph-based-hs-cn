@@ -22,17 +22,58 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+leolaniTalk:Interactions {
+    leolaniContext:context228 a eps:Context ;
+        rdfs:label "context228" ;
+        hs:id "228"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:they_got_to a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_got_to" ;
-        gaf:denotedBy leolaniTalk:chat1516_utterance2_char0-88 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1516 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "111"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1516 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1516" ;
+        hs:id "1516"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1516_utterance2 .
+
+    leolaniTalk:chat1516_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1516_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:leolani_know_hs {
@@ -71,27 +112,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1516_utterance2_char0-88 .
-
-    leolaniWorld:to a gaf:Instance ;
-        rdfs:label "to" ;
-        gaf:denotedIn leolaniTalk:chat1516_utterance2_char0-88 .
-}
-
-leolaniWorld:they_got_to {
-    leolaniWorld:they ns11:got leolaniWorld:to .
 }
 
 leolaniWorld:Ontology {
@@ -429,57 +449,37 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context228 a eps:Context ;
-        rdfs:label "context228" ;
-        hs:id "228"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:they_got_to {
+    leolaniWorld:they ns11:got leolaniWorld:to .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1516 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "111"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1516 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1516" ;
-        hs:id "1516"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1516_utterance2 .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat1516_utterance2 a grasp:Utterance,
+    leolaniWorld:they_got_to a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1516_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "they_got_to" ;
+        gaf:denotedBy leolaniTalk:chat1516_utterance2_char0-88 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1516_utterance2_char0-88 .
+
+    leolaniWorld:to a gaf:Instance ;
+        rdfs:label "to" ;
+        gaf:denotedIn leolaniTalk:chat1516_utterance2_char0-88 .
 }
 

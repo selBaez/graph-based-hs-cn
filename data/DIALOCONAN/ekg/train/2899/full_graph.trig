@@ -22,71 +22,86 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:It_must_must_banned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_must_must_banned" ;
-        gaf:denotedBy leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:it_is-about_infidels a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is-about_infidels" ;
-        gaf:denotedBy leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:it_is-about_killing_infidels a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_is-about_killing_infidels" ;
-        gaf:denotedBy leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:nothing_suggest_that a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "nothing_suggest_that" ;
-        gaf:denotedBy leolaniTalk:chat2899_utterance1_char0-130 .
-
-    leolaniWorld:problem_is-with_Islam a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "problem_is-with_Islam" ;
-        gaf:denotedBy leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:they_are_are_called a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_are_called" ;
-        gaf:denotedBy leolaniTalk:chat2899_utterance2_char0-81 .
-
-    leolaniWorld:they_are_are_called_then a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_are_called_then" ;
-        gaf:denotedBy leolaniTalk:chat2899_utterance2_char0-81 .
-
-    leolaniWorld:they_are_why_are_called a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_why_are_called" ;
-        gaf:denotedBy leolaniTalk:chat2899_utterance2_char0-81 .
-
-    leolaniWorld:they_are_why_are_called_then a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_why_are_called_then" ;
-        gaf:denotedBy leolaniTalk:chat2899_utterance2_char0-81 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:they_are_are_called {
+    leolaniWorld:they ns1:are leolaniWorld:are_called .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:nothing_suggest_that {
+    leolaniWorld:nothing ns1:suggest leolaniWorld:that .
 }
 
-leolaniWorld:they_are_why_are_called_then {
-    leolaniWorld:they ns1:are leolaniWorld:why_are_called_then .
+leolaniTalk:Interactions {
+    leolaniContext:context113 a eps:Context ;
+        rdfs:label "context113" ;
+        hs:id "113"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2899 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "148"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2899 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2899" ;
+        hs:id "2899"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2899_utterance0,
+            leolaniTalk:chat2899_utterance1,
+            leolaniTalk:chat2899_utterance2 .
+
+    leolaniTalk:chat2899_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2899_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2899_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2899_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2899_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2899_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:It_must_must_banned {
@@ -97,85 +112,160 @@ leolaniWorld:it_is-about_killing_infidels {
     leolaniWorld:it ns1:is_about leolaniWorld:killing_infidels .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Islam a gaf:Instance ;
-        rdfs:label "islam" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:are_called a gaf:Instance ;
-        rdfs:label "are-called" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
-
-    leolaniWorld:are_called_then a gaf:Instance ;
-        rdfs:label "are-called-then" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:infidels a gaf:Instance ;
-        rdfs:label "infidels" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:killing_infidels a gaf:Instance ;
-        rdfs:label "killing-infidels" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:must_banned a gaf:Instance ;
-        rdfs:label "must-banned" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance1_char0-130 .
-
-    leolaniWorld:problem a gaf:Instance ;
-        rdfs:label "problem" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
-
-    leolaniWorld:that a gaf:Instance ;
-        rdfs:label "that" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance1_char0-130 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
-
-    leolaniWorld:why_are_called a gaf:Instance ;
-        rdfs:label "why-are-called" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
-
-    leolaniWorld:why_are_called_then a gaf:Instance ;
-        rdfs:label "why-are-called-then" ;
-        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:it_is-about_infidels {
-    leolaniWorld:it ns1:is_about leolaniWorld:infidels .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:problem_is-with_Islam {
+    leolaniWorld:problem ns1:is_with leolaniWorld:Islam .
 }
 
 leolaniWorld:they_are_are_called_then {
     leolaniWorld:they ns1:are leolaniWorld:are_called_then .
 }
 
-leolaniWorld:nothing_suggest_that {
-    leolaniWorld:nothing ns1:suggest leolaniWorld:that .
+leolaniTalk:Perspectives {
+    leolaniTalk:It_must_must_banned_00028 a grasp:Attribution ;
+        rdfs:label "It_must_must_banned_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2899_utterance0_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2899_utterance1_char0-130 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2899_utterance1_char0-130" ;
+        gaf:containsDenotation leolaniWorld:nothing,
+            leolaniWorld:that ;
+        gaf:denotes leolaniWorld:nothing_suggest_that ;
+        grasp:hasAttribution leolaniTalk:nothing_suggest_that_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:22:54.656177"^^xml1:string ;
+        rdf:value "There is nothing to suggest that. Even if a few Muslims are extremists, this doesn’t mean all Muslims are murderers or terrorists."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2899_utterance1 .
+
+    leolaniTalk:it_is-about_infidels_00028 a grasp:Attribution ;
+        rdfs:label "it_is-about_infidels_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2899_utterance0_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:it_is-about_killing_infidels_00028 a grasp:Attribution ;
+        rdfs:label "it_is-about_killing_infidels_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2899_utterance0_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:nothing_suggest_that_00028 a grasp:Attribution ;
+        rdfs:label "nothing_suggest_that_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2899_utterance1_char0-130 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:problem_is-with_Islam_00028 a grasp:Attribution ;
+        rdfs:label "problem_is-with_Islam_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2899_utterance0_char0-79 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_are_called_00028 a grasp:Attribution ;
+        rdfs:label "they_are_are_called_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2899_utterance2_char0-81 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_are_called_then_00028 a grasp:Attribution ;
+        rdfs:label "they_are_are_called_then_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2899_utterance2_char0-81 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_why_are_called_00028 a grasp:Attribution ;
+        rdfs:label "they_are_why_are_called_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2899_utterance2_char0-81 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_are_why_are_called_then_00028 a grasp:Attribution ;
+        rdfs:label "they_are_why_are_called_then_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2899_utterance2_char0-81 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2899_utterance0_char0-79 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2899_utterance0_char0-79" ;
+        gaf:containsDenotation leolaniWorld:Islam,
+            leolaniWorld:It,
+            leolaniWorld:infidels,
+            leolaniWorld:it,
+            leolaniWorld:killing_infidels,
+            leolaniWorld:must_banned,
+            leolaniWorld:problem ;
+        gaf:denotes leolaniWorld:It_must_must_banned,
+            leolaniWorld:it_is-about_infidels,
+            leolaniWorld:it_is-about_killing_infidels,
+            leolaniWorld:problem_is-with_Islam ;
+        grasp:hasAttribution leolaniTalk:It_must_must_banned_00028,
+            leolaniTalk:it_is-about_infidels_00028,
+            leolaniTalk:it_is-about_killing_infidels_00028,
+            leolaniTalk:problem_is-with_Islam_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:22:54.528451"^^xml1:string,
+            "2024-06-05T23:22:54.528508"^^xml1:string,
+            "2024-06-05T23:22:54.528532"^^xml1:string,
+            "2024-06-05T23:22:54.528554"^^xml1:string ;
+        rdf:value "The problem with Islam is that it is about killing infidels. It must be banned."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2899_utterance0 .
+
+    leolaniTalk:chat2899_utterance2_char0-81 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2899_utterance2_char0-81" ;
+        gaf:containsDenotation leolaniWorld:are_called,
+            leolaniWorld:are_called_then,
+            leolaniWorld:they,
+            leolaniWorld:why_are_called,
+            leolaniWorld:why_are_called_then ;
+        gaf:denotes leolaniWorld:they_are_are_called,
+            leolaniWorld:they_are_are_called_then,
+            leolaniWorld:they_are_why_are_called,
+            leolaniWorld:they_are_why_are_called_then ;
+        grasp:hasAttribution leolaniTalk:they_are_are_called_00028,
+            leolaniTalk:they_are_are_called_then_00028,
+            leolaniTalk:they_are_why_are_called_00028,
+            leolaniTalk:they_are_why_are_called_then_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:22:54.745917"^^xml1:string,
+            "2024-06-05T23:22:54.745969"^^xml1:string,
+            "2024-06-05T23:22:54.745992"^^xml1:string,
+            "2024-06-05T23:22:54.746015"^^xml1:string ;
+        rdf:value "But, why are they being called terrorists then? It's because they are, of course!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2899_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -513,233 +603,143 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:they_are_are_called {
-    leolaniWorld:they ns1:are leolaniWorld:are_called .
+leolaniWorld:they_are_why_are_called {
+    leolaniWorld:they ns1:are leolaniWorld:why_are_called .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:it_is-about_infidels {
+    leolaniWorld:it ns1:is_about leolaniWorld:infidels .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:It_must_must_banned_00028 a grasp:Attribution ;
-        rdfs:label "It_must_must_banned_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2899_utterance0_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:It_must_must_banned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_must_must_banned" ;
+        gaf:denotedBy leolaniTalk:chat2899_utterance0_char0-79 .
 
-    leolaniTalk:chat2899_utterance1_char0-130 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2899_utterance1_char0-130" ;
-        gaf:containsDenotation leolaniWorld:nothing,
-            leolaniWorld:that ;
-        gaf:denotes leolaniWorld:nothing_suggest_that ;
-        grasp:hasAttribution leolaniTalk:nothing_suggest_that_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:22:54.656177"^^xml1:string ;
-        rdf:value "There is nothing to suggest that. Even if a few Muslims are extremists, this doesn’t mean all Muslims are murderers or terrorists."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2899_utterance1 .
+    leolaniWorld:it_is-about_infidels a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is-about_infidels" ;
+        gaf:denotedBy leolaniTalk:chat2899_utterance0_char0-79 .
 
-    leolaniTalk:it_is-about_infidels_00028 a grasp:Attribution ;
-        rdfs:label "it_is-about_infidels_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2899_utterance0_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:it_is-about_killing_infidels a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_is-about_killing_infidels" ;
+        gaf:denotedBy leolaniTalk:chat2899_utterance0_char0-79 .
 
-    leolaniTalk:it_is-about_killing_infidels_00028 a grasp:Attribution ;
-        rdfs:label "it_is-about_killing_infidels_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2899_utterance0_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:nothing_suggest_that_00028 a grasp:Attribution ;
-        rdfs:label "nothing_suggest_that_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2899_utterance1_char0-130 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:problem_is-with_Islam_00028 a grasp:Attribution ;
-        rdfs:label "problem_is-with_Islam_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2899_utterance0_char0-79 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:nothing_suggest_that a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "nothing_suggest_that" ;
+        gaf:denotedBy leolaniTalk:chat2899_utterance1_char0-130 .
 
-    leolaniTalk:they_are_are_called_00028 a grasp:Attribution ;
-        rdfs:label "they_are_are_called_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2899_utterance2_char0-81 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:problem_is-with_Islam a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "problem_is-with_Islam" ;
+        gaf:denotedBy leolaniTalk:chat2899_utterance0_char0-79 .
 
-    leolaniTalk:they_are_are_called_then_00028 a grasp:Attribution ;
-        rdfs:label "they_are_are_called_then_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2899_utterance2_char0-81 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_are_are_called a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_are_called" ;
+        gaf:denotedBy leolaniTalk:chat2899_utterance2_char0-81 .
 
-    leolaniTalk:they_are_why_are_called_00028 a grasp:Attribution ;
-        rdfs:label "they_are_why_are_called_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2899_utterance2_char0-81 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_are_are_called_then a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_are_called_then" ;
+        gaf:denotedBy leolaniTalk:chat2899_utterance2_char0-81 .
 
-    leolaniTalk:they_are_why_are_called_then_00028 a grasp:Attribution ;
-        rdfs:label "they_are_why_are_called_then_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2899_utterance2_char0-81 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_are_why_are_called a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_why_are_called" ;
+        gaf:denotedBy leolaniTalk:chat2899_utterance2_char0-81 .
 
-    leolaniTalk:chat2899_utterance0_char0-79 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2899_utterance0_char0-79" ;
-        gaf:containsDenotation leolaniWorld:Islam,
-            leolaniWorld:It,
-            leolaniWorld:infidels,
-            leolaniWorld:it,
-            leolaniWorld:killing_infidels,
-            leolaniWorld:must_banned,
-            leolaniWorld:problem ;
-        gaf:denotes leolaniWorld:It_must_must_banned,
-            leolaniWorld:it_is-about_infidels,
-            leolaniWorld:it_is-about_killing_infidels,
-            leolaniWorld:problem_is-with_Islam ;
-        grasp:hasAttribution leolaniTalk:It_must_must_banned_00028,
-            leolaniTalk:it_is-about_infidels_00028,
-            leolaniTalk:it_is-about_killing_infidels_00028,
-            leolaniTalk:problem_is-with_Islam_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:22:54.528451"^^xml1:string,
-            "2024-06-05T23:22:54.528508"^^xml1:string,
-            "2024-06-05T23:22:54.528532"^^xml1:string,
-            "2024-06-05T23:22:54.528554"^^xml1:string ;
-        rdf:value "The problem with Islam is that it is about killing infidels. It must be banned."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2899_utterance0 .
+    leolaniWorld:they_are_why_are_called_then a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_why_are_called_then" ;
+        gaf:denotedBy leolaniTalk:chat2899_utterance2_char0-81 .
 
-    leolaniTalk:chat2899_utterance2_char0-81 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2899_utterance2_char0-81" ;
-        gaf:containsDenotation leolaniWorld:are_called,
-            leolaniWorld:are_called_then,
-            leolaniWorld:they,
-            leolaniWorld:why_are_called,
-            leolaniWorld:why_are_called_then ;
-        gaf:denotes leolaniWorld:they_are_are_called,
-            leolaniWorld:they_are_are_called_then,
-            leolaniWorld:they_are_why_are_called,
-            leolaniWorld:they_are_why_are_called_then ;
-        grasp:hasAttribution leolaniTalk:they_are_are_called_00028,
-            leolaniTalk:they_are_are_called_then_00028,
-            leolaniTalk:they_are_why_are_called_00028,
-            leolaniTalk:they_are_why_are_called_then_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:22:54.745917"^^xml1:string,
-            "2024-06-05T23:22:54.745969"^^xml1:string,
-            "2024-06-05T23:22:54.745992"^^xml1:string,
-            "2024-06-05T23:22:54.746015"^^xml1:string ;
-        rdf:value "But, why are they being called terrorists then? It's because they are, of course!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2899_utterance2 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:problem_is-with_Islam {
-    leolaniWorld:problem ns1:is_with leolaniWorld:Islam .
+leolaniWorld:they_are_why_are_called_then {
+    leolaniWorld:they ns1:are leolaniWorld:why_are_called_then .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context113 a eps:Context ;
-        rdfs:label "context113" ;
-        hs:id "113"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Islam a gaf:Instance ;
+        rdfs:label "islam" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2899 .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:are_called a gaf:Instance ;
+        rdfs:label "are-called" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "148"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2899 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2899" ;
-        hs:id "2899"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2899_utterance0,
-            leolaniTalk:chat2899_utterance1,
-            leolaniTalk:chat2899_utterance2 .
-
-    leolaniTalk:chat2899_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2899_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat2899_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2899_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2899_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2899_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:are_called_then a gaf:Instance ;
+        rdfs:label "are-called-then" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:they_are_why_are_called {
-    leolaniWorld:they ns1:are leolaniWorld:why_are_called .
+    leolaniWorld:infidels a gaf:Instance ;
+        rdfs:label "infidels" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
+
+    leolaniWorld:killing_infidels a gaf:Instance ;
+        rdfs:label "killing-infidels" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:must_banned a gaf:Instance ;
+        rdfs:label "must-banned" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance1_char0-130 .
+
+    leolaniWorld:problem a gaf:Instance ;
+        rdfs:label "problem" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance0_char0-79 .
+
+    leolaniWorld:that a gaf:Instance ;
+        rdfs:label "that" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance1_char0-130 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
+
+    leolaniWorld:why_are_called a gaf:Instance ;
+        rdfs:label "why-are-called" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
+
+    leolaniWorld:why_are_called_then a gaf:Instance ;
+        rdfs:label "why-are-called-then" ;
+        gaf:denotedIn leolaniTalk:chat2899_utterance2_char0-81 .
 }
 

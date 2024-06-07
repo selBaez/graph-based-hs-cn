@@ -22,34 +22,96 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:feminism_is_stupid a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context211 a eps:Context ;
+        rdfs:label "context211" ;
+        hs:id "211"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2557 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "252"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2557 a grasp:Chat,
             sem:Event ;
-        rdfs:label "feminism_is_stupid" ;
-        gaf:denotedBy leolaniTalk:chat2557_utterance2_char0-45 .
+        rdfs:label "chat2557" ;
+        hs:id "2557"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2557_utterance2 .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat2557_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat2557_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-leolaniWorld:Instances {
-    leolaniWorld:feminism a gaf:Instance ;
-        rdfs:label "feminism" ;
-        gaf:denotedIn leolaniTalk:chat2557_utterance2_char0-45 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:stupid a gaf:Instance ;
-        rdfs:label "stupid" ;
-        gaf:denotedIn leolaniTalk:chat2557_utterance2_char0-45 .
+leolaniTalk:Perspectives {
+    leolaniTalk:chat2557_utterance2_char0-45 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2557_utterance2_char0-45" ;
+        gaf:containsDenotation leolaniWorld:feminism,
+            leolaniWorld:stupid ;
+        gaf:denotes leolaniWorld:feminism_is_stupid ;
+        grasp:hasAttribution leolaniTalk:feminism_is_stupid_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:55:25.069406"^^xml1:string ;
+        rdf:value "All feminism is stupid. I don't see equality."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2557_utterance2 .
+
+    leolaniTalk:feminism_is_stupid_00021 a grasp:Attribution ;
+        rdfs:label "feminism_is_stupid_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat2557_utterance2_char0-45 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -387,99 +449,37 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:feminism_is_stupid a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "feminism_is_stupid" ;
+        gaf:denotedBy leolaniTalk:chat2557_utterance2_char0-45 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:feminism_is_stupid {
     leolaniWorld:feminism ns11:is leolaniWorld:stupid .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat2557_utterance2_char0-45 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2557_utterance2_char0-45" ;
-        gaf:containsDenotation leolaniWorld:feminism,
-            leolaniWorld:stupid ;
-        gaf:denotes leolaniWorld:feminism_is_stupid ;
-        grasp:hasAttribution leolaniTalk:feminism_is_stupid_00021 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:55:25.069406"^^xml1:string ;
-        rdf:value "All feminism is stupid. I don't see equality."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2557_utterance2 .
-
-    leolaniTalk:feminism_is_stupid_00021 a grasp:Attribution ;
-        rdfs:label "feminism_is_stupid_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat2557_utterance2_char0-45 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:ANGER a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANGER" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context211 a eps:Context ;
-        rdfs:label "context211" ;
-        hs:id "211"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2557 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "252"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2557 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2557" ;
-        hs:id "2557"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2557_utterance2 .
-
-    leolaniTalk:chat2557_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2557_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:feminism a gaf:Instance ;
+        rdfs:label "feminism" ;
+        gaf:denotedIn leolaniTalk:chat2557_utterance2_char0-45 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:stupid a gaf:Instance ;
+        rdfs:label "stupid" ;
+        gaf:denotedIn leolaniTalk:chat2557_utterance2_char0-45 .
 }
 

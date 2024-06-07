@@ -22,101 +22,169 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Women_are_weak a gaf:Assertion,
+leolaniWorld:Women_need_to_able {
+    leolaniWorld:Women ns11:need leolaniWorld:to_able .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context223 a eps:Context ;
+        rdfs:label "context223" ;
+        hs:id "223"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1960 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "185"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1960 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Women_are_weak" ;
-        gaf:denotedBy leolaniTalk:chat1960_utterance0_char0-75 .
+        rdfs:label "chat1960" ;
+        hs:id "1960"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1960_utterance0,
+            leolaniTalk:chat1960_utterance1 .
 
-    leolaniWorld:Women_need_able a gaf:Assertion,
+    leolaniTalk:chat1960_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Women_need_able" ;
-        gaf:denotedBy leolaniTalk:chat1960_utterance0_char0-75 .
+        rdfs:label "chat1960_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:Women_need_men a gaf:Assertion,
+    leolaniTalk:chat1960_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Women_need_men" ;
-        gaf:denotedBy leolaniTalk:chat1960_utterance0_char0-75 .
+        rdfs:label "chat1960_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:Women_need_to_able a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Women_need_to_able" ;
-        gaf:denotedBy leolaniTalk:chat1960_utterance0_char0-75 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    leolaniWorld:men_intervene_to_fix a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_intervene_to_fix" ;
-        gaf:denotedBy leolaniTalk:chat1960_utterance1_char0-120 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Women_need_men {
-    leolaniWorld:Women ns11:need leolaniWorld:men .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Women_are_weak_00028 a grasp:Attribution ;
+        rdfs:label "Women_are_weak_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1960_utterance0_char0-75 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75 .
+    leolaniTalk:Women_need_able_00028 a grasp:Attribution ;
+        rdfs:label "Women_need_able_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1960_utterance0_char0-75 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:able a gaf:Instance ;
-        rdfs:label "able" ;
-        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75 .
+    leolaniTalk:Women_need_men_00028 a grasp:Attribution ;
+        rdfs:label "Women_need_men_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1960_utterance0_char0-75 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:Women_need_to_able_00028 a grasp:Attribution ;
+        rdfs:label "Women_need_to_able_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1960_utterance0_char0-75 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:chat1960_utterance1_char0-120 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1960_utterance1_char0-120" ;
+        gaf:containsDenotation leolaniWorld:men,
+            leolaniWorld:to_fix ;
+        gaf:denotes leolaniWorld:men_intervene_to_fix ;
+        grasp:hasAttribution leolaniTalk:men_intervene_to_fix_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:05:17.037775"^^xml1:string ;
+        rdf:value "Like most human beings, some women are better than others at certain things and men don't need to intervene to fix this."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1960_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:men_intervene_to_fix_00028 a grasp:Attribution ;
+        rdfs:label "men_intervene_to_fix_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1960_utterance1_char0-120 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75,
-            leolaniTalk:chat1960_utterance1_char0-120 .
+    leolaniTalk:chat1960_utterance0_char0-75 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1960_utterance0_char0-75" ;
+        gaf:containsDenotation leolaniWorld:Women,
+            leolaniWorld:able,
+            leolaniWorld:men,
+            leolaniWorld:to_able,
+            leolaniWorld:weak ;
+        gaf:denotes leolaniWorld:Women_are_weak,
+            leolaniWorld:Women_need_able,
+            leolaniWorld:Women_need_men,
+            leolaniWorld:Women_need_to_able ;
+        grasp:hasAttribution leolaniTalk:Women_are_weak_00028,
+            leolaniTalk:Women_need_able_00028,
+            leolaniTalk:Women_need_men_00028,
+            leolaniTalk:Women_need_to_able_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:05:10.382910"^^xml1:string,
+            "2024-06-05T23:05:10.382973"^^xml1:string,
+            "2024-06-05T23:05:10.382996"^^xml1:string,
+            "2024-06-05T23:05:10.383017"^^xml1:string ;
+        rdf:value "Women are weak and need men to be able to achieve something in their lives."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1960_utterance0 .
 
-    leolaniWorld:to_able a gaf:Instance ;
-        rdfs:label "to-able" ;
-        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:to_fix a gaf:Instance ;
-        rdfs:label "to-fix" ;
-        gaf:denotedIn leolaniTalk:chat1960_utterance1_char0-120 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:weak a gaf:Instance ;
-        rdfs:label "weak" ;
-        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75 .
-}
-
-leolaniWorld:Women_are_weak {
-    leolaniWorld:Women ns11:are leolaniWorld:weak .
-}
-
-leolaniWorld:men_intervene_to_fix {
-    leolaniWorld:men ns11:intervene leolaniWorld:to_fix .
-}
-
-leolaniWorld:Women_need_to_able {
-    leolaniWorld:Women ns11:need leolaniWorld:to_able .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -454,164 +522,96 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Women_are_weak {
+    leolaniWorld:Women ns11:are leolaniWorld:weak .
+}
+
+leolaniWorld:men_intervene_to_fix {
+    leolaniWorld:men ns11:intervene leolaniWorld:to_fix .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:Women_are_weak a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_are_weak" ;
+        gaf:denotedBy leolaniTalk:chat1960_utterance0_char0-75 .
+
+    leolaniWorld:Women_need_able a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_need_able" ;
+        gaf:denotedBy leolaniTalk:chat1960_utterance0_char0-75 .
+
+    leolaniWorld:Women_need_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_need_men" ;
+        gaf:denotedBy leolaniTalk:chat1960_utterance0_char0-75 .
+
+    leolaniWorld:Women_need_to_able a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_need_to_able" ;
+        gaf:denotedBy leolaniTalk:chat1960_utterance0_char0-75 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:men_intervene_to_fix a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_intervene_to_fix" ;
+        gaf:denotedBy leolaniTalk:chat1960_utterance1_char0-120 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Women_need_men {
+    leolaniWorld:Women ns11:need leolaniWorld:men .
+}
+
 leolaniWorld:Women_need_able {
     leolaniWorld:Women ns11:need leolaniWorld:able .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
+leolaniWorld:Instances {
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75 .
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Women_are_weak_00028 a grasp:Attribution ;
-        rdfs:label "Women_are_weak_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1960_utterance0_char0-75 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_need_able_00028 a grasp:Attribution ;
-        rdfs:label "Women_need_able_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1960_utterance0_char0-75 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_need_men_00028 a grasp:Attribution ;
-        rdfs:label "Women_need_men_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1960_utterance0_char0-75 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Women_need_to_able_00028 a grasp:Attribution ;
-        rdfs:label "Women_need_to_able_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1960_utterance0_char0-75 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1960_utterance1_char0-120 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1960_utterance1_char0-120" ;
-        gaf:containsDenotation leolaniWorld:men,
-            leolaniWorld:to_fix ;
-        gaf:denotes leolaniWorld:men_intervene_to_fix ;
-        grasp:hasAttribution leolaniTalk:men_intervene_to_fix_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:05:17.037775"^^xml1:string ;
-        rdf:value "Like most human beings, some women are better than others at certain things and men don't need to intervene to fix this."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1960_utterance1 .
-
-    leolaniTalk:men_intervene_to_fix_00028 a grasp:Attribution ;
-        rdfs:label "men_intervene_to_fix_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1960_utterance1_char0-120 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1960_utterance0_char0-75 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1960_utterance0_char0-75" ;
-        gaf:containsDenotation leolaniWorld:Women,
-            leolaniWorld:able,
-            leolaniWorld:men,
-            leolaniWorld:to_able,
-            leolaniWorld:weak ;
-        gaf:denotes leolaniWorld:Women_are_weak,
-            leolaniWorld:Women_need_able,
-            leolaniWorld:Women_need_men,
-            leolaniWorld:Women_need_to_able ;
-        grasp:hasAttribution leolaniTalk:Women_are_weak_00028,
-            leolaniTalk:Women_need_able_00028,
-            leolaniTalk:Women_need_men_00028,
-            leolaniTalk:Women_need_to_able_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:05:10.382910"^^xml1:string,
-            "2024-06-05T23:05:10.382973"^^xml1:string,
-            "2024-06-05T23:05:10.382996"^^xml1:string,
-            "2024-06-05T23:05:10.383017"^^xml1:string ;
-        rdf:value "Women are weak and need men to be able to achieve something in their lives."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1960_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context223 a eps:Context ;
-        rdfs:label "context223" ;
-        hs:id "223"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1960 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "185"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1960 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1960" ;
-        hs:id "1960"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1960_utterance0,
-            leolaniTalk:chat1960_utterance1 .
-
-    leolaniTalk:chat1960_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1960_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1960_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1960_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:able a gaf:Instance ;
+        rdfs:label "able" ;
+        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75,
+            leolaniTalk:chat1960_utterance1_char0-120 .
+
+    leolaniWorld:to_able a gaf:Instance ;
+        rdfs:label "to-able" ;
+        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75 .
+
+    leolaniWorld:to_fix a gaf:Instance ;
+        rdfs:label "to-fix" ;
+        gaf:denotedIn leolaniTalk:chat1960_utterance1_char0-120 .
+
+    leolaniWorld:weak a gaf:Instance ;
+        rdfs:label "weak" ;
+        gaf:denotedIn leolaniTalk:chat1960_utterance0_char0-75 .
 }
 

@@ -22,104 +22,177 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:you_starting-from_family {
-    leolaniWorld:you ns1:starting_from leolaniWorld:family .
+leolaniTalk:Interactions {
+    leolaniContext:context52 a eps:Context ;
+        rdfs:label "context52" ;
+        hs:id "52"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2459 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "52"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2459 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2459" ;
+        hs:id "2459"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2459_utterance0,
+            leolaniTalk:chat2459_utterance1 .
+
+    leolaniTalk:chat2459_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2459_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat2459_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2459_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Welcoming_people_makes_us_uncomfortable a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Welcoming_people_makes_us_uncomfortable" ;
-        gaf:denotedBy leolaniTalk:chat2459_utterance0_char0-92 .
+leolaniWorld:you_got_know {
+    leolaniWorld:you ns1:got leolaniWorld:know .
+}
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:people_makes_us_uncomfortable a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_makes_us_uncomfortable" ;
-        gaf:denotedBy leolaniTalk:chat2459_utterance0_char0-92 .
-
-    leolaniWorld:you_got_know a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_got_know" ;
-        gaf:denotedBy leolaniTalk:chat2459_utterance1_char0-209 .
-
-    leolaniWorld:you_got_to_know a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_got_to_know" ;
-        gaf:denotedBy leolaniTalk:chat2459_utterance1_char0-209 .
-
-    leolaniWorld:you_starting-from_family a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_starting-from_family" ;
-        gaf:denotedBy leolaniTalk:chat2459_utterance1_char0-209 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Welcoming_people_makes_us_uncomfortable {
-    leolaniWorld:Welcoming_people ns1:makes leolaniWorld:us_uncomfortable .
+leolaniWorld:you_starting-from_family {
+    leolaniWorld:you ns1:starting_from leolaniWorld:family .
 }
 
-leolaniWorld:you_got_to_know {
-    leolaniWorld:you ns1:got leolaniWorld:to_know .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:Welcoming_people_makes_us_uncomfortable_00022 a grasp:Attribution ;
+        rdfs:label "Welcoming_people_makes_us_uncomfortable_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2459_utterance0_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-leolaniWorld:Instances {
-    leolaniWorld:Welcoming_people a gaf:Instance ;
-        rdfs:label "welcoming-people" ;
-        gaf:denotedIn leolaniTalk:chat2459_utterance0_char0-92 .
+    leolaniTalk:people_makes_us_uncomfortable_00022 a grasp:Attribution ;
+        rdfs:label "people_makes_us_uncomfortable_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2459_utterance0_char0-92 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:you_got_know_00028 a grasp:Attribution ;
+        rdfs:label "you_got_know_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2459_utterance1_char0-209 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:family a gaf:Instance ;
-        rdfs:label "family" ;
-        gaf:denotedIn leolaniTalk:chat2459_utterance1_char0-209 .
+    leolaniTalk:you_got_to_know_00028 a grasp:Attribution ;
+        rdfs:label "you_got_to_know_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2459_utterance1_char0-209 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    leolaniTalk:you_starting-from_family_00028 a grasp:Attribution ;
+        rdfs:label "you_starting-from_family_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2459_utterance1_char0-209 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:know a gaf:Instance ;
-        rdfs:label "know" ;
-        gaf:denotedIn leolaniTalk:chat2459_utterance1_char0-209 .
+    leolaniTalk:chat2459_utterance0_char0-92 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2459_utterance0_char0-92" ;
+        gaf:containsDenotation leolaniWorld:Welcoming_people,
+            leolaniWorld:people,
+            leolaniWorld:us_uncomfortable ;
+        gaf:denotes leolaniWorld:Welcoming_people_makes_us_uncomfortable,
+            leolaniWorld:people_makes_us_uncomfortable ;
+        grasp:hasAttribution leolaniTalk:Welcoming_people_makes_us_uncomfortable_00022,
+            leolaniTalk:people_makes_us_uncomfortable_00022 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:12.754247"^^xml1:string,
+            "2024-06-05T23:24:12.754322"^^xml1:string ;
+        rdf:value "Well, we shouldn't. Welcoming people from the so-called Muslim world makes us uncomfortable."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2459_utterance0 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat2459_utterance0_char0-92 .
+    leolaniTalk:chat2459_utterance1_char0-209 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2459_utterance1_char0-209" ;
+        gaf:containsDenotation leolaniWorld:family,
+            leolaniWorld:know,
+            leolaniWorld:to_know,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:you_got_know,
+            leolaniWorld:you_got_to_know,
+            leolaniWorld:you_starting-from_family ;
+        grasp:hasAttribution leolaniTalk:you_got_know_00028,
+            leolaniTalk:you_got_to_know_00028,
+            leolaniTalk:you_starting-from_family_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:12.878477"^^xml1:string,
+            "2024-06-05T23:24:12.878541"^^xml1:string,
+            "2024-06-05T23:24:12.878573"^^xml1:string ;
+        rdf:value "Many of the Muslims living here are good people. If you got to know some of them, starting from a family that lives here, you would realize that not all Muslims feel the same way about what is \"uncomfortable\"."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2459_utterance1 .
 
-    leolaniWorld:to_know a gaf:Instance ;
-        rdfs:label "to-know" ;
-        gaf:denotedIn leolaniTalk:chat2459_utterance1_char0-209 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:us_uncomfortable a gaf:Instance ;
-        rdfs:label "us-uncomfortable" ;
-        gaf:denotedIn leolaniTalk:chat2459_utterance0_char0-92 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat2459_utterance1_char0-209 .
-}
-
-leolaniWorld:you_got_know {
-    leolaniWorld:you ns1:got leolaniWorld:know .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -457,168 +530,95 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniTalk:Perspectives {
-    leolaniTalk:Welcoming_people_makes_us_uncomfortable_00022 a grasp:Attribution ;
-        rdfs:label "Welcoming_people_makes_us_uncomfortable_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2459_utterance0_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_makes_us_uncomfortable_00022 a grasp:Attribution ;
-        rdfs:label "people_makes_us_uncomfortable_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2459_utterance0_char0-92 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_got_know_00028 a grasp:Attribution ;
-        rdfs:label "you_got_know_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2459_utterance1_char0-209 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_got_to_know_00028 a grasp:Attribution ;
-        rdfs:label "you_got_to_know_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2459_utterance1_char0-209 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_starting-from_family_00028 a grasp:Attribution ;
-        rdfs:label "you_starting-from_family_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2459_utterance1_char0-209 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat2459_utterance0_char0-92 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2459_utterance0_char0-92" ;
-        gaf:containsDenotation leolaniWorld:Welcoming_people,
-            leolaniWorld:people,
-            leolaniWorld:us_uncomfortable ;
-        gaf:denotes leolaniWorld:Welcoming_people_makes_us_uncomfortable,
-            leolaniWorld:people_makes_us_uncomfortable ;
-        grasp:hasAttribution leolaniTalk:Welcoming_people_makes_us_uncomfortable_00022,
-            leolaniTalk:people_makes_us_uncomfortable_00022 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:12.754247"^^xml1:string,
-            "2024-06-05T23:24:12.754322"^^xml1:string ;
-        rdf:value "Well, we shouldn't. Welcoming people from the so-called Muslim world makes us uncomfortable."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2459_utterance0 .
-
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    leolaniTalk:chat2459_utterance1_char0-209 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2459_utterance1_char0-209" ;
-        gaf:containsDenotation leolaniWorld:family,
-            leolaniWorld:know,
-            leolaniWorld:to_know,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:you_got_know,
-            leolaniWorld:you_got_to_know,
-            leolaniWorld:you_starting-from_family ;
-        grasp:hasAttribution leolaniTalk:you_got_know_00028,
-            leolaniTalk:you_got_to_know_00028,
-            leolaniTalk:you_starting-from_family_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:12.878477"^^xml1:string,
-            "2024-06-05T23:24:12.878541"^^xml1:string,
-            "2024-06-05T23:24:12.878573"^^xml1:string ;
-        rdf:value "Many of the Muslims living here are good people. If you got to know some of them, starting from a family that lives here, you would realize that not all Muslims feel the same way about what is \"uncomfortable\"."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2459_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:you_got_to_know {
+    leolaniWorld:you ns1:got leolaniWorld:to_know .
 }
 
 leolaniWorld:people_makes_us_uncomfortable {
     leolaniWorld:people ns1:makes leolaniWorld:us_uncomfortable .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context52 a eps:Context ;
-        rdfs:label "context52" ;
-        hs:id "52"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2459 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "52"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2459 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Welcoming_people_makes_us_uncomfortable a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2459" ;
-        hs:id "2459"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2459_utterance0,
-            leolaniTalk:chat2459_utterance1 .
+        rdfs:label "Welcoming_people_makes_us_uncomfortable" ;
+        gaf:denotedBy leolaniTalk:chat2459_utterance0_char0-92 .
 
-    leolaniTalk:chat2459_utterance0 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2459_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat2459_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat2459_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:people_makes_us_uncomfortable a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_makes_us_uncomfortable" ;
+        gaf:denotedBy leolaniTalk:chat2459_utterance0_char0-92 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:you_got_know a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_got_know" ;
+        gaf:denotedBy leolaniTalk:chat2459_utterance1_char0-209 .
+
+    leolaniWorld:you_got_to_know a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_got_to_know" ;
+        gaf:denotedBy leolaniTalk:chat2459_utterance1_char0-209 .
+
+    leolaniWorld:you_starting-from_family a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_starting-from_family" ;
+        gaf:denotedBy leolaniTalk:chat2459_utterance1_char0-209 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Welcoming_people_makes_us_uncomfortable {
+    leolaniWorld:Welcoming_people ns1:makes leolaniWorld:us_uncomfortable .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Welcoming_people a gaf:Instance ;
+        rdfs:label "welcoming-people" ;
+        gaf:denotedIn leolaniTalk:chat2459_utterance0_char0-92 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:family a gaf:Instance ;
+        rdfs:label "family" ;
+        gaf:denotedIn leolaniTalk:chat2459_utterance1_char0-209 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:know a gaf:Instance ;
+        rdfs:label "know" ;
+        gaf:denotedIn leolaniTalk:chat2459_utterance1_char0-209 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat2459_utterance0_char0-92 .
+
+    leolaniWorld:to_know a gaf:Instance ;
+        rdfs:label "to-know" ;
+        gaf:denotedIn leolaniTalk:chat2459_utterance1_char0-209 .
+
+    leolaniWorld:us_uncomfortable a gaf:Instance ;
+        rdfs:label "us-uncomfortable" ;
+        gaf:denotedIn leolaniTalk:chat2459_utterance0_char0-92 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat2459_utterance1_char0-209 .
 }
 

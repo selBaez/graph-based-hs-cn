@@ -22,91 +22,165 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:we_are_happy {
-    leolaniWorld:we ns11:are leolaniWorld:happy .
+leolaniTalk:Interactions {
+    leolaniContext:context78 a eps:Context ;
+        rdfs:label "context78" ;
+        hs:id "78"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat617 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "237"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat617 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat617" ;
+        hs:id "617"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat617_utterance0,
+            leolaniTalk:chat617_utterance1 .
+
+    leolaniTalk:chat617_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat617_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat617_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat617_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:we_have-around_them {
+    leolaniWorld:we ns11:have_around leolaniWorld:them .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:They_are_problem a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_are_problem" ;
-        gaf:denotedBy leolaniTalk:chat617_utterance0_char0-49 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:we_are_happy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_are_happy" ;
-        gaf:denotedBy leolaniTalk:chat617_utterance1_char0-96 .
-
-    leolaniWorld:we_have-around_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_have-around_them" ;
-        gaf:denotedBy leolaniTalk:chat617_utterance1_char0-96 .
-
-    leolaniWorld:we_have_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_have_them" ;
-        gaf:denotedBy leolaniTalk:chat617_utterance1_char0-96 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
 leolaniWorld:leolani_know_hs {
     leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:we_have_them {
-    leolaniWorld:we ns11:have leolaniWorld:them .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat617_utterance0_char0-49 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:happy a gaf:Instance ;
-        rdfs:label "happy" ;
-        gaf:denotedIn leolaniTalk:chat617_utterance1_char0-96 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:problem a gaf:Instance ;
-        rdfs:label "problem" ;
-        gaf:denotedIn leolaniTalk:chat617_utterance0_char0-49 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat617_utterance1_char0-96 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat617_utterance1_char0-96 .
-}
-
 leolaniWorld:They_are_problem {
     leolaniWorld:They ns11:are leolaniWorld:problem .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:They_are_problem_00021 a grasp:Attribution ;
+        rdfs:label "They_are_problem_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat617_utterance0_char0-49 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat617_utterance0_char0-49 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat617_utterance0_char0-49" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:problem ;
+        gaf:denotes leolaniWorld:They_are_problem ;
+        grasp:hasAttribution leolaniTalk:They_are_problem_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:16:46.446802"^^xml1:string ;
+        rdf:value "Don't we all hate foreigners? They are a problem."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat617_utterance0 .
+
+    leolaniTalk:we_are_happy_0003 a grasp:Attribution ;
+        rdfs:label "we_are_happy_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat617_utterance1_char0-96 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_have-around_them_0003 a grasp:Attribution ;
+        rdfs:label "we_have-around_them_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat617_utterance1_char0-96 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_have_them_0003 a grasp:Attribution ;
+        rdfs:label "we_have_them_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat617_utterance1_char0-96 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
+
+    leolaniTalk:chat617_utterance1_char0-96 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat617_utterance1_char0-96" ;
+        gaf:containsDenotation leolaniWorld:happy,
+            leolaniWorld:them,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_are_happy,
+            leolaniWorld:we_have-around_them,
+            leolaniWorld:we_have_them ;
+        grasp:hasAttribution leolaniTalk:we_are_happy_0003,
+            leolaniTalk:we_have-around_them_0003,
+            leolaniTalk:we_have_them_0003 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:16:53.058584"^^xml1:string,
+            "2024-06-05T23:16:53.058648"^^xml1:string,
+            "2024-06-05T23:16:53.058675"^^xml1:string ;
+        rdf:value "Well, foreigners are certainly not a 'problem' in our country, we are happy to have them around."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat617_utterance1 .
+
+    graspe:JOY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "JOY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -444,152 +518,78 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:we_have-around_them {
-    leolaniWorld:we ns11:have_around leolaniWorld:them .
+leolaniWorld:we_are_happy {
+    leolaniWorld:we ns11:are leolaniWorld:happy .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:They_are_problem_00021 a grasp:Attribution ;
-        rdfs:label "They_are_problem_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat617_utterance0_char0-49 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:They_are_problem a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_are_problem" ;
+        gaf:denotedBy leolaniTalk:chat617_utterance0_char0-49 .
 
-    leolaniTalk:chat617_utterance0_char0-49 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat617_utterance0_char0-49" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:problem ;
-        gaf:denotes leolaniWorld:They_are_problem ;
-        grasp:hasAttribution leolaniTalk:They_are_problem_00021 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:16:46.446802"^^xml1:string ;
-        rdf:value "Don't we all hate foreigners? They are a problem."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat617_utterance0 .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:we_are_happy_0003 a grasp:Attribution ;
-        rdfs:label "we_are_happy_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat617_utterance1_char0-96 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:we_have-around_them_0003 a grasp:Attribution ;
-        rdfs:label "we_have-around_them_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat617_utterance1_char0-96 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:we_are_happy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_are_happy" ;
+        gaf:denotedBy leolaniTalk:chat617_utterance1_char0-96 .
 
-    leolaniTalk:we_have_them_0003 a grasp:Attribution ;
-        rdfs:label "we_have_them_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat617_utterance1_char0-96 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:we_have-around_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have-around_them" ;
+        gaf:denotedBy leolaniTalk:chat617_utterance1_char0-96 .
 
-    graspe:ANGER a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANGER" .
+    leolaniWorld:we_have_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_have_them" ;
+        gaf:denotedBy leolaniTalk:chat617_utterance1_char0-96 .
 
-    leolaniTalk:chat617_utterance1_char0-96 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat617_utterance1_char0-96" ;
-        gaf:containsDenotation leolaniWorld:happy,
-            leolaniWorld:them,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_are_happy,
-            leolaniWorld:we_have-around_them,
-            leolaniWorld:we_have_them ;
-        grasp:hasAttribution leolaniTalk:we_are_happy_0003,
-            leolaniTalk:we_have-around_them_0003,
-            leolaniTalk:we_have_them_0003 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:16:53.058584"^^xml1:string,
-            "2024-06-05T23:16:53.058648"^^xml1:string,
-            "2024-06-05T23:16:53.058675"^^xml1:string ;
-        rdf:value "Well, foreigners are certainly not a 'problem' in our country, we are happy to have them around."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat617_utterance1 .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 
-    graspe:JOY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "JOY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context78 a eps:Context ;
-        rdfs:label "context78" ;
-        hs:id "78"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:we_have_them {
+    leolaniWorld:we ns11:have leolaniWorld:them .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat617 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "237"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat617 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat617" ;
-        hs:id "617"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat617_utterance0,
-            leolaniTalk:chat617_utterance1 .
-
-    leolaniTalk:chat617_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat617_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat617_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat617_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat617_utterance0_char0-49 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:happy a gaf:Instance ;
+        rdfs:label "happy" ;
+        gaf:denotedIn leolaniTalk:chat617_utterance1_char0-96 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:problem a gaf:Instance ;
+        rdfs:label "problem" ;
+        gaf:denotedIn leolaniTalk:chat617_utterance0_char0-49 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat617_utterance1_char0-96 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat617_utterance1_char0-96 .
 }
 

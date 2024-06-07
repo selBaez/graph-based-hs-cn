@@ -22,6 +22,88 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:lesbians_live_happy_healthy_life {
+    leolaniWorld:lesbians ns1:live leolaniWorld:happy_healthy_life .
+}
+
+leolaniWorld:lesbians_live_life {
+    leolaniWorld:lesbians ns1:live leolaniWorld:life .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context28 a eps:Context ;
+        rdfs:label "context28" ;
+        hs:id "28"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat365 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "183"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat365 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat365" ;
+        hs:id "365"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat365_utterance0,
+            leolaniTalk:chat365_utterance1,
+            leolaniTalk:chat365_utterance2 .
+
+    leolaniTalk:chat365_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat365_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat365_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat365_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat365_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat365_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
 leolaniWorld:gay_men_is-in_US {
     leolaniWorld:gay_men ns1:is_in leolaniWorld:US .
 }
@@ -30,80 +112,24 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:sick_ones_should_should_shunned {
-    leolaniWorld:sick_ones ns1:should leolaniWorld:should_shunned .
+leolaniWorld:lesbians_live_healthy_life {
+    leolaniWorld:lesbians ns1:live leolaniWorld:healthy_life .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Gay_men_are_diseased a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_are_diseased" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance0_char0-49 .
-
-    leolaniWorld:Gay_men_go-to_hospital a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Gay_men_go-to_hospital" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance0_char0-49 .
-
-    leolaniWorld:gay_men_is-in_US a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "gay_men_is-in_US" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:lesbians_live_happy_healthy_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "lesbians_live_happy_healthy_life" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:lesbians_live_happy_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "lesbians_live_happy_life" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:lesbians_live_healthy_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "lesbians_live_healthy_life" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:lesbians_live_life a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "lesbians_live_life" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:ones_should_should_shunned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "ones_should_should_shunned" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance2_char0-75 .
-
-    leolaniWorld:sick_ones_should_should_shunned a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "sick_ones_should_should_shunned" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance2_char0-75 .
-
-    leolaniWorld:they_are_sick a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_sick" ;
-        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:Gay_men_are_diseased {
-    leolaniWorld:Gay_men ns1:are leolaniWorld:diseased .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:ones_should_should_shunned {
     leolaniWorld:ones ns1:should leolaniWorld:should_shunned .
+}
+
+leolaniWorld:Gay_men_go-to_hospital {
+    leolaniWorld:Gay_men ns1:go_to leolaniWorld:hospital .
+}
+
+leolaniWorld:sick_ones_should_should_shunned {
+    leolaniWorld:sick_ones ns1:should leolaniWorld:should_shunned .
 }
 
 leolaniTalk:Perspectives {
@@ -265,175 +291,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:lesbians_live_life {
-    leolaniWorld:lesbians ns1:live leolaniWorld:life .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Gay_men a gaf:Instance ;
-        rdfs:label "gay-men" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance0_char0-49 .
-
-    leolaniWorld:US a gaf:Instance ;
-        rdfs:label "us" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:diseased a gaf:Instance ;
-        rdfs:label "diseased" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance0_char0-49 .
-
-    leolaniWorld:gay_men a gaf:Instance ;
-        rdfs:label "gay-men" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:happy_healthy_life a gaf:Instance ;
-        rdfs:label "happy-healthy-life" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:happy_life a gaf:Instance ;
-        rdfs:label "happy-life" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:healthy_life a gaf:Instance ;
-        rdfs:label "healthy-life" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:hospital a gaf:Instance ;
-        rdfs:label "hospital" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance0_char0-49 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:lesbians a gaf:Instance ;
-        rdfs:label "lesbians" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:life a gaf:Instance ;
-        rdfs:label "life" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:ones a gaf:Instance ;
-        rdfs:label "ones" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance2_char0-75 .
-
-    leolaniWorld:should_shunned a gaf:Instance ;
-        rdfs:label "should-shunned" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance2_char0-75 .
-
-    leolaniWorld:sick a gaf:Instance ;
-        rdfs:label "sick" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
-
-    leolaniWorld:sick_ones a gaf:Instance ;
-        rdfs:label "sick-ones" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance2_char0-75 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:lesbians_live_happy_life {
-    leolaniWorld:lesbians ns1:live leolaniWorld:happy_life .
-}
-
-leolaniWorld:Gay_men_go-to_hospital {
-    leolaniWorld:Gay_men ns1:go_to leolaniWorld:hospital .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context28 a eps:Context ;
-        rdfs:label "context28" ;
-        hs:id "28"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat365 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "183"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat365 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat365" ;
-        hs:id "365"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat365_utterance0,
-            leolaniTalk:chat365_utterance1,
-            leolaniTalk:chat365_utterance2 .
-
-    leolaniTalk:chat365_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat365_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat365_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat365_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat365_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat365_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:they_are_sick {
     leolaniWorld:they ns1:are leolaniWorld:sick .
-}
-
-leolaniWorld:lesbians_live_happy_healthy_life {
-    leolaniWorld:lesbians ns1:live leolaniWorld:happy_healthy_life .
 }
 
 leolaniWorld:Ontology {
@@ -771,7 +630,148 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:lesbians_live_healthy_life {
-    leolaniWorld:lesbians ns1:live leolaniWorld:healthy_life .
+leolaniWorld:Claims {
+    leolaniWorld:Gay_men_are_diseased a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Gay_men_are_diseased" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance0_char0-49 .
+
+    leolaniWorld:Gay_men_go-to_hospital a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Gay_men_go-to_hospital" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance0_char0-49 .
+
+    leolaniWorld:gay_men_is-in_US a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "gay_men_is-in_US" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:lesbians_live_happy_healthy_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "lesbians_live_happy_healthy_life" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:lesbians_live_happy_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "lesbians_live_happy_life" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:lesbians_live_healthy_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "lesbians_live_healthy_life" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:lesbians_live_life a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "lesbians_live_life" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:ones_should_should_shunned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "ones_should_should_shunned" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance2_char0-75 .
+
+    leolaniWorld:sick_ones_should_should_shunned a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "sick_ones_should_should_shunned" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance2_char0-75 .
+
+    leolaniWorld:they_are_sick a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_sick" ;
+        gaf:denotedBy leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:lesbians_live_happy_life {
+    leolaniWorld:lesbians ns1:live leolaniWorld:happy_life .
+}
+
+leolaniWorld:Gay_men_are_diseased {
+    leolaniWorld:Gay_men ns1:are leolaniWorld:diseased .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Gay_men a gaf:Instance ;
+        rdfs:label "gay-men" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance0_char0-49 .
+
+    leolaniWorld:US a gaf:Instance ;
+        rdfs:label "us" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance ;
+        rdfs:label "cn" .
+
+    leolaniWorld:diseased a gaf:Instance ;
+        rdfs:label "diseased" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance0_char0-49 .
+
+    leolaniWorld:gay_men a gaf:Instance ;
+        rdfs:label "gay-men" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:happy_healthy_life a gaf:Instance ;
+        rdfs:label "happy-healthy-life" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:happy_life a gaf:Instance ;
+        rdfs:label "happy-life" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:healthy_life a gaf:Instance ;
+        rdfs:label "healthy-life" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:hospital a gaf:Instance ;
+        rdfs:label "hospital" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance0_char0-49 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:lesbians a gaf:Instance ;
+        rdfs:label "lesbians" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:life a gaf:Instance ;
+        rdfs:label "life" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:ones a gaf:Instance ;
+        rdfs:label "ones" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance2_char0-75 .
+
+    leolaniWorld:should_shunned a gaf:Instance ;
+        rdfs:label "should-shunned" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance2_char0-75 .
+
+    leolaniWorld:sick a gaf:Instance ;
+        rdfs:label "sick" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
+
+    leolaniWorld:sick_ones a gaf:Instance ;
+        rdfs:label "sick-ones" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance2_char0-75 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat365_utterance1_char0-120 .
 }
 

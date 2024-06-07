@@ -22,48 +22,78 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context108 a eps:Context ;
+        rdfs:label "context108" ;
+        hs:id "108"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat573 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "83"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat573 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat573" ;
+        hs:id "573"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat573_utterance1 .
+
+    leolaniTalk:chat573_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat573_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:Convention_same-rights-to_men {
+    leolaniWorld:Convention ns1:same_rights_to leolaniWorld:men .
 }
 
 leolaniWorld:European_Convention_rights-to_men {
     leolaniWorld:European_Convention ns1:rights_to leolaniWorld:men .
 }
 
-leolaniWorld:Convention_rights-to_men {
-    leolaniWorld:Convention ns1:rights_to leolaniWorld:men .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Convention_rights-to_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Convention_rights-to_men" ;
-        gaf:denotedBy leolaniTalk:chat573_utterance1_char0-110 .
-
-    leolaniWorld:Convention_same-rights-to_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Convention_same-rights-to_men" ;
-        gaf:denotedBy leolaniTalk:chat573_utterance1_char0-110 .
-
-    leolaniWorld:European_Convention_rights-to_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "European_Convention_rights-to_men" ;
-        gaf:denotedBy leolaniTalk:chat573_utterance1_char0-110 .
-
-    leolaniWorld:European_Convention_same-rights-to_men a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "European_Convention_same-rights-to_men" ;
-        gaf:denotedBy leolaniTalk:chat573_utterance1_char0-110 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
 leolaniWorld:European_Convention_same-rights-to_men {
     leolaniWorld:European_Convention ns1:same_rights_to leolaniWorld:men .
+}
+
+leolaniWorld:Convention_rights-to_men {
+    leolaniWorld:Convention ns1:rights_to leolaniWorld:men .
 }
 
 leolaniTalk:Perspectives {
@@ -129,31 +159,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Convention a gaf:Instance ;
-        rdfs:label "convention" ;
-        gaf:denotedIn leolaniTalk:chat573_utterance1_char0-110 .
-
-    leolaniWorld:European_Convention a gaf:Instance ;
-        rdfs:label "european-convention" ;
-        gaf:denotedIn leolaniTalk:chat573_utterance1_char0-110 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat573_utterance1_char0-110 .
-}
-
-leolaniWorld:Convention_same-rights-to_men {
-    leolaniWorld:Convention ns1:same_rights_to leolaniWorld:men .
 }
 
 leolaniWorld:Ontology {
@@ -491,57 +496,52 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context108 a eps:Context ;
-        rdfs:label "context108" ;
-        hs:id "108"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat573 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "83"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat573 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Convention_rights-to_men a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat573" ;
-        hs:id "573"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat573_utterance1 .
+        rdfs:label "Convention_rights-to_men" ;
+        gaf:denotedBy leolaniTalk:chat573_utterance1_char0-110 .
 
-    leolaniTalk:chat573_utterance1 a grasp:Utterance,
+    leolaniWorld:Convention_same-rights-to_men a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat573_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Convention_same-rights-to_men" ;
+        gaf:denotedBy leolaniTalk:chat573_utterance1_char0-110 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:European_Convention_rights-to_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "European_Convention_rights-to_men" ;
+        gaf:denotedBy leolaniTalk:chat573_utterance1_char0-110 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:European_Convention_same-rights-to_men a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "European_Convention_same-rights-to_men" ;
+        gaf:denotedBy leolaniTalk:chat573_utterance1_char0-110 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Convention a gaf:Instance ;
+        rdfs:label "convention" ;
+        gaf:denotedIn leolaniTalk:chat573_utterance1_char0-110 .
+
+    leolaniWorld:European_Convention a gaf:Instance ;
+        rdfs:label "european-convention" ;
+        gaf:denotedIn leolaniTalk:chat573_utterance1_char0-110 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat573_utterance1_char0-110 .
 }
 

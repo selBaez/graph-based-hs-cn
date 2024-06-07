@@ -22,99 +22,171 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:They_have_nothing {
-    leolaniWorld:They ns1:have leolaniWorld:nothing .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:European_Union_includes_Jewish_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "European_Union_includes_Jewish_people" ;
-        gaf:denotedBy leolaniTalk:chat952_utterance1_char0-87 .
-
-    leolaniWorld:European_Union_includes_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "European_Union_includes_people" ;
-        gaf:denotedBy leolaniTalk:chat952_utterance1_char0-87 .
-
-    leolaniWorld:They_have_nothing a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "They_have_nothing" ;
-        gaf:denotedBy leolaniTalk:chat952_utterance0_char0-66 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_have_part a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_have_part" ;
-        gaf:denotedBy leolaniTalk:chat952_utterance1_char0-87 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:European_Union_includes_Jewish_people {
-    leolaniWorld:European_Union ns1:includes leolaniWorld:Jewish_people .
+leolaniWorld:they_have_part {
+    leolaniWorld:they ns1:have leolaniWorld:part .
 }
 
 leolaniWorld:European_Union_includes_people {
     leolaniWorld:European_Union ns1:includes leolaniWorld:people .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:European_Union a gaf:Instance ;
-        rdfs:label "european-union" ;
-        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
+leolaniTalk:Interactions {
+    leolaniContext:context137 a eps:Context ;
+        rdfs:label "context137" ;
+        hs:id "137"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Jewish_people a gaf:Instance ;
-        rdfs:label "jewish-people" ;
-        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat952 .
 
-    leolaniWorld:They a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat952_utterance0_char0-66 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "209"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat952 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat952" ;
+        hs:id "952"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat952_utterance0,
+            leolaniTalk:chat952_utterance1 .
+
+    leolaniTalk:chat952_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat952_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat952_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat952_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:nothing a gaf:Instance ;
-        rdfs:label "nothing" ;
-        gaf:denotedIn leolaniTalk:chat952_utterance0_char0-66 .
-
-    leolaniWorld:part a gaf:Instance ;
-        rdfs:label "part" ;
-        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
 }
 
-leolaniWorld:they_have_part {
-    leolaniWorld:they ns1:have leolaniWorld:part .
+leolaniWorld:European_Union_includes_Jewish_people {
+    leolaniWorld:European_Union ns1:includes leolaniWorld:Jewish_people .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:European_Union_includes_Jewish_people_00028 a grasp:Attribution ;
+        rdfs:label "European_Union_includes_Jewish_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat952_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:European_Union_includes_people_00028 a grasp:Attribution ;
+        rdfs:label "European_Union_includes_people_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat952_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:They_have_nothing_00023 a grasp:Attribution ;
+        rdfs:label "They_have_nothing_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat952_utterance0_char0-66 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat952_utterance0_char0-66 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat952_utterance0_char0-66" ;
+        gaf:containsDenotation leolaniWorld:They,
+            leolaniWorld:nothing ;
+        gaf:denotes leolaniWorld:They_have_nothing ;
+        grasp:hasAttribution leolaniTalk:They_have_nothing_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:37.942429"^^xml1:string ;
+        rdf:value "Jews don't belong here. They have nothing to contribute to Europe."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat952_utterance0 .
+
+    leolaniTalk:they_have_part_00028 a grasp:Attribution ;
+        rdfs:label "they_have_part_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat952_utterance1_char0-87 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat952_utterance1_char0-87 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat952_utterance1_char0-87" ;
+        gaf:containsDenotation leolaniWorld:European_Union,
+            leolaniWorld:Jewish_people,
+            leolaniWorld:part,
+            leolaniWorld:people,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:European_Union_includes_Jewish_people,
+            leolaniWorld:European_Union_includes_people,
+            leolaniWorld:they_have_part ;
+        grasp:hasAttribution leolaniTalk:European_Union_includes_Jewish_people_00028,
+            leolaniTalk:European_Union_includes_people_00028,
+            leolaniTalk:they_have_part_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:38.045723"^^xml1:string,
+            "2024-06-05T23:08:38.045779"^^xml1:string,
+            "2024-06-05T23:08:38.045801"^^xml1:string ;
+        rdf:value "The European Union includes Jewish people and, they have a part to play in our society."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat952_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -452,154 +524,82 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:European_Union_includes_Jewish_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "European_Union_includes_Jewish_people" ;
+        gaf:denotedBy leolaniTalk:chat952_utterance1_char0-87 .
+
+    leolaniWorld:European_Union_includes_people a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "European_Union_includes_people" ;
+        gaf:denotedBy leolaniTalk:chat952_utterance1_char0-87 .
+
+    leolaniWorld:They_have_nothing a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "They_have_nothing" ;
+        gaf:denotedBy leolaniTalk:chat952_utterance0_char0-66 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_have_part a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_have_part" ;
+        gaf:denotedBy leolaniTalk:chat952_utterance1_char0-87 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:European_Union_includes_Jewish_people_00028 a grasp:Attribution ;
-        rdfs:label "European_Union_includes_Jewish_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat952_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:European_Union_includes_people_00028 a grasp:Attribution ;
-        rdfs:label "European_Union_includes_people_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat952_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:They_have_nothing_00023 a grasp:Attribution ;
-        rdfs:label "They_have_nothing_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat952_utterance0_char0-66 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat952_utterance0_char0-66 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat952_utterance0_char0-66" ;
-        gaf:containsDenotation leolaniWorld:They,
-            leolaniWorld:nothing ;
-        gaf:denotes leolaniWorld:They_have_nothing ;
-        grasp:hasAttribution leolaniTalk:They_have_nothing_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:37.942429"^^xml1:string ;
-        rdf:value "Jews don't belong here. They have nothing to contribute to Europe."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat952_utterance0 .
-
-    leolaniTalk:they_have_part_00028 a grasp:Attribution ;
-        rdfs:label "they_have_part_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat952_utterance1_char0-87 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat952_utterance1_char0-87 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat952_utterance1_char0-87" ;
-        gaf:containsDenotation leolaniWorld:European_Union,
-            leolaniWorld:Jewish_people,
-            leolaniWorld:part,
-            leolaniWorld:people,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:European_Union_includes_Jewish_people,
-            leolaniWorld:European_Union_includes_people,
-            leolaniWorld:they_have_part ;
-        grasp:hasAttribution leolaniTalk:European_Union_includes_Jewish_people_00028,
-            leolaniTalk:European_Union_includes_people_00028,
-            leolaniTalk:they_have_part_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:38.045723"^^xml1:string,
-            "2024-06-05T23:08:38.045779"^^xml1:string,
-            "2024-06-05T23:08:38.045801"^^xml1:string ;
-        rdf:value "The European Union includes Jewish people and, they have a part to play in our society."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat952_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:They_have_nothing {
+    leolaniWorld:They ns1:have leolaniWorld:nothing .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context137 a eps:Context ;
-        rdfs:label "context137" ;
-        hs:id "137"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:European_Union a gaf:Instance ;
+        rdfs:label "european-union" ;
+        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat952 .
+    leolaniWorld:Jewish_people a gaf:Instance ;
+        rdfs:label "jewish-people" ;
+        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "209"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat952 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat952" ;
-        hs:id "952"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat952_utterance0,
-            leolaniTalk:chat952_utterance1 .
-
-    leolaniTalk:chat952_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat952_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat952_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat952_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:They a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat952_utterance0_char0-66 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:nothing a gaf:Instance ;
+        rdfs:label "nothing" ;
+        gaf:denotedIn leolaniTalk:chat952_utterance0_char0-66 .
+
+    leolaniWorld:part a gaf:Instance ;
+        rdfs:label "part" ;
+        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat952_utterance1_char0-87 .
 }
 

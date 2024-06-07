@@ -22,74 +22,94 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Muslims_starting_businesses {
-    leolaniWorld:Muslims ns1:starting leolaniWorld:businesses .
+leolaniWorld:Time_take-back_our_country {
+    leolaniWorld:Time ns1:take_back leolaniWorld:our_country .
 }
 
-leolaniWorld:population_starting_businesses {
-    leolaniWorld:population ns1:starting leolaniWorld:businesses .
+leolaniTalk:Interactions {
+    leolaniContext:context188 a eps:Context ;
+        rdfs:label "context188" ;
+        hs:id "188"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat132 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "195"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat132 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat132" ;
+        hs:id "132"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat132_utterance0,
+            leolaniTalk:chat132_utterance1,
+            leolaniTalk:chat132_utterance2 .
+
+    leolaniTalk:chat132_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat132_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat132_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat132_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat132_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat132_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Asian_population_contributing-to_economy {
-    leolaniWorld:Asian_population ns1:contributing_to leolaniWorld:economy .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Asian_population_contributing-to_economy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Asian_population_contributing-to_economy" ;
-        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
-
-    leolaniWorld:Asian_population_starting_businesses a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Asian_population_starting_businesses" ;
-        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
-
-    leolaniWorld:I_replacement-of_our_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_replacement-of_our_people" ;
-        gaf:denotedBy leolaniTalk:chat132_utterance2_char0-101 .
-
-    leolaniWorld:Muslims_starting_businesses a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Muslims_starting_businesses" ;
-        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
-
-    leolaniWorld:Time_take-back_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Time_take-back_our_country" ;
-        gaf:denotedBy leolaniTalk:chat132_utterance0_char0-167 .
-
-    leolaniWorld:Time_take_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Time_take_our_country" ;
-        gaf:denotedBy leolaniTalk:chat132_utterance0_char0-167 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:population_contributing-to_economy a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "population_contributing-to_economy" ;
-        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
-
-    leolaniWorld:population_starting_businesses a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "population_starting_businesses" ;
-        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:population_starting_businesses {
+    leolaniWorld:population ns1:starting leolaniWorld:businesses .
 }
 
 leolaniWorld:Asian_population_starting_businesses {
@@ -219,75 +239,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Asian_population a gaf:Instance ;
-        rdfs:label "asian-population" ;
-        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
-
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat132_utterance2_char0-101 .
-
-    leolaniWorld:Muslims a gaf:Instance ;
-        rdfs:label "muslims" ;
-        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
-
-    leolaniWorld:Time a gaf:Instance ;
-        rdfs:label "time" ;
-        gaf:denotedIn leolaniTalk:chat132_utterance0_char0-167 .
-
-    leolaniWorld:businesses a gaf:Instance ;
-        rdfs:label "businesses" ;
-        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:economy a gaf:Instance ;
-        rdfs:label "economy" ;
-        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:our_country a gaf:Instance ;
-        rdfs:label "our-country" ;
-        gaf:denotedIn leolaniTalk:chat132_utterance0_char0-167 .
-
-    leolaniWorld:our_people a gaf:Instance ;
-        rdfs:label "our-people" ;
-        gaf:denotedIn leolaniTalk:chat132_utterance2_char0-101 .
-
-    leolaniWorld:population a gaf:Instance ;
-        rdfs:label "population" ;
-        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
-}
-
-leolaniWorld:Time_take-back_our_country {
-    leolaniWorld:Time ns1:take_back leolaniWorld:our_country .
-}
-
-leolaniWorld:Time_take_our_country {
-    leolaniWorld:Time ns1:take leolaniWorld:our_country .
-}
-
-leolaniWorld:population_contributing-to_economy {
-    leolaniWorld:population ns1:contributing_to leolaniWorld:economy .
-}
-
-leolaniWorld:I_replacement-of_our_people {
-    leolaniWorld:I ns1:replacement_of leolaniWorld:our_people .
 }
 
 leolaniWorld:Ontology {
@@ -625,77 +576,126 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context188 a eps:Context ;
-        rdfs:label "context188" ;
-        hs:id "188"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Asian_population_contributing-to_economy {
+    leolaniWorld:Asian_population ns1:contributing_to leolaniWorld:economy .
+}
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat132 .
+leolaniWorld:Time_take_our_country {
+    leolaniWorld:Time ns1:take leolaniWorld:our_country .
+}
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "195"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat132 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Asian_population_contributing-to_economy a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat132" ;
-        hs:id "132"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat132_utterance0,
-            leolaniTalk:chat132_utterance1,
-            leolaniTalk:chat132_utterance2 .
+        rdfs:label "Asian_population_contributing-to_economy" ;
+        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
 
-    leolaniTalk:chat132_utterance0 a grasp:Utterance,
+    leolaniWorld:Asian_population_starting_businesses a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat132_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Asian_population_starting_businesses" ;
+        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
 
-    leolaniTalk:chat132_utterance1 a grasp:Utterance,
+    leolaniWorld:I_replacement-of_our_people a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat132_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "I_replacement-of_our_people" ;
+        gaf:denotedBy leolaniTalk:chat132_utterance2_char0-101 .
 
-    leolaniTalk:chat132_utterance2 a grasp:Utterance,
+    leolaniWorld:Muslims_starting_businesses a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat132_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Muslims_starting_businesses" ;
+        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:Time_take-back_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Time_take-back_our_country" ;
+        gaf:denotedBy leolaniTalk:chat132_utterance0_char0-167 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Time_take_our_country a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Time_take_our_country" ;
+        gaf:denotedBy leolaniTalk:chat132_utterance0_char0-167 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:population_contributing-to_economy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "population_contributing-to_economy" ;
+        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
+
+    leolaniWorld:population_starting_businesses a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "population_starting_businesses" ;
+        gaf:denotedBy leolaniTalk:chat132_utterance1_char0-110 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:Muslims_starting_businesses {
+    leolaniWorld:Muslims ns1:starting leolaniWorld:businesses .
+}
+
+leolaniWorld:population_contributing-to_economy {
+    leolaniWorld:population ns1:contributing_to leolaniWorld:economy .
+}
+
+leolaniWorld:I_replacement-of_our_people {
+    leolaniWorld:I ns1:replacement_of leolaniWorld:our_people .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Asian_population a gaf:Instance ;
+        rdfs:label "asian-population" ;
+        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
+
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat132_utterance2_char0-101 .
+
+    leolaniWorld:Muslims a gaf:Instance ;
+        rdfs:label "muslims" ;
+        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
+
+    leolaniWorld:Time a gaf:Instance ;
+        rdfs:label "time" ;
+        gaf:denotedIn leolaniTalk:chat132_utterance0_char0-167 .
+
+    leolaniWorld:businesses a gaf:Instance ;
+        rdfs:label "businesses" ;
+        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:economy a gaf:Instance ;
+        rdfs:label "economy" ;
+        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:our_country a gaf:Instance ;
+        rdfs:label "our-country" ;
+        gaf:denotedIn leolaniTalk:chat132_utterance0_char0-167 .
+
+    leolaniWorld:our_people a gaf:Instance ;
+        rdfs:label "our-people" ;
+        gaf:denotedIn leolaniTalk:chat132_utterance2_char0-101 .
+
+    leolaniWorld:population a gaf:Instance ;
+        rdfs:label "population" ;
+        gaf:denotedIn leolaniTalk:chat132_utterance1_char0-110 .
 }
 

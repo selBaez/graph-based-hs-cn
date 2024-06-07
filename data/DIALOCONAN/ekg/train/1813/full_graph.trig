@@ -23,37 +23,62 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    ns11:s_reflect-on_this a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "'s_reflect-on_this" ;
-        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+leolaniTalk:Interactions {
+    leolaniContext:context120 a eps:Context ;
+        rdfs:label "context120" ;
+        hs:id "120"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:Black_people_show_same_strength a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Black_people_show_same_strength" ;
-        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1813 .
 
-    leolaniWorld:Black_people_show_strength a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Black_people_show_strength" ;
-        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "196"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
 
-    leolaniWorld:people_show_same_strength a gaf:Assertion,
+    leolaniTalk:chat1813 a grasp:Chat,
             sem:Event ;
-        rdfs:label "people_show_same_strength" ;
-        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+        rdfs:label "chat1813" ;
+        hs:id "1813"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1813_utterance1 .
 
-    leolaniWorld:people_show_strength a gaf:Assertion,
+    leolaniTalk:chat1813_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "people_show_strength" ;
-        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+        rdfs:label "chat1813_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
+leolaniWorld:people_show_strength {
+    leolaniWorld:people ns1:show leolaniWorld:strength .
 }
 
 leolaniWorld:leolani_know_cn {
@@ -64,45 +89,86 @@ leolaniWorld:Black_people_show_strength {
     leolaniWorld:Black_people ns1:show leolaniWorld:strength .
 }
 
-ns11:s_reflect-on_this {
-    ns11:s ns1:reflect_on leolaniWorld:this .
-}
-
-leolaniWorld:Instances {
-    ns11:s a gaf:Instance ;
-        rdfs:label "s" ;
-        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
-
-    leolaniWorld:Black_people a gaf:Instance ;
-        rdfs:label "black-people" ;
-        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
-
-    leolaniWorld:same_strength a gaf:Instance ;
-        rdfs:label "same-strength" ;
-        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
-
-    leolaniWorld:strength a gaf:Instance ;
-        rdfs:label "strength" ;
-        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
-
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
-}
-
 leolaniWorld:people_show_same_strength {
     leolaniWorld:people ns1:show leolaniWorld:same_strength .
+}
+
+leolaniTalk:Perspectives {
+    <http://cltl.nl/leolani/talk/'s_reflect-on_this_0003> a grasp:Attribution ;
+        rdfs:label "'s_reflect-on_this_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_show_same_strength_0003 a grasp:Attribution ;
+        rdfs:label "Black_people_show_same_strength_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:Black_people_show_strength_0003 a grasp:Attribution ;
+        rdfs:label "Black_people_show_strength_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_show_same_strength_0003 a grasp:Attribution ;
+        rdfs:label "people_show_same_strength_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:people_show_strength_0003 a grasp:Attribution ;
+        rdfs:label "people_show_strength_0003" ;
+        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
+        rdf:value graspe:JOY,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1813_utterance1_char0-164 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1813_utterance1_char0-164" ;
+        gaf:containsDenotation ns11:s,
+            leolaniWorld:Black_people,
+            leolaniWorld:people,
+            leolaniWorld:same_strength,
+            leolaniWorld:strength,
+            leolaniWorld:this ;
+        gaf:denotes ns11:s_reflect-on_this,
+            leolaniWorld:Black_people_show_same_strength,
+            leolaniWorld:Black_people_show_strength,
+            leolaniWorld:people_show_same_strength,
+            leolaniWorld:people_show_strength ;
+        grasp:hasAttribution <http://cltl.nl/leolani/talk/'s_reflect-on_this_0003>,
+            leolaniTalk:Black_people_show_same_strength_0003,
+            leolaniTalk:Black_people_show_strength_0003,
+            leolaniTalk:people_show_same_strength_0003,
+            leolaniTalk:people_show_strength_0003 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T22:57:25.531062"^^xml1:string,
+            "2024-06-05T22:57:25.531126"^^xml1:string,
+            "2024-06-05T22:57:25.531149"^^xml1:string,
+            "2024-06-05T22:57:25.531171"^^xml1:string,
+            "2024-06-05T22:57:25.531193"^^xml1:string ;
+        rdf:value "Black people show the same strength that anybody else has. The difference is that black people do not enjoy the same social advantages as us. Let's reflect on this."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1813_utterance1 .
+
+    graspe:JOY a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "JOY" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -440,143 +506,77 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
+leolaniWorld:Claims {
+    ns11:s_reflect-on_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "'s_reflect-on_this" ;
+        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+
+    leolaniWorld:Black_people_show_same_strength a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_show_same_strength" ;
+        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+
+    leolaniWorld:Black_people_show_strength a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Black_people_show_strength" ;
+        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:people_show_same_strength a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_show_same_strength" ;
+        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+
+    leolaniWorld:people_show_strength a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "people_show_strength" ;
+        gaf:denotedBy leolaniTalk:chat1813_utterance1_char0-164 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+ns11:s_reflect-on_this {
+    ns11:s ns1:reflect_on leolaniWorld:this .
+}
+
 leolaniWorld:Black_people_show_same_strength {
     leolaniWorld:Black_people ns1:show leolaniWorld:same_strength .
 }
 
-leolaniTalk:Perspectives {
-    <http://cltl.nl/leolani/talk/'s_reflect-on_this_0003> a grasp:Attribution ;
-        rdfs:label "'s_reflect-on_this_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    ns11:s a gaf:Instance ;
+        rdfs:label "s" ;
+        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
 
-    leolaniTalk:Black_people_show_same_strength_0003 a grasp:Attribution ;
-        rdfs:label "Black_people_show_same_strength_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Black_people_show_strength_0003 a grasp:Attribution ;
-        rdfs:label "Black_people_show_strength_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_show_same_strength_0003 a grasp:Attribution ;
-        rdfs:label "people_show_same_strength_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:people_show_strength_0003 a grasp:Attribution ;
-        rdfs:label "people_show_strength_0003" ;
-        grasp:isAttributionFor leolaniTalk:chat1813_utterance1_char0-164 ;
-        rdf:value graspe:JOY,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1813_utterance1_char0-164 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1813_utterance1_char0-164" ;
-        gaf:containsDenotation ns11:s,
-            leolaniWorld:Black_people,
-            leolaniWorld:people,
-            leolaniWorld:same_strength,
-            leolaniWorld:strength,
-            leolaniWorld:this ;
-        gaf:denotes ns11:s_reflect-on_this,
-            leolaniWorld:Black_people_show_same_strength,
-            leolaniWorld:Black_people_show_strength,
-            leolaniWorld:people_show_same_strength,
-            leolaniWorld:people_show_strength ;
-        grasp:hasAttribution <http://cltl.nl/leolani/talk/'s_reflect-on_this_0003>,
-            leolaniTalk:Black_people_show_same_strength_0003,
-            leolaniTalk:Black_people_show_strength_0003,
-            leolaniTalk:people_show_same_strength_0003,
-            leolaniTalk:people_show_strength_0003 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T22:57:25.531062"^^xml1:string,
-            "2024-06-05T22:57:25.531126"^^xml1:string,
-            "2024-06-05T22:57:25.531149"^^xml1:string,
-            "2024-06-05T22:57:25.531171"^^xml1:string,
-            "2024-06-05T22:57:25.531193"^^xml1:string ;
-        rdf:value "Black people show the same strength that anybody else has. The difference is that black people do not enjoy the same social advantages as us. Let's reflect on this."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1813_utterance1 .
-
-    graspe:JOY a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "JOY" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context120 a eps:Context ;
-        rdfs:label "context120" ;
-        hs:id "120"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1813 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "196"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1813 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1813" ;
-        hs:id "1813"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1813_utterance1 .
-
-    leolaniTalk:chat1813_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1813_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:Black_people a gaf:Instance ;
+        rdfs:label "black-people" ;
+        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
-}
 
-leolaniWorld:people_show_strength {
-    leolaniWorld:people ns1:show leolaniWorld:strength .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
+
+    leolaniWorld:same_strength a gaf:Instance ;
+        rdfs:label "same-strength" ;
+        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
+
+    leolaniWorld:strength a gaf:Instance ;
+        rdfs:label "strength" ;
+        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat1813_utterance1_char0-164 .
 }
 

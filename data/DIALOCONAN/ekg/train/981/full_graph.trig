@@ -22,64 +22,145 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:worse_things_is-in_world {
-    leolaniWorld:worse_things ns1:is_in leolaniWorld:world .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context76 a eps:Context ;
+        rdfs:label "context76" ;
+        hs:id "76"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat981 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "218"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat981 a grasp:Chat,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat981" ;
+        hs:id "981"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat981_utterance0,
+            leolaniTalk:chat981_utterance2 .
 
-    leolaniWorld:they_ask-for_privileges a gaf:Assertion,
+    leolaniTalk:chat981_utterance0 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "they_ask-for_privileges" ;
-        gaf:denotedBy leolaniTalk:chat981_utterance2_char0-77 .
+        rdfs:label "chat981_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:they_ask-for_special_privileges a gaf:Assertion,
+    leolaniTalk:chat981_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "they_ask-for_special_privileges" ;
-        gaf:denotedBy leolaniTalk:chat981_utterance2_char0-77 .
+        rdfs:label "chat981_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:worse_things_is-in_world a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "worse_things_is-in_world" ;
-        gaf:denotedBy leolaniTalk:chat981_utterance0_char0-94 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-leolaniWorld:Instances {
     leolaniWorld:hs a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "hs" .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:privileges a gaf:Instance ;
-        rdfs:label "privileges" ;
-        gaf:denotedIn leolaniTalk:chat981_utterance2_char0-77 .
-
-    leolaniWorld:special_privileges a gaf:Instance ;
-        rdfs:label "special-privileges" ;
-        gaf:denotedIn leolaniTalk:chat981_utterance2_char0-77 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat981_utterance2_char0-77 .
-
-    leolaniWorld:world a gaf:Instance ;
-        rdfs:label "world" ;
-        gaf:denotedIn leolaniTalk:chat981_utterance0_char0-94 .
-
-    leolaniWorld:worse_things a gaf:Instance ;
-        rdfs:label "worse-things" ;
-        gaf:denotedIn leolaniTalk:chat981_utterance0_char0-94 .
+leolaniWorld:they_ask-for_privileges {
+    leolaniWorld:they ns1:ask_for leolaniWorld:privileges .
 }
 
 leolaniWorld:they_ask-for_special_privileges {
     leolaniWorld:they ns1:ask_for leolaniWorld:special_privileges .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:chat981_utterance0_char0-94 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat981_utterance0_char0-94" ;
+        gaf:containsDenotation leolaniWorld:world,
+            leolaniWorld:worse_things ;
+        gaf:denotes leolaniWorld:worse_things_is-in_world ;
+        grasp:hasAttribution leolaniTalk:worse_things_is-in_world_00023 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:20:00.212337"^^xml1:string ;
+        rdf:value "Nazism wasn't that bad and I think there are worse things in the world, like Jews for example."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat981_utterance0 .
+
+    leolaniTalk:they_ask-for_privileges_00028 a grasp:Attribution ;
+        rdfs:label "they_ask-for_privileges_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat981_utterance2_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_ask-for_special_privileges_00028 a grasp:Attribution ;
+        rdfs:label "they_ask-for_special_privileges_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat981_utterance2_char0-77 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:worse_things_is-in_world_00023 a grasp:Attribution ;
+        rdfs:label "worse_things_is-in_world_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat981_utterance0_char0-94 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
+
+    leolaniTalk:chat981_utterance2_char0-77 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat981_utterance2_char0-77" ;
+        gaf:containsDenotation leolaniWorld:privileges,
+            leolaniWorld:special_privileges,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:they_ask-for_privileges,
+            leolaniWorld:they_ask-for_special_privileges ;
+        grasp:hasAttribution leolaniTalk:they_ask-for_privileges_00028,
+            leolaniTalk:they_ask-for_special_privileges_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:20:00.424763"^^xml1:string,
+            "2024-06-05T23:20:00.424819"^^xml1:string ;
+        rdf:value "But Jews think they are the “chosen people”, they ask for special privileges."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat981_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -417,140 +498,59 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:worse_things_is-in_world {
+    leolaniWorld:worse_things ns1:is_in leolaniWorld:world .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat981_utterance0_char0-94 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat981_utterance0_char0-94" ;
-        gaf:containsDenotation leolaniWorld:world,
-            leolaniWorld:worse_things ;
-        gaf:denotes leolaniWorld:worse_things_is-in_world ;
-        grasp:hasAttribution leolaniTalk:worse_things_is-in_world_00023 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:20:00.212337"^^xml1:string ;
-        rdf:value "Nazism wasn't that bad and I think there are worse things in the world, like Jews for example."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat981_utterance0 .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:they_ask-for_privileges_00028 a grasp:Attribution ;
-        rdfs:label "they_ask-for_privileges_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat981_utterance2_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_ask-for_privileges a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_ask-for_privileges" ;
+        gaf:denotedBy leolaniTalk:chat981_utterance2_char0-77 .
 
-    leolaniTalk:they_ask-for_special_privileges_00028 a grasp:Attribution ;
-        rdfs:label "they_ask-for_special_privileges_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat981_utterance2_char0-77 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:they_ask-for_special_privileges a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_ask-for_special_privileges" ;
+        gaf:denotedBy leolaniTalk:chat981_utterance2_char0-77 .
 
-    leolaniTalk:worse_things_is-in_world_00023 a grasp:Attribution ;
-        rdfs:label "worse_things_is-in_world_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat981_utterance0_char0-94 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:worse_things_is-in_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "worse_things_is-in_world" ;
+        gaf:denotedBy leolaniTalk:chat981_utterance0_char0-94 .
 
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat981_utterance2_char0-77 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat981_utterance2_char0-77" ;
-        gaf:containsDenotation leolaniWorld:privileges,
-            leolaniWorld:special_privileges,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:they_ask-for_privileges,
-            leolaniWorld:they_ask-for_special_privileges ;
-        grasp:hasAttribution leolaniTalk:they_ask-for_privileges_00028,
-            leolaniTalk:they_ask-for_special_privileges_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:20:00.424763"^^xml1:string,
-            "2024-06-05T23:20:00.424819"^^xml1:string ;
-        rdf:value "But Jews think they are the “chosen people”, they ask for special privileges."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat981_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:they_ask-for_privileges {
-    leolaniWorld:they ns1:ask_for leolaniWorld:privileges .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context76 a eps:Context ;
-        rdfs:label "context76" ;
-        hs:id "76"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat981 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "218"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat981 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat981" ;
-        hs:id "981"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat981_utterance0,
-            leolaniTalk:chat981_utterance2 .
-
-    leolaniTalk:chat981_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat981_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat981_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat981_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:privileges a gaf:Instance ;
+        rdfs:label "privileges" ;
+        gaf:denotedIn leolaniTalk:chat981_utterance2_char0-77 .
+
+    leolaniWorld:special_privileges a gaf:Instance ;
+        rdfs:label "special-privileges" ;
+        gaf:denotedIn leolaniTalk:chat981_utterance2_char0-77 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat981_utterance2_char0-77 .
+
+    leolaniWorld:world a gaf:Instance ;
+        rdfs:label "world" ;
+        gaf:denotedIn leolaniTalk:chat981_utterance0_char0-94 .
+
+    leolaniWorld:worse_things a gaf:Instance ;
+        rdfs:label "worse-things" ;
+        gaf:denotedIn leolaniTalk:chat981_utterance0_char0-94 .
 }
 

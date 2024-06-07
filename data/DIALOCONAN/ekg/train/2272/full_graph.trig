@@ -22,42 +22,100 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+leolaniWorld:you_should-look-into_UK_laws {
+    leolaniWorld:you ns1:should_look_into leolaniWorld:UK_laws .
+}
 
-    leolaniWorld:you_should-look-into_UK_laws a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_should-look-into_UK_laws" ;
-        gaf:denotedBy leolaniTalk:chat2272_utterance1_char0-94 .
+leolaniTalk:Interactions {
+    leolaniContext:context64 a eps:Context ;
+        rdfs:label "context64" ;
+        hs:id "64"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2272 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "85"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2272 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2272" ;
+        hs:id "2272"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2272_utterance1 .
+
+    leolaniTalk:chat2272_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2272_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:you_should-look-into_UK_laws {
-    leolaniWorld:you ns1:should_look_into leolaniWorld:UK_laws .
-}
+leolaniTalk:Perspectives {
+    leolaniTalk:chat2272_utterance1_char0-94 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2272_utterance1_char0-94" ;
+        gaf:containsDenotation leolaniWorld:UK_laws,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:you_should-look-into_UK_laws ;
+        grasp:hasAttribution leolaniTalk:you_should-look-into_UK_laws_00022 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:08:46.856737"^^xml1:string ;
+        rdf:value "I think you should look into the UK and EU laws that prevent discrimination based on religion."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2272_utterance1 .
 
-leolaniWorld:Instances {
-    leolaniWorld:UK_laws a gaf:Instance ;
-        rdfs:label "uk-laws" ;
-        gaf:denotedIn leolaniTalk:chat2272_utterance1_char0-94 .
+    leolaniTalk:you_should-look-into_UK_laws_00022 a grasp:Attribution ;
+        rdfs:label "you_should-look-into_UK_laws_00022" ;
+        grasp:isAttributionFor leolaniTalk:chat2272_utterance1_char0-94 ;
+        rdf:value graspe:ANNOYANCE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    graspe:ANNOYANCE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANNOYANCE" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat2272_utterance1_char0-94 .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -395,91 +453,33 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat2272_utterance1_char0-94 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2272_utterance1_char0-94" ;
-        gaf:containsDenotation leolaniWorld:UK_laws,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:you_should-look-into_UK_laws ;
-        grasp:hasAttribution leolaniTalk:you_should-look-into_UK_laws_00022 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:08:46.856737"^^xml1:string ;
-        rdf:value "I think you should look into the UK and EU laws that prevent discrimination based on religion."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2272_utterance1 .
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:you_should-look-into_UK_laws_00022 a grasp:Attribution ;
-        rdfs:label "you_should-look-into_UK_laws_00022" ;
-        grasp:isAttributionFor leolaniTalk:chat2272_utterance1_char0-94 ;
-        rdf:value graspe:ANNOYANCE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_should-look-into_UK_laws a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_should-look-into_UK_laws" ;
+        gaf:denotedBy leolaniTalk:chat2272_utterance1_char0-94 .
 
-    graspe:ANNOYANCE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANNOYANCE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context64 a eps:Context ;
-        rdfs:label "context64" ;
-        hs:id "64"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2272 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "85"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2272 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2272" ;
-        hs:id "2272"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2272_utterance1 .
-
-    leolaniTalk:chat2272_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2272_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+leolaniWorld:Instances {
+    leolaniWorld:UK_laws a gaf:Instance ;
+        rdfs:label "uk-laws" ;
+        gaf:denotedIn leolaniTalk:chat2272_utterance1_char0-94 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat2272_utterance1_char0-94 .
 }
 

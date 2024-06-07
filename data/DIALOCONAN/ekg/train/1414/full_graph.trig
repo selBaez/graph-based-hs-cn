@@ -22,116 +22,201 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:You_can-choose_vegetarian {
-    leolaniWorld:You ns11:can_choose leolaniWorld:vegetarian .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:I_hate_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "I_hate_it" ;
-        gaf:denotedBy leolaniTalk:chat1414_utterance0_char0-76 .
-
-    leolaniWorld:You_be_woman a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_be_woman" ;
-        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:You_can-choose_gay a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_can-choose_gay" ;
-        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:You_can-choose_to_woman a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_can-choose_to_woman" ;
-        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:You_can-choose_vegetarian a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_can-choose_vegetarian" ;
-        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:You_can-choose_woman a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_can-choose_woman" ;
-        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:you_can_can_anything a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_can_can_anything" ;
-        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:I_hate_it {
-    leolaniWorld:I ns11:hate leolaniWorld:it .
-}
-
 leolaniWorld:You_be_woman {
     leolaniWorld:You ns11:be leolaniWorld:woman .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context3 a eps:Context ;
+        rdfs:label "context3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1414 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "118"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1414 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1414" ;
+        hs:id "1414"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1414_utterance0,
+            leolaniTalk:chat1414_utterance2 .
+
+    leolaniTalk:chat1414_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1414_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1414_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1414_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:You_can-choose_woman {
     leolaniWorld:You ns11:can_choose leolaniWorld:woman .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat1414_utterance0_char0-76 .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
 
-    leolaniWorld:You a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:can_anything a gaf:Instance ;
-        rdfs:label "can-anything" ;
-        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:gay a gaf:Instance ;
-        rdfs:label "gay" ;
-        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1414_utterance0_char0-76 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:to_woman a gaf:Instance ;
-        rdfs:label "to-woman" ;
-        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:vegetarian a gaf:Instance ;
-        rdfs:label "vegetarian" ;
-        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:woman a gaf:Instance ;
-        rdfs:label "woman" ;
-        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
-
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
+leolaniWorld:You_can-choose_vegetarian {
+    leolaniWorld:You ns11:can_choose leolaniWorld:vegetarian .
 }
 
 leolaniWorld:You_can-choose_gay {
     leolaniWorld:You ns11:can_choose leolaniWorld:gay .
 }
 
-leolaniWorld:You_can-choose_to_woman {
-    leolaniWorld:You ns11:can_choose leolaniWorld:to_woman .
+leolaniWorld:I_hate_it {
+    leolaniWorld:I ns11:hate leolaniWorld:it .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:I_hate_it_00021 a grasp:Attribution ;
+        rdfs:label "I_hate_it_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat1414_utterance0_char0-76 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_be_woman_00028 a grasp:Attribution ;
+        rdfs:label "You_be_woman_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_can-choose_gay_00028 a grasp:Attribution ;
+        rdfs:label "You_can-choose_gay_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_can-choose_to_woman_00028 a grasp:Attribution ;
+        rdfs:label "You_can-choose_to_woman_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_can-choose_vegetarian_00028 a grasp:Attribution ;
+        rdfs:label "You_can-choose_vegetarian_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_can-choose_woman_00028 a grasp:Attribution ;
+        rdfs:label "You_can-choose_woman_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat1414_utterance0_char0-76 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1414_utterance0_char0-76" ;
+        gaf:containsDenotation leolaniWorld:I,
+            leolaniWorld:it ;
+        gaf:denotes leolaniWorld:I_hate_it ;
+        grasp:hasAttribution leolaniTalk:I_hate_it_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:05.436777"^^xml1:string ;
+        rdf:value "I hate it when gay people think they can just 'mock' us with their 'sodomy'."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1414_utterance0 .
+
+    leolaniTalk:you_can_can_anything_00028 a grasp:Attribution ;
+        rdfs:label "you_can_can_anything_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
+
+    leolaniTalk:chat1414_utterance2_char0-138 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1414_utterance2_char0-138" ;
+        gaf:containsDenotation leolaniWorld:You,
+            leolaniWorld:can_anything,
+            leolaniWorld:gay,
+            leolaniWorld:to_woman,
+            leolaniWorld:vegetarian,
+            leolaniWorld:woman,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:You_be_woman,
+            leolaniWorld:You_can-choose_gay,
+            leolaniWorld:You_can-choose_to_woman,
+            leolaniWorld:You_can-choose_vegetarian,
+            leolaniWorld:You_can-choose_woman,
+            leolaniWorld:you_can_can_anything ;
+        grasp:hasAttribution leolaniTalk:You_be_woman_00028,
+            leolaniTalk:You_can-choose_gay_00028,
+            leolaniTalk:You_can-choose_to_woman_00028,
+            leolaniTalk:You_can-choose_vegetarian_00028,
+            leolaniTalk:You_can-choose_woman_00028,
+            leolaniTalk:you_can_can_anything_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:09:05.621863"^^xml1:string,
+            "2024-06-05T23:09:05.621922"^^xml1:string,
+            "2024-06-05T23:09:05.621947"^^xml1:string,
+            "2024-06-05T23:09:05.621971"^^xml1:string,
+            "2024-06-05T23:09:05.621993"^^xml1:string,
+            "2024-06-05T23:09:05.622015"^^xml1:string ;
+        rdf:value "You can choose to be a woman, a gay, a vegetarian, you can be anything you want to be called! I want to be called King, where is my crown?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1414_utterance2 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -469,184 +554,99 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:You_can-choose_to_woman {
+    leolaniWorld:You ns11:can_choose leolaniWorld:to_woman .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:I_hate_it_00021 a grasp:Attribution ;
-        rdfs:label "I_hate_it_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat1414_utterance0_char0-76 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:I_hate_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "I_hate_it" ;
+        gaf:denotedBy leolaniTalk:chat1414_utterance0_char0-76 .
 
-    leolaniTalk:You_be_woman_00028 a grasp:Attribution ;
-        rdfs:label "You_be_woman_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_be_woman a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_be_woman" ;
+        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
 
-    leolaniTalk:You_can-choose_gay_00028 a grasp:Attribution ;
-        rdfs:label "You_can-choose_gay_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_can-choose_gay a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_can-choose_gay" ;
+        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
 
-    leolaniTalk:You_can-choose_to_woman_00028 a grasp:Attribution ;
-        rdfs:label "You_can-choose_to_woman_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_can-choose_to_woman a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_can-choose_to_woman" ;
+        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
 
-    leolaniTalk:You_can-choose_vegetarian_00028 a grasp:Attribution ;
-        rdfs:label "You_can-choose_vegetarian_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_can-choose_vegetarian a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_can-choose_vegetarian" ;
+        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
 
-    leolaniTalk:You_can-choose_woman_00028 a grasp:Attribution ;
-        rdfs:label "You_can-choose_woman_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You_can-choose_woman a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_can-choose_woman" ;
+        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
 
-    leolaniTalk:chat1414_utterance0_char0-76 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1414_utterance0_char0-76" ;
-        gaf:containsDenotation leolaniWorld:I,
-            leolaniWorld:it ;
-        gaf:denotes leolaniWorld:I_hate_it ;
-        grasp:hasAttribution leolaniTalk:I_hate_it_00021 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:05.436777"^^xml1:string ;
-        rdf:value "I hate it when gay people think they can just 'mock' us with their 'sodomy'."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1414_utterance0 .
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:you_can_can_anything_00028 a grasp:Attribution ;
-        rdfs:label "you_can_can_anything_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1414_utterance2_char0-138 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_can_can_anything a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_can_can_anything" ;
+        gaf:denotedBy leolaniTalk:chat1414_utterance2_char0-138 .
 
-    graspe:ANGER a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANGER" .
-
-    leolaniTalk:chat1414_utterance2_char0-138 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1414_utterance2_char0-138" ;
-        gaf:containsDenotation leolaniWorld:You,
-            leolaniWorld:can_anything,
-            leolaniWorld:gay,
-            leolaniWorld:to_woman,
-            leolaniWorld:vegetarian,
-            leolaniWorld:woman,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:You_be_woman,
-            leolaniWorld:You_can-choose_gay,
-            leolaniWorld:You_can-choose_to_woman,
-            leolaniWorld:You_can-choose_vegetarian,
-            leolaniWorld:You_can-choose_woman,
-            leolaniWorld:you_can_can_anything ;
-        grasp:hasAttribution leolaniTalk:You_be_woman_00028,
-            leolaniTalk:You_can-choose_gay_00028,
-            leolaniTalk:You_can-choose_to_woman_00028,
-            leolaniTalk:You_can-choose_vegetarian_00028,
-            leolaniTalk:You_can-choose_woman_00028,
-            leolaniTalk:you_can_can_anything_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:09:05.621863"^^xml1:string,
-            "2024-06-05T23:09:05.621922"^^xml1:string,
-            "2024-06-05T23:09:05.621947"^^xml1:string,
-            "2024-06-05T23:09:05.621971"^^xml1:string,
-            "2024-06-05T23:09:05.621993"^^xml1:string,
-            "2024-06-05T23:09:05.622015"^^xml1:string ;
-        rdf:value "You can choose to be a woman, a gay, a vegetarian, you can be anything you want to be called! I want to be called King, where is my crown?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1414_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:you_can_can_anything {
     leolaniWorld:you ns11:can leolaniWorld:can_anything .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context3 a eps:Context ;
-        rdfs:label "context3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat1414_utterance0_char0-76 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1414 .
+    leolaniWorld:You a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
 
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
+    leolaniWorld:can_anything a gaf:Instance ;
+        rdfs:label "can-anything" ;
+        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
 
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "118"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1414 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1414" ;
-        hs:id "1414"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1414_utterance0,
-            leolaniTalk:chat1414_utterance2 .
-
-    leolaniTalk:chat1414_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1414_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1414_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1414_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:gay a gaf:Instance ;
+        rdfs:label "gay" ;
+        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1414_utterance0_char0-76 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:to_woman a gaf:Instance ;
+        rdfs:label "to-woman" ;
+        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
+
+    leolaniWorld:vegetarian a gaf:Instance ;
+        rdfs:label "vegetarian" ;
+        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
+
+    leolaniWorld:woman a gaf:Instance ;
+        rdfs:label "woman" ;
+        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1414_utterance2_char0-138 .
 }
 

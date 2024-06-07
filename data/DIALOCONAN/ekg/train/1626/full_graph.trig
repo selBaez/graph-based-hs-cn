@@ -22,51 +22,115 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:it_has_insane a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_insane" ;
-        gaf:denotedBy leolaniTalk:chat1626_utterance2_char0-97 .
+leolaniWorld:it_has_insane {
+    leolaniWorld:it ns1:has leolaniWorld:insane .
+}
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+leolaniTalk:Interactions {
+    leolaniContext:context80 a eps:Context ;
+        rdfs:label "context80" ;
+        hs:id "80"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-    leolaniWorld:you_should-check-out_it a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_should-check-out_it" ;
-        gaf:denotedBy leolaniTalk:chat1626_utterance2_char0-97 .
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1626 .
 
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "78"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1626 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1626" ;
+        hs:id "1626"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1626_utterance2 .
+
+    leolaniTalk:chat1626_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1626_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 leolaniWorld:you_should-check-out_it {
     leolaniWorld:you ns1:should_check_out leolaniWorld:it .
 }
 
-leolaniWorld:it_has_insane {
-    leolaniWorld:it ns1:has leolaniWorld:insane .
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+leolaniTalk:Perspectives {
+    leolaniTalk:it_has_insane_00028 a grasp:Attribution ;
+        rdfs:label "it_has_insane_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1626_utterance2_char0-97 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:insane a gaf:Instance ;
-        rdfs:label "insane" ;
-        gaf:denotedIn leolaniTalk:chat1626_utterance2_char0-97 .
+    leolaniTalk:you_should-check-out_it_00028 a grasp:Attribution ;
+        rdfs:label "you_should-check-out_it_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1626_utterance2_char0-97 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1626_utterance2_char0-97 .
+    leolaniTalk:chat1626_utterance2_char0-97 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1626_utterance2_char0-97" ;
+        gaf:containsDenotation leolaniWorld:insane,
+            leolaniWorld:it,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:it_has_insane,
+            leolaniWorld:you_should-check-out_it ;
+        grasp:hasAttribution leolaniTalk:it_has_insane_00028,
+            leolaniTalk:you_should-check-out_it_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:34:00.769612"^^xml1:string,
+            "2024-06-05T23:34:00.769676"^^xml1:string ;
+        rdf:value "There's a blog that posts a lot about it, you should check it out, it's insane what's going on..."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1626_utterance2 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat1626_utterance2_char0-97 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -404,106 +468,42 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:it_has_insane a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_insane" ;
+        gaf:denotedBy leolaniTalk:chat1626_utterance2_char0-97 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:you_should-check-out_it a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_should-check-out_it" ;
+        gaf:denotedBy leolaniTalk:chat1626_utterance2_char0-97 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:it_has_insane_00028 a grasp:Attribution ;
-        rdfs:label "it_has_insane_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1626_utterance2_char0-97 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:you_should-check-out_it_00028 a grasp:Attribution ;
-        rdfs:label "you_should-check-out_it_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1626_utterance2_char0-97 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1626_utterance2_char0-97 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1626_utterance2_char0-97" ;
-        gaf:containsDenotation leolaniWorld:insane,
-            leolaniWorld:it,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:it_has_insane,
-            leolaniWorld:you_should-check-out_it ;
-        grasp:hasAttribution leolaniTalk:it_has_insane_00028,
-            leolaniTalk:you_should-check-out_it_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:34:00.769612"^^xml1:string,
-            "2024-06-05T23:34:00.769676"^^xml1:string ;
-        rdf:value "There's a blog that posts a lot about it, you should check it out, it's insane what's going on..."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1626_utterance2 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context80 a eps:Context ;
-        rdfs:label "context80" ;
-        hs:id "80"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1626 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "78"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1626 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1626" ;
-        hs:id "1626"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1626_utterance2 .
-
-    leolaniTalk:chat1626_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1626_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:insane a gaf:Instance ;
+        rdfs:label "insane" ;
+        gaf:denotedIn leolaniTalk:chat1626_utterance2_char0-97 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1626_utterance2_char0-97 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat1626_utterance2_char0-97 .
 }
 

@@ -22,130 +22,98 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:we_be_better {
+    leolaniWorld:we ns1:be leolaniWorld:better .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Women_do-have_right a gaf:Assertion,
+leolaniTalk:Interactions {
+    leolaniContext:context83 a eps:Context ;
+        rdfs:label "context83" ;
+        hs:id "83"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat373 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "31"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat373 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Women_do-have_right" ;
-        gaf:denotedBy leolaniTalk:chat373_utterance1_char0-61 .
+        rdfs:label "chat373" ;
+        hs:id "373"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat373_utterance1,
+            leolaniTalk:chat373_utterance2,
+            leolaniTalk:chat373_utterance3 .
 
-    leolaniWorld:conflict_is-with_principles_of_democracy a gaf:Assertion,
+    leolaniTalk:chat373_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "conflict_is-with_principles_of_democracy" ;
-        gaf:denotedBy leolaniTalk:chat373_utterance3_char0-150 .
+        rdfs:label "chat373_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
+    leolaniTalk:chat373_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_cn" .
+        rdfs:label "chat373_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
+    leolaniTalk:chat373_utterance3 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "leolani_know_hs" .
+        rdfs:label "chat373_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:they_deserve_equal_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_deserve_equal_rights" ;
-        gaf:denotedBy leolaniTalk:chat373_utterance1_char0-61 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:they_deserve_rights a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_deserve_rights" ;
-        gaf:denotedBy leolaniTalk:chat373_utterance1_char0-61 .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:we_be_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_be_better" ;
-        gaf:denotedBy leolaniTalk:chat373_utterance2_char0-54 .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 
-    leolaniWorld:we_be_much_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_be_much_better" ;
-        gaf:denotedBy leolaniTalk:chat373_utterance2_char0-54 .
-
-    leolaniWorld:we_be_so_much_better a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_be_so_much_better" ;
-        gaf:denotedBy leolaniTalk:chat373_utterance2_char0-54 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
 leolaniWorld:we_be_much_better {
     leolaniWorld:we ns1:be leolaniWorld:much_better .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
-
-    leolaniWorld:better a gaf:Instance ;
-        rdfs:label "better" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance2_char0-54 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:conflict a gaf:Instance ;
-        rdfs:label "conflict" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance3_char0-150 .
-
-    leolaniWorld:equal_rights a gaf:Instance ;
-        rdfs:label "equal-rights" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:much_better a gaf:Instance ;
-        rdfs:label "much-better" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance2_char0-54 .
-
-    leolaniWorld:principles_of_democracy a gaf:Instance ;
-        rdfs:label "principles-of-democracy" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance3_char0-150 .
-
-    leolaniWorld:right a gaf:Instance ;
-        rdfs:label "right" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
-
-    leolaniWorld:rights a gaf:Instance ;
-        rdfs:label "rights" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
-
-    leolaniWorld:so_much_better a gaf:Instance ;
-        rdfs:label "so-much-better" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance2_char0-54 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat373_utterance2_char0-54 .
-}
-
-leolaniWorld:we_be_better {
-    leolaniWorld:we ns1:be leolaniWorld:better .
-}
-
 leolaniWorld:they_deserve_equal_rights {
     leolaniWorld:they ns1:deserve leolaniWorld:equal_rights .
 }
 
-leolaniWorld:we_be_so_much_better {
-    leolaniWorld:we ns1:be leolaniWorld:so_much_better .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:they_deserve_rights {
@@ -156,8 +124,129 @@ leolaniWorld:Women_do-have_right {
     leolaniWorld:Women ns1:do_have leolaniWorld:right .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniTalk:Perspectives {
+    leolaniTalk:Women_do-have_right_00012 a grasp:Attribution ;
+        rdfs:label "Women_do-have_right_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat373_utterance1_char0-61 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat373_utterance3_char0-150 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat373_utterance3_char0-150" ;
+        gaf:containsDenotation leolaniWorld:conflict,
+            leolaniWorld:principles_of_democracy ;
+        gaf:denotes leolaniWorld:conflict_is-with_principles_of_democracy ;
+        grasp:hasAttribution leolaniTalk:conflict_is-with_principles_of_democracy_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:28.658332"^^xml1:string ;
+        rdf:value "If women weren't allowed to vote, then women wouldn't be worthy of respect and equal rights, and this is in conflict with the principles of democracy."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat373_utterance3 .
+
+    leolaniTalk:conflict_is-with_principles_of_democracy_00028 a grasp:Attribution ;
+        rdfs:label "conflict_is-with_principles_of_democracy_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat373_utterance3_char0-150 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_deserve_equal_rights_00012 a grasp:Attribution ;
+        rdfs:label "they_deserve_equal_rights_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat373_utterance1_char0-61 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:they_deserve_rights_00012 a grasp:Attribution ;
+        rdfs:label "they_deserve_rights_00012" ;
+        grasp:isAttributionFor leolaniTalk:chat373_utterance1_char0-61 ;
+        rdf:value graspe:APPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_be_better_00028 a grasp:Attribution ;
+        rdfs:label "we_be_better_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat373_utterance2_char0-54 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_be_much_better_00028 a grasp:Attribution ;
+        rdfs:label "we_be_much_better_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat373_utterance2_char0-54 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:we_be_so_much_better_00028 a grasp:Attribution ;
+        rdfs:label "we_be_so_much_better_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat373_utterance2_char0-54 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat373_utterance1_char0-61 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat373_utterance1_char0-61" ;
+        gaf:containsDenotation leolaniWorld:Women,
+            leolaniWorld:equal_rights,
+            leolaniWorld:right,
+            leolaniWorld:rights,
+            leolaniWorld:they ;
+        gaf:denotes leolaniWorld:Women_do-have_right,
+            leolaniWorld:they_deserve_equal_rights,
+            leolaniWorld:they_deserve_rights ;
+        grasp:hasAttribution leolaniTalk:Women_do-have_right_00012,
+            leolaniTalk:they_deserve_equal_rights_00012,
+            leolaniTalk:they_deserve_rights_00012 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:28.488420"^^xml1:string,
+            "2024-06-05T23:24:28.488483"^^xml1:string,
+            "2024-06-05T23:24:28.488507"^^xml1:string ;
+        rdf:value "Women do have a right to vote, and they deserve equal rights."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat373_utterance1 .
+
+    leolaniTalk:chat373_utterance2_char0-54 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat373_utterance2_char0-54" ;
+        gaf:containsDenotation leolaniWorld:better,
+            leolaniWorld:much_better,
+            leolaniWorld:so_much_better,
+            leolaniWorld:we ;
+        gaf:denotes leolaniWorld:we_be_better,
+            leolaniWorld:we_be_much_better,
+            leolaniWorld:we_be_so_much_better ;
+        grasp:hasAttribution leolaniTalk:we_be_better_00028,
+            leolaniTalk:we_be_much_better_00028,
+            leolaniTalk:we_be_so_much_better_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:24:28.563508"^^xml1:string,
+            "2024-06-05T23:24:28.563588"^^xml1:string,
+            "2024-06-05T23:24:28.563611"^^xml1:string ;
+        rdf:value "If they stopped voting we would be so much better off!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat373_utterance2 .
+
+    graspe:APPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "APPROVAL" .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
+}
+
+leolaniWorld:conflict_is-with_principles_of_democracy {
+    leolaniWorld:conflict ns1:is_with leolaniWorld:principles_of_democracy .
 }
 
 leolaniWorld:Ontology {
@@ -495,202 +584,113 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:conflict_is-with_principles_of_democracy {
-    leolaniWorld:conflict ns1:is_with leolaniWorld:principles_of_democracy .
+leolaniWorld:Claims {
+    leolaniWorld:Women_do-have_right a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Women_do-have_right" ;
+        gaf:denotedBy leolaniTalk:chat373_utterance1_char0-61 .
+
+    leolaniWorld:conflict_is-with_principles_of_democracy a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "conflict_is-with_principles_of_democracy" ;
+        gaf:denotedBy leolaniTalk:chat373_utterance3_char0-150 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_deserve_equal_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_deserve_equal_rights" ;
+        gaf:denotedBy leolaniTalk:chat373_utterance1_char0-61 .
+
+    leolaniWorld:they_deserve_rights a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_deserve_rights" ;
+        gaf:denotedBy leolaniTalk:chat373_utterance1_char0-61 .
+
+    leolaniWorld:we_be_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_be_better" ;
+        gaf:denotedBy leolaniTalk:chat373_utterance2_char0-54 .
+
+    leolaniWorld:we_be_much_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_be_much_better" ;
+        gaf:denotedBy leolaniTalk:chat373_utterance2_char0-54 .
+
+    leolaniWorld:we_be_so_much_better a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_be_so_much_better" ;
+        gaf:denotedBy leolaniTalk:chat373_utterance2_char0-54 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Women_do-have_right_00012 a grasp:Attribution ;
-        rdfs:label "Women_do-have_right_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat373_utterance1_char0-61 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat373_utterance3_char0-150 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat373_utterance3_char0-150" ;
-        gaf:containsDenotation leolaniWorld:conflict,
-            leolaniWorld:principles_of_democracy ;
-        gaf:denotes leolaniWorld:conflict_is-with_principles_of_democracy ;
-        grasp:hasAttribution leolaniTalk:conflict_is-with_principles_of_democracy_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:28.658332"^^xml1:string ;
-        rdf:value "If women weren't allowed to vote, then women wouldn't be worthy of respect and equal rights, and this is in conflict with the principles of democracy."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat373_utterance3 .
-
-    leolaniTalk:conflict_is-with_principles_of_democracy_00028 a grasp:Attribution ;
-        rdfs:label "conflict_is-with_principles_of_democracy_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat373_utterance3_char0-150 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_deserve_equal_rights_00012 a grasp:Attribution ;
-        rdfs:label "they_deserve_equal_rights_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat373_utterance1_char0-61 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:they_deserve_rights_00012 a grasp:Attribution ;
-        rdfs:label "they_deserve_rights_00012" ;
-        grasp:isAttributionFor leolaniTalk:chat373_utterance1_char0-61 ;
-        rdf:value graspe:APPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_be_better_00028 a grasp:Attribution ;
-        rdfs:label "we_be_better_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat373_utterance2_char0-54 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_be_much_better_00028 a grasp:Attribution ;
-        rdfs:label "we_be_much_better_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat373_utterance2_char0-54 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:we_be_so_much_better_00028 a grasp:Attribution ;
-        rdfs:label "we_be_so_much_better_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat373_utterance2_char0-54 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat373_utterance1_char0-61 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat373_utterance1_char0-61" ;
-        gaf:containsDenotation leolaniWorld:Women,
-            leolaniWorld:equal_rights,
-            leolaniWorld:right,
-            leolaniWorld:rights,
-            leolaniWorld:they ;
-        gaf:denotes leolaniWorld:Women_do-have_right,
-            leolaniWorld:they_deserve_equal_rights,
-            leolaniWorld:they_deserve_rights ;
-        grasp:hasAttribution leolaniTalk:Women_do-have_right_00012,
-            leolaniTalk:they_deserve_equal_rights_00012,
-            leolaniTalk:they_deserve_rights_00012 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:28.488420"^^xml1:string,
-            "2024-06-05T23:24:28.488483"^^xml1:string,
-            "2024-06-05T23:24:28.488507"^^xml1:string ;
-        rdf:value "Women do have a right to vote, and they deserve equal rights."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat373_utterance1 .
-
-    leolaniTalk:chat373_utterance2_char0-54 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat373_utterance2_char0-54" ;
-        gaf:containsDenotation leolaniWorld:better,
-            leolaniWorld:much_better,
-            leolaniWorld:so_much_better,
-            leolaniWorld:we ;
-        gaf:denotes leolaniWorld:we_be_better,
-            leolaniWorld:we_be_much_better,
-            leolaniWorld:we_be_so_much_better ;
-        grasp:hasAttribution leolaniTalk:we_be_better_00028,
-            leolaniTalk:we_be_much_better_00028,
-            leolaniTalk:we_be_so_much_better_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:24:28.563508"^^xml1:string,
-            "2024-06-05T23:24:28.563588"^^xml1:string,
-            "2024-06-05T23:24:28.563611"^^xml1:string ;
-        rdf:value "If they stopped voting we would be so much better off!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat373_utterance2 .
-
-    graspe:APPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "APPROVAL" .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:we_be_so_much_better {
+    leolaniWorld:we ns1:be leolaniWorld:so_much_better .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context83 a eps:Context ;
-        rdfs:label "context83" ;
-        hs:id "83"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
+leolaniWorld:Instances {
+    leolaniWorld:Women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
 
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat373 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "31"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat373 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat373" ;
-        hs:id "373"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat373_utterance1,
-            leolaniTalk:chat373_utterance2,
-            leolaniTalk:chat373_utterance3 .
-
-    leolaniTalk:chat373_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat373_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat373_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat373_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat373_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat373_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
+    leolaniWorld:better a gaf:Instance ;
+        rdfs:label "better" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance2_char0-54 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:conflict a gaf:Instance ;
+        rdfs:label "conflict" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance3_char0-150 .
+
+    leolaniWorld:equal_rights a gaf:Instance ;
+        rdfs:label "equal-rights" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:much_better a gaf:Instance ;
+        rdfs:label "much-better" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance2_char0-54 .
+
+    leolaniWorld:principles_of_democracy a gaf:Instance ;
+        rdfs:label "principles-of-democracy" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance3_char0-150 .
+
+    leolaniWorld:right a gaf:Instance ;
+        rdfs:label "right" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
+
+    leolaniWorld:rights a gaf:Instance ;
+        rdfs:label "rights" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
+
+    leolaniWorld:so_much_better a gaf:Instance ;
+        rdfs:label "so-much-better" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance2_char0-54 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance1_char0-61 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat373_utterance2_char0-54 .
 }
 

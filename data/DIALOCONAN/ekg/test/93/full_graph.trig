@@ -23,12 +23,93 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:It_has_dangerous_path {
-    leolaniWorld:It ns1:has leolaniWorld:dangerous_path .
+leolaniWorld:It_s-gateway-for_trans_agenda {
+    leolaniWorld:It ns12:s_gateway_for leolaniWorld:trans_agenda .
 }
 
-leolaniWorld:It_has_gateway {
-    leolaniWorld:It ns1:has leolaniWorld:gateway .
+leolaniTalk:Interactions {
+    leolaniContext:context161 a eps:Context ;
+        rdfs:label "context161" ;
+        hs:id "161"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat93 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "3"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat93 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat93" ;
+        hs:id "93"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat93_utterance0,
+            leolaniTalk:chat93_utterance2 .
+
+    leolaniTalk:chat93_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat93_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat93_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat93_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:we_first-tell_kids {
+    leolaniWorld:we ns1:first_tell leolaniWorld:kids .
+}
+
+leolaniWorld:It_has_path {
+    leolaniWorld:It ns1:has leolaniWorld:path .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:they_change_genders {
+    leolaniWorld:they ns1:change leolaniWorld:genders .
+}
+
+leolaniWorld:we_are-telling_them {
+    leolaniWorld:we ns1:are_telling leolaniWorld:them .
+}
+
+leolaniWorld:they_are_next_confused {
+    leolaniWorld:they ns1:are leolaniWorld:next_confused .
 }
 
 leolaniTalk:Perspectives {
@@ -200,78 +281,84 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145,
-            leolaniTalk:chat93_utterance2_char0-36 .
-
-    leolaniWorld:confused a gaf:Instance ;
-        rdfs:label "confused" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:dangerous a gaf:Instance ;
-        rdfs:label "dangerous" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:dangerous_path a gaf:Instance ;
-        rdfs:label "dangerous-path" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:gateway a gaf:Instance ;
-        rdfs:label "gateway" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance2_char0-36 .
-
-    leolaniWorld:genders a gaf:Instance ;
-        rdfs:label "genders" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:kids a gaf:Instance ;
-        rdfs:label "kids" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:next_confused a gaf:Instance ;
-        rdfs:label "next-confused" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:okay a gaf:Instance ;
-        rdfs:label "okay" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:path a gaf:Instance ;
-        rdfs:label "path" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:trans_agenda a gaf:Instance ;
-        rdfs:label "trans-agenda" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance2_char0-36 .
-
-    leolaniWorld:we a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
-}
-
 leolaniWorld:we_tell_kids {
     leolaniWorld:we ns1:tell leolaniWorld:kids .
+}
+
+leolaniWorld:they_are_confused {
+    leolaniWorld:they ns1:are leolaniWorld:confused .
+}
+
+leolaniWorld:It_has_gateway {
+    leolaniWorld:It ns1:has leolaniWorld:gateway .
+}
+
+leolaniWorld:Claims {
+    leolaniWorld:It_has_dangerous a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_dangerous" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:It_has_dangerous_path a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_dangerous_path" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:It_has_gateway a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_gateway" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance2_char0-36 .
+
+    leolaniWorld:It_has_path a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_has_path" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:It_s-gateway-for_trans_agenda a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_s-gateway-for_trans_agenda" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance2_char0-36 .
+
+    leolaniWorld:it_has_okay a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_has_okay" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:they_are_confused a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_confused" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:they_are_next_confused a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_are_next_confused" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:they_change_genders a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_change_genders" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:we_are-telling_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_are-telling_them" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:we_first-tell_kids a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_first-tell_kids" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:we_tell_kids a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "we_tell_kids" ;
+        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
 leolaniWorld:Ontology {
@@ -609,172 +696,85 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:It_has_path {
-    leolaniWorld:It ns1:has leolaniWorld:path .
-}
-
-leolaniWorld:It_has_dangerous {
-    leolaniWorld:It ns1:has leolaniWorld:dangerous .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context161 a eps:Context ;
-        rdfs:label "context161" ;
-        hs:id "161"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat93 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "3"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat93 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat93" ;
-        hs:id "93"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat93_utterance0,
-            leolaniTalk:chat93_utterance2 .
-
-    leolaniTalk:chat93_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat93_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat93_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat93_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:It_s-gateway-for_trans_agenda {
-    leolaniWorld:It ns12:s_gateway_for leolaniWorld:trans_agenda .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:It_has_dangerous a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_dangerous" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:It_has_dangerous_path a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_dangerous_path" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:It_has_gateway a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_gateway" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance2_char0-36 .
-
-    leolaniWorld:It_has_path a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_has_path" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:It_s-gateway-for_trans_agenda a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_s-gateway-for_trans_agenda" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance2_char0-36 .
-
-    leolaniWorld:it_has_okay a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_okay" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:they_are_confused a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_confused" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:they_are_next_confused a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_are_next_confused" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:they_change_genders a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_change_genders" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:we_are-telling_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_are-telling_them" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:we_first-tell_kids a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_first-tell_kids" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:we_tell_kids a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "we_tell_kids" ;
-        gaf:denotedBy leolaniTalk:chat93_utterance0_char0-145 .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:they_change_genders {
-    leolaniWorld:they ns1:change leolaniWorld:genders .
-}
-
-leolaniWorld:we_first-tell_kids {
-    leolaniWorld:we ns1:first_tell leolaniWorld:kids .
-}
-
-leolaniWorld:we_are-telling_them {
-    leolaniWorld:we ns1:are_telling leolaniWorld:them .
-}
-
-leolaniWorld:they_are_next_confused {
-    leolaniWorld:they ns1:are leolaniWorld:next_confused .
-}
-
-leolaniWorld:they_are_confused {
-    leolaniWorld:they ns1:are leolaniWorld:confused .
+leolaniWorld:It_has_dangerous_path {
+    leolaniWorld:It ns1:has leolaniWorld:dangerous_path .
 }
 
 leolaniWorld:it_has_okay {
     leolaniWorld:it ns1:has leolaniWorld:okay .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:It_has_dangerous {
+    leolaniWorld:It ns1:has leolaniWorld:dangerous .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145,
+            leolaniTalk:chat93_utterance2_char0-36 .
+
+    leolaniWorld:confused a gaf:Instance ;
+        rdfs:label "confused" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:dangerous a gaf:Instance ;
+        rdfs:label "dangerous" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:dangerous_path a gaf:Instance ;
+        rdfs:label "dangerous-path" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:gateway a gaf:Instance ;
+        rdfs:label "gateway" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance2_char0-36 .
+
+    leolaniWorld:genders a gaf:Instance ;
+        rdfs:label "genders" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:kids a gaf:Instance ;
+        rdfs:label "kids" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:next_confused a gaf:Instance ;
+        rdfs:label "next-confused" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:okay a gaf:Instance ;
+        rdfs:label "okay" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:path a gaf:Instance ;
+        rdfs:label "path" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
+
+    leolaniWorld:trans_agenda a gaf:Instance ;
+        rdfs:label "trans-agenda" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance2_char0-36 .
+
+    leolaniWorld:we a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat93_utterance0_char0-145 .
 }
 

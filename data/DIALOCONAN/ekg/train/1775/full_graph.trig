@@ -22,55 +22,111 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniTalk:Interactions {
+    leolaniContext:context62 a eps:Context ;
+        rdfs:label "context62" ;
+        hs:id "62"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1775 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "126"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1775 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1775" ;
+        hs:id "1775"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1775_utterance1 .
+
+    leolaniTalk:chat1775_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1775_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+}
+
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:Saying_is-degrading-to_people a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Saying_is-degrading-to_people" ;
-        gaf:denotedBy leolaniTalk:chat1775_utterance1_char0-179 .
-
-    leolaniWorld:Saying_is_degrading a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Saying_is_degrading" ;
-        gaf:denotedBy leolaniTalk:chat1775_utterance1_char0-179 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
-leolaniWorld:Saying_is_degrading {
-    leolaniWorld:Saying ns11:is leolaniWorld:degrading .
 }
 
 leolaniWorld:Saying_is-degrading-to_people {
     leolaniWorld:Saying ns11:is_degrading_to leolaniWorld:people .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Saying a gaf:Instance ;
-        rdfs:label "saying" ;
-        gaf:denotedIn leolaniTalk:chat1775_utterance1_char0-179 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Saying_is-degrading-to_people_00017 a grasp:Attribution ;
+        rdfs:label "Saying_is-degrading-to_people_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat1775_utterance1_char0-179 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:Saying_is_degrading_00017 a grasp:Attribution ;
+        rdfs:label "Saying_is_degrading_00017" ;
+        grasp:isAttributionFor leolaniTalk:chat1775_utterance1_char0-179 ;
+        rdf:value graspe:DISAPPOINTMENT,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:degrading a gaf:Instance ;
-        rdfs:label "degrading" ;
-        gaf:denotedIn leolaniTalk:chat1775_utterance1_char0-179 .
+    leolaniTalk:chat1775_utterance1_char0-179 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1775_utterance1_char0-179" ;
+        gaf:containsDenotation leolaniWorld:Saying,
+            leolaniWorld:degrading,
+            leolaniWorld:people ;
+        gaf:denotes leolaniWorld:Saying_is-degrading-to_people,
+            leolaniWorld:Saying_is_degrading ;
+        grasp:hasAttribution leolaniTalk:Saying_is-degrading-to_people_00017,
+            leolaniTalk:Saying_is_degrading_00017 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:02:51.966745"^^xml1:string,
+            "2024-06-05T23:02:51.966800"^^xml1:string ;
+        rdf:value "Saying that gay people affect society in a bad and harmful way because of their sexual preferences is degrading to these people. This is not what a just and fair society is about."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1775_utterance1 .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    graspe:DISAPPOINTMENT a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPOINTMENT" .
 
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1775_utterance1_char0-179 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -408,102 +464,46 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Saying_is-degrading-to_people_00017 a grasp:Attribution ;
-        rdfs:label "Saying_is-degrading-to_people_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat1775_utterance1_char0-179 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:Saying_is_degrading_00017 a grasp:Attribution ;
-        rdfs:label "Saying_is_degrading_00017" ;
-        grasp:isAttributionFor leolaniTalk:chat1775_utterance1_char0-179 ;
-        rdf:value graspe:DISAPPOINTMENT,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat1775_utterance1_char0-179 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1775_utterance1_char0-179" ;
-        gaf:containsDenotation leolaniWorld:Saying,
-            leolaniWorld:degrading,
-            leolaniWorld:people ;
-        gaf:denotes leolaniWorld:Saying_is-degrading-to_people,
-            leolaniWorld:Saying_is_degrading ;
-        grasp:hasAttribution leolaniTalk:Saying_is-degrading-to_people_00017,
-            leolaniTalk:Saying_is_degrading_00017 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:02:51.966745"^^xml1:string,
-            "2024-06-05T23:02:51.966800"^^xml1:string ;
-        rdf:value "Saying that gay people affect society in a bad and harmful way because of their sexual preferences is degrading to these people. This is not what a just and fair society is about."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1775_utterance1 .
-
-    graspe:DISAPPOINTMENT a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPOINTMENT" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:Saying_is_degrading {
+    leolaniWorld:Saying ns11:is leolaniWorld:degrading .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context62 a eps:Context ;
-        rdfs:label "context62" ;
-        hs:id "62"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1775 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "126"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1775 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Saying_is-degrading-to_people a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1775" ;
-        hs:id "1775"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1775_utterance1 .
+        rdfs:label "Saying_is-degrading-to_people" ;
+        gaf:denotedBy leolaniTalk:chat1775_utterance1_char0-179 .
 
-    leolaniTalk:chat1775_utterance1 a grasp:Utterance,
+    leolaniWorld:Saying_is_degrading a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1775_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Saying_is_degrading" ;
+        gaf:denotedBy leolaniTalk:chat1775_utterance1_char0-179 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Saying a gaf:Instance ;
+        rdfs:label "saying" ;
+        gaf:denotedIn leolaniTalk:chat1775_utterance1_char0-179 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:degrading a gaf:Instance ;
+        rdfs:label "degrading" ;
+        gaf:denotedIn leolaniTalk:chat1775_utterance1_char0-179 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1775_utterance1_char0-179 .
 }
 

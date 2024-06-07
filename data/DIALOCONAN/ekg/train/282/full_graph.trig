@@ -22,117 +22,215 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:Claims {
-    leolaniWorld:Feminism_is_cancer a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminism_is_cancer" ;
-        gaf:denotedBy leolaniTalk:chat282_utterance0_char0-52 .
-
-    leolaniWorld:Feminism_is_cancer_spreading_all_around_world a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminism_is_cancer_spreading_all_around_world" ;
-        gaf:denotedBy leolaniTalk:chat282_utterance0_char0-52 .
-
-    leolaniWorld:Feminism_is_cancer_spreading_around_world a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Feminism_is_cancer_spreading_around_world" ;
-        gaf:denotedBy leolaniTalk:chat282_utterance0_char0-52 .
-
-    leolaniWorld:It_is-movement-for_equality a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_is-movement-for_equality" ;
-        gaf:denotedBy leolaniTalk:chat282_utterance1_char0-94 .
-
-    leolaniWorld:It_is_movement a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "It_is_movement" ;
-        gaf:denotedBy leolaniTalk:chat282_utterance1_char0-94 .
-
-    leolaniWorld:feminism_is-threat_Even_if_not_hate_movement a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "feminism_is-threat_Even_if_not_hate_movement" ;
-        gaf:denotedBy leolaniTalk:chat282_utterance2_char0-72 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:It_is-movement-for_equality {
+    leolaniWorld:It ns1:is_movement_for leolaniWorld:equality .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniWorld:feminism_is-threat_Even_if_not_hate_movement {
+    leolaniWorld:feminism ns1:is_threat leolaniWorld:Even_if_not_hate_movement .
+}
+
+leolaniWorld:Feminism_is_cancer {
+    leolaniWorld:Feminism ns1:is leolaniWorld:cancer .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context118 a eps:Context ;
+        rdfs:label "context118" ;
+        hs:id "118"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat282 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "105"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat282 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat282" ;
+        hs:id "282"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat282_utterance0,
+            leolaniTalk:chat282_utterance1,
+            leolaniTalk:chat282_utterance2 .
+
+    leolaniTalk:chat282_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat282_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat282_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat282_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat282_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat282_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:Feminism_is_cancer_spreading_all_around_world {
     leolaniWorld:Feminism ns1:is leolaniWorld:cancer_spreading_all_around_world .
 }
 
-leolaniWorld:It_is-movement-for_equality {
-    leolaniWorld:It ns1:is_movement_for leolaniWorld:equality .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Even_if_not_hate_movement a gaf:Instance ;
-        rdfs:label "even-if-not-hate-movement" ;
-        gaf:denotedIn leolaniTalk:chat282_utterance2_char0-72 .
+leolaniTalk:Perspectives {
+    leolaniTalk:Feminism_is_cancer_00028 a grasp:Attribution ;
+        rdfs:label "Feminism_is_cancer_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat282_utterance0_char0-52 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:Feminism a gaf:Instance ;
-        rdfs:label "feminism" ;
-        gaf:denotedIn leolaniTalk:chat282_utterance0_char0-52 .
+    leolaniTalk:Feminism_is_cancer_spreading_all_around_world_00028 a grasp:Attribution ;
+        rdfs:label "Feminism_is_cancer_spreading_all_around_world_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat282_utterance0_char0-52 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:It a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat282_utterance1_char0-94 .
+    leolaniTalk:Feminism_is_cancer_spreading_around_world_00028 a grasp:Attribution ;
+        rdfs:label "Feminism_is_cancer_spreading_around_world_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat282_utterance0_char0-52 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cancer a gaf:Instance ;
-        rdfs:label "cancer" ;
-        gaf:denotedIn leolaniTalk:chat282_utterance0_char0-52 .
+    leolaniTalk:It_is-movement-for_equality_00023 a grasp:Attribution ;
+        rdfs:label "It_is-movement-for_equality_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat282_utterance1_char0-94 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cancer_spreading_all_around_world a gaf:Instance ;
-        rdfs:label "cancer-spreading-all-around-world" ;
-        gaf:denotedIn leolaniTalk:chat282_utterance0_char0-52 .
+    leolaniTalk:It_is_movement_00023 a grasp:Attribution ;
+        rdfs:label "It_is_movement_00023" ;
+        grasp:isAttributionFor leolaniTalk:chat282_utterance1_char0-94 ;
+        rdf:value graspe:DISAPPROVAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cancer_spreading_around_world a gaf:Instance ;
-        rdfs:label "cancer-spreading-around-world" ;
-        gaf:denotedIn leolaniTalk:chat282_utterance0_char0-52 .
+    leolaniTalk:chat282_utterance2_char0-72 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat282_utterance2_char0-72" ;
+        gaf:containsDenotation leolaniWorld:Even_if_not_hate_movement,
+            leolaniWorld:feminism ;
+        gaf:denotes leolaniWorld:feminism_is-threat_Even_if_not_hate_movement ;
+        grasp:hasAttribution leolaniTalk:feminism_is-threat_Even_if_not_hate_movement_00021 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:20:54.250633"^^xml1:string ;
+        rdf:value "Even if it's not a hate movement, feminism is a threat to human dignity."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat282_utterance2 .
 
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:feminism_is-threat_Even_if_not_hate_movement_00021 a grasp:Attribution ;
+        rdfs:label "feminism_is-threat_Even_if_not_hate_movement_00021" ;
+        grasp:isAttributionFor leolaniTalk:chat282_utterance2_char0-72 ;
+        rdf:value graspe:ANGER,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:equality a gaf:Instance ;
-        rdfs:label "equality" ;
-        gaf:denotedIn leolaniTalk:chat282_utterance1_char0-94 .
+    graspe:ANGER a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "ANGER" .
 
-    leolaniWorld:feminism a gaf:Instance ;
-        rdfs:label "feminism" ;
-        gaf:denotedIn leolaniTalk:chat282_utterance2_char0-72 .
+    leolaniTalk:chat282_utterance1_char0-94 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat282_utterance1_char0-94" ;
+        gaf:containsDenotation leolaniWorld:It,
+            leolaniWorld:equality,
+            leolaniWorld:movement ;
+        gaf:denotes leolaniWorld:It_is-movement-for_equality,
+            leolaniWorld:It_is_movement ;
+        grasp:hasAttribution leolaniTalk:It_is-movement-for_equality_00023,
+            leolaniTalk:It_is_movement_00023 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:20:47.732091"^^xml1:string,
+            "2024-06-05T23:20:47.732155"^^xml1:string ;
+        rdf:value "Feminism is not a disease, nor does it need any cure. It is a movement for equality, not hate."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat282_utterance1 .
 
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
+    graspe:DISAPPROVAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "DISAPPROVAL" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+    leolaniTalk:chat282_utterance0_char0-52 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat282_utterance0_char0-52" ;
+        gaf:containsDenotation leolaniWorld:Feminism,
+            leolaniWorld:cancer,
+            leolaniWorld:cancer_spreading_all_around_world,
+            leolaniWorld:cancer_spreading_around_world ;
+        gaf:denotes leolaniWorld:Feminism_is_cancer,
+            leolaniWorld:Feminism_is_cancer_spreading_all_around_world,
+            leolaniWorld:Feminism_is_cancer_spreading_around_world ;
+        grasp:hasAttribution leolaniTalk:Feminism_is_cancer_00028,
+            leolaniTalk:Feminism_is_cancer_spreading_all_around_world_00028,
+            leolaniTalk:Feminism_is_cancer_spreading_around_world_00028 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:20:47.627333"^^xml1:string,
+            "2024-06-05T23:20:47.627397"^^xml1:string,
+            "2024-06-05T23:20:47.627426"^^xml1:string ;
+        rdf:value "Feminism is a cancer spreading all around the world."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat282_utterance0 .
 
-    leolaniWorld:movement a gaf:Instance ;
-        rdfs:label "movement" ;
-        gaf:denotedIn leolaniTalk:chat282_utterance1_char0-94 .
-}
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-leolaniWorld:It_is_movement {
-    leolaniWorld:It ns1:is leolaniWorld:movement .
-}
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-leolaniWorld:Feminism_is_cancer_spreading_around_world {
-    leolaniWorld:Feminism ns1:is leolaniWorld:cancer_spreading_around_world .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -470,202 +568,104 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:feminism_is-threat_Even_if_not_hate_movement {
-    leolaniWorld:feminism ns1:is_threat leolaniWorld:Even_if_not_hate_movement .
+leolaniWorld:Feminism_is_cancer_spreading_around_world {
+    leolaniWorld:Feminism ns1:is leolaniWorld:cancer_spreading_around_world .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Claims {
+    leolaniWorld:Feminism_is_cancer a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminism_is_cancer" ;
+        gaf:denotedBy leolaniTalk:chat282_utterance0_char0-52 .
+
+    leolaniWorld:Feminism_is_cancer_spreading_all_around_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminism_is_cancer_spreading_all_around_world" ;
+        gaf:denotedBy leolaniTalk:chat282_utterance0_char0-52 .
+
+    leolaniWorld:Feminism_is_cancer_spreading_around_world a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Feminism_is_cancer_spreading_around_world" ;
+        gaf:denotedBy leolaniTalk:chat282_utterance0_char0-52 .
+
+    leolaniWorld:It_is-movement-for_equality a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_is-movement-for_equality" ;
+        gaf:denotedBy leolaniTalk:chat282_utterance1_char0-94 .
+
+    leolaniWorld:It_is_movement a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "It_is_movement" ;
+        gaf:denotedBy leolaniTalk:chat282_utterance1_char0-94 .
+
+    leolaniWorld:feminism_is-threat_Even_if_not_hate_movement a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "feminism_is-threat_Even_if_not_hate_movement" ;
+        gaf:denotedBy leolaniTalk:chat282_utterance2_char0-72 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:Feminism_is_cancer {
-    leolaniWorld:Feminism ns1:is leolaniWorld:cancer .
+leolaniWorld:It_is_movement {
+    leolaniWorld:It ns1:is leolaniWorld:movement .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Feminism_is_cancer_00028 a grasp:Attribution ;
-        rdfs:label "Feminism_is_cancer_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat282_utterance0_char0-52 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Even_if_not_hate_movement a gaf:Instance ;
+        rdfs:label "even-if-not-hate-movement" ;
+        gaf:denotedIn leolaniTalk:chat282_utterance2_char0-72 .
 
-    leolaniTalk:Feminism_is_cancer_spreading_all_around_world_00028 a grasp:Attribution ;
-        rdfs:label "Feminism_is_cancer_spreading_all_around_world_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat282_utterance0_char0-52 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:Feminism a gaf:Instance ;
+        rdfs:label "feminism" ;
+        gaf:denotedIn leolaniTalk:chat282_utterance0_char0-52 .
 
-    leolaniTalk:Feminism_is_cancer_spreading_around_world_00028 a grasp:Attribution ;
-        rdfs:label "Feminism_is_cancer_spreading_around_world_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat282_utterance0_char0-52 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:It a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat282_utterance1_char0-94 .
 
-    leolaniTalk:It_is-movement-for_equality_00023 a grasp:Attribution ;
-        rdfs:label "It_is-movement-for_equality_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat282_utterance1_char0-94 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:cancer a gaf:Instance ;
+        rdfs:label "cancer" ;
+        gaf:denotedIn leolaniTalk:chat282_utterance0_char0-52 .
 
-    leolaniTalk:It_is_movement_00023 a grasp:Attribution ;
-        rdfs:label "It_is_movement_00023" ;
-        grasp:isAttributionFor leolaniTalk:chat282_utterance1_char0-94 ;
-        rdf:value graspe:DISAPPROVAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:cancer_spreading_all_around_world a gaf:Instance ;
+        rdfs:label "cancer-spreading-all-around-world" ;
+        gaf:denotedIn leolaniTalk:chat282_utterance0_char0-52 .
 
-    leolaniTalk:chat282_utterance2_char0-72 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat282_utterance2_char0-72" ;
-        gaf:containsDenotation leolaniWorld:Even_if_not_hate_movement,
-            leolaniWorld:feminism ;
-        gaf:denotes leolaniWorld:feminism_is-threat_Even_if_not_hate_movement ;
-        grasp:hasAttribution leolaniTalk:feminism_is-threat_Even_if_not_hate_movement_00021 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:20:54.250633"^^xml1:string ;
-        rdf:value "Even if it's not a hate movement, feminism is a threat to human dignity."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat282_utterance2 .
-
-    leolaniTalk:feminism_is-threat_Even_if_not_hate_movement_00021 a grasp:Attribution ;
-        rdfs:label "feminism_is-threat_Even_if_not_hate_movement_00021" ;
-        grasp:isAttributionFor leolaniTalk:chat282_utterance2_char0-72 ;
-        rdf:value graspe:ANGER,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:ANGER a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "ANGER" .
-
-    leolaniTalk:chat282_utterance1_char0-94 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat282_utterance1_char0-94" ;
-        gaf:containsDenotation leolaniWorld:It,
-            leolaniWorld:equality,
-            leolaniWorld:movement ;
-        gaf:denotes leolaniWorld:It_is-movement-for_equality,
-            leolaniWorld:It_is_movement ;
-        grasp:hasAttribution leolaniTalk:It_is-movement-for_equality_00023,
-            leolaniTalk:It_is_movement_00023 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:20:47.732091"^^xml1:string,
-            "2024-06-05T23:20:47.732155"^^xml1:string ;
-        rdf:value "Feminism is not a disease, nor does it need any cure. It is a movement for equality, not hate."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat282_utterance1 .
-
-    graspe:DISAPPROVAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "DISAPPROVAL" .
-
-    leolaniTalk:chat282_utterance0_char0-52 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat282_utterance0_char0-52" ;
-        gaf:containsDenotation leolaniWorld:Feminism,
-            leolaniWorld:cancer,
-            leolaniWorld:cancer_spreading_all_around_world,
-            leolaniWorld:cancer_spreading_around_world ;
-        gaf:denotes leolaniWorld:Feminism_is_cancer,
-            leolaniWorld:Feminism_is_cancer_spreading_all_around_world,
-            leolaniWorld:Feminism_is_cancer_spreading_around_world ;
-        grasp:hasAttribution leolaniTalk:Feminism_is_cancer_00028,
-            leolaniTalk:Feminism_is_cancer_spreading_all_around_world_00028,
-            leolaniTalk:Feminism_is_cancer_spreading_around_world_00028 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:20:47.627333"^^xml1:string,
-            "2024-06-05T23:20:47.627397"^^xml1:string,
-            "2024-06-05T23:20:47.627426"^^xml1:string ;
-        rdf:value "Feminism is a cancer spreading all around the world."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat282_utterance0 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context118 a eps:Context ;
-        rdfs:label "context118" ;
-        hs:id "118"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat282 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "105"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat282 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat282" ;
-        hs:id "282"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat282_utterance0,
-            leolaniTalk:chat282_utterance1,
-            leolaniTalk:chat282_utterance2 .
-
-    leolaniTalk:chat282_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat282_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat282_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat282_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat282_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat282_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:cancer_spreading_around_world a gaf:Instance ;
+        rdfs:label "cancer-spreading-around-world" ;
+        gaf:denotedIn leolaniTalk:chat282_utterance0_char0-52 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:equality a gaf:Instance ;
+        rdfs:label "equality" ;
+        gaf:denotedIn leolaniTalk:chat282_utterance1_char0-94 .
+
+    leolaniWorld:feminism a gaf:Instance ;
+        rdfs:label "feminism" ;
+        gaf:denotedIn leolaniTalk:chat282_utterance2_char0-72 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:movement a gaf:Instance ;
+        rdfs:label "movement" ;
+        gaf:denotedIn leolaniTalk:chat282_utterance1_char0-94 .
 }
 

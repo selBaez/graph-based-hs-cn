@@ -24,143 +24,243 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:it_maybe-s-time_look {
-    leolaniWorld:it ns13:s_time leolaniWorld:look .
-}
-
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
-
-leolaniWorld:Claims {
-    leolaniWorld:it_maybe-s-time_look a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_maybe-s-time_look" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
-
-    leolaniWorld:it_maybe-s-time_to_look a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_maybe-s-time_to_look" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
-
-    leolaniWorld:it_s-time_look a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-time_look" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
-
-    leolaniWorld:it_s-time_to_look a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_s-time_to_look" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:migration_can-benefit_countries a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migration_can-benefit_countries" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
-
-    leolaniWorld:migration_discriminating-against_immigrants a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "migration_discriminating-against_immigrants" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
-
-    leolaniWorld:you_were_if_told a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_were_if_told" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance3_char0-179 .
-
-    leolaniWorld:you_were_told a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_were_told" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance3_char0-179 .
-
-    leolaniWorld:you_would-say_if_told a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_would-say_if_told" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance3_char0-179 .
-
-    leolaniWorld:you_would-say_told a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "you_would-say_told" ;
-        gaf:denotedBy leolaniTalk:chat2522_utterance3_char0-179 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
-
-leolaniWorld:migration_discriminating-against_immigrants {
-    leolaniWorld:migration ns11:discriminating_against leolaniWorld:immigrants .
-}
-
 leolaniWorld:it_s-time_look {
     leolaniWorld:it ns12:s_time leolaniWorld:look .
-}
-
-leolaniWorld:you_were_if_told {
-    leolaniWorld:you ns11:were leolaniWorld:if_told .
 }
 
 leolaniWorld:it_s-time_to_look {
     leolaniWorld:it ns12:s_time leolaniWorld:to_look .
 }
 
-leolaniWorld:you_would-say_if_told {
-    leolaniWorld:you ns11:would_say leolaniWorld:if_told .
-}
-
-leolaniWorld:you_were_told {
-    leolaniWorld:you ns11:were leolaniWorld:told .
+leolaniWorld:migration_discriminating-against_immigrants {
+    leolaniWorld:migration ns11:discriminating_against leolaniWorld:immigrants .
 }
 
 leolaniWorld:it_maybe-s-time_to_look {
     leolaniWorld:it ns13:s_time leolaniWorld:to_look .
 }
 
-leolaniWorld:Instances {
+leolaniWorld:you_were_if_told {
+    leolaniWorld:you ns11:were leolaniWorld:if_told .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context166 a eps:Context ;
+        rdfs:label "context166" ;
+        hs:id "166"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2522 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "248"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2522 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2522" ;
+        hs:id "2522"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2522_utterance1,
+            leolaniTalk:chat2522_utterance3 .
+
+    leolaniTalk:chat2522_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2522_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat2522_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2522_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
     leolaniWorld:cn a hs:person,
-            gaf:Instance ;
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
         rdfs:label "cn" .
+}
 
-    leolaniWorld:countries a gaf:Instance ;
-        rdfs:label "countries" ;
-        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+leolaniWorld:you_would-say_told {
+    leolaniWorld:you ns11:would_say leolaniWorld:told .
+}
 
-    leolaniWorld:if_told a gaf:Instance ;
-        rdfs:label "if-told" ;
-        gaf:denotedIn leolaniTalk:chat2522_utterance3_char0-179 .
+leolaniWorld:migration_can-benefit_countries {
+    leolaniWorld:migration ns11:can_benefit leolaniWorld:countries .
+}
 
-    leolaniWorld:immigrants a gaf:Instance ;
-        rdfs:label "immigrants" ;
-        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+leolaniWorld:you_were_told {
+    leolaniWorld:you ns11:were leolaniWorld:told .
+}
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
+leolaniWorld:you_would-say_if_told {
+    leolaniWorld:you ns11:would_say leolaniWorld:if_told .
+}
 
-    leolaniWorld:look a gaf:Instance ;
-        rdfs:label "look" ;
-        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+leolaniTalk:Perspectives {
+    leolaniTalk:it_maybe-s-time_look_00028 a grasp:Attribution ;
+        rdfs:label "it_maybe-s-time_look_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:migration a gaf:Instance ;
-        rdfs:label "migration" ;
-        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+    leolaniTalk:it_maybe-s-time_to_look_00028 a grasp:Attribution ;
+        rdfs:label "it_maybe-s-time_to_look_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:to_look a gaf:Instance ;
-        rdfs:label "to-look" ;
-        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+    leolaniTalk:it_s-time_look_00028 a grasp:Attribution ;
+        rdfs:label "it_s-time_look_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:told a gaf:Instance ;
-        rdfs:label "told" ;
-        gaf:denotedIn leolaniTalk:chat2522_utterance3_char0-179 .
+    leolaniTalk:it_s-time_to_look_00028 a grasp:Attribution ;
+        rdfs:label "it_s-time_to_look_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:you a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat2522_utterance3_char0-179 .
+    leolaniTalk:migration_can-benefit_countries_00028 a grasp:Attribution ;
+        rdfs:label "migration_can-benefit_countries_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:migration_discriminating-against_immigrants_00028 a grasp:Attribution ;
+        rdfs:label "migration_discriminating-against_immigrants_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_were_if_told_00028 a grasp:Attribution ;
+        rdfs:label "you_were_if_told_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance3_char0-179 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_were_told_00028 a grasp:Attribution ;
+        rdfs:label "you_were_told_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance3_char0-179 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_would-say_if_told_00028 a grasp:Attribution ;
+        rdfs:label "you_would-say_if_told_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance3_char0-179 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:you_would-say_told_00028 a grasp:Attribution ;
+        rdfs:label "you_would-say_told_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat2522_utterance3_char0-179 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat2522_utterance3_char0-179 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2522_utterance3_char0-179" ;
+        gaf:containsDenotation leolaniWorld:if_told,
+            leolaniWorld:told,
+            leolaniWorld:you ;
+        gaf:denotes leolaniWorld:you_were_if_told,
+            leolaniWorld:you_were_told,
+            leolaniWorld:you_would-say_if_told,
+            leolaniWorld:you_would-say_told ;
+        grasp:hasAttribution leolaniTalk:you_were_if_told_00028,
+            leolaniTalk:you_were_told_00028,
+            leolaniTalk:you_would-say_if_told_00028,
+            leolaniTalk:you_would-say_told_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:43:59.701628"^^xml1:string,
+            "2024-06-05T23:43:59.701681"^^xml1:string,
+            "2024-06-05T23:43:59.701703"^^xml1:string,
+            "2024-06-05T23:43:59.701724"^^xml1:string ;
+        rdf:value "Some people commit crimes like child molestation, but this has nothing to do with immigration. What would you say if you were told that you are a rapist because of your ethnicity?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2522_utterance3 .
+
+    leolaniTalk:chat2522_utterance1_char0-160 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat2522_utterance1_char0-160" ;
+        gaf:containsDenotation leolaniWorld:countries,
+            leolaniWorld:immigrants,
+            leolaniWorld:it,
+            leolaniWorld:look,
+            leolaniWorld:migration,
+            leolaniWorld:to_look ;
+        gaf:denotes leolaniWorld:it_maybe-s-time_look,
+            leolaniWorld:it_maybe-s-time_to_look,
+            leolaniWorld:it_s-time_look,
+            leolaniWorld:it_s-time_to_look,
+            leolaniWorld:migration_can-benefit_countries,
+            leolaniWorld:migration_discriminating-against_immigrants ;
+        grasp:hasAttribution leolaniTalk:it_maybe-s-time_look_00028,
+            leolaniTalk:it_maybe-s-time_to_look_00028,
+            leolaniTalk:it_s-time_look_00028,
+            leolaniTalk:it_s-time_to_look_00028,
+            leolaniTalk:migration_can-benefit_countries_00028,
+            leolaniTalk:migration_discriminating-against_immigrants_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:43:59.512733"^^xml1:string,
+            "2024-06-05T23:43:59.512796"^^xml1:string,
+            "2024-06-05T23:43:59.512819"^^xml1:string,
+            "2024-06-05T23:43:59.512843"^^xml1:string,
+            "2024-06-05T23:43:59.512865"^^xml1:string,
+            "2024-06-05T23:43:59.512890"^^xml1:string ;
+        rdf:value "There are many jobs that can be done by immigrants. Maybe it's time to look at how migration can benefit countries instead of discriminating against immigrants."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat2522_utterance1 .
+
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -498,210 +598,110 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:it_maybe-s-time_look_00028 a grasp:Attribution ;
-        rdfs:label "it_maybe-s-time_look_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Claims {
+    leolaniWorld:it_maybe-s-time_look a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_maybe-s-time_look" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
 
-    leolaniTalk:it_maybe-s-time_to_look_00028 a grasp:Attribution ;
-        rdfs:label "it_maybe-s-time_to_look_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:it_maybe-s-time_to_look a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_maybe-s-time_to_look" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
 
-    leolaniTalk:it_s-time_look_00028 a grasp:Attribution ;
-        rdfs:label "it_s-time_look_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:it_s-time_look a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-time_look" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
 
-    leolaniTalk:it_s-time_to_look_00028 a grasp:Attribution ;
-        rdfs:label "it_s-time_to_look_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:it_s-time_to_look a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "it_s-time_to_look" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
 
-    leolaniTalk:migration_can-benefit_countries_00028 a grasp:Attribution ;
-        rdfs:label "migration_can-benefit_countries_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:migration_discriminating-against_immigrants_00028 a grasp:Attribution ;
-        rdfs:label "migration_discriminating-against_immigrants_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance1_char0-160 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:migration_can-benefit_countries a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migration_can-benefit_countries" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
 
-    leolaniTalk:you_were_if_told_00028 a grasp:Attribution ;
-        rdfs:label "you_were_if_told_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance3_char0-179 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:migration_discriminating-against_immigrants a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "migration_discriminating-against_immigrants" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance1_char0-160 .
 
-    leolaniTalk:you_were_told_00028 a grasp:Attribution ;
-        rdfs:label "you_were_told_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance3_char0-179 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_were_if_told a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_were_if_told" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance3_char0-179 .
 
-    leolaniTalk:you_would-say_if_told_00028 a grasp:Attribution ;
-        rdfs:label "you_would-say_if_told_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance3_char0-179 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_were_told a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_were_told" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance3_char0-179 .
 
-    leolaniTalk:you_would-say_told_00028 a grasp:Attribution ;
-        rdfs:label "you_would-say_told_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat2522_utterance3_char0-179 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:you_would-say_if_told a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_would-say_if_told" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance3_char0-179 .
 
-    leolaniTalk:chat2522_utterance3_char0-179 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2522_utterance3_char0-179" ;
-        gaf:containsDenotation leolaniWorld:if_told,
-            leolaniWorld:told,
-            leolaniWorld:you ;
-        gaf:denotes leolaniWorld:you_were_if_told,
-            leolaniWorld:you_were_told,
-            leolaniWorld:you_would-say_if_told,
-            leolaniWorld:you_would-say_told ;
-        grasp:hasAttribution leolaniTalk:you_were_if_told_00028,
-            leolaniTalk:you_were_told_00028,
-            leolaniTalk:you_would-say_if_told_00028,
-            leolaniTalk:you_would-say_told_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:43:59.701628"^^xml1:string,
-            "2024-06-05T23:43:59.701681"^^xml1:string,
-            "2024-06-05T23:43:59.701703"^^xml1:string,
-            "2024-06-05T23:43:59.701724"^^xml1:string ;
-        rdf:value "Some people commit crimes like child molestation, but this has nothing to do with immigration. What would you say if you were told that you are a rapist because of your ethnicity?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2522_utterance3 .
+    leolaniWorld:you_would-say_told a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "you_would-say_told" ;
+        gaf:denotedBy leolaniTalk:chat2522_utterance3_char0-179 .
 
-    leolaniTalk:chat2522_utterance1_char0-160 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat2522_utterance1_char0-160" ;
-        gaf:containsDenotation leolaniWorld:countries,
-            leolaniWorld:immigrants,
-            leolaniWorld:it,
-            leolaniWorld:look,
-            leolaniWorld:migration,
-            leolaniWorld:to_look ;
-        gaf:denotes leolaniWorld:it_maybe-s-time_look,
-            leolaniWorld:it_maybe-s-time_to_look,
-            leolaniWorld:it_s-time_look,
-            leolaniWorld:it_s-time_to_look,
-            leolaniWorld:migration_can-benefit_countries,
-            leolaniWorld:migration_discriminating-against_immigrants ;
-        grasp:hasAttribution leolaniTalk:it_maybe-s-time_look_00028,
-            leolaniTalk:it_maybe-s-time_to_look_00028,
-            leolaniTalk:it_s-time_look_00028,
-            leolaniTalk:it_s-time_to_look_00028,
-            leolaniTalk:migration_can-benefit_countries_00028,
-            leolaniTalk:migration_discriminating-against_immigrants_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:43:59.512733"^^xml1:string,
-            "2024-06-05T23:43:59.512796"^^xml1:string,
-            "2024-06-05T23:43:59.512819"^^xml1:string,
-            "2024-06-05T23:43:59.512843"^^xml1:string,
-            "2024-06-05T23:43:59.512865"^^xml1:string,
-            "2024-06-05T23:43:59.512890"^^xml1:string ;
-        rdf:value "There are many jobs that can be done by immigrants. Maybe it's time to look at how migration can benefit countries instead of discriminating against immigrants."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat2522_utterance1 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
 }
 
-leolaniWorld:migration_can-benefit_countries {
-    leolaniWorld:migration ns11:can_benefit leolaniWorld:countries .
+leolaniWorld:it_maybe-s-time_look {
+    leolaniWorld:it ns13:s_time leolaniWorld:look .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context166 a eps:Context ;
-        rdfs:label "context166" ;
-        hs:id "166"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2522 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "248"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2522 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2522" ;
-        hs:id "2522"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2522_utterance1,
-            leolaniTalk:chat2522_utterance3 .
-
-    leolaniTalk:chat2522_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2522_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat2522_utterance3 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2522_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
-}
 
-leolaniWorld:you_would-say_told {
-    leolaniWorld:you ns11:would_say leolaniWorld:told .
+    leolaniWorld:countries a gaf:Instance ;
+        rdfs:label "countries" ;
+        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+
+    leolaniWorld:if_told a gaf:Instance ;
+        rdfs:label "if-told" ;
+        gaf:denotedIn leolaniTalk:chat2522_utterance3_char0-179 .
+
+    leolaniWorld:immigrants a gaf:Instance ;
+        rdfs:label "immigrants" ;
+        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:look a gaf:Instance ;
+        rdfs:label "look" ;
+        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+
+    leolaniWorld:migration a gaf:Instance ;
+        rdfs:label "migration" ;
+        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+
+    leolaniWorld:to_look a gaf:Instance ;
+        rdfs:label "to-look" ;
+        gaf:denotedIn leolaniTalk:chat2522_utterance1_char0-160 .
+
+    leolaniWorld:told a gaf:Instance ;
+        rdfs:label "told" ;
+        gaf:denotedIn leolaniTalk:chat2522_utterance3_char0-179 .
+
+    leolaniWorld:you a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat2522_utterance3_char0-179 .
 }
 

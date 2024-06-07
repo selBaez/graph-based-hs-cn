@@ -22,68 +22,140 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:person_just-identifies-as_gay {
-    leolaniWorld:person ns11:just_identifies_as leolaniWorld:gay .
+leolaniWorld:person_identifies-as_gay {
+    leolaniWorld:person ns11:identifies_as leolaniWorld:gay .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context81 a eps:Context ;
+        rdfs:label "context81" ;
+        hs:id "81"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1008 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "166"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1008 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1008" ;
+        hs:id "1008"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1008_utterance1,
+            leolaniTalk:chat1008_utterance3 .
+
+    leolaniTalk:chat1008_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1008_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat1008_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1008_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 }
 
 leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:it_has_possible a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "it_has_possible" ;
-        gaf:denotedBy leolaniTalk:chat1008_utterance1_char0-112 .
+leolaniTalk:Perspectives {
+    leolaniTalk:chat1008_utterance1_char0-112 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1008_utterance1_char0-112" ;
+        gaf:containsDenotation leolaniWorld:it,
+            leolaniWorld:possible ;
+        gaf:denotes leolaniWorld:it_has_possible ;
+        grasp:hasAttribution leolaniTalk:it_has_possible_00027 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:44:10.460061"^^xml1:string ;
+        rdf:value "Sure, it's possible to identify someone as gay by their appearance... Don't you think this is really simplistic?"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1008_utterance1 .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniTalk:it_has_possible_00027 a grasp:Attribution ;
+        rdfs:label "it_has_possible_00027" ;
+        grasp:isAttributionFor leolaniTalk:chat1008_utterance1_char0-112 ;
+        rdf:value graspe:CONFUSION,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:person_identifies-as_gay a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "person_identifies-as_gay" ;
-        gaf:denotedBy leolaniTalk:chat1008_utterance3_char0-207 .
+    leolaniTalk:person_identifies-as_gay_00028 a grasp:Attribution ;
+        rdfs:label "person_identifies-as_gay_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1008_utterance3_char0-207 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:person_just-identifies-as_gay a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "person_just-identifies-as_gay" ;
-        gaf:denotedBy leolaniTalk:chat1008_utterance3_char0-207 .
+    leolaniTalk:person_just-identifies-as_gay_00028 a grasp:Attribution ;
+        rdfs:label "person_just-identifies-as_gay_00028" ;
+        grasp:isAttributionFor leolaniTalk:chat1008_utterance3_char0-207 ;
+        rdf:value graspe:NEUTRAL,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
 
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-}
+    graspe:CONFUSION a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CONFUSION" .
 
-leolaniWorld:Instances {
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
+    leolaniTalk:chat1008_utterance3_char0-207 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat1008_utterance3_char0-207" ;
+        gaf:containsDenotation leolaniWorld:gay,
+            leolaniWorld:person ;
+        gaf:denotes leolaniWorld:person_identifies-as_gay,
+            leolaniWorld:person_just-identifies-as_gay ;
+        grasp:hasAttribution leolaniTalk:person_identifies-as_gay_00028,
+            leolaniTalk:person_just-identifies-as_gay_00028 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:44:10.659044"^^xml1:string,
+            "2024-06-05T23:44:10.659105"^^xml1:string ;
+        rdf:value "Even if you are not homophobic it does not mean it's nice to say what you said. But either way, just because a person identifies as gay, does not make you obliged to like them (or to express your disliking)."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat1008_utterance3 .
 
-    leolaniWorld:gay a gaf:Instance ;
-        rdfs:label "gay" ;
-        gaf:denotedIn leolaniTalk:chat1008_utterance3_char0-207 .
+    graspe:NEUTRAL a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "NEUTRAL" .
 
-    leolaniWorld:it a gaf:Instance ;
-        rdfs:label "it" ;
-        gaf:denotedIn leolaniTalk:chat1008_utterance1_char0-112 .
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
 
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:person a gaf:Instance ;
-        rdfs:label "person" ;
-        gaf:denotedIn leolaniTalk:chat1008_utterance3_char0-207 .
-
-    leolaniWorld:possible a gaf:Instance ;
-        rdfs:label "possible" ;
-        gaf:denotedIn leolaniTalk:chat1008_utterance1_char0-112 .
-}
-
-leolaniWorld:it_has_possible {
-    leolaniWorld:it ns11:has leolaniWorld:possible .
-}
-
-leolaniWorld:person_identifies-as_gay {
-    leolaniWorld:person ns11:identifies_as leolaniWorld:gay .
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -421,131 +493,59 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:chat1008_utterance1_char0-112 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1008_utterance1_char0-112" ;
-        gaf:containsDenotation leolaniWorld:it,
-            leolaniWorld:possible ;
-        gaf:denotes leolaniWorld:it_has_possible ;
-        grasp:hasAttribution leolaniTalk:it_has_possible_00027 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:44:10.460061"^^xml1:string ;
-        rdf:value "Sure, it's possible to identify someone as gay by their appearance... Don't you think this is really simplistic?"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1008_utterance1 .
-
-    leolaniTalk:it_has_possible_00027 a grasp:Attribution ;
-        rdfs:label "it_has_possible_00027" ;
-        grasp:isAttributionFor leolaniTalk:chat1008_utterance1_char0-112 ;
-        rdf:value graspe:CONFUSION,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:person_identifies-as_gay_00028 a grasp:Attribution ;
-        rdfs:label "person_identifies-as_gay_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1008_utterance3_char0-207 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:person_just-identifies-as_gay_00028 a grasp:Attribution ;
-        rdfs:label "person_just-identifies-as_gay_00028" ;
-        grasp:isAttributionFor leolaniTalk:chat1008_utterance3_char0-207 ;
-        rdf:value graspe:NEUTRAL,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    graspe:CONFUSION a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CONFUSION" .
-
-    leolaniTalk:chat1008_utterance3_char0-207 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat1008_utterance3_char0-207" ;
-        gaf:containsDenotation leolaniWorld:gay,
-            leolaniWorld:person ;
-        gaf:denotes leolaniWorld:person_identifies-as_gay,
-            leolaniWorld:person_just-identifies-as_gay ;
-        grasp:hasAttribution leolaniTalk:person_identifies-as_gay_00028,
-            leolaniTalk:person_just-identifies-as_gay_00028 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:44:10.659044"^^xml1:string,
-            "2024-06-05T23:44:10.659105"^^xml1:string ;
-        rdf:value "Even if you are not homophobic it does not mean it's nice to say what you said. But either way, just because a person identifies as gay, does not make you obliged to like them (or to express your disliking)."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat1008_utterance3 .
-
-    graspe:NEUTRAL a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "NEUTRAL" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
+leolaniWorld:person_just-identifies-as_gay {
+    leolaniWorld:person ns11:just_identifies_as leolaniWorld:gay .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context81 a eps:Context ;
-        rdfs:label "context81" ;
-        hs:id "81"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1008 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "166"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1008 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:it_has_possible a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1008" ;
-        hs:id "1008"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1008_utterance1,
-            leolaniTalk:chat1008_utterance3 .
+        rdfs:label "it_has_possible" ;
+        gaf:denotedBy leolaniTalk:chat1008_utterance1_char0-112 .
 
-    leolaniTalk:chat1008_utterance1 a grasp:Utterance,
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1008_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat1008_utterance3 a grasp:Utterance,
+    leolaniWorld:person_identifies-as_gay a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1008_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "person_identifies-as_gay" ;
+        gaf:denotedBy leolaniTalk:chat1008_utterance3_char0-207 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:person_just-identifies-as_gay a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "person_just-identifies-as_gay" ;
+        gaf:denotedBy leolaniTalk:chat1008_utterance3_char0-207 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+}
 
+leolaniWorld:it_has_possible {
+    leolaniWorld:it ns11:has leolaniWorld:possible .
+}
+
+leolaniWorld:Instances {
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
+
+    leolaniWorld:gay a gaf:Instance ;
+        rdfs:label "gay" ;
+        gaf:denotedIn leolaniTalk:chat1008_utterance3_char0-207 .
+
+    leolaniWorld:it a gaf:Instance ;
+        rdfs:label "it" ;
+        gaf:denotedIn leolaniTalk:chat1008_utterance1_char0-112 .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:person a gaf:Instance ;
+        rdfs:label "person" ;
+        gaf:denotedIn leolaniTalk:chat1008_utterance3_char0-207 .
+
+    leolaniWorld:possible a gaf:Instance ;
+        rdfs:label "possible" ;
+        gaf:denotedIn leolaniTalk:chat1008_utterance1_char0-112 .
 }
 

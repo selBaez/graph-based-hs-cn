@@ -24,8 +24,90 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-leolaniWorld:they_were_where_minority {
-    leolaniWorld:they ns1:were leolaniWorld:where_minority .
+ns11:re-taking-over_whole_areas {
+    leolaniWorld:they ns21:re_taking_over leolaniWorld:whole_areas .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context32 a eps:Context ;
+        rdfs:label "context32" ;
+        hs:id "32"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1666 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "32"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1666 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1666" ;
+        hs:id "1666"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1666_utterance0,
+            leolaniTalk:chat1666_utterance2,
+            leolaniTalk:chat1666_utterance3 .
+
+    leolaniTalk:chat1666_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1666_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1666_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1666_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1666_utterance3 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1666_utterance3" ;
+        hs:id "3"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:people_realise_this {
+    leolaniWorld:people ns1:realise leolaniWorld:this .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 ns11:re-taking-over_areas {
@@ -36,65 +118,12 @@ leolaniWorld:leolani_know_cn {
     leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-ns11:re-taking-over_whole_areas {
-    leolaniWorld:they ns21:re_taking_over leolaniWorld:whole_areas .
+leolaniWorld:many_Muslims_is-in_our_country {
+    leolaniWorld:many_Muslims ns1:is_in leolaniWorld:our_country .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:many_Muslims_is-in_our_country a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "many_Muslims_is-in_our_country" ;
-        gaf:denotedBy leolaniTalk:chat1666_utterance0_char0-149 .
-
-    leolaniWorld:people_realise_this a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "people_realise_this" ;
-        gaf:denotedBy leolaniTalk:chat1666_utterance0_char0-149 .
-
-    leolaniWorld:they_faced-in_areas a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_faced-in_areas" ;
-        gaf:denotedBy leolaniTalk:chat1666_utterance3_char0-201 .
-
-    leolaniWorld:they_were_minority a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_were_minority" ;
-        gaf:denotedBy leolaniTalk:chat1666_utterance3_char0-201 .
-
-    leolaniWorld:they_were_where_minority a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_were_where_minority" ;
-        gaf:denotedBy leolaniTalk:chat1666_utterance3_char0-201 .
-
-    ns11:re-taking-over_areas a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_’re-taking-over_areas" ;
-        gaf:denotedBy leolaniTalk:chat1666_utterance2_char0-99 .
-
-    ns11:re-taking-over_whole_areas a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "they_’re-taking-over_whole_areas" ;
-        gaf:denotedBy leolaniTalk:chat1666_utterance2_char0-99 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
-}
-
-leolaniWorld:they_faced-in_areas {
-    leolaniWorld:they ns1:faced_in leolaniWorld:areas .
-}
-
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:they_were_minority {
+    leolaniWorld:they ns1:were leolaniWorld:minority .
 }
 
 leolaniTalk:Perspectives {
@@ -216,69 +245,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:areas a gaf:Instance ;
-        rdfs:label "areas" ;
-        gaf:denotedIn leolaniTalk:chat1666_utterance2_char0-99,
-            leolaniTalk:chat1666_utterance3_char0-201 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:many_Muslims a gaf:Instance ;
-        rdfs:label "many-muslims" ;
-        gaf:denotedIn leolaniTalk:chat1666_utterance0_char0-149 .
-
-    leolaniWorld:minority a gaf:Instance ;
-        rdfs:label "minority" ;
-        gaf:denotedIn leolaniTalk:chat1666_utterance3_char0-201 .
-
-    leolaniWorld:our_country a gaf:Instance ;
-        rdfs:label "our-country" ;
-        gaf:denotedIn leolaniTalk:chat1666_utterance0_char0-149 .
-
-    leolaniWorld:people a gaf:Instance ;
-        rdfs:label "people" ;
-        gaf:denotedIn leolaniTalk:chat1666_utterance0_char0-149 .
-
-    leolaniWorld:they a gaf:Instance ;
-        rdfs:label "they" ;
-        gaf:denotedIn leolaniTalk:chat1666_utterance2_char0-99,
-            leolaniTalk:chat1666_utterance3_char0-201 .
-
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat1666_utterance0_char0-149 .
-
-    leolaniWorld:where_minority a gaf:Instance ;
-        rdfs:label "where-minority" ;
-        gaf:denotedIn leolaniTalk:chat1666_utterance3_char0-201 .
-
-    leolaniWorld:whole_areas a gaf:Instance ;
-        rdfs:label "whole-areas" ;
-        gaf:denotedIn leolaniTalk:chat1666_utterance2_char0-99 .
-}
-
-leolaniWorld:people_realise_this {
-    leolaniWorld:people ns1:realise leolaniWorld:this .
-}
-
-leolaniWorld:many_Muslims_is-in_our_country {
-    leolaniWorld:many_Muslims ns1:is_in leolaniWorld:our_country .
-}
-
-leolaniWorld:they_were_minority {
-    leolaniWorld:they ns1:were leolaniWorld:minority .
 }
 
 leolaniWorld:Ontology {
@@ -616,77 +582,111 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context32 a eps:Context ;
-        rdfs:label "context32" ;
-        hs:id "32"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1666 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "32"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1666 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1666" ;
-        hs:id "1666"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1666_utterance0,
-            leolaniTalk:chat1666_utterance2,
-            leolaniTalk:chat1666_utterance3 .
+        rdfs:label "leolani_know_cn" .
 
-    leolaniTalk:chat1666_utterance0 a grasp:Utterance,
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1666_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "leolani_know_hs" .
 
-    leolaniTalk:chat1666_utterance2 a grasp:Utterance,
+    leolaniWorld:many_Muslims_is-in_our_country a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1666_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "many_Muslims_is-in_our_country" ;
+        gaf:denotedBy leolaniTalk:chat1666_utterance0_char0-149 .
 
-    leolaniTalk:chat1666_utterance3 a grasp:Utterance,
+    leolaniWorld:people_realise_this a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1666_utterance3" ;
-        hs:id "3"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "people_realise_this" ;
+        gaf:denotedBy leolaniTalk:chat1666_utterance0_char0-149 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:they_faced-in_areas a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_faced-in_areas" ;
+        gaf:denotedBy leolaniTalk:chat1666_utterance3_char0-201 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:they_were_minority a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_were_minority" ;
+        gaf:denotedBy leolaniTalk:chat1666_utterance3_char0-201 .
+
+    leolaniWorld:they_were_where_minority a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_were_where_minority" ;
+        gaf:denotedBy leolaniTalk:chat1666_utterance3_char0-201 .
+
+    ns11:re-taking-over_areas a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_’re-taking-over_areas" ;
+        gaf:denotedBy leolaniTalk:chat1666_utterance2_char0-99 .
+
+    ns11:re-taking-over_whole_areas a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "they_’re-taking-over_whole_areas" ;
+        gaf:denotedBy leolaniTalk:chat1666_utterance2_char0-99 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:they_were_where_minority {
+    leolaniWorld:they ns1:were leolaniWorld:where_minority .
+}
+
+leolaniWorld:they_faced-in_areas {
+    leolaniWorld:they ns1:faced_in leolaniWorld:areas .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:areas a gaf:Instance ;
+        rdfs:label "areas" ;
+        gaf:denotedIn leolaniTalk:chat1666_utterance2_char0-99,
+            leolaniTalk:chat1666_utterance3_char0-201 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:many_Muslims a gaf:Instance ;
+        rdfs:label "many-muslims" ;
+        gaf:denotedIn leolaniTalk:chat1666_utterance0_char0-149 .
+
+    leolaniWorld:minority a gaf:Instance ;
+        rdfs:label "minority" ;
+        gaf:denotedIn leolaniTalk:chat1666_utterance3_char0-201 .
+
+    leolaniWorld:our_country a gaf:Instance ;
+        rdfs:label "our-country" ;
+        gaf:denotedIn leolaniTalk:chat1666_utterance0_char0-149 .
+
+    leolaniWorld:people a gaf:Instance ;
+        rdfs:label "people" ;
+        gaf:denotedIn leolaniTalk:chat1666_utterance0_char0-149 .
+
+    leolaniWorld:they a gaf:Instance ;
+        rdfs:label "they" ;
+        gaf:denotedIn leolaniTalk:chat1666_utterance2_char0-99,
+            leolaniTalk:chat1666_utterance3_char0-201 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat1666_utterance0_char0-149 .
+
+    leolaniWorld:where_minority a gaf:Instance ;
+        rdfs:label "where-minority" ;
+        gaf:denotedIn leolaniTalk:chat1666_utterance3_char0-201 .
+
+    leolaniWorld:whole_areas a gaf:Instance ;
+        rdfs:label "whole-areas" ;
+        gaf:denotedIn leolaniTalk:chat1666_utterance2_char0-99 .
 }
 

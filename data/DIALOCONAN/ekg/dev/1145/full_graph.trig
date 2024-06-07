@@ -25,88 +25,103 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+ns13:s_wealth {
+    leolaniWorld:men ns1:contribute_to <http://cltl.nl/leolani/world/country_'s_wealth> .
+}
+
 leolaniWorld:country_to_wealth {
     leolaniWorld:country ns1:to leolaniWorld:wealth .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
-}
+leolaniTalk:Interactions {
+    leolaniContext:context140 a eps:Context ;
+        rdfs:label "context140" ;
+        hs:id "140"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
 
-leolaniWorld:men_want_to_contribute {
-    leolaniWorld:men ns1:want leolaniWorld:to_contribute .
-}
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1145 .
 
-leolaniWorld:Claims {
-    leolaniWorld:Whore_is-term-of_abuse a gaf:Assertion,
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "68"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1145 a grasp:Chat,
             sem:Event ;
-        rdfs:label "Whore_is-term-of_abuse" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance1_char0-121 .
+        rdfs:label "chat1145" ;
+        hs:id "1145"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1145_utterance1,
+            leolaniTalk:chat1145_utterance2 .
 
-    leolaniWorld:Whore_is-term-of_abuse_used a gaf:Assertion,
+    leolaniTalk:chat1145_utterance1 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Whore_is-term-of_abuse_used" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance1_char0-121 .
+        rdfs:label "chat1145_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
 
-    leolaniWorld:Whore_is_term a gaf:Assertion,
+    leolaniTalk:chat1145_utterance2 a grasp:Utterance,
             sem:Event ;
-        rdfs:label "Whore_is_term" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance1_char0-121 .
+        rdfs:label "chat1145_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
 
-    leolaniWorld:country_to_wealth a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "country_to_wealth" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
 
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
 
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
 
-    ns13:s_wealth a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_contribute-to_country_'s_wealth" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
-
-    leolaniWorld:men_want-unlike_women a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_want-unlike_women" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
-
-    leolaniWorld:men_want_contribute a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_want_contribute" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
-
-    ns12:s_wealth a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_want_contribute_to_country_'s_wealth" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
-
-    leolaniWorld:men_want_to_contribute a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_want_to_contribute" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
-
-    ns14:s_wealth a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "men_want_to_contribute_to_country_'s_wealth" ;
-        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
 }
 
 ns12:s_wealth {
     leolaniWorld:men ns1:want <http://cltl.nl/leolani/world/contribute_to_country_'s_wealth> .
 }
 
-ns13:s_wealth {
-    leolaniWorld:men ns1:contribute_to <http://cltl.nl/leolani/world/country_'s_wealth> .
+leolaniWorld:men_want_contribute {
+    leolaniWorld:men ns1:want leolaniWorld:contribute .
+}
+
+ns14:s_wealth {
+    leolaniWorld:men ns1:want <http://cltl.nl/leolani/world/to_contribute_to_country_'s_wealth> .
+}
+
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:men_want-unlike_women {
+    leolaniWorld:men ns1:want_unlike leolaniWorld:women .
 }
 
 leolaniTalk:Perspectives {
@@ -255,97 +270,8 @@ leolaniTalk:Perspectives {
         rdfs:label "UNDERSPECIFIED" .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:Whore a gaf:Instance ;
-        rdfs:label "whore" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance1_char0-121 .
-
-    leolaniWorld:abuse a gaf:Instance ;
-        rdfs:label "abuse" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance1_char0-121 .
-
-    leolaniWorld:abuse_used a gaf:Instance ;
-        rdfs:label "abuse-used" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance1_char0-121 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:contribute a gaf:Instance ;
-        rdfs:label "contribute" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
-
-    <http://cltl.nl/leolani/world/contribute_to_country_'s_wealth> a gaf:Instance ;
-        rdfs:label "contribute-to-country-s-wealth" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
-
-    leolaniWorld:country a gaf:Instance ;
-        rdfs:label "country" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
-
-    <http://cltl.nl/leolani/world/country_'s_wealth> a gaf:Instance ;
-        rdfs:label "country-s-wealth" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:men a gaf:Instance ;
-        rdfs:label "men" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
-
-    leolaniWorld:term a gaf:Instance ;
-        rdfs:label "term" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance1_char0-121 .
-
-    leolaniWorld:to_contribute a gaf:Instance ;
-        rdfs:label "to-contribute" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
-
-    <http://cltl.nl/leolani/world/to_contribute_to_country_'s_wealth> a gaf:Instance ;
-        rdfs:label "to-contribute-to-country-s-wealth" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
-
-    leolaniWorld:wealth a gaf:Instance ;
-        rdfs:label "wealth" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
-
-    leolaniWorld:women a gaf:Instance ;
-        rdfs:label "women" ;
-        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
-}
-
-leolaniWorld:men_want_contribute {
-    leolaniWorld:men ns1:want leolaniWorld:contribute .
-}
-
-leolaniWorld:Whore_is-term-of_abuse {
-    leolaniWorld:Whore ns1:is_term_of leolaniWorld:abuse .
-}
-
 leolaniWorld:Whore_is-term-of_abuse_used {
     leolaniWorld:Whore ns1:is_term_of leolaniWorld:abuse_used .
-}
-
-leolaniWorld:men_want-unlike_women {
-    leolaniWorld:men ns1:want_unlike leolaniWorld:women .
-}
-
-ns14:s_wealth {
-    leolaniWorld:men ns1:want <http://cltl.nl/leolani/world/to_contribute_to_country_'s_wealth> .
-}
-
-leolaniWorld:Whore_is_term {
-    leolaniWorld:Whore ns1:is leolaniWorld:term .
 }
 
 leolaniWorld:Ontology {
@@ -683,70 +609,144 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context140 a eps:Context ;
-        rdfs:label "context140" ;
-        hs:id "140"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1145 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "68"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1145 a grasp:Chat,
+leolaniWorld:Claims {
+    leolaniWorld:Whore_is-term-of_abuse a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1145" ;
-        hs:id "1145"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1145_utterance1,
-            leolaniTalk:chat1145_utterance2 .
+        rdfs:label "Whore_is-term-of_abuse" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance1_char0-121 .
 
-    leolaniTalk:chat1145_utterance1 a grasp:Utterance,
+    leolaniWorld:Whore_is-term-of_abuse_used a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1145_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
+        rdfs:label "Whore_is-term-of_abuse_used" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance1_char0-121 .
 
-    leolaniTalk:chat1145_utterance2 a grasp:Utterance,
+    leolaniWorld:Whore_is_term a gaf:Assertion,
             sem:Event ;
-        rdfs:label "chat1145_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
+        rdfs:label "Whore_is_term" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance1_char0-121 .
 
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
+    leolaniWorld:country_to_wealth a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "country_to_wealth" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
 
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    ns13:s_wealth a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_contribute-to_country_'s_wealth" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
+
+    leolaniWorld:men_want-unlike_women a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_want-unlike_women" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
+
+    leolaniWorld:men_want_contribute a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_want_contribute" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
+
+    ns12:s_wealth a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_want_contribute_to_country_'s_wealth" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
+
+    leolaniWorld:men_want_to_contribute a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_want_to_contribute" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
+
+    ns14:s_wealth a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "men_want_to_contribute_to_country_'s_wealth" ;
+        gaf:denotedBy leolaniTalk:chat1145_utterance2_char0-69 .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+}
+
+leolaniWorld:men_want_to_contribute {
+    leolaniWorld:men ns1:want leolaniWorld:to_contribute .
+}
+
+leolaniWorld:Whore_is_term {
+    leolaniWorld:Whore ns1:is leolaniWorld:term .
+}
+
+leolaniWorld:Whore_is-term-of_abuse {
+    leolaniWorld:Whore ns1:is_term_of leolaniWorld:abuse .
+}
+
+leolaniWorld:Instances {
+    leolaniWorld:Whore a gaf:Instance ;
+        rdfs:label "whore" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance1_char0-121 .
+
+    leolaniWorld:abuse a gaf:Instance ;
+        rdfs:label "abuse" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance1_char0-121 .
+
+    leolaniWorld:abuse_used a gaf:Instance ;
+        rdfs:label "abuse-used" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance1_char0-121 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
+    leolaniWorld:contribute a gaf:Instance ;
+        rdfs:label "contribute" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
+
+    <http://cltl.nl/leolani/world/contribute_to_country_'s_wealth> a gaf:Instance ;
+        rdfs:label "contribute-to-country-s-wealth" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
+
+    leolaniWorld:country a gaf:Instance ;
+        rdfs:label "country" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
+
+    <http://cltl.nl/leolani/world/country_'s_wealth> a gaf:Instance ;
+        rdfs:label "country-s-wealth" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
+
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:men a gaf:Instance ;
+        rdfs:label "men" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
+
+    leolaniWorld:term a gaf:Instance ;
+        rdfs:label "term" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance1_char0-121 .
+
+    leolaniWorld:to_contribute a gaf:Instance ;
+        rdfs:label "to-contribute" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
+
+    <http://cltl.nl/leolani/world/to_contribute_to_country_'s_wealth> a gaf:Instance ;
+        rdfs:label "to-contribute-to-country-s-wealth" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
+
+    leolaniWorld:wealth a gaf:Instance ;
+        rdfs:label "wealth" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
+
+    leolaniWorld:women a gaf:Instance ;
+        rdfs:label "women" ;
+        gaf:denotedIn leolaniTalk:chat1145_utterance2_char0-69 .
 }
 

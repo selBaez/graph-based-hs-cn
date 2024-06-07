@@ -26,113 +26,194 @@ leolaniWorld:We_must-stand-up-to_them {
     leolaniWorld:We ns1:must_stand_up_to leolaniWorld:them .
 }
 
-leolaniWorld:Claims {
-    leolaniWorld:Love_is_love a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "Love_is_love" ;
-        gaf:denotedBy leolaniTalk:chat509_utterance1_char0-38 .
-
-    leolaniWorld:We_must-stand-up-to_them a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "We_must-stand-up-to_them" ;
-        gaf:denotedBy leolaniTalk:chat509_utterance2_char0-116 .
-
-    leolaniWorld:You_be_better_careful a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_be_better_careful" ;
-        gaf:denotedBy leolaniTalk:chat509_utterance2_char0-116 .
-
-    leolaniWorld:You_be_careful a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "You_be_careful" ;
-        gaf:denotedBy leolaniTalk:chat509_utterance2_char0-116 .
-
-    leolaniWorld:children_need_only_this a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "children_need_only_this" ;
-        gaf:denotedBy leolaniTalk:chat509_utterance1_char0-38 .
-
-    leolaniWorld:children_need_this a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "children_need_this" ;
-        gaf:denotedBy leolaniTalk:chat509_utterance1_char0-38 .
-
-    leolaniWorld:leolani_know_cn a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_cn" .
-
-    leolaniWorld:leolani_know_hs a gaf:Assertion,
-            sem:Event ;
-        rdfs:label "leolani_know_hs" .
-
-    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
-
-    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
+leolaniWorld:children_need_this {
+    leolaniWorld:children ns1:need leolaniWorld:this .
 }
 
-leolaniWorld:leolani_know_cn {
-    leolaniWorld:leolani hs:know leolaniWorld:cn .
+leolaniTalk:Interactions {
+    leolaniContext:context50 a eps:Context ;
+        rdfs:label "context50" ;
+        hs:id "50"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat509 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "193"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat509 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat509" ;
+        hs:id "509"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat509_utterance1,
+            leolaniTalk:chat509_utterance2 .
+
+    leolaniTalk:chat509_utterance1 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat509_utterance1" ;
+        hs:id "1"^^xml1:string ;
+        sem:hasActor leolaniWorld:cn .
+
+    leolaniTalk:chat509_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat509_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:cn a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "cn" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
 }
 
 leolaniWorld:You_be_better_careful {
     leolaniWorld:You ns1:be leolaniWorld:better_careful .
 }
 
-leolaniWorld:Instances {
-    leolaniWorld:Love a gaf:Instance ;
-        rdfs:label "love" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
-
-    leolaniWorld:We a gaf:Instance ;
-        rdfs:label "we" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
-
-    leolaniWorld:You a gaf:Instance ;
-        rdfs:label "you" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
-
-    leolaniWorld:better_careful a gaf:Instance ;
-        rdfs:label "better-careful" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
-
-    leolaniWorld:careful a gaf:Instance ;
-        rdfs:label "careful" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
-
-    leolaniWorld:children a gaf:Instance ;
-        rdfs:label "children" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
-
-    leolaniWorld:cn a hs:person,
-            gaf:Instance ;
-        rdfs:label "cn" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:love a gaf:Instance ;
-        rdfs:label "love" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
-
-    leolaniWorld:only_this a gaf:Instance ;
-        rdfs:label "only-this" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
-
-    leolaniWorld:them a gaf:Instance ;
-        rdfs:label "them" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
-
-    leolaniWorld:this a gaf:Instance ;
-        rdfs:label "this" ;
-        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
+leolaniWorld:leolani_know_cn {
+    leolaniWorld:leolani hs:know leolaniWorld:cn .
 }
 
-leolaniWorld:children_need_only_this {
-    leolaniWorld:children ns1:need leolaniWorld:only_this .
+leolaniWorld:You_be_careful {
+    leolaniWorld:You ns1:be leolaniWorld:careful .
+}
+
+leolaniTalk:Perspectives {
+    leolaniTalk:Love_is_love_0004 a grasp:Attribution ;
+        rdfs:label "Love_is_love_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat509_utterance1_char0-38 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:We_must-stand-up-to_them_0007 a grasp:Attribution ;
+        rdfs:label "We_must-stand-up-to_them_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat509_utterance2_char0-116 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_be_better_careful_0007 a grasp:Attribution ;
+        rdfs:label "You_be_better_careful_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat509_utterance2_char0-116 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:You_be_careful_0007 a grasp:Attribution ;
+        rdfs:label "You_be_careful_0007" ;
+        grasp:isAttributionFor leolaniTalk:chat509_utterance2_char0-116 ;
+        rdf:value graspe:CARING,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:children_need_only_this_0004 a grasp:Attribution ;
+        rdfs:label "children_need_only_this_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat509_utterance1_char0-38 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:children_need_this_0004 a grasp:Attribution ;
+        rdfs:label "children_need_this_0004" ;
+        grasp:isAttributionFor leolaniTalk:chat509_utterance1_char0-38 ;
+        rdf:value graspe:LOVE,
+            graspf:UNDERSPECIFIED,
+            grasps:UNDERSPECIFIED .
+
+    leolaniTalk:chat509_utterance1_char0-38 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat509_utterance1_char0-38" ;
+        gaf:containsDenotation leolaniWorld:Love,
+            leolaniWorld:children,
+            leolaniWorld:love,
+            leolaniWorld:only_this,
+            leolaniWorld:this ;
+        gaf:denotes leolaniWorld:Love_is_love,
+            leolaniWorld:children_need_only_this,
+            leolaniWorld:children_need_this ;
+        grasp:hasAttribution leolaniTalk:Love_is_love_0004,
+            leolaniTalk:children_need_only_this_0004,
+            leolaniTalk:children_need_this_0004 ;
+        grasp:wasAttributedTo leolaniWorld:cn ;
+        sem:hasBeginTimeStamp "2024-06-05T23:13:51.585800"^^xml1:string,
+            "2024-06-05T23:13:51.585863"^^xml1:string,
+            "2024-06-05T23:13:51.585885"^^xml1:string ;
+        rdf:value "Love is love, children need only this."^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat509_utterance1 .
+
+    leolaniTalk:chat509_utterance2_char0-116 a gaf:Mention,
+            grasp:Statement ;
+        rdfs:label "chat509_utterance2_char0-116" ;
+        gaf:containsDenotation leolaniWorld:We,
+            leolaniWorld:You,
+            leolaniWorld:better_careful,
+            leolaniWorld:careful,
+            leolaniWorld:them ;
+        gaf:denotes leolaniWorld:We_must-stand-up-to_them,
+            leolaniWorld:You_be_better_careful,
+            leolaniWorld:You_be_careful ;
+        grasp:hasAttribution leolaniTalk:We_must-stand-up-to_them_0007,
+            leolaniTalk:You_be_better_careful_0007,
+            leolaniTalk:You_be_careful_0007 ;
+        grasp:wasAttributedTo leolaniWorld:hs ;
+        sem:hasBeginTimeStamp "2024-06-05T23:13:51.676180"^^xml1:string,
+            "2024-06-05T23:13:51.676241"^^xml1:string,
+            "2024-06-05T23:13:51.676264"^^xml1:string ;
+        rdf:value "You better be careful who you stand up for. For example, my gay 'friends' vote against us. We must stand up to them!"^^xml1:string ;
+        prov:wasDerivedFrom leolaniTalk:chat509_utterance2 .
+
+    graspe:CARING a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "CARING" .
+
+    graspe:LOVE a grasp:AttributionValue,
+            graspe:EmotionValue ;
+        rdfs:label "LOVE" .
+
+    graspf:UNDERSPECIFIED a grasp:AttributionValue,
+            graspf:CertaintyValue,
+            graspf:PolarityValue ;
+        rdfs:label "UNDERSPECIFIED" .
+
+    grasps:UNDERSPECIFIED a grasp:AttributionValue,
+            grasps:SentimentValue ;
+        rdfs:label "UNDERSPECIFIED" .
 }
 
 leolaniWorld:Ontology {
@@ -470,189 +551,108 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:children_need_this {
-    leolaniWorld:children ns1:need leolaniWorld:this .
+leolaniWorld:Claims {
+    leolaniWorld:Love_is_love a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "Love_is_love" ;
+        gaf:denotedBy leolaniTalk:chat509_utterance1_char0-38 .
+
+    leolaniWorld:We_must-stand-up-to_them a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "We_must-stand-up-to_them" ;
+        gaf:denotedBy leolaniTalk:chat509_utterance2_char0-116 .
+
+    leolaniWorld:You_be_better_careful a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_be_better_careful" ;
+        gaf:denotedBy leolaniTalk:chat509_utterance2_char0-116 .
+
+    leolaniWorld:You_be_careful a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "You_be_careful" ;
+        gaf:denotedBy leolaniTalk:chat509_utterance2_char0-116 .
+
+    leolaniWorld:children_need_only_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "children_need_only_this" ;
+        gaf:denotedBy leolaniTalk:chat509_utterance1_char0-38 .
+
+    leolaniWorld:children_need_this a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "children_need_this" ;
+        gaf:denotedBy leolaniTalk:chat509_utterance1_char0-38 .
+
+    leolaniWorld:leolani_know_cn a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_cn" .
+
+    leolaniWorld:leolani_know_hs a gaf:Assertion,
+            sem:Event ;
+        rdfs:label "leolani_know_hs" .
+
+    leolaniWorld:cn owl:sameAs leolaniWorld:cn .
+
+    leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:children_need_only_this {
+    leolaniWorld:children ns1:need leolaniWorld:only_this .
 }
 
 leolaniWorld:Love_is_love {
     leolaniWorld:Love ns1:is leolaniWorld:love .
 }
 
-leolaniTalk:Perspectives {
-    leolaniTalk:Love_is_love_0004 a grasp:Attribution ;
-        rdfs:label "Love_is_love_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat509_utterance1_char0-38 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+leolaniWorld:Instances {
+    leolaniWorld:Love a gaf:Instance ;
+        rdfs:label "love" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
 
-    leolaniTalk:We_must-stand-up-to_them_0007 a grasp:Attribution ;
-        rdfs:label "We_must-stand-up-to_them_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat509_utterance2_char0-116 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:We a gaf:Instance ;
+        rdfs:label "we" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
 
-    leolaniTalk:You_be_better_careful_0007 a grasp:Attribution ;
-        rdfs:label "You_be_better_careful_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat509_utterance2_char0-116 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:You a gaf:Instance ;
+        rdfs:label "you" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
 
-    leolaniTalk:You_be_careful_0007 a grasp:Attribution ;
-        rdfs:label "You_be_careful_0007" ;
-        grasp:isAttributionFor leolaniTalk:chat509_utterance2_char0-116 ;
-        rdf:value graspe:CARING,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:better_careful a gaf:Instance ;
+        rdfs:label "better-careful" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
 
-    leolaniTalk:children_need_only_this_0004 a grasp:Attribution ;
-        rdfs:label "children_need_only_this_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat509_utterance1_char0-38 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
+    leolaniWorld:careful a gaf:Instance ;
+        rdfs:label "careful" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
 
-    leolaniTalk:children_need_this_0004 a grasp:Attribution ;
-        rdfs:label "children_need_this_0004" ;
-        grasp:isAttributionFor leolaniTalk:chat509_utterance1_char0-38 ;
-        rdf:value graspe:LOVE,
-            graspf:UNDERSPECIFIED,
-            grasps:UNDERSPECIFIED .
-
-    leolaniTalk:chat509_utterance1_char0-38 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat509_utterance1_char0-38" ;
-        gaf:containsDenotation leolaniWorld:Love,
-            leolaniWorld:children,
-            leolaniWorld:love,
-            leolaniWorld:only_this,
-            leolaniWorld:this ;
-        gaf:denotes leolaniWorld:Love_is_love,
-            leolaniWorld:children_need_only_this,
-            leolaniWorld:children_need_this ;
-        grasp:hasAttribution leolaniTalk:Love_is_love_0004,
-            leolaniTalk:children_need_only_this_0004,
-            leolaniTalk:children_need_this_0004 ;
-        grasp:wasAttributedTo leolaniWorld:cn ;
-        sem:hasBeginTimeStamp "2024-06-05T23:13:51.585800"^^xml1:string,
-            "2024-06-05T23:13:51.585863"^^xml1:string,
-            "2024-06-05T23:13:51.585885"^^xml1:string ;
-        rdf:value "Love is love, children need only this."^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat509_utterance1 .
-
-    leolaniTalk:chat509_utterance2_char0-116 a gaf:Mention,
-            grasp:Statement ;
-        rdfs:label "chat509_utterance2_char0-116" ;
-        gaf:containsDenotation leolaniWorld:We,
-            leolaniWorld:You,
-            leolaniWorld:better_careful,
-            leolaniWorld:careful,
-            leolaniWorld:them ;
-        gaf:denotes leolaniWorld:We_must-stand-up-to_them,
-            leolaniWorld:You_be_better_careful,
-            leolaniWorld:You_be_careful ;
-        grasp:hasAttribution leolaniTalk:We_must-stand-up-to_them_0007,
-            leolaniTalk:You_be_better_careful_0007,
-            leolaniTalk:You_be_careful_0007 ;
-        grasp:wasAttributedTo leolaniWorld:hs ;
-        sem:hasBeginTimeStamp "2024-06-05T23:13:51.676180"^^xml1:string,
-            "2024-06-05T23:13:51.676241"^^xml1:string,
-            "2024-06-05T23:13:51.676264"^^xml1:string ;
-        rdf:value "You better be careful who you stand up for. For example, my gay 'friends' vote against us. We must stand up to them!"^^xml1:string ;
-        prov:wasDerivedFrom leolaniTalk:chat509_utterance2 .
-
-    graspe:CARING a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "CARING" .
-
-    graspe:LOVE a grasp:AttributionValue,
-            graspe:EmotionValue ;
-        rdfs:label "LOVE" .
-
-    graspf:UNDERSPECIFIED a grasp:AttributionValue,
-            graspf:CertaintyValue,
-            graspf:PolarityValue ;
-        rdfs:label "UNDERSPECIFIED" .
-
-    grasps:UNDERSPECIFIED a grasp:AttributionValue,
-            grasps:SentimentValue ;
-        rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context50 a eps:Context ;
-        rdfs:label "context50" ;
-        hs:id "50"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat509 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "193"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat509 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat509" ;
-        hs:id "509"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat509_utterance1,
-            leolaniTalk:chat509_utterance2 .
-
-    leolaniTalk:chat509_utterance1 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat509_utterance1" ;
-        hs:id "1"^^xml1:string ;
-        sem:hasActor leolaniWorld:cn .
-
-    leolaniTalk:chat509_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat509_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
+    leolaniWorld:children a gaf:Instance ;
+        rdfs:label "children" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
 
     leolaniWorld:cn a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "cn" .
 
     leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
+            gaf:Instance ;
         rdfs:label "hs" .
-}
 
-leolaniWorld:You_be_careful {
-    leolaniWorld:You ns1:be leolaniWorld:careful .
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:love a gaf:Instance ;
+        rdfs:label "love" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
+
+    leolaniWorld:only_this a gaf:Instance ;
+        rdfs:label "only-this" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
+
+    leolaniWorld:them a gaf:Instance ;
+        rdfs:label "them" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance2_char0-116 .
+
+    leolaniWorld:this a gaf:Instance ;
+        rdfs:label "this" ;
+        gaf:denotedIn leolaniTalk:chat509_utterance1_char0-38 .
 }
 

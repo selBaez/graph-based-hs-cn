@@ -22,6 +22,91 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:anybody_even-can-commit_crimes {
+    leolaniWorld:anybody ns1:even_can_commit leolaniWorld:crimes .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context183 a eps:Context ;
+        rdfs:label "context183" ;
+        hs:id "183"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1075 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "219"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat1075 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat1075" ;
+        hs:id "1075"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat1075_utterance0,
+            leolaniTalk:chat1075_utterance2 .
+
+    leolaniTalk:chat1075_utterance0 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1075_utterance0" ;
+        hs:id "0"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniTalk:chat1075_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat1075_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:gays_are-more-criminal-than_others {
+    leolaniWorld:gays ns1:are_more_criminal_than leolaniWorld:others .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
+leolaniWorld:anybody_can-commit_crimes {
+    leolaniWorld:anybody ns1:can_commit leolaniWorld:crimes .
+}
+
+leolaniWorld:gays_are_criminal {
+    leolaniWorld:gays ns1:are leolaniWorld:criminal .
+}
+
+leolaniWorld:gays_are-criminal-than_others {
+    leolaniWorld:gays ns1:are_criminal_than leolaniWorld:others .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:anybody_can-commit_crimes_00028 a grasp:Attribution ;
         rdfs:label "anybody_can-commit_crimes_00028" ;
@@ -127,55 +212,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:anybody a gaf:Instance ;
-        rdfs:label "anybody" ;
-        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
-
-    leolaniWorld:crimes a gaf:Instance ;
-        rdfs:label "crimes" ;
-        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
-
-    leolaniWorld:criminal a gaf:Instance ;
-        rdfs:label "criminal" ;
-        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
-
-    leolaniWorld:criminals a gaf:Instance ;
-        rdfs:label "criminals" ;
-        gaf:denotedIn leolaniTalk:chat1075_utterance0_char0-22 .
-
-    leolaniWorld:gay a gaf:Instance ;
-        rdfs:label "gay" ;
-        gaf:denotedIn leolaniTalk:chat1075_utterance0_char0-22 .
-
-    leolaniWorld:gays a gaf:Instance ;
-        rdfs:label "gays" ;
-        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
-
-    leolaniWorld:more_criminal a gaf:Instance ;
-        rdfs:label "more-criminal" ;
-        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
-
-    leolaniWorld:others a gaf:Instance ;
-        rdfs:label "others" ;
-        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
-}
-
-leolaniWorld:anybody_even-can-commit_crimes {
-    leolaniWorld:anybody ns1:even_can_commit leolaniWorld:crimes .
-}
-
-leolaniWorld:gays_are_more_criminal {
-    leolaniWorld:gays ns1:are leolaniWorld:more_criminal .
 }
 
 leolaniWorld:Ontology {
@@ -513,75 +549,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniWorld:gay_are_criminals {
-    leolaniWorld:gay ns1:are leolaniWorld:criminals .
-}
-
-leolaniTalk:Interactions {
-    leolaniContext:context183 a eps:Context ;
-        rdfs:label "context183" ;
-        hs:id "183"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat1075 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "219"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat1075 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat1075" ;
-        hs:id "1075"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat1075_utterance0,
-            leolaniTalk:chat1075_utterance2 .
-
-    leolaniTalk:chat1075_utterance0 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1075_utterance0" ;
-        hs:id "0"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniTalk:chat1075_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat1075_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
-leolaniWorld:gays_are_criminal {
-    leolaniWorld:gays ns1:are leolaniWorld:criminal .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:anybody_can-commit_crimes a gaf:Assertion,
             sem:Event ;
@@ -625,19 +592,52 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:anybody_can-commit_crimes {
-    leolaniWorld:anybody ns1:can_commit leolaniWorld:crimes .
+leolaniWorld:gays_are_more_criminal {
+    leolaniWorld:gays ns1:are leolaniWorld:more_criminal .
 }
 
-leolaniWorld:gays_are-criminal-than_others {
-    leolaniWorld:gays ns1:are_criminal_than leolaniWorld:others .
+leolaniWorld:gay_are_criminals {
+    leolaniWorld:gay ns1:are leolaniWorld:criminals .
 }
 
-leolaniWorld:gays_are-more-criminal-than_others {
-    leolaniWorld:gays ns1:are_more_criminal_than leolaniWorld:others .
-}
+leolaniWorld:Instances {
+    leolaniWorld:anybody a gaf:Instance ;
+        rdfs:label "anybody" ;
+        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+    leolaniWorld:crimes a gaf:Instance ;
+        rdfs:label "crimes" ;
+        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
+
+    leolaniWorld:criminal a gaf:Instance ;
+        rdfs:label "criminal" ;
+        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
+
+    leolaniWorld:criminals a gaf:Instance ;
+        rdfs:label "criminals" ;
+        gaf:denotedIn leolaniTalk:chat1075_utterance0_char0-22 .
+
+    leolaniWorld:gay a gaf:Instance ;
+        rdfs:label "gay" ;
+        gaf:denotedIn leolaniTalk:chat1075_utterance0_char0-22 .
+
+    leolaniWorld:gays a gaf:Instance ;
+        rdfs:label "gays" ;
+        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
+
+    leolaniWorld:more_criminal a gaf:Instance ;
+        rdfs:label "more-criminal" ;
+        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
+
+    leolaniWorld:others a gaf:Instance ;
+        rdfs:label "others" ;
+        gaf:denotedIn leolaniTalk:chat1075_utterance2_char0-74 .
 }
 

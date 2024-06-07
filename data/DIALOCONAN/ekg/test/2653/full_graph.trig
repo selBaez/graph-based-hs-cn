@@ -22,6 +22,72 @@
 @prefix xml1: <https://www.w3.org/TR/xmlschema-2/#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+leolaniWorld:I_have_feeling {
+    leolaniWorld:I ns1:have leolaniWorld:feeling .
+}
+
+leolaniTalk:Interactions {
+    leolaniContext:context182 a eps:Context ;
+        rdfs:label "context182" ;
+        hs:id "182"^^xml1:string ;
+        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
+        sem:hasPlace leolaniContext:online-forum .
+
+    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2653 .
+
+    leolaniContext:2024-04-01 a sem:Time,
+            time1:DateTimeDescription ;
+        rdfs:label "2024-04-01" ;
+        time1:day "1"^^xml1:gDay ;
+        time1:month "4"^^xml1:gMonthDay ;
+        time1:unitType time1:unitDay ;
+        time1:year "2024"^^xml1:gYear .
+
+    leolaniContext:online-forum a hs:location,
+            sem:Place ;
+        rdfs:label "online-forum" ;
+        hs:id "196"^^xml1:string ;
+        hs:in leolaniWorld:MX,
+            leolaniWorld:Mexico_City .
+
+    leolaniTalk:chat2653 a grasp:Chat,
+            sem:Event ;
+        rdfs:label "chat2653" ;
+        hs:id "2653"^^xml1:string ;
+        sem:hasSubEvent leolaniTalk:chat2653_utterance2 .
+
+    leolaniTalk:chat2653_utterance2 a grasp:Utterance,
+            sem:Event ;
+        rdfs:label "chat2653_utterance2" ;
+        hs:id "2"^^xml1:string ;
+        sem:hasActor leolaniWorld:hs .
+
+    leolaniWorld:MX a hs:country,
+            hs:location,
+            sem:Place ;
+        rdfs:label "MX" .
+
+    leolaniWorld:Mexico_City a hs:city,
+            hs:location,
+            hs:region,
+            sem:Place ;
+        rdfs:label "Mexico City" .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance,
+            grasp:Source,
+            sem:Actor ;
+        rdfs:label "hs" .
+}
+
+leolaniWorld:I_have_feeling_about_it {
+    leolaniWorld:I ns1:have leolaniWorld:feeling_about_it .
+}
+
+leolaniWorld:leolani_know_hs {
+    leolaniWorld:leolani hs:know leolaniWorld:hs .
+}
+
 leolaniTalk:Perspectives {
     leolaniTalk:I_have_bad_feeling_00017 a grasp:Attribution ;
         rdfs:label "I_have_bad_feeling_00017" ;
@@ -87,35 +153,6 @@ leolaniTalk:Perspectives {
     grasps:UNDERSPECIFIED a grasp:AttributionValue,
             grasps:SentimentValue ;
         rdfs:label "UNDERSPECIFIED" .
-}
-
-leolaniWorld:Instances {
-    leolaniWorld:I a gaf:Instance ;
-        rdfs:label "i" ;
-        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
-
-    leolaniWorld:bad_feeling a gaf:Instance ;
-        rdfs:label "bad-feeling" ;
-        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
-
-    leolaniWorld:bad_feeling_about_it a gaf:Instance ;
-        rdfs:label "bad-feeling-about-it" ;
-        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
-
-    leolaniWorld:feeling a gaf:Instance ;
-        rdfs:label "feeling" ;
-        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
-
-    leolaniWorld:feeling_about_it a gaf:Instance ;
-        rdfs:label "feeling-about-it" ;
-        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance ;
-        rdfs:label "hs" .
-
-    leolaniWorld:leolani a hs:robot ;
-        rdfs:label "leolani" .
 }
 
 leolaniWorld:Ontology {
@@ -453,60 +490,6 @@ A Mention uniquely identifies the (part of a) web source that denotes the mentio
     [] a owl:Ontology .
 }
 
-leolaniTalk:Interactions {
-    leolaniContext:context182 a eps:Context ;
-        rdfs:label "context182" ;
-        hs:id "182"^^xml1:string ;
-        sem:hasBeginTimeStamp leolaniContext:2024-04-01 ;
-        sem:hasPlace leolaniContext:online-forum .
-
-    leolaniContext:contextNone sem:hasEvent leolaniTalk:chat2653 .
-
-    leolaniContext:2024-04-01 a sem:Time,
-            time1:DateTimeDescription ;
-        rdfs:label "2024-04-01" ;
-        time1:day "1"^^xml1:gDay ;
-        time1:month "4"^^xml1:gMonthDay ;
-        time1:unitType time1:unitDay ;
-        time1:year "2024"^^xml1:gYear .
-
-    leolaniContext:online-forum a hs:location,
-            sem:Place ;
-        rdfs:label "online-forum" ;
-        hs:id "196"^^xml1:string ;
-        hs:in leolaniWorld:MX,
-            leolaniWorld:Mexico_City .
-
-    leolaniTalk:chat2653 a grasp:Chat,
-            sem:Event ;
-        rdfs:label "chat2653" ;
-        hs:id "2653"^^xml1:string ;
-        sem:hasSubEvent leolaniTalk:chat2653_utterance2 .
-
-    leolaniTalk:chat2653_utterance2 a grasp:Utterance,
-            sem:Event ;
-        rdfs:label "chat2653_utterance2" ;
-        hs:id "2"^^xml1:string ;
-        sem:hasActor leolaniWorld:hs .
-
-    leolaniWorld:MX a hs:country,
-            hs:location,
-            sem:Place ;
-        rdfs:label "MX" .
-
-    leolaniWorld:Mexico_City a hs:city,
-            hs:location,
-            hs:region,
-            sem:Place ;
-        rdfs:label "Mexico City" .
-
-    leolaniWorld:hs a hs:person,
-            gaf:Instance,
-            grasp:Source,
-            sem:Actor ;
-        rdfs:label "hs" .
-}
-
 leolaniWorld:Claims {
     leolaniWorld:I_have_bad_feeling a gaf:Assertion,
             sem:Event ;
@@ -535,14 +518,6 @@ leolaniWorld:Claims {
     leolaniWorld:hs owl:sameAs leolaniWorld:hs .
 }
 
-leolaniWorld:I_have_feeling {
-    leolaniWorld:I ns1:have leolaniWorld:feeling .
-}
-
-leolaniWorld:I_have_feeling_about_it {
-    leolaniWorld:I ns1:have leolaniWorld:feeling_about_it .
-}
-
 leolaniWorld:I_have_bad_feeling_about_it {
     leolaniWorld:I ns1:have leolaniWorld:bad_feeling_about_it .
 }
@@ -551,7 +526,32 @@ leolaniWorld:I_have_bad_feeling {
     leolaniWorld:I ns1:have leolaniWorld:bad_feeling .
 }
 
-leolaniWorld:leolani_know_hs {
-    leolaniWorld:leolani hs:know leolaniWorld:hs .
+leolaniWorld:Instances {
+    leolaniWorld:I a gaf:Instance ;
+        rdfs:label "i" ;
+        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
+
+    leolaniWorld:bad_feeling a gaf:Instance ;
+        rdfs:label "bad-feeling" ;
+        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
+
+    leolaniWorld:bad_feeling_about_it a gaf:Instance ;
+        rdfs:label "bad-feeling-about-it" ;
+        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
+
+    leolaniWorld:feeling a gaf:Instance ;
+        rdfs:label "feeling" ;
+        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
+
+    leolaniWorld:feeling_about_it a gaf:Instance ;
+        rdfs:label "feeling-about-it" ;
+        gaf:denotedIn leolaniTalk:chat2653_utterance2_char0-63 .
+
+    leolaniWorld:hs a hs:person,
+            gaf:Instance ;
+        rdfs:label "hs" .
+
+    leolaniWorld:leolani a hs:robot ;
+        rdfs:label "leolani" .
 }
 
