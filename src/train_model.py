@@ -11,8 +11,8 @@ from rich.console import Console
 from rich.table import Column, Table
 from transformers import AutoTokenizer, DataCollatorForSeq2Seq, Seq2SeqTrainingArguments, Seq2SeqTrainer
 
-from train_utils.dataset import DialoconanDatasetGoT
-from train_utils.model import T5ForGoTGeneration
+from train_utils.dataset import DialoconanDatasetWithGraph
+from train_utils.model import T5GenerationWithGraph
 from train_utils.utils_data import load_data_std_dialoconan, mk_dir, make_save_directory
 from train_utils.utils_prompt import postprocess_text
 
@@ -39,12 +39,12 @@ def T5Trainer(args):
     # Load data as dataset
     print('====Load dataset====')
     train_problems, dev_problems, test_problems = load_data_std_dialoconan(args, console=console)
-    train_set = DialoconanDatasetGoT(train_problems, "train", tokenizer, args.input_len, args.output_len, args)
-    eval_set = DialoconanDatasetGoT(dev_problems, "dev", tokenizer, args.input_len, args.output_len, args)
+    train_set = DialoconanDatasetWithGraph(train_problems, "train", tokenizer, args.input_len, args.output_len, args)
+    eval_set = DialoconanDatasetWithGraph(dev_problems, "dev", tokenizer, args.input_len, args.output_len, args)
 
     # Load model
     print(f'====Load model: {args.model} ====')
-    model = T5ForGoTGeneration.from_pretrained(args.model, s_token_id=s_token_id)
+    model = T5GenerationWithGraph.from_pretrained(args.model, s_token_id=s_token_id)
     model.resize_token_embeddings(len(tokenizer))
     print("model parameters: ", model.num_parameters())
 
