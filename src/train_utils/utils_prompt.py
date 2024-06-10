@@ -8,12 +8,17 @@ from typing import List, Optional
 import nltk
 
 
-def build_train_pair_dialoconan(problems):
+def build_train_pair_dialoconan(problems, exclude_context=False):
     examples = []
     # create the prompt input
-    text_example = f"Hate Speech:\n{problems['hate_speech']}\n\n" \
-                   f"Dialogue History:\n{problems['dialogue_history']}\n\n" \
-                   f"Counter-narrative:\n"
+    if exclude_context:
+        text_example = f"Hate Speech:\n{problems['hate_speech']}\n\n" \
+                       f"Counter-narrative:\n"
+    else:
+        text_example = f"Hate Speech:\n{problems['hate_speech']}\n\n" \
+                       f"Dialogue History:\n{problems['dialogue_history']}\n\n" \
+                       f"Counter-narrative:\n"
+
     target = problems['counter_narrative']
 
     examples.append(text_example)

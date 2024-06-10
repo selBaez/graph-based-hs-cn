@@ -39,8 +39,10 @@ def T5Trainer(args):
     # Load data as dataset
     print('====Load dataset====')
     train_problems, dev_problems, test_problems = load_data_std_dialoconan(args, console=console)
-    train_set = DialoconanDatasetNoGraph(train_problems, tokenizer, args.input_len, args.output_len)
-    eval_set = DialoconanDatasetNoGraph(dev_problems, tokenizer, args.input_len, args.output_len)
+    train_set = DialoconanDatasetNoGraph(train_problems, tokenizer, args.input_len, args.output_len,
+                                         args.exclude_context)
+    eval_set = DialoconanDatasetNoGraph(dev_problems, tokenizer, args.input_len, args.output_len,
+                                        args.exclude_context)
 
     # Load model
     print(f'====Load model: {args.model} ====')
@@ -151,6 +153,7 @@ def parse_args():
     parser.add_argument('--dataset', type=str, default='DIALOCONAN')
     parser.add_argument('--output_dir', type=str, default='./../experiments/DIALOCONAN')
     parser.add_argument('--model', type=str, default='declare-lab/flan-alpaca-base')  # TODO or large?
+    parser.add_argument('--exclude_context', action='store_true', help='remove dialogue history from the prompt')
     parser.add_argument('--epoch', type=int, default=2)  # TODO change
     parser.add_argument('--lr', type=float, default=5e-5)
     parser.add_argument('--bs', type=int, default=4)  # TODO change

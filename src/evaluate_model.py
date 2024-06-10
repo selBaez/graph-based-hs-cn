@@ -12,12 +12,14 @@ from rich.table import Column, Table
 from transformers import AutoTokenizer, DataCollatorForSeq2Seq, Seq2SeqTrainingArguments, Seq2SeqTrainer
 
 from eval_utils.utils_evaluate import get_scores_conan
-from train_utils.dataset import DialoconanDatasetWithGraph
-from train_utils.model import T5GenerationWithGraph
+from train_utils.dataset import DialoconanDatasetWithGraph, DialoconanDatasetNoGraph
+from train_utils.model import T5GenerationWithGraph, T5GenerationNoGraph
 from train_utils.utils_data import load_data_std_dialoconan
 from train_utils.utils_prompt import postprocess_text
 
 console = Console(record=True)
+
+
 # os.environ["WANDB_PROJECT"] = "GoT_reproduction"
 
 
@@ -40,15 +42,29 @@ def T5Trainer(args):
     # Load data as dataset
     print('====Load dataset====')
     train_problems, dev_problems, test_problems = load_data_std_dialoconan(args, console=console)
-    train_set = DialoconanDatasetWithGraph(train_problems, "train", tokenizer, args.input_len, args.output_len, args)
-    eval_set = DialoconanDatasetWithGraph(dev_problems, "dev", tokenizer, args.input_len, args.output_len, args)
-    test_set = DialoconanDatasetWithGraph(test_problems, "test", tokenizer, args.input_len, args.output_len,
-                                          args)  # TODO uncomment for real
 
-    # Load model
+    if args.text_only:
+        train_set = DialoconanDatasetNoGraph(train_problems, tokenizer, args.input_len, args.output_len,
+                                             args.exclude_context)
+        eval_set = DialoconanDatasetNoGraph(dev_problems, tokenizer, args.input_len, args.output_len,
+                                            args.exclude_context)
+        test_set = DialoconanDatasetNoGraph(test_problems, tokenizer, args.input_len, args.output_len,
+                                            args.exclude_context)
+    else:
+        train_set = DialoconanDatasetWithGraph(train_problems, "train", tokenizer, args.input_len, args.output_len,
+                                               args)
+        eval_set = DialoconanDatasetWithGraph(dev_problems, "dev", tokenizer, args.input_len, args.output_len,
+                                              args)
+        test_set = DialoconanDatasetWithGraph(test_problems, "test", tokenizer, args.input_len, args.output_len,
+                                              args)
+
+        # Load model
     args.model = args.evaluate_dir
     print(f'====Load model: {args.model} ====')
-    model = T5GenerationWithGraph.from_pretrained(args.model, s_token_id=s_token_id)
+    if args.text_only:
+        model = T5GenerationNoGraph.from_pretrained(args.model, s_token_id=s_token_id)
+    else:
+        model = T5GenerationWithGraph.from_pretrained(args.model, s_token_id=s_token_id)
     model.resize_token_embeddings(len(tokenizer))
     print("model parameters: ", model.num_parameters())
 
@@ -109,7 +125,7 @@ def T5Trainer(args):
                              )
 
     # Evaluate
-    print('====Evaluate with HF====') # TODO uncomment for real
+    print('====Evaluate with HF====')  # TODO uncomment for real
     metrics = trainer.evaluate(eval_dataset=test_set, max_length=args.output_len)
     trainer.log_metrics("test", metrics)
     trainer.save_metrics("test", metrics)
@@ -153,6 +169,8 @@ def parse_args():
     parser.add_argument('--got_root', type=str, default='got/')
     parser.add_argument('--output_dir', type=str, default='./../experiments/DIALOCONAN')
     parser.add_argument('--model', type=str, default='declare-lab/flan-alpaca-base')
+    parser.add_argument('--text_only', action='store_true', help='remove graphs')
+    parser.add_argument('--exclude_context', action='store_true', help='remove dialogue history from the prompt')
     parser.add_argument('--epoch', type=int, default=50)
     parser.add_argument('--lr', type=float, default=5e-5)
     parser.add_argument('--bs', type=int, default=2)

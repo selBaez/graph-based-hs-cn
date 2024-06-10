@@ -95,7 +95,7 @@ class DialoconanDatasetNoGraph(Dataset):
 
     """
 
-    def __init__(self, problems, tokenizer, source_len, target_len):
+    def __init__(self, problems, tokenizer, source_len, target_len, exclude_context):
         self.tokenizer = tokenizer
         self.data = problems  # {qid : problems[qid] for qid in qids}
         self.source_len = source_len
@@ -104,7 +104,7 @@ class DialoconanDatasetNoGraph(Dataset):
         self.source_text = []
 
         for qid, prob in enumerate(self.data):
-            prompt, target = build_train_pair_dialoconan(prob)
+            prompt, target = build_train_pair_dialoconan(prob, exclude_context)
             self.target_text.append(target)
             self.source_text.append(prompt)
 
