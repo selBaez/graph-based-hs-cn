@@ -202,6 +202,7 @@ def parse_args():
     parser.add_argument('--output_dir', type=str, default='./../data/DIALOCONAN/got/')
     parser.add_argument('--input_text_file', type=str, default='mc_input_text.pkl')
     parser.add_argument('--adj_matrix_file', type=str, default='mc_adj_matrix.pkl')
+    parser.add_argument('--exclude_context', action='store_true', help='remove dialogue history from the prompt')
 
     args = parser.parse_args()
     return args
@@ -224,7 +225,10 @@ def main(args):
                 dialogue_history = dialogue["dialogue_history"]
                 hs = dialogue["hate_speech"]
 
-                mc_context_text = f"{dialogue_history}\n{hs}"
+                if args.exclude_context:
+                    mc_context_text = f"{hs}"
+                else:
+                    mc_context_text = f"{dialogue_history}\n{hs}"
 
                 mc_input_text, mc_adj_matrix = get_mind_chart(mc_context_text, max_nodes, client)
                 mc_input_text_list.append(mc_input_text)

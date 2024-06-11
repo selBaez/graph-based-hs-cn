@@ -152,6 +152,7 @@ def parse_args():
     parser.add_argument('--got_root', type=str, default='got/')
     parser.add_argument('--output_dir', type=str, default='./../experiments')
     parser.add_argument('--model', type=str, default='declare-lab/flan-alpaca-base')  # TODO or large?
+    parser.add_argument('--exclude_context', action='store_true', help='remove dialogue history from the prompt')
     parser.add_argument('--epoch', type=int, default=2)  # TODO change
     parser.add_argument('--lr', type=float, default=5e-5)
     parser.add_argument('--bs', type=int, default=4)  # TODO change

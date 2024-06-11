@@ -29,7 +29,7 @@ class DialoconanDatasetWithGraph(Dataset):
             self.got_adj_matrix_list = pickle.load(f)
 
         for qid, prob in enumerate(self.data):
-            prompt, target = build_train_pair_dialoconan(prob)
+            prompt, target = build_train_pair_dialoconan(prob, args.exclude_context)
             self.target_text.append(target)
             self.source_text.append(prompt)
 
