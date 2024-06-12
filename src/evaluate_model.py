@@ -56,7 +56,7 @@ def T5Trainer(args):
         eval_set = DialoconanDatasetWithGraph(dev_problems, "dev", tokenizer, args.input_len, args.output_len,
                                               args)
         test_set = DialoconanDatasetWithGraph(test_problems, "test", tokenizer, args.input_len, args.output_len,
-                                              args)
+                                              args)  # TODO change for real
 
         # Load model
     args.model = args.evaluate_dir
@@ -125,10 +125,10 @@ def T5Trainer(args):
                              )
 
     # Evaluate
-    print('====Evaluate with HF====')  # TODO uncomment for real
-    metrics = trainer.evaluate(eval_dataset=test_set, max_length=args.output_len)
-    trainer.log_metrics("test", metrics)
-    trainer.save_metrics("test", metrics)
+    # print('====Evaluate with HF====')  # TODO uncomment for real
+    # metrics = trainer.evaluate(eval_dataset=test_set, max_length=args.output_len)
+    # trainer.log_metrics("test", metrics)
+    # trainer.save_metrics("test", metrics)
 
     def generate_predictions(dataset):
         predict_results = trainer.predict(test_dataset=dataset, max_length=args.output_len)
@@ -143,7 +143,7 @@ def T5Trainer(args):
     # Generate predictions
     print('====Generate predictions====')
     preds, targets = generate_predictions(test_set)
-    scores, df = get_scores_conan(preds, targets)
+    scores, df = get_scores_conan(preds, targets, train_problems)
     output_data = {"scores": scores,
                    "preds": preds,
                    "labels": targets}

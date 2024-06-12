@@ -34,12 +34,10 @@ def load_data_std_dialoconan(args, console):
 
     problems_train = load_data(args, 'train')
     problems_dev = load_data(args, 'dev')
-    problems_test = load_data(args, 'test') #TODO change for real
+    problems_test = load_data(args, 'test')  # TODO change for real
 
     console.log(f"number of train problems: {len(problems_train)}\n")
     console.log(f"number of val problems: {len(problems_dev)}\n")
     console.log(f"number of test problems: {len(problems_test)}\n")
 
     return problems_train, problems_dev, problems_test
-
-
