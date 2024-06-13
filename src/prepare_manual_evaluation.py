@@ -7,6 +7,8 @@ import pandas as pd
 from train_utils.utils_data import load_data
 
 SAMPLE_SIZE = 0.25
+DIMENSIONS = ["Relatedness", "Specificity", "Richness", "Coherence", "Grammatically", "Effectiveness"]
+
 
 def read_and_sample(experiments_path):
     prediction_files = sorted(f / "checkpoint-3500" / "predictions_ans_test.csv" for f in experiments_path.iterdir())
@@ -42,7 +44,7 @@ def rearrange_dialogues(to_annotate, problems_test):
         new_format = pd.DataFrame(row).reset_index().rename(columns={'index': 'source', idx: "text"})
         new_format["og_idx"] = idx
         new_format["id"] = [randint(1, 10000) for k in new_format.index]
-        new_format[["Relatedness", "Specificity", "Richness", "Coherence", "Grammatically"]] = "", "", "", "", ""
+        new_format[DIMENSIONS] = "", "", "", "", ""
         new_format = new_format[["source", "og_idx", "id", "text",
                                  "Relatedness", "Specificity", "Richness", "Coherence", "Grammatically"]]
 

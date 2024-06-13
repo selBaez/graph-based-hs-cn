@@ -1,101 +1,125 @@
 import argparse
+import json
+from collections import defaultdict
 from pathlib import Path
-from random import randint
 
+import numpy as np
 import pandas as pd
+from sklearn.metrics import cohen_kappa_score
 
-from train_utils.utils_data import load_data
+from prepare_manual_evaluation import DIMENSIONS
 
-SAMPLE_SIZE = 0.25
+ANNOTATORS = [
+    # 779698106,  # i
+    1235414710,  # i2
+    # 742083769, # h
+    410231477,  # f (28)
+    1106223098,  # s
+    # 182740748,  # l (5)
+    73519088, # w
+    1664249700,  # j (11)
+    # 1718239219,  # b (8)
+    # 1975017435,  # m
+    # 1014977765  # a
+]
 
-def read_and_sample(experiments_path):
-    prediction_files = sorted(f / "checkpoint-3500" / "predictions_ans_test.csv" for f in experiments_path.iterdir())
+N_ANNOTATORS = len(ANNOTATORS)
 
-    experiments_data = []
-    for i, p_file in enumerate(prediction_files):
-        # Get predictions from each model
-        predictions = pd.read_csv(p_file, index_col=0)
-        predictions[f"{p_file.parents[1].name}"] = predictions[["pred"]]
-        if i == 0:
-            predictions = predictions[["ref", f"{p_file.parents[1].name}"]]
-        else:
-            predictions = predictions[[f"{p_file.parents[1].name}"]]
-        experiments_data.append(predictions)
-
-    # Create dataframe
-    data = pd.concat(experiments_data, axis=1)
-
-    # Sample
-    to_annotate = data.sample(frac=SAMPLE_SIZE, random_state=42)
-
-    return to_annotate
+MODELS = [
+    'declare-lab-flan-alpaca-base_lr5e-05_bs32_op256_ep50_2024-06-01-04-17',  # got
+    'declare-lab-flan-alpaca-base_lr5e-05_bs32_op256_ep50_2024-06-06-18-34',  # ekg
+    'declare-lab-flan-alpaca-base_lr5e-05_bs32_op256_ep50_2024-06-08-23-44',  # txt
+    'declare-lab-flan-alpaca-base_lr5e-05_bs32_op256_ep50_2024-06-09-21-36',  # tnc
+    'declare-lab-flan-alpaca-base_lr5e-05_bs32_op256_ep50_2024-06-11-00-09',  # got-nc
+    'ref'
+]
 
 
-def rearrange_dialogues(to_annotate, problems_test):
-    all_annotations = []
-    all_keys = []
-    for idx, row in to_annotate.iterrows():
-        # Shuffle order
-        row = row.sample(frac=1, random_state=42)
+def read_data(key):
+    per_dim = {"Relatedness": defaultdict(list), "Specificity": defaultdict(list), "Richness": defaultdict(list),
+               "Coherence": defaultdict(list), "Grammatically": defaultdict(list), "Effectiveness": defaultdict(list)}
 
-        # Reformat and add idx, id, and annotation columns
-        new_format = pd.DataFrame(row).reset_index().rename(columns={'index': 'source', idx: "text"})
-        new_format["og_idx"] = idx
-        new_format["id"] = [randint(1, 10000) for k in new_format.index]
-        new_format[["Relatedness", "Specificity", "Richness", "Coherence", "Grammatically"]] = "", "", "", "", ""
-        new_format = new_format[["source", "og_idx", "id", "text",
-                                 "Relatedness", "Specificity", "Richness", "Coherence", "Grammatically"]]
+    min_common_annotations = 30 * 6  # dialogues x dimensions
+    for sheet_id in ANNOTATORS:
+        annotations = pd.read_csv(f'https://docs.google.com/spreadsheets/d/'
+                                  f'1_VviKQ__XZ1mwtVq6XrSOMuZV0ut449xFekUjo0fnSY/'
+                                  f'export?gid={sheet_id}&format=csv')
 
-        # Separate secret parts from public parts
-        key_for_id = new_format[["source", "og_idx", "id"]]
-        annotators_df = new_format[["og_idx", "id", "text",
-                                    "Relatedness", "Specificity", "Richness", "Coherence", "Grammatically"]]
+        # format data
+        annotations = annotations[["id", "og_idx", "text",
+                                   "Relatedness", "Specificity", "Richness", "Coherence", "Grammatically",
+                                   "Effectiveness"]]
+        annotations = annotations[annotations['id'].notna()]
+        annotations = annotations[annotations['Relatedness'].notna()]
 
-        # Add HS and dialogue history
-        context_df = pd.DataFrame(columns=annotators_df.columns)
-        context_df.loc[0] = ["Dialogue history:", "", "", "", "", "", "", ""]
-        context_df.loc[1] = [problems_test.iloc[[idx]]["dialogue_history"].values[0], "", "", "", "", "", "", ""]
-        context_df.loc[2] = ["HS to address:", "", "", "", "", "", "", ""]
-        context_df.loc[3] = [f'HS: {problems_test.iloc[[idx]]["hate_speech"].values[0]}', "", "", "", "", "", "", ""]
+        # map source model
+        annotations['og_idx'] = annotations['og_idx'].astype('int64')
+        key['og_idx'] = key['og_idx'].astype('int64')
+        merged_df = pd.merge(annotations, key, left_on=['id', 'og_idx'], right_on=['id', 'og_idx'], how='left')
 
-        # Add empty rows
-        empty_between = pd.DataFrame([{}] * 1, columns=annotators_df.columns)
-        empty_end = pd.DataFrame([{}] * 3, columns=annotators_df.columns)
+        if len(merged_df) > 0:
+            min_common_annotations = min(min_common_annotations, len(merged_df))
 
-        # Concat
-        dialogue = pd.concat([context_df, empty_between, annotators_df, empty_end], ignore_index=True)
+            # put in dictionary
+            for dim in DIMENSIONS:
+                per_dim[dim]["all"].append(merged_df[dim].tolist())
 
-        all_annotations.append(dialogue)
-        all_keys.append(key_for_id)
+                # group by model
+                for model, model_ann in merged_df.groupby(by=["source"]):
+                    per_dim[dim][model[0]].append(model_ann[dim].tolist())
 
-    return all_annotations, all_keys
+    return per_dim, min_common_annotations
 
 
 def main(args):
-    experiments_path = Path(f"./../experiments/{args.dataset}").resolve()
     annotations_path = Path(f"./../annotations/{args.dataset}").resolve()
 
     # read data
-    to_annotate = read_and_sample(experiments_path)
-    problems_test = pd.DataFrame(load_data(args, 'test'))
+    key = pd.read_csv(f"{annotations_path}/annotation_keys.tsv", sep='\t')
+    all_annotations, min_common_annotations = read_data(key)
+    min_common_dialogues = min_common_annotations // 6
 
-    # format data
-    all_annotations, all_keys = rearrange_dialogues(to_annotate, problems_test)
+    per_dim = {"Relatedness": defaultdict(dict), "Specificity": defaultdict(dict), "Richness": defaultdict(dict),
+               "Coherence": defaultdict(dict), "Grammatically": defaultdict(dict), "Effectiveness": defaultdict(dict),
+               "All": defaultdict(dict)}
+    iaa = []
+    for dim, info in all_annotations.items():
+        # Calculate Cohen's kappa for all pairs of annotators
+        dim_annotations = [ann[:min_common_annotations] for ann in info["all"]
+                           if np.nan not in ann[:min_common_annotations]]
+        kappas = []
+        for i in range(len(dim_annotations)):
+            for j in range(i + 1, len(dim_annotations)):
+                kappa = cohen_kappa_score(dim_annotations[i], dim_annotations[j])
+                kappas.append(kappa)
+        per_dim[dim]["IAA"] = np.mean(kappas)
+        iaa.append(np.mean(kappas))
 
-    # Create final files
-    print(f"Selected {len(all_annotations)} dialogues for annotation")
-    public_data = pd.concat(all_annotations, axis=0)
-    secret_data = pd.concat(all_keys, axis=0)
+        for model in MODELS:
+            model_dim_annotations = []
+            for annotator in info[model]:
+                if np.nan not in annotator[:min_common_dialogues]:
+                    fixed_annotations = [int(ann) for ann in annotator[:min_common_dialogues]]
+                    model_dim_annotations.append(fixed_annotations)
 
-    public_data.to_csv(annotations_path / "annotation_template.tsv", index=False, sep='\t')
-    secret_data.to_csv(annotations_path / "annotation_keys.tsv", index=False, sep='\t')
+            model_dim_avg = [np.mean(annotator) for annotator in model_dim_annotations]
+            per_dim[dim][model]["per_annotator"] = model_dim_avg
+            per_dim[dim][model]["total_average"] = np.mean(model_dim_avg)
+
+            print(f"Dimension: {dim}, Num annotators: {len(dim_annotations)}, "
+                  f"Average value: {per_dim[dim][model]['total_average']:.2f}, "
+                  f"Average Cohen's kappa: {per_dim[dim]['IAA']:.2f}\n\n")
+
+    per_dim["All"]["IAA"] = np.mean(iaa)
+
+    with open(annotations_path / 'interannotator_agreement.json', 'w', encoding='utf-8') as f:
+        json.dump(per_dim, f, ensure_ascii=False, indent=4)
 
     print("DONE")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_root', type=str, default='./../data')
     parser.add_argument('--dataset', type=str, default='DIALOCONAN')
 
     args = parser.parse_args()
