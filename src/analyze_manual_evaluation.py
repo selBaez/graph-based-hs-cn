@@ -13,12 +13,12 @@ ANNOTATORS = [
     # 779698106,  # i
     1235414710,  # i2
     # 742083769, # h
-    410231477,  # f (28)
-    1106223098,  # s
+    410231477,  # f (30)
+    1106223098,  # s (30)
     # 182740748,  # l (5)
-    73519088, # w
-    1664249700,  # j (11)
-    # 1718239219,  # b (8)
+    # 73519088, # w
+    # 1664249700,  # j (11)
+    # 1718239219,  # b (20)
     # 1975017435,  # m
     # 1014977765  # a
 ]
@@ -106,7 +106,8 @@ def main(args):
             per_dim[dim][model]["per_annotator"] = model_dim_avg
             per_dim[dim][model]["total_average"] = np.mean(model_dim_avg)
 
-            print(f"Dimension: {dim}, Num annotators: {len(dim_annotations)}, "
+            print(f"Dialogues: {min_common_dialogues}, Num annotators: {len(dim_annotations)}, "
+                  f"Dimension: {dim}, "
                   f"Average value: {per_dim[dim][model]['total_average']:.2f}, "
                   f"Average Cohen's kappa: {per_dim[dim]['IAA']:.2f}\n\n")
 

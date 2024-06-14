@@ -86,7 +86,7 @@ def get_scores_conan(results, reference, training_corpus):
               'counterspeech': df["counterspeech"].mean() * 100,
               'toxicity': df["toxicity"].mean() * 100,
               'diversity': df["diversity"].mean() * 100,
-              'novelty': df["diversity"].mean() * 100
+              'novelty': df["novelty"].mean() * 100
               }
 
     scores = {k: float(val) for k, val in scores.items()}
