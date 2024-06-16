@@ -11,12 +11,12 @@ from prepare_manual_evaluation import DIMENSIONS
 
 ANNOTATORS = [
     # 779698106,  # i
-    1235414710,  # i2
+    1235414710,  # i2 (30)
     # 742083769, # h
     410231477,  # f (30)
     1106223098,  # s (30)
     # 182740748,  # l (5)
-    # 73519088, # w
+    73519088,  # w (30)
     # 1664249700,  # j (11)
     # 1718239219,  # b (20)
     # 1975017435,  # m
@@ -39,18 +39,18 @@ def read_data(key):
     per_dim = {"Relatedness": defaultdict(list), "Specificity": defaultdict(list), "Richness": defaultdict(list),
                "Coherence": defaultdict(list), "Grammatically": defaultdict(list), "Effectiveness": defaultdict(list)}
 
-    min_common_annotations = 30 * 6  # dialogues x dimensions
+    min_common_annotations = 27 * 6  # dialogues x dimensions
     for sheet_id in ANNOTATORS:
         annotations = pd.read_csv(f'https://docs.google.com/spreadsheets/d/'
                                   f'1_VviKQ__XZ1mwtVq6XrSOMuZV0ut449xFekUjo0fnSY/'
                                   f'export?gid={sheet_id}&format=csv')
 
         # format data
+        annotations = annotations[annotations['Relatedness'].notna()]
+        annotations = annotations[annotations['id'].notna()]
         annotations = annotations[["id", "og_idx", "text",
                                    "Relatedness", "Specificity", "Richness", "Coherence", "Grammatically",
                                    "Effectiveness"]]
-        annotations = annotations[annotations['id'].notna()]
-        annotations = annotations[annotations['Relatedness'].notna()]
 
         # map source model
         annotations['og_idx'] = annotations['og_idx'].astype('int64')
@@ -84,9 +84,19 @@ def main(args):
                "All": defaultdict(dict)}
     iaa = []
     for dim, info in all_annotations.items():
+        dim_annotations = []
+        for ann_id, ann in enumerate(info["all"]):
+            if np.nan not in ann[:min_common_annotations]:
+                dim_annotations.append(ann[:min_common_annotations])
+            else:
+                print(f"\tCorrupt annotation for dimension:{dim} from annotator {ann_id}\n"
+                      f"\t{ann[:min_common_annotations]}\n\n")
+
+        # Export as csv
+        dimension_file = pd.DataFrame(dim_annotations).transpose()
+        dimension_file.to_csv(annotations_path / f'annotations_{dim.lower()}.csv', header=False, index=False)
+
         # Calculate Cohen's kappa for all pairs of annotators
-        dim_annotations = [ann[:min_common_annotations] for ann in info["all"]
-                           if np.nan not in ann[:min_common_annotations]]
         kappas = []
         for i in range(len(dim_annotations)):
             for j in range(i + 1, len(dim_annotations)):
